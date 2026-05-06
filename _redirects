@@ -4,3 +4,6 @@
 /tiktok /tiktok-lite/ 301
 /points /point-site/ 301
 /feed /rss.xml 301
+/register /member/ 301
+/signup /member/ 301
+/app /install/ 301

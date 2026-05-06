@@ -1,15 +1,42 @@
 {
-  "name": "スマホ小銭研究所",
+  "name": "スマホ小銭研究所｜条件を見てからお得を拾う",
   "short_name": "小銭研究所",
-  "start_url": "/",
+  "description": "ポイ活・クーポン・自治体還元・招待特典を条件確認つきで整理するスマホ小銭チェック所。",
+  "start_url": "/?utm_source=pwa",
+  "scope": "/",
   "display": "standalone",
-  "background_color": "#f5fbf8",
-  "theme_color": "#00a884",
+  "background_color": "#f6f3ea",
+  "theme_color": "#0a7c6a",
   "icons": [
     {
-      "src": "/assets/favicon.svg",
-      "sizes": "any",
-      "type": "image/svg+xml"
+      "src": "/assets/images/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/images/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "TikTok Lite確認",
+      "short_name": "TikTok",
+      "url": "/tiktok-lite/checklist/",
+      "description": "TikTok Liteの条件確認"
+    },
+    {
+      "name": "ポイント比較",
+      "short_name": "比較",
+      "url": "/point-site/",
+      "description": "ポイントサイトを比較"
+    },
+    {
+      "name": "支払い前チェック",
+      "short_name": "支払い",
+      "url": "/tools/payment-checklist/",
+      "description": "税金・公共料金・クーポン確認"
     }
   ]
 }
