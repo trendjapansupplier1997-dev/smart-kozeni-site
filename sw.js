@@ -1,10 +1,5 @@
-
-const CACHE='smart-kozeni-v8';
-const CORE=['/','/start-here/','/tiktok-lite/','/point-site/','/member/','/install/','/assets/style.css','/assets/script.js','/assets/images/icon-192.png'];
-self.addEventListener('install', event=>{ event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(CORE)).then(()=>self.skipWaiting())); });
-self.addEventListener('activate', event=>{ event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim())); });
-self.addEventListener('fetch', event=>{
-  const req=event.request;
-  if(req.method!=='GET') return;
-  event.respondWith(fetch(req).then(res=>{ const copy=res.clone(); if(new URL(req.url).origin===location.origin){ caches.open(CACHE).then(cache=>cache.put(req,copy)); } return res; }).catch(()=>caches.match(req).then(cached=>cached||caches.match('/'))));
-});
+const CACHE_NAME='smart-kozeni-v9';
+const CORE_ASSETS=['/','/manifest.webmanifest','/assets/style.css','/assets/script.js','/assets/favicon.svg','/assets/images/icon-192.png','/assets/images/icon-512.png','/tiktok-lite/','/point-site/','/member/','/install/','/tools/payment-checklist/'];
+self.addEventListener('install',event=>{event.waitUntil(caches.open(CACHE_NAME).then(cache=>cache.addAll(CORE_ASSETS)).then(()=>self.skipWaiting()));});
+self.addEventListener('activate',event=>{event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE_NAME).map(k=>caches.delete(k)))).then(()=>self.clients.claim()));});
+self.addEventListener('fetch',event=>{if(event.request.method!=='GET')return; event.respondWith(fetch(event.request).then(response=>{const clone=response.clone(); caches.open(CACHE_NAME).then(cache=>{ if(response.ok && new URL(event.request.url).origin===location.origin) cache.put(event.request,clone); }); return response;}).catch(()=>caches.match(event.request).then(cached=>cached||caches.match('/'))));});
