@@ -4,7 +4,7 @@ Cloudflare Pages + GitHub + 独自ドメイン向けの静的サイトです。
 
 ## 公開前に置換するURL
 
-現在の仮URL: `https://smart-kozeni.pages.dev`
+本番URL: `https://smart-kozeni.com`
 
 Cloudflare Pagesの実URL、または独自ドメインが決まったら以下を一括置換してください。
 
@@ -13,7 +13,7 @@ Cloudflare Pagesの実URL、または独自ドメインが決まったら以下�
 - `sitemap.xml`
 
 例:
-`https://smart-kozeni.pages.dev` → `https://smart-kozeni.com`
+`https://smart-kozeni.com` → `https://smart-kozeni.com`
 
 ## 主要ページ
 
@@ -46,3 +46,12 @@ Cloudflare Pagesの実URL、または独自ドメインが決まったら以下�
 - 個別記事ページを増やす
 - Search Console登録後、sitemap.xmlを送信する
 - 伸びたクエリを見てタイトルと本文を改善する
+
+
+## v2で追加
+- smart-kozeni.com をcanonical/OGP/sitemap/robotsに反映
+- OGP画像とfaviconを追加
+- 初めての方ページを追加
+- TikTok Lite 報酬反映/対象外ページを追加
+- ホームの初見導線を強化
+- 既存Instagram QRと投稿画像素材をassetsに追加

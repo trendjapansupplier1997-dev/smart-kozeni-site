@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://smart-kozeni.pages.dev/sitemap.xml
+Sitemap: https://smart-kozeni.com/sitemap.xml
