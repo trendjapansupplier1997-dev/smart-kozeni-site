@@ -1,0 +1,62 @@
+[
+  {
+    "url": "/",
+    "title": "スマホ小銭研究所",
+    "description": "スマホ小銭研究所の確認ページです。",
+    "keywords": "ポイ活 クーポン 小銭"
+  },
+  {
+    "url": "/start-here/",
+    "title": "初めての方へ",
+    "description": "スマホ小銭研究所の確認ページです。",
+    "keywords": "使い方 PR 条件確認"
+  },
+  {
+    "url": "/tiktok-lite/",
+    "title": "TikTok Lite条件確認",
+    "description": "スマホ小銭研究所の確認ページです。",
+    "keywords": "TikTok Lite ヒットチャレンジ 紹介コード"
+  },
+  {
+    "url": "/tiktok-lite/checklist/",
+    "title": "TikTok Liteチェックリスト",
+    "description": "スマホ小銭研究所の確認ページです。",
+    "keywords": "対象 条件 期限"
+  },
+  {
+    "url": "/tiktok-lite/trouble/",
+    "title": "TikTok Lite反映されない",
+    "description": "スマホ小銭研究所の確認ページです。",
+    "keywords": "報酬 反映 対象外"
+  },
+  {
+    "url": "/point-site/",
+    "title": "ポイントサイト比較",
+    "description": "スマホ小銭研究所の確認ページです。",
+    "keywords": "モッピー ハピタス ちょびリッチ 比較"
+  },
+  {
+    "url": "/point-site/beginner/",
+    "title": "初心者向けポイントサイト",
+    "description": "スマホ小銭研究所の確認ページです。",
+    "keywords": "初心者 どれから"
+  },
+  {
+    "url": "/receipt/mcdonalds-kodo/",
+    "title": "マックKODO",
+    "description": "スマホ小銭研究所の確認ページです。",
+    "keywords": "マック KODO レシート クーポン"
+  },
+  {
+    "url": "/local-campaign/paypay/",
+    "title": "PayPay自治体還元",
+    "description": "スマホ小銭研究所の確認ページです。",
+    "keywords": "PayPay 商品券 自治体"
+  },
+  {
+    "url": "/coupon/lawson/",
+    "title": "ローソンアプリ",
+    "description": "スマホ小銭研究所の確認ページです。",
+    "keywords": "ローソン クーポン お試し引換券"
+  }
+]
