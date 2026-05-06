@@ -1,36 +1,21 @@
-# スマホ小銭研究所 Pro Static Site
+# スマホ小銭研究所 Pro Static Site v3
 
-Cloudflare Pages + GitHub + 独自ドメイン向けの静的サイトです。
+Cloudflare Pages + GitHub + 独自ドメイン `https://smart-kozeni.com` 向けの静的サイトです。
 
-## 公開前に置換するURL
+## v3で追加
 
-本番URL: `https://smart-kozeni.com`
-
-Cloudflare Pagesの実URL、または独自ドメインが決まったら以下を一括置換してください。
-
-- HTML内の canonical / og:url
-- `robots.txt`
-- `sitemap.xml`
-
-例:
-`https://smart-kozeni.com` → `https://smart-kozeni.com`
-
-## 主要ページ
-
-- `/` トップページ
-- `/tiktok-lite/`
-- `/point-site/`
-- `/point-site/moppy/`
-- `/point-site/hapitas/`
-- `/point-site/chobirich/`
-- `/receipt/`
-- `/receipt/mcdonalds-kodo/`
-- `/local-campaign/`
-- `/local-campaign/tokyo-app/`
-- `/local-campaign/paypay/`
-- `/tax-payment/`
-- `/coupon/`
-- `/privacy/`
+- GA4タグ: `G-V140MZBPKB`
+- Microsoft Clarity ID: `wmurko5bi1`
+- 紹介リンククリック計測 `affiliate_click`
+- 個別イベント `affiliate_click_tiktok_lite` / `affiliate_click_moppy` / `affiliate_click_hapitas` / `affiliate_click_chobirich`
+- `/about/` このサイトについて
+- `/policy/` 掲載方針・PR表記
+- `/tiktok-lite/invite-code/` 紹介コードの使い方
+- `/tiktok-lite/checklist/` 始める前チェックリスト
+- `/point-site/beginner/` 初心者向け選び方
+- `/point-site/mistakes/` 失敗しやすい条件
+- `404.html`
+- `sitemap.xml` を23ページへ更新
 
 ## 紹介リンク
 
@@ -39,19 +24,9 @@ Cloudflare Pagesの実URL、または独自ドメインが決まったら以下�
 - ハピタス: https://hapitas.jp/appinvite?i=25179605&route=text / code KYAKGJ
 - ちょびリッチ: https://www.chobirich.com/cm/ad/?p=8225208671&i=4970604 / code c1dlpH
 
-## SEO方針
+## 運用方針
 
 - 条件確認・対象外・失敗例を明記する
 - 薄い紹介リンクページにしない
-- 個別記事ページを増やす
-- Search Console登録後、sitemap.xmlを送信する
-- 伸びたクエリを見てタイトルと本文を改善する
-
-
-## v2で追加
-- smart-kozeni.com をcanonical/OGP/sitemap/robotsに反映
-- OGP画像とfaviconを追加
-- 初めての方ページを追加
-- TikTok Lite 報酬反映/対象外ページを追加
-- ホームの初見導線を強化
-- 既存Instagram QRと投稿画像素材をassetsに追加
+- クリック計測を見て改善する
+- Search Console / GA4 / Clarity を併用する
