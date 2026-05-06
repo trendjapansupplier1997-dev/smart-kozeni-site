@@ -1,21 +1,16 @@
-# スマホ小銭研究所 Pro Static Site v3
+# スマホ小銭研究所 Pro Static Site v4
 
-Cloudflare Pages + GitHub + 独自ドメイン `https://smart-kozeni.com` 向けの静的サイトです。
+本番URL: https://smart-kozeni.com
 
-## v3で追加
+## v4 強化内容
 
-- GA4タグ: `G-V140MZBPKB`
-- Microsoft Clarity ID: `wmurko5bi1`
-- 紹介リンククリック計測 `affiliate_click`
-- 個別イベント `affiliate_click_tiktok_lite` / `affiliate_click_moppy` / `affiliate_click_hapitas` / `affiliate_click_chobirich`
-- `/about/` このサイトについて
-- `/policy/` 掲載方針・PR表記
-- `/tiktok-lite/invite-code/` 紹介コードの使い方
-- `/tiktok-lite/checklist/` 始める前チェックリスト
-- `/point-site/beginner/` 初心者向け選び方
-- `/point-site/mistakes/` 失敗しやすい条件
-- `404.html`
-- `sitemap.xml` を23ページへ更新
+- 全ページのナビゲーションを統一
+- GA4 `G-V140MZBPKB` と Microsoft Clarity `wmurko5bi1` を全ページに導入
+- 紹介リンククリック、外部リンク、内部CTA、コピー、スクロール深度を計測
+- TikTok Liteクラスターを強化
+- ポイントサイト比較クラスターを強化
+- レシート/自治体/クーポン/支払い前チェックのページを追加
+- 404、llms.txt、humans.txt、sitemap.xmlを更新
 
 ## 紹介リンク
 
@@ -24,9 +19,6 @@ Cloudflare Pages + GitHub + 独自ドメイン `https://smart-kozeni.com` 向け
 - ハピタス: https://hapitas.jp/appinvite?i=25179605&route=text / code KYAKGJ
 - ちょびリッチ: https://www.chobirich.com/cm/ad/?p=8225208671&i=4970604 / code c1dlpH
 
-## 運用方針
+## 次の改善
 
-- 条件確認・対象外・失敗例を明記する
-- 薄い紹介リンクページにしない
-- クリック計測を見て改善する
-- Search Console / GA4 / Clarity を併用する
+Search ConsoleとGA4を見て、表示回数が出たクエリから個別記事を増やす。
