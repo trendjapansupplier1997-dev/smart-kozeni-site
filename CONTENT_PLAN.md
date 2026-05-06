@@ -9,5 +9,5 @@
 
 ## 毎週見る数値
 - Search Console: 表示回数、CTR、クエリ
-- GA4: ページ閲覧、affiliate_click
-- Clarity: スクロール、クリック、離脱
+- アクセス解析: ページ閲覧、offer_link_tap
+- ヒートマップ: スクロール、タップ、離脱

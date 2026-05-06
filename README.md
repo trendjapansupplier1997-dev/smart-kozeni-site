@@ -10,10 +10,10 @@
 - `sw.js` を `smart-kozeni-v9` に更新
 - `assets/images/icon-192.png` / `icon-512.png` / `ogp.png` を再生成
 - `/member/` を無料研究員登録の入口として再設計
-- `/install/` をホーム画面追加/PWA導線として再設計
-- 全HTMLのナビに `無料登録` と `アプリ化` を反映
-- GA4 `G-V140MZBPKB` と Clarity `wmurko5bi1` を維持
-- 紹介リンククリック、内部CTA、外部リンク、スクロール深度、PWA導線を計測
+- `/install/` をホーム画面追加/ホーム画面追加として再設計
+- 全HTMLのナビに `無料登録` と `ホーム追加` を反映
+- アクセス解析 `G-V140MZBPKB` と ヒートマップ `wmurko5bi1` を維持
+- 紹介リンクタップ、サイト内ボタン、外部ページ、スクロール深度、ホーム画面追加を確認
 
 ## 主要確認URL
 
@@ -26,7 +26,7 @@
 
 ## コミットメッセージ
 
-Redesign v10 as monetization focused PWA
+Redesign v10 as visitor friendly PWA
 
 
 ## v10で修正
@@ -34,3 +34,10 @@ Redesign v10 as monetization focused PWA
 - トップページとCSSを大幅再設計
 - 本文へ移動リンクを通常表示から削除
 - manifest / sw.js / アイコンは維持
+
+
+## v11で追加
+
+- 公開ページの文言を生活者向けに整理
+- sitemap.xml を実在ページ全件で再生成
+- Service Worker キャッシュを v11 に更新

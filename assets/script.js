@@ -10,19 +10,19 @@ document.addEventListener('click', async (event) => {
   try { await navigator.clipboard.writeText(text); sendEvent('copy_code', { code_target: button.dataset.copyTarget || 'unknown', page_path: location.pathname }); const old=button.textContent; button.textContent='コピー済み'; setTimeout(()=>button.textContent=old,1500); } catch(e){ alert('コピーできませんでした。手動で選択してください。'); }
 });
 document.addEventListener('click', (event) => {
-  const affiliateLink = event.target.closest('a[data-affiliate]');
-  if (!affiliateLink) return;
-  const affiliate = (affiliateLink.dataset.affiliate || 'unknown').replace(/-/g,'_');
-  const payload = { affiliate, affiliate_name: affiliateLink.dataset.affiliateName || affiliate, link_url: affiliateLink.href, link_text: (affiliateLink.textContent || '').trim().slice(0,80), page_location: location.href, page_path: location.pathname };
-  sendEvent('affiliate_click', payload); sendEvent('affiliate_click_' + affiliate, payload);
+  const offerLink = event.target.closest('a[data-offer]');
+  if (!offerLink) return;
+  const offer = (offerLink.dataset.offer || 'unknown').replace(/-/g,'_');
+  const payload = { offer, offer_name: offerLink.dataset.offerName || offer, link_url: offerLink.href, link_text: (offerLink.textContent || '').trim().slice(0,80), page_location: location.href, page_path: location.pathname };
+  sendEvent('offer_link_tap', payload); sendEvent('offer_link_tap_' + offer, payload);
 });
 document.addEventListener('click', (event) => {
-  const outbound = event.target.closest('a[href^="http"]'); if (!outbound || outbound.dataset.affiliate) return;
+  const outbound = event.target.closest('a[href^="http"]'); if (!outbound || outbound.dataset.offer) return;
   try { if (new URL(outbound.href).hostname === location.hostname) return; } catch(e) {}
   sendEvent('outbound_click', { link_url: outbound.href, link_text: (outbound.textContent||'').trim().slice(0,80), page_path: location.pathname });
 });
 document.addEventListener('click', (event) => {
-  const cta = event.target.closest('a.button, a.card-link, .quick-item, .mini-deal, .bottom-tabs a'); if (!cta || cta.dataset.affiliate) return;
+  const cta = event.target.closest('a.button, a.card-link, .quick-item, .mini-deal, .bottom-tabs a'); if (!cta || cta.dataset.offer) return;
   const href = cta.getAttribute('href') || ''; if (!href || href.startsWith('#')) return;
   sendEvent('internal_cta_click', { link_url: cta.href, link_text: (cta.textContent||'').trim().slice(0,80), page_path: location.pathname });
 });
