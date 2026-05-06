@@ -26,4 +26,11 @@
 
 ## コミットメッセージ
 
-Redesign v9 as monetization focused PWA
+Redesign v10 as monetization focused PWA
+
+
+## v10で修正
+- 公開ページから運営側の裏事情表現を削除
+- トップページとCSSを大幅再設計
+- 本文へ移動リンクを通常表示から削除
+- manifest / sw.js / アイコンは維持
