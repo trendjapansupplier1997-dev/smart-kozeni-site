@@ -1,0 +1,55 @@
+diff --git a/index.html b/index.html
+--- a/index.html
++++ b/index.html
+@@
+-<title>スマホ小銭研究所｜案件を選んで条件チェック</title>
+-<meta name="description" content="スマホで拾える小さなお得を、案件ごとに比較。最高額の目安と条件チェックを見て、対象なら進みます。">
++<title>スマホ小銭研究所｜条件を見て、最初の1件へ</title>
++<meta name="description" content="スマホで拾える小さなお得を、登録前に条件チェック。対象なら拾う。対象外ならやらない。">
+@@
+-  <a href="/#deals">案件一覧</a>
++  <a href="/start-here/">はじめて</a>
+@@
+-  <h1>まず、案件を選ぶ。</h1>
+-  <p class="lead">最高額と条件の重さだけ見て、合いそうなものへ。</p>
+-  <a class="primary-btn" href="#deals">案件を見る</a>
++  <h1>最初の1件を、迷わず選ぶ。</h1>
++  <p class="lead">対象なら拾う。対象外ならやらない。条件を見てから公式へ。</p>
++  <a class="primary-btn" href="/start-here/">はじめての順番を見る</a>
+@@
+-  <p class="eyebrow">DEALS</p>
+-  <h2>案件一覧</h2>
++  <p class="eyebrow">CHECK</p>
++  <h2>主な入口</h2>
+@@
+-  8件の案件カードを表示
++  3件の入口カードだけに整理
++
++  01 TikTok Lite
++  02 ポイントサイト
++  03 レシート・移動系
+
+diff --git a/start-here/index.html b/start-here/index.html
+--- a/start-here/index.html
++++ b/start-here/index.html
+@@
+-<title>初めてのスマホ小銭研究所｜おすすめ順と30秒診断</title>
++<title>初めてのスマホ小銭研究所｜最初の1件を迷わず選ぶ</title>
+@@
+-<h1>上から見れば、<br><span>迷わない。</span></h1>
+-<p>最初は診断でも、おすすめ順でもOK。紹介コードと条件確認へすぐ進めます。</p>
++<h1>最初の1件を、<br><span>迷わず選ぶ。</span></h1>
++<p>PRあり。条件を読んで、対象なら拾う。対象外ならやらない。</p>
+@@
+-30秒診断、4件おすすめ、コードコピー導線を表示
++3ステップと3候補だけに整理
++
++STEP:
++01 候補を1つ決める
++02 条件を先に読む
++03 最後は公式で判断
++
++FIRST CHOICE:
++01 TikTok Lite
++02 ポイントサイト
++03 レシート・移動系
