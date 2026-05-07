@@ -1,5 +1,5 @@
 {
-  "version": "v27-minimal-clear-ui",
-  "builtAt": "2026-05-07T00:00:00+09:00",
-  "notes": "minimal clear UI; one screen one message"
+  "version": "v28-deal-first-condition-check",
+  "updated": "2026-05-07",
+  "concept": "ホームで案件を選び、案件詳細で条件チェックする最小構造"
 }
