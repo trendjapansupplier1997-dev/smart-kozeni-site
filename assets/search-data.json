@@ -98,56 +98,65 @@
   {
     "url": "/tiktok-lite/",
     "title": "TikTok Lite招待コードと条件確認",
-    "description": "TikTok Liteの招待コード、対象外、反映、リンク不具合を短く確認。",
-    "keywords": "TikTok Lite 招待コード 対象外 反映されない"
+    "description": "招待コード、対象外、報酬反映、リンク不具合の確認順。",
+    "keywords": "TikTok Lite 招待コード 対象外 反映されない リンク 開かない",
+    "category": "TikTok Lite"
   },
   {
     "url": "/tiktok-lite/invite-code/",
-    "title": "TikTok Lite紹介コードの使い方",
-    "description": "913299034・765692063の控え、リンクが開かない時の確認、コード入力前の条件確認。",
-    "keywords": "TikTok Lite 紹介コード 招待コード 913299034 765692063"
+    "title": "TikTok Lite招待コード｜765692063・913299034",
+    "description": "コードを控えて、対象外・期限・達成条件を登録前に確認。",
+    "keywords": "TikTok Lite 招待コード 765692063 913299034 紹介コード",
+    "category": "TikTok Lite"
   },
   {
     "url": "/tiktok-lite/checklist/",
     "title": "TikTok Lite登録前チェックリスト",
-    "description": "対象外を避けるために、リンクを押す前・登録直後・達成後に見る項目。",
-    "keywords": "TikTok Lite チェックリスト 対象条件 期限"
+    "description": "TikTok Lite登録前に対象者、期限、達成条件、反映タイミング、スクショを確認。",
+    "keywords": "TikTok Lite チェックリスト 登録前 条件 対象外",
+    "category": "TikTok Lite"
   },
   {
     "url": "/tiktok-lite/not-eligible/",
     "title": "TikTok Lite対象外になりやすい人",
-    "description": "過去利用、端末、地域、年齢、複数アカウントなど対象外条件の確認。",
-    "keywords": "TikTok Lite 対象外 過去利用 端末"
+    "description": "過去利用、同一端末、期限切れ、リンク経由、対象者条件を登録前に確認。",
+    "keywords": "TikTok Lite 対象外 過去利用 端末 期限",
+    "category": "TikTok Lite"
   },
   {
     "url": "/tiktok-lite/reward-timing/",
-    "title": "TikTok Lite報酬反映タイミング",
-    "description": "報酬がいつ反映されるか、反映待ち時に見る画面と確認順。",
-    "keywords": "TikTok Lite 報酬 いつ 反映 タイミング"
+    "title": "TikTok Lite報酬はいつ反映？",
+    "description": "報酬反映、反映待ち、未達、対象外の確認順。",
+    "keywords": "TikTok Lite 報酬 いつ 反映 反映待ち",
+    "category": "TikTok Lite"
   },
   {
     "url": "/tiktok-lite/link-not-open/",
-    "title": "TikTok Liteリンクが開けない時",
-    "description": "招待リンクが開けない時のブラウザ、アプリ、通信、コード控えの確認。",
-    "keywords": "TikTok Lite リンク 開かない 招待リンク"
+    "title": "TikTok Lite招待リンクが開かない時",
+    "description": "招待リンクが開かない時のブラウザ、通信、アプリ状態、コード控えの確認。",
+    "keywords": "TikTok Lite リンク 開かない 招待リンク 白い画面",
+    "category": "TikTok Lite"
   },
   {
     "url": "/tiktok-lite/trouble/",
     "title": "TikTok Lite反映されない時",
-    "description": "報酬が反映されない時に、達成条件、対象外、ログイン状態を確認するメモ。",
-    "keywords": "TikTok Lite 反映されない 報酬 対象外"
+    "description": "条件未達、対象外、反映待ち、ログインアカウント、保存すべき画面を整理。",
+    "keywords": "TikTok Lite 反映されない 報酬 対象外",
+    "category": "TikTok Lite"
   },
   {
     "url": "/tiktok-lite/first-3-days/",
     "title": "TikTok Lite初回3日で確認すること",
-    "description": "開始直後に見る画面、保存するスクショ、報酬反映状況の確認。",
-    "keywords": "TikTok Lite 初回 3日 チェックイン 反映"
+    "description": "開始直後の3日間で見る条件画面、進捗、チェックイン、報酬反映を整理。",
+    "keywords": "TikTok Lite 初回 3日 チェックイン 進捗",
+    "category": "TikTok Lite"
   },
   {
     "url": "/tiktok-lite/terms-check/",
     "title": "TikTok Lite条件画面の読み方",
-    "description": "最大表示、達成条件、期限、対象外条件、反映タイミングの読み方。",
-    "keywords": "TikTok Lite 条件 最大 対象外 期限"
+    "description": "最大表示、対象者、達成条件、期限、反映時期、注意事項を確認。",
+    "keywords": "TikTok Lite 条件 最大 対象者 期限",
+    "category": "TikTok Lite"
   },
   {
     "url": "/receipt/mcdonalds-kodo/",
