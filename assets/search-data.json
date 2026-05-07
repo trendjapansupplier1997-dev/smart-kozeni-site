@@ -10,9 +10,9 @@
     "description": "ヒットチャレンジの紹介リンクと条件チェック。"
   },
   {
-    "title": "ポイントサイト",
+    "title": "ポイントサイト・アプリ",
     "url": "/point-site/",
-    "description": "モッピー、ハピタス、ちょびリッチ、トリマを比較。"
+    "description": "モッピー、ハピタス、ちょびリッチ、トリマ、ポイントタウン、クラシルリワードを比較。"
   },
   {
     "title": "モッピー",
@@ -33,5 +33,15 @@
     "title": "トリマ",
     "url": "/point-site/trima/",
     "description": "紹介リンクと条件チェック。電話番号認証まで確認。"
+  },
+  {
+    "title": "ポイントタウン",
+    "url": "/point-site/pointtown/",
+    "description": "Web紹介リンク、アプリ用コード、条件チェック。"
+  },
+  {
+    "title": "クラシルリワード",
+    "url": "/point-site/kurashiru-reward/",
+    "description": "紹介リンクと30日以内の条件チェック。"
   }
 ]

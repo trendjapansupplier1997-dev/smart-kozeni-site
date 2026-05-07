@@ -1,5 +1,5 @@
 {
-  "version": "v34-trima-css-fix",
-  "scope": "trima css repair",
-  "updated": "2026-05-07"
+  "version": "v35-add-pointtown-kurashiru",
+  "updated": "2026-05-07",
+  "note": "Add PointTown and Kurashiru Reward referral pages to home and point-site list."
 }
