@@ -41,3 +41,8 @@ Redesign v10 as visitor friendly PWA
 - 公開ページの文言を生活者向けに整理
 - sitemap.xml を実在ページ全件で再生成
 - Service Worker キャッシュを v11 に更新
+
+
+## V12
+
+`/start-here/` を収益導線の入口として強化し、主要ページからの共通CTAを追加しました。詳細は `V12_CHANGELOG.md` を参照。

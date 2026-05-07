@@ -7,9 +7,9 @@
   },
   {
     "url": "/start-here/",
-    "title": "初めての方へ",
-    "description": "スマホ小銭研究所の確認ページです。",
-    "keywords": "使い方 PR 条件確認"
+    "title": "初めてのスマホ小銭研究所",
+    "description": "TikTok Lite、モッピー、ハピタス、ちょびリッチを登録前の確認順で整理。紹介コード、対象外条件、PR表記も確認できます。",
+    "keywords": "ポイ活 初心者 ポイントサイト 紹介コード TikTok Lite 招待 スマホ 副業 節約"
   },
   {
     "url": "/tiktok-lite/",
@@ -58,5 +58,35 @@
     "title": "ローソンアプリ",
     "description": "スマホ小銭研究所の確認ページです。",
     "keywords": "ローソン クーポン お試し引換券"
+  },
+  {
+    "url": "/point-site/moppy/",
+    "title": "モッピー紹介コード条件確認",
+    "description": "モッピーの紹介コード、登録前に見る条件、対象外条件を整理。",
+    "keywords": "モッピー 紹介コード F9fnA1a1 ポイントサイト"
+  },
+  {
+    "url": "/point-site/hapitas/",
+    "title": "ハピタス紹介コード条件確認",
+    "description": "ハピタスの紹介コード、買い物前チェック、判定期間、対象外条件を整理。",
+    "keywords": "ハピタス 紹介コード KYAKGJ ポイントサイト"
+  },
+  {
+    "url": "/point-site/chobirich/",
+    "title": "ちょびリッチ紹介コード条件確認",
+    "description": "ちょびリッチの紹介コード、案件確認、交換条件、対象外条件を整理。",
+    "keywords": "ちょびリッチ 紹介コード c1dlpH ポイントサイト"
+  },
+  {
+    "url": "/point-site/choose-by-purpose/",
+    "title": "目的別ポイントサイト比較",
+    "description": "買い物、アプリ案件、サービス申込、交換先など目的別にポイントサイトを選ぶページ。",
+    "keywords": "ポイントサイト 比較 目的別 モッピー ハピタス ちょびリッチ"
+  },
+  {
+    "url": "/tiktok-lite/invite-code/",
+    "title": "TikTok Lite紹介コード確認",
+    "description": "TikTok Liteの紹介コード、リンクが開かない場合の確認方法、対象外条件を整理。",
+    "keywords": "TikTok Lite 紹介コード 招待コード 913299034 765692063"
   }
 ]
