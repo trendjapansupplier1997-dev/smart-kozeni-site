@@ -1,5 +1,5 @@
 {
-  "version": "v33-add-trima-referral",
-  "updated": "2026-05-07",
-  "note": "Add Trima deal page and referral link."
+  "version": "v34-trima-css-fix",
+  "scope": "trima css repair",
+  "updated": "2026-05-07"
 }
