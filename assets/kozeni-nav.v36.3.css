@@ -1,4 +1,4 @@
-/* v36.3 navigation/app clarity layer. Keep existing design; add left menu + fixed prev/next. */
+/* v36.3.1 navigation/app clarity layer. Keep existing design; add left menu + fixed browser-history buttons. */
 .kozeni-v363 { --sk-menu-w: 286px; --sk-bg: #fffaf0; --sk-ink: #17201d; --sk-border: rgba(23,32,29,.14); }
 .kozeni-v363 .site-top .nav, .kozeni-v363 .site-header .nav-links, .kozeni-v363 .bottom-tabs { display: none !important; }
 .sk-menu-toggle { position: fixed; top: 14px; left: 14px; z-index: 1002; border: 1px solid var(--sk-border); border-radius: 999px; background: rgba(255,250,240,.92); color: var(--sk-ink); padding: 10px 14px; font-weight: 800; box-shadow: 0 10px 26px rgba(0,0,0,.10); backdrop-filter: blur(12px); }
@@ -30,7 +30,7 @@ body.sk-menu-open .sk-left-menu { transform: translateX(0); }
 .kozeni-check-list p { margin: 5px 0 0; font-weight: 800; }
 .kozeni-next-links > div:last-child { display:flex; flex-wrap:wrap; gap:10px; }
 .kozeni-next-links a { display:inline-flex; padding: 10px 14px; border:1px solid var(--sk-border); border-radius:999px; text-decoration:none; color:var(--sk-ink); background: rgba(255,255,255,.7); font-weight:800; }
-.sk-page-turn { position: fixed; bottom: calc(14px + env(safe-area-inset-bottom)); z-index: 999; display:flex; flex-direction:column; gap:2px; max-width: 42vw; padding: 10px 12px; border-radius: 18px; text-decoration:none; background: rgba(23,59,51,.96); color:#fff8e8; box-shadow:0 14px 38px rgba(0,0,0,.22); font-weight:900; line-height:1.15; }
+.sk-page-turn { position: fixed; bottom: calc(14px + env(safe-area-inset-bottom)); z-index: 999; display:flex; flex-direction:column; gap:2px; max-width: 42vw; padding: 10px 12px; border-radius: 18px; border:0; cursor:pointer; font-family:inherit; text-decoration:none; background: rgba(23,59,51,.96); color:#fff8e8; box-shadow:0 14px 38px rgba(0,0,0,.22); font-weight:900; line-height:1.15; }
 .sk-page-turn small { opacity:.72; font-size:11px; font-weight:800; }
 .sk-page-turn.prev { left: 12px; text-align:left; }
 .sk-page-turn.next { right: 12px; text-align:right; }
