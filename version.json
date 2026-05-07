@@ -1,5 +1,5 @@
 {
-  "version": "v32-home-tiktok-5500-only",
+  "version": "v33-add-trima-referral",
   "updated": "2026-05-07",
-  "concept": "v28ベース。ホーム案件一覧のTikTok Lite最高額を最大5,500円分へ変更する最小差分。"
+  "note": "Add Trima deal page and referral link."
 }

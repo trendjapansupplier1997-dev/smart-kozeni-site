@@ -7,26 +7,31 @@
   {
     "title": "TikTok Lite",
     "url": "/tiktok-lite/",
-    "description": "条件チェックと紹介コード。"
+    "description": "ヒットチャレンジの紹介リンクと条件チェック。"
   },
   {
     "title": "ポイントサイト",
     "url": "/point-site/",
-    "description": "モッピー、ハピタス、ちょびリッチを比較。"
+    "description": "モッピー、ハピタス、ちょびリッチ、トリマを比較。"
   },
   {
     "title": "モッピー",
     "url": "/point-site/moppy/",
-    "description": "紹介コードF9fnA1a1と条件チェック。"
+    "description": "紹介リンクと条件チェック。"
   },
   {
     "title": "ハピタス",
     "url": "/point-site/hapitas/",
-    "description": "紹介コードKYAKGJと条件チェック。"
+    "description": "紹介リンクと条件チェック。"
   },
   {
     "title": "ちょびリッチ",
     "url": "/point-site/chobirich/",
-    "description": "紹介コードc1dlpHと条件チェック。"
+    "description": "紹介リンクと条件チェック。"
+  },
+  {
+    "title": "トリマ",
+    "url": "/point-site/trima/",
+    "description": "紹介リンクと条件チェック。電話番号認証まで確認。"
   }
 ]
