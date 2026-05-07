@@ -1,8 +1,8 @@
 [
   {
     "url": "/",
-    "title": "スマホ小銭研究所｜迷わず選べる紹介コード案内",
-    "description": "診断→条件確認→公式確認の流れで、TikTok Liteと主要ポイントサイトをスマートに案内。",
+    "title": "スマホ小銭研究所",
+    "description": "条件を見て、対象なら拾う。まずはTikTok Liteから。",
     "keywords": "スマホ小銭 紹介コード TikTok Lite モッピー ハピタス ちょびリッチ"
   },
   {
@@ -13,8 +13,8 @@
   },
   {
     "url": "/point-site/",
-    "title": "ポイントサイト比較｜紹介コードをすぐ確認",
-    "description": "モッピー、ハピタス、ちょびリッチの紹介コードと公式確認ボタン。",
+    "title": "ポイントサイト",
+    "description": "モッピー、ハピタス、ちょびリッチをまず3つだけ比較。",
     "keywords": "ポイントサイト 比較 紹介コード モッピー ハピタス ちょびリッチ"
   },
   {
@@ -97,8 +97,8 @@
   },
   {
     "url": "/tiktok-lite/",
-    "title": "TikTok Lite招待コードと条件確認",
-    "description": "TikTok Liteの招待コード、対象外条件、報酬反映、リンクが開かない時の確認順。",
+    "title": "TikTok Lite",
+    "description": "始める前に対象外だけ確認。対象ならコードを使う。",
     "keywords": "TikTok Lite 招待コード 対象外 反映されない リンク 開かない"
   },
   {
@@ -133,8 +133,8 @@
   },
   {
     "url": "/tiktok-lite/trouble/",
-    "title": "TikTok Lite反映されない時",
-    "description": "条件未達、対象外、反映待ち、ログインアカウント、保存すべき画面を整理。",
+    "title": "TikTok Liteで困った時",
+    "description": "反映されない、リンクが開かない、報酬はいつ、を症状別に確認。",
     "keywords": "TikTok Lite 反映されない 報酬 対象外"
   },
   {
