@@ -1,0 +1,48 @@
+/* v36.3 navigation/app clarity layer. Keep existing design; add left menu + fixed prev/next. */
+.kozeni-v363 { --sk-menu-w: 286px; --sk-bg: #fffaf0; --sk-ink: #17201d; --sk-border: rgba(23,32,29,.14); }
+.kozeni-v363 .site-top .nav, .kozeni-v363 .site-header .nav-links, .kozeni-v363 .bottom-tabs { display: none !important; }
+.sk-menu-toggle { position: fixed; top: 14px; left: 14px; z-index: 1002; border: 1px solid var(--sk-border); border-radius: 999px; background: rgba(255,250,240,.92); color: var(--sk-ink); padding: 10px 14px; font-weight: 800; box-shadow: 0 10px 26px rgba(0,0,0,.10); backdrop-filter: blur(12px); }
+.sk-menu-overlay { position: fixed; inset: 0; z-index: 1000; background: rgba(0,0,0,.28); }
+.sk-left-menu { position: fixed; inset: 0 auto 0 0; width: var(--sk-menu-w); z-index: 1001; background: rgba(255,250,240,.98); border-right: 1px solid var(--sk-border); box-shadow: 18px 0 50px rgba(0,0,0,.12); padding: 20px 18px 80px; overflow-y: auto; transform: translateX(-105%); transition: transform .2s ease; }
+body.sk-menu-open .sk-left-menu { transform: translateX(0); }
+.sk-menu-brand { display:flex; align-items:center; gap:10px; margin-bottom: 18px; }
+.sk-menu-brand span { display:grid; place-items:center; width:34px; height:34px; border-radius:50%; background:#173b33; color:#fff8e8; font-weight:900; }
+.sk-menu-brand strong { font-size: 15px; }
+.sk-left-menu nav { display:grid; gap:6px; }
+.sk-left-menu p { margin: 16px 0 4px; font-size: 11px; letter-spacing:.12em; color: rgba(23,32,29,.54); font-weight:900; }
+.sk-left-menu a { display:flex; align-items:center; min-height: 38px; padding: 9px 10px; border-radius: 14px; color: var(--sk-ink); text-decoration: none; font-weight: 800; }
+.sk-left-menu a:hover, .sk-left-menu a.is-active, .sk-left-menu a[aria-current="page"] { background: #173b33; color: #fff8e8; }
+.kozeni-v363 .site-top { padding-left: 74px; }
+.kozeni-hero .kozeni-actions, .kozeni-actions { display:flex; flex-wrap:wrap; gap:12px; align-items:center; margin-top: 18px; }
+.secondary-btn { display:inline-flex; align-items:center; justify-content:center; min-height: 44px; border-radius: 999px; border: 1px solid var(--sk-border); padding: 0 18px; text-decoration:none; color: var(--sk-ink); background: rgba(255,255,255,.65); font-weight: 900; }
+.kozeni-actions.small { margin-top: 12px; }
+.kozeni-actions.small .primary-btn, .kozeni-actions.small .secondary-btn { min-height: 40px; padding: 0 14px; font-size: 14px; }
+.kozeni-app-grid { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+.kozeni-app-card .card-action { margin-top: auto; }
+.kozeni-step-grid, .kozeni-link-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap:16px; }
+.kozeni-step, .kozeni-link-card { border:1px solid var(--sk-border); border-radius: 24px; padding: 18px; background: rgba(255,255,255,.74); box-shadow: 0 18px 45px rgba(0,0,0,.06); }
+.kozeni-step span, .kozeni-link-card > span { font-size: 12px; font-weight: 900; letter-spacing:.1em; color: rgba(23,32,29,.56); }
+.kozeni-step h3, .kozeni-link-card h3 { margin: 8px 0 6px; }
+.kozeni-detail-hero .hero-amount { margin-top: 16px; }
+.kozeni-check-list { display:grid; gap:12px; list-style:none; padding:0; margin:0; }
+.kozeni-check-list li { display:flex; gap:12px; align-items:flex-start; border:1px solid var(--sk-border); border-radius:18px; padding:14px; background: rgba(255,255,255,.68); }
+.kozeni-check-list span { flex:0 0 auto; display:grid; place-items:center; width:34px; height:34px; border-radius:50%; background:#173b33; color:#fff8e8; font-weight:900; }
+.kozeni-check-list p { margin: 5px 0 0; font-weight: 800; }
+.kozeni-next-links > div:last-child { display:flex; flex-wrap:wrap; gap:10px; }
+.kozeni-next-links a { display:inline-flex; padding: 10px 14px; border:1px solid var(--sk-border); border-radius:999px; text-decoration:none; color:var(--sk-ink); background: rgba(255,255,255,.7); font-weight:800; }
+.sk-page-turn { position: fixed; bottom: calc(14px + env(safe-area-inset-bottom)); z-index: 999; display:flex; flex-direction:column; gap:2px; max-width: 42vw; padding: 10px 12px; border-radius: 18px; text-decoration:none; background: rgba(23,59,51,.96); color:#fff8e8; box-shadow:0 14px 38px rgba(0,0,0,.22); font-weight:900; line-height:1.15; }
+.sk-page-turn small { opacity:.72; font-size:11px; font-weight:800; }
+.sk-page-turn.prev { left: 12px; text-align:left; }
+.sk-page-turn.next { right: 12px; text-align:right; }
+@media (min-width: 980px) {
+  .kozeni-v363 { padding-left: var(--sk-menu-w); }
+  .sk-left-menu { transform:none; box-shadow:none; }
+  .sk-menu-toggle, .sk-menu-overlay { display:none !important; }
+  .kozeni-v363 .site-top { padding-left: 24px; }
+  .sk-page-turn.prev { left: calc(var(--sk-menu-w) + 18px); }
+}
+@media (max-width: 620px) {
+  .kozeni-v363 .hero h1 { font-size: clamp(2.2rem, 12vw, 4rem); }
+  .kozeni-actions .primary-btn, .kozeni-actions .secondary-btn { width: 100%; }
+  .sk-page-turn { max-width: 45vw; font-size: 13px; padding: 9px 10px; }
+}
