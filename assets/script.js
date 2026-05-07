@@ -55,3 +55,20 @@ document.addEventListener('click', (event) => {
   });
   sendEvent('v15_filter_click', { filter: raw, page_path: location.pathname });
 });
+
+
+// v17 quick-pick: one-tap recommendation. Static JS, no Cloudflare config needed.
+document.addEventListener('click', (event) => {
+  const pick = event.target.closest('[data-v17-pick]');
+  if (!pick) return;
+  const root = pick.closest('[data-v17-picker]');
+  if (!root) return;
+  const key = pick.dataset.v17Pick || '';
+  root.querySelectorAll('[data-v17-pick]').forEach(btn => btn.classList.toggle('is-active', btn === pick));
+  const idle = root.querySelector('[data-v17-idle]');
+  if (idle) idle.hidden = true;
+  root.querySelectorAll('[data-v17-result]').forEach(card => {
+    card.hidden = card.dataset.v17Result !== key;
+  });
+  sendEvent('v17_quick_pick', { pick: key, page_path: location.pathname });
+});

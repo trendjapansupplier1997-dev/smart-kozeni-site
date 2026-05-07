@@ -43,4 +43,11 @@
   <url><loc>https://smart-kozeni.com/tiktok-lite/trouble/</loc><lastmod>2026-05-07</lastmod><changefreq>monthly</changefreq><priority>0.78</priority></url>
   <url><loc>https://smart-kozeni.com/tools/</loc><lastmod>2026-05-07</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
   <url><loc>https://smart-kozeni.com/tools/payment-checklist/</loc><lastmod>2026-05-07</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+
+  <url>
+    <loc>https://smart-kozeni.com/quick-pick/</loc>
+    <lastmod>2026-05-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.86</priority>
+  </url>
 </urlset>
