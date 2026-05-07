@@ -1,0 +1,129 @@
+--- smart-kozeni-v36.2-honmei-apps-upload-root/index.html	2026-05-07 23:24:01.982574240 +0000
++++ smart-kozeni-v36.2.1-no-inpage-links-upload-root/index.html	2026-05-07 23:33:15.840376364 +0000
+@@ -41,7 +41,6 @@
+     <p class="eyebrow">SMART KOZENI</p>
+     <h1>本命アプリを、迷わず選ぶ。</h1>
+     <p class="lead">案件は増やしすぎない。まずは本命だけ、条件を見てから。</p>
+-    <a class="primary-btn" href="/start-here/">本命アプリを見る</a>
+   </section>
+ 
+   <section class="section" id="deals">
+--- smart-kozeni-v36.2-honmei-apps-upload-root/start-here/index.html	2026-05-07 23:24:01.982639788 +0000
++++ smart-kozeni-v36.2.1-no-inpage-links-upload-root/start-here/index.html	2026-05-07 23:33:29.667458735 +0000
+@@ -28,7 +28,7 @@
+ <script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","wmurko5bi1");</script>
+ <meta name="x-kozeni-version" content="v36.2-honmei-apps">
+ </head>
+-<body class="v15-page has-sticky">
++<body class="v15-page">
+ <header class="site-header v15-header">
+   <nav class="nav" aria-label="主要ナビゲーション">
+     <a class="brand" href="/"><span class="brand-mark" aria-hidden="true">¥</span><span>スマホ小銭研究所</span></a>
+@@ -48,8 +48,7 @@
+     <h1>本命アプリを、<br><span>迷わず選ぶ。</span></h1>
+     <p>PRあり。まずは本命だけ。条件を見て、対象なら拾う。</p>
+     <div class="v19-hero-actions">
+-      <a class="v19-btn primary" href="#honmei-apps">本命を見る</a>
+-      <a class="v19-btn ghost" href="/tiktok-lite/checklist/">条件チェック</a>
++      <a class="v19-btn primary" href="/tiktok-lite/checklist/">条件チェック</a>
+     </div>
+   </section>
+ 
+@@ -115,7 +114,7 @@
+         </div>
+         <div class="v19-card-actions">
+           <a href="/point-site/moppy/" class="v19-btn primary">条件を見る</a>
+-          <a href="/point-site/referral-code/" class="v19-btn ghost">リンクを見る</a>
++          <a href="/point-site/referral-code/" class="v19-btn ghost">紹介リンク一覧へ</a>
+         </div>
+       </article>
+ 
+@@ -128,7 +127,7 @@
+         </div>
+         <div class="v19-card-actions">
+           <a href="/point-site/hapitas/" class="v19-btn primary">条件を見る</a>
+-          <a href="/point-site/referral-code/" class="v19-btn ghost">リンクを見る</a>
++          <a href="/point-site/referral-code/" class="v19-btn ghost">紹介リンク一覧へ</a>
+         </div>
+       </article>
+ 
+@@ -141,7 +140,7 @@
+         </div>
+         <div class="v19-card-actions">
+           <a href="/point-site/trima/" class="v19-btn primary">条件を見る</a>
+-          <a href="/point-site/referral-code/" class="v19-btn ghost">リンクを見る</a>
++          <a href="/point-site/referral-code/" class="v19-btn ghost">紹介リンク一覧へ</a>
+         </div>
+       </article>
+ 
+@@ -154,7 +153,7 @@
+         </div>
+         <div class="v19-card-actions">
+           <a href="/point-site/kurashiru-reward/" class="v19-btn primary">条件を見る</a>
+-          <a href="/point-site/referral-code/" class="v19-btn ghost">リンクを見る</a>
++          <a href="/point-site/referral-code/" class="v19-btn ghost">紹介リンク一覧へ</a>
+         </div>
+       </article>
+ 
+@@ -167,7 +166,7 @@
+         </div>
+         <div class="v19-card-actions">
+           <a href="/point-site/powl/" class="v19-btn primary">条件を見る</a>
+-          <a href="/point-site/referral-code/" class="v19-btn ghost">リンクを見る</a>
++          <a href="/point-site/referral-code/" class="v19-btn ghost">紹介リンク一覧へ</a>
+         </div>
+       </article>
+     </div>
+@@ -176,7 +175,6 @@
+   <div class="v19-pr">PR / 紹介リンクを含みます。報酬や条件は変更される場合があります。開始前に必ず公式画面・アプリ内表示を確認してください。</div>
+ </main>
+ 
+-<div class="v20-sticky-bar"><a href="#honmei-apps" class="v20-sticky-btn primary">本命を見る</a><a href="/tiktok-lite/checklist/" class="v20-sticky-btn">条件チェック</a></div>
+ <footer class="site-footer v15-footer">
+   <div class="footer-inner">
+     <div class="footer-grid">
+@@ -186,7 +184,6 @@
+     </div>
+   </div>
+ </footer>
+-<div class="v15-sticky v19-sticky"><a class="v15-sticky-main" href="#honmei-apps">本命を見る</a><a href="/tiktok-lite/checklist/">条件チェック</a></div>
+ <nav class="bottom-tabs v15-tabs" aria-label="スマホ下部ナビ"><a href="/"><b>⌂</b>ホーム</a><a href="/start-here/"><b>1</b>順番</a><a href="/tiktok-lite/"><b>♪</b>TikTok</a><a href="/point-site/referral-code/"><b>¥</b>コード</a></nav>
+ </body>
+ </html>
+--- smart-kozeni-v36.2-honmei-apps-upload-root/point-site/referral-code/index.html	2026-05-07 23:24:01.982704261 +0000
++++ smart-kozeni-v36.2.1-no-inpage-links-upload-root/point-site/referral-code/index.html	2026-05-07 23:33:15.841354122 +0000
+@@ -25,7 +25,7 @@
+ <script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","wmurko5bi1");</script>
+ <meta name="x-kozeni-version" content="v36.2-honmei-apps-referral">
+ </head>
+-<body class="v15-page has-sticky">
++<body class="v15-page">
+ <header class="site-header v15-header">
+   <nav class="nav" aria-label="主要ナビゲーション">
+     <a class="brand" href="/"><span class="brand-mark" aria-hidden="true">¥</span><span>スマホ小銭研究所</span></a>
+@@ -45,8 +45,7 @@
+     <h1>本命アプリの<br><span>リンクだけ。</span></h1>
+     <p>登録前に条件を確認。対象なら拾う。対象外ならやらない。</p>
+     <div class="v19-hero-actions">
+-      <a class="v19-btn primary" href="#honmei-links">リンクを見る</a>
+-      <a class="v19-btn ghost" href="/start-here/">順番に戻る</a>
++      <a class="v19-btn primary" href="/start-here/">順番に戻る</a>
+     </div>
+   </section>
+ 
+@@ -140,7 +139,6 @@
+   <div class="v19-pr">PR / 紹介リンクを含みます。報酬額・条件・対象者・期限は変わる場合があります。開始前に必ず公式画面・アプリ内表示を確認してください。</div>
+ </main>
+ 
+-<div class="v20-sticky-bar"><a href="#honmei-links" class="v20-sticky-btn primary">リンクを見る</a><a href="/start-here/" class="v20-sticky-btn">順番に戻る</a></div>
+ <footer class="site-footer v15-footer">
+   <div class="footer-inner">
+     <div class="footer-grid">
+@@ -150,7 +148,6 @@
+     </div>
+   </div>
+ </footer>
+-<div class="v15-sticky v19-sticky"><a class="v15-sticky-main" href="#honmei-links">リンクを見る</a><a href="/start-here/">順番に戻る</a></div>
+ <nav class="bottom-tabs v15-tabs" aria-label="スマホ下部ナビ"><a href="/"><b>⌂</b>ホーム</a><a href="/start-here/"><b>1</b>順番</a><a href="/tiktok-lite/"><b>♪</b>TikTok</a><a href="/point-site/referral-code/"><b>¥</b>リンク</a></nav>
+ </body>
+ </html>
