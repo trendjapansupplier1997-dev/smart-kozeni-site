@@ -1,5 +1,5 @@
 {
-  "version": "v36-add-powl-referral",
-  "generatedAt": "2026-05-07T00:00:00+09:00",
-  "notes": "Add Powl referral page and cards"
+  "version": "v39-point-site-compare",
+  "updated": "2026-05-07",
+  "notes": "Add a minimal point-site referral comparison page without increasing top-page clutter."
 }
