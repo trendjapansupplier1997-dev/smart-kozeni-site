@@ -1,5 +1,1 @@
-{
-  "version": "v24-premium-conversion-tiktok",
-  "generatedAt": "2026-05-07T00:00:00+09:00",
-  "focus": "premium conversion redesign; TikTok Lite revenue path; cache-busted assets"
-}
+{"version":"v25-safe-premium-tiktok","base":"v23-stable-layout","purpose":"recover v24 visual regression and prioritize TikTok Lite conversion","generated":"2026-05-07"}
