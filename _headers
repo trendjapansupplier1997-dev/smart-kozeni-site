@@ -2,17 +2,23 @@
   X-Content-Type-Options: nosniff
   X-Frame-Options: DENY
   Referrer-Policy: strict-origin-when-cross-origin
-  Permissions-Policy: geolocation=(), microphone=(), camera=()
-
-/manifest.webmanifest
-  Content-Type: application/manifest+json
-
-/site.webmanifest
-  Content-Type: application/manifest+json
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+  Cache-Control: no-store, no-cache, max-age=0, must-revalidate
+  Pragma: no-cache
+  Expires: 0
 
 /sw.js
-  Content-Type: application/javascript
-  Cache-Control: no-cache
+  Cache-Control: no-store, no-cache, max-age=0, must-revalidate
+  Service-Worker-Allowed: /
 
-/assets/*
-  Cache-Control: public, max-age=31536000, immutable
+/assets/style.v22.css
+  Cache-Control: no-store, no-cache, max-age=0, must-revalidate
+
+/assets/script.v22.js
+  Cache-Control: no-store, no-cache, max-age=0, must-revalidate
+
+/version.json
+  Cache-Control: no-store, no-cache, max-age=0, must-revalidate
+
+/__version.html
+  Cache-Control: no-store, no-cache, max-age=0, must-revalidate

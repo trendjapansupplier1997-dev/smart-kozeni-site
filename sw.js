@@ -1,5 +1,28 @@
-const CACHE_NAME='smart-kozeni-v11';
-const CORE_ASSETS=['/','/manifest.webmanifest','/assets/style.css','/assets/script.js','/assets/favicon.svg','/assets/images/icon-192.png','/assets/images/icon-512.png','/tiktok-lite/','/point-site/','/member/','/install/','/tools/payment-checklist/'];
-self.addEventListener('install',event=>{event.waitUntil(caches.open(CACHE_NAME).then(cache=>cache.addAll(CORE_ASSETS)).then(()=>self.skipWaiting()));});
-self.addEventListener('activate',event=>{event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE_NAME).map(k=>caches.delete(k)))).then(()=>self.clients.claim()));});
-self.addEventListener('fetch',event=>{if(event.request.method!=='GET')return; event.respondWith(fetch(event.request).then(response=>{const clone=response.clone(); caches.open(CACHE_NAME).then(cache=>{ if(response.ok && new URL(event.request.url).origin===location.origin) cache.put(event.request,clone); }); return response;}).catch(()=>caches.match(event.request).then(cached=>cached||caches.match('/'))));});
+// v22: hard retire old PWA/service-worker caches during rapid design updates.
+self.addEventListener('install', event => {
+  self.skipWaiting();
+});
+
+self.addEventListener('activate', event => {
+  event.waitUntil((async () => {
+    try {
+      const keys = await caches.keys();
+      await Promise.all(keys.map(key => caches.delete(key)));
+    } catch (e) {}
+    try { await self.registration.unregister(); } catch (e) {}
+    try {
+      const clients = await self.clients.matchAll({ type: 'window', includeUncontrolled: true });
+      for (const client of clients) {
+        const url = new URL(client.url);
+        if (!url.searchParams.has('kozeni_sw_reset')) {
+          url.searchParams.set('kozeni_sw_reset', 'v22');
+          client.navigate(url.toString());
+        }
+      }
+    } catch (e) {}
+  })());
+});
+
+self.addEventListener('fetch', event => {
+  return;
+});
