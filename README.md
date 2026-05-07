@@ -46,3 +46,11 @@ Redesign v10 as visitor friendly PWA
 ## V12
 
 `/start-here/` を収益導線の入口として強化し、主要ページからの共通CTAを追加しました。詳細は `V12_CHANGELOG.md` を参照。
+
+## v13
+
+TikTok Lite focused build. `/tiktok-lite/` is now the pillar page, with deeper pages for invite code, eligibility, reward timing, link issues, troubleshooting, first 3 days, and condition-screen reading. Sitemap, RSS, and search data are updated.
+
+## v14
+
+Point-site focused build. `/point-site/` is now the pillar page, with deeper pages for referral codes, Moppy, Hapitas, Chobirich, beginner guide, mistakes, judgement timing, exchange guide, cookie checks, shopping, and app/game offers. Sitemap, RSS, and search data are updated.

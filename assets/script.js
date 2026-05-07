@@ -39,3 +39,19 @@ function updateMemberUI(){ const m=readMember(); document.querySelectorAll('[dat
 document.addEventListener('submit',(event)=>{ const form=event.target.closest('[data-member-form]'); if(!form)return; event.preventDefault(); const data=Object.fromEntries(new FormData(form).entries()); data.createdAt=new Date().toISOString(); data.localOnly=true; writeMember(data); updateMemberUI(); sendEvent('member_register_local',{interest:data.interest||'unknown',page_path:location.pathname}); const result=document.querySelector('[data-member-result]'); if(result) result.textContent='登録しました。この端末に研究員カードを保存しました。'; });
 document.addEventListener('click',(event)=>{ const el=event.target.closest('[data-track]'); if(!el)return; sendEvent(el.dataset.track,{page_path:location.pathname,label:(el.textContent||'').trim().slice(0,80)}); });
 document.addEventListener('DOMContentLoaded',()=>{ document.body.classList.toggle('has-sticky',!!document.querySelector('.sticky-cta')); updateMemberUI(); });
+
+
+// v15 conversion UI: lightweight client-side filtering only. No Cloudflare setting required.
+document.addEventListener('click', (event) => {
+  const filterButton = event.target.closest('[data-v15-filter]');
+  if (!filterButton) return;
+  const raw = (filterButton.dataset.v15Filter || 'all').trim();
+  const tokens = raw.split(/\s+/).filter(Boolean);
+  document.querySelectorAll('[data-v15-filter]').forEach(btn => btn.classList.toggle('is-active', btn === filterButton));
+  document.querySelectorAll('[data-v15-card]').forEach(card => {
+    const values = (card.dataset.v15Card || '').split(/\s+/);
+    const show = tokens.includes('all') || tokens.some(t => values.includes(t));
+    card.classList.toggle('v15-card-hidden', !show);
+  });
+  sendEvent('v15_filter_click', { filter: raw, page_path: location.pathname });
+});

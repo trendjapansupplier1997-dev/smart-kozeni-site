@@ -1,45 +1,153 @@
 [
   {
     "url": "/",
-    "title": "スマホ小銭研究所",
-    "description": "スマホ小銭研究所の確認ページです。",
-    "keywords": "ポイ活 クーポン 小銭"
+    "title": "スマホ小銭研究所｜30秒で選ぶ紹介コード",
+    "description": "TikTok Lite、モッピー、ハピタス、ちょびリッチを登録前に短く確認。",
+    "keywords": "スマホ小銭 紹介コード TikTok Lite モッピー ハピタス ちょびリッチ"
   },
   {
     "url": "/start-here/",
-    "title": "初めてのスマホ小銭研究所",
-    "description": "TikTok Lite、モッピー、ハピタス、ちょびリッチを登録前の確認順で整理。紹介コード、対象外条件、PR表記も確認できます。",
-    "keywords": "ポイ活 初心者 ポイントサイト 紹介コード TikTok Lite 招待 スマホ 副業 節約"
-  },
-  {
-    "url": "/tiktok-lite/",
-    "title": "TikTok Lite条件確認",
-    "description": "スマホ小銭研究所の確認ページです。",
-    "keywords": "TikTok Lite ヒットチャレンジ 紹介コード"
-  },
-  {
-    "url": "/tiktok-lite/checklist/",
-    "title": "TikTok Liteチェックリスト",
-    "description": "スマホ小銭研究所の確認ページです。",
-    "keywords": "対象 条件 期限"
-  },
-  {
-    "url": "/tiktok-lite/trouble/",
-    "title": "TikTok Lite反映されない",
-    "description": "スマホ小銭研究所の確認ページです。",
-    "keywords": "報酬 反映 対象外"
+    "title": "初めての確認順｜紹介リンクを選ぶ",
+    "description": "初見向けにおすすめ順と紹介コードを1画面で整理。",
+    "keywords": "ポイ活 初心者 紹介コード おすすめ順"
   },
   {
     "url": "/point-site/",
-    "title": "ポイントサイト比較",
-    "description": "スマホ小銭研究所の確認ページです。",
-    "keywords": "モッピー ハピタス ちょびリッチ 比較"
+    "title": "ポイントサイト比較｜紹介コードをすぐ確認",
+    "description": "モッピー、ハピタス、ちょびリッチの紹介コードと公式確認ボタン。",
+    "keywords": "ポイントサイト 比較 紹介コード モッピー ハピタス ちょびリッチ"
+  },
+  {
+    "url": "/point-site/referral-code/",
+    "title": "ポイントサイト紹介コード一覧",
+    "description": "モッピー、ハピタス、ちょびリッチの紹介コード一覧。",
+    "keywords": "モッピー 紹介コード ハピタス 紹介コード ちょびリッチ 紹介コード"
+  },
+  {
+    "url": "/point-site/moppy/",
+    "title": "モッピー紹介コード",
+    "description": "モッピー紹介コードF9fnA1a1と登録前チェック。",
+    "keywords": "モッピー 紹介コード F9fnA1a1"
+  },
+  {
+    "url": "/point-site/hapitas/",
+    "title": "ハピタス紹介コード",
+    "description": "ハピタス紹介コードKYAKGJと買い物前チェック。",
+    "keywords": "ハピタス 紹介コード KYAKGJ"
+  },
+  {
+    "url": "/point-site/chobirich/",
+    "title": "ちょびリッチ紹介コード",
+    "description": "ちょびリッチ紹介コードc1dlpHと条件確認。",
+    "keywords": "ちょびリッチ 紹介コード c1dlpH"
   },
   {
     "url": "/point-site/beginner/",
-    "title": "初心者向けポイントサイト",
-    "description": "スマホ小銭研究所の確認ページです。",
-    "keywords": "初心者 どれから"
+    "title": "ポイントサイト初心者向け",
+    "description": "初心者が最初のポイントサイトを選ぶ基準。",
+    "keywords": "ポイントサイト 初心者 おすすめ 失敗"
+  },
+  {
+    "url": "/point-site/choose-by-purpose/",
+    "title": "目的別ポイントサイト比較",
+    "description": "買い物、アプリ案件、サービス申込、交換先など目的別にポイントサイトを選ぶページ。",
+    "keywords": "ポイントサイト 比較 目的別 モッピー ハピタス ちょびリッチ"
+  },
+  {
+    "url": "/point-site/mistakes/",
+    "title": "ポイントサイトで失敗しやすい条件",
+    "description": "対象外、Cookie、判定待ち、反映されない原因を確認。",
+    "keywords": "ポイントサイト 反映されない 対象外 Cookie"
+  },
+  {
+    "url": "/point-site/judgement-time/",
+    "title": "ポイントサイト判定中・反映待ち",
+    "description": "反映されない時や判定中の確認順。",
+    "keywords": "ポイントサイト 判定中 反映されない"
+  },
+  {
+    "url": "/point-site/minimum-exchange/",
+    "title": "ポイントサイト最低交換額",
+    "description": "最低交換額、交換単位、手数料、交換予定日を確認。",
+    "keywords": "ポイントサイト 最低交換額 交換先"
+  },
+  {
+    "url": "/point-site/exchange-guide/",
+    "title": "ポイントサイト交換先の選び方",
+    "description": "現金、ギフト、電子マネーへの交換前に見る条件。",
+    "keywords": "ポイントサイト 交換先 手数料 現金"
+  },
+  {
+    "url": "/point-site/cookie-check/",
+    "title": "ポイントサイトCookie確認",
+    "description": "広告利用前のCookie、広告ブロック、ブラウザ設定の確認。",
+    "keywords": "ポイントサイト Cookie 広告ブロック"
+  },
+  {
+    "url": "/point-site/shopping/",
+    "title": "買い物前に見るポイントサイト",
+    "description": "ネットショッピング前にポイントサイトを経由する確認順。",
+    "keywords": "ポイントサイト 買い物 ハピタス 経由"
+  },
+  {
+    "url": "/point-site/app-games/",
+    "title": "アプリ案件のポイントサイト確認",
+    "description": "アプリ案件の初回条件、達成期限、対象外確認。",
+    "keywords": "ポイントサイト アプリ案件 ゲーム 初回"
+  },
+  {
+    "url": "/tiktok-lite/",
+    "title": "TikTok Lite招待コードと条件確認",
+    "description": "TikTok Liteの招待コード、対象外、反映、リンク不具合を短く確認。",
+    "keywords": "TikTok Lite 招待コード 対象外 反映されない"
+  },
+  {
+    "url": "/tiktok-lite/invite-code/",
+    "title": "TikTok Lite紹介コードの使い方",
+    "description": "913299034・765692063の控え、リンクが開かない時の確認、コード入力前の条件確認。",
+    "keywords": "TikTok Lite 紹介コード 招待コード 913299034 765692063"
+  },
+  {
+    "url": "/tiktok-lite/checklist/",
+    "title": "TikTok Lite登録前チェックリスト",
+    "description": "対象外を避けるために、リンクを押す前・登録直後・達成後に見る項目。",
+    "keywords": "TikTok Lite チェックリスト 対象条件 期限"
+  },
+  {
+    "url": "/tiktok-lite/not-eligible/",
+    "title": "TikTok Lite対象外になりやすい人",
+    "description": "過去利用、端末、地域、年齢、複数アカウントなど対象外条件の確認。",
+    "keywords": "TikTok Lite 対象外 過去利用 端末"
+  },
+  {
+    "url": "/tiktok-lite/reward-timing/",
+    "title": "TikTok Lite報酬反映タイミング",
+    "description": "報酬がいつ反映されるか、反映待ち時に見る画面と確認順。",
+    "keywords": "TikTok Lite 報酬 いつ 反映 タイミング"
+  },
+  {
+    "url": "/tiktok-lite/link-not-open/",
+    "title": "TikTok Liteリンクが開けない時",
+    "description": "招待リンクが開けない時のブラウザ、アプリ、通信、コード控えの確認。",
+    "keywords": "TikTok Lite リンク 開かない 招待リンク"
+  },
+  {
+    "url": "/tiktok-lite/trouble/",
+    "title": "TikTok Lite反映されない時",
+    "description": "報酬が反映されない時に、達成条件、対象外、ログイン状態を確認するメモ。",
+    "keywords": "TikTok Lite 反映されない 報酬 対象外"
+  },
+  {
+    "url": "/tiktok-lite/first-3-days/",
+    "title": "TikTok Lite初回3日で確認すること",
+    "description": "開始直後に見る画面、保存するスクショ、報酬反映状況の確認。",
+    "keywords": "TikTok Lite 初回 3日 チェックイン 反映"
+  },
+  {
+    "url": "/tiktok-lite/terms-check/",
+    "title": "TikTok Lite条件画面の読み方",
+    "description": "最大表示、達成条件、期限、対象外条件、反映タイミングの読み方。",
+    "keywords": "TikTok Lite 条件 最大 対象外 期限"
   },
   {
     "url": "/receipt/mcdonalds-kodo/",
@@ -58,35 +166,5 @@
     "title": "ローソンアプリ",
     "description": "スマホ小銭研究所の確認ページです。",
     "keywords": "ローソン クーポン お試し引換券"
-  },
-  {
-    "url": "/point-site/moppy/",
-    "title": "モッピー紹介コード条件確認",
-    "description": "モッピーの紹介コード、登録前に見る条件、対象外条件を整理。",
-    "keywords": "モッピー 紹介コード F9fnA1a1 ポイントサイト"
-  },
-  {
-    "url": "/point-site/hapitas/",
-    "title": "ハピタス紹介コード条件確認",
-    "description": "ハピタスの紹介コード、買い物前チェック、判定期間、対象外条件を整理。",
-    "keywords": "ハピタス 紹介コード KYAKGJ ポイントサイト"
-  },
-  {
-    "url": "/point-site/chobirich/",
-    "title": "ちょびリッチ紹介コード条件確認",
-    "description": "ちょびリッチの紹介コード、案件確認、交換条件、対象外条件を整理。",
-    "keywords": "ちょびリッチ 紹介コード c1dlpH ポイントサイト"
-  },
-  {
-    "url": "/point-site/choose-by-purpose/",
-    "title": "目的別ポイントサイト比較",
-    "description": "買い物、アプリ案件、サービス申込、交換先など目的別にポイントサイトを選ぶページ。",
-    "keywords": "ポイントサイト 比較 目的別 モッピー ハピタス ちょびリッチ"
-  },
-  {
-    "url": "/tiktok-lite/invite-code/",
-    "title": "TikTok Lite紹介コード確認",
-    "description": "TikTok Liteの紹介コード、リンクが開かない場合の確認方法、対象外条件を整理。",
-    "keywords": "TikTok Lite 紹介コード 招待コード 913299034 765692063"
   }
 ]
