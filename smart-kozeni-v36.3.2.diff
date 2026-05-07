@@ -1,0 +1,24 @@
+Only in /mnt/data/smart-kozeni-v36.3.2-simple-history-labels-upload-root: README-v36.3.2.txt
+diff -ru /mnt/data/smart-kozeni-v36.3.1-history-buttons-upload-root/assets/kozeni-nav.v36.3.js /mnt/data/smart-kozeni-v36.3.2-simple-history-labels-upload-root/assets/kozeni-nav.v36.3.js
+--- /mnt/data/smart-kozeni-v36.3.1-history-buttons-upload-root/assets/kozeni-nav.v36.3.js	2026-05-07 23:52:21.728723130 +0000
++++ /mnt/data/smart-kozeni-v36.3.2-simple-history-labels-upload-root/assets/kozeni-nav.v36.3.js	2026-05-07 23:57:20.083622400 +0000
+@@ -21,7 +21,7 @@
+     back.type = 'button';
+     back.className = 'sk-page-turn prev sk-history-turn';
+     back.setAttribute('aria-label', '前に見ていた画面へ戻る');
+-    back.innerHTML = '<small>前に見た画面へ</small><span>← 戻る</span>';
++    back.textContent = '戻る';
+     back.addEventListener('click', function() {
+       try { sessionStorage.setItem('sk-history-back-used', '1'); } catch (e) {}
+       if (window.history.length > 1) {
+@@ -36,7 +36,7 @@
+     forward.type = 'button';
+     forward.className = 'sk-page-turn next sk-history-turn';
+     forward.setAttribute('aria-label', '戻る前に見ていた画面へ進む');
+-    forward.innerHTML = '<small>戻る前の画面へ</small><span>進む →</span>';
++    forward.textContent = '進む';
+     forward.addEventListener('click', function() {
+       window.history.forward();
+     });
+Only in /mnt/data/smart-kozeni-v36.3.2-simple-history-labels-upload-root: smart-kozeni-v36.3.2-filelist.txt
+Only in /mnt/data/smart-kozeni-v36.3.2-simple-history-labels-upload-root: smart-kozeni-v36.3.2.diff
