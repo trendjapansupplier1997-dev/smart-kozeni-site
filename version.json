@@ -1,5 +1,1 @@
-{
-  "version": "v39-point-site-compare",
-  "updated": "2026-05-07",
-  "notes": "Add a minimal point-site referral comparison page without increasing top-page clutter."
-}
+{"version":"v40-restore-v36-no-compare","base":"v36-add-powl-referral","purpose":"restore v36 visible structure and remove compare navigation"}
