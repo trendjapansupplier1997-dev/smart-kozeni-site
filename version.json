@@ -1,1 +1,5 @@
-{"version":"v25-safe-premium-tiktok","base":"v23-stable-layout","purpose":"recover v24 visual regression and prioritize TikTok Lite conversion","generated":"2026-05-07"}
+{
+  "version": "v26-minimal-premium-conversion",
+  "builtAt": "2026-05-07",
+  "note": "minimal premium conversion, stable class strategy"
+}
