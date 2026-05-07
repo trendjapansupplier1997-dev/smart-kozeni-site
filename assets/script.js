@@ -72,3 +72,61 @@ document.addEventListener('click', (event) => {
   });
   sendEvent('v17_quick_pick', { pick: key, page_path: location.pathname });
 });
+
+
+
+// v19 premium picker: one-tap recommendation + accessible toast. Static JS only.
+(function(){
+  function showToast(message){
+    let toast=document.querySelector('.v19-toast');
+    if(!toast){
+      toast=document.createElement('div');
+      toast.className='v19-toast';
+      document.body.appendChild(toast);
+    }
+    toast.textContent=message;
+    toast.classList.add('is-show');
+    clearTimeout(window.__v19ToastTimer);
+    window.__v19ToastTimer=setTimeout(()=>toast.classList.remove('is-show'),1600);
+  }
+  document.addEventListener('click', (event) => {
+    const pick=event.target.closest('[data-v19-pick]');
+    if(!pick) return;
+    const root=pick.closest('[data-v19-picker]');
+    if(!root) return;
+    const key=pick.dataset.v19Pick;
+    root.querySelectorAll('[data-v19-pick]').forEach(btn=>btn.classList.toggle('is-active', btn===pick));
+    root.querySelectorAll('[data-v19-result]').forEach(card=>{
+      card.hidden = card.dataset.v19Result !== key;
+    });
+    sendEvent('v19_pick', { pick:key, page_path:location.pathname });
+  });
+  document.addEventListener('click', (event) => {
+    const copy=event.target.closest('[data-copy]');
+    if(!copy) return;
+    setTimeout(()=>showToast('コピーしました'), 50);
+  });
+})();
+
+
+// v20 polish: smooth internal jumps and richer toast text.
+(function(){
+  document.addEventListener('click', function(event){
+    const link = event.target.closest('a[href^="#"]');
+    if(!link) return;
+    const id = link.getAttribute('href');
+    if(!id || id==="#") return;
+    const target = document.querySelector(id);
+    if(!target) return;
+    event.preventDefault();
+    target.scrollIntoView({behavior:'smooth', block:'start'});
+  });
+  document.addEventListener('click', function(event){
+    const btn = event.target.closest('[data-copy]');
+    if(!btn) return;
+    setTimeout(function(){
+      const toast = document.querySelector('.v19-toast');
+      if(toast) toast.textContent = (btn.dataset.copyTarget || 'コード') + 'をコピーしました';
+    }, 70);
+  });
+})();
