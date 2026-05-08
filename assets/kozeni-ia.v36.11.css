@@ -216,3 +216,51 @@
 .intent-related-links{display:flex;flex-wrap:wrap;gap:8px}
 .intent-related-links a{display:inline-flex;align-items:center;min-height:34px;padding:0 12px;border-radius:999px;border:1px solid var(--ia-line);background:var(--ia-pale);color:var(--ia-green);font-size:13px;font-weight:900}
 @media(max-width:720px){.intent-note,.intent-related{width:calc(100% - 24px)}}
+
+/* compact faq seo v2 */
+.compact-faq{
+  width:min(900px,calc(100% - 40px));
+  margin:-22px auto 62px;
+  padding:18px;
+  border:1px solid var(--ia-line);
+  border-radius:24px;
+  background:rgba(255,255,255,.88);
+  box-shadow:0 12px 34px rgba(34,140,98,.07);
+}
+.compact-faq h2{
+  margin:0 0 8px;
+  font-size:18px;
+  line-height:1.35;
+  letter-spacing:-.03em;
+}
+.compact-faq-intro{
+  margin:0 0 12px;
+  color:var(--ia-muted);
+  font-size:13px;
+}
+.compact-faq details{
+  border-top:1px solid var(--ia-line);
+  padding:11px 0;
+}
+.compact-faq details:first-of-type{border-top:0}
+.compact-faq summary{
+  cursor:pointer;
+  color:var(--ia-ink);
+  font-weight:950;
+  font-size:14px;
+  line-height:1.55;
+}
+.compact-faq summary::-webkit-details-marker{color:var(--ia-green)}
+.compact-faq details p{
+  margin:8px 0 0;
+  color:var(--ia-muted);
+  font-size:13px;
+  line-height:1.75;
+}
+@media(max-width:720px){
+  .compact-faq{
+    width:calc(100% - 24px);
+    margin:-12px auto 52px;
+    padding:16px;
+  }
+}
