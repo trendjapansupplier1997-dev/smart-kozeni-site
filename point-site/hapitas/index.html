@@ -4,10 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>ハピタス｜新規登録と条件チェック｜スマホ小銭研究所</title>
-  <meta name="description" content="ハピタスの新規登録ボタンと条件チェックを整理します。">
+  <meta name="description" content="ハピタスの新規登録ボタンと条件チェッククイズを整理します。">
   <link rel="canonical" href="https://smart-kozeni.com/point-site/hapitas/">
   <meta property="og:title" content="ハピタス｜新規登録と条件チェック｜スマホ小銭研究所">
-  <meta property="og:description" content="ハピタスの新規登録ボタンと条件チェックを整理します。">
+  <meta property="og:description" content="ハピタスの新規登録ボタンと条件チェッククイズを整理します。">
   <meta property="og:type" content="article">
   <meta name="theme-color" content="#4DBD8C">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -72,14 +72,14 @@
       <section class="hero clean" aria-labelledby="detail-title">
         <p class="eyebrow">ポイ活 / 買い物前</p>
         <h1 id="detail-title">ハピタス</h1>
-        <p class="lead">ネット購入・旅行・サービス申込の前に経由確認する候補。</p>
+        <p class="lead">メール認証と過去登録の有無、キャンペーン条件を見てから使う候補。</p>
       </section>
 
       <section class="section detail-layout">
         <article class="detail-panel">
           <span class="card-kicker">登録</span>
           <h2>ボタンから進む。</h2>
-          <p class="card-copy">紹介リンクあり。登録前に対象条件、承認時期、対象外条件だけ確認します。</p>
+          <p class="card-copy">紹介リンクあり。条件チェックで対象外リスクを減らしてから進めます。</p>
           <div class="callout">
             <h3>ハピタスに登録する</h3>
             <p>PR / 紹介リンクを含みます。条件は変わるため、最後は登録先の公式画面で確認してください。</p>
@@ -88,23 +88,46 @@
         </article>
 
         <aside>
-          <div class="detail-panel">
-            <span class="card-kicker">確認</span>
-            <h2>登録前チェック</h2>
-            <ul class="check-list">
-              <li>登録ボタンから進む</li>
-<li>買い物や申込の前に経由する</li>
-<li>対象外条件を確認する</li>
-            </ul>
-          </div>
+          <article class="info-card quiz-card" data-kozeni-quiz data-register-url="https://hapitas.jp/appinvite?i=25179605&amp;route=text" data-register-name="ハピタス">
+            <span class="card-kicker">条件チェック</span>
+            <h2>3問だけ確認。</h2>
+            <p class="card-copy">全部「はい」なら、登録前の最低確認はOKです。</p>
+            <div class="quiz-list">
+              <div class="quiz-question" data-quiz-question>
+                <p>ハピタスに過去登録したことがない？</p>
+                <div class="quiz-answers">
+                  <button type="button" data-quiz-answer="yes">はい</button>
+                  <button type="button" data-quiz-answer="no">いいえ</button>
+                </div>
+              </div>
+              <div class="quiz-question" data-quiz-question>
+                <p>登録後にメールアドレス認証まで完了できる？</p>
+                <div class="quiz-answers">
+                  <button type="button" data-quiz-answer="yes">はい</button>
+                  <button type="button" data-quiz-answer="no">いいえ</button>
+                </div>
+              </div>
+              <div class="quiz-question" data-quiz-question>
+                <p>紹介キャンペーンの期限・広告利用条件を登録画面で確認できる？</p>
+                <div class="quiz-answers">
+                  <button type="button" data-quiz-answer="yes">はい</button>
+                  <button type="button" data-quiz-answer="no">いいえ</button>
+                </div>
+              </div>
+            </div>
+            <div class="quiz-result" data-quiz-result aria-live="polite">
+              3つ答えると結果が出ます。
+            </div>
+          </article>
         </aside>
       </section>
 
       <section class="section">
         <article class="info-card">
-          <span class="card-kicker">FIT</span>
-          <h2>向いている人</h2>
+          <span class="card-kicker">MEMO</span>
+          <h2>この案件の見どころ</h2>
           <p class="card-copy">ネットショッピング前の取りこぼしを減らしたい人。</p>
+          <p class="note">メールアドレス認証が未完了だと紹介人数や紹介特典の計算対象外になる点が重要です。</p>
           <a class="card-action" href="/point-site/">ポイ活一覧へ戻る</a>
         </article>
       </section>

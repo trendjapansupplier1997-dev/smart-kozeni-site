@@ -84,9 +84,83 @@
     }
   }
 
+  function injectQuizStyle() {
+    if (document.querySelector('[data-kozeni-quiz-style]')) return;
+    var style = document.createElement('style');
+    style.setAttribute('data-kozeni-quiz-style', 'true');
+    style.textContent = [
+      '.quiz-card{padding:22px}',
+      '.quiz-list{display:grid;gap:12px;margin-top:16px}',
+      '.quiz-question{border:1px solid #dcece4;border-radius:22px;background:#fff;padding:14px}',
+      '.quiz-question p{margin:0 0 10px;font-weight:900;line-height:1.45}',
+      '.quiz-answers{display:flex;gap:8px}',
+      '.quiz-answers button{flex:1;border:1px solid #dcece4;background:#F2F6F4;color:#62736b;border-radius:999px;padding:9px 10px;font-weight:950;cursor:pointer}',
+      '.quiz-answers button.is-selected[data-quiz-answer="yes"]{background:#E9F5EF;border-color:#4DBD8C;color:#228C62}',
+      '.quiz-answers button.is-selected[data-quiz-answer="no"]{background:#fff6df;border-color:#F2C94C;color:#8C6B16}',
+      '.quiz-result{margin-top:16px;border-radius:22px;padding:14px;background:#F2F6F4;color:#62736b;font-weight:850}',
+      '.quiz-result.is-ok{background:#E9F5EF;color:#228C62}',
+      '.quiz-result.is-ng{background:#fff6df;color:#8C6B16}',
+      '.quiz-result a{display:inline-flex;margin-top:10px;border-radius:999px;background:#228C62;color:#fff;padding:9px 13px;font-weight:950}'
+    ].join('\n');
+    document.head.appendChild(style);
+  }
+
+  function setupQuizzes() {
+    var quizzes = document.querySelectorAll('[data-kozeni-quiz]');
+    if (!quizzes.length) return;
+    injectQuizStyle();
+
+    quizzes.forEach(function(quiz) {
+      var questions = Array.from(quiz.querySelectorAll('[data-quiz-question]'));
+      var result = quiz.querySelector('[data-quiz-result]');
+      var registerUrl = quiz.getAttribute('data-register-url') || '#';
+      var registerName = quiz.getAttribute('data-register-name') || '登録先';
+
+      function render() {
+        var answers = questions.map(function(q) {
+          var selected = q.querySelector('[data-quiz-answer].is-selected');
+          return selected ? selected.getAttribute('data-quiz-answer') : null;
+        });
+
+        if (answers.some(function(a){ return a === null; })) {
+          result.className = 'quiz-result';
+          result.textContent = '3つ答えると結果が出ます。';
+          return;
+        }
+
+        if (answers.every(function(a){ return a === 'yes'; })) {
+          result.className = 'quiz-result is-ok';
+          result.innerHTML = '登録前チェックはOKです。最後に公式画面の条件を確認して進んでください。<br><a href="' + registerUrl + '" target="_blank" rel="sponsored noopener noreferrer">' + registerName + 'に新規登録する</a>';
+        } else {
+          result.className = 'quiz-result is-ng';
+          result.textContent = '今は無理に進めなくてOKです。条件を満たせるか、公式画面で確認してから判断してください。';
+        }
+      }
+
+      quiz.querySelectorAll('[data-quiz-answer]').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          var wrap = btn.closest('[data-quiz-question]');
+          wrap.querySelectorAll('[data-quiz-answer]').forEach(function(other) {
+            other.classList.remove('is-selected');
+            other.setAttribute('aria-pressed', 'false');
+          });
+          btn.classList.add('is-selected');
+          btn.setAttribute('aria-pressed', 'true');
+          render();
+        });
+      });
+
+      render();
+    });
+  }
+
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', injectBackButton);
+    document.addEventListener('DOMContentLoaded', function(){
+      injectBackButton();
+      setupQuizzes();
+    });
   } else {
     injectBackButton();
+    setupQuizzes();
   }
 })();
