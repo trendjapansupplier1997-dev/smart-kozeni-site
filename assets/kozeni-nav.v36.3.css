@@ -46,3 +46,10 @@ body.sk-menu-open .sk-left-menu { transform: translateX(0); }
   .kozeni-actions .primary-btn, .kozeni-actions .secondary-btn { width: 100%; }
   .sk-page-turn { max-width: 45vw; font-size: 13px; padding: 9px 10px; }
 }
+
+
+/* v36.3.3: bring back v36-like eye-catch amounts without adding comparison tables. */
+.kozeni-app-card .amount-label { margin-top: 12px; color: rgba(23,32,29,.58); }
+.kozeni-app-card .amount { font-size: clamp(1.35rem, 4vw, 1.9rem); line-height: 1.08; letter-spacing: -.03em; }
+.kozeni-eye { margin: 8px 0 10px; font-weight: 900; color: #173b33; }
+.kozeni-eye strong { font-size: 1.08em; }

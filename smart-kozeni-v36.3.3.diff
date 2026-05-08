@@ -1,0 +1,428 @@
+--- v36.3.2/index.html
++++ v36.3.3/index.html
+@@ -25,7 +25,7 @@
+ <script async src="https://www.googletagmanager.com/gtag/js?id=G-V140MZBPKB"></script>
+ <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-V140MZBPKB');</script>
+ <script>window.clarity=window.clarity||function(){(window.clarity.q=window.clarity.q||[]).push(arguments)};(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","wmurko5bi1");</script>
+-<meta name="x-kozeni-version" content="v36.3-navigation-apps">
++<meta name="x-kozeni-version" content="v36.3.3-eyecatch-amounts">
+ </head>
+ <body class="kozeni-v363" data-page-path="/">
+ <button class="sk-menu-toggle" type="button" aria-expanded="false" aria-controls="sk-left-menu">メニュー</button>
+@@ -64,82 +64,82 @@
+ <main>
+   <section class="hero kozeni-hero">
+     <p class="eyebrow">SMART KOZENI</p>
+-    <h1>本命アプリを、迷わず選ぶ。</h1>
+-    <p class="lead">同じページ内で飛ばさない。押したら、ちゃんと次のページへ。</p>
++    <h1>目玉だけ見て、迷わず選ぶ。</h1>
++    <p class="lead">金額・特典・強みだけ短く。気になったら詳細ページへ。</p>
+     <div class="kozeni-actions"><a class="primary-btn" href="/start-here/">はじめての順番へ</a><a class="secondary-btn" href="/point-site/referral-code/">紹介リンク一覧へ</a></div>
+   </section>
+   <section class="section">
+     <div class="section-head">
+       <p class="eyebrow">APPS</p>
+       <h2>本命アプリ 8件</h2>
+-      <p>ランキングではなく、役割で選ぶ。詳細はそれぞれのページへ。</p>
++      <p>まず目玉だけ見る。条件と公式リンクは詳細ページで確認。</p>
+     </div>
+     <div class="deal-grid kozeni-app-grid">
+ <a class="deal-card kozeni-app-card" href="/tiktok-lite/">
+         <span class="deal-badge">キャンペーン</span>
+         <h3>TikTok Lite</h3>
+-        <p class="amount-label">見ること</p>
+-        <p class="amount">招待・対象外・反映タイミングを先に見る。</p>
+-        <p class="muted">招待キャンペーンは、対象外・期限・反映タイミングを先に確認。</p>
++        <p class="amount-label">目玉</p>
++        <p class="amount">最大2,750円相当</p>
++        <p class="muted">招待キャンペーン。対象外・反映条件は変動。</p>
+         <span class="card-action">詳細ページへ</span>
+       </a>
+ <a class="deal-card kozeni-app-card" href="/point-site/moppy/">
+         <span class="deal-badge">王道</span>
+         <h3>モッピー</h3>
+-        <p class="amount-label">見ること</p>
+-        <p class="amount">登録・広告利用前の定番。</p>
+-        <p class="muted">登録・広告利用・買い物前チェックまで使いやすい定番候補。</p>
++        <p class="amount-label">目玉</p>
++        <p class="amount">最大2,000P対象</p>
++        <p class="muted">広告利用まで見る定番。高還元案件も探しやすい。</p>
+         <span class="card-action">詳細ページへ</span>
+       </a>
+ <a class="deal-card kozeni-app-card" href="/point-site/hapitas/">
+         <span class="deal-badge">買い物前</span>
+         <h3>ハピタス</h3>
+-        <p class="amount-label">見ること</p>
+-        <p class="amount">買い物や申込前に経由を確認。</p>
+-        <p class="muted">ネット購入・旅行・サービス申込の前に経由を確認。</p>
++        <p class="amount-label">目玉</p>
++        <p class="amount">5月CP 最大2,300pt</p>
++        <p class="muted">ネット購入・旅行・申込前に経由チェック。</p>
+         <span class="card-action">詳細ページへ</span>
+       </a>
+ <a class="deal-card kozeni-app-card" href="/point-site/trima/">
+         <span class="deal-badge">移動</span>
+         <h3>トリマ</h3>
+-        <p class="amount-label">見ること</p>
+-        <p class="amount">歩く・移動のついで。</p>
+-        <p class="muted">歩数・移動のついでに、毎日コツコツ拾う候補。</p>
++        <p class="amount-label">目玉</p>
++        <p class="amount">招待で5,000マイル</p>
++        <p class="muted">歩く・移動のついで。電話番号認証まで確認。</p>
+         <span class="card-action">詳細ページへ</span>
+       </a>
+ <a class="deal-card kozeni-app-card" href="/point-site/kurashiru-reward/">
+         <span class="deal-badge">生活</span>
+         <h3>クラシルリワード</h3>
+-        <p class="amount-label">見ること</p>
+-        <p class="amount">レシートや生活導線で拾う。</p>
+-        <p class="muted">レシート・チラシ・移動など、生活のついでに確認。</p>
++        <p class="amount-label">目玉</p>
++        <p class="amount">達成で50,000コイン</p>
++        <p class="muted">レシート・チラシ・移動など生活導線で拾う。</p>
+         <span class="card-action">詳細ページへ</span>
+       </a>
+ <a class="deal-card kozeni-app-card" href="/point-site/powl/">
+         <span class="deal-badge">スキマ</span>
+         <h3>Powl</h3>
+-        <p class="amount-label">見ること</p>
+-        <p class="amount">アンケートや軽い案件を確認。</p>
+-        <p class="muted">アンケート・歩数・軽い案件を、空き時間で試す候補。</p>
++        <p class="amount-label">目玉</p>
++        <p class="amount">登録で300pt</p>
++        <p class="muted">スキマ時間向き。招待コードは3日以内に確認。</p>
+         <span class="card-action">詳細ページへ</span>
+       </a>
+ <a class="deal-card kozeni-app-card" href="/point-site/pointtown/">
+         <span class="deal-badge">案件</span>
+         <h3>ポイントタウン</h3>
+-        <p class="amount-label">見ること</p>
+-        <p class="amount">案件利用を広く見る追加候補。</p>
+-        <p class="muted">広告・案件利用を広く見たい時の追加候補。</p>
++        <p class="amount-label">目玉</p>
++        <p class="amount">条件達成で2,000pt</p>
++        <p class="muted">広告案件を広く見たい時の追加候補。</p>
+         <span class="card-action">詳細ページへ</span>
+       </a>
+ <a class="deal-card kozeni-app-card" href="/point-site/chobirich/">
+-        <span class="deal-badge">控え</span>
++        <span class="deal-badge">追加候補</span>
+         <h3>ちょびリッチ</h3>
+-        <p class="amount-label">見ること</p>
+-        <p class="amount">ポイントサイト追加候補。</p>
+-        <p class="muted">モッピー・ハピタス以外も見たい時の比較候補。</p>
++        <p class="amount-label">目玉</p>
++        <p class="amount">買い物保証あり</p>
++        <p class="muted">ポイントサイトの追加候補。案件前に経由確認。</p>
+         <span class="card-action">詳細ページへ</span>
+       </a>
+-    </div>
++        </div>
+     <p class="note">PR・紹介リンクを含みます。報酬額、条件、対象者、期限は変わるため、開始前に公式画面・アプリ内表示で確認してください。</p>
+   </section>
+ </main>
+--- v36.3.2/start-here/index.html
++++ v36.3.3/start-here/index.html
+@@ -25,7 +25,7 @@
+ <script async src="https://www.googletagmanager.com/gtag/js?id=G-V140MZBPKB"></script>
+ <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-V140MZBPKB');</script>
+ <script>window.clarity=window.clarity||function(){(window.clarity.q=window.clarity.q||[]).push(arguments)};(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","wmurko5bi1");</script>
+-<meta name="x-kozeni-version" content="v36.3-navigation-apps">
++<meta name="x-kozeni-version" content="v36.3.3-eyecatch-amounts">
+ </head>
+ <body class="kozeni-v363" data-page-path="/start-here/">
+ <button class="sk-menu-toggle" type="button" aria-expanded="false" aria-controls="sk-left-menu">メニュー</button>
+@@ -64,82 +64,82 @@
+ <main>
+   <section class="hero kozeni-hero">
+     <p class="eyebrow">START</p>
+-    <h1>最初の1件を、迷わず選ぶ。</h1>
+-    <p class="lead">PRあり。条件を読んで、対象なら拾う。対象外ならやらない。</p>
++    <h1>目玉で選んで、条件で止まる。</h1>
++    <p class="lead">金額・特典・強みだけ短く。詳しい条件は次のページで確認。</p>
+     <div class="kozeni-actions"><a class="primary-btn" href="/tiktok-lite/">TikTok Liteを見る</a><a class="secondary-btn" href="/point-site/referral-code/">紹介リンク一覧へ</a></div>
+   </section>
+   <section class="section kozeni-steps" aria-labelledby="steps-title">
+     <div class="section-head"><p class="eyebrow">STEP</p><h2 id="steps-title">やることは3つだけ。</h2></div>
+-    <div class="kozeni-step-grid"><article class="kozeni-step"><span>01</span><h3>アプリを選ぶ</h3><p>本命8件から、今の目的に近いものを1つ選ぶ。</p></article><article class="kozeni-step"><span>02</span><h3>詳細ページを見る</h3><p>対象外・期限・反映タイミングを先に確認する。</p></article><article class="kozeni-step"><span>03</span><h3>公式で確認する</h3><p>最後は公式画面・アプリ内表示で判断する。</p></article></div>
++    <div class="kozeni-step-grid"><article class="kozeni-step"><span>01</span><h3>アプリを選ぶ</h3><p>目玉の金額・特典・特徴で、気になるものを1つ選ぶ。</p></article><article class="kozeni-step"><span>02</span><h3>詳細ページを見る</h3><p>対象外・期限・反映タイミングを先に確認する。</p></article><article class="kozeni-step"><span>03</span><h3>公式で確認する</h3><p>最後は公式画面・アプリ内表示で判断する。</p></article></div>
+   </section>
+   <section class="section">
+-    <div class="section-head"><p class="eyebrow">APPS</p><h2>本命アプリから選ぶ</h2><p>押す先は全部、別ページ。ページ内ジャンプは使わない。</p></div>
++    <div class="section-head"><p class="eyebrow">APPS</p><h2>本命アプリから選ぶ</h2><p>まず目玉だけ見る。条件と公式リンクは詳細ページで確認。</p></div>
+     <div class="deal-grid kozeni-app-grid">
+ <a class="deal-card kozeni-app-card" href="/tiktok-lite/">
+         <span class="deal-badge">キャンペーン</span>
+         <h3>TikTok Lite</h3>
+-        <p class="amount-label">見ること</p>
+-        <p class="amount">招待・対象外・反映タイミングを先に見る。</p>
+-        <p class="muted">招待キャンペーンは、対象外・期限・反映タイミングを先に確認。</p>
++        <p class="amount-label">目玉</p>
++        <p class="amount">最大2,750円相当</p>
++        <p class="muted">招待キャンペーン。対象外・反映条件は変動。</p>
+         <span class="card-action">詳細ページへ</span>
+       </a>
+ <a class="deal-card kozeni-app-card" href="/point-site/moppy/">
+         <span class="deal-badge">王道</span>
+         <h3>モッピー</h3>
+-        <p class="amount-label">見ること</p>
+-        <p class="amount">登録・広告利用前の定番。</p>
+-        <p class="muted">登録・広告利用・買い物前チェックまで使いやすい定番候補。</p>
++        <p class="amount-label">目玉</p>
++        <p class="amount">最大2,000P対象</p>
++        <p class="muted">広告利用まで見る定番。高還元案件も探しやすい。</p>
+         <span class="card-action">詳細ページへ</span>
+       </a>
+ <a class="deal-card kozeni-app-card" href="/point-site/hapitas/">
+         <span class="deal-badge">買い物前</span>
+         <h3>ハピタス</h3>
+-        <p class="amount-label">見ること</p>
+-        <p class="amount">買い物や申込前に経由を確認。</p>
+-        <p class="muted">ネット購入・旅行・サービス申込の前に経由を確認。</p>
++        <p class="amount-label">目玉</p>
++        <p class="amount">5月CP 最大2,300pt</p>
++        <p class="muted">ネット購入・旅行・申込前に経由チェック。</p>
+         <span class="card-action">詳細ページへ</span>
+       </a>
+ <a class="deal-card kozeni-app-card" href="/point-site/trima/">
+         <span class="deal-badge">移動</span>
+         <h3>トリマ</h3>
+-        <p class="amount-label">見ること</p>
+-        <p class="amount">歩く・移動のついで。</p>
+-        <p class="muted">歩数・移動のついでに、毎日コツコツ拾う候補。</p>
++        <p class="amount-label">目玉</p>
++        <p class="amount">招待で5,000マイル</p>
++        <p class="muted">歩く・移動のついで。電話番号認証まで確認。</p>
+         <span class="card-action">詳細ページへ</span>
+       </a>
+ <a class="deal-card kozeni-app-card" href="/point-site/kurashiru-reward/">
+         <span class="deal-badge">生活</span>
+         <h3>クラシルリワード</h3>
+-        <p class="amount-label">見ること</p>
+-        <p class="amount">レシートや生活導線で拾う。</p>
+-        <p class="muted">レシート・チラシ・移動など、生活のついでに確認。</p>
++        <p class="amount-label">目玉</p>
++        <p class="amount">達成で50,000コイン</p>
++        <p class="muted">レシート・チラシ・移動など生活導線で拾う。</p>
+         <span class="card-action">詳細ページへ</span>
+       </a>
+ <a class="deal-card kozeni-app-card" href="/point-site/powl/">
+         <span class="deal-badge">スキマ</span>
+         <h3>Powl</h3>
+-        <p class="amount-label">見ること</p>
+-        <p class="amount">アンケートや軽い案件を確認。</p>
+-        <p class="muted">アンケート・歩数・軽い案件を、空き時間で試す候補。</p>
++        <p class="amount-label">目玉</p>
++        <p class="amount">登録で300pt</p>
++        <p class="muted">スキマ時間向き。招待コードは3日以内に確認。</p>
+         <span class="card-action">詳細ページへ</span>
+       </a>
+ <a class="deal-card kozeni-app-card" href="/point-site/pointtown/">
+         <span class="deal-badge">案件</span>
+         <h3>ポイントタウン</h3>
+-        <p class="amount-label">見ること</p>
+-        <p class="amount">案件利用を広く見る追加候補。</p>
+-        <p class="muted">広告・案件利用を広く見たい時の追加候補。</p>
++        <p class="amount-label">目玉</p>
++        <p class="amount">条件達成で2,000pt</p>
++        <p class="muted">広告案件を広く見たい時の追加候補。</p>
+         <span class="card-action">詳細ページへ</span>
+       </a>
+ <a class="deal-card kozeni-app-card" href="/point-site/chobirich/">
+-        <span class="deal-badge">控え</span>
++        <span class="deal-badge">追加候補</span>
+         <h3>ちょびリッチ</h3>
+-        <p class="amount-label">見ること</p>
+-        <p class="amount">ポイントサイト追加候補。</p>
+-        <p class="muted">モッピー・ハピタス以外も見たい時の比較候補。</p>
++        <p class="amount-label">目玉</p>
++        <p class="amount">買い物保証あり</p>
++        <p class="muted">ポイントサイトの追加候補。案件前に経由確認。</p>
+         <span class="card-action">詳細ページへ</span>
+       </a>
+-    </div>
++        </div>
+   </section>
+ </main>
+ <footer class="site-footer">
+--- v36.3.2/point-site/index.html
++++ v36.3.3/point-site/index.html
+@@ -25,7 +25,7 @@
+ <script async src="https://www.googletagmanager.com/gtag/js?id=G-V140MZBPKB"></script>
+ <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-V140MZBPKB');</script>
+ <script>window.clarity=window.clarity||function(){(window.clarity.q=window.clarity.q||[]).push(arguments)};(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","wmurko5bi1");</script>
+-<meta name="x-kozeni-version" content="v36.3-navigation-apps">
++<meta name="x-kozeni-version" content="v36.3.3-eyecatch-amounts">
+ </head>
+ <body class="kozeni-v363" data-page-path="/point-site/">
+ <button class="sk-menu-toggle" type="button" aria-expanded="false" aria-controls="sk-left-menu">メニュー</button>
+@@ -62,65 +62,65 @@
+   </nav>
+ </header>
+ <main>
+-  <section class="hero kozeni-hero"><p class="eyebrow">POINT / LIFE APPS</p><h1>ポイント系は、役割で見る。</h1><p class="lead">買い物前、移動、生活、スキマ時間。用途で選ぶ。</p><div class="kozeni-actions"><a class="primary-btn" href="/point-site/referral-code/">紹介リンク一覧へ</a><a class="secondary-btn" href="/start-here/">はじめてへ戻る</a></div></section>
+-  <section class="section"><div class="section-head"><p class="eyebrow">APPS</p><h2>ポイント・生活系 7件</h2><p>同じページ内で移動せず、各詳細ページへ進みます。</p></div><div class="deal-grid kozeni-app-grid">
++  <section class="hero kozeni-hero"><p class="eyebrow">POINT / LIFE APPS</p><h1>ポイント系は、目玉で見る。</h1><p class="lead">金額・特典・強みを短く見て、詳細ページへ。</p><div class="kozeni-actions"><a class="primary-btn" href="/point-site/referral-code/">紹介リンク一覧へ</a><a class="secondary-btn" href="/start-here/">はじめてへ戻る</a></div></section>
++  <section class="section"><div class="section-head"><p class="eyebrow">APPS</p><h2>ポイント・生活系 7件</h2><p>まず目玉だけ見る。条件と公式リンクは詳細ページで確認。</p></div><div class="deal-grid kozeni-app-grid">
+ <a class="deal-card kozeni-app-card" href="/point-site/moppy/">
+         <span class="deal-badge">王道</span>
+         <h3>モッピー</h3>
+-        <p class="amount-label">見ること</p>
+-        <p class="amount">登録・広告利用前の定番。</p>
+-        <p class="muted">登録・広告利用・買い物前チェックまで使いやすい定番候補。</p>
++        <p class="amount-label">目玉</p>
++        <p class="amount">最大2,000P対象</p>
++        <p class="muted">広告利用まで見る定番。高還元案件も探しやすい。</p>
+         <span class="card-action">詳細ページへ</span>
+       </a>
+ <a class="deal-card kozeni-app-card" href="/point-site/hapitas/">
+         <span class="deal-badge">買い物前</span>
+         <h3>ハピタス</h3>
+-        <p class="amount-label">見ること</p>
+-        <p class="amount">買い物や申込前に経由を確認。</p>
+-        <p class="muted">ネット購入・旅行・サービス申込の前に経由を確認。</p>
++        <p class="amount-label">目玉</p>
++        <p class="amount">5月CP 最大2,300pt</p>
++        <p class="muted">ネット購入・旅行・申込前に経由チェック。</p>
+         <span class="card-action">詳細ページへ</span>
+       </a>
+ <a class="deal-card kozeni-app-card" href="/point-site/trima/">
+         <span class="deal-badge">移動</span>
+         <h3>トリマ</h3>
+-        <p class="amount-label">見ること</p>
+-        <p class="amount">歩く・移動のついで。</p>
+-        <p class="muted">歩数・移動のついでに、毎日コツコツ拾う候補。</p>
++        <p class="amount-label">目玉</p>
++        <p class="amount">招待で5,000マイル</p>
++        <p class="muted">歩く・移動のついで。電話番号認証まで確認。</p>
+         <span class="card-action">詳細ページへ</span>
+       </a>
+ <a class="deal-card kozeni-app-card" href="/point-site/kurashiru-reward/">
+         <span class="deal-badge">生活</span>
+         <h3>クラシルリワード</h3>
+-        <p class="amount-label">見ること</p>
+-        <p class="amount">レシートや生活導線で拾う。</p>
+-        <p class="muted">レシート・チラシ・移動など、生活のついでに確認。</p>
++        <p class="amount-label">目玉</p>
++        <p class="amount">達成で50,000コイン</p>
++        <p class="muted">レシート・チラシ・移動など生活導線で拾う。</p>
+         <span class="card-action">詳細ページへ</span>
+       </a>
+ <a class="deal-card kozeni-app-card" href="/point-site/powl/">
+         <span class="deal-badge">スキマ</span>
+         <h3>Powl</h3>
+-        <p class="amount-label">見ること</p>
+-        <p class="amount">アンケートや軽い案件を確認。</p>
+-        <p class="muted">アンケート・歩数・軽い案件を、空き時間で試す候補。</p>
++        <p class="amount-label">目玉</p>
++        <p class="amount">登録で300pt</p>
++        <p class="muted">スキマ時間向き。招待コードは3日以内に確認。</p>
+         <span class="card-action">詳細ページへ</span>
+       </a>
+ <a class="deal-card kozeni-app-card" href="/point-site/pointtown/">
+         <span class="deal-badge">案件</span>
+         <h3>ポイントタウン</h3>
+-        <p class="amount-label">見ること</p>
+-        <p class="amount">案件利用を広く見る追加候補。</p>
+-        <p class="muted">広告・案件利用を広く見たい時の追加候補。</p>
++        <p class="amount-label">目玉</p>
++        <p class="amount">条件達成で2,000pt</p>
++        <p class="muted">広告案件を広く見たい時の追加候補。</p>
+         <span class="card-action">詳細ページへ</span>
+       </a>
+ <a class="deal-card kozeni-app-card" href="/point-site/chobirich/">
+-        <span class="deal-badge">控え</span>
++        <span class="deal-badge">追加候補</span>
+         <h3>ちょびリッチ</h3>
+-        <p class="amount-label">見ること</p>
+-        <p class="amount">ポイントサイト追加候補。</p>
+-        <p class="muted">モッピー・ハピタス以外も見たい時の比較候補。</p>
++        <p class="amount-label">目玉</p>
++        <p class="amount">買い物保証あり</p>
++        <p class="muted">ポイントサイトの追加候補。案件前に経由確認。</p>
+         <span class="card-action">詳細ページへ</span>
+       </a>
+-    </div></section>
++        </div></section>
+ </main>
+ <footer class="site-footer">
+   <div>
+--- v36.3.2/point-site/referral-code/index.html
++++ v36.3.3/point-site/referral-code/index.html
+@@ -25,7 +25,7 @@
+ <script async src="https://www.googletagmanager.com/gtag/js?id=G-V140MZBPKB"></script>
+ <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-V140MZBPKB');</script>
+ <script>window.clarity=window.clarity||function(){(window.clarity.q=window.clarity.q||[]).push(arguments)};(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","wmurko5bi1");</script>
+-<meta name="x-kozeni-version" content="v36.3-navigation-apps">
++<meta name="x-kozeni-version" content="v36.3.3-eyecatch-amounts">
+ </head>
+ <body class="kozeni-v363" data-page-path="/point-site/referral-code/">
+ <button class="sk-menu-toggle" type="button" aria-expanded="false" aria-controls="sk-left-menu">メニュー</button>
+@@ -62,45 +62,53 @@
+   </nav>
+ </header>
+ <main>
+-  <section class="hero kozeni-hero"><p class="eyebrow">PR / LINKS</p><h1>紹介リンク一覧。</h1><p class="lead">条件を見た後、公式へ。リンクだけ探す時はここ。</p><div class="kozeni-actions"><a class="primary-btn" href="/start-here/">はじめてへ戻る</a><a class="secondary-btn" href="/">ホームへ</a></div></section>
++  <section class="hero kozeni-hero"><p class="eyebrow">PR / LINKS</p><h1>紹介リンク一覧。</h1><p class="lead">目玉を見た後、公式へ。リンクだけ探す時はここ。</p><div class="kozeni-actions"><a class="primary-btn" href="/start-here/">はじめてへ戻る</a><a class="secondary-btn" href="/">ホームへ</a></div></section>
+   <section class="section"><div class="section-head"><p class="eyebrow">APP LINKS</p><h2>本命アプリ 8件</h2><p>PR・紹介リンクを含みます。開始前に公式画面で条件を確認してください。</p></div><div class="kozeni-link-grid"><article class="kozeni-link-card">
+       <span>01 / キャンペーン</span>
+       <h3>TikTok Lite</h3>
++      <p class="kozeni-eye">目玉：<strong>最大2,750円相当（変動）</strong></p>
+       <p>紹介コード：<strong>913299034</strong></p>
+       <div class="kozeni-actions small"><a class="primary-btn" href="https://lite.tiktok.com/t/ZS9FNf4YXU4EW-eKSGv/" target="_blank" rel="sponsored nofollow noopener noreferrer">公式へ進む</a><a class="secondary-btn" href="/tiktok-lite/">詳細ページへ</a></div>
+     </article><article class="kozeni-link-card">
+       <span>02 / 王道</span>
+       <h3>モッピー</h3>
++      <p class="kozeni-eye">目玉：<strong>最大2,000P対象</strong></p>
+       <p>紹介コード：<strong>F9fnA1a1</strong></p>
+       <div class="kozeni-actions small"><a class="primary-btn" href="https://pc.moppy.jp/entry/invite.php?invite=F9fnA1a1" target="_blank" rel="sponsored nofollow noopener noreferrer">公式へ進む</a><a class="secondary-btn" href="/point-site/moppy/">詳細ページへ</a></div>
+     </article><article class="kozeni-link-card">
+       <span>03 / 買い物前</span>
+       <h3>ハピタス</h3>
++      <p class="kozeni-eye">目玉：<strong>5月CP 最大2,300pt</strong></p>
+       <p>紹介コード：<strong>KYAKGJ</strong></p>
+       <div class="kozeni-actions small"><a class="primary-btn" href="https://hapitas.jp/appinvite?i=25179605&amp;route=text" target="_blank" rel="sponsored nofollow noopener noreferrer">公式へ進む</a><a class="secondary-btn" href="/point-site/hapitas/">詳細ページへ</a></div>
+     </article><article class="kozeni-link-card">
+       <span>04 / 移動</span>
+       <h3>トリマ</h3>
++      <p class="kozeni-eye">目玉：<strong>招待で5,000マイル</strong></p>
+       <p>招待コード：<strong>zWowBHqTe</strong></p>
+       <div class="kozeni-actions small"><a class="primary-btn" href="https://services.trip-mile.com/web/invite?code=zWowBHqTe" target="_blank" rel="sponsored nofollow noopener noreferrer">公式へ進む</a><a class="secondary-btn" href="/point-site/trima/">詳細ページへ</a></div>
+     </article><article class="kozeni-link-card">
+       <span>05 / 生活</span>
+       <h3>クラシルリワード</h3>
++      <p class="kozeni-eye">目玉：<strong>達成で50,000コイン</strong></p>
+       <p>登録方法：<strong>リンク登録</strong></p>
+       <div class="kozeni-actions small"><a class="primary-btn" href="https://www.rewards.kurashiru.com/register?ref=055aba5c-282f-48cb-947b-1188018494c6" target="_blank" rel="sponsored nofollow noopener noreferrer">公式へ進む</a><a class="secondary-btn" href="/point-site/kurashiru-reward/">詳細ページへ</a></div>
+     </article><article class="kozeni-link-card">
+       <span>06 / スキマ</span>
+       <h3>Powl</h3>
++      <p class="kozeni-eye">目玉：<strong>登録で300pt</strong></p>
+       <p>招待コード：<strong>TA9N5BAJUEL</strong></p>
+       <div class="kozeni-actions small"><a class="primary-btn" href="https://web.powl.jp/?invite_code=TA9N5BAJUEL" target="_blank" rel="sponsored nofollow noopener noreferrer">公式へ進む</a><a class="secondary-btn" href="/point-site/powl/">詳細ページへ</a></div>
+     </article><article class="kozeni-link-card">
+       <span>07 / 案件</span>
+       <h3>ポイントタウン</h3>
++      <p class="kozeni-eye">目玉：<strong>条件達成で2,000pt</strong></p>
+       <p>アプリ用紹介コード：<strong>fuFGNjgw9Ydeu</strong></p>
+       <div class="kozeni-actions small"><a class="primary-btn" href="https://www.pointtown.com/registration?intrid=fuFGNj2vixnyk" target="_blank" rel="sponsored nofollow noopener noreferrer">公式へ進む</a><a class="secondary-btn" href="/point-site/pointtown/">詳細ページへ</a></div>
+     </article><article class="kozeni-link-card">
+       <span>08 / 控え</span>
+       <h3>ちょびリッチ</h3>
++      <p class="kozeni-eye">目玉：<strong>買い物保証あり</strong></p>
+       <p>紹介コード：<strong>c1dlpH</strong></p>
+       <div class="kozeni-actions small"><a class="primary-btn" href="https://www.chobirich.com/cm/ad/?p=8225208671&amp;i=4970604" target="_blank" rel="sponsored nofollow noopener noreferrer">公式へ進む</a><a class="secondary-btn" href="/point-site/chobirich/">詳細ページへ</a></div>
+     </article></div></section>
+--- v36.3.2/assets/kozeni-nav.v36.3.css
++++ v36.3.3/assets/kozeni-nav.v36.3.css
+@@ -46,3 +46,10 @@
+   .kozeni-actions .primary-btn, .kozeni-actions .secondary-btn { width: 100%; }
+   .sk-page-turn { max-width: 45vw; font-size: 13px; padding: 9px 10px; }
+ }
++
++
++/* v36.3.3: bring back v36-like eye-catch amounts without adding comparison tables. */
++.kozeni-app-card .amount-label { margin-top: 12px; color: rgba(23,32,29,.58); }
++.kozeni-app-card .amount { font-size: clamp(1.35rem, 4vw, 1.9rem); line-height: 1.08; letter-spacing: -.03em; }
++.kozeni-eye { margin: 8px 0 10px; font-weight: 900; color: #173b33; }
++.kozeni-eye strong { font-size: 1.08em; }
