@@ -74,3 +74,12 @@ body.sk-menu-open .sk-left-menu { transform: translateX(0); }
 .kozeni-quiz-result.is-stop { background:#3a3431; }
 .kozeni-quiz-result.is-stop .primary-btn { display:none; }
 @media (max-width: 620px) { .kozeni-quiz-buttons { grid-template-columns:1fr; } }
+
+
+/* v36.6: after-register cards. Helps beginners decide what to do after signup. */
+.kozeni-after-register { padding-top: clamp(28px, 5vw, 52px); }
+.kozeni-after-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap:14px; }
+.kozeni-after-card { border:1px solid var(--sk-border); border-radius:22px; padding:16px; background:rgba(255,255,255,.74); box-shadow:0 16px 38px rgba(0,0,0,.055); }
+.kozeni-after-card span { display:inline-grid; place-items:center; min-width:36px; height:28px; border-radius:999px; background:#173b33; color:#fff8e8; font-size:12px; font-weight:900; letter-spacing:.04em; }
+.kozeni-after-card h3 { margin:10px 0 6px; font-size:1.04rem; letter-spacing:-.02em; }
+.kozeni-after-card p { margin:0; color:rgba(23,32,29,.72); font-weight:800; line-height:1.65; }

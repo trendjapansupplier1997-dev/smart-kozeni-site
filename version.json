@@ -1,6 +1,7 @@
 {
-  "version": "v36.5-quick-check",
+  "version": "v36.6-after-register",
   "clean": true,
   "pages": 13,
-  "feature": "detail-page 3-question checks"
+  "feature": "detail-page 3-question checks plus after-register cards",
+  "note": "トップは変更せず、各詳細ページに登録後にまず見るものを追加。"
 }
