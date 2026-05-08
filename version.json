@@ -1,7 +1,1 @@
-{
-  "version": "v36.6-after-register",
-  "clean": true,
-  "pages": 13,
-  "feature": "detail-page 3-question checks plus after-register cards",
-  "note": "トップは変更せず、各詳細ページに登録後にまず見るものを追加。"
-}
+{"version":"v36.7-current-pickups","label":"current-pickups","updated":"2026-05-08","note":"Generic after-register explanations were removed. Current deal pickup cards were added."}
