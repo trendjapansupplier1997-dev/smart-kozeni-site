@@ -200,7 +200,9 @@
     margin:-14px auto 52px;
     padding:18px;
   }
-}\n\n/* tiktok intent pages v1 */
+}
+
+/* tiktok intent pages v1 */
 .intent-list{display:grid;gap:10px;margin:16px 0 0;padding:0;list-style:none}
 .intent-list li{padding:12px 14px;border:1px solid var(--ia-line);border-radius:18px;background:var(--ia-gray);color:var(--ia-muted);font-size:14px}
 .intent-cta{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:18px auto 0}
@@ -213,4 +215,4 @@
 .intent-related p{margin:0 0 12px;color:var(--ia-muted);font-size:13px}
 .intent-related-links{display:flex;flex-wrap:wrap;gap:8px}
 .intent-related-links a{display:inline-flex;align-items:center;min-height:34px;padding:0 12px;border-radius:999px;border:1px solid var(--ia-line);background:var(--ia-pale);color:var(--ia-green);font-size:13px;font-weight:900}
-@media(max-width:720px){.intent-note,.intent-related{width:calc(100% - 24px)}}\n
+@media(max-width:720px){.intent-note,.intent-related{width:calc(100% - 24px)}}
