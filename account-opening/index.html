@@ -2,96 +2,307 @@
 <html lang="ja">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>新規口座を開きたい？｜スマホ小銭研究所</title>
-  <meta name="description" content="証券口座、銀行口座、NISA口座キャンペーンの準備中入口です。">
-  <link rel="canonical" href="https://smart-kozeni.com/">
-  <meta property="og:title" content="新規口座を開きたい？｜スマホ小銭研究所">
-  <meta property="og:description" content="証券口座、銀行口座、NISA口座キャンペーンの準備中入口です。">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>新規口座を開く前に確認すること｜スマホ小銭研究所</title>
+  <meta name="description" content="証券口座、銀行口座、NISA口座などを開く前に、公式キャンペーン・ポイントサイト経由・ASP/提携リンクの違いを確認するためのページです。">
+  <link rel="canonical" href="https://smart-kozeni.com/account-opening/">
+  <meta property="og:title" content="新規口座を開く前に確認すること｜スマホ小銭研究所">
+  <meta property="og:description" content="口座開設前に、経由先・条件・対象外・本人確認をチェック。">
+  <meta property="og:url" content="https://smart-kozeni.com/account-opening/">
   <meta property="og:type" content="website">
-  <meta name="theme-color" content="#4DBD8C">
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <link rel="manifest" href="/site.webmanifest">
-  <link rel="stylesheet" href="/assets/kozeni-ia.v36.10.css">
+  <style>
+:root {
+  --mint: #4DBD8C;
+  --deep: #228C62;
+  --pale: #E9F5EF;
+  --gold: #F2C94C;
+  --gray: #F2F6F4;
+  --charcoal: #222831;
+  --white: #ffffff;
+  --line: rgba(34, 40, 49, .12);
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: "Noto Sans JP", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: var(--charcoal);
+  background: linear-gradient(180deg, #ffffff 0%, var(--pale) 100%);
+  line-height: 1.8;
+}
+a { color: inherit; }
+.page {
+  width: min(1040px, calc(100% - 32px));
+  margin: 0 auto;
+}
+.site-header {
+  padding: 18px 0;
+  border-bottom: 1px solid var(--line);
+  background: rgba(255,255,255,.86);
+  backdrop-filter: blur(12px);
+  position: sticky;
+  top: 0;
+  z-index: 5;
+}
+.header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  font-weight: 800;
+  letter-spacing: .02em;
+}
+.logo-mark {
+  width: 34px;
+  height: 34px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--mint), var(--deep));
+  color: white;
+  display: grid;
+  place-items: center;
+  font-weight: 900;
+}
+.back {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  padding: 0 16px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  text-decoration: none;
+  background: white;
+  font-size: 14px;
+}
+.hero {
+  padding: 72px 0 36px;
+}
+.badge {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: white;
+  border: 1px solid var(--line);
+  color: var(--deep);
+  font-size: 13px;
+  font-weight: 700;
+}
+h1 {
+  margin: 20px 0 14px;
+  font-size: clamp(34px, 7vw, 68px);
+  line-height: 1.08;
+  letter-spacing: -.05em;
+}
+.lead {
+  max-width: 720px;
+  font-size: clamp(17px, 2.4vw, 21px);
+  color: rgba(34, 40, 49, .72);
+}
+.notice {
+  margin-top: 26px;
+  padding: 18px 20px;
+  border-radius: 22px;
+  background: rgba(255,255,255,.78);
+  border: 1px solid var(--line);
+  font-size: 14px;
+  color: rgba(34, 40, 49, .72);
+}
+.grid {
+  display: grid;
+  gap: 18px;
+}
+.grid.three {
+  grid-template-columns: repeat(3, 1fr);
+}
+.grid.two {
+  grid-template-columns: repeat(2, 1fr);
+}
+.card {
+  background: rgba(255,255,255,.88);
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  padding: 24px;
+  box-shadow: 0 20px 60px rgba(34, 140, 98, .08);
+}
+.card h2,
+.card h3 {
+  margin: 0 0 10px;
+  line-height: 1.35;
+}
+.card p {
+  margin: 0;
+  color: rgba(34, 40, 49, .7);
+}
+.section {
+  padding: 26px 0;
+}
+.section-title {
+  margin: 0 0 18px;
+  font-size: clamp(24px, 4vw, 38px);
+  line-height: 1.25;
+  letter-spacing: -.03em;
+}
+.check-list {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.check-list li {
+  padding: 14px 16px;
+  border-radius: 18px;
+  background: var(--gray);
+  border: 1px solid var(--line);
+}
+.routes {
+  display: grid;
+  gap: 12px;
+}
+.route {
+  display: grid;
+  grid-template-columns: 112px 1fr;
+  gap: 14px;
+  padding: 16px;
+  border-radius: 20px;
+  border: 1px solid var(--line);
+  background: white;
+}
+.route strong {
+  color: var(--deep);
+}
+.mini {
+  font-size: 13px;
+  color: rgba(34, 40, 49, .62);
+}
+.footer {
+  margin-top: 50px;
+  padding: 34px 0 44px;
+  border-top: 1px solid var(--line);
+  color: rgba(34, 40, 49, .62);
+  font-size: 13px;
+}
+.footer a {
+  margin-right: 14px;
+}
+@media (max-width: 760px) {
+  .grid.three,
+  .grid.two {
+    grid-template-columns: 1fr;
+  }
+  .header-row {
+    align-items: flex-start;
+  }
+  .back {
+    font-size: 13px;
+    padding: 0 12px;
+  }
+  .hero {
+    padding-top: 52px;
+  }
+  .route {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
 </head>
 <body>
-  <a class="skip-link" href="#main">本文へ移動</a>
-  <button class="menu-trigger" type="button" data-menu-toggle aria-label="メニューを開く">メニュー</button>
+  <header class="site-header">
+    <div class="page header-row">
+      <a class="logo" href="/">
+        <span class="logo-mark">小</span>
+        <span>スマホ小銭研究所</span>
+      </a>
+      <a class="back" href="/">← 前へ戻る</a>
+    </div>
+  </header>
 
-  <div class="site-shell">
-    <aside class="side-menu" aria-label="サイトメニュー">
-      <a class="side-brand" href="/"><span class="brand-icon" aria-hidden="true"><svg viewBox="0 0 64 64" focusable="false">
-  <rect x="18" y="8" width="30" height="48" rx="7" fill="none" stroke="currentColor" stroke-width="4"/>
-  <path d="M28 14h10" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
-  <path d="M31 49h4" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
-  <circle cx="27" cy="39" r="10" fill="#F2C94C"/>
-  <path d="M22 36h10M24 31l4 8 4-8M28 39v7" stroke="#8C6B16" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
-  <circle cx="41" cy="28" r="10" fill="white" stroke="currentColor" stroke-width="4"/>
-  <path d="M37 28l3 3 6-7" fill="none" stroke="#4DBD8C" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M48 35l8 8" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
-</svg></span><span>スマホ小銭研究所</span></a>
-      <p class="side-caption">4つから選ぶ。</p>
-
-      <div class="side-group">
-        <p class="side-group-title">入口</p>
-        <a class="side-link " href="/"><span>ホーム</span></a>
-<a class="side-link " href="/mobile-sim/"><span>スマホ料金を見直す</span></a>
-<a class="side-link " href="/point-site/"><span>小銭を稼ぐ</span></a>
-<a class="side-link is-current" href="/account-opening/"><span>新規口座を開く</span></a>
-<a class="side-link " href="/credit-card/"><span>クレカが欲しい</span></a>
+  <main class="page">
+    <section class="hero">
+      <span class="badge">口座開設前チェック</span>
+      <h1>新規口座を開く前に、経由先だけ確認する。</h1>
+      <p class="lead">
+        証券口座、銀行口座、NISA口座などは、公式キャンペーン・ポイントサイト経由・提携リンクで条件が変わることがあります。
+        申し込む前に、どこから進むのが自分に合うかを落ち着いて確認します。
+      </p>
+      <div class="notice">
+        PR・アフィリエイトリンクを含む場合があります。投資判断をすすめるページではありません。
+        金融商品の内容、手数料、リスク、キャンペーン条件は必ず公式サイトで確認してください。
       </div>
+    </section>
 
-      <div class="side-group">
-        <p class="side-group-title">サイト情報</p>
-        <a class="side-link" href="/policy/"><span>PR表記</span></a>
-        <a class="side-link" href="/about/"><span>このサイトについて</span></a>
-        <a class="side-link" href="/privacy/"><span>プライバシー</span></a>
+    <section class="section">
+      <h2 class="section-title">このページで見ること</h2>
+      <div class="grid three">
+        <article class="card">
+          <h3>経由先</h3>
+          <p>公式、ポイントサイト、提携リンクのどれを使うか。報酬だけでなく、対象条件も見ます。</p>
+        </article>
+        <article class="card">
+          <h3>対象外条件</h3>
+          <p>過去利用、既存口座、同一世帯、本人確認未完了など、失敗しやすい条件を先に確認します。</p>
+        </article>
+        <article class="card">
+          <h3>申し込み後の流れ</h3>
+          <p>本人確認、初回ログイン、入金・取引条件の有無など、登録後に必要な動きを整理します。</p>
+        </article>
       </div>
-    </aside>
+    </section>
 
-    <main class="page-main" id="main">
-      <header class="site-top">
-        <a class="brand" href="/"><span class="brand-icon" aria-hidden="true"><svg viewBox="0 0 64 64" focusable="false">
-  <rect x="18" y="8" width="30" height="48" rx="7" fill="none" stroke="currentColor" stroke-width="4"/>
-  <path d="M28 14h10" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
-  <path d="M31 49h4" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
-  <circle cx="27" cy="39" r="10" fill="#F2C94C"/>
-  <path d="M22 36h10M24 31l4 8 4-8M28 39v7" stroke="#8C6B16" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
-  <circle cx="41" cy="28" r="10" fill="white" stroke="currentColor" stroke-width="4"/>
-  <path d="M37 28l3 3 6-7" fill="none" stroke="#4DBD8C" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M48 35l8 8" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
-</svg></span><span>スマホ小銭研究所</span></a>
-        <nav class="nav" aria-label="主要カテゴリ">
-          <a class="" href="/mobile-sim/">スマホ料金</a>
-<a class="" href="/point-site/">小銭</a>
-<a class="is-current" href="/account-opening/">新規口座</a>
-<a class="" href="/credit-card/">クレカ</a>
-        </nav>
-      </header>
-
-      <section class="hero clean" aria-labelledby="account-title">
-        <p class="eyebrow">口座開設</p>
-        <h1 id="account-title">準備中。</h1>
-      </section>
-      <section class="section">
-        <div class="category-grid">
-          <article class="category-card"><span class="card-kicker">NISA</span><h2>NISA口座</h2><p class="card-copy">商品推奨ではなく、口座開設キャンペーンの条件確認に限定。</p></article>
-          <article class="category-card"><span class="card-kicker">証券</span><h2>証券口座</h2><p class="card-copy">紹介制度、付与条件、取引条件、対象外を整理。</p></article>
-          <article class="category-card"><span class="card-kicker">銀行</span><h2>銀行口座</h2><p class="card-copy">ネット銀行、給与受取、振込、ポイント条件を確認。</p></article>
-          <a class="category-card" href="/"><span class="card-kicker">戻る</span><h2>4つの入口へ</h2></a>
+    <section class="section">
+      <h2 class="section-title">まず確認する候補</h2>
+      <div class="routes">
+        <div class="route">
+          <strong>証券口座</strong>
+          <span>SBI証券、楽天証券、松井証券、マネックス証券など。NISAを始める前の候補として確認します。</span>
         </div>
-      </section>
-      <footer class="site-footer">
-        <p>スマホ小銭研究所</p>
-        <nav aria-label="フッター">
-          <a href="/policy/">PR表記</a>
-          <a href="/privacy/">プライバシー</a>
-          <a href="/about/">このサイトについて</a>
-        </nav>
-      </footer>
-    </main>
-  </div>
+        <div class="route">
+          <strong>銀行口座</strong>
+          <span>ネット銀行や給与受取・振込・ATM条件を確認。ポイントサイト案件がある場合もあります。</span>
+        </div>
+        <div class="route">
+          <strong>NISA関連</strong>
+          <span>口座開設だけでなく、金融機関変更やキャンペーン条件に注意します。</span>
+        </div>
+      </div>
+    </section>
 
-  <script src="/assets/kozeni-ia.v36.10.js" defer></script>
+    <section class="section">
+      <h2 class="section-title">申し込み前チェック</h2>
+      <ul class="check-list">
+        <li>すでに同じサービスを使ったことがないか</li>
+        <li>キャンペーンの対象期間・対象者に入っているか</li>
+        <li>口座開設だけで成果になるのか、入金や取引が必要なのか</li>
+        <li>本人確認書類と登録情報が一致しているか</li>
+        <li>ポイントサイト経由の場合、途中で別ページへ移動していないか</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <div class="card">
+        <h2>スマホ小銭研究所の方針</h2>
+        <p>
+          ここでは「投資で儲ける方法」ではなく、口座開設前に見落としやすい経由条件を整理します。
+          条件が合わない場合は無理に申し込まず、公式情報を確認してから判断します。
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="page">
+      <a href="/policy/">PR表記</a>
+      <a href="/privacy/">プライバシー</a>
+      <a href="/about/">このサイトについて</a>
+      <p>© スマホ小銭研究所</p>
+    </div>
+  </footer>
 </body>
 </html>
