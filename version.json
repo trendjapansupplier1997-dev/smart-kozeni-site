@@ -1,5 +1,6 @@
 {
-  "version": "v36.4-clean-root",
+  "version": "v36.5-quick-check",
   "clean": true,
-  "pages": 13
+  "pages": 13,
+  "feature": "detail-page 3-question checks"
 }

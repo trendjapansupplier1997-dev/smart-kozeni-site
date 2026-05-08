@@ -53,3 +53,24 @@ body.sk-menu-open .sk-left-menu { transform: translateX(0); }
 .kozeni-app-card .amount { font-size: clamp(1.35rem, 4vw, 1.9rem); line-height: 1.08; letter-spacing: -.03em; }
 .kozeni-eye { margin: 8px 0 10px; font-weight: 900; color: #173b33; }
 .kozeni-eye strong { font-size: 1.08em; }
+
+
+/* v36.5: 3-question quick check. No data is saved or sent. */
+.kozeni-quick-check { padding-top: clamp(34px, 6vw, 64px); }
+.kozeni-quiz-card { display:grid; gap:14px; border:1px solid var(--sk-border); border-radius:28px; padding:18px; background:rgba(255,255,255,.74); box-shadow:0 18px 45px rgba(0,0,0,.06); }
+.kozeni-quiz-q { display:grid; gap:10px; padding:14px; border-radius:20px; background:rgba(247,243,234,.72); border:1px solid rgba(23,32,29,.08); }
+.kozeni-quiz-q p { margin:0; font-weight:900; color:var(--sk-ink); }
+.kozeni-quiz-q p span { display:inline-grid; place-items:center; min-width:34px; height:26px; margin-right:8px; border-radius:999px; background:#173b33; color:#fff8e8; font-size:12px; letter-spacing:.03em; }
+.kozeni-quiz-buttons { display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:8px; }
+.kozeni-quiz-buttons button { min-height:42px; border-radius:999px; border:1px solid var(--sk-border); background:#fffaf0; color:var(--sk-ink); font:inherit; font-weight:900; cursor:pointer; }
+.kozeni-quiz-buttons button:hover { transform:translateY(-1px); }
+.kozeni-quiz-buttons button.is-selected { background:#173b33; color:#fff8e8; border-color:#173b33; }
+.kozeni-quiz-result { margin-top:2px; border-radius:24px; padding:18px; background:#173b33; color:#fff8e8; }
+.kozeni-quiz-result .result-label { margin:0 0 6px; opacity:.72; font-size:12px; font-weight:900; letter-spacing:.12em; }
+.kozeni-quiz-result strong { display:block; font-size:clamp(1.35rem, 4vw, 2rem); letter-spacing:-.03em; }
+.kozeni-quiz-result p:not(.result-label) { margin:8px 0 14px; color:rgba(255,248,232,.84); font-weight:800; }
+.kozeni-quiz-result .primary-btn { background:#fff8e8; color:#173b33; }
+.kozeni-quiz-result.is-caution { background:#5a4623; }
+.kozeni-quiz-result.is-stop { background:#3a3431; }
+.kozeni-quiz-result.is-stop .primary-btn { display:none; }
+@media (max-width: 620px) { .kozeni-quiz-buttons { grid-template-columns:1fr; } }
