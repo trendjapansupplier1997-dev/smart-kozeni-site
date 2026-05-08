@@ -76,13 +76,14 @@ a{color:inherit}
 }
 .navlinks a{text-decoration:none}
 .top-return{
-  position:fixed;
-  left:16px;
+  position:sticky;
   top:76px;
-  z-index:1000;
-  width:auto;
-  padding:0;
+  z-index:9;
+  padding:14px 0 0;
   pointer-events:none;
+}
+.top-return .home-return{
+  pointer-events:auto;
 }
 .home-return{
   display:inline-flex;
@@ -92,14 +93,12 @@ a{color:inherit}
   padding:0 16px;
   border-radius:999px;
   border:1px solid var(--line);
-  background:rgba(255,255,255,.94);
-  backdrop-filter:blur(12px);
-  box-shadow:0 14px 36px rgba(34,140,98,.16);
+  background:rgba(255,255,255,.92);
+  box-shadow:0 12px 32px rgba(34,140,98,.08);
   color:var(--deep);
   text-decoration:none;
   font-size:14px;
   font-weight:900;
-  pointer-events:auto;
 }
 .hero{padding:44px 0 34px}
 .pill{
@@ -209,18 +208,10 @@ h1{
 }
 .footer a{margin-right:14px}
 @media(max-width:760px){
+  .top-return{top:92px}
   .nav{align-items:flex-start; flex-direction:column; padding:14px 0}
   .grid.three,.grid.two{grid-template-columns:1fr}
   .kv div{grid-template-columns:1fr}
-  .top-return{
-    left:12px;
-    top:92px;
-  }
-  .home-return{
-    min-height:38px;
-    padding:0 13px;
-    font-size:13px;
-  }
   .hero{padding-top:36px}
 }
 </style>
