@@ -1,16 +1,10 @@
 (function(){
   var button = document.querySelector('[data-menu-toggle]');
   if (button) {
-    button.addEventListener('click', function(){
-      document.body.classList.toggle('menu-open');
-    });
-    document.addEventListener('keydown', function(event){
-      if (event.key === 'Escape') document.body.classList.remove('menu-open');
-    });
+    button.addEventListener('click', function(){ document.body.classList.toggle('menu-open'); });
+    document.addEventListener('keydown', function(event){ if (event.key === 'Escape') document.body.classList.remove('menu-open'); });
     document.querySelectorAll('.side-menu a').forEach(function(link){
-      link.addEventListener('click', function(){
-        document.body.classList.remove('menu-open');
-      });
+      link.addEventListener('click', function(){ document.body.classList.remove('menu-open'); });
     });
   }
 
@@ -21,12 +15,11 @@
     return path + (path === '/' ? '' : '/');
   }
 
-  function isHome(path) {
-    return path === '/' || path === '/index.html/';
-  }
+  function isHome(path) { return path === '/' || path === '/index.html/'; }
 
   function fallbackHref(path) {
     if (path.indexOf('/tiktok-lite/') === 0) return '/point-site/';
+    if (path.indexOf('/point-site/moppy/earn/') === 0) return '/point-site/moppy/';
     if (path.indexOf('/point-site/') === 0 && path !== '/point-site/') return '/point-site/';
     if (path.indexOf('/mobile-sim/') === 0 && path !== '/mobile-sim/') return '/mobile-sim/';
     if (path === '/point-site/' || path === '/mobile-sim/' || path === '/account-opening/' || path === '/credit-card/') return '/';
@@ -62,11 +55,7 @@
     link.addEventListener('click', function(event){
       var referrer = document.referrer;
       var sameOrigin = false;
-      try {
-        sameOrigin = !!referrer && new URL(referrer).origin === window.location.origin;
-      } catch (error) {
-        sameOrigin = false;
-      }
+      try { sameOrigin = !!referrer && new URL(referrer).origin === window.location.origin; } catch (error) { sameOrigin = false; }
       if (sameOrigin && window.history.length > 1) {
         event.preventDefault();
         window.history.back();
@@ -77,54 +66,39 @@
 
     var main = document.querySelector('.page-main') || document.querySelector('main') || document.body;
     var top = main.querySelector('.site-top');
-    if (top && top.parentNode === main) {
-      top.insertAdjacentElement('afterend', bar);
-    } else {
-      main.insertBefore(bar, main.firstChild);
-    }
-  }
-
-  function injectQuizStyle() {
-    if (document.querySelector('[data-kozeni-quiz-style]')) return;
-    var style = document.createElement('style');
-    style.setAttribute('data-kozeni-quiz-style', 'true');
-    style.textContent = [
-      '.quiz-card{padding:22px}',
-      '.quiz-list{display:grid;gap:12px;margin-top:16px}',
-      '.quiz-question{border:1px solid #dcece4;border-radius:22px;background:#fff;padding:14px}',
-      '.quiz-question p{margin:0 0 10px;font-weight:900;line-height:1.45}',
-      '.quiz-answers{display:flex;gap:8px}',
-      '.quiz-answers button{flex:1;border:1px solid #dcece4;background:#F2F6F4;color:#62736b;border-radius:999px;padding:9px 10px;font-weight:950;cursor:pointer}',
-      '.quiz-answers button.is-selected[data-quiz-answer="yes"]{background:#E9F5EF;border-color:#4DBD8C;color:#228C62}',
-      '.quiz-answers button.is-selected[data-quiz-answer="no"]{background:#fff6df;border-color:#F2C94C;color:#8C6B16}',
-      '.quiz-result{margin-top:16px;border-radius:22px;padding:14px;background:#F2F6F4;color:#62736b;font-weight:850}',
-      '.quiz-result.is-ok{background:#E9F5EF;color:#228C62}',
-      '.quiz-result.is-ng{background:#fff6df;color:#8C6B16}',
-      '.quiz-result a{display:inline-flex;margin-top:10px;border-radius:999px;background:#228C62;color:#fff;padding:9px 13px;font-weight:950}'
-    ].join('\n');
-    document.head.appendChild(style);
+    if (top && top.parentNode === main) top.insertAdjacentElement('afterend', bar);
+    else main.insertBefore(bar, main.firstChild);
   }
 
   function setupQuizzes() {
     var quizzes = document.querySelectorAll('[data-kozeni-quiz]');
     if (!quizzes.length) return;
-    injectQuizStyle();
 
     quizzes.forEach(function(quiz) {
       var questions = Array.from(quiz.querySelectorAll('[data-quiz-question]'));
       var result = quiz.querySelector('[data-quiz-result]');
+      var submit = quiz.querySelector('[data-quiz-submit]');
       var registerUrl = quiz.getAttribute('data-register-url') || '#';
       var registerName = quiz.getAttribute('data-register-name') || '登録先';
 
-      function render() {
-        var answers = questions.map(function(q) {
+      function getAnswers() {
+        return questions.map(function(q) {
           var selected = q.querySelector('[data-quiz-answer].is-selected');
           return selected ? selected.getAttribute('data-quiz-answer') : null;
         });
+      }
+
+      function render(force) {
+        var answers = getAnswers();
+        if (!force) {
+          result.className = 'quiz-result';
+          result.textContent = '3つ答えてから、結果を確認してください。';
+          return;
+        }
 
         if (answers.some(function(a){ return a === null; })) {
-          result.className = 'quiz-result';
-          result.textContent = '3つ答えると結果が出ます。';
+          result.className = 'quiz-result is-ng';
+          result.textContent = '未回答があります。3つすべて答えてから確認してください。';
           return;
         }
 
@@ -146,11 +120,12 @@
           });
           btn.classList.add('is-selected');
           btn.setAttribute('aria-pressed', 'true');
-          render();
+          render(false);
         });
       });
 
-      render();
+      if (submit) submit.addEventListener('click', function(){ render(true); });
+      render(false);
     });
   }
 
