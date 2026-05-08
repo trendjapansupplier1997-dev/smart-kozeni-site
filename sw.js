@@ -1,4 +1,8 @@
-self.addEventListener('install', event => { self.skipWaiting(); });
+/* smart-kozeni service worker v36.10.4: clear old caches and take control */
+self.addEventListener('install', event => {
+  self.skipWaiting();
+});
+
 self.addEventListener('activate', event => {
   event.waitUntil((async () => {
     const keys = await caches.keys();
