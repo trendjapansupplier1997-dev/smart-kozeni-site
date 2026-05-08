@@ -1,1 +1,5 @@
-{"version":"v40-restore-v36-no-compare","base":"v36-add-powl-referral","purpose":"restore v36 visible structure and remove compare navigation"}
+{
+  "version": "v36.4-clean-root",
+  "clean": true,
+  "pages": 13
+}

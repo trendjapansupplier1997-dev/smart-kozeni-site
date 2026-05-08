@@ -1,46 +1,21 @@
 {
-  "name": "スマホ小銭研究所 - 小銭チェックアプリ",
+  "name": "スマホ小銭研究所",
   "short_name": "小銭研究所",
-  "description": "スマホで拾える小銭とお得情報を、条件・期限・失敗例つきで確認するアプリ風サイト。",
-  "start_url": "/?utm_source=pwa",
+  "start_url": "/",
   "scope": "/",
   "display": "standalone",
-  "orientation": "portrait",
-  "background_color": "#f7efe2",
-  "theme_color": "#093b35",
-  "lang": "ja",
+  "background_color": "#f8f4eb",
+  "theme_color": "#123f35",
   "icons": [
     {
       "src": "/assets/images/icon-192.png",
       "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "any maskable"
+      "type": "image/png"
     },
     {
       "src": "/assets/images/icon-512.png",
       "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "any maskable"
-    }
-  ],
-  "shortcuts": [
-    {
-      "name": "TikTok Liteチェック",
-      "short_name": "TikTok",
-      "url": "/tiktok-lite/checklist/?utm_source=pwa_shortcut",
-      "description": "TikTok Liteを始める前の条件確認"
-    },
-    {
-      "name": "ポイント比較",
-      "short_name": "比較",
-      "url": "/point-site/?utm_source=pwa_shortcut",
-      "description": "ポイントサイトを用途別に比較"
-    },
-    {
-      "name": "支払い前30秒",
-      "short_name": "支払い",
-      "url": "/tools/payment-checklist/?utm_source=pwa_shortcut",
-      "description": "支払い前に損しない確認"
+      "type": "image/png"
     }
   ]
 }

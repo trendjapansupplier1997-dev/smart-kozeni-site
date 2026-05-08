@@ -1,4 +1,4 @@
-/* v36-add-powl-referral */
+/* smart-kozeni v36 clean helpers */
 (() => {
   const copyButtons = document.querySelectorAll('[data-copy]');
   copyButtons.forEach((button) => {
@@ -27,7 +27,7 @@
     link.addEventListener('click', () => {
       const name = link.getAttribute('data-referral-link') || 'referral';
       if (typeof gtag === 'function') {
-        gtag('event', 'referral_click', { item_name: name, link_url: link.href });
+        gtag('event', 'referral_click', { item_name: name, link_url: link.href, page_path: location.pathname });
       }
       if (typeof clarity === 'function') {
         clarity('event', 'referral_click_' + name);

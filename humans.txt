@@ -1,4 +1,2 @@
 スマホ小銭研究所
-URL: https://smart-kozeni.com/
-Purpose: 条件確認と損得目線でスマホのお得情報を整理する研究メモ。
-Updated: 2026-05-06
+https://smart-kozeni.com/

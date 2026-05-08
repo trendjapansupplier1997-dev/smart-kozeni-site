@@ -1,11 +1,2 @@
 # スマホ小銭研究所
-
-スマホで拾える小銭とお得情報を、条件・期限・失敗例つきで整理する研究メモ。ポイ活、クーポン、自治体還元、招待特典、レシート活用を損得目線で確認します。
-
-主要ページ:
-- https://smart-kozeni.com/tiktok-lite/
-- https://smart-kozeni.com/point-site/
-- https://smart-kozeni.com/receipt/mcdonalds-kodo/
-- https://smart-kozeni.com/local-campaign/
-
-方針: PR/紹介リンクを明記し、対象条件・期限・失敗例・公式確認を優先します。
+条件・期限・対象外を確認して、スマホで拾える小さなお得を整理するサイトです。
