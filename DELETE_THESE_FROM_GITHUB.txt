@@ -1,0 +1,7 @@
+GitHub上で削除してください。ZIP上書きだけでは消えません。
+
+start-here/index.html
+point-site/referral-code/index.html
+
+この2ページはホーム/アプリ一覧/各アプリ詳細と内容が重複するため削除対象です。
+リンクはv36.3.6で全ページから外しています。
