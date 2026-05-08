@@ -1,4 +1,4 @@
-/* smart-kozeni service worker v36.11.1: clear old caches and take control */
+/* smart-kozeni service worker v36.11.2: clear old caches and take control */
 self.addEventListener('install', event => {
   self.skipWaiting();
 });
