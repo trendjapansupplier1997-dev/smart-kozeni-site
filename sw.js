@@ -1,2 +1,5 @@
-self.addEventListener('install', event => { self.skipWaiting(); });
-self.addEventListener('activate', event => { event.waitUntil((async () => { const keys = await caches.keys(); await Promise.all(keys.map(k => caches.delete(k))); await self.clients.claim(); })()); });
+const CACHE_NAME='smart-kozeni-v36.9-mobile-sim';
+const CORE_ASSETS=['/','/mobile-sim/','/manifest.webmanifest','/assets/style.v36.css','/assets/script.v36.js','/assets/mobile-sim.v36.9.css','/assets/favicon.svg','/assets/images/icon-192.png','/assets/images/icon-512.png','/tiktok-lite/','/point-site/','/policy/','/privacy/','/about/'];
+self.addEventListener('install',event=>{event.waitUntil(caches.open(CACHE_NAME).then(cache=>cache.addAll(CORE_ASSETS)).then(()=>self.skipWaiting()))});
+self.addEventListener('activate',event=>{event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE_NAME).map(k=>caches.delete(k)))).then(()=>self.clients.claim()))});
+self.addEventListener('fetch',event=>{if(event.request.method!=='GET')return;event.respondWith(fetch(event.request).then(response=>{const clone=response.clone();caches.open(CACHE_NAME).then(cache=>{if(response.ok&&new URL(event.request.url).origin===location.origin)cache.put(event.request,clone)});return response}).catch(()=>caches.match(event.request).then(cached=>cached||caches.match('/'))))});
