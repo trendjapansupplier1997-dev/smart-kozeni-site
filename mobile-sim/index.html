@@ -4,164 +4,250 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>スマホ料金を見直したい？｜スマホ小銭研究所</title>
-  <meta name="description" content="スマホ料金・格安SIM・乗り換えキャンペーンの候補を選ぶ入口です。">
-  <link rel="canonical" href="https://smart-kozeni.com/">
+  <meta name="description" content="スマホ回線の申込前に公式・紹介・ポイントサイト・ASP直の条件を確認する一覧ページです。">
+  <link rel="canonical" href="https://smart-kozeni.com/mobile-sim/">
   <meta property="og:title" content="スマホ料金を見直したい？｜スマホ小銭研究所">
-  <meta property="og:description" content="スマホ料金・格安SIM・乗り換えキャンペーンの候補を選ぶ入口です。">
+  <meta property="og:description" content="スマホ回線の申込前に公式・紹介・ポイントサイト・ASP直の条件を確認する一覧ページです。">
+  <meta property="og:url" content="https://smart-kozeni.com/mobile-sim/">
   <meta property="og:type" content="website">
-  <meta name="theme-color" content="#4DBD8C">
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <link rel="manifest" href="/site.webmanifest">
-  <link rel="stylesheet" href="/assets/kozeni-ia.v36.10.css">
+  <style>
+:root{
+  --mint:#4DBD8C;
+  --deep:#228C62;
+  --pale:#E9F5EF;
+  --gold:#F2C94C;
+  --light:#F2F6F4;
+  --ink:#222831;
+  --muted:#66736E;
+  --line:rgba(34,140,98,.16);
+  --white:#fff;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:"Noto Sans JP", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color:var(--ink);
+  background:linear-gradient(180deg,#F7FCFA 0%,#FFFFFF 44%,#F7FCFA 100%);
+  line-height:1.78;
+}
+a{color:inherit}
+.container{width:min(1040px, calc(100% - 32px)); margin:0 auto}
+.header{
+  position:sticky;
+  top:0;
+  z-index:10;
+  background:rgba(255,255,255,.9);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);
+}
+.nav{
+  min-height:64px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+}
+.brand{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  text-decoration:none;
+  font-weight:900;
+  letter-spacing:.02em;
+}
+.logo-dot{
+  width:30px;
+  height:30px;
+  border-radius:11px;
+  display:inline-grid;
+  place-items:center;
+  background:linear-gradient(135deg,var(--mint),var(--deep));
+  color:white;
+  font-size:15px;
+}
+.navlinks{
+  display:flex;
+  gap:14px;
+  align-items:center;
+  font-size:14px;
+  color:var(--muted);
+  flex-wrap:wrap;
+}
+.navlinks a{text-decoration:none}
+.top-return{
+  padding:20px 0 0;
+}
+.home-return{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:42px;
+  padding:0 16px;
+  border-radius:999px;
+  border:1px solid var(--line);
+  background:rgba(255,255,255,.92);
+  box-shadow:0 12px 32px rgba(34,140,98,.08);
+  color:var(--deep);
+  text-decoration:none;
+  font-size:14px;
+  font-weight:900;
+}
+.hero{padding:44px 0 34px}
+.pill{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:8px 12px;
+  border-radius:999px;
+  background:var(--pale);
+  color:var(--deep);
+  font-weight:900;
+  font-size:13px;
+}
+h1{
+  margin:18px 0 14px;
+  font-size:clamp(34px,6vw,64px);
+  line-height:1.08;
+  letter-spacing:-.05em;
+}
+.lead{
+  margin:0;
+  max-width:740px;
+  color:var(--muted);
+  font-size:clamp(16px,2.2vw,20px);
+}
+.note{
+  margin-top:20px;
+  color:var(--muted);
+  font-size:14px;
+}
+.section{padding:26px 0}
+.section-title{
+  margin:0 0 18px;
+  font-size:clamp(24px,4vw,38px);
+  line-height:1.25;
+  letter-spacing:-.03em;
+}
+.grid{
+  display:grid;
+  gap:16px;
+}
+.grid.three{grid-template-columns:repeat(3,1fr)}
+.grid.two{grid-template-columns:repeat(2,1fr)}
+.card{
+  display:block;
+  text-decoration:none;
+  background:rgba(255,255,255,.9);
+  border:1px solid var(--line);
+  border-radius:28px;
+  padding:24px;
+  box-shadow:0 18px 60px rgba(34,140,98,.08);
+}
+.card:hover{transform:translateY(-1px)}
+.card h2,.card h3{margin:0 0 10px;line-height:1.35}
+.card p{margin:0;color:var(--muted)}
+.tag{
+  display:inline-flex;
+  align-items:center;
+  margin-bottom:12px;
+  padding:5px 10px;
+  border-radius:999px;
+  background:var(--light);
+  color:var(--deep);
+  font-size:12px;
+  font-weight:900;
+}
+.kv{
+  display:grid;
+  gap:10px;
+  margin-top:18px;
+}
+.kv div{
+  display:grid;
+  grid-template-columns:120px 1fr;
+  gap:12px;
+  padding:12px 0;
+  border-bottom:1px solid rgba(34,140,98,.12);
+}
+.kv span:first-child{
+  color:var(--muted);
+  font-size:13px;
+}
+.list{
+  margin:16px 0 0;
+  padding-left:1.2em;
+  color:var(--muted);
+}
+.check-list{
+  display:grid;
+  gap:12px;
+  margin:0;
+  padding:0;
+  list-style:none;
+}
+.check-list li{
+  padding:14px 16px;
+  border-radius:18px;
+  background:var(--light);
+  border:1px solid var(--line);
+}
+.footer{
+  margin-top:52px;
+  padding:34px 0 44px;
+  border-top:1px solid var(--line);
+  color:rgba(34,40,49,.62);
+  font-size:13px;
+}
+.footer a{margin-right:14px}
+@media(max-width:760px){
+  .nav{align-items:flex-start; flex-direction:column; padding:14px 0}
+  .grid.three,.grid.two{grid-template-columns:1fr}
+  .kv div{grid-template-columns:1fr}
+  .hero{padding-top:36px}
+}
+</style>
 </head>
 <body>
-  <a class="skip-link" href="#main">本文へ移動</a>
-  <button class="menu-trigger" type="button" data-menu-toggle aria-label="メニューを開く">メニュー</button>
-
-  <div class="site-shell">
-    <aside class="side-menu" aria-label="サイトメニュー">
-      <a class="side-brand" href="/"><span class="brand-icon" aria-hidden="true"><svg viewBox="0 0 64 64" focusable="false">
-  <rect x="18" y="8" width="30" height="48" rx="7" fill="none" stroke="currentColor" stroke-width="4"/>
-  <path d="M28 14h10" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
-  <path d="M31 49h4" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
-  <circle cx="27" cy="39" r="10" fill="#F2C94C"/>
-  <path d="M22 36h10M24 31l4 8 4-8M28 39v7" stroke="#8C6B16" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
-  <circle cx="41" cy="28" r="10" fill="white" stroke="currentColor" stroke-width="4"/>
-  <path d="M37 28l3 3 6-7" fill="none" stroke="#4DBD8C" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M48 35l8 8" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
-</svg></span><span>スマホ小銭研究所</span></a>
-      <p class="side-caption">4つから選ぶ。</p>
-
-      <div class="side-group">
-        <p class="side-group-title">入口</p>
-        <a class="side-link " href="/"><span>ホーム</span></a>
-<a class="side-link is-current" href="/mobile-sim/"><span>スマホ料金を見直す</span></a>
-<a class="side-link " href="/point-site/"><span>小銭を稼ぐ</span></a>
-<a class="side-link " href="/account-opening/"><span>新規口座を開く</span></a>
-<a class="side-link " href="/credit-card/"><span>クレカが欲しい</span></a>
-      </div>
-
-      <div class="side-group">
-        <p class="side-group-title">サイト情報</p>
-        <a class="side-link" href="/policy/"><span>PR表記</span></a>
-        <a class="side-link" href="/about/"><span>このサイトについて</span></a>
-        <a class="side-link" href="/privacy/"><span>プライバシー</span></a>
-      </div>
-    </aside>
-
-    <main class="page-main" id="main">
-      <header class="site-top">
-        <a class="brand" href="/"><span class="brand-icon" aria-hidden="true"><svg viewBox="0 0 64 64" focusable="false">
-  <rect x="18" y="8" width="30" height="48" rx="7" fill="none" stroke="currentColor" stroke-width="4"/>
-  <path d="M28 14h10" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
-  <path d="M31 49h4" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
-  <circle cx="27" cy="39" r="10" fill="#F2C94C"/>
-  <path d="M22 36h10M24 31l4 8 4-8M28 39v7" stroke="#8C6B16" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
-  <circle cx="41" cy="28" r="10" fill="white" stroke="currentColor" stroke-width="4"/>
-  <path d="M37 28l3 3 6-7" fill="none" stroke="#4DBD8C" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M48 35l8 8" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
-</svg></span><span>スマホ小銭研究所</span></a>
-        <nav class="nav" aria-label="主要カテゴリ">
-          <a class="is-current" href="/mobile-sim/">スマホ料金</a>
-<a class="" href="/point-site/">小銭</a>
-<a class="" href="/account-opening/">新規口座</a>
-<a class="" href="/credit-card/">クレカ</a>
-        </nav>
-      </header>
-
-      <section class="hero clean" aria-labelledby="mobile-title">
-        <p class="eyebrow">スマホ料金</p>
-        <h1 id="mobile-title">候補を選ぶ。</h1>
-      </section>
-
-      <section class="section">
-        <div class="card-grid">
-
-          <a class="deal-card" href="/mobile-sim/rakuten-mobile/">
-            <span class="card-kicker">優先</span>
-            <h3>楽天モバイル</h3>
-            <p class="card-copy">紹介者7,000ポイント。紹介された側は最大13,000ポイント。</p>
-            <dl class="mini-spec"><div><dt>見る点</dt><dd>紹介キャンペーン</dd></div><div><dt>確認</dt><dd>公式条件</dd></div></dl>
-            <span class="card-action">詳細へ</span>
-          </a>
-
-          <a class="deal-card" href="/mobile-sim/ahamo/">
-            <span class="card-kicker">優先</span>
-            <h3>ahamo</h3>
-            <p class="card-copy">紹介者7,000ポイント。MNPなら紹介された側も最大13,000ポイント。</p>
-            <dl class="mini-spec"><div><dt>見る点</dt><dd>dポイント</dd></div><div><dt>確認</dt><dd>公式条件</dd></div></dl>
-            <span class="card-action">詳細へ</span>
-          </a>
-
-          <a class="deal-card" href="/mobile-sim/linemo/">
-            <span class="card-kicker">優先</span>
-            <h3>LINEMO</h3>
-            <p class="card-copy">紹介者2,000円相当。MNPの被紹介者特典も確認。</p>
-            <dl class="mini-spec"><div><dt>見る点</dt><dd>PayPayポイント</dd></div><div><dt>確認</dt><dd>公式条件</dd></div></dl>
-            <span class="card-action">詳細へ</span>
-          </a>
-
-          <a class="deal-card" href="/mobile-sim/povo/">
-            <span class="card-kicker">データ</span>
-            <h3>povo</h3>
-            <p class="card-copy">現金系ではなくデータボーナス。軽く試したい人向け。</p>
-            <dl class="mini-spec"><div><dt>見る点</dt><dd>基本料ゼロ</dd></div><div><dt>確認</dt><dd>公式条件</dd></div></dl>
-            <span class="card-action">詳細へ</span>
-          </a>
-
-          <a class="deal-card" href="/mobile-sim/uq-mobile/">
-            <span class="card-kicker">比較</span>
-            <h3>UQ mobile</h3>
-            <p class="card-copy">au回線の安定感。家族・光回線セット条件も確認。</p>
-            <dl class="mini-spec"><div><dt>見る点</dt><dd>サブブランド</dd></div><div><dt>確認</dt><dd>公式条件</dd></div></dl>
-            <span class="card-action">詳細へ</span>
-          </a>
-
-          <a class="deal-card" href="/mobile-sim/ymobile/">
-            <span class="card-kicker">比較</span>
-            <h3>ワイモバイル</h3>
-            <p class="card-copy">家族割・PayPay圏との相性を確認。</p>
-            <dl class="mini-spec"><div><dt>見る点</dt><dd>サブブランド</dd></div><div><dt>確認</dt><dd>公式条件</dd></div></dl>
-            <span class="card-action">詳細へ</span>
-          </a>
-
-          <a class="deal-card" href="/mobile-sim/mineo/">
-            <span class="card-kicker">比較</span>
-            <h3>mineo</h3>
-            <p class="card-copy">紹介制度と独自サービスを確認。低〜中容量向き。</p>
-            <dl class="mini-spec"><div><dt>見る点</dt><dd>MVNO</dd></div><div><dt>確認</dt><dd>公式条件</dd></div></dl>
-            <span class="card-action">詳細へ</span>
-          </a>
-
-          <a class="deal-card" href="/mobile-sim/iijmio/">
-            <span class="card-kicker">料金</span>
-            <h3>IIJmio</h3>
-            <p class="card-copy">端末セットや月額の安さを見る比較枠。</p>
-            <dl class="mini-spec"><div><dt>見る点</dt><dd>MVNO</dd></div><div><dt>確認</dt><dd>公式条件</dd></div></dl>
-            <span class="card-action">詳細へ</span>
-          </a>
-
-          <a class="deal-card" href="/mobile-sim/nihon-tsushin/">
-            <span class="card-kicker">料金</span>
-            <h3>日本通信SIM</h3>
-            <p class="card-copy">月額の安さを基準にする信頼補強枠。</p>
-            <dl class="mini-spec"><div><dt>見る点</dt><dd>合理的プラン</dd></div><div><dt>確認</dt><dd>公式条件</dd></div></dl>
-            <span class="card-action">詳細へ</span>
-          </a>
-        </div>
-        <p class="note" style="margin-top:18px">金額・条件・終了日は変わります。開始前に公式ページ、アプリ内画面、申込画面で確認してください。</p>
-      </section>
-      <footer class="site-footer">
-        <p>スマホ小銭研究所</p>
-        <nav aria-label="フッター">
-          <a href="/policy/">PR表記</a>
-          <a href="/privacy/">プライバシー</a>
-          <a href="/about/">このサイトについて</a>
-        </nav>
-      </footer>
-    </main>
+<header class="header">
+  <div class="container nav">
+    <a class="brand" href="/"><span class="logo-dot">小</span><span>スマホ小銭研究所</span></a>
+    <nav class="navlinks" aria-label="主要メニュー">
+      <a href="/">ホーム</a>
+      <a href="/mobile-sim/">スマホ料金</a>
+      <a href="/point-site/">ポイ活</a>
+      <a href="/account-opening/">口座開設</a>
+      <a href="/credit-card/">クレカ</a>
+    </nav>
   </div>
+</header>
+<div class="container top-return">
+  <a class="home-return" href="/">← ホームへ戻る</a>
+</div>
+<main>
 
-  <script src="/assets/kozeni-ia.v36.10.js" defer></script>
+<section class="hero">
+  <div class="container">
+    <span class="pill">スマホ料金</span>
+    <h1>候補を選ぶ。</h1>
+    <p class="lead">スマホ回線は、公式・紹介・ポイントサイト・ASP直で条件が変わります。まずは候補を選び、申し込み前に対象条件だけ確認します。</p>
+    <p class="note">※ 金額・条件・終了日は変わります。開始前に公式ページ、アプリ内画面、申込画面で確認してください。</p>
+  </div>
+</section>
+<section class="section">
+  <div class="container grid three">
+    <a class="card" href="/mobile-sim/rakuten-mobile/"><span class="tag">優先</span><h2>楽天モバイル</h2><p>紹介キャンペーンとASP直を両方確認。入口で差が出やすい本命候補。</p></a><a class="card" href="/mobile-sim/ahamo/"><span class="tag">優先</span><h2>ahamo</h2><p>新規/MNPか、ドコモからの変更かを先に確認。dポイント条件も見る。</p></a><a class="card" href="/mobile-sim/linemo/"><span class="tag">優先</span><h2>LINEMO</h2><p>PayPay還元とASP直を両方確認。MNP条件と付与時期に注意。</p></a><a class="card" href="/mobile-sim/povo/"><span class="tag">データ</span><h2>povo</h2><p>現金系ではなくデータボーナス型。軽く試したい人向け。</p></a><a class="card" href="/mobile-sim/uq-mobile/"><span class="tag">比較</span><h2>UQ mobile</h2><p>au回線の安定感。自宅セット割や対象プランを確認。</p></a><a class="card" href="/mobile-sim/ymobile/"><span class="tag">比較</span><h2>ワイモバイル</h2><p>家族割・PayPay圏との相性を確認。</p></a><a class="card" href="/mobile-sim/mineo/"><span class="tag">比較</span><h2>mineo</h2><p>紹介制度と独自サービスを確認。低〜中容量向き。</p></a><a class="card" href="/mobile-sim/iijmio/"><span class="tag">料金</span><h2>IIJmio</h2><p>端末セットや月額の安さを見る比較枠。</p></a><a class="card" href="/mobile-sim/nihon-tsushin/"><span class="tag">料金</span><h2>日本通信SIM</h2><p>月額の安さを基準にする信頼補強枠。</p></a>
+  </div>
+</section>
+
+</main>
+<footer class="footer">
+  <div class="container">
+    <a href="/policy/">PR表記</a>
+    <a href="/privacy/">プライバシー</a>
+    <a href="/about/">このサイトについて</a>
+    <p>© スマホ小銭研究所</p>
+  </div>
+</footer>
 </body>
 </html>

@@ -2,307 +2,266 @@
 <html lang="ja">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>クレカを作る前に確認すること｜スマホ小銭研究所</title>
-  <meta name="description" content="クレジットカードを作る前に、公式キャンペーン・ポイントサイト経由・提携リンク・年会費・条件を確認するためのページです。">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>クレカが欲しい？｜スマホ小銭研究所</title>
+  <meta name="description" content="クレジットカードを作る前に、年会費、特典条件、公式・ポイントサイト・提携リンクの違いを確認するページです。">
   <link rel="canonical" href="https://smart-kozeni.com/credit-card/">
-  <meta property="og:title" content="クレカを作る前に確認すること｜スマホ小銭研究所">
-  <meta property="og:description" content="カード発行前に、年会費・還元・キャンペーン・対象外条件をチェック。">
+  <meta property="og:title" content="クレカが欲しい？｜スマホ小銭研究所">
+  <meta property="og:description" content="クレジットカードを作る前に、年会費、特典条件、公式・ポイントサイト・提携リンクの違いを確認するページです。">
   <meta property="og:url" content="https://smart-kozeni.com/credit-card/">
   <meta property="og:type" content="website">
   <style>
-:root {
-  --mint: #4DBD8C;
-  --deep: #228C62;
-  --pale: #E9F5EF;
-  --gold: #F2C94C;
-  --gray: #F2F6F4;
-  --charcoal: #222831;
-  --white: #ffffff;
-  --line: rgba(34, 40, 49, .12);
+:root{
+  --mint:#4DBD8C;
+  --deep:#228C62;
+  --pale:#E9F5EF;
+  --gold:#F2C94C;
+  --light:#F2F6F4;
+  --ink:#222831;
+  --muted:#66736E;
+  --line:rgba(34,140,98,.16);
+  --white:#fff;
 }
-* { box-sizing: border-box; }
-body {
-  margin: 0;
-  font-family: "Noto Sans JP", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  color: var(--charcoal);
-  background: linear-gradient(180deg, #ffffff 0%, var(--pale) 100%);
-  line-height: 1.8;
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:"Noto Sans JP", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color:var(--ink);
+  background:linear-gradient(180deg,#F7FCFA 0%,#FFFFFF 44%,#F7FCFA 100%);
+  line-height:1.78;
 }
-a { color: inherit; }
-.page {
-  width: min(1040px, calc(100% - 32px));
-  margin: 0 auto;
+a{color:inherit}
+.container{width:min(1040px, calc(100% - 32px)); margin:0 auto}
+.header{
+  position:sticky;
+  top:0;
+  z-index:10;
+  background:rgba(255,255,255,.9);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);
 }
-.site-header {
-  padding: 18px 0;
-  border-bottom: 1px solid var(--line);
-  background: rgba(255,255,255,.86);
-  backdrop-filter: blur(12px);
-  position: sticky;
-  top: 0;
-  z-index: 5;
+.nav{
+  min-height:64px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
 }
-.header-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 16px;
+.brand{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  text-decoration:none;
+  font-weight:900;
+  letter-spacing:.02em;
 }
-.logo {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  text-decoration: none;
-  font-weight: 800;
-  letter-spacing: .02em;
+.logo-dot{
+  width:30px;
+  height:30px;
+  border-radius:11px;
+  display:inline-grid;
+  place-items:center;
+  background:linear-gradient(135deg,var(--mint),var(--deep));
+  color:white;
+  font-size:15px;
 }
-.logo-mark {
-  width: 34px;
-  height: 34px;
-  border-radius: 12px;
-  background: linear-gradient(135deg, var(--mint), var(--deep));
-  color: white;
-  display: grid;
-  place-items: center;
-  font-weight: 900;
+.navlinks{
+  display:flex;
+  gap:14px;
+  align-items:center;
+  font-size:14px;
+  color:var(--muted);
+  flex-wrap:wrap;
 }
-.back {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 40px;
-  padding: 0 16px;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  text-decoration: none;
-  background: white;
-  font-size: 14px;
+.navlinks a{text-decoration:none}
+.top-return{
+  padding:20px 0 0;
 }
-.hero {
-  padding: 72px 0 36px;
+.home-return{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:42px;
+  padding:0 16px;
+  border-radius:999px;
+  border:1px solid var(--line);
+  background:rgba(255,255,255,.92);
+  box-shadow:0 12px 32px rgba(34,140,98,.08);
+  color:var(--deep);
+  text-decoration:none;
+  font-size:14px;
+  font-weight:900;
 }
-.badge {
-  display: inline-flex;
-  gap: 8px;
-  align-items: center;
-  padding: 8px 12px;
-  border-radius: 999px;
-  background: white;
-  border: 1px solid var(--line);
-  color: var(--deep);
-  font-size: 13px;
-  font-weight: 700;
+.hero{padding:44px 0 34px}
+.pill{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:8px 12px;
+  border-radius:999px;
+  background:var(--pale);
+  color:var(--deep);
+  font-weight:900;
+  font-size:13px;
 }
-h1 {
-  margin: 20px 0 14px;
-  font-size: clamp(34px, 7vw, 68px);
-  line-height: 1.08;
-  letter-spacing: -.05em;
+h1{
+  margin:18px 0 14px;
+  font-size:clamp(34px,6vw,64px);
+  line-height:1.08;
+  letter-spacing:-.05em;
 }
-.lead {
-  max-width: 720px;
-  font-size: clamp(17px, 2.4vw, 21px);
-  color: rgba(34, 40, 49, .72);
+.lead{
+  margin:0;
+  max-width:740px;
+  color:var(--muted);
+  font-size:clamp(16px,2.2vw,20px);
 }
-.notice {
-  margin-top: 26px;
-  padding: 18px 20px;
-  border-radius: 22px;
-  background: rgba(255,255,255,.78);
-  border: 1px solid var(--line);
-  font-size: 14px;
-  color: rgba(34, 40, 49, .72);
+.note{
+  margin-top:20px;
+  color:var(--muted);
+  font-size:14px;
 }
-.grid {
-  display: grid;
-  gap: 18px;
+.section{padding:26px 0}
+.section-title{
+  margin:0 0 18px;
+  font-size:clamp(24px,4vw,38px);
+  line-height:1.25;
+  letter-spacing:-.03em;
 }
-.grid.three {
-  grid-template-columns: repeat(3, 1fr);
+.grid{
+  display:grid;
+  gap:16px;
 }
-.grid.two {
-  grid-template-columns: repeat(2, 1fr);
+.grid.three{grid-template-columns:repeat(3,1fr)}
+.grid.two{grid-template-columns:repeat(2,1fr)}
+.card{
+  display:block;
+  text-decoration:none;
+  background:rgba(255,255,255,.9);
+  border:1px solid var(--line);
+  border-radius:28px;
+  padding:24px;
+  box-shadow:0 18px 60px rgba(34,140,98,.08);
 }
-.card {
-  background: rgba(255,255,255,.88);
-  border: 1px solid var(--line);
-  border-radius: 28px;
-  padding: 24px;
-  box-shadow: 0 20px 60px rgba(34, 140, 98, .08);
+.card:hover{transform:translateY(-1px)}
+.card h2,.card h3{margin:0 0 10px;line-height:1.35}
+.card p{margin:0;color:var(--muted)}
+.tag{
+  display:inline-flex;
+  align-items:center;
+  margin-bottom:12px;
+  padding:5px 10px;
+  border-radius:999px;
+  background:var(--light);
+  color:var(--deep);
+  font-size:12px;
+  font-weight:900;
 }
-.card h2,
-.card h3 {
-  margin: 0 0 10px;
-  line-height: 1.35;
+.kv{
+  display:grid;
+  gap:10px;
+  margin-top:18px;
 }
-.card p {
-  margin: 0;
-  color: rgba(34, 40, 49, .7);
+.kv div{
+  display:grid;
+  grid-template-columns:120px 1fr;
+  gap:12px;
+  padding:12px 0;
+  border-bottom:1px solid rgba(34,140,98,.12);
 }
-.section {
-  padding: 26px 0;
+.kv span:first-child{
+  color:var(--muted);
+  font-size:13px;
 }
-.section-title {
-  margin: 0 0 18px;
-  font-size: clamp(24px, 4vw, 38px);
-  line-height: 1.25;
-  letter-spacing: -.03em;
+.list{
+  margin:16px 0 0;
+  padding-left:1.2em;
+  color:var(--muted);
 }
-.check-list {
-  display: grid;
-  gap: 12px;
-  margin: 0;
-  padding: 0;
-  list-style: none;
+.check-list{
+  display:grid;
+  gap:12px;
+  margin:0;
+  padding:0;
+  list-style:none;
 }
-.check-list li {
-  padding: 14px 16px;
-  border-radius: 18px;
-  background: var(--gray);
-  border: 1px solid var(--line);
+.check-list li{
+  padding:14px 16px;
+  border-radius:18px;
+  background:var(--light);
+  border:1px solid var(--line);
 }
-.routes {
-  display: grid;
-  gap: 12px;
+.footer{
+  margin-top:52px;
+  padding:34px 0 44px;
+  border-top:1px solid var(--line);
+  color:rgba(34,40,49,.62);
+  font-size:13px;
 }
-.route {
-  display: grid;
-  grid-template-columns: 112px 1fr;
-  gap: 14px;
-  padding: 16px;
-  border-radius: 20px;
-  border: 1px solid var(--line);
-  background: white;
-}
-.route strong {
-  color: var(--deep);
-}
-.mini {
-  font-size: 13px;
-  color: rgba(34, 40, 49, .62);
-}
-.footer {
-  margin-top: 50px;
-  padding: 34px 0 44px;
-  border-top: 1px solid var(--line);
-  color: rgba(34, 40, 49, .62);
-  font-size: 13px;
-}
-.footer a {
-  margin-right: 14px;
-}
-@media (max-width: 760px) {
-  .grid.three,
-  .grid.two {
-    grid-template-columns: 1fr;
-  }
-  .header-row {
-    align-items: flex-start;
-  }
-  .back {
-    font-size: 13px;
-    padding: 0 12px;
-  }
-  .hero {
-    padding-top: 52px;
-  }
-  .route {
-    grid-template-columns: 1fr;
-  }
+.footer a{margin-right:14px}
+@media(max-width:760px){
+  .nav{align-items:flex-start; flex-direction:column; padding:14px 0}
+  .grid.three,.grid.two{grid-template-columns:1fr}
+  .kv div{grid-template-columns:1fr}
+  .hero{padding-top:36px}
 }
 </style>
 </head>
 <body>
-  <header class="site-header">
-    <div class="page header-row">
-      <a class="logo" href="/">
-        <span class="logo-mark">小</span>
-        <span>スマホ小銭研究所</span>
-      </a>
-      <a class="back" href="/">← 前へ戻る</a>
-    </div>
-  </header>
+<header class="header">
+  <div class="container nav">
+    <a class="brand" href="/"><span class="logo-dot">小</span><span>スマホ小銭研究所</span></a>
+    <nav class="navlinks" aria-label="主要メニュー">
+      <a href="/">ホーム</a>
+      <a href="/mobile-sim/">スマホ料金</a>
+      <a href="/point-site/">ポイ活</a>
+      <a href="/account-opening/">口座開設</a>
+      <a href="/credit-card/">クレカ</a>
+    </nav>
+  </div>
+</header>
+<div class="container top-return">
+  <a class="home-return" href="/">← ホームへ戻る</a>
+</div>
+<main>
 
-  <main class="page">
-    <section class="hero">
-      <span class="badge">クレカ発行前チェック</span>
-      <h1>クレカを作る前に、条件だけ見る。</h1>
-      <p class="lead">
-        クレジットカードは、公式キャンペーン・ポイントサイト経由・提携リンクで特典や対象条件が変わることがあります。
-        年会費、還元、発行条件、注意点を先に確認します。
-      </p>
-      <div class="notice">
-        PR・アフィリエイトリンクを含む場合があります。カード発行や利用を過度にすすめるページではありません。
-        審査、年会費、特典、利用条件は必ず公式サイトで確認してください。
-      </div>
-    </section>
+<section class="hero">
+  <div class="container">
+    <span class="pill">クレカ発行前チェック</span>
+    <h1>クレカを作る前に、条件だけ見る。</h1>
+    <p class="lead">クレジットカードは、公式キャンペーン・ポイントサイト経由・提携リンクで特典や対象条件が変わることがあります。年会費、還元、発行条件、注意点を先に確認します。</p>
+    <p class="note">PR・アフィリエイトリンクを含む場合があります。カード発行や利用を過度にすすめるページではありません。審査、年会費、特典、利用条件は必ず公式サイトで確認してください。</p>
+  </div>
+</section>
+<section class="section">
+  <div class="container grid three">
+    <article class="card"><span class="tag">特典</span><h2>入会特典</h2><p>ポイント額だけでなく、利用条件と付与時期を確認します。</p></article>
+    <article class="card"><span class="tag">紹介</span><h2>紹介制度</h2><p>サイト掲載・SNS拡散が可能かを先に確認します。</p></article>
+    <article class="card"><span class="tag">費用</span><h2>年会費</h2><p>初年度無料、条件付き無料、有料を分けて整理します。</p></article>
+  </div>
+</section>
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">申し込み前チェック</h2>
+    <ul class="check-list">
+      <li>年会費と無料条件を確認したか</li>
+      <li>発行だけで特典対象か、利用金額条件があるか</li>
+      <li>キャッシング枠やリボ設定が不要なら外せるか</li>
+      <li>過去に同じカードを作ったことがないか</li>
+      <li>ポイントサイト経由の場合、ブラウザ移動やアプリ遷移で計測が切れないか</li>
+    </ul>
+  </div>
+</section>
 
-    <section class="section">
-      <h2 class="section-title">見るポイントは3つだけ</h2>
-      <div class="grid three">
-        <article class="card">
-          <h3>年会費</h3>
-          <p>無料か、条件付き無料か、有料か。初年度だけ無料のカードもあるので確認します。</p>
-        </article>
-        <article class="card">
-          <h3>特典条件</h3>
-          <p>発行だけで対象か、利用金額が必要か、期限内の利用が必要かを見ます。</p>
-        </article>
-        <article class="card">
-          <h3>経由先</h3>
-          <p>公式、ポイントサイト、提携リンクのどこが条件に合うかを比べます。</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2 class="section-title">候補の見方</h2>
-      <div class="routes">
-        <div class="route">
-          <strong>日常用</strong>
-          <span>スマホ決済、コンビニ、ネット通販など、普段の支払いと相性が良いかを確認します。</span>
-        </div>
-        <div class="route">
-          <strong>年会費重視</strong>
-          <span>無料・条件付き無料・有料を分けて、維持コストを先に見ます。</span>
-        </div>
-        <div class="route">
-          <strong>キャンペーン重視</strong>
-          <span>発行後の利用条件、対象外、特典付与時期を確認してから申し込みます。</span>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2 class="section-title">申し込み前チェック</h2>
-      <ul class="check-list">
-        <li>年会費と無料条件を確認したか</li>
-        <li>発行だけで特典対象か、利用金額条件があるか</li>
-        <li>キャッシング枠やリボ設定が不要なら外せるか</li>
-        <li>過去に同じカードを作ったことがないか</li>
-        <li>ポイントサイト経由の場合、ブラウザ移動やアプリ遷移で計測が切れないか</li>
-      </ul>
-    </section>
-
-    <section class="section">
-      <div class="card">
-        <h2>スマホ小銭研究所の方針</h2>
-        <p>
-          クレカは高額特典だけで選ばず、使い道・維持費・条件を先に確認します。
-          特典のために無理な利用をするのではなく、自分の支払いに合うものだけを候補にします。
-        </p>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="page">
-      <a href="/policy/">PR表記</a>
-      <a href="/privacy/">プライバシー</a>
-      <a href="/about/">このサイトについて</a>
-      <p>© スマホ小銭研究所</p>
-    </div>
-  </footer>
+</main>
+<footer class="footer">
+  <div class="container">
+    <a href="/policy/">PR表記</a>
+    <a href="/privacy/">プライバシー</a>
+    <a href="/about/">このサイトについて</a>
+    <p>© スマホ小銭研究所</p>
+  </div>
+</footer>
 </body>
 </html>

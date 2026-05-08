@@ -1,80 +1,264 @@
 <!doctype html>
 <html lang="ja">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>povo｜スマホ料金条件チェック</title>
-<meta name="description" content="povoのキャンペーン、月額、対象外条件を申し込み前に確認するページ。">
-<meta name="robots" content="index,follow,max-image-preview:large">
-<link rel="canonical" href="https://smart-kozeni.com/mobile-sim/povo/">
-<meta property="og:site_name" content="スマホ小銭研究所">
-<meta property="og:title" content="povo｜スマホ料金条件チェック">
-<meta property="og:description" content="povoのキャンペーン、月額、対象外条件を申し込み前に確認するページ。">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://smart-kozeni.com/mobile-sim/povo/">
-<meta property="og:locale" content="ja_JP">
-<meta property="og:image" content="https://smart-kozeni.com/assets/images/ogp.png">
-<meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="/assets/images/icon-192.png">
-<meta name="theme-color" content="#f7f3ea">
-<link rel="stylesheet" href="/assets/style.v36.css">
-<link rel="stylesheet" href="/assets/kozeni-ia.v36.10.css">
-<script defer src="/assets/script.v36.js"></script>
-<script defer src="/assets/kozeni-ia.v36.10.js"></script>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-V140MZBPKB"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-V140MZBPKB');</script>
-<script>window.clarity=window.clarity||function(){(window.clarity.q=window.clarity.q||[]).push(arguments)};(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","wmurko5bi1");</script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>povo｜スマホ料金条件チェック</title>
+  <meta name="description" content="povoの申込前に対象条件・紹介制度・公式条件を確認するページです。">
+  <link rel="canonical" href="https://smart-kozeni.com/mobile-sim/povo/">
+  <meta property="og:title" content="povo｜スマホ料金条件チェック">
+  <meta property="og:description" content="povoの申込前に対象条件・紹介制度・公式条件を確認するページです。">
+  <meta property="og:url" content="https://smart-kozeni.com/mobile-sim/povo/">
+  <meta property="og:type" content="website">
+  <style>
+:root{
+  --mint:#4DBD8C;
+  --deep:#228C62;
+  --pale:#E9F5EF;
+  --gold:#F2C94C;
+  --light:#F2F6F4;
+  --ink:#222831;
+  --muted:#66736E;
+  --line:rgba(34,140,98,.16);
+  --white:#fff;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:"Noto Sans JP", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color:var(--ink);
+  background:linear-gradient(180deg,#F7FCFA 0%,#FFFFFF 44%,#F7FCFA 100%);
+  line-height:1.78;
+}
+a{color:inherit}
+.container{width:min(1040px, calc(100% - 32px)); margin:0 auto}
+.header{
+  position:sticky;
+  top:0;
+  z-index:10;
+  background:rgba(255,255,255,.9);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);
+}
+.nav{
+  min-height:64px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+}
+.brand{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  text-decoration:none;
+  font-weight:900;
+  letter-spacing:.02em;
+}
+.logo-dot{
+  width:30px;
+  height:30px;
+  border-radius:11px;
+  display:inline-grid;
+  place-items:center;
+  background:linear-gradient(135deg,var(--mint),var(--deep));
+  color:white;
+  font-size:15px;
+}
+.navlinks{
+  display:flex;
+  gap:14px;
+  align-items:center;
+  font-size:14px;
+  color:var(--muted);
+  flex-wrap:wrap;
+}
+.navlinks a{text-decoration:none}
+.top-return{
+  padding:20px 0 0;
+}
+.home-return{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:42px;
+  padding:0 16px;
+  border-radius:999px;
+  border:1px solid var(--line);
+  background:rgba(255,255,255,.92);
+  box-shadow:0 12px 32px rgba(34,140,98,.08);
+  color:var(--deep);
+  text-decoration:none;
+  font-size:14px;
+  font-weight:900;
+}
+.hero{padding:44px 0 34px}
+.pill{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:8px 12px;
+  border-radius:999px;
+  background:var(--pale);
+  color:var(--deep);
+  font-weight:900;
+  font-size:13px;
+}
+h1{
+  margin:18px 0 14px;
+  font-size:clamp(34px,6vw,64px);
+  line-height:1.08;
+  letter-spacing:-.05em;
+}
+.lead{
+  margin:0;
+  max-width:740px;
+  color:var(--muted);
+  font-size:clamp(16px,2.2vw,20px);
+}
+.note{
+  margin-top:20px;
+  color:var(--muted);
+  font-size:14px;
+}
+.section{padding:26px 0}
+.section-title{
+  margin:0 0 18px;
+  font-size:clamp(24px,4vw,38px);
+  line-height:1.25;
+  letter-spacing:-.03em;
+}
+.grid{
+  display:grid;
+  gap:16px;
+}
+.grid.three{grid-template-columns:repeat(3,1fr)}
+.grid.two{grid-template-columns:repeat(2,1fr)}
+.card{
+  display:block;
+  text-decoration:none;
+  background:rgba(255,255,255,.9);
+  border:1px solid var(--line);
+  border-radius:28px;
+  padding:24px;
+  box-shadow:0 18px 60px rgba(34,140,98,.08);
+}
+.card:hover{transform:translateY(-1px)}
+.card h2,.card h3{margin:0 0 10px;line-height:1.35}
+.card p{margin:0;color:var(--muted)}
+.tag{
+  display:inline-flex;
+  align-items:center;
+  margin-bottom:12px;
+  padding:5px 10px;
+  border-radius:999px;
+  background:var(--light);
+  color:var(--deep);
+  font-size:12px;
+  font-weight:900;
+}
+.kv{
+  display:grid;
+  gap:10px;
+  margin-top:18px;
+}
+.kv div{
+  display:grid;
+  grid-template-columns:120px 1fr;
+  gap:12px;
+  padding:12px 0;
+  border-bottom:1px solid rgba(34,140,98,.12);
+}
+.kv span:first-child{
+  color:var(--muted);
+  font-size:13px;
+}
+.list{
+  margin:16px 0 0;
+  padding-left:1.2em;
+  color:var(--muted);
+}
+.check-list{
+  display:grid;
+  gap:12px;
+  margin:0;
+  padding:0;
+  list-style:none;
+}
+.check-list li{
+  padding:14px 16px;
+  border-radius:18px;
+  background:var(--light);
+  border:1px solid var(--line);
+}
+.footer{
+  margin-top:52px;
+  padding:34px 0 44px;
+  border-top:1px solid var(--line);
+  color:rgba(34,40,49,.62);
+  font-size:13px;
+}
+.footer a{margin-right:14px}
+@media(max-width:760px){
+  .nav{align-items:flex-start; flex-direction:column; padding:14px 0}
+  .grid.three,.grid.two{grid-template-columns:1fr}
+  .kv div{grid-template-columns:1fr}
+  .hero{padding-top:36px}
+}
+</style>
 </head>
-<body><a class="skip-link" href="#main">本文へ移動</a>
-<button class="menu-trigger" type="button" data-menu-toggle aria-label="メニューを開閉">メニュー</button>
-<div class="site-shell">
-<aside class="side-menu" aria-label="サイト構造">
-  <a class="side-brand" href="/"><span class="side-brand-mark">小</span><span>スマホ小銭研究所</span></a>
-  <p class="side-caption">条件を見て、対象なら拾う。迷ったら大きな入口から選ぶ。</p>
-  <div class="side-group">
-    <p class="side-group-title">4つの入口</p>
-    <a class="side-link" href="/"><span>ホーム</span><span>全体</span></a>
-    <a class="side-link is-current" href="/mobile-sim/"><span>スマホ料金を見直す</span><span>重点</span></a>
-    <a class="side-link" href="/point-site/"><span>小銭を稼ぐ</span><span>ポイ活</span></a>
-    <a class="side-link" href="/account-opening/"><span>新規口座を開く</span><span>準備中</span></a>
-    <a class="side-link" href="/credit-card/"><span>クレカを作る</span><span>準備中</span></a>
+<body>
+<header class="header">
+  <div class="container nav">
+    <a class="brand" href="/"><span class="logo-dot">小</span><span>スマホ小銭研究所</span></a>
+    <nav class="navlinks" aria-label="主要メニュー">
+      <a href="/">ホーム</a>
+      <a href="/mobile-sim/">スマホ料金</a>
+      <a href="/point-site/">ポイ活</a>
+      <a href="/account-opening/">口座開設</a>
+      <a href="/credit-card/">クレカ</a>
+    </nav>
   </div>
-  <div class="side-group">
-    <p class="side-group-title">すぐ見る</p>
-    <a class="side-link" href="/mobile-sim/rakuten-mobile/"><span>楽天モバイル</span><span>紹介</span></a>
-    <a class="side-link" href="/mobile-sim/ahamo/"><span>ahamo</span><span>紹介</span></a>
-    <a class="side-link" href="/mobile-sim/linemo/"><span>LINEMO</span><span>紹介</span></a>
-    <a class="side-link" href="/point-site/app-games/"><span>ゲーム案件</span><span>ポイ活</span></a>
-    <a class="side-link" href="/tiktok-lite/"><span>TikTok Lite</span><span>条件</span></a>
-  </div>
-  <div class="side-group">
-    <p class="side-group-title">サイト情報</p>
-    <a class="side-link" href="/policy/"><span>PR表記</span><span>必読</span></a>
-    <a class="side-link" href="/about/"><span>このサイトについて</span><span>方針</span></a>
-    <a class="side-link" href="/privacy/"><span>プライバシー</span><span>規約</span></a>
-  </div>
-  <p class="side-note">紹介リンク・PRを含む場合があります。報酬額や条件は変わるため、最後は公式画面で確認します。</p>
-</aside>
-<div class="page-main">
-<header class="site-top">
-  <a class="brand" href="/" aria-label="スマホ小銭研究所 ホーム"><span class="brand-mark">小</span><span>スマホ小銭研究所</span></a>
-  <nav class="nav" aria-label="主要ナビゲーション">
-    <a href="/mobile-sim/">スマホ料金</a>
-    <a href="/point-site/">ポイ活</a>
-    <a href="/account-opening/">口座開設</a>
-    <a href="/credit-card/">クレカ</a>
-  </nav>
 </header>
-<main id="main">
-<section class="hero"><p class="eyebrow">MOBILE CHECK</p><h1>povo</h1><p class="lead">おともだち紹介の条件チェック。細かい金額より、対象条件と失敗しやすい点を先に見る。</p><div class="hero-actions"><a class="primary-btn" href="#check">チェックする</a><a class="secondary-btn" href="/mobile-sim/">候補一覧へ</a></div></section>
-<section class="section detail-layout" id="check">
-  <article class="detail-panel"><p class="eyebrow">POINT</p><h2>見るポイント</h2><p>現金・ポイントではなくデータボーナス型。軽く試したい人向け。</p><ul class="check-list"><li>公式キャンペーンページで現在の特典を確認</li><li>紹介コード入力、SIM有効化、同一名義対象外、付与データの期限</li><li>申込前に対象外条件、期限、併用可否を見る</li><li>紹介リンクを使う場合は、開通まで同じ導線で進む</li></ul></article>
-  <aside class="detail-panel"><p class="eyebrow">MEMO</p><h3>データボーナス</h3><p class="note">報酬・特典は変動します。ここでは判断の順番を整理し、最終確認は公式画面で行います。</p><a class="primary-btn" href="/mobile-sim/">他の候補も見る</a></aside>
+<div class="container top-return">
+  <a class="home-return" href="/">← ホームへ戻る</a>
+</div>
+<main>
+
+<section class="hero">
+  <div class="container">
+    <span class="pill">MOBILE CHECK</span>
+    <h1>povo</h1>
+    <p class="lead">おともだち紹介の条件チェック。細かい金額より、対象条件と失敗しやすい点を先に見る。</p>
+  </div>
 </section>
-</main><footer class="site-footer">
-  <div><strong>スマホ小銭研究所</strong><p>条件を見て、対象なら拾う。</p></div>
-  <nav aria-label="フッター"><a href="/policy/">PR表記</a><a href="/privacy/">プライバシー</a><a href="/about/">このサイトについて</a></nav>
+<section class="section">
+  <div class="container grid two">
+    <article class="card">
+      <span class="tag">POINT</span>
+      <h2>見るポイント</h2>
+      <p>現金・ポイントではなくデータボーナス型。軽く試したい人向け。</p>
+      <ul class="list">
+        <li>公式キャンペーンページで現在の特典を確認</li><li>紹介コード入力、SIM有効化、同一名義対象外、付与データの期限</li><li>申込前に対象外条件、期限、併用可否を見る</li><li>紹介リンクを使う場合は、開通まで同じ導線で進む</li>
+      </ul>
+    </article>
+    <article class="card">
+      <span class="tag">MEMO</span>
+      <h2>データボーナス</h2>
+      <p>報酬・特典は変動します。ここでは判断の順番を整理し、最終確認は公式画面で行います。</p>
+    </article>
+  </div>
+</section>
+
+</main>
+<footer class="footer">
+  <div class="container">
+    <a href="/policy/">PR表記</a>
+    <a href="/privacy/">プライバシー</a>
+    <a href="/about/">このサイトについて</a>
+    <p>© スマホ小銭研究所</p>
+  </div>
 </footer>
-</div></div>
-</body></html>
+</body>
+</html>
