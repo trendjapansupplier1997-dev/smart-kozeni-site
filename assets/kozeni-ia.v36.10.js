@@ -18,8 +18,11 @@
   function isHome(path) { return path === '/' || path === '/index.html/'; }
 
   function fallbackHref(path) {
+    if (path.indexOf('/tiktok-lite/earn/') === 0) return '/tiktok-lite/';
     if (path.indexOf('/tiktok-lite/') === 0) return '/point-site/';
-    if (path.indexOf('/point-site/moppy/earn/') === 0) return '/point-site/moppy/';
+    if (path.indexOf('/point-site/') === 0 && path.indexOf('/earn/') > -1) {
+      return path.replace(/earn\/$/, '');
+    }
     if (path.indexOf('/point-site/') === 0 && path !== '/point-site/') return '/point-site/';
     if (path.indexOf('/mobile-sim/') === 0 && path !== '/mobile-sim/') return '/mobile-sim/';
     if (path === '/point-site/' || path === '/mobile-sim/' || path === '/account-opening/' || path === '/credit-card/') return '/';

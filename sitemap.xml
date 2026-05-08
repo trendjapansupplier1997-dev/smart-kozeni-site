@@ -76,13 +76,19 @@
     <loc>https://smart-kozeni.com/tiktok-lite/</loc>
     <lastmod>2026-05-08</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://smart-kozeni.com/tiktok-lite/earn/</loc>
+    <lastmod>2026-05-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
   </url>
   <url>
     <loc>https://smart-kozeni.com/point-site/moppy/</loc>
     <lastmod>2026-05-08</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://smart-kozeni.com/point-site/moppy/earn/</loc>
@@ -97,10 +103,22 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://smart-kozeni.com/point-site/hapitas/earn/</loc>
+    <lastmod>2026-05-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
     <loc>https://smart-kozeni.com/point-site/chobirich/</loc>
     <lastmod>2026-05-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://smart-kozeni.com/point-site/chobirich/earn/</loc>
+    <lastmod>2026-05-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
   </url>
   <url>
     <loc>https://smart-kozeni.com/point-site/trima/</loc>
@@ -109,10 +127,22 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://smart-kozeni.com/point-site/trima/earn/</loc>
+    <lastmod>2026-05-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
     <loc>https://smart-kozeni.com/point-site/pointtown/</loc>
     <lastmod>2026-05-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://smart-kozeni.com/point-site/pointtown/earn/</loc>
+    <lastmod>2026-05-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
   </url>
   <url>
     <loc>https://smart-kozeni.com/point-site/kurashiru-reward/</loc>
@@ -121,16 +151,34 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://smart-kozeni.com/point-site/kurashiru-reward/earn/</loc>
+    <lastmod>2026-05-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
     <loc>https://smart-kozeni.com/point-site/powl/</loc>
     <lastmod>2026-05-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://smart-kozeni.com/point-site/powl/earn/</loc>
+    <lastmod>2026-05-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
     <loc>https://smart-kozeni.com/point-site/point-income/</loc>
     <lastmod>2026-05-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://smart-kozeni.com/point-site/point-income/earn/</loc>
+    <lastmod>2026-05-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
   </url>
   <url>
     <loc>https://smart-kozeni.com/account-opening/</loc>
