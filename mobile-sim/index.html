@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>スマホ・回線見直し｜格安SIM・短期Wi-Fi・条件確認</title>
-  <meta name="description" content="楽天モバイル、ahamo、LINEMOなどのスマホ料金を中心に、短期Wi-Fi・回線見直しも条件確認前提で整理します。">
+  <title>スマホ・回線30秒診断｜料金・Wi-Fiの公式条件チェック</title>
+  <meta name="description" content="スマホ代、格安SIM、工事不要Wi-Fi、開通待ち回線を、現在の月額・データ使用量・家Wi-Fi状況から軽く診断して公式条件へ案内します。">
   <link rel="canonical" href="https://smart-kozeni.com/mobile-sim/">
-  <meta property="og:title" content="スマホ・回線見直し｜格安SIM・短期Wi-Fi・条件確認">
-  <meta property="og:description" content="楽天モバイル、ahamo、LINEMOなどのスマホ料金を中心に、短期Wi-Fi・回線見直しも条件確認前提で整理します。">
+  <meta property="og:title" content="スマホ・回線30秒診断｜料金・Wi-Fiの公式条件チェック">
+  <meta property="og:description" content="スマホ代、格安SIM、工事不要Wi-Fi、開通待ち回線を、現在の月額・データ使用量・家Wi-Fi状況から軽く診断して公式条件へ案内します。">
   <meta property="og:url" content="https://smart-kozeni.com/mobile-sim/">
   <meta property="og:type" content="website">
   <style>
@@ -197,87 +197,142 @@ h1{
   line-height: 1.55;
 }
 
-/* kozeni-line-diagnosis-v38:start */
+
+/* kozeni-line-diagnosis-v38-1:start */
 .kozeni-line-check {
-  margin: 1.1rem 0 1.35rem;
-  padding: clamp(1rem, 2.5vw, 1.35rem);
-  border-radius: 1.45rem;
+  margin: 1.1rem 0 1.45rem;
+  padding: clamp(1rem, 2.4vw, 1.45rem);
+  border-radius: 1.55rem;
   border: 1px solid rgba(34, 140, 98, .14);
   background:
-    radial-gradient(circle at 14% 12%, rgba(77, 189, 140, .16), transparent 28%),
-    linear-gradient(135deg, rgba(233, 245, 239, .78), rgba(255, 255, 255, .96));
-  box-shadow: 0 16px 38px rgba(34, 40, 49, .055);
+    radial-gradient(circle at 12% 10%, rgba(77, 189, 140, .18), transparent 28%),
+    radial-gradient(circle at 92% 18%, rgba(242, 201, 76, .13), transparent 24%),
+    linear-gradient(135deg, rgba(233, 245, 239, .82), rgba(255, 255, 255, .98));
+  box-shadow: 0 18px 44px rgba(34, 40, 49, .06);
+}
+
+.kozeni-line-check * {
+  box-sizing: border-box;
 }
 
 .kozeni-line-check__head {
   display: grid;
-  gap: .42rem;
+  gap: .44rem;
   margin-bottom: 1rem;
 }
 
-.kozeni-line-check__label {
+.kozeni-line-check__eyebrow {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  gap: .38rem;
   margin: 0;
+  padding: .3rem .58rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .72);
   color: #228C62;
-  font-size: .78rem;
-  font-weight: 900;
-  letter-spacing: .09em;
+  font-size: .75rem;
+  font-weight: 950;
+  letter-spacing: .08em;
+}
+
+.kozeni-line-check__eyebrow::before {
+  content: "";
+  width: .48rem;
+  height: .48rem;
+  border-radius: 999px;
+  background: #4DBD8C;
+  box-shadow: 0 0 0 .22rem rgba(77, 189, 140, .14);
 }
 
 .kozeni-line-check__head h2 {
   margin: 0;
   color: #222831;
-  font-size: clamp(1.34rem, 2.6vw, 1.95rem);
-  line-height: 1.35;
-  letter-spacing: -.035em;
+  font-size: clamp(1.38rem, 2.7vw, 2rem);
+  line-height: 1.32;
+  letter-spacing: -.04em;
 }
 
 .kozeni-line-check__lead {
-  max-width: 48rem;
+  max-width: 54rem;
   margin: 0;
   color: rgba(34, 40, 49, .68);
   font-size: .94rem;
   line-height: 1.75;
 }
 
+.kozeni-line-check__meter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .42rem;
+  margin: .16rem 0 .1rem;
+  padding: 0;
+  list-style: none;
+}
+
+.kozeni-line-check__meter li {
+  display: inline-flex;
+  align-items: center;
+  min-height: 30px;
+  padding: .34rem .56rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .66);
+  color: rgba(34, 40, 49, .58);
+  font-size: .74rem;
+  font-weight: 900;
+}
+
+.kozeni-line-check__meter li[data-active="true"] {
+  background: rgba(77, 189, 140, .17);
+  color: #116544;
+}
+
 .kozeni-line-check__body {
   display: grid;
-  grid-template-columns: minmax(0, 1.05fr) minmax(280px, .95fr);
-  gap: .85rem;
-  align-items: stretch;
+  grid-template-columns: minmax(0, 1.06fr) minmax(300px, .94fr);
+  gap: .92rem;
+  align-items: start;
 }
 
 .kozeni-line-check__questions {
   display: grid;
-  gap: .72rem;
+  gap: .66rem;
 }
 
 .kozeni-line-check__group {
   margin: 0;
-  padding: .78rem;
+  padding: .76rem;
   border: 1px solid rgba(34, 40, 49, .07);
-  border-radius: 1.08rem;
-  background: rgba(255, 255, 255, .78);
+  border-radius: 1.12rem;
+  background: rgba(255, 255, 255, .76);
 }
 
 .kozeni-line-check__group legend {
-  padding: 0 .14rem;
-  color: rgba(34, 40, 49, .78);
+  padding: 0 .16rem;
+  color: rgba(34, 40, 49, .82);
   font-size: .82rem;
-  font-weight: 850;
+  font-weight: 900;
+}
+
+.kozeni-line-check__hint {
+  margin: .14rem 0 0;
+  color: rgba(34, 40, 49, .5);
+  font-size: .74rem;
+  line-height: 1.55;
 }
 
 .kozeni-line-check__choices {
   display: flex;
   flex-wrap: wrap;
   gap: .42rem;
-  margin-top: .54rem;
+  margin-top: .52rem;
 }
 
 .kozeni-line-check__choice {
   display: inline-flex;
-  align-items: center;
   min-height: 38px;
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .kozeni-line-check__choice input {
@@ -289,44 +344,70 @@ h1{
 .kozeni-line-check__choice span {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   min-height: 38px;
   padding: .54rem .72rem;
   border-radius: 999px;
   border: 1px solid rgba(34, 40, 49, .09);
-  background: rgba(242, 246, 244, .76);
+  background: rgba(242, 246, 244, .78);
   color: rgba(34, 40, 49, .72);
-  font-size: .82rem;
-  font-weight: 800;
+  font-size: .81rem;
+  font-weight: 850;
   line-height: 1.2;
+  transition: transform .14s ease, border-color .14s ease, background .14s ease, color .14s ease, box-shadow .14s ease;
+}
+
+.kozeni-line-check__choice input:focus-visible + span {
+  outline: 3px solid rgba(77, 189, 140, .28);
+  outline-offset: 2px;
+}
+
+.kozeni-line-check__choice:hover span {
+  transform: translateY(-1px);
 }
 
 .kozeni-line-check__choice input:checked + span {
-  border-color: rgba(34, 140, 98, .36);
+  border-color: rgba(34, 140, 98, .38);
   background: rgba(77, 189, 140, .16);
   color: #116544;
-  box-shadow: inset 0 0 0 1px rgba(34, 140, 98, .08);
+  box-shadow: inset 0 0 0 1px rgba(34, 140, 98, .08), 0 8px 18px rgba(34, 140, 98, .08);
 }
 
 .kozeni-line-check__result {
+  position: sticky;
+  top: .9rem;
   display: grid;
-  align-content: start;
-  gap: .68rem;
+  gap: .72rem;
   padding: 1rem;
-  border-radius: 1.18rem;
+  border-radius: 1.22rem;
   border: 1px solid rgba(34, 140, 98, .14);
-  background: rgba(255, 255, 255, .88);
-  box-shadow: 0 12px 28px rgba(34, 40, 49, .045);
+  background: rgba(255, 255, 255, .91);
+  box-shadow: 0 14px 32px rgba(34, 40, 49, .052);
 }
 
-.kozeni-line-check__result-label {
-  width: fit-content;
+.kozeni-line-check__status {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .36rem;
+  align-items: center;
+}
+
+.kozeni-line-check__badge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
   margin: 0;
-  padding: .28rem .56rem;
+  padding: .28rem .58rem;
   border-radius: 999px;
   background: rgba(242, 201, 76, .2);
   color: #6f5200;
-  font-size: .74rem;
-  font-weight: 900;
+  font-size: .72rem;
+  font-weight: 950;
+}
+
+.kozeni-line-check__badge--green {
+  background: rgba(77, 189, 140, .15);
+  color: #116544;
 }
 
 .kozeni-line-check__result h3 {
@@ -334,20 +415,38 @@ h1{
   color: #222831;
   font-size: 1.18rem;
   line-height: 1.45;
-  letter-spacing: -.02em;
+  letter-spacing: -.025em;
 }
 
+.kozeni-line-check__verdict,
 .kozeni-line-check__result p {
   margin: 0;
   color: rgba(34, 40, 49, .66);
-  font-size: .88rem;
+  font-size: .87rem;
   line-height: 1.75;
 }
 
-.kozeni-line-check__points {
+.kozeni-line-check__verdict {
+  padding: .66rem .74rem;
+  border-radius: .92rem;
+  background: rgba(233, 245, 239, .56);
+  color: rgba(34, 40, 49, .72);
+  font-weight: 750;
+}
+
+.kozeni-line-check__section-title {
+  margin: .06rem 0 -.2rem;
+  color: rgba(34, 40, 49, .54);
+  font-size: .72rem;
+  font-weight: 950;
+  letter-spacing: .08em;
+}
+
+.kozeni-line-check__points,
+.kozeni-line-check__candidates {
   display: grid;
-  gap: .36rem;
-  margin: .05rem 0;
+  gap: .38rem;
+  margin: 0;
   padding: 0;
   list-style: none;
 }
@@ -362,19 +461,39 @@ h1{
 
 .kozeni-line-check__points li::before {
   content: "";
-  width: .44rem;
-  height: .44rem;
-  flex: 0 0 .44rem;
-  margin-top: .44rem;
+  width: .43rem;
+  height: .43rem;
+  flex: 0 0 .43rem;
+  margin-top: .43rem;
   border-radius: 999px;
   background: #4DBD8C;
+}
+
+.kozeni-line-check__candidate {
+  display: grid;
+  gap: .16rem;
+  padding: .62rem .68rem;
+  border-radius: .94rem;
+  border: 1px solid rgba(34, 40, 49, .07);
+  background: rgba(242, 246, 244, .55);
+}
+
+.kozeni-line-check__candidate strong {
+  color: #222831;
+  font-size: .84rem;
+}
+
+.kozeni-line-check__candidate span {
+  color: rgba(34, 40, 49, .6);
+  font-size: .76rem;
+  line-height: 1.55;
 }
 
 .kozeni-line-check__actions {
   display: flex;
   flex-wrap: wrap;
-  gap: .52rem;
-  margin-top: .22rem;
+  gap: .5rem;
+  margin-top: .06rem;
 }
 
 .kozeni-line-check__button {
@@ -382,10 +501,10 @@ h1{
   align-items: center;
   justify-content: center;
   min-height: 42px;
-  padding: .72rem .96rem;
+  padding: .72rem .95rem;
   border-radius: 999px;
-  font-size: .86rem;
-  font-weight: 900;
+  font-size: .84rem;
+  font-weight: 950;
   line-height: 1;
   text-decoration: none;
 }
@@ -402,30 +521,75 @@ h1{
   color: #116544;
 }
 
+.kozeni-line-check__button--subtle {
+  border: 1px solid rgba(34, 40, 49, .08);
+  background: rgba(255, 255, 255, .76);
+  color: rgba(34, 40, 49, .68);
+}
+
+.kozeni-line-check__reset {
+  appearance: none;
+  width: fit-content;
+  margin: .04rem 0 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: rgba(34, 140, 98, .86);
+  cursor: pointer;
+  font-size: .76rem;
+  font-weight: 900;
+  text-decoration: underline;
+  text-underline-offset: .18rem;
+}
+
 .kozeni-line-check__note {
   color: rgba(34, 40, 49, .5) !important;
-  font-size: .76rem !important;
+  font-size: .74rem !important;
   line-height: 1.65 !important;
+}
+
+.kozeni-line-check__noscript {
+  margin: .75rem 0 0;
+  padding: .72rem .84rem;
+  border-radius: .9rem;
+  background: rgba(242, 201, 76, .16);
+  color: rgba(34, 40, 49, .72);
+  font-size: .82rem;
+  line-height: 1.65;
 }
 
 .kozeni-mini-note--line-ready strong {
   color: #228C62;
 }
 
-@media (max-width: 880px) {
+@media (max-width: 900px) {
   .kozeni-line-check__body {
     grid-template-columns: 1fr;
+  }
+
+  .kozeni-line-check__result {
+    position: static;
   }
 }
 
 @media (max-width: 560px) {
+  .kozeni-line-check {
+    margin-left: -.1rem;
+    margin-right: -.1rem;
+  }
+
+  .kozeni-line-check__choices {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
   .kozeni-line-check__choice,
   .kozeni-line-check__choice span,
   .kozeni-line-check__button {
     width: 100%;
   }
 }
-/* kozeni-line-diagnosis-v38:end */
+/* kozeni-line-diagnosis-v38-1:end */
 </style>
   <link rel="stylesheet" href="/assets/kozeni-brand.v1.css?v=brand1">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/icon-32.png?v=xicon1">
@@ -463,64 +627,108 @@ h1{
 <!-- kozeni-mobile-sim-v37-2:end -->
         <div class="brand-keywords"><span>月額</span><span>紹介特典</span><span>MNP条件</span><span>公式条件</span></div>
       </section>
-<!-- kozeni-line-diagnosis-v38:start -->
-<section class="kozeni-line-check" aria-labelledby="kozeni-line-check-title">
+
+<!-- kozeni-line-diagnosis-v38-1:start -->
+<section class="kozeni-line-check" aria-labelledby="kozeni-line-check-title" data-result="starter">
   <div class="kozeni-line-check__head">
-    <p class="kozeni-line-check__label">30秒チェック</p>
-    <h2 id="kozeni-line-check-title">今の契約から、見るべき公式ページを絞る。</h2>
-    <p class="kozeni-line-check__lead">細かい比較は後でOK。まずは「スマホ代」「家のWi-Fi」「開通待ち」のどれを先に見るかだけ決めます。</p>
+    <p class="kozeni-line-check__eyebrow">30秒チェック</p>
+    <h2 id="kozeni-line-check-title">スマホ代、下げられる余地ある？</h2>
+    <p class="kozeni-line-check__lead">いきなり比較表を読む前に、今の料金・GB・家のネット状況から「まず見るべき公式ページ」を1〜2個に絞ります。</p>
+    <ul class="kozeni-line-check__meter" aria-label="診断で見る項目">
+      <li data-meter="need" data-active="true">悩み</li>
+      <li data-meter="bill" data-active="true">月額</li>
+      <li data-meter="data" data-active="true">GB</li>
+      <li data-meter="home" data-active="true">家Wi-Fi</li>
+      <li data-meter="style" data-active="true">優先条件</li>
+    </ul>
   </div>
 
   <div class="kozeni-line-check__body">
     <div class="kozeni-line-check__questions" role="group" aria-label="スマホ・回線のかんたん診断">
-      <fieldset class="kozeni-line-check__group">
-        <legend>いま一番気になること</legend>
+      <fieldset class="kozeni-line-check__group" data-question="need">
+        <legend>1. いま一番困っていること</legend>
         <div class="kozeni-line-check__choices">
-          <label class="kozeni-line-check__choice"><input type="radio" name="kozeni-line-area" value="phone" checked><span>スマホ代</span></label>
-          <label class="kozeni-line-check__choice"><input type="radio" name="kozeni-line-area" value="wifi"><span>家のWi-Fi</span></label>
-          <label class="kozeni-line-check__choice"><input type="radio" name="kozeni-line-area" value="both"><span>両方</span></label>
-          <label class="kozeni-line-check__choice"><input type="radio" name="kozeni-line-area" value="temporary"><span>引っ越し・開通待ち</span></label>
+          <label class="kozeni-line-check__choice"><input type="radio" name="kozeni-line-need" value="save" checked><span>スマホ代を下げたい</span></label>
+          <label class="kozeni-line-check__choice"><input type="radio" name="kozeni-line-need" value="data"><span>ギガが足りない</span></label>
+          <label class="kozeni-line-check__choice"><input type="radio" name="kozeni-line-need" value="wifi"><span>家のWi-Fi</span></label>
+          <label class="kozeni-line-check__choice"><input type="radio" name="kozeni-line-need" value="temporary"><span>引っ越し・開通待ち</span></label>
+          <label class="kozeni-line-check__choice"><input type="radio" name="kozeni-line-need" value="sub"><span>サブ回線/eSIM</span></label>
         </div>
       </fieldset>
 
-      <fieldset class="kozeni-line-check__group">
-        <legend>スマホの使い方</legend>
+      <fieldset class="kozeni-line-check__group" data-question="bill">
+        <legend>2. いまのスマホ代</legend>
+        <p class="kozeni-line-check__hint">端末代・サブスク込みで分からない場合は「分からない」でOK。</p>
         <div class="kozeni-line-check__choices">
-          <label class="kozeni-line-check__choice"><input type="radio" name="kozeni-line-usage" value="light" checked><span>3〜10GBくらい</span></label>
-          <label class="kozeni-line-check__choice"><input type="radio" name="kozeni-line-usage" value="medium"><span>20〜30GBくらい</span></label>
-          <label class="kozeni-line-check__choice"><input type="radio" name="kozeni-line-usage" value="heavy"><span>月によって大きく変わる</span></label>
-          <label class="kozeni-line-check__choice"><input type="radio" name="kozeni-line-usage" value="sub"><span>サブ回線・eSIM</span></label>
+          <label class="kozeni-line-check__choice"><input type="radio" name="kozeni-line-bill" value="under2000"><span>2,000円未満</span></label>
+          <label class="kozeni-line-check__choice"><input type="radio" name="kozeni-line-bill" value="2000_4000" checked><span>2,000〜4,000円</span></label>
+          <label class="kozeni-line-check__choice"><input type="radio" name="kozeni-line-bill" value="4000_6000"><span>4,000〜6,000円</span></label>
+          <label class="kozeni-line-check__choice"><input type="radio" name="kozeni-line-bill" value="over6000"><span>6,000円以上</span></label>
+          <label class="kozeni-line-check__choice"><input type="radio" name="kozeni-line-bill" value="unknown"><span>分からない</span></label>
         </div>
       </fieldset>
 
-      <fieldset class="kozeni-line-check__group">
-        <legend>家のネット状況</legend>
+      <fieldset class="kozeni-line-check__group" data-question="data">
+        <legend>3. 月のデータ使用量</legend>
+        <p class="kozeni-line-check__hint">Myページやスマホ設定で後から確認できます。迷ったら近いものを選択。</p>
         <div class="kozeni-line-check__choices">
-          <label class="kozeni-line-check__choice"><input type="radio" name="kozeni-line-home" value="ok" checked><span>今は困っていない</span></label>
-          <label class="kozeni-line-check__choice"><input type="radio" name="kozeni-line-home" value="no-construction"><span>工事なしがいい</span></label>
-          <label class="kozeni-line-check__choice"><input type="radio" name="kozeni-line-home" value="waiting"><span>開通までのつなぎ</span></label>
+          <label class="kozeni-line-check__choice"><input type="radio" name="kozeni-line-data" value="under3"><span>3GB以下</span></label>
+          <label class="kozeni-line-check__choice"><input type="radio" name="kozeni-line-data" value="4_10" checked><span>4〜10GB</span></label>
+          <label class="kozeni-line-check__choice"><input type="radio" name="kozeni-line-data" value="11_30"><span>11〜30GB</span></label>
+          <label class="kozeni-line-check__choice"><input type="radio" name="kozeni-line-data" value="over30"><span>30GB以上</span></label>
+          <label class="kozeni-line-check__choice"><input type="radio" name="kozeni-line-data" value="variable"><span>月で大きく変わる</span></label>
+          <label class="kozeni-line-check__choice"><input type="radio" name="kozeni-line-data" value="unknown"><span>分からない</span></label>
+        </div>
+      </fieldset>
+
+      <fieldset class="kozeni-line-check__group" data-question="home">
+        <legend>4. 家のネット状況</legend>
+        <div class="kozeni-line-check__choices">
+          <label class="kozeni-line-check__choice"><input type="radio" name="kozeni-line-home" value="ok" checked><span>安定している</span></label>
+          <label class="kozeni-line-check__choice"><input type="radio" name="kozeni-line-home" value="slow"><span>遅い・不安定</span></label>
+          <label class="kozeni-line-check__choice"><input type="radio" name="kozeni-line-home" value="none"><span>家Wi-Fiなし</span></label>
+          <label class="kozeni-line-check__choice"><input type="radio" name="kozeni-line-home" value="waiting"><span>開通待ち</span></label>
+          <label class="kozeni-line-check__choice"><input type="radio" name="kozeni-line-home" value="no_construction"><span>工事なしがいい</span></label>
+        </div>
+      </fieldset>
+
+      <fieldset class="kozeni-line-check__group" data-question="style">
+        <legend>5. 優先したいこと</legend>
+        <div class="kozeni-line-check__choices">
+          <label class="kozeni-line-check__choice"><input type="radio" name="kozeni-line-style" value="cheap" checked><span>月額の安さ</span></label>
+          <label class="kozeni-line-check__choice"><input type="radio" name="kozeni-line-style" value="simple"><span>分かりやすさ</span></label>
+          <label class="kozeni-line-check__choice"><input type="radio" name="kozeni-line-style" value="support"><span>店舗・家族割</span></label>
+          <label class="kozeni-line-check__choice"><input type="radio" name="kozeni-line-style" value="rakuten"><span>楽天ポイント</span></label>
+          <label class="kozeni-line-check__choice"><input type="radio" name="kozeni-line-style" value="sub"><span>今の回線を残す</span></label>
         </div>
       </fieldset>
     </div>
 
-    <aside class="kozeni-line-check__result" aria-live="polite">
-      <p class="kozeni-line-check__result-label" id="kozeni-line-check-kind">結果</p>
-      <h3 id="kozeni-line-check-result-title">まずはLINEMOなどの小容量プランを確認。</h3>
-      <p id="kozeni-line-check-result-copy">3〜10GB中心なら、毎月の固定費を軽くしやすい候補から見るのが早いです。</p>
-      <ul class="kozeni-line-check__points" id="kozeni-line-check-points">
-        <li>月のGB数が足りるか確認</li>
-        <li>キャンペーンの対象条件を確認</li>
-        <li>最後は公式画面で最新条件を見る</li>
-      </ul>
-      <div class="kozeni-line-check__actions">
-        <a class="kozeni-line-check__button kozeni-line-check__button--primary" id="kozeni-line-check-primary" href="https://www.linemo.jp/plan/" target="_blank" rel="noopener noreferrer">公式条件を見る</a>
-        <a class="kozeni-line-check__button kozeni-line-check__button--ghost" id="kozeni-line-check-secondary" href="/mobile-sim/linemo/">研究所メモを見る</a>
+    <aside class="kozeni-line-check__result" aria-live="polite" aria-atomic="true">
+      <div class="kozeni-line-check__status">
+        <p class="kozeni-line-check__badge kozeni-line-check__badge--green" id="kozeni-line-check-kind">診断結果</p>
+        <p class="kozeni-line-check__badge" id="kozeni-line-check-saving">節約余地：中</p>
       </div>
-      <p class="kozeni-line-check__note">PR・紹介・ASPリンクを使う場合は別途明記します。この診断は公式条件確認への入口です。</p>
+      <h3 id="kozeni-line-check-result-title">小〜中容量なら、まず月額を軽くする候補を確認。</h3>
+      <p class="kozeni-line-check__verdict" id="kozeni-line-check-verdict">4〜10GB中心なら、いきなり大容量プランを見るより、小〜中容量の公式条件を確認する方が早いです。</p>
+
+      <p class="kozeni-line-check__section-title">見る候補</p>
+      <ul class="kozeni-line-check__candidates" id="kozeni-line-check-candidates"></ul>
+
+      <p class="kozeni-line-check__section-title">確認ポイント</p>
+      <ul class="kozeni-line-check__points" id="kozeni-line-check-points"></ul>
+
+      <div class="kozeni-line-check__actions" id="kozeni-line-check-actions"></div>
+      <button type="button" class="kozeni-line-check__reset" id="kozeni-line-check-reset">選択を初期状態に戻す</button>
+      <p class="kozeni-line-check__note">この診断は公式条件確認への入口です。PR・紹介・ASPリンクを使う場合は別途明記します。料金・キャンペーン・提供エリアは公式画面で最終確認してください。</p>
     </aside>
   </div>
+
+  <noscript>
+    <p class="kozeni-line-check__noscript">診断ギミックを使うにはJavaScriptを有効にしてください。迷ったら、まず現在のスマホ代・月間GB・家のWi-Fi状況を確認してから公式ページを見るのがおすすめです。</p>
+  </noscript>
 </section>
-<!-- kozeni-line-diagnosis-v38:end -->
+<!-- kozeni-line-diagnosis-v38-1:end -->
 <!-- brand-list-hero-v1:end -->
 <!-- kozeni-mobile-network-list-v1:start -->
 <section class="kozeni-list-section" aria-label="最初に見るおすすめスマホ・回線">
@@ -622,110 +830,242 @@ h1{
 <nav class="kozeni-fixed-return" aria-label="ホームへ戻る">
   <a href="/">← ホームへ戻る</a>
 </nav>
-<!-- kozeni-line-diagnosis-js-v38:start -->
+
+<!-- kozeni-line-diagnosis-js-v38-1:start -->
 <script>
 (() => {
   const root = document.querySelector('.kozeni-line-check');
   if (!root) return;
 
-  const official = {
-    rakuten: {
-      kind: 'スマホ代',
-      title: '毎月のGBが読めないなら、楽天モバイルを先に確認。',
-      copy: '使う月と使わない月の差が大きい人は、段階制・無制限寄りの公式条件を見るのが早いです。',
-      points: ['3GB・20GB・無制限の境目を確認', 'Rakuten Linkなど通話条件を確認', '紹介やキャンペーン条件は公式画面で再確認'],
-      primaryText: '楽天モバイル公式を見る',
-      primaryUrl: 'https://network.mobile.rakuten.co.jp/fee/saikyo-plan/',
-      secondaryText: '楽天モバイルのメモを見る',
-      secondaryUrl: '/mobile-sim/rakuten-mobile/'
+  const links = {
+    rakuten: 'https://network.mobile.rakuten.co.jp/fee/saikyo-plan/',
+    ahamo: 'https://ahamo.com/plan/index.html',
+    linemo: 'https://www.linemo.jp/plan/',
+    iijmio: 'https://www.iijmio.jp/gigaplan/',
+    mineo: 'https://mineo.jp/price/',
+    uqmobile: 'https://www.uqwimax.jp/mobile/plan/',
+    ymobile: 'https://www.ymobile.jp/plan/',
+    wimax: 'https://www.uqwimax.jp/wimax/plan/',
+    home5g: 'https://www.docomo.ne.jp/home_5g/',
+    rakutenTurbo: 'https://network.mobile.rakuten.co.jp/internet/turbo/fee/',
+    povo: 'https://povo.jp/',
+    list: '/mobile-sim/'
+  };
+
+  const results = {
+    usageUnknown: {
+      kind: 'まず確認', saving: '節約余地：未判定',
+      title: '先に「今の料金」と「月のGB」を確認。',
+      verdict: '使用量が分からないまま乗り換えると、安いけど足りない・大容量だけど払いすぎ、のどちらにも転びます。まずMyページやスマホ設定で使用量を見ます。',
+      candidates: [
+        ['今の契約先のMyページ', '月額、通話料、オプション、データ使用量を確認'],
+        ['スマホ設定のモバイル通信', '直近のデータ使用量をざっくり確認']
+      ],
+      points: ['端末代・保証・サブスクが混ざっていないか見る', '月間GBが3GB以下か、10GB超か、30GB超かを見る', 'キャンペーンの最安表示だけで判断しない'],
+      actions: [['スマホ・回線一覧へ戻る', links.list, 'primary']]
     },
-    ahamo: {
-      kind: 'スマホ代',
-      title: '20〜30GBなら、ahamoを基準に見る。',
-      copy: '中〜大容量をシンプルに使うなら、まず30GB前後の公式条件を確認します。',
-      points: ['30GBで足りるか確認', '5分通話込みの前提を確認', 'ドコモからの変更とMNP条件を分けて見る'],
-      primaryText: 'ahamo公式を見る',
-      primaryUrl: 'https://ahamo.com/plan/index.html',
-      secondaryText: 'ahamoのメモを見る',
-      secondaryUrl: '/mobile-sim/ahamo/'
+    alreadyCheap: {
+      kind: '無理に変えない', saving: '節約余地：低',
+      title: 'すでに安い可能性あり。乗り換えより条件確認を優先。',
+      verdict: '2,000円未満で収まっているなら、無理な乗り換えで手間や失敗リスクを増やすより、GB不足・通話料・家Wi-Fiだけを確認する方が安全です。',
+      candidates: [
+        ['IIJmio / mineo系', '低容量・サブ回線候補として比較'],
+        ['povo系', 'たまに使う回線・予備回線として確認']
+      ],
+      points: ['本当に困っているのが月額かGBかを分ける', '通話料・オプションで高くなっていないか見る', 'MNP特典だけで動かない'],
+      actions: [['IIJmio公式を見る', links.iijmio, 'primary'], ['mineo公式を見る', links.mineo, 'ghost']]
     },
-    linemo: {
-      kind: 'スマホ代',
-      title: '3〜10GB中心なら、LINEMOを先に確認。',
-      copy: '少なめGBで毎月の固定費を下げたい人は、小容量寄りの公式条件から見るのが早いです。',
-      points: ['3GB・10GBの料金差を確認', 'PayPay還元の対象条件を確認', 'LINE中心の使い方と相性を見る'],
-      primaryText: 'LINEMO公式を見る',
-      primaryUrl: 'https://www.linemo.jp/plan/',
-      secondaryText: 'LINEMOのメモを見る',
-      secondaryUrl: '/mobile-sim/linemo/'
+    lightCheap: {
+      kind: '小容量', saving: '節約余地：中',
+      title: '3GB以下なら、小容量プランを先に確認。',
+      verdict: '毎月3GB以下なら、大容量プランより小容量・低価格の公式条件を見た方が早いです。LINE中心ならLINEMO、細かく容量を選ぶならIIJmioが候補です。',
+      candidates: [
+        ['LINEMO', '3GB以下・10GB以下の段階で見やすい'],
+        ['IIJmio', '5GB前後やeSIM・サブ回線に寄せやすい']
+      ],
+      points: ['自宅Wi-Fiあり前提で足りるか確認', '通話オプションが必要か確認', 'キャンペーン対象条件と付与時期を確認'],
+      actions: [['LINEMO公式を見る', links.linemo, 'primary'], ['IIJmio公式を見る', links.iijmio, 'ghost']]
     },
-    iijmio: {
-      kind: 'サブ回線',
-      title: 'サブ回線・eSIMなら、IIJmio系を確認。',
-      copy: 'メイン回線を変えずに小さく試すなら、eSIMや低容量プランの公式条件から見るのが無難です。',
-      points: ['必要なGBだけ選べるか確認', 'eSIM・端末セットの条件を確認', 'メイン回線との役割分担を決める'],
-      primaryText: 'IIJmio公式を見る',
-      primaryUrl: 'https://www.iijmio.jp/gigaplan/',
-      secondaryText: 'IIJmioのメモを見る',
-      secondaryUrl: '/mobile-sim/iijmio/'
+    midCheap: {
+      kind: '中容量', saving: '節約余地：中',
+      title: '4〜10GBなら、小〜中容量で月額を軽くする。',
+      verdict: '4〜10GB中心なら、いきなり30GB以上へ上げず、10GB前後で足りるかを先に確認します。毎月の固定費を落としやすいゾーンです。',
+      candidates: [
+        ['LINEMO', '3GB/10GB帯から見やすい'],
+        ['IIJmio', '5GB〜10GB前後を細かく調整しやすい']
+      ],
+      points: ['外で動画をどれくらい見るか確認', '昼休みなど混雑時間帯の使い方を確認', '端末セット・MNP特典は条件を確認'],
+      actions: [['LINEMO公式を見る', links.linemo, 'primary'], ['IIJmio公式を見る', links.iijmio, 'ghost']]
     },
-    wimax: {
-      kind: '回線・Wi-Fi',
-      title: '工事なしで家のWi-Fiなら、WiMAX系を確認。',
-      copy: '光回線の工事を避けたい、引っ越し前後で早くネットを使いたい場合は、ホームルーター/モバイルルーターの公式条件を見ます。',
-      points: ['住所の提供エリアを確認', '端末代・契約期間・解約条件を確認', '短期レンタル案件は提携リンク準備後に追加'],
-      primaryText: 'UQ WiMAX公式を見る',
-      primaryUrl: 'https://www.uqwimax.jp/wimax/plan/',
-      secondaryText: '回線候補の準備状況を見る',
-      secondaryUrl: '/mobile-sim/'
+    largeSimple: {
+      kind: '大容量', saving: '節約余地：中',
+      title: '11〜30GBなら、ahamoを基準に確認。',
+      verdict: '20〜30GB前後を安定して使うなら、まず30GB帯のシンプルな公式条件を基準にします。料金・通話・キャンペーンを分けて見るのがコツです。',
+      candidates: [
+        ['ahamo', '30GB・5分通話込みの基準として見やすい'],
+        ['LINEMOベストプランV', '30GB帯の比較候補']
+      ],
+      points: ['30GBで足りるか、超過月が多いか確認', '5分通話込みが得か確認', 'ドコモ/ソフトバンク系からの変更条件を確認'],
+      actions: [['ahamo公式を見る', links.ahamo, 'primary'], ['LINEMO公式を見る', links.linemo, 'ghost']]
     },
-    home5g: {
-      kind: '回線・Wi-Fi',
-      title: 'ドコモ回線寄りなら、home 5Gも確認。',
-      copy: '工事なしの据え置き回線を検討するなら、WiMAX系とhome 5Gの公式条件を横に並べると判断しやすいです。',
-      points: ['住所・エリア・速度の前提を確認', '端末代と月額を分けて確認', 'スマホとのセット割条件を確認'],
-      primaryText: 'ドコモ home 5G公式を見る',
-      primaryUrl: 'https://www.docomo.ne.jp/home_5g/',
-      secondaryText: 'スマホ・回線一覧へ戻る',
-      secondaryUrl: '/mobile-sim/'
+    variableHeavy: {
+      kind: '大容量・変動', saving: '節約余地：中〜高',
+      title: '30GB以上・月で変動するなら、段階制か大容量を確認。',
+      verdict: '使う月と使わない月の差が大きいなら楽天モバイル、毎月30GB前後を安定して使うならahamoを基準に見ると判断しやすいです。',
+      candidates: [
+        ['楽天モバイル', '使用量がブレる人・楽天ポイント重視'],
+        ['ahamo', '30GB〜110GBの大容量基準']
+      ],
+      points: ['自宅Wi-Fiなしでスマホ回線に寄せすぎていないか確認', 'テザリング用途なら制限・エリアを確認', '通話はアプリ条件や対象外番号を確認'],
+      actions: [['楽天モバイル公式を見る', links.rakuten, 'primary'], ['ahamo公式を見る', links.ahamo, 'ghost']]
+    },
+    subLine: {
+      kind: 'サブ回線', saving: '節約余地：目的次第',
+      title: 'メインを残すなら、eSIM・サブ回線で小さく試す。',
+      verdict: 'いきなりメイン回線を変えるのが怖い人は、サブ回線やeSIMで通信品質・使い勝手を試す方が安全です。',
+      candidates: [
+        ['IIJmio', 'eSIM・低容量の候補として見やすい'],
+        ['povo', '必要な時だけトッピングする予備回線候補']
+      ],
+      points: ['端末がeSIM対応か確認', '電話番号を移すか、新規番号にするか確認', 'メイン回線の解約は最後に判断'],
+      actions: [['IIJmio公式を見る', links.iijmio, 'primary'], ['povo公式を見る', links.povo, 'ghost']]
+    },
+    supportFamily: {
+      kind: '店舗・家族割', saving: '節約余地：条件次第',
+      title: '家族割・店舗サポート重視なら、サブブランドを確認。',
+      verdict: '最安だけを狙うより、店舗サポート・家族割・光回線セット割を含めて判断する方が失敗しにくい層です。',
+      candidates: [
+        ['UQ mobile', 'au/UQ系・店舗/セット割を確認'],
+        ['Y!mobile', 'ソフトバンク/Yahoo!系・家族割を確認']
+      ],
+      points: ['割引前料金と割引後料金を分けて見る', '家族回線・光回線の条件を確認', '店舗サポートが必要な人の回線だけ分ける'],
+      actions: [['UQ mobile公式を見る', links.uqmobile, 'primary'], ['Y!mobile公式を見る', links.ymobile, 'ghost']]
+    },
+    wifiNoConstruction: {
+      kind: '工事不要Wi-Fi', saving: '回線次第',
+      title: '家のWi-Fiは、工事なし候補を先に確認。',
+      verdict: '家のネットがない・遅い・工事を避けたい場合は、スマホプランより先にホームルーター/WiMAX系の提供エリアを確認した方が早いです。',
+      candidates: [
+        ['UQ WiMAX', '工事なし・持ち運び/ホームルーター候補'],
+        ['docomo home 5G', '据え置き型・ドコモ系セット割候補'],
+        ['Rakuten Turbo', '楽天経済圏寄りのホームルーター候補']
+      ],
+      points: ['住所の提供エリアを確認', '端末代・契約期間・解約条件を確認', 'オンラインゲーム/在宅会議など用途を確認'],
+      actions: [['UQ WiMAX公式を見る', links.wimax, 'primary'], ['home 5G公式を見る', links.home5g, 'ghost'], ['Rakuten Turbo公式を見る', links.rakutenTurbo, 'subtle']]
+    },
+    temporaryWifi: {
+      kind: '開通待ち', saving: '短期優先',
+      title: '開通待ちなら、短期・工事なし回線を優先。',
+      verdict: '引っ越し直後や光回線の開通待ちは、長期契約の安さより「すぐ使える・解約しやすい・端末が届く」条件を優先します。',
+      candidates: [
+        ['UQ WiMAX', '工事なし候補として公式条件を確認'],
+        ['短期Wi-Fiレンタル', 'A8など提携審査後に候補を追加予定']
+      ],
+      points: ['必要期間が2週間か1〜3か月か決める', '端末到着日と返却条件を確認', '長期契約に寄せすぎない'],
+      actions: [['UQ WiMAX公式を見る', links.wimax, 'primary'], ['スマホ・回線一覧へ戻る', links.list, 'ghost']]
+    },
+    rakutenPoint: {
+      kind: '楽天経済圏', saving: '使い方次第',
+      title: '楽天ポイント重視なら、楽天モバイル/楽天Turboを確認。',
+      verdict: '楽天市場・楽天カード・楽天ポイントをよく使うなら、スマホ回線とホームルーターを楽天側で見る価値があります。通信エリアと料金条件は必ず公式で確認します。',
+      candidates: [
+        ['楽天モバイル', '段階制スマホ回線'],
+        ['Rakuten Turbo', '工事不要ホームルーター']
+      ],
+      points: ['ポイント還元の条件と上限を確認', '自宅/職場の楽天回線エリアを確認', '通話アプリ条件を確認'],
+      actions: [['楽天モバイル公式を見る', links.rakuten, 'primary'], ['Rakuten Turbo公式を見る', links.rakutenTurbo, 'ghost']]
     }
   };
 
   const $ = (selector) => root.querySelector(selector);
   const get = (name) => root.querySelector(`input[name="${name}"]:checked`)?.value;
 
-  function pickOffer() {
-    const area = get('kozeni-line-area');
-    const usage = get('kozeni-line-usage');
+  function chooseResult() {
+    const need = get('kozeni-line-need');
+    const bill = get('kozeni-line-bill');
+    const data = get('kozeni-line-data');
     const home = get('kozeni-line-home');
+    const style = get('kozeni-line-style');
 
-    if (area === 'temporary' || home === 'waiting') return official.wimax;
-    if (area === 'wifi') return home === 'no-construction' ? official.wimax : official.home5g;
-    if (area === 'both' && home !== 'ok') return official.wimax;
-    if (usage === 'heavy') return official.rakuten;
-    if (usage === 'medium') return official.ahamo;
-    if (usage === 'sub') return official.iijmio;
-    return official.linemo;
+    if (data === 'unknown' || bill === 'unknown') return 'usageUnknown';
+    if (need === 'temporary' || home === 'waiting') return 'temporaryWifi';
+    if (need === 'wifi' || home === 'slow' || home === 'none' || home === 'no_construction') return 'wifiNoConstruction';
+    if (style === 'support') return 'supportFamily';
+    if (style === 'rakuten') return 'rakutenPoint';
+    if (need === 'sub' || style === 'sub') return 'subLine';
+    if (bill === 'under2000' && need !== 'data') return 'alreadyCheap';
+    if (data === 'under3') return 'lightCheap';
+    if (data === '4_10') return 'midCheap';
+    if (data === '11_30') return 'largeSimple';
+    if (data === 'over30' || data === 'variable' || need === 'data') return 'variableHeavy';
+    return 'midCheap';
+  }
+
+  function replaceList(list, rows, className) {
+    list.textContent = '';
+    rows.forEach((row) => {
+      const li = document.createElement('li');
+      if (className) li.className = className;
+      if (Array.isArray(row)) {
+        const strong = document.createElement('strong');
+        strong.textContent = row[0];
+        const span = document.createElement('span');
+        span.textContent = row[1];
+        li.append(strong, span);
+      } else {
+        li.textContent = row;
+      }
+      list.appendChild(li);
+    });
+  }
+
+  function renderActions(container, actions) {
+    container.textContent = '';
+    actions.forEach(([text, href, variant]) => {
+      const a = document.createElement('a');
+      a.className = `kozeni-line-check__button kozeni-line-check__button--${variant}`;
+      a.textContent = text;
+      a.href = href;
+      if (/^https?:\/\//.test(href)) {
+        a.target = '_blank';
+        a.rel = 'noopener noreferrer';
+      }
+      container.appendChild(a);
+    });
   }
 
   function render() {
-    const offer = pickOffer();
-    $('#kozeni-line-check-kind').textContent = offer.kind;
-    $('#kozeni-line-check-result-title').textContent = offer.title;
-    $('#kozeni-line-check-result-copy').textContent = offer.copy;
-    $('#kozeni-line-check-points').innerHTML = offer.points.map((point) => `<li>${point}</li>`).join('');
-    const primary = $('#kozeni-line-check-primary');
-    primary.textContent = offer.primaryText;
-    primary.href = offer.primaryUrl;
-    const secondary = $('#kozeni-line-check-secondary');
-    secondary.textContent = offer.secondaryText;
-    secondary.href = offer.secondaryUrl;
+    const key = chooseResult();
+    const result = results[key];
+    root.dataset.result = key;
+    $('#kozeni-line-check-kind').textContent = result.kind;
+    $('#kozeni-line-check-saving').textContent = result.saving;
+    $('#kozeni-line-check-result-title').textContent = result.title;
+    $('#kozeni-line-check-verdict').textContent = result.verdict;
+    replaceList($('#kozeni-line-check-candidates'), result.candidates, 'kozeni-line-check__candidate');
+    replaceList($('#kozeni-line-check-points'), result.points);
+    renderActions($('#kozeni-line-check-actions'), result.actions);
   }
+
+  $('#kozeni-line-check-reset')?.addEventListener('click', () => {
+    const defaults = {
+      'kozeni-line-need': 'save',
+      'kozeni-line-bill': '2000_4000',
+      'kozeni-line-data': '4_10',
+      'kozeni-line-home': 'ok',
+      'kozeni-line-style': 'cheap'
+    };
+    Object.entries(defaults).forEach(([name, value]) => {
+      const input = root.querySelector(`input[name="${name}"][value="${value}"]`);
+      if (input) input.checked = true;
+    });
+    render();
+  });
 
   root.addEventListener('change', render);
   render();
 })();
 </script>
-<!-- kozeni-line-diagnosis-js-v38:end -->
+<!-- kozeni-line-diagnosis-js-v38-1:end -->
 </body>
 </html>
