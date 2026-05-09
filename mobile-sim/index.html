@@ -404,6 +404,40 @@ h1{
   line-height: 1.65;
 }
 
+
+/* v37.3 mobile-sim reward badges */
+.kozeni-reward-badge {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  margin-top: .42rem;
+  padding: .34rem .62rem;
+  border-radius: 999px;
+  background: rgba(242, 201, 76, .18);
+  border: 1px solid rgba(242, 201, 76, .42);
+  color: #6f5200;
+  font-size: .8rem;
+  font-weight: 850;
+  line-height: 1;
+  letter-spacing: .01em;
+}
+
+.kozeni-reward-note {
+  display: block;
+  margin-top: .28rem;
+  color: rgba(34, 40, 49, .56);
+  font-size: .74rem;
+  font-weight: 650;
+  line-height: 1.55;
+}
+
+.kozeni-sim-pick .kozeni-reward-badge,
+.category-card .kozeni-reward-badge,
+.brand-card .kozeni-reward-badge,
+.service-card .kozeni-reward-badge {
+  margin-top: .5rem;
+}
+
 </style>
   <link rel="stylesheet" href="/assets/kozeni-brand.v1.css?v=brand1">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/icon-32.png?v=xicon1">
@@ -468,18 +502,21 @@ h1{
     <a class="kozeni-sim-pick" href="/mobile-sim/rakuten-mobile/" aria-label="楽天モバイルの条件確認ページを見る">
       <span>毎月のGBが読めない</span>
       <strong>楽天モバイル</strong>
+      <span class="kozeni-reward-badge">最大13,000pt</span><small class="kozeni-reward-note">紹介条件・Rakuten Link条件あり</small>
       <em>使う月と使わない月で見る。</em>
       <small>条件を見る</small>
     </a>
     <a class="kozeni-sim-pick" href="/mobile-sim/ahamo/" aria-label="ahamoの条件確認ページを見る">
       <span>30GBをシンプルに</span>
       <strong>ahamo</strong>
+      <span class="kozeni-reward-badge">MNP最大20,000pt</span><small class="kozeni-reward-note">要エントリー・期間用途限定</small>
       <em>大容量寄り。オンライン前提。</em>
       <small>条件を見る</small>
     </a>
     <a class="kozeni-sim-pick" href="/mobile-sim/linemo/" aria-label="LINEMOの条件確認ページを見る">
       <span>3〜10GBで軽く</span>
       <strong>LINEMO</strong>
+      <span class="kozeni-reward-badge">最大16,000円相当</span><small class="kozeni-reward-note">PayPayポイント・期限あり</small>
       <em>少なめGBとLINE中心。</em>
       <small>条件を見る</small>
     </a>
@@ -491,7 +528,16 @@ h1{
 <!-- brand-list-hero-v1:end -->
 <section class="section">
   <div class="container grid three">
-    <a class="card" href="/mobile-sim/rakuten-mobile/"><span class="tag">優先</span><h2>楽天モバイル</h2><p>紹介キャンペーンとASP直を両方確認。入口で差が出やすい本命候補。</p></a><a class="card" href="/mobile-sim/ahamo/"><span class="tag">優先</span><h2>ahamo</h2><p>新規/MNPか、ドコモからの変更かを先に確認。dポイント条件も見る。</p></a><a class="card" href="/mobile-sim/linemo/"><span class="tag">優先</span><h2>LINEMO</h2><p>PayPay還元とASP直を両方確認。MNP条件と付与時期に注意。</p></a><a class="card" href="/mobile-sim/povo/"><span class="tag">データ</span><h2>povo</h2><p>現金系ではなくデータボーナス型。軽く試したい人向け。</p></a><a class="card" href="/mobile-sim/uq-mobile/"><span class="tag">比較</span><h2>UQ mobile</h2><p>au回線の安定感。自宅セット割や対象プランを確認。</p></a><a class="card" href="/mobile-sim/ymobile/"><span class="tag">比較</span><h2>ワイモバイル</h2><p>家族割・PayPay圏との相性を確認。</p></a><a class="card" href="/mobile-sim/mineo/"><span class="tag">比較</span><h2>mineo</h2><p>紹介制度と独自サービスを確認。低〜中容量向き。</p></a><a class="card" href="/mobile-sim/iijmio/"><span class="tag">料金</span><h2>IIJmio</h2><p>端末セットや月額の安さを見る比較枠。</p></a><a class="card" href="/mobile-sim/nihon-tsushin/"><span class="tag">料金</span><h2>日本通信SIM</h2><p>月額の安さを基準にする信頼補強枠。</p></a>
+    <a class="card" href="/mobile-sim/rakuten-mobile/"><span class="tag">優先</span><h2>楽天モバイル</h2>
+      <span class="kozeni-reward-badge">最大13,000pt</span><small class="kozeni-reward-note">紹介条件・Rakuten Link条件あり</small><p>紹介キャンペーンとASP直を両方確認。入口で差が出やすい本命候補。</p></a><a class="card" href="/mobile-sim/ahamo/"><span class="tag">優先</span><h2>ahamo</h2>
+      <span class="kozeni-reward-badge">MNP最大20,000pt</span><small class="kozeni-reward-note">要エントリー・期間用途限定</small><p>新規/MNPか、ドコモからの変更かを先に確認。dポイント条件も見る。</p></a><a class="card" href="/mobile-sim/linemo/"><span class="tag">優先</span><h2>LINEMO</h2>
+      <span class="kozeni-reward-badge">最大16,000円相当</span><small class="kozeni-reward-note">PayPayポイント・期限あり</small><p>PayPay還元とASP直を両方確認。MNP条件と付与時期に注意。</p></a><a class="card" href="/mobile-sim/povo/"><span class="tag">データ</span><h2>povo</h2>
+      <span class="kozeni-reward-badge">対象トッピング還元</span><small class="kozeni-reward-note">還元率・対象トッピング確認</small><p>現金系ではなくデータボーナス型。軽く試したい人向け。</p></a><a class="card" href="/mobile-sim/uq-mobile/"><span class="tag">比較</span><h2>UQ mobile</h2>
+      <span class="kozeni-reward-badge">最大20,000円相当</span><small class="kozeni-reward-note">au PAY残高・条件あり</small><p>au回線の安定感。自宅セット割や対象プランを確認。</p></a><a class="card" href="/mobile-sim/ymobile/"><span class="tag">比較</span><h2>ワイモバイル</h2>
+      <span class="kozeni-reward-badge">最大15,000円相当</span><small class="kozeni-reward-note">PayPayポイント・条件あり</small><p>家族割・PayPay圏との相性を確認。</p></a><a class="card" href="/mobile-sim/mineo/"><span class="tag">比較</span><h2>mineo</h2>
+      <span class="kozeni-reward-badge">最大5,148円割引</span><small class="kozeni-reward-note">月額割引・期限あり</small><p>紹介制度と独自サービスを確認。低〜中容量向き。</p></a><a class="card" href="/mobile-sim/iijmio/"><span class="tag">料金</span><h2>IIJmio</h2>
+      <span class="kozeni-reward-badge">端末特価・月額割引</span><small class="kozeni-reward-note">キャンペーン種別を確認</small><p>端末セットや月額の安さを見る比較枠。</p></a><a class="card" href="/mobile-sim/nihon-tsushin/"><span class="tag">料金</span><h2>日本通信SIM</h2>
+      <span class="kozeni-reward-badge">特典より低月額</span><small class="kozeni-reward-note">低月額重視で確認</small><p>月額の安さを基準にする信頼補強枠。</p></a>
   </div>
 </section>
 
