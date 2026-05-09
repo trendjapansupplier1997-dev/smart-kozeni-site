@@ -4,44 +4,50 @@ body{
 }
 
 .kozeni-fixed-return{
-  position:fixed;
-  left:50%;
-  bottom:14px;
-  z-index:120;
-  width:min(1120px, calc(100% - 24px));
-  transform:translateX(-50%);
-  display:flex;
-  justify-content:center;
-  pointer-events:none;
+  position:fixed !important;
+  left:50% !important;
+  bottom:14px !important;
+  z-index:120 !important;
+  width:min(1120px, calc(100% - 24px)) !important;
+  transform:translateX(-50%) !important;
+  display:flex !important;
+  justify-content:center !important;
+  pointer-events:none !important;
 }
 
 .kozeni-fixed-return a{
-  pointer-events:auto;
-  width:100%;
-  min-height:50px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  border-radius:999px;
-  background:rgba(255,255,255,.96);
-  border:1px solid var(--ia-line, rgba(34,140,98,.16));
-  color:var(--ia-green, var(--deep, #228C62));
-  padding:12px 18px;
-  font-size:14px;
-  font-weight:950;
-  line-height:1.2;
-  text-decoration:none;
-  box-shadow:0 14px 34px rgba(34,140,98,.16);
-  backdrop-filter:blur(14px);
+  pointer-events:auto !important;
+  width:100% !important;
+  min-height:50px !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  border-radius:999px !important;
+  background:rgba(255,255,255,.96) !important;
+  border:1px solid var(--ia-line, rgba(34,140,98,.16)) !important;
+  color:var(--ia-green, var(--deep, #228C62)) !important;
+  padding:12px 18px !important;
+  font-size:14px !important;
+  font-weight:950 !important;
+  line-height:1.2 !important;
+  text-decoration:none !important;
+  box-shadow:0 14px 34px rgba(34,140,98,.16) !important;
+  backdrop-filter:blur(14px) !important;
+}
+
+.kozeni-fixed-return a:visited{
+  color:var(--ia-green, var(--deep, #228C62)) !important;
 }
 
 .kozeni-fixed-return a:hover{
-  transform:translateY(-1px);
+  transform:translateY(-1px) !important;
+  background:rgba(255,255,255,.98) !important;
+  color:var(--ia-green, var(--deep, #228C62)) !important;
 }
 
 .kozeni-fixed-return a:focus-visible{
-  outline:3px solid rgba(77,189,140,.35);
-  outline-offset:3px;
+  outline:3px solid rgba(77,189,140,.35) !important;
+  outline-offset:3px !important;
 }
 
 @media(max-width:720px){
@@ -50,11 +56,11 @@ body{
   }
 
   .kozeni-fixed-return{
-    bottom:10px;
-    width:calc(100% - 20px);
+    bottom:10px !important;
+    width:calc(100% - 20px) !important;
   }
 
   .kozeni-fixed-return a{
-    min-height:48px;
+    min-height:48px !important;
   }
 }
