@@ -362,6 +362,46 @@ h1{
   }
 }
 
+
+/* v37.4 mobile-sim detail benefit strip */
+.kozeni-benefit-strip {
+  display: grid;
+  gap: .42rem;
+  margin: .92rem 0 .95rem;
+  padding: .88rem .95rem;
+  border-radius: 18px;
+  border: 1px solid rgba(242, 201, 76, .34);
+  background: linear-gradient(135deg, rgba(242, 201, 76, .14), rgba(255, 255, 255, .9));
+}
+
+.kozeni-benefit-strip__amount {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  padding: .35rem .68rem;
+  border-radius: 999px;
+  background: rgba(242, 201, 76, .2);
+  border: 1px solid rgba(242, 201, 76, .46);
+  color: #6f5200;
+  font-size: .84rem;
+  font-weight: 850;
+  line-height: 1;
+}
+
+.kozeni-benefit-strip__note {
+  color: rgba(34, 40, 49, .62);
+  font-size: .78rem;
+  font-weight: 700;
+  line-height: 1.55;
+}
+
+.kozeni-benefit-strip p {
+  margin: 0;
+  color: rgba(34, 40, 49, .72);
+  font-size: .9rem;
+  line-height: 1.75;
+}
+
 </style>
   <link rel="stylesheet" href="/assets/kozeni-brand.v1.css?v=brand1">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/icon-32.png?v=xicon1">
@@ -429,6 +469,13 @@ h1{
   <div class="kozeni-sim-focus__chips" aria-label="確認ラベル">
     <span>30GB</span><span>5分通話</span><span>オンライン</span>
   </div>
+  <!-- kozeni-mobile-sim-benefit-v37-4:start -->
+  <div class="kozeni-benefit-strip" aria-label="読者特典の確認">
+    <span class="kozeni-benefit-strip__amount">MNP最大20,000pt</span>
+    <span class="kozeni-benefit-strip__note">要エントリー・期間用途限定dポイント</span>
+    <p>30GBをシンプルに使いたい人向け。乗り換え条件と進呈時期だけ確認。</p>
+  </div>
+  <!-- kozeni-mobile-sim-benefit-v37-4:end -->
   <div class="kozeni-sim-focus__footer">
     <a class="kozeni-sim-focus__cta" href="https://ahamo.com/plan/index.html" target="_blank" rel="noopener noreferrer">公式条件を見る</a>
     <p class="kozeni-sim-focus__note">キャンペーン・対象外・事務手数料は変わります。最後は公式画面で確認。</p>
