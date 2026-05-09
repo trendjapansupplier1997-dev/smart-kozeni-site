@@ -115,6 +115,54 @@ button.quiz-submit:focus-visible,.quiz-submit:focus-visible{
 @media(max-width:720px){
   .quiz-first .quiz-card{max-width:none}
 }
+/* credit-card always-visible CTA */
+.credit-action-panel{
+  max-width:860px;
+  margin:18px auto 0;
+  border:1px solid rgba(34,140,98,.13);
+  border-radius:26px;
+  background:rgba(255,255,255,.94);
+  padding:18px;
+  box-shadow:0 16px 36px rgba(34,40,49,.045);
+}
+.credit-action-panel h2{
+  margin:0 0 6px;
+  color:var(--ink);
+  font-size:clamp(1.25rem,2vw,1.65rem);
+  letter-spacing:-.035em;
+}
+.credit-action-panel p{
+  margin:.38rem 0 0;
+  color:rgba(34,40,49,.64);
+  line-height:1.75;
+  font-weight:700;
+}
+.credit-action-cta{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:46px;
+  margin-top:14px;
+  padding:.82rem 1.14rem;
+  border-radius:999px;
+  background:var(--deep);
+  color:#fff;
+  text-decoration:none;
+  font-weight:900;
+  box-shadow:0 14px 30px rgba(34,140,98,.18);
+}
+.credit-action-cta:hover{
+  transform:translateY(-1px);
+}
+.credit-action-note{
+  font-size:.82rem;
+  color:rgba(34,40,49,.56);
+}
+@media(max-width:720px){
+  .credit-action-cta{
+    width:100%;
+  }
+}
 </style>
   <link rel="stylesheet" href="/assets/kozeni-brand.v1.css?v=brand1"><link rel="icon" type="image/png" sizes="32x32" href="/assets/images/icon-32.png?v=xicon1">
 </head>
@@ -163,6 +211,16 @@ button.quiz-submit:focus-visible,.quiz-submit:focus-visible{
         </div>
         <p class="card-copy kozeni-credit-pr-inline">条件・特典は公式画面で確認してください。</p>
       </article>
+    </div>
+  </section>
+  <section class="section credit-action-section">
+    <div class="container">
+      <div class="credit-action-panel" aria-label="dカード GOLD Uの公式確認リンク">
+        <h2>公式条件を確認</h2>
+        <p>年齢条件・年会費・実質無料条件を公式画面で確認します。</p>
+        <a class="credit-action-cta" href="https://dcard.docomo.ne.jp/st/dcard_goldu/index.html" target="_blank" rel="noopener noreferrer">公式ページを確認する</a>
+        <p class="credit-action-note">条件・特典は公式画面で確認してください。</p>
+      </div>
     </div>
   </section>
 </main>
