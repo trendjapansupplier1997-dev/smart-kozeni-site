@@ -75,31 +75,7 @@ a{color:inherit}
   flex-wrap:wrap;
 }
 .navlinks a{text-decoration:none}
-.top-return{
-  position:sticky;
-  top:76px;
-  z-index:9;
-  padding:14px 0 0;
-  pointer-events:none;
-}
-.top-return .home-return{
-  pointer-events:auto;
-}
-.home-return{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  min-height:42px;
-  padding:0 16px;
-  border-radius:999px;
-  border:1px solid var(--line);
-  background:rgba(255,255,255,.92);
-  box-shadow:0 12px 32px rgba(34,140,98,.08);
-  color:var(--deep);
-  text-decoration:none;
-  font-size:14px;
-  font-weight:900;
-}
+
 .hero{padding:44px 0 34px}
 .pill{
   display:inline-flex;
@@ -208,7 +184,7 @@ h1{
 }
 .footer a{margin-right:14px}
 @media(max-width:760px){
-  .top-return{top:92px}
+  
   .nav{align-items:flex-start; flex-direction:column; padding:14px 0}
   .grid.three,.grid.two{grid-template-columns:1fr}
   .kv div{grid-template-columns:1fr}
@@ -362,7 +338,6 @@ h1{
   }
 }
 
-
 /* v37.2.3 mobile-sim card link completion */
 .kozeni-sim-pick {
   position: relative;
@@ -404,7 +379,6 @@ h1{
   line-height: 1.65;
 }
 
-
 /* v37.3 mobile-sim reward badges */
 .kozeni-reward-badge {
   display: inline-flex;
@@ -438,6 +412,59 @@ h1{
   margin-top: .5rem;
 }
 
+/* kozeni fixed return button: unified list return */
+body{
+  padding-bottom:96px;
+}
+.kozeni-fixed-return{
+  position:fixed;
+  left:50%;
+  bottom:14px;
+  z-index:120;
+  width:min(1120px, calc(100% - 24px));
+  transform:translateX(-50%);
+  display:flex;
+  justify-content:center;
+  pointer-events:none;
+}
+.kozeni-fixed-return a{
+  pointer-events:auto;
+  width:100%;
+  min-height:50px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:999px;
+  background:rgba(255,255,255,.96);
+  border:1px solid var(--ia-line, rgba(34,140,98,.16));
+  color:var(--ia-green, var(--deep, #228C62));
+  padding:12px 18px;
+  font-size:14px;
+  font-weight:950;
+  line-height:1.2;
+  text-decoration:none;
+  box-shadow:0 14px 34px rgba(34,140,98,.16);
+  backdrop-filter:blur(14px);
+}
+.kozeni-fixed-return a:hover{
+  transform:translateY(-1px);
+}
+.kozeni-fixed-return a:focus-visible{
+  outline:3px solid rgba(77,189,140,.35);
+  outline-offset:3px;
+}
+@media(max-width:720px){
+  body{
+    padding-bottom:92px;
+  }
+  .kozeni-fixed-return{
+    bottom:10px;
+    width:calc(100% - 20px);
+  }
+  .kozeni-fixed-return a{
+    min-height:48px;
+  }
+}
 </style>
   <link rel="stylesheet" href="/assets/kozeni-brand.v1.css?v=brand1">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/icon-32.png?v=xicon1">
@@ -485,9 +512,6 @@ h1{
 </svg></span><span class="kozeni-social-text">Instagram</span></a>
   </nav>
 </header>
-<div class="container top-return">
-  <a class="home-return" href="/">← ホームへ戻る</a>
-</div>
 <main>
 
 <!-- brand-list-hero-v1:start -->
@@ -546,5 +570,8 @@ h1{
     <p>© スマホ小銭研究所</p>
   </div>
 </footer>
+<nav class="kozeni-fixed-return" aria-label="ホームへ戻る">
+  <a href="/">← ホームへ戻る</a>
+</nav>
 </body>
 </html>
