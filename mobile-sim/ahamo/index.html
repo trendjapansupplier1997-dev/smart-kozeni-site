@@ -33,21 +33,7 @@ body{
 }
 a{color:inherit}
 .container{width:min(1040px, calc(100% - 32px)); margin:0 auto}
-.header{
-  position:sticky;
-  top:0;
-  z-index:10;
-  background:rgba(255,255,255,.9);
-  backdrop-filter:blur(14px);
-  border-bottom:1px solid var(--line);
-}
-.nav{
-  min-height:64px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:16px;
-}
+
 .brand{
   display:inline-flex;
   align-items:center;
@@ -66,40 +52,7 @@ a{color:inherit}
   color:white;
   font-size:15px;
 }
-.navlinks{
-  display:flex;
-  gap:14px;
-  align-items:center;
-  font-size:14px;
-  color:var(--muted);
-  flex-wrap:wrap;
-}
-.navlinks a{text-decoration:none}
-.top-return{
-  position:sticky;
-  top:76px;
-  z-index:9;
-  padding:14px 0 0;
-  pointer-events:none;
-}
-.top-return .home-return{
-  pointer-events:auto;
-}
-.home-return{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  min-height:42px;
-  padding:0 16px;
-  border-radius:999px;
-  border:1px solid var(--line);
-  background:rgba(255,255,255,.92);
-  box-shadow:0 12px 32px rgba(34,140,98,.08);
-  color:var(--deep);
-  text-decoration:none;
-  font-size:14px;
-  font-weight:900;
-}
+
 .hero{padding:44px 0 34px}
 .pill{
   display:inline-flex;
@@ -208,8 +161,8 @@ h1{
 }
 .footer a{margin-right:14px}
 @media(max-width:760px){
-  .top-return{top:92px}
-  .nav{align-items:flex-start; flex-direction:column; padding:14px 0}
+  
+  
   .grid.three,.grid.two{grid-template-columns:1fr}
   .kv div{grid-template-columns:1fr}
   .hero{padding-top:36px}
@@ -428,8 +381,6 @@ h1{
   <a href="/mobile-sim/">スマホ料金</a>
   <span aria-hidden="true">›</span>
   <span aria-current="page">ahamo</span></nav>
-<div class="container top-return">
-</div>
 <main>
 
 <!-- brand-micro-v1:start -->
