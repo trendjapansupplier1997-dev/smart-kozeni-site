@@ -641,3 +641,15 @@ a.kozeni-social-link .kozeni-social-logo{
     grid-template-columns: 1fr;
   }
 }
+
+/* v37.1.1 close polish: keyword chips are labels, not controls */
+.brand-keywords span {
+  cursor: default;
+  user-select: none;
+}
+
+.brand-keywords span:focus,
+.brand-keywords span:hover {
+  text-decoration: none;
+}
+
