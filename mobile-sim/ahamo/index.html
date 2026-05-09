@@ -362,6 +362,48 @@ h1{
   }
 }
 
+
+/* v37.2.3 mobile-sim card link completion */
+.kozeni-sim-pick {
+  position: relative;
+}
+
+.kozeni-sim-pick small {
+  display: inline-flex;
+  align-items: center;
+  margin-top: .55rem;
+  color: #228C62;
+  font-size: .78rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.kozeni-sim-pick small::after {
+  content: "→";
+  margin-left: .28rem;
+}
+
+.kozeni-sim-pick:hover {
+  transform: translateY(-1px);
+  border-color: rgba(77, 189, 140, .3);
+  box-shadow: 0 10px 24px rgba(34, 40, 49, .055);
+}
+
+.kozeni-sim-pick:focus-visible,
+.kozeni-sim-focus__cta:focus-visible {
+  outline: 3px solid rgba(77, 189, 140, .34);
+  outline-offset: 3px;
+}
+
+.kozeni-sim-focus__card em {
+  display: block;
+  margin-top: .26rem;
+  color: rgba(34, 40, 49, .68);
+  font-size: .82rem;
+  font-style: normal;
+  line-height: 1.65;
+}
+
 </style>
   <link rel="stylesheet" href="/assets/kozeni-brand.v1.css?v=brand1">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/icon-32.png?v=xicon1">
@@ -430,9 +472,9 @@ h1{
     <span>30GB</span><span>5分通話</span><span>オンライン</span>
   </div>
   <div class="kozeni-sim-focus__grid">
-    <div class="kozeni-sim-focus__card"><span>見る数字</span><strong>30GB / 大盛り110GB</strong></div>
-    <div class="kozeni-sim-focus__card"><span>見る条件</span><strong>小容量向けではないか確認</strong></div>
-    <div class="kozeni-sim-focus__card"><span>見る前提</span><strong>手続き・サポートはオンライン中心</strong></div>
+    <div class="kozeni-sim-focus__card"><span>見る数字</span><strong>30GB / 大盛り110GB</strong><em>毎月30GB前後なら見やすい。</em></div>
+    <div class="kozeni-sim-focus__card"><span>見る条件</span><strong>小容量向けではないか確認</strong><em>少量利用なら他候補も見る。</em></div>
+    <div class="kozeni-sim-focus__card"><span>見る前提</span><strong>手続き・サポートはオンライン中心</strong><em>店頭相談前提なら注意。</em></div>
   </div>
   <div class="kozeni-sim-focus__footer">
     <a class="kozeni-sim-focus__cta" href="https://ahamo.com/plan/index.html" target="_blank" rel="noopener noreferrer">公式条件を見る</a>

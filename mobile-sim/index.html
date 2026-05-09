@@ -362,6 +362,48 @@ h1{
   }
 }
 
+
+/* v37.2.3 mobile-sim card link completion */
+.kozeni-sim-pick {
+  position: relative;
+}
+
+.kozeni-sim-pick small {
+  display: inline-flex;
+  align-items: center;
+  margin-top: .55rem;
+  color: #228C62;
+  font-size: .78rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.kozeni-sim-pick small::after {
+  content: "→";
+  margin-left: .28rem;
+}
+
+.kozeni-sim-pick:hover {
+  transform: translateY(-1px);
+  border-color: rgba(77, 189, 140, .3);
+  box-shadow: 0 10px 24px rgba(34, 40, 49, .055);
+}
+
+.kozeni-sim-pick:focus-visible,
+.kozeni-sim-focus__cta:focus-visible {
+  outline: 3px solid rgba(77, 189, 140, .34);
+  outline-offset: 3px;
+}
+
+.kozeni-sim-focus__card em {
+  display: block;
+  margin-top: .26rem;
+  color: rgba(34, 40, 49, .68);
+  font-size: .82rem;
+  font-style: normal;
+  line-height: 1.65;
+}
+
 </style>
   <link rel="stylesheet" href="/assets/kozeni-brand.v1.css?v=brand1">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/icon-32.png?v=xicon1">
@@ -420,24 +462,27 @@ h1{
         <h1 id="brand-list-title">スマホ料金は、固定費から見直す。</h1>
         <p class="lead">月額・紹介特典・MNP条件・対象外を、申し込み前に短く確認します。</p>
         <!-- kozeni-mobile-sim-v37-2:start -->
-<section class="kozeni-sim-guide kozeni-sim-guide--quiet" aria-label="スマホ料金の最初の見方">
+<section class="kozeni-sim-guide" aria-label="スマホ料金の最初の見方">
   <p class="kozeni-sim-guide__label">まず見る3択</p>
   <div class="kozeni-sim-guide__grid">
-    <div class="kozeni-sim-pick" role="group" aria-label="楽天モバイルの見方">
+    <a class="kozeni-sim-pick" href="/mobile-sim/rakuten-mobile/" aria-label="楽天モバイルの条件確認ページを見る">
       <span>毎月のGBが読めない</span>
       <strong>楽天モバイル</strong>
-      <em>段階制。使う月と使わない月で見る。</em>
-    </div>
-    <div class="kozeni-sim-pick" role="group" aria-label="ahamoの見方">
+      <em>使う月と使わない月で見る。</em>
+      <small>条件を見る</small>
+    </a>
+    <a class="kozeni-sim-pick" href="/mobile-sim/ahamo/" aria-label="ahamoの条件確認ページを見る">
       <span>30GBをシンプルに</span>
       <strong>ahamo</strong>
-      <em>大容量寄り。オンライン前提で見る。</em>
-    </div>
-    <div class="kozeni-sim-pick" role="group" aria-label="LINEMOの見方">
+      <em>大容量寄り。オンライン前提。</em>
+      <small>条件を見る</small>
+    </a>
+    <a class="kozeni-sim-pick" href="/mobile-sim/linemo/" aria-label="LINEMOの条件確認ページを見る">
       <span>3〜10GBで軽く</span>
       <strong>LINEMO</strong>
-      <em>少なめGBとLINE中心で見る。</em>
-    </div>
+      <em>少なめGBとLINE中心。</em>
+      <small>条件を見る</small>
+    </a>
   </div>
 </section>
 <!-- kozeni-mobile-sim-v37-2:end -->

@@ -362,6 +362,48 @@ h1{
   }
 }
 
+
+/* v37.2.3 mobile-sim card link completion */
+.kozeni-sim-pick {
+  position: relative;
+}
+
+.kozeni-sim-pick small {
+  display: inline-flex;
+  align-items: center;
+  margin-top: .55rem;
+  color: #228C62;
+  font-size: .78rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.kozeni-sim-pick small::after {
+  content: "→";
+  margin-left: .28rem;
+}
+
+.kozeni-sim-pick:hover {
+  transform: translateY(-1px);
+  border-color: rgba(77, 189, 140, .3);
+  box-shadow: 0 10px 24px rgba(34, 40, 49, .055);
+}
+
+.kozeni-sim-pick:focus-visible,
+.kozeni-sim-focus__cta:focus-visible {
+  outline: 3px solid rgba(77, 189, 140, .34);
+  outline-offset: 3px;
+}
+
+.kozeni-sim-focus__card em {
+  display: block;
+  margin-top: .26rem;
+  color: rgba(34, 40, 49, .68);
+  font-size: .82rem;
+  font-style: normal;
+  line-height: 1.65;
+}
+
 </style>
   <link rel="stylesheet" href="/assets/kozeni-brand.v1.css?v=brand1">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/icon-32.png?v=xicon1">
@@ -431,8 +473,8 @@ h1{
   </div>
   <div class="kozeni-sim-focus__grid">
     <div class="kozeni-sim-focus__card"><span>見る数字</span><strong>3GB・20GB・無制限の境目</strong></div>
-    <div class="kozeni-sim-focus__card"><span>見る条件</span><strong>家族割・紹介・端末割引は別条件</strong></div>
-    <div class="kozeni-sim-focus__card"><span>見る前提</span><strong>Rakuten Linkの対象外通話に注意</strong></div>
+    <div class="kozeni-sim-focus__card"><span>見る条件</span><strong>家族割・紹介・端末割引は別条件</strong><em>特典は対象外を先に確認。</em></div>
+    <div class="kozeni-sim-focus__card"><span>見る前提</span><strong>Rakuten Linkの対象外通話に注意</strong><em>通話条件は公式で確認。</em></div>
   </div>
   <div class="kozeni-sim-focus__footer">
     <a class="kozeni-sim-focus__cta" href="https://network.mobile.rakuten.co.jp/fee/saikyo-plan/" target="_blank" rel="noopener noreferrer">公式条件を見る</a>
