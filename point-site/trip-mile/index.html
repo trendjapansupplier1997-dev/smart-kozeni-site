@@ -7,8 +7,66 @@
   <meta name="robots" content="noindex,follow">
   <link rel="canonical" href="https://smart-kozeni.com/point-site/trima/">
   <meta http-equiv="refresh" content="0; url=/point-site/trima/">
+<style>
+/* kozeni fixed return button: point-site detail return */
+body{
+  padding-bottom:96px;
+}
+.kozeni-fixed-return{
+  position:fixed;
+  left:50%;
+  bottom:14px;
+  z-index:120;
+  width:min(1120px, calc(100% - 24px));
+  transform:translateX(-50%);
+  display:flex;
+  justify-content:center;
+  pointer-events:none;
+}
+.kozeni-fixed-return a{
+  pointer-events:auto;
+  width:100%;
+  min-height:50px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:999px;
+  background:rgba(255,255,255,.96);
+  border:1px solid var(--ia-line, rgba(34,140,98,.16));
+  color:var(--ia-green, var(--deep, #228C62));
+  padding:12px 18px;
+  font-size:14px;
+  font-weight:950;
+  line-height:1.2;
+  text-decoration:none;
+  box-shadow:0 14px 34px rgba(34,140,98,.16);
+  backdrop-filter:blur(14px);
+}
+.kozeni-fixed-return a:hover{
+  transform:translateY(-1px);
+}
+.kozeni-fixed-return a:focus-visible{
+  outline:3px solid rgba(77,189,140,.35);
+  outline-offset:3px;
+}
+@media(max-width:720px){
+  body{
+    padding-bottom:92px;
+  }
+  .kozeni-fixed-return{
+    bottom:10px;
+    width:calc(100% - 20px);
+  }
+  .kozeni-fixed-return a{
+    min-height:48px;
+  }
+}
+</style>
 </head>
 <body>
   <p>トリマのページへ移動します。自動で移動しない場合は <a href="/point-site/trima/">こちら</a> を押してください。</p>
+<nav class="kozeni-fixed-return" aria-label="ポイ活一覧へ戻る">
+  <a href="/point-site/">← ポイ活一覧へ戻る</a>
+</nav>
 </body>
 </html>
