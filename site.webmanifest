@@ -1,14 +1,25 @@
 {
   "name": "スマホ小銭研究所",
-  "short_name": "小銭研究所",
+  "short_name": "スマホ小銭",
+  "description": "スマホで賢く、ムダなく、毎日をちょっと豊かに。",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
-  "background_color": "#ffffff",
+  "background_color": "#E9F5EF",
   "theme_color": "#4DBD8C",
   "icons": [
     {
-      "src": "/favicon.svg",
+      "src": "/assets/images/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/images/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/brand-mark.svg",
       "sizes": "any",
       "type": "image/svg+xml"
     }
