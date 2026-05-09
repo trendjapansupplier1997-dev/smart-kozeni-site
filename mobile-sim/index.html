@@ -388,6 +388,34 @@ h1{
 .service-card .kozeni-reward-badge {
   margin-top: .5rem;
 }
+
+.kozeni-mini-note{
+  max-width:1040px;
+  margin:26px auto 40px;
+  padding:1.05rem 1.1rem;
+  border-radius:24px;
+  border:1px solid rgba(34,140,98,.13);
+  background:linear-gradient(135deg, rgba(233,245,239,.72), rgba(255,255,255,.94));
+  box-shadow:0 14px 34px rgba(34,40,49,.045);
+}
+.kozeni-mini-note__label{
+  margin:0 0 .35rem;
+  color:var(--deep, #228C62);
+  font-size:.74rem;
+  font-weight:950;
+  letter-spacing:.12em;
+}
+.kozeni-mini-note h2{
+  margin:.1rem 0 .45rem;
+  font-size:clamp(1.15rem, 2vw, 1.55rem);
+  letter-spacing:-.035em;
+}
+.kozeni-mini-note p{
+  margin:0;
+  color:rgba(34,40,49,.66);
+  line-height:1.8;
+}
+
 </style>
   <link rel="stylesheet" href="/assets/kozeni-brand.v1.css?v=brand1">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/icon-32.png?v=xicon1">
@@ -404,7 +432,7 @@ h1{
       <span>スマホ小銭研究所</span>
     </a>
     <nav class="kozeni-main-nav" aria-label="主要カテゴリ">
-      <a class="is-active" aria-current="page" href="/mobile-sim/">スマホ料金</a>
+      <a class="is-active" aria-current="page" href="/mobile-sim/">スマホ・回線</a>
       <a href="/point-site/">ポイ活</a>
       <a href="/credit-card/">クレカ</a>
       <a href="/account-opening/">口座</a>
@@ -413,7 +441,7 @@ h1{
 </header>
 <nav class="kozeni-breadcrumb" aria-label="パンくず"><a href="/">ホーム</a>
   <span aria-hidden="true">›</span>
-  <span aria-current="page">スマホ料金</span></nav>
+  <span aria-current="page">スマホ・回線</span></nav>
 <main>
 
 <!-- brand-list-hero-v1:start -->
@@ -463,6 +491,11 @@ h1{
   </div>
 </section>
 
+<section class="kozeni-mini-note" aria-label="今後追加予定の回線カテゴリ">
+  <p class="kozeni-mini-note__label">NEXT</p>
+  <h2>短期Wi-Fi・回線見直しも追加予定</h2>
+  <p>引っ越し前後、入院、一時帰国、光回線の開通待ちなど、スマホ料金だけでは足りない場面の回線選びも整理していきます。</p>
+</section>
 </main>
 <footer class="footer">
   <div class="container">
