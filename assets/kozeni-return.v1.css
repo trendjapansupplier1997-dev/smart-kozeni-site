@@ -15,7 +15,7 @@ body{
   pointer-events:none !important;
 }
 
-.kozeni-fixed-return a{
+html body .kozeni-fixed-return > a{
   pointer-events:auto !important;
   width:100% !important;
   min-height:50px !important;
@@ -24,8 +24,11 @@ body{
   justify-content:center !important;
   border-radius:999px !important;
   background:rgba(255,255,255,.96) !important;
+  background-color:rgba(255,255,255,.96) !important;
+  background-image:none !important;
   border:1px solid var(--ia-line, rgba(34,140,98,.16)) !important;
   color:var(--ia-green, var(--deep, #228C62)) !important;
+  -webkit-text-fill-color:var(--ia-green, var(--deep, #228C62)) !important;
   padding:12px 18px !important;
   font-size:14px !important;
   font-weight:950 !important;
@@ -35,17 +38,20 @@ body{
   backdrop-filter:blur(14px) !important;
 }
 
-.kozeni-fixed-return a:visited{
+html body .kozeni-fixed-return > a:visited{
   color:var(--ia-green, var(--deep, #228C62)) !important;
 }
 
-.kozeni-fixed-return a:hover{
+html body .kozeni-fixed-return > a:hover{
   transform:translateY(-1px) !important;
   background:rgba(255,255,255,.98) !important;
+  background-color:rgba(255,255,255,.98) !important;
+  background-image:none !important;
   color:var(--ia-green, var(--deep, #228C62)) !important;
+  -webkit-text-fill-color:var(--ia-green, var(--deep, #228C62)) !important;
 }
 
-.kozeni-fixed-return a:focus-visible{
+html body .kozeni-fixed-return > a:focus-visible{
   outline:3px solid rgba(77,189,140,.35) !important;
   outline-offset:3px !important;
 }
@@ -60,7 +66,7 @@ body{
     width:calc(100% - 20px) !important;
   }
 
-  .kozeni-fixed-return a{
+  html body .kozeni-fixed-return > a{
     min-height:48px !important;
   }
 }
