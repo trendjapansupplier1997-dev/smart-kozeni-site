@@ -510,3 +510,34 @@ a.kozeni-social-link--instagram .kozeni-social-logo-wrap{
     flex-basis:24px;
   }
 }
+
+/* kozeni inline social app-icon nav v5 */
+a.kozeni-social-link .kozeni-social-logo-wrap{
+  display:inline-grid;
+  place-items:center;
+  width:32px;
+  height:32px;
+  flex:0 0 32px;
+  border-radius:10px;
+  background:transparent;
+  box-shadow:0 3px 10px rgba(34,140,98,.10);
+  overflow:visible;
+}
+a.kozeni-social-link .kozeni-social-logo-svg{
+  display:block;
+  width:32px;
+  height:32px;
+  border-radius:10px;
+}
+a.kozeni-social-link .kozeni-social-logo{
+  display:none;
+}
+@media(max-width:720px){
+  a.kozeni-social-link .kozeni-social-logo-wrap,
+  a.kozeni-social-link .kozeni-social-logo-svg{
+    width:28px;
+    height:28px;
+    flex-basis:28px;
+    border-radius:9px;
+  }
+}
