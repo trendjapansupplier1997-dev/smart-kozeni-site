@@ -158,3 +158,12 @@
     padding:11px 14px;
   }
 }
+
+/* visible site brand icon */
+.brand-icon img{
+  width:42px;
+  height:42px;
+  display:block;
+  border-radius:999px;
+  object-fit:cover;
+}
