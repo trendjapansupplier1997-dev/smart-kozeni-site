@@ -1,21 +1,22 @@
-/* kozeni navigation v1 */
+/* kozeni navigation v2 */
 .kozeni-site-header{
   position:sticky;
   top:0;
-  z-index:80;
-  background:rgba(255,255,255,.92);
+  z-index:90;
+  background:rgba(255,255,255,.94);
   border-bottom:1px solid rgba(34,40,49,.06);
-  backdrop-filter:blur(14px);
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
 }
 
 .kozeni-site-nav{
   max-width:1120px;
   margin:0 auto;
-  padding:12px 20px;
+  padding:10px 20px;
   display:flex;
   align-items:center;
   justify-content:space-between;
-  gap:16px;
+  gap:18px;
 }
 
 .kozeni-site-brand{
@@ -25,29 +26,41 @@
   color:var(--ink, #222831);
   text-decoration:none;
   font-weight:950;
-  letter-spacing:-.03em;
+  letter-spacing:-.035em;
   white-space:nowrap;
+  min-width:fit-content;
 }
 
 .kozeni-site-brand img{
   width:34px;
   height:34px;
-  border-radius:10px;
+  border-radius:11px;
+  box-shadow:0 8px 20px rgba(34,140,98,.12);
 }
 
 .kozeni-main-nav{
   display:flex;
   align-items:center;
   justify-content:flex-end;
-  gap:8px;
-  flex-wrap:wrap;
+  gap:7px;
+  flex-wrap:nowrap;
+  min-width:0;
+  overflow-x:auto;
+  overscroll-behavior-x:contain;
+  scrollbar-width:none;
+  -webkit-overflow-scrolling:touch;
+}
+
+.kozeni-main-nav::-webkit-scrollbar{
+  display:none;
 }
 
 .kozeni-main-nav a{
   display:inline-flex;
   align-items:center;
   justify-content:center;
-  min-height:36px;
+  flex:0 0 auto;
+  min-height:34px;
   padding:8px 12px;
   border-radius:999px;
   color:rgba(34,40,49,.62);
@@ -55,31 +68,35 @@
   font-size:13px;
   font-weight:900;
   line-height:1.2;
+  white-space:nowrap;
+  transition:background .16s ease, color .16s ease, transform .16s ease, box-shadow .16s ease;
 }
 
 .kozeni-main-nav a:hover{
   background:rgba(77,189,140,.1);
   color:var(--deep, #228C62);
+  transform:translateY(-1px);
 }
 
 .kozeni-main-nav a.is-active,
 .kozeni-main-nav a[aria-current="page"]{
-  background:var(--pale, #E9F5EF);
+  background:linear-gradient(135deg, var(--pale, #E9F5EF), rgba(255,255,255,.94));
   color:var(--deep, #228C62);
-  box-shadow:inset 0 0 0 1px rgba(34,140,98,.12);
+  box-shadow:inset 0 0 0 1px rgba(34,140,98,.14), 0 8px 18px rgba(34,140,98,.08);
 }
 
 .kozeni-breadcrumb{
   max-width:1120px;
-  margin:18px auto -6px;
+  margin:14px auto -4px;
   padding:0 20px;
   display:flex;
   align-items:center;
   gap:7px;
   flex-wrap:wrap;
-  color:rgba(34,40,49,.54);
+  color:rgba(34,40,49,.48);
   font-size:12px;
   font-weight:850;
+  line-height:1.7;
 }
 
 .kozeni-breadcrumb a{
@@ -87,8 +104,17 @@
   text-decoration:none;
 }
 
+.kozeni-breadcrumb a:hover{
+  text-decoration:underline;
+  text-underline-offset:3px;
+}
+
 .kozeni-breadcrumb span{
   color:rgba(34,40,49,.42);
+}
+
+.kozeni-breadcrumb span[aria-current="page"]{
+  color:rgba(34,40,49,.58);
 }
 
 .kozeni-footer-social{
@@ -113,6 +139,12 @@
   text-decoration:none;
   font-size:13px;
   font-weight:900;
+  box-shadow:0 8px 20px rgba(34,140,98,.08);
+}
+
+.kozeni-footer-social a:hover{
+  transform:translateY(-1px);
+  background:rgba(255,255,255,.96);
 }
 
 .kozeni-footer-social__icon{
@@ -131,33 +163,6 @@
   border-radius:7px;
 }
 
-@media(max-width:720px){
-  .kozeni-site-nav{
-    align-items:flex-start;
-    flex-direction:column;
-    gap:10px;
-    padding:10px 16px;
-  }
-
-  .kozeni-main-nav{
-    width:100%;
-    justify-content:flex-start;
-    gap:6px;
-  }
-
-  .kozeni-main-nav a{
-    min-height:34px;
-    padding:7px 10px;
-    font-size:12px;
-  }
-
-  .kozeni-breadcrumb{
-    margin-top:14px;
-    padding:0 16px;
-  }
-}
-
-
 .kozeni-footer-social img.kozeni-footer-social__icon{
   width:22px;
   height:22px;
@@ -165,4 +170,49 @@
   flex:0 0 22px;
   border-radius:7px;
   object-fit:cover;
+}
+
+@media(max-width:720px){
+  .kozeni-site-nav{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:9px;
+    padding:9px 14px 10px;
+  }
+
+  .kozeni-site-brand{
+    font-size:14px;
+  }
+
+  .kozeni-site-brand img{
+    width:30px;
+    height:30px;
+    border-radius:10px;
+  }
+
+  .kozeni-main-nav{
+    width:100%;
+    justify-content:flex-start;
+    gap:6px;
+    padding-bottom:1px;
+  }
+
+  .kozeni-main-nav a{
+    min-height:33px;
+    padding:7px 10px;
+    font-size:12px;
+  }
+
+  .kozeni-breadcrumb{
+    margin-top:12px;
+    padding:0 14px;
+    font-size:11px;
+    gap:6px;
+  }
+}
+
+@media(min-width:721px){
+  .kozeni-main-nav{
+    max-width:62vw;
+  }
 }
