@@ -511,3 +511,133 @@ a.kozeni-social-link .kozeni-social-logo{
     border-radius:10px;
   }
 }
+
+/* v37.1 precision polish: status badges, soft labels, and low-noise guidance */
+.kozeni-status {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .25rem;
+  margin-left: .55rem;
+  padding: .22rem .58rem;
+  border-radius: 999px;
+  border: 1px solid rgba(34, 140, 98, .18);
+  background: rgba(233, 245, 239, .9);
+  color: #228C62;
+  font-size: .72rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: .03em;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.kozeni-status--live {
+  background: rgba(77, 189, 140, .14);
+  border-color: rgba(34, 140, 98, .24);
+  color: #228C62;
+}
+
+.kozeni-status--wip {
+  background: rgba(242, 201, 76, .16);
+  border-color: rgba(242, 201, 76, .38);
+  color: #7a5a00;
+}
+
+.kozeni-status--soon {
+  background: rgba(242, 246, 244, .95);
+  border-color: rgba(34, 40, 49, .12);
+  color: rgba(34, 40, 49, .68);
+}
+
+.kozeni-soft-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .42rem;
+  margin: .85rem 0 1.1rem;
+}
+
+.kozeni-soft-tags > span {
+  display: inline-flex;
+  align-items: center;
+  padding: .34rem .68rem;
+  border-radius: 999px;
+  background: rgba(242, 246, 244, .72);
+  border: 1px solid rgba(34, 40, 49, .08);
+  color: rgba(34, 40, 49, .68);
+  font-size: .82rem;
+  font-weight: 650;
+  line-height: 1;
+  cursor: default;
+}
+
+.kozeni-choice-guide,
+.kozeni-prep-note {
+  margin: 1.05rem 0 1.35rem;
+  padding: 1rem;
+  border-radius: 1.25rem;
+  border: 1px solid rgba(34, 140, 98, .12);
+  background: linear-gradient(135deg, rgba(233, 245, 239, .72), rgba(255, 255, 255, .9));
+  box-shadow: 0 10px 30px rgba(34, 40, 49, .04);
+}
+
+.kozeni-choice-guide__label {
+  margin: 0 0 .65rem;
+  color: #228C62;
+  font-size: .78rem;
+  font-weight: 800;
+  letter-spacing: .08em;
+}
+
+.kozeni-choice-guide__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: .65rem;
+}
+
+.kozeni-choice-guide__grid p {
+  margin: 0;
+  padding: .75rem .78rem;
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, .78);
+  border: 1px solid rgba(34, 40, 49, .06);
+}
+
+.kozeni-choice-guide__grid strong,
+.kozeni-choice-guide__grid span,
+.kozeni-prep-note strong,
+.kozeni-prep-note span {
+  display: block;
+}
+
+.kozeni-choice-guide__grid strong,
+.kozeni-prep-note strong {
+  color: #222831;
+  font-size: .86rem;
+  font-weight: 800;
+}
+
+.kozeni-choice-guide__grid span,
+.kozeni-prep-note span {
+  margin-top: .28rem;
+  color: rgba(34, 40, 49, .68);
+  font-size: .84rem;
+  line-height: 1.65;
+}
+
+.kozeni-prep-note {
+  display: grid;
+  gap: .25rem;
+}
+
+@media (max-width: 720px) {
+  .kozeni-status {
+    margin-left: .4rem;
+    padding: .2rem .5rem;
+    font-size: .68rem;
+  }
+
+  .kozeni-choice-guide__grid {
+    grid-template-columns: 1fr;
+  }
+}
