@@ -163,61 +163,8 @@ button.quiz-submit:focus-visible,.quiz-submit:focus-visible{
     width:100%;
   }
 }
-/* kozeni fixed return button: match point-site return behavior */
-body{
-  padding-bottom:96px;
-}
-.kozeni-fixed-return{
-  position:fixed;
-  left:50%;
-  bottom:14px;
-  z-index:120;
-  width:min(1120px, calc(100% - 24px));
-  transform:translateX(-50%);
-  display:flex;
-  justify-content:center;
-  pointer-events:none;
-}
-.kozeni-fixed-return a{
-  pointer-events:auto;
-  width:100%;
-  min-height:50px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  border-radius:999px;
-  background:rgba(255,255,255,.96);
-  border:1px solid var(--ia-line, rgba(34,140,98,.16));
-  color:var(--ia-green, var(--deep, #228C62));
-  padding:12px 18px;
-  font-size:14px;
-  font-weight:950;
-  line-height:1.2;
-  text-decoration:none;
-  box-shadow:0 14px 34px rgba(34,140,98,.16);
-  backdrop-filter:blur(14px);
-}
-.kozeni-fixed-return a:hover{
-  transform:translateY(-1px);
-}
-.kozeni-fixed-return a:focus-visible{
-  outline:3px solid rgba(77,189,140,.35);
-  outline-offset:3px;
-}
-@media(max-width:720px){
-  body{
-    padding-bottom:92px;
-  }
-  .kozeni-fixed-return{
-    bottom:10px;
-    width:calc(100% - 20px);
-  }
-  .kozeni-fixed-return a{
-    min-height:48px;
-  }
-}
 </style>
-  <link rel="stylesheet" href="/assets/kozeni-brand.v1.css?v=brand1"><link rel="icon" type="image/png" sizes="32x32" href="/assets/images/icon-32.png?v=xicon1">
+  <link rel="stylesheet" href="/assets/kozeni-brand.v1.css?v=brand1"><link rel="stylesheet" href="/assets/kozeni-return.v1.css?v=return1"><link rel="icon" type="image/png" sizes="32x32" href="/assets/images/icon-32.png?v=xicon1">
 </head>
 <body>
 <header class="header"><nav class="nav"><a class="brand" href="/">スマホ小銭研究所</a><div class="navlinks"><a href="/credit-card/">クレカ</a><a href="/mobile-sim/">スマホ料金</a><a href="/point-site/">ポイ活</a><a href="/about/">運営方針</a></div></nav></header>
