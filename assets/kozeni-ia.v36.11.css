@@ -511,3 +511,60 @@ a.kozeni-social-link--instagram .kozeni-social-logo-wrap{
   }
 }
 
+/* kozeni official social app-icon nav v3 */
+a.kozeni-social-link{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  min-height:34px;
+  padding:5px 10px 5px 7px;
+  border:1px solid rgba(34,140,98,.18);
+  border-radius:999px;
+  background:#fff;
+  color:#222831;
+  font-weight:900;
+  line-height:1;
+  text-decoration:none;
+  white-space:nowrap;
+  box-shadow:0 6px 16px rgba(34,140,98,.07);
+}
+a.kozeni-social-link:hover{
+  transform:translateY(-1px);
+  border-color:rgba(34,140,98,.30);
+  box-shadow:0 10px 22px rgba(34,140,98,.12);
+}
+a.kozeni-social-link .kozeni-social-logo-wrap{
+  display:inline-grid;
+  place-items:center;
+  width:28px;
+  height:28px;
+  flex:0 0 28px;
+  border-radius:9px;
+  background:transparent;
+  box-shadow:none;
+  overflow:visible;
+}
+a.kozeni-social-link .kozeni-social-logo{
+  display:block;
+  width:28px;
+  height:28px;
+  object-fit:contain;
+}
+a.kozeni-social-link--x .kozeni-social-logo-wrap,
+a.kozeni-social-link--instagram .kozeni-social-logo-wrap{
+  background:transparent;
+}
+@media(max-width:720px){
+  a.kozeni-social-link{
+    min-height:32px;
+    padding:5px 8px 5px 6px;
+    gap:6px;
+    font-size:13px;
+  }
+  a.kozeni-social-link .kozeni-social-logo-wrap,
+  a.kozeni-social-link .kozeni-social-logo{
+    width:24px;
+    height:24px;
+    flex-basis:24px;
+  }
+}
