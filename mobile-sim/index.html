@@ -199,7 +199,8 @@ h1{
 
 
 
-/* kozeni-line-diagnosis-v38-2:start */
+
+/* kozeni-line-diagnosis-v38-3:start */
 .kozeni-line-quiz {
   --quiz-green: #228C62;
   --quiz-mint: #4DBD8C;
@@ -224,8 +225,8 @@ h1{
 .kozeni-line-quiz__head {
   display: grid;
   gap: .44rem;
-  max-width: 58rem;
-  margin-bottom: .92rem;
+  max-width: 44rem;
+  margin-bottom: .72rem;
   color: #fff;
 }
 
@@ -264,22 +265,21 @@ h1{
 }
 
 .kozeni-line-quiz__lead {
-  max-width: 42rem;
+  max-width: 38rem;
   margin: 0;
-  color: rgba(255, 255, 255, .76);
-  font-size: .92rem;
-  line-height: 1.7;
+  color: rgba(255, 255, 255, .72);
+  font-size: .88rem;
+  line-height: 1.65;
 }
 
 .kozeni-line-quiz__shell {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(220px, .34fr);
+  grid-template-columns: minmax(0, 820px);
   gap: .82rem;
   align-items: stretch;
 }
 
 .kozeni-line-quiz__panel,
-.kozeni-line-quiz__trail,
 .kozeni-line-quiz__result {
   border: 1px solid rgba(255, 255, 255, .58);
   border-radius: 1.35rem;
@@ -290,7 +290,7 @@ h1{
 
 .kozeni-line-quiz__panel {
   display: grid;
-  min-height: 440px;
+  min-height: 380px;
   padding: clamp(1rem, 2.3vw, 1.45rem);
 }
 
@@ -299,7 +299,7 @@ h1{
   gap: .74rem;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: .95rem;
+  margin-bottom: .72rem;
 }
 
 .kozeni-line-quiz__step {
@@ -502,51 +502,6 @@ h1{
   color: #116544;
 }
 
-.kozeni-line-quiz__trail {
-  display: grid;
-  align-content: start;
-  gap: .62rem;
-  padding: 1rem;
-}
-
-.kozeni-line-quiz__trail-title {
-  margin: 0;
-  color: rgba(34, 40, 49, .54);
-  font-size: .76rem;
-  font-weight: 950;
-  letter-spacing: .08em;
-}
-
-.kozeni-line-quiz__summary {
-  display: grid;
-  gap: .48rem;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.kozeni-line-quiz__summary li {
-  display: grid;
-  gap: .12rem;
-  padding: .52rem .58rem;
-  border-radius: .86rem;
-  background: rgba(242, 246, 244, .76);
-}
-
-.kozeni-line-quiz__summary strong {
-  color: rgba(34, 40, 49, .46);
-  font-size: .68rem;
-  font-weight: 950;
-  letter-spacing: .04em;
-}
-
-.kozeni-line-quiz__summary span {
-  color: rgba(34, 40, 49, .78);
-  font-size: .8rem;
-  font-weight: 850;
-  line-height: 1.45;
-}
-
 .kozeni-line-quiz__result {
   display: grid;
   gap: .72rem;
@@ -694,14 +649,6 @@ h1{
   .kozeni-line-quiz__shell {
     grid-template-columns: 1fr;
   }
-
-  .kozeni-line-quiz__trail {
-    order: -1;
-  }
-
-  .kozeni-line-quiz__summary {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
 }
 
 @media (max-width: 560px) {
@@ -715,10 +662,6 @@ h1{
     min-height: auto;
   }
 
-  .kozeni-line-quiz__summary {
-    grid-template-columns: 1fr;
-  }
-
   .kozeni-line-quiz__nav,
   .kozeni-line-quiz__nav-left,
   .kozeni-line-quiz__nav-right,
@@ -727,7 +670,7 @@ h1{
     width: 100%;
   }
 }
-/* kozeni-line-diagnosis-v38-2:end */
+/* kozeni-line-diagnosis-v38-3:end */
 </style>
   <link rel="stylesheet" href="/assets/kozeni-brand.v1.css?v=brand1">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/icon-32.png?v=xicon1">
@@ -767,12 +710,13 @@ h1{
       </section>
 
 
-<!-- kozeni-line-diagnosis-v38-2:start -->
+
+<!-- kozeni-line-diagnosis-v38-3:start -->
 <section class="kozeni-line-quiz" aria-labelledby="kozeni-line-quiz-title" data-step="0">
   <div class="kozeni-line-quiz__head">
     <p class="kozeni-line-quiz__eyebrow">30秒クイズ診断</p>
     <h2 id="kozeni-line-quiz-title">スマホ・回線、まずどこを見る？</h2>
-    <p class="kozeni-line-quiz__lead">質問は1つずつ。選んで進むだけで、見るべき公式ページを絞ります。</p>
+    <p class="kozeni-line-quiz__lead">5つ選ぶだけ。最後に見るべき公式ページを出します。</p>
   </div>
 
   <div class="kozeni-line-quiz__shell">
@@ -799,11 +743,6 @@ h1{
         </div>
       </div>
     </div>
-
-    <aside class="kozeni-line-quiz__trail" aria-label="選択した内容">
-      <p class="kozeni-line-quiz__trail-title">SELECTED</p>
-      <ul class="kozeni-line-quiz__summary" id="kozeni-line-quiz-summary"></ul>
-    </aside>
   </div>
 
   <section class="kozeni-line-quiz__result" id="kozeni-line-quiz-result" aria-live="polite" aria-atomic="true" hidden>
@@ -828,7 +767,7 @@ h1{
     <p class="kozeni-line-quiz__noscript">診断ギミックを使うにはJavaScriptを有効にしてください。まず現在のスマホ代・月間GB・家のWi-Fi状況を確認してから公式ページを見るのがおすすめです。</p>
   </noscript>
 </section>
-<!-- kozeni-line-diagnosis-v38-2:end -->
+<!-- kozeni-line-diagnosis-v38-3:end -->
 <!-- brand-list-hero-v1:end -->
 <!-- kozeni-mobile-network-list-v1:start -->
 <section class="kozeni-list-section" aria-label="最初に見るおすすめスマホ・回線">
@@ -932,7 +871,8 @@ h1{
 </nav>
 
 
-<!-- kozeni-line-diagnosis-js-v38-2:start -->
+
+<!-- kozeni-line-diagnosis-js-v38-3:start -->
 <script>
 (() => {
   const root = document.querySelector('.kozeni-line-quiz');
@@ -1113,7 +1053,6 @@ h1{
     question: $('#kozeni-line-quiz-question'),
     hint: $('#kozeni-line-quiz-hint'),
     options: $('#kozeni-line-quiz-options'),
-    summary: $('#kozeni-line-quiz-summary'),
     back: $('#kozeni-line-quiz-back'),
     next: $('#kozeni-line-quiz-next'),
     reset: $('#kozeni-line-quiz-reset'),
@@ -1126,10 +1065,6 @@ h1{
     points: $('#kozeni-line-quiz-points'),
     actions: $('#kozeni-line-quiz-actions')
   };
-
-  function optionLabel(question, value) {
-    return question.options.find((option) => option.value === value)?.label || '未選択';
-  }
 
   function chooseResult() {
     const { need, bill, data, home, style } = state;
@@ -1189,19 +1124,6 @@ h1{
     });
   }
 
-  function renderSummary() {
-    els.summary.textContent = '';
-    questions.forEach((question) => {
-      const li = document.createElement('li');
-      const strong = document.createElement('strong');
-      const span = document.createElement('span');
-      strong.textContent = question.title.replace('？', '');
-      span.textContent = state[question.key] ? optionLabel(question, state[question.key]) : '未選択';
-      li.append(strong, span);
-      els.summary.appendChild(li);
-    });
-  }
-
   function renderQuestion() {
     const question = questions[step];
     root.dataset.step = String(step);
@@ -1239,7 +1161,6 @@ h1{
     els.next.disabled = !state[question.key];
     els.next.textContent = step === questions.length - 1 ? '診断結果を見る' : '次へ';
     renderDots();
-    renderSummary();
   }
 
   function renderResult() {
@@ -1287,6 +1208,6 @@ h1{
   renderQuestion();
 })();
 </script>
-<!-- kozeni-line-diagnosis-js-v38-2:end -->
+<!-- kozeni-line-diagnosis-js-v38-3:end -->
 </body>
 </html>

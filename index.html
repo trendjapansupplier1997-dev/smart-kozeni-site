@@ -18,6 +18,18 @@
   <link rel="manifest" href="/site.webmanifest?v=xicon1">
 <link rel="stylesheet" href="/assets/kozeni-nav.v1.css?v=nav2">
 <link rel="stylesheet" href="/assets/kozeni-menu.v1.css?v=menu1">
+<style>
+/* kozeni-nav-fallback-v38-3:start */
+.kozeni-menu-open .is-open,
+[data-kozeni-nav-target].is-open {
+  visibility: visible !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+  transform: none !important;
+  max-height: 100vh !important;
+}
+/* kozeni-nav-fallback-v38-3:end */
+</style>
 </head>
 <body>
 <header class="kozeni-site-header">
@@ -120,5 +132,92 @@
 
   <script src="/assets/kozeni-ia.v36.10.js" defer></script>
 <script src="/assets/kozeni-menu.v1.js?v=menu1" defer></script>
+<!-- kozeni-nav-fallback-v38-3:start -->
+<script>
+(() => {
+  const ready = (fn) => {
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', fn, { once: true });
+    else fn();
+  };
+
+  ready(() => {
+    const toggleSelector = [
+      '[data-menu-toggle]',
+      '[data-nav-toggle]',
+      '.menu-toggle',
+      '.nav-toggle',
+      '.hamburger',
+      '.site-menu-toggle',
+      '.brand-menu-toggle',
+      '.kozeni-menu-toggle',
+      'button[aria-controls][aria-expanded]',
+      'button[aria-label*="メニュー"]',
+      'button[aria-label*="menu" i]'
+    ].join(',');
+
+    const targetSelector = [
+      '[data-menu-panel]',
+      '[data-nav-panel]',
+      '#site-menu',
+      '#mobile-menu',
+      '#global-menu',
+      '.site-nav',
+      '.global-nav',
+      '.brand-nav',
+      '.kozeni-nav',
+      '.nav-links',
+      'nav'
+    ].join(',');
+
+    const findTarget = (button) => {
+      const controlled = button.getAttribute('aria-controls');
+      if (controlled && document.getElementById(controlled)) return document.getElementById(controlled);
+      const selector = button.getAttribute('data-target') || button.getAttribute('data-menu-target') || button.getAttribute('data-nav-target');
+      if (selector) {
+        try {
+          const found = document.querySelector(selector);
+          if (found) return found;
+        } catch (_) {}
+      }
+      const scope = button.closest('header, .site-header, .brand-header, .kozeni-header') || document;
+      const found = scope.querySelector(targetSelector);
+      return found && found !== button ? found : null;
+    };
+
+    const setOpen = (button, target, open) => {
+      button.setAttribute('aria-expanded', String(open));
+      button.classList.toggle('is-open', open);
+      document.documentElement.classList.toggle('kozeni-menu-open', open);
+      document.body.classList.toggle('kozeni-menu-open', open);
+      if (!target) return;
+      target.setAttribute('data-kozeni-nav-target', 'true');
+      target.classList.toggle('is-open', open);
+      target.dataset.open = String(open);
+      target.setAttribute('aria-hidden', String(!open));
+      if (open) target.hidden = false;
+    };
+
+    document.querySelectorAll(toggleSelector).forEach((button) => {
+      if (button.dataset.kozeniNavFallbackBound === 'true') return;
+      const target = findTarget(button);
+      if (!target) return;
+      button.dataset.kozeniNavFallbackBound = 'true';
+      button.addEventListener('click', (event) => {
+        const isOpen = button.getAttribute('aria-expanded') === 'true' || target.classList.contains('is-open') || target.dataset.open === 'true';
+        setOpen(button, target, !isOpen);
+        event.stopPropagation();
+      });
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key !== 'Escape') return;
+      document.querySelectorAll('[data-kozeni-nav-fallback-bound="true"]').forEach((button) => {
+        setOpen(button, findTarget(button), false);
+      });
+    });
+  });
+})();
+</script>
+<!-- kozeni-nav-fallback-v38-3:end -->
 </body>
 </html>
