@@ -19,16 +19,21 @@
 <link rel="stylesheet" href="/assets/kozeni-nav.v1.css?v=nav2">
 <link rel="stylesheet" href="/assets/kozeni-menu.v1.css?v=menu1">
 <style>
-/* kozeni-nav-fallback-v38-3:start */
-.kozeni-menu-open .is-open,
-[data-kozeni-nav-target].is-open {
+/* kozeni-nav-fallback-v38-5:start */
+[data-kozeni-fallback-panel="true"][data-kozeni-fallback-open="true"],
+[data-kozeni-nav-target="true"][data-kozeni-fallback-open="true"] {
   visibility: visible !important;
   opacity: 1 !important;
   pointer-events: auto !important;
   transform: none !important;
   max-height: 100vh !important;
 }
-/* kozeni-nav-fallback-v38-3:end */
+
+html.kozeni-nav-fallback-open,
+body.kozeni-nav-fallback-open {
+  overscroll-behavior: contain;
+}
+/* kozeni-nav-fallback-v38-5:end */
 </style>
 </head>
 <body>
@@ -132,7 +137,7 @@
 
   <script src="/assets/kozeni-ia.v36.10.js" defer></script>
 <script src="/assets/kozeni-menu.v1.js?v=menu1" defer></script>
-<!-- kozeni-nav-fallback-v38-3:start -->
+<!-- kozeni-nav-fallback-v38-5:start -->
 <script>
 (() => {
   const ready = (fn) => {
@@ -155,7 +160,21 @@
       'button[aria-label*="menu" i]'
     ].join(',');
 
-    const targetSelector = [
+    const closeSelector = [
+      '[data-menu-close]',
+      '[data-nav-close]',
+      '.menu-close',
+      '.nav-close',
+      '.site-menu-close',
+      '.brand-menu-close',
+      '.kozeni-menu-close',
+      'button[aria-label*="閉じ"]',
+      'button[aria-label*="close" i]'
+    ].join(',');
+
+    const panelSelector = [
+      '[data-kozeni-fallback-panel="true"]',
+      '[data-kozeni-nav-target="true"]',
       '[data-menu-panel]',
       '[data-nav-panel]',
       '#site-menu',
@@ -169,55 +188,118 @@
       'nav'
     ].join(',');
 
+    const allPanels = () => Array.from(document.querySelectorAll(panelSelector));
+
+    const normalizePanel = (panel) => {
+      if (!panel) return null;
+      panel.setAttribute('data-kozeni-fallback-panel', 'true');
+      if (panel.hasAttribute('hidden') && !panel.dataset.kozeniFallbackHadHidden) {
+        panel.dataset.kozeniFallbackHadHidden = 'true';
+      }
+      return panel;
+    };
+
     const findTarget = (button) => {
       const controlled = button.getAttribute('aria-controls');
-      if (controlled && document.getElementById(controlled)) return document.getElementById(controlled);
+      if (controlled && document.getElementById(controlled)) return normalizePanel(document.getElementById(controlled));
+
       const selector = button.getAttribute('data-target') || button.getAttribute('data-menu-target') || button.getAttribute('data-nav-target');
       if (selector) {
         try {
           const found = document.querySelector(selector);
-          if (found) return found;
+          if (found) return normalizePanel(found);
         } catch (_) {}
       }
-      const scope = button.closest('header, .site-header, .brand-header, .kozeni-header') || document;
-      const found = scope.querySelector(targetSelector);
-      return found && found !== button ? found : null;
+
+      const scope = button.closest('header, .site-header, .brand-header, .kozeni-header, .kozeni-site-header') || document;
+      const found = Array.from(scope.querySelectorAll(panelSelector)).find((node) => node !== button && !button.contains(node));
+      return normalizePanel(found || null);
     };
 
-    const setOpen = (button, target, open) => {
-      button.setAttribute('aria-expanded', String(open));
-      button.classList.toggle('is-open', open);
+    const findCloseTarget = (button) => {
+      const direct = button.closest(panelSelector);
+      if (direct) return normalizePanel(direct);
+      return normalizePanel(allPanels().find((panel) => panel.dataset.kozeniFallbackOpen === 'true' || panel.classList.contains('is-open')) || null);
+    };
+
+    const closeAll = () => {
+      document.documentElement.classList.remove('kozeni-menu-open', 'kozeni-nav-fallback-open');
+      document.body.classList.remove('kozeni-menu-open', 'kozeni-nav-fallback-open');
+      document.querySelectorAll(toggleSelector).forEach((button) => {
+        button.setAttribute('aria-expanded', 'false');
+        button.classList.remove('is-open');
+      });
+      allPanels().forEach((panel) => {
+        panel.dataset.kozeniFallbackOpen = 'false';
+        panel.dataset.open = 'false';
+        panel.setAttribute('aria-hidden', 'true');
+        panel.classList.remove('is-open', 'open', 'active');
+        if (panel.dataset.kozeniFallbackHadHidden === 'true') panel.hidden = true;
+      });
+    };
+
+    const setOpen = (button, panel, open) => {
+      if (open) closeAll();
+
+      if (button) {
+        button.setAttribute('aria-expanded', String(open));
+        button.classList.toggle('is-open', open);
+      }
+
+      document.documentElement.classList.toggle('kozeni-nav-fallback-open', open);
+      document.body.classList.toggle('kozeni-nav-fallback-open', open);
       document.documentElement.classList.toggle('kozeni-menu-open', open);
       document.body.classList.toggle('kozeni-menu-open', open);
-      if (!target) return;
-      target.setAttribute('data-kozeni-nav-target', 'true');
-      target.classList.toggle('is-open', open);
-      target.dataset.open = String(open);
-      target.setAttribute('aria-hidden', String(!open));
-      if (open) target.hidden = false;
+
+      if (!panel) return;
+      panel = normalizePanel(panel);
+      if (open) panel.hidden = false;
+      panel.dataset.kozeniFallbackOpen = String(open);
+      panel.dataset.open = String(open);
+      panel.classList.toggle('is-open', open);
+      panel.classList.toggle('open', open);
+      panel.setAttribute('aria-hidden', String(!open));
+      if (!open && panel.dataset.kozeniFallbackHadHidden === 'true') panel.hidden = true;
     };
 
-    document.querySelectorAll(toggleSelector).forEach((button) => {
-      if (button.dataset.kozeniNavFallbackBound === 'true') return;
-      const target = findTarget(button);
-      if (!target) return;
-      button.dataset.kozeniNavFallbackBound = 'true';
-      button.addEventListener('click', (event) => {
-        const isOpen = button.getAttribute('aria-expanded') === 'true' || target.classList.contains('is-open') || target.dataset.open === 'true';
-        setOpen(button, target, !isOpen);
-        event.stopPropagation();
-      });
-    });
+    const isOpen = (button, panel) => {
+      return button?.getAttribute('aria-expanded') === 'true'
+        || panel?.dataset.kozeniFallbackOpen === 'true'
+        || panel?.dataset.open === 'true'
+        || panel?.classList.contains('is-open')
+        || document.body.classList.contains('kozeni-menu-open')
+        || document.documentElement.classList.contains('kozeni-menu-open');
+    };
+
+    document.addEventListener('click', (event) => {
+      const closeButton = event.target.closest(closeSelector);
+      if (closeButton) {
+        closeAll();
+        event.preventDefault();
+        event.stopImmediatePropagation();
+        return;
+      }
+
+      const toggleButton = event.target.closest(toggleSelector);
+      if (toggleButton) {
+        const target = findTarget(toggleButton);
+        if (!target) return;
+        setOpen(toggleButton, target, !isOpen(toggleButton, target));
+        event.preventDefault();
+        event.stopImmediatePropagation();
+        return;
+      }
+
+      const openedPanel = allPanels().find((panel) => panel.dataset.kozeniFallbackOpen === 'true' || panel.classList.contains('is-open'));
+      if (openedPanel && !event.target.closest(panelSelector)) closeAll();
+    }, true);
 
     document.addEventListener('keydown', (event) => {
-      if (event.key !== 'Escape') return;
-      document.querySelectorAll('[data-kozeni-nav-fallback-bound="true"]').forEach((button) => {
-        setOpen(button, findTarget(button), false);
-      });
+      if (event.key === 'Escape') closeAll();
     });
   });
 })();
 </script>
-<!-- kozeni-nav-fallback-v38-3:end -->
+<!-- kozeni-nav-fallback-v38-5:end -->
 </body>
 </html>
