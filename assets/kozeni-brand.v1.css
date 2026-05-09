@@ -801,3 +801,20 @@ a.kozeni-social-link .kozeni-social-logo{
     width: 100%;
   }
 }
+
+/* v37.2.1 mobile-sim guide: non-link quiet cards */
+.kozeni-sim-guide--quiet .kozeni-sim-pick {
+  cursor: default;
+  user-select: none;
+}
+
+.kozeni-sim-guide--quiet .kozeni-sim-pick:hover {
+  transform: none;
+  border-color: rgba(34, 40, 49, .07);
+  box-shadow: none;
+}
+
+.kozeni-sim-guide--quiet .kozeni-sim-pick:focus {
+  outline: none;
+}
+
