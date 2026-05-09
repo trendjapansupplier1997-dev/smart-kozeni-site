@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>スマホ・回線30秒診断｜料金・Wi-Fiの公式条件チェック</title>
-  <meta name="description" content="スマホ代、格安SIM、工事不要Wi-Fi、開通待ち回線を、現在の月額・データ使用量・家Wi-Fi状況から軽く診断して公式条件へ案内します。">
+  <title>スマホ・回線30秒クイズ診断｜料金・Wi-Fiの公式条件チェック</title>
+  <meta name="description" content="スマホ代、格安SIM、工事不要Wi-Fi、開通待ち回線を、1問ずつ答えるクイズ形式で整理して公式条件へ案内します。">
   <link rel="canonical" href="https://smart-kozeni.com/mobile-sim/">
-  <meta property="og:title" content="スマホ・回線30秒診断｜料金・Wi-Fiの公式条件チェック">
-  <meta property="og:description" content="スマホ代、格安SIM、工事不要Wi-Fi、開通待ち回線を、現在の月額・データ使用量・家Wi-Fi状況から軽く診断して公式条件へ案内します。">
+  <meta property="og:title" content="スマホ・回線30秒クイズ診断｜料金・Wi-Fiの公式条件チェック">
+  <meta property="og:description" content="スマホ代、格安SIM、工事不要Wi-Fi、開通待ち回線を、1問ずつ答えるクイズ形式で整理して公式条件へ案内します。">
   <meta property="og:url" content="https://smart-kozeni.com/mobile-sim/">
   <meta property="og:type" content="website">
   <style>
@@ -198,201 +198,374 @@ h1{
 }
 
 
-/* kozeni-line-diagnosis-v38-1:start */
-.kozeni-line-check {
-  margin: 1.1rem 0 1.45rem;
+
+/* kozeni-line-diagnosis-v38-2:start */
+.kozeni-line-quiz {
+  --quiz-green: #228C62;
+  --quiz-mint: #4DBD8C;
+  --quiz-ink: #1d2630;
+  --quiz-soft: #E9F5EF;
+  --quiz-gold: #F2C94C;
+  margin: 1rem 0 1.45rem;
   padding: clamp(1rem, 2.4vw, 1.45rem);
-  border-radius: 1.55rem;
-  border: 1px solid rgba(34, 140, 98, .14);
+  border-radius: 1.7rem;
   background:
-    radial-gradient(circle at 12% 10%, rgba(77, 189, 140, .18), transparent 28%),
-    radial-gradient(circle at 92% 18%, rgba(242, 201, 76, .13), transparent 24%),
-    linear-gradient(135deg, rgba(233, 245, 239, .82), rgba(255, 255, 255, .98));
-  box-shadow: 0 18px 44px rgba(34, 40, 49, .06);
+    radial-gradient(circle at 10% 10%, rgba(77, 189, 140, .27), transparent 30%),
+    radial-gradient(circle at 92% 0%, rgba(242, 201, 76, .2), transparent 28%),
+    linear-gradient(145deg, #10241d 0%, #17372b 42%, #f7fbf8 42.2%, #ffffff 100%);
+  box-shadow: 0 22px 54px rgba(34, 40, 49, .12);
+  overflow: hidden;
 }
 
-.kozeni-line-check * {
+.kozeni-line-quiz * {
   box-sizing: border-box;
 }
 
-.kozeni-line-check__head {
+.kozeni-line-quiz__head {
   display: grid;
   gap: .44rem;
-  margin-bottom: 1rem;
+  max-width: 58rem;
+  margin-bottom: .92rem;
+  color: #fff;
 }
 
-.kozeni-line-check__eyebrow {
+.kozeni-line-quiz__eyebrow {
   display: inline-flex;
   width: fit-content;
   align-items: center;
-  gap: .38rem;
+  gap: .42rem;
   margin: 0;
-  padding: .3rem .58rem;
+  padding: .32rem .64rem;
+  border: 1px solid rgba(255, 255, 255, .18);
   border-radius: 999px;
-  background: rgba(255, 255, 255, .72);
-  color: #228C62;
+  background: rgba(255, 255, 255, .12);
+  color: rgba(255, 255, 255, .92);
   font-size: .75rem;
   font-weight: 950;
   letter-spacing: .08em;
 }
 
-.kozeni-line-check__eyebrow::before {
+.kozeni-line-quiz__eyebrow::before {
   content: "";
   width: .48rem;
   height: .48rem;
   border-radius: 999px;
-  background: #4DBD8C;
-  box-shadow: 0 0 0 .22rem rgba(77, 189, 140, .14);
+  background: var(--quiz-gold);
+  box-shadow: 0 0 0 .24rem rgba(242, 201, 76, .16);
 }
 
-.kozeni-line-check__head h2 {
+.kozeni-line-quiz__head h2 {
+  max-width: 43rem;
   margin: 0;
-  color: #222831;
-  font-size: clamp(1.38rem, 2.7vw, 2rem);
-  line-height: 1.32;
-  letter-spacing: -.04em;
+  color: #fff;
+  font-size: clamp(1.48rem, 3vw, 2.16rem);
+  line-height: 1.28;
+  letter-spacing: -.045em;
 }
 
-.kozeni-line-check__lead {
-  max-width: 54rem;
+.kozeni-line-quiz__lead {
+  max-width: 42rem;
   margin: 0;
-  color: rgba(34, 40, 49, .68);
-  font-size: .94rem;
-  line-height: 1.75;
+  color: rgba(255, 255, 255, .76);
+  font-size: .92rem;
+  line-height: 1.7;
 }
 
-.kozeni-line-check__meter {
+.kozeni-line-quiz__shell {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(220px, .34fr);
+  gap: .82rem;
+  align-items: stretch;
+}
+
+.kozeni-line-quiz__panel,
+.kozeni-line-quiz__trail,
+.kozeni-line-quiz__result {
+  border: 1px solid rgba(255, 255, 255, .58);
+  border-radius: 1.35rem;
+  background: rgba(255, 255, 255, .92);
+  box-shadow: 0 18px 42px rgba(16, 36, 29, .12);
+  backdrop-filter: blur(12px);
+}
+
+.kozeni-line-quiz__panel {
+  display: grid;
+  min-height: 440px;
+  padding: clamp(1rem, 2.3vw, 1.45rem);
+}
+
+.kozeni-line-quiz__top {
   display: flex;
-  flex-wrap: wrap;
-  gap: .42rem;
-  margin: .16rem 0 .1rem;
+  gap: .74rem;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: .95rem;
+}
+
+.kozeni-line-quiz__step {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  padding: .36rem .68rem;
+  border-radius: 999px;
+  background: rgba(34, 140, 98, .1);
+  color: #116544;
+  font-size: .78rem;
+  font-weight: 950;
+}
+
+.kozeni-line-quiz__dots {
+  display: flex;
+  gap: .28rem;
+  margin: 0;
   padding: 0;
   list-style: none;
 }
 
-.kozeni-line-check__meter li {
-  display: inline-flex;
-  align-items: center;
-  min-height: 30px;
-  padding: .34rem .56rem;
+.kozeni-line-quiz__dots li {
+  width: .48rem;
+  height: .48rem;
   border-radius: 999px;
-  background: rgba(255, 255, 255, .66);
-  color: rgba(34, 40, 49, .58);
-  font-size: .74rem;
-  font-weight: 900;
+  background: rgba(34, 40, 49, .14);
+  transition: width .18s ease, background .18s ease;
 }
 
-.kozeni-line-check__meter li[data-active="true"] {
-  background: rgba(77, 189, 140, .17);
-  color: #116544;
+.kozeni-line-quiz__dots li[data-active="true"] {
+  width: 1.45rem;
+  background: var(--quiz-green);
 }
 
-.kozeni-line-check__body {
+.kozeni-line-quiz__stage {
   display: grid;
-  grid-template-columns: minmax(0, 1.06fr) minmax(300px, .94fr);
-  gap: .92rem;
-  align-items: start;
+  align-content: start;
+  gap: .74rem;
 }
 
-.kozeni-line-check__questions {
-  display: grid;
-  gap: .66rem;
-}
-
-.kozeni-line-check__group {
+.kozeni-line-quiz__kicker {
+  width: fit-content;
   margin: 0;
-  padding: .76rem;
-  border: 1px solid rgba(34, 40, 49, .07);
-  border-radius: 1.12rem;
-  background: rgba(255, 255, 255, .76);
+  padding: .24rem .52rem;
+  border-radius: 999px;
+  background: rgba(242, 201, 76, .2);
+  color: #6f5200;
+  font-size: .72rem;
+  font-weight: 950;
 }
 
-.kozeni-line-check__group legend {
-  padding: 0 .16rem;
-  color: rgba(34, 40, 49, .82);
-  font-size: .82rem;
-  font-weight: 900;
+.kozeni-line-quiz__question {
+  margin: 0;
+  color: var(--quiz-ink);
+  font-size: clamp(1.34rem, 2.5vw, 1.86rem);
+  line-height: 1.34;
+  letter-spacing: -.04em;
 }
 
-.kozeni-line-check__hint {
-  margin: .14rem 0 0;
-  color: rgba(34, 40, 49, .5);
-  font-size: .74rem;
-  line-height: 1.55;
+.kozeni-line-quiz__hint {
+  min-height: 1.5em;
+  margin: -.16rem 0 .08rem;
+  color: rgba(34, 40, 49, .55);
+  font-size: .86rem;
+  line-height: 1.65;
 }
 
-.kozeni-line-check__choices {
-  display: flex;
-  flex-wrap: wrap;
-  gap: .42rem;
-  margin-top: .52rem;
+.kozeni-line-quiz__options {
+  display: grid;
+  gap: .54rem;
 }
 
-.kozeni-line-check__choice {
-  display: inline-flex;
-  min-height: 38px;
+.kozeni-line-quiz__option {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: .6rem;
+  align-items: center;
+  width: 100%;
+  min-height: 58px;
+  padding: .78rem .86rem .78rem .98rem;
+  border: 1px solid rgba(34, 40, 49, .08);
+  border-radius: 1.08rem;
+  background: #fff;
+  color: rgba(34, 40, 49, .78);
   cursor: pointer;
+  text-align: left;
+  box-shadow: 0 8px 20px rgba(34, 40, 49, .045);
+  transition: transform .14s ease, border-color .14s ease, background .14s ease, box-shadow .14s ease;
   -webkit-tap-highlight-color: transparent;
 }
 
-.kozeni-line-check__choice input {
-  position: absolute;
-  opacity: 0;
-  pointer-events: none;
+.kozeni-line-quiz__option:hover,
+.kozeni-line-quiz__option:focus-visible {
+  transform: translateY(-1px);
+  border-color: rgba(34, 140, 98, .34);
+  box-shadow: 0 12px 26px rgba(34, 140, 98, .1);
+  outline: none;
 }
 
-.kozeni-line-check__choice span {
+.kozeni-line-quiz__option[aria-pressed="true"] {
+  border-color: rgba(34, 140, 98, .44);
+  background: linear-gradient(135deg, rgba(233, 245, 239, .95), #fff);
+  box-shadow: inset 0 0 0 1px rgba(34, 140, 98, .08), 0 14px 28px rgba(34, 140, 98, .12);
+}
+
+.kozeni-line-quiz__option-label {
+  display: block;
+  color: var(--quiz-ink);
+  font-size: .94rem;
+  font-weight: 950;
+  line-height: 1.35;
+}
+
+.kozeni-line-quiz__option-micro {
+  display: block;
+  margin-top: .16rem;
+  color: rgba(34, 40, 49, .52);
+  font-size: .75rem;
+  font-weight: 750;
+  line-height: 1.45;
+}
+
+.kozeni-line-quiz__option::after {
+  content: "›";
+  display: grid;
+  place-items: center;
+  width: 1.62rem;
+  height: 1.62rem;
+  border-radius: 999px;
+  background: rgba(233, 245, 239, .85);
+  color: var(--quiz-green);
+  font-size: 1.2rem;
+  font-weight: 950;
+}
+
+.kozeni-line-quiz__option[aria-pressed="true"]::after {
+  content: "✓";
+  background: var(--quiz-green);
+  color: #fff;
+  font-size: .86rem;
+}
+
+.kozeni-line-quiz__nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: .35rem;
+}
+
+.kozeni-line-quiz__nav-left,
+.kozeni-line-quiz__nav-right {
+  display: flex;
+  gap: .5rem;
+  flex-wrap: wrap;
+}
+
+.kozeni-line-quiz__nav-button,
+.kozeni-line-quiz__button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 38px;
-  padding: .54rem .72rem;
+  min-height: 42px;
+  padding: .72rem 1rem;
   border-radius: 999px;
-  border: 1px solid rgba(34, 40, 49, .09);
-  background: rgba(242, 246, 244, .78);
-  color: rgba(34, 40, 49, .72);
-  font-size: .81rem;
-  font-weight: 850;
-  line-height: 1.2;
-  transition: transform .14s ease, border-color .14s ease, background .14s ease, color .14s ease, box-shadow .14s ease;
+  border: 0;
+  cursor: pointer;
+  font-size: .86rem;
+  font-weight: 950;
+  line-height: 1;
+  text-decoration: none;
 }
 
-.kozeni-line-check__choice input:focus-visible + span {
-  outline: 3px solid rgba(77, 189, 140, .28);
-  outline-offset: 2px;
+.kozeni-line-quiz__nav-button--back {
+  background: rgba(34, 40, 49, .06);
+  color: rgba(34, 40, 49, .68);
 }
 
-.kozeni-line-check__choice:hover span {
-  transform: translateY(-1px);
+.kozeni-line-quiz__nav-button--main,
+.kozeni-line-quiz__button--primary {
+  background: var(--quiz-green);
+  color: #fff;
+  box-shadow: 0 12px 26px rgba(34, 140, 98, .18);
 }
 
-.kozeni-line-check__choice input:checked + span {
-  border-color: rgba(34, 140, 98, .38);
-  background: rgba(77, 189, 140, .16);
+.kozeni-line-quiz__nav-button--main[disabled] {
+  cursor: not-allowed;
+  opacity: .42;
+  box-shadow: none;
+}
+
+.kozeni-line-quiz__nav-button--reset,
+.kozeni-line-quiz__button--ghost,
+.kozeni-line-quiz__button--subtle {
+  border: 1px solid rgba(34, 140, 98, .16);
+  background: rgba(233, 245, 239, .62);
   color: #116544;
-  box-shadow: inset 0 0 0 1px rgba(34, 140, 98, .08), 0 8px 18px rgba(34, 140, 98, .08);
 }
 
-.kozeni-line-check__result {
-  position: sticky;
-  top: .9rem;
+.kozeni-line-quiz__trail {
+  display: grid;
+  align-content: start;
+  gap: .62rem;
+  padding: 1rem;
+}
+
+.kozeni-line-quiz__trail-title {
+  margin: 0;
+  color: rgba(34, 40, 49, .54);
+  font-size: .76rem;
+  font-weight: 950;
+  letter-spacing: .08em;
+}
+
+.kozeni-line-quiz__summary {
+  display: grid;
+  gap: .48rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.kozeni-line-quiz__summary li {
+  display: grid;
+  gap: .12rem;
+  padding: .52rem .58rem;
+  border-radius: .86rem;
+  background: rgba(242, 246, 244, .76);
+}
+
+.kozeni-line-quiz__summary strong {
+  color: rgba(34, 40, 49, .46);
+  font-size: .68rem;
+  font-weight: 950;
+  letter-spacing: .04em;
+}
+
+.kozeni-line-quiz__summary span {
+  color: rgba(34, 40, 49, .78);
+  font-size: .8rem;
+  font-weight: 850;
+  line-height: 1.45;
+}
+
+.kozeni-line-quiz__result {
   display: grid;
   gap: .72rem;
-  padding: 1rem;
-  border-radius: 1.22rem;
-  border: 1px solid rgba(34, 140, 98, .14);
-  background: rgba(255, 255, 255, .91);
-  box-shadow: 0 14px 32px rgba(34, 40, 49, .052);
+  margin-top: .86rem;
+  padding: clamp(1rem, 2.4vw, 1.35rem);
 }
 
-.kozeni-line-check__status {
+.kozeni-line-quiz__result[hidden] {
+  display: none;
+}
+
+.kozeni-line-quiz__status {
   display: flex;
   flex-wrap: wrap;
   gap: .36rem;
   align-items: center;
 }
 
-.kozeni-line-check__badge {
+.kozeni-line-quiz__badge {
   display: inline-flex;
   align-items: center;
   min-height: 28px;
@@ -405,45 +578,40 @@ h1{
   font-weight: 950;
 }
 
-.kozeni-line-check__badge--green {
+.kozeni-line-quiz__badge--green {
   background: rgba(77, 189, 140, .15);
   color: #116544;
 }
 
-.kozeni-line-check__result h3 {
+.kozeni-line-quiz__result h3 {
   margin: 0;
-  color: #222831;
-  font-size: 1.18rem;
-  line-height: 1.45;
+  color: var(--quiz-ink);
+  font-size: clamp(1.18rem, 2.2vw, 1.5rem);
+  line-height: 1.42;
   letter-spacing: -.025em;
 }
 
-.kozeni-line-check__verdict,
-.kozeni-line-check__result p {
+.kozeni-line-quiz__verdict {
   margin: 0;
-  color: rgba(34, 40, 49, .66);
-  font-size: .87rem;
+  padding: .72rem .82rem;
+  border-radius: .95rem;
+  background: rgba(233, 245, 239, .58);
+  color: rgba(34, 40, 49, .72);
+  font-size: .9rem;
+  font-weight: 760;
   line-height: 1.75;
 }
 
-.kozeni-line-check__verdict {
-  padding: .66rem .74rem;
-  border-radius: .92rem;
-  background: rgba(233, 245, 239, .56);
-  color: rgba(34, 40, 49, .72);
-  font-weight: 750;
-}
-
-.kozeni-line-check__section-title {
-  margin: .06rem 0 -.2rem;
+.kozeni-line-quiz__section-title {
+  margin: .08rem 0 -.22rem;
   color: rgba(34, 40, 49, .54);
   font-size: .72rem;
   font-weight: 950;
   letter-spacing: .08em;
 }
 
-.kozeni-line-check__points,
-.kozeni-line-check__candidates {
+.kozeni-line-quiz__candidates,
+.kozeni-line-quiz__points {
   display: grid;
   gap: .38rem;
   margin: 0;
@@ -451,104 +619,58 @@ h1{
   list-style: none;
 }
 
-.kozeni-line-check__points li {
-  display: flex;
-  gap: .42rem;
-  color: rgba(34, 40, 49, .7);
+.kozeni-line-quiz__candidate {
+  display: grid;
+  gap: .12rem;
+  padding: .58rem .68rem;
+  border-radius: .9rem;
+  background: rgba(242, 246, 244, .8);
+}
+
+.kozeni-line-quiz__candidate strong {
+  color: var(--quiz-ink);
+  font-size: .86rem;
+  font-weight: 950;
+}
+
+.kozeni-line-quiz__candidate span,
+.kozeni-line-quiz__points li {
+  color: rgba(34, 40, 49, .66);
   font-size: .82rem;
   line-height: 1.55;
 }
 
-.kozeni-line-check__points li::before {
+.kozeni-line-quiz__points li {
+  position: relative;
+  padding-left: 1rem;
+}
+
+.kozeni-line-quiz__points li::before {
   content: "";
-  width: .43rem;
-  height: .43rem;
-  flex: 0 0 .43rem;
-  margin-top: .43rem;
+  position: absolute;
+  left: 0;
+  top: .52rem;
+  width: .42rem;
+  height: .42rem;
   border-radius: 999px;
-  background: #4DBD8C;
+  background: var(--quiz-mint);
 }
 
-.kozeni-line-check__candidate {
-  display: grid;
-  gap: .16rem;
-  padding: .62rem .68rem;
-  border-radius: .94rem;
-  border: 1px solid rgba(34, 40, 49, .07);
-  background: rgba(242, 246, 244, .55);
-}
-
-.kozeni-line-check__candidate strong {
-  color: #222831;
-  font-size: .84rem;
-}
-
-.kozeni-line-check__candidate span {
-  color: rgba(34, 40, 49, .6);
-  font-size: .76rem;
-  line-height: 1.55;
-}
-
-.kozeni-line-check__actions {
+.kozeni-line-quiz__actions {
   display: flex;
   flex-wrap: wrap;
-  gap: .5rem;
-  margin-top: .06rem;
+  gap: .52rem;
+  margin-top: .16rem;
 }
 
-.kozeni-line-check__button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 42px;
-  padding: .72rem .95rem;
-  border-radius: 999px;
-  font-size: .84rem;
-  font-weight: 950;
-  line-height: 1;
-  text-decoration: none;
+.kozeni-line-quiz__note {
+  margin: 0;
+  color: rgba(34, 40, 49, .48);
+  font-size: .74rem;
+  line-height: 1.65;
 }
 
-.kozeni-line-check__button--primary {
-  background: #228C62;
-  color: #fff;
-  box-shadow: 0 12px 26px rgba(34, 140, 98, .18);
-}
-
-.kozeni-line-check__button--ghost {
-  border: 1px solid rgba(34, 140, 98, .18);
-  background: rgba(233, 245, 239, .64);
-  color: #116544;
-}
-
-.kozeni-line-check__button--subtle {
-  border: 1px solid rgba(34, 40, 49, .08);
-  background: rgba(255, 255, 255, .76);
-  color: rgba(34, 40, 49, .68);
-}
-
-.kozeni-line-check__reset {
-  appearance: none;
-  width: fit-content;
-  margin: .04rem 0 0;
-  padding: 0;
-  border: 0;
-  background: transparent;
-  color: rgba(34, 140, 98, .86);
-  cursor: pointer;
-  font-size: .76rem;
-  font-weight: 900;
-  text-decoration: underline;
-  text-underline-offset: .18rem;
-}
-
-.kozeni-line-check__note {
-  color: rgba(34, 40, 49, .5) !important;
-  font-size: .74rem !important;
-  line-height: 1.65 !important;
-}
-
-.kozeni-line-check__noscript {
+.kozeni-line-quiz__noscript {
   margin: .75rem 0 0;
   padding: .72rem .84rem;
   border-radius: .9rem;
@@ -563,33 +685,49 @@ h1{
 }
 
 @media (max-width: 900px) {
-  .kozeni-line-check__body {
+  .kozeni-line-quiz {
+    background:
+      radial-gradient(circle at 10% 10%, rgba(77, 189, 140, .22), transparent 30%),
+      linear-gradient(145deg, #10241d 0%, #17372b 34%, #f7fbf8 34.2%, #ffffff 100%);
+  }
+
+  .kozeni-line-quiz__shell {
     grid-template-columns: 1fr;
   }
 
-  .kozeni-line-check__result {
-    position: static;
+  .kozeni-line-quiz__trail {
+    order: -1;
+  }
+
+  .kozeni-line-quiz__summary {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
 @media (max-width: 560px) {
-  .kozeni-line-check {
+  .kozeni-line-quiz {
     margin-left: -.1rem;
     margin-right: -.1rem;
+    border-radius: 1.35rem;
   }
 
-  .kozeni-line-check__choices {
-    display: grid;
+  .kozeni-line-quiz__panel {
+    min-height: auto;
+  }
+
+  .kozeni-line-quiz__summary {
     grid-template-columns: 1fr;
   }
 
-  .kozeni-line-check__choice,
-  .kozeni-line-check__choice span,
-  .kozeni-line-check__button {
+  .kozeni-line-quiz__nav,
+  .kozeni-line-quiz__nav-left,
+  .kozeni-line-quiz__nav-right,
+  .kozeni-line-quiz__nav-button,
+  .kozeni-line-quiz__button {
     width: 100%;
   }
 }
-/* kozeni-line-diagnosis-v38-1:end */
+/* kozeni-line-diagnosis-v38-2:end */
 </style>
   <link rel="stylesheet" href="/assets/kozeni-brand.v1.css?v=brand1">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/icon-32.png?v=xicon1">
@@ -628,107 +766,69 @@ h1{
         <div class="brand-keywords"><span>月額</span><span>紹介特典</span><span>MNP条件</span><span>公式条件</span></div>
       </section>
 
-<!-- kozeni-line-diagnosis-v38-1:start -->
-<section class="kozeni-line-check" aria-labelledby="kozeni-line-check-title" data-result="starter">
-  <div class="kozeni-line-check__head">
-    <p class="kozeni-line-check__eyebrow">30秒チェック</p>
-    <h2 id="kozeni-line-check-title">スマホ代、下げられる余地ある？</h2>
-    <p class="kozeni-line-check__lead">いきなり比較表を読む前に、今の料金・GB・家のネット状況から「まず見るべき公式ページ」を1〜2個に絞ります。</p>
-    <ul class="kozeni-line-check__meter" aria-label="診断で見る項目">
-      <li data-meter="need" data-active="true">悩み</li>
-      <li data-meter="bill" data-active="true">月額</li>
-      <li data-meter="data" data-active="true">GB</li>
-      <li data-meter="home" data-active="true">家Wi-Fi</li>
-      <li data-meter="style" data-active="true">優先条件</li>
-    </ul>
+
+<!-- kozeni-line-diagnosis-v38-2:start -->
+<section class="kozeni-line-quiz" aria-labelledby="kozeni-line-quiz-title" data-step="0">
+  <div class="kozeni-line-quiz__head">
+    <p class="kozeni-line-quiz__eyebrow">30秒クイズ診断</p>
+    <h2 id="kozeni-line-quiz-title">スマホ・回線、まずどこを見る？</h2>
+    <p class="kozeni-line-quiz__lead">質問は1つずつ。選んで進むだけで、見るべき公式ページを絞ります。</p>
   </div>
 
-  <div class="kozeni-line-check__body">
-    <div class="kozeni-line-check__questions" role="group" aria-label="スマホ・回線のかんたん診断">
-      <fieldset class="kozeni-line-check__group" data-question="need">
-        <legend>1. いま一番困っていること</legend>
-        <div class="kozeni-line-check__choices">
-          <label class="kozeni-line-check__choice"><input type="radio" name="kozeni-line-need" value="save" checked><span>スマホ代を下げたい</span></label>
-          <label class="kozeni-line-check__choice"><input type="radio" name="kozeni-line-need" value="data"><span>ギガが足りない</span></label>
-          <label class="kozeni-line-check__choice"><input type="radio" name="kozeni-line-need" value="wifi"><span>家のWi-Fi</span></label>
-          <label class="kozeni-line-check__choice"><input type="radio" name="kozeni-line-need" value="temporary"><span>引っ越し・開通待ち</span></label>
-          <label class="kozeni-line-check__choice"><input type="radio" name="kozeni-line-need" value="sub"><span>サブ回線/eSIM</span></label>
-        </div>
-      </fieldset>
+  <div class="kozeni-line-quiz__shell">
+    <div class="kozeni-line-quiz__panel">
+      <div class="kozeni-line-quiz__top">
+        <span class="kozeni-line-quiz__step" id="kozeni-line-quiz-step">1 / 5</span>
+        <ol class="kozeni-line-quiz__dots" id="kozeni-line-quiz-dots" aria-label="診断の進み具合"></ol>
+      </div>
 
-      <fieldset class="kozeni-line-check__group" data-question="bill">
-        <legend>2. いまのスマホ代</legend>
-        <p class="kozeni-line-check__hint">端末代・サブスク込みで分からない場合は「分からない」でOK。</p>
-        <div class="kozeni-line-check__choices">
-          <label class="kozeni-line-check__choice"><input type="radio" name="kozeni-line-bill" value="under2000"><span>2,000円未満</span></label>
-          <label class="kozeni-line-check__choice"><input type="radio" name="kozeni-line-bill" value="2000_4000" checked><span>2,000〜4,000円</span></label>
-          <label class="kozeni-line-check__choice"><input type="radio" name="kozeni-line-bill" value="4000_6000"><span>4,000〜6,000円</span></label>
-          <label class="kozeni-line-check__choice"><input type="radio" name="kozeni-line-bill" value="over6000"><span>6,000円以上</span></label>
-          <label class="kozeni-line-check__choice"><input type="radio" name="kozeni-line-bill" value="unknown"><span>分からない</span></label>
-        </div>
-      </fieldset>
+      <div class="kozeni-line-quiz__stage">
+        <p class="kozeni-line-quiz__kicker" id="kozeni-line-quiz-kicker">QUESTION</p>
+        <h3 class="kozeni-line-quiz__question" id="kozeni-line-quiz-question">まず、何を見直したい？</h3>
+        <p class="kozeni-line-quiz__hint" id="kozeni-line-quiz-hint">一番近いものを選んでください。</p>
+        <div class="kozeni-line-quiz__options" id="kozeni-line-quiz-options" aria-labelledby="kozeni-line-quiz-question"></div>
+      </div>
 
-      <fieldset class="kozeni-line-check__group" data-question="data">
-        <legend>3. 月のデータ使用量</legend>
-        <p class="kozeni-line-check__hint">Myページやスマホ設定で後から確認できます。迷ったら近いものを選択。</p>
-        <div class="kozeni-line-check__choices">
-          <label class="kozeni-line-check__choice"><input type="radio" name="kozeni-line-data" value="under3"><span>3GB以下</span></label>
-          <label class="kozeni-line-check__choice"><input type="radio" name="kozeni-line-data" value="4_10" checked><span>4〜10GB</span></label>
-          <label class="kozeni-line-check__choice"><input type="radio" name="kozeni-line-data" value="11_30"><span>11〜30GB</span></label>
-          <label class="kozeni-line-check__choice"><input type="radio" name="kozeni-line-data" value="over30"><span>30GB以上</span></label>
-          <label class="kozeni-line-check__choice"><input type="radio" name="kozeni-line-data" value="variable"><span>月で大きく変わる</span></label>
-          <label class="kozeni-line-check__choice"><input type="radio" name="kozeni-line-data" value="unknown"><span>分からない</span></label>
+      <div class="kozeni-line-quiz__nav">
+        <div class="kozeni-line-quiz__nav-left">
+          <button type="button" class="kozeni-line-quiz__nav-button kozeni-line-quiz__nav-button--back" id="kozeni-line-quiz-back">戻る</button>
         </div>
-      </fieldset>
-
-      <fieldset class="kozeni-line-check__group" data-question="home">
-        <legend>4. 家のネット状況</legend>
-        <div class="kozeni-line-check__choices">
-          <label class="kozeni-line-check__choice"><input type="radio" name="kozeni-line-home" value="ok" checked><span>安定している</span></label>
-          <label class="kozeni-line-check__choice"><input type="radio" name="kozeni-line-home" value="slow"><span>遅い・不安定</span></label>
-          <label class="kozeni-line-check__choice"><input type="radio" name="kozeni-line-home" value="none"><span>家Wi-Fiなし</span></label>
-          <label class="kozeni-line-check__choice"><input type="radio" name="kozeni-line-home" value="waiting"><span>開通待ち</span></label>
-          <label class="kozeni-line-check__choice"><input type="radio" name="kozeni-line-home" value="no_construction"><span>工事なしがいい</span></label>
+        <div class="kozeni-line-quiz__nav-right">
+          <button type="button" class="kozeni-line-quiz__nav-button kozeni-line-quiz__nav-button--reset" id="kozeni-line-quiz-reset">最初から</button>
+          <button type="button" class="kozeni-line-quiz__nav-button kozeni-line-quiz__nav-button--main" id="kozeni-line-quiz-next" disabled>次へ</button>
         </div>
-      </fieldset>
-
-      <fieldset class="kozeni-line-check__group" data-question="style">
-        <legend>5. 優先したいこと</legend>
-        <div class="kozeni-line-check__choices">
-          <label class="kozeni-line-check__choice"><input type="radio" name="kozeni-line-style" value="cheap" checked><span>月額の安さ</span></label>
-          <label class="kozeni-line-check__choice"><input type="radio" name="kozeni-line-style" value="simple"><span>分かりやすさ</span></label>
-          <label class="kozeni-line-check__choice"><input type="radio" name="kozeni-line-style" value="support"><span>店舗・家族割</span></label>
-          <label class="kozeni-line-check__choice"><input type="radio" name="kozeni-line-style" value="rakuten"><span>楽天ポイント</span></label>
-          <label class="kozeni-line-check__choice"><input type="radio" name="kozeni-line-style" value="sub"><span>今の回線を残す</span></label>
-        </div>
-      </fieldset>
+      </div>
     </div>
 
-    <aside class="kozeni-line-check__result" aria-live="polite" aria-atomic="true">
-      <div class="kozeni-line-check__status">
-        <p class="kozeni-line-check__badge kozeni-line-check__badge--green" id="kozeni-line-check-kind">診断結果</p>
-        <p class="kozeni-line-check__badge" id="kozeni-line-check-saving">節約余地：中</p>
-      </div>
-      <h3 id="kozeni-line-check-result-title">小〜中容量なら、まず月額を軽くする候補を確認。</h3>
-      <p class="kozeni-line-check__verdict" id="kozeni-line-check-verdict">4〜10GB中心なら、いきなり大容量プランを見るより、小〜中容量の公式条件を確認する方が早いです。</p>
-
-      <p class="kozeni-line-check__section-title">見る候補</p>
-      <ul class="kozeni-line-check__candidates" id="kozeni-line-check-candidates"></ul>
-
-      <p class="kozeni-line-check__section-title">確認ポイント</p>
-      <ul class="kozeni-line-check__points" id="kozeni-line-check-points"></ul>
-
-      <div class="kozeni-line-check__actions" id="kozeni-line-check-actions"></div>
-      <button type="button" class="kozeni-line-check__reset" id="kozeni-line-check-reset">選択を初期状態に戻す</button>
-      <p class="kozeni-line-check__note">この診断は公式条件確認への入口です。PR・紹介・ASPリンクを使う場合は別途明記します。料金・キャンペーン・提供エリアは公式画面で最終確認してください。</p>
+    <aside class="kozeni-line-quiz__trail" aria-label="選択した内容">
+      <p class="kozeni-line-quiz__trail-title">SELECTED</p>
+      <ul class="kozeni-line-quiz__summary" id="kozeni-line-quiz-summary"></ul>
     </aside>
   </div>
 
+  <section class="kozeni-line-quiz__result" id="kozeni-line-quiz-result" aria-live="polite" aria-atomic="true" hidden>
+    <div class="kozeni-line-quiz__status">
+      <p class="kozeni-line-quiz__badge kozeni-line-quiz__badge--green" id="kozeni-line-quiz-kind">診断結果</p>
+      <p class="kozeni-line-quiz__badge" id="kozeni-line-quiz-saving">節約余地：中</p>
+    </div>
+    <h3 id="kozeni-line-quiz-result-title">小〜中容量なら、まず月額を軽くする候補を確認。</h3>
+    <p class="kozeni-line-quiz__verdict" id="kozeni-line-quiz-verdict">4〜10GB中心なら、小〜中容量の公式条件を確認する方が早いです。</p>
+
+    <p class="kozeni-line-quiz__section-title">見る候補</p>
+    <ul class="kozeni-line-quiz__candidates" id="kozeni-line-quiz-candidates"></ul>
+
+    <p class="kozeni-line-quiz__section-title">確認ポイント</p>
+    <ul class="kozeni-line-quiz__points" id="kozeni-line-quiz-points"></ul>
+
+    <div class="kozeni-line-quiz__actions" id="kozeni-line-quiz-actions"></div>
+    <p class="kozeni-line-quiz__note">公式条件確認への入口です。PR・紹介・ASPリンクを使う場合は別途明記します。料金・キャンペーン・提供エリアは公式画面で最終確認してください。</p>
+  </section>
+
   <noscript>
-    <p class="kozeni-line-check__noscript">診断ギミックを使うにはJavaScriptを有効にしてください。迷ったら、まず現在のスマホ代・月間GB・家のWi-Fi状況を確認してから公式ページを見るのがおすすめです。</p>
+    <p class="kozeni-line-quiz__noscript">診断ギミックを使うにはJavaScriptを有効にしてください。まず現在のスマホ代・月間GB・家のWi-Fi状況を確認してから公式ページを見るのがおすすめです。</p>
   </noscript>
 </section>
-<!-- kozeni-line-diagnosis-v38-1:end -->
+<!-- kozeni-line-diagnosis-v38-2:end -->
 <!-- brand-list-hero-v1:end -->
 <!-- kozeni-mobile-network-list-v1:start -->
 <section class="kozeni-list-section" aria-label="最初に見るおすすめスマホ・回線">
@@ -831,10 +931,11 @@ h1{
   <a href="/">← ホームへ戻る</a>
 </nav>
 
-<!-- kozeni-line-diagnosis-js-v38-1:start -->
+
+<!-- kozeni-line-diagnosis-js-v38-2:start -->
 <script>
 (() => {
-  const root = document.querySelector('.kozeni-line-check');
+  const root = document.querySelector('.kozeni-line-quiz');
   if (!root) return;
 
   const links = {
@@ -852,6 +953,60 @@ h1{
     list: '/mobile-sim/'
   };
 
+  const questions = [
+    {
+      key: 'need', kicker: 'QUESTION 1', title: 'まず、何を見直したい？', hint: '一番近いものを選んでください。',
+      options: [
+        { value: 'save', label: 'スマホ代を下げたい', micro: '毎月の固定費を軽くしたい' },
+        { value: 'data', label: 'ギガが足りない', micro: '外でも動画・SNSを使う' },
+        { value: 'wifi', label: '家のWi-Fi', micro: '遅い・ない・工事なしで済ませたい' },
+        { value: 'temporary', label: '引っ越し・開通待ち', micro: '短期でネット環境が必要' },
+        { value: 'sub', label: 'サブ回線/eSIM', micro: '今の回線は残して試したい' }
+      ]
+    },
+    {
+      key: 'bill', kicker: 'QUESTION 2', title: '今のスマホ代は？', hint: '端末代やサブスク込みで曖昧なら「分からない」でOK。',
+      options: [
+        { value: 'under2000', label: '2,000円未満', micro: 'すでに安いかも' },
+        { value: '2000_4000', label: '2,000〜4,000円', micro: '見直し候補ゾーン' },
+        { value: '4000_6000', label: '4,000〜6,000円', micro: '節約余地が出やすい' },
+        { value: 'over6000', label: '6,000円以上', micro: 'まず内訳確認したい' },
+        { value: 'unknown', label: '分からない', micro: '先にMyページ確認' }
+      ]
+    },
+    {
+      key: 'data', kicker: 'QUESTION 3', title: '月のギガはどれくらい？', hint: '迷ったら近いものを選択。分からない場合もそのまま進めます。',
+      options: [
+        { value: 'under3', label: '3GB以下', micro: '小容量で足りる' },
+        { value: '4_10', label: '4〜10GB', micro: 'SNS・調べ物中心' },
+        { value: '11_30', label: '11〜30GB', micro: '外でもよく使う' },
+        { value: 'over30', label: '30GB以上', micro: '動画・テザリング多め' },
+        { value: 'variable', label: '月で大きく変わる', micro: '使う月と使わない月がある' },
+        { value: 'unknown', label: '分からない', micro: 'まず使用量チェック' }
+      ]
+    },
+    {
+      key: 'home', kicker: 'QUESTION 4', title: '家のネットは？', hint: 'スマホ代より、家のWi-Fiを先に見るべき場合があります。',
+      options: [
+        { value: 'ok', label: '安定している', micro: 'スマホ料金を中心に見る' },
+        { value: 'slow', label: '遅い・不安定', micro: '回線側も候補' },
+        { value: 'none', label: '家Wi-Fiなし', micro: 'スマホ大容量かホームルーター' },
+        { value: 'waiting', label: '開通待ち', micro: '短期・工事なし優先' },
+        { value: 'no_construction', label: '工事なしがいい', micro: 'WiMAX/home 5G系' }
+      ]
+    },
+    {
+      key: 'style', kicker: 'QUESTION 5', title: '最後に、何を優先する？', hint: '結果は次のボタンで出します。',
+      options: [
+        { value: 'cheap', label: '月額の安さ', micro: '固定費を削る' },
+        { value: 'simple', label: '分かりやすさ', micro: '料金体系がシンプル' },
+        { value: 'support', label: '店舗・家族割', micro: 'サポートやセット割も見る' },
+        { value: 'rakuten', label: '楽天ポイント', micro: '楽天経済圏も重視' },
+        { value: 'sub', label: '今の回線を残す', micro: 'サブ回線で試す' }
+      ]
+    }
+  ];
+
   const results = {
     usageUnknown: {
       kind: 'まず確認', saving: '節約余地：未判定',
@@ -868,10 +1023,7 @@ h1{
       kind: '無理に変えない', saving: '節約余地：低',
       title: 'すでに安い可能性あり。乗り換えより条件確認を優先。',
       verdict: '2,000円未満で収まっているなら、無理な乗り換えで手間や失敗リスクを増やすより、GB不足・通話料・家Wi-Fiだけを確認する方が安全です。',
-      candidates: [
-        ['IIJmio / mineo系', '低容量・サブ回線候補として比較'],
-        ['povo系', 'たまに使う回線・予備回線として確認']
-      ],
+      candidates: [['IIJmio / mineo系', '低容量・サブ回線候補として比較'], ['povo系', 'たまに使う回線・予備回線として確認']],
       points: ['本当に困っているのが月額かGBかを分ける', '通話料・オプションで高くなっていないか見る', 'MNP特典だけで動かない'],
       actions: [['IIJmio公式を見る', links.iijmio, 'primary'], ['mineo公式を見る', links.mineo, 'ghost']]
     },
@@ -879,10 +1031,7 @@ h1{
       kind: '小容量', saving: '節約余地：中',
       title: '3GB以下なら、小容量プランを先に確認。',
       verdict: '毎月3GB以下なら、大容量プランより小容量・低価格の公式条件を見た方が早いです。LINE中心ならLINEMO、細かく容量を選ぶならIIJmioが候補です。',
-      candidates: [
-        ['LINEMO', '3GB以下・10GB以下の段階で見やすい'],
-        ['IIJmio', '5GB前後やeSIM・サブ回線に寄せやすい']
-      ],
+      candidates: [['LINEMO', '3GB以下・10GB以下の段階で見やすい'], ['IIJmio', '5GB前後やeSIM・サブ回線に寄せやすい']],
       points: ['自宅Wi-Fiあり前提で足りるか確認', '通話オプションが必要か確認', 'キャンペーン対象条件と付与時期を確認'],
       actions: [['LINEMO公式を見る', links.linemo, 'primary'], ['IIJmio公式を見る', links.iijmio, 'ghost']]
     },
@@ -890,10 +1039,7 @@ h1{
       kind: '中容量', saving: '節約余地：中',
       title: '4〜10GBなら、小〜中容量で月額を軽くする。',
       verdict: '4〜10GB中心なら、いきなり30GB以上へ上げず、10GB前後で足りるかを先に確認します。毎月の固定費を落としやすいゾーンです。',
-      candidates: [
-        ['LINEMO', '3GB/10GB帯から見やすい'],
-        ['IIJmio', '5GB〜10GB前後を細かく調整しやすい']
-      ],
+      candidates: [['LINEMO', '3GB/10GB帯から見やすい'], ['IIJmio', '5GB〜10GB前後を細かく調整しやすい']],
       points: ['外で動画をどれくらい見るか確認', '昼休みなど混雑時間帯の使い方を確認', '端末セット・MNP特典は条件を確認'],
       actions: [['LINEMO公式を見る', links.linemo, 'primary'], ['IIJmio公式を見る', links.iijmio, 'ghost']]
     },
@@ -901,10 +1047,7 @@ h1{
       kind: '大容量', saving: '節約余地：中',
       title: '11〜30GBなら、ahamoを基準に確認。',
       verdict: '20〜30GB前後を安定して使うなら、まず30GB帯のシンプルな公式条件を基準にします。料金・通話・キャンペーンを分けて見るのがコツです。',
-      candidates: [
-        ['ahamo', '30GB・5分通話込みの基準として見やすい'],
-        ['LINEMOベストプランV', '30GB帯の比較候補']
-      ],
+      candidates: [['ahamo', '30GB・5分通話込みの基準として見やすい'], ['LINEMOベストプランV', '30GB帯の比較候補']],
       points: ['30GBで足りるか、超過月が多いか確認', '5分通話込みが得か確認', 'ドコモ/ソフトバンク系からの変更条件を確認'],
       actions: [['ahamo公式を見る', links.ahamo, 'primary'], ['LINEMO公式を見る', links.linemo, 'ghost']]
     },
@@ -912,10 +1055,7 @@ h1{
       kind: '大容量・変動', saving: '節約余地：中〜高',
       title: '30GB以上・月で変動するなら、段階制か大容量を確認。',
       verdict: '使う月と使わない月の差が大きいなら楽天モバイル、毎月30GB前後を安定して使うならahamoを基準に見ると判断しやすいです。',
-      candidates: [
-        ['楽天モバイル', '使用量がブレる人・楽天ポイント重視'],
-        ['ahamo', '30GB〜110GBの大容量基準']
-      ],
+      candidates: [['楽天モバイル', '使用量がブレる人・楽天ポイント重視'], ['ahamo', '30GB〜110GBの大容量基準']],
       points: ['自宅Wi-Fiなしでスマホ回線に寄せすぎていないか確認', 'テザリング用途なら制限・エリアを確認', '通話はアプリ条件や対象外番号を確認'],
       actions: [['楽天モバイル公式を見る', links.rakuten, 'primary'], ['ahamo公式を見る', links.ahamo, 'ghost']]
     },
@@ -923,10 +1063,7 @@ h1{
       kind: 'サブ回線', saving: '節約余地：目的次第',
       title: 'メインを残すなら、eSIM・サブ回線で小さく試す。',
       verdict: 'いきなりメイン回線を変えるのが怖い人は、サブ回線やeSIMで通信品質・使い勝手を試す方が安全です。',
-      candidates: [
-        ['IIJmio', 'eSIM・低容量の候補として見やすい'],
-        ['povo', '必要な時だけトッピングする予備回線候補']
-      ],
+      candidates: [['IIJmio', 'eSIM・低容量の候補として見やすい'], ['povo', '必要な時だけトッピングする予備回線候補']],
       points: ['端末がeSIM対応か確認', '電話番号を移すか、新規番号にするか確認', 'メイン回線の解約は最後に判断'],
       actions: [['IIJmio公式を見る', links.iijmio, 'primary'], ['povo公式を見る', links.povo, 'ghost']]
     },
@@ -934,10 +1071,7 @@ h1{
       kind: '店舗・家族割', saving: '節約余地：条件次第',
       title: '家族割・店舗サポート重視なら、サブブランドを確認。',
       verdict: '最安だけを狙うより、店舗サポート・家族割・光回線セット割を含めて判断する方が失敗しにくい層です。',
-      candidates: [
-        ['UQ mobile', 'au/UQ系・店舗/セット割を確認'],
-        ['Y!mobile', 'ソフトバンク/Yahoo!系・家族割を確認']
-      ],
+      candidates: [['UQ mobile', 'au/UQ系・店舗/セット割を確認'], ['Y!mobile', 'ソフトバンク/Yahoo!系・家族割を確認']],
       points: ['割引前料金と割引後料金を分けて見る', '家族回線・光回線の条件を確認', '店舗サポートが必要な人の回線だけ分ける'],
       actions: [['UQ mobile公式を見る', links.uqmobile, 'primary'], ['Y!mobile公式を見る', links.ymobile, 'ghost']]
     },
@@ -945,11 +1079,7 @@ h1{
       kind: '工事不要Wi-Fi', saving: '回線次第',
       title: '家のWi-Fiは、工事なし候補を先に確認。',
       verdict: '家のネットがない・遅い・工事を避けたい場合は、スマホプランより先にホームルーター/WiMAX系の提供エリアを確認した方が早いです。',
-      candidates: [
-        ['UQ WiMAX', '工事なし・持ち運び/ホームルーター候補'],
-        ['docomo home 5G', '据え置き型・ドコモ系セット割候補'],
-        ['Rakuten Turbo', '楽天経済圏寄りのホームルーター候補']
-      ],
+      candidates: [['UQ WiMAX', '工事なし・持ち運び/ホームルーター候補'], ['docomo home 5G', '据え置き型・ドコモ系セット割候補'], ['Rakuten Turbo', '楽天経済圏寄りのホームルーター候補']],
       points: ['住所の提供エリアを確認', '端末代・契約期間・解約条件を確認', 'オンラインゲーム/在宅会議など用途を確認'],
       actions: [['UQ WiMAX公式を見る', links.wimax, 'primary'], ['home 5G公式を見る', links.home5g, 'ghost'], ['Rakuten Turbo公式を見る', links.rakutenTurbo, 'subtle']]
     },
@@ -957,10 +1087,7 @@ h1{
       kind: '開通待ち', saving: '短期優先',
       title: '開通待ちなら、短期・工事なし回線を優先。',
       verdict: '引っ越し直後や光回線の開通待ちは、長期契約の安さより「すぐ使える・解約しやすい・端末が届く」条件を優先します。',
-      candidates: [
-        ['UQ WiMAX', '工事なし候補として公式条件を確認'],
-        ['短期Wi-Fiレンタル', 'A8など提携審査後に候補を追加予定']
-      ],
+      candidates: [['UQ WiMAX', '工事なし候補として公式条件を確認'], ['短期Wi-Fiレンタル', 'A8など提携審査後に候補を追加予定']],
       points: ['必要期間が2週間か1〜3か月か決める', '端末到着日と返却条件を確認', '長期契約に寄せすぎない'],
       actions: [['UQ WiMAX公式を見る', links.wimax, 'primary'], ['スマホ・回線一覧へ戻る', links.list, 'ghost']]
     },
@@ -968,25 +1095,44 @@ h1{
       kind: '楽天経済圏', saving: '使い方次第',
       title: '楽天ポイント重視なら、楽天モバイル/楽天Turboを確認。',
       verdict: '楽天市場・楽天カード・楽天ポイントをよく使うなら、スマホ回線とホームルーターを楽天側で見る価値があります。通信エリアと料金条件は必ず公式で確認します。',
-      candidates: [
-        ['楽天モバイル', '段階制スマホ回線'],
-        ['Rakuten Turbo', '工事不要ホームルーター']
-      ],
+      candidates: [['楽天モバイル', '段階制スマホ回線'], ['Rakuten Turbo', '工事不要ホームルーター']],
       points: ['ポイント還元の条件と上限を確認', '自宅/職場の楽天回線エリアを確認', '通話アプリ条件を確認'],
       actions: [['楽天モバイル公式を見る', links.rakuten, 'primary'], ['Rakuten Turbo公式を見る', links.rakutenTurbo, 'ghost']]
     }
   };
 
+  const state = Object.fromEntries(questions.map((question) => [question.key, null]));
+  let step = 0;
+  let resultVisible = false;
+
   const $ = (selector) => root.querySelector(selector);
-  const get = (name) => root.querySelector(`input[name="${name}"]:checked`)?.value;
+  const els = {
+    step: $('#kozeni-line-quiz-step'),
+    dots: $('#kozeni-line-quiz-dots'),
+    kicker: $('#kozeni-line-quiz-kicker'),
+    question: $('#kozeni-line-quiz-question'),
+    hint: $('#kozeni-line-quiz-hint'),
+    options: $('#kozeni-line-quiz-options'),
+    summary: $('#kozeni-line-quiz-summary'),
+    back: $('#kozeni-line-quiz-back'),
+    next: $('#kozeni-line-quiz-next'),
+    reset: $('#kozeni-line-quiz-reset'),
+    result: $('#kozeni-line-quiz-result'),
+    kind: $('#kozeni-line-quiz-kind'),
+    saving: $('#kozeni-line-quiz-saving'),
+    resultTitle: $('#kozeni-line-quiz-result-title'),
+    verdict: $('#kozeni-line-quiz-verdict'),
+    candidates: $('#kozeni-line-quiz-candidates'),
+    points: $('#kozeni-line-quiz-points'),
+    actions: $('#kozeni-line-quiz-actions')
+  };
+
+  function optionLabel(question, value) {
+    return question.options.find((option) => option.value === value)?.label || '未選択';
+  }
 
   function chooseResult() {
-    const need = get('kozeni-line-need');
-    const bill = get('kozeni-line-bill');
-    const data = get('kozeni-line-data');
-    const home = get('kozeni-line-home');
-    const style = get('kozeni-line-style');
-
+    const { need, bill, data, home, style } = state;
     if (data === 'unknown' || bill === 'unknown') return 'usageUnknown';
     if (need === 'temporary' || home === 'waiting') return 'temporaryWifi';
     if (need === 'wifi' || home === 'slow' || home === 'none' || home === 'no_construction') return 'wifiNoConstruction';
@@ -1023,7 +1169,7 @@ h1{
     container.textContent = '';
     actions.forEach(([text, href, variant]) => {
       const a = document.createElement('a');
-      a.className = `kozeni-line-check__button kozeni-line-check__button--${variant}`;
+      a.className = `kozeni-line-quiz__button kozeni-line-quiz__button--${variant}`;
       a.textContent = text;
       a.href = href;
       if (/^https?:\/\//.test(href)) {
@@ -1034,38 +1180,113 @@ h1{
     });
   }
 
-  function render() {
-    const key = chooseResult();
-    const result = results[key];
-    root.dataset.result = key;
-    $('#kozeni-line-check-kind').textContent = result.kind;
-    $('#kozeni-line-check-saving').textContent = result.saving;
-    $('#kozeni-line-check-result-title').textContent = result.title;
-    $('#kozeni-line-check-verdict').textContent = result.verdict;
-    replaceList($('#kozeni-line-check-candidates'), result.candidates, 'kozeni-line-check__candidate');
-    replaceList($('#kozeni-line-check-points'), result.points);
-    renderActions($('#kozeni-line-check-actions'), result.actions);
+  function renderDots() {
+    els.dots.textContent = '';
+    questions.forEach((_, index) => {
+      const dot = document.createElement('li');
+      dot.dataset.active = String(index === step);
+      els.dots.appendChild(dot);
+    });
   }
 
-  $('#kozeni-line-check-reset')?.addEventListener('click', () => {
-    const defaults = {
-      'kozeni-line-need': 'save',
-      'kozeni-line-bill': '2000_4000',
-      'kozeni-line-data': '4_10',
-      'kozeni-line-home': 'ok',
-      'kozeni-line-style': 'cheap'
-    };
-    Object.entries(defaults).forEach(([name, value]) => {
-      const input = root.querySelector(`input[name="${name}"][value="${value}"]`);
-      if (input) input.checked = true;
+  function renderSummary() {
+    els.summary.textContent = '';
+    questions.forEach((question) => {
+      const li = document.createElement('li');
+      const strong = document.createElement('strong');
+      const span = document.createElement('span');
+      strong.textContent = question.title.replace('？', '');
+      span.textContent = state[question.key] ? optionLabel(question, state[question.key]) : '未選択';
+      li.append(strong, span);
+      els.summary.appendChild(li);
     });
-    render();
+  }
+
+  function renderQuestion() {
+    const question = questions[step];
+    root.dataset.step = String(step);
+    els.step.textContent = `${step + 1} / ${questions.length}`;
+    els.kicker.textContent = question.kicker;
+    els.question.textContent = question.title;
+    els.hint.textContent = question.hint;
+    els.options.textContent = '';
+
+    question.options.forEach((option) => {
+      const button = document.createElement('button');
+      const label = document.createElement('span');
+      const micro = document.createElement('span');
+      button.type = 'button';
+      button.className = 'kozeni-line-quiz__option';
+      button.dataset.value = option.value;
+      button.setAttribute('aria-pressed', String(state[question.key] === option.value));
+      label.className = 'kozeni-line-quiz__option-label';
+      label.textContent = option.label;
+      micro.className = 'kozeni-line-quiz__option-micro';
+      micro.textContent = option.micro;
+      const wrap = document.createElement('span');
+      wrap.append(label, micro);
+      button.appendChild(wrap);
+      button.addEventListener('click', () => {
+        state[question.key] = option.value;
+        resultVisible = false;
+        els.result.hidden = true;
+        renderQuestion();
+      });
+      els.options.appendChild(button);
+    });
+
+    els.back.disabled = step === 0;
+    els.next.disabled = !state[question.key];
+    els.next.textContent = step === questions.length - 1 ? '診断結果を見る' : '次へ';
+    renderDots();
+    renderSummary();
+  }
+
+  function renderResult() {
+    const result = results[chooseResult()];
+    els.kind.textContent = result.kind;
+    els.saving.textContent = result.saving;
+    els.resultTitle.textContent = result.title;
+    els.verdict.textContent = result.verdict;
+    replaceList(els.candidates, result.candidates, 'kozeni-line-quiz__candidate');
+    replaceList(els.points, result.points);
+    renderActions(els.actions, result.actions);
+  }
+
+  els.back.addEventListener('click', () => {
+    if (step > 0) {
+      step -= 1;
+      resultVisible = false;
+      els.result.hidden = true;
+      renderQuestion();
+    }
   });
 
-  root.addEventListener('change', render);
-  render();
+  els.next.addEventListener('click', () => {
+    const question = questions[step];
+    if (!state[question.key]) return;
+    if (step < questions.length - 1) {
+      step += 1;
+      renderQuestion();
+      return;
+    }
+    renderResult();
+    resultVisible = true;
+    els.result.hidden = false;
+    els.result.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+
+  els.reset.addEventListener('click', () => {
+    Object.keys(state).forEach((key) => { state[key] = null; });
+    step = 0;
+    resultVisible = false;
+    els.result.hidden = true;
+    renderQuestion();
+  });
+
+  renderQuestion();
 })();
 </script>
-<!-- kozeni-line-diagnosis-js-v38-1:end -->
+<!-- kozeni-line-diagnosis-js-v38-2:end -->
 </body>
 </html>
