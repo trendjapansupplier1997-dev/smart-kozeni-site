@@ -19,6 +19,61 @@
   <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/icon-192.png?v=xicon1">
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png?v=xicon1">
   <link rel="manifest" href="/site.webmanifest?v=xicon1">
+<style>
+/* kozeni fixed return button: unified detail return */
+body{
+  padding-bottom:96px;
+}
+.kozeni-fixed-return{
+  position:fixed;
+  left:50%;
+  bottom:14px;
+  z-index:120;
+  width:min(1120px, calc(100% - 24px));
+  transform:translateX(-50%);
+  display:flex;
+  justify-content:center;
+  pointer-events:none;
+}
+.kozeni-fixed-return a{
+  pointer-events:auto;
+  width:100%;
+  min-height:50px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:999px;
+  background:rgba(255,255,255,.96);
+  border:1px solid var(--ia-line, rgba(34,140,98,.16));
+  color:var(--ia-green, var(--deep, #228C62));
+  padding:12px 18px;
+  font-size:14px;
+  font-weight:950;
+  line-height:1.2;
+  text-decoration:none;
+  box-shadow:0 14px 34px rgba(34,140,98,.16);
+  backdrop-filter:blur(14px);
+}
+.kozeni-fixed-return a:hover{
+  transform:translateY(-1px);
+}
+.kozeni-fixed-return a:focus-visible{
+  outline:3px solid rgba(77,189,140,.35);
+  outline-offset:3px;
+}
+@media(max-width:720px){
+  body{
+    padding-bottom:92px;
+  }
+  .kozeni-fixed-return{
+    bottom:10px;
+    width:calc(100% - 20px);
+  }
+  .kozeni-fixed-return a{
+    min-height:48px;
+  }
+}
+</style>
 </head>
 <body>
   <a class="skip-link" href="#main">本文へ移動</a>
@@ -166,10 +221,6 @@
         <div class="seo-related-links"><a href="/point-site/powl/">Powl登録前チェック</a><a href="/point-site/">ポイ活一覧</a><a href="/point-site/kurashiru-reward/earn/">クラシルリワード登録後の狙い目</a><a href="/point-site/pointtown/earn/">ポイントタウン登録後の狙い目</a></div>
       </section>
 <!-- seo-internal-links-v1:end -->
-
-      <nav class="compact-return" aria-label="戻る">
-        <a href="/point-site/powl/">Powl入口へ戻る</a>
-      </nav>
       <footer class="site-footer">
         <p>スマホ小銭研究所</p>
         <nav aria-label="フッター">
@@ -182,5 +233,8 @@
   </div>
 
   <script src="/assets/kozeni-ia.v36.11.js?v=quiz-sticky1" defer></script>
+<nav class="kozeni-fixed-return" aria-label="一覧へ戻る">
+  <a href="/point-site/">← 一覧へ戻る</a>
+</nav>
 </body>
 </html>
