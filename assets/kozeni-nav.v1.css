@@ -103,6 +103,7 @@
   display:inline-flex;
   align-items:center;
   justify-content:center;
+  gap:8px;
   min-height:38px;
   padding:8px 13px;
   border-radius:999px;
@@ -112,6 +113,22 @@
   text-decoration:none;
   font-size:13px;
   font-weight:900;
+}
+
+.kozeni-footer-social__icon{
+  width:22px;
+  height:22px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  flex:0 0 22px;
+}
+
+.kozeni-footer-social__icon svg{
+  width:22px;
+  height:22px;
+  display:block;
+  border-radius:7px;
 }
 
 @media(max-width:720px){
