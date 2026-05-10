@@ -1112,6 +1112,239 @@ h1{
     .kozeni-branch-result__links a { width: 100%; }
   }
 </style>
+
+<style id="kozeni-mobile-v40-4-diagnosis-style">
+  .kozeni-diagnosis-v40-4 {
+    width: min(1120px, calc(100% - 32px));
+    margin: 34px auto;
+  }
+  .kozeni-diagnosis-v40-4__shell {
+    border: 1px solid rgba(15, 122, 85, .18);
+    border-radius: 30px;
+    padding: 22px;
+    background:
+      radial-gradient(circle at 100% 0%, rgba(201, 154, 46, .12), transparent 24rem),
+      linear-gradient(135deg, rgba(255,255,255,.98), rgba(232,255,246,.88));
+    box-shadow: 0 20px 48px rgba(11, 48, 36, .08);
+  }
+  .kozeni-diagnosis-v40-4__head {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 16px;
+    align-items: end;
+    margin-bottom: 16px;
+  }
+  .kozeni-diagnosis-v40-4__label {
+    display: inline-flex;
+    width: fit-content;
+    padding: .28rem .62rem;
+    border-radius: 999px;
+    background: rgba(15, 122, 85, .09);
+    color: #0f7a55;
+    font-size: .76rem;
+    font-weight: 900;
+    letter-spacing: .05em;
+  }
+  .kozeni-diagnosis-v40-4 h2 {
+    margin: 9px 0 0;
+    color: #0f2f25;
+    font-size: clamp(1.5rem, 3.4vw, 2.35rem);
+    line-height: 1.1;
+    letter-spacing: -.055em;
+  }
+  .kozeni-diagnosis-v40-4__lead {
+    margin: 8px 0 0;
+    color: #5f716a;
+    line-height: 1.8;
+  }
+  .kozeni-diagnosis-v40-4__meter {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 86px;
+    padding: .45rem .7rem;
+    border-radius: 999px;
+    color: #0f2f25;
+    background: rgba(255,255,255,.76);
+    border: 1px solid rgba(15, 61, 46, .12);
+    font-weight: 900;
+    font-size: .84rem;
+  }
+  .kozeni-diagnosis-v40-4__panel {
+    display: grid;
+    gap: 14px;
+  }
+  .kozeni-diagnosis-v40-4__question {
+    border: 1px solid rgba(15, 61, 46, .12);
+    border-radius: 24px;
+    padding: 18px;
+    background: rgba(255,255,255,.78);
+  }
+  .kozeni-diagnosis-v40-4__question h3 {
+    margin: 0;
+    color: #0f2f25;
+    font-size: clamp(1.18rem, 2.5vw, 1.58rem);
+    letter-spacing: -.035em;
+  }
+  .kozeni-diagnosis-v40-4__hint {
+    margin: 6px 0 0;
+    color: #66786f;
+    line-height: 1.7;
+    font-size: .92rem;
+  }
+  .kozeni-diagnosis-v40-4__options {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+    margin-top: 14px;
+  }
+  .kozeni-diagnosis-v40-4__option {
+    appearance: none;
+    border: 1px solid rgba(15, 61, 46, .14);
+    border-radius: 20px;
+    padding: 15px;
+    min-height: 118px;
+    background: rgba(255,255,255,.9);
+    color: #0f2f25;
+    text-align: left;
+    cursor: pointer;
+    transition: transform .16s ease, box-shadow .16s ease, border-color .16s ease;
+    font: inherit;
+  }
+  .kozeni-diagnosis-v40-4__option:hover,
+  .kozeni-diagnosis-v40-4__option:focus-visible {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 28px rgba(11, 48, 36, .09);
+    border-color: rgba(15, 122, 85, .3);
+    outline: none;
+  }
+  .kozeni-diagnosis-v40-4__option strong {
+    display: block;
+    font-size: 1rem;
+    letter-spacing: -.02em;
+  }
+  .kozeni-diagnosis-v40-4__option span {
+    display: block;
+    margin-top: 7px;
+    color: #63766d;
+    line-height: 1.6;
+    font-size: .86rem;
+  }
+  .kozeni-diagnosis-v40-4__result {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 16px;
+    align-items: stretch;
+    border-radius: 26px;
+    padding: 20px;
+    background:
+      radial-gradient(circle at 100% 0%, rgba(255,255,255,.18), transparent 14rem),
+      linear-gradient(135deg, #0f7a55, #0f3d2e);
+    color: #fff;
+    box-shadow: 0 20px 44px rgba(15, 61, 46, .20);
+  }
+  .kozeni-diagnosis-v40-4__result-badge {
+    display: inline-flex;
+    width: fit-content;
+    padding: .28rem .6rem;
+    border-radius: 999px;
+    border: 1px solid rgba(255,255,255,.25);
+    background: rgba(255,255,255,.14);
+    font-size: .76rem;
+    font-weight: 900;
+  }
+  .kozeni-diagnosis-v40-4__result h3 {
+    margin: 10px 0 8px;
+    font-size: clamp(1.35rem, 3vw, 2.05rem);
+    line-height: 1.12;
+    letter-spacing: -.05em;
+  }
+  .kozeni-diagnosis-v40-4__result p {
+    margin: 0;
+    color: rgba(255,255,255,.84);
+    line-height: 1.8;
+  }
+  .kozeni-diagnosis-v40-4__result ul {
+    margin: 12px 0 0;
+    padding-left: 1.15rem;
+    color: rgba(255,255,255,.82);
+    line-height: 1.75;
+    font-size: .92rem;
+  }
+  .kozeni-diagnosis-v40-4__actions {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    justify-content: flex-end;
+    min-width: 210px;
+  }
+  .kozeni-diagnosis-v40-4__actions a,
+  .kozeni-diagnosis-v40-4__reset {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: .72rem .95rem;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 900;
+    border: 1px solid rgba(255,255,255,.25);
+    cursor: pointer;
+    font: inherit;
+  }
+  .kozeni-diagnosis-v40-4__main {
+    background: #fff;
+    color: #0f3d2e;
+  }
+  .kozeni-diagnosis-v40-4__sub,
+  .kozeni-diagnosis-v40-4__reset {
+    background: rgba(255,255,255,.10);
+    color: #fff;
+  }
+  .kozeni-diagnosis-v40-4__history {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 12px;
+  }
+  .kozeni-diagnosis-v40-4__history span {
+    display: inline-flex;
+    padding: .25rem .52rem;
+    border-radius: 999px;
+    background: rgba(15, 122, 85, .08);
+    color: #0f7a55;
+    font-size: .76rem;
+    font-weight: 900;
+  }
+  .kozeni-diagnosis-v40-4__note {
+    margin: 12px 0 0;
+    color: #74847c;
+    line-height: 1.7;
+    font-size: .8rem;
+  }
+  .kozeni-diagnosis-legacy-hidden {
+    display: none !important;
+  }
+  @media (max-width: 860px) {
+    .kozeni-diagnosis-v40-4__head,
+    .kozeni-diagnosis-v40-4__result {
+      grid-template-columns: 1fr;
+    }
+    .kozeni-diagnosis-v40-4__options {
+      grid-template-columns: 1fr;
+    }
+    .kozeni-diagnosis-v40-4__actions {
+      min-width: 0;
+    }
+  }
+  @media (max-width: 560px) {
+    .kozeni-diagnosis-v40-4 { width: min(100% - 22px, 1120px); }
+    .kozeni-diagnosis-v40-4__shell { padding: 16px; border-radius: 24px; }
+    .kozeni-diagnosis-v40-4__option { min-height: auto; }
+    .kozeni-diagnosis-v40-4__actions a,
+    .kozeni-diagnosis-v40-4__reset { width: 100%; }
+  }
+</style>
 </head>
 <body>
 <header class="kozeni-site-header">
@@ -1233,63 +1466,6 @@ h1{
   短期Wi-Fi、ホームルーター、光回線、光回線の開通待ち向けWi-Fiなども、条件を確認しながら順番に整理します。
 </div>
 <!-- kozeni-mobile-network-list-v1:end -->
-<!-- kozeni-line-diagnosis-v38-3:start -->
-<section id="kozeni-mobile-line-quiz" class="kozeni-line-quiz" aria-labelledby="kozeni-line-quiz-title" data-step="0">
-  <div class="kozeni-line-quiz__head">
-    <p class="kozeni-line-quiz__eyebrow">30秒クイズ診断</p>
-    <h2 id="kozeni-line-quiz-title">スマホ・回線、まずどこを見る？</h2>
-    <p class="kozeni-line-quiz__lead">4つ選ぶだけ。最後に見るべき公式ページを出します。</p>
-  </div>
-
-  <div class="kozeni-line-quiz__shell">
-    <div class="kozeni-line-quiz__panel">
-      <div class="kozeni-line-quiz__top">
-        <span class="kozeni-line-quiz__step" id="kozeni-line-quiz-step">1 / 5</span>
-        <ol class="kozeni-line-quiz__dots" id="kozeni-line-quiz-dots" aria-label="診断の進み具合"></ol>
-      </div>
-
-      <div class="kozeni-line-quiz__stage">
-        <p class="kozeni-line-quiz__kicker" id="kozeni-line-quiz-kicker">QUESTION</p>
-        <h3 class="kozeni-line-quiz__question" id="kozeni-line-quiz-question">まず、何を見直したい？</h3>
-        <p class="kozeni-line-quiz__hint" id="kozeni-line-quiz-hint">一番近いものを選んでください。</p>
-        <div class="kozeni-line-quiz__options" id="kozeni-line-quiz-options" aria-labelledby="kozeni-line-quiz-question"></div>
-      </div>
-
-      <div class="kozeni-line-quiz__nav">
-        <div class="kozeni-line-quiz__nav-left">
-          <button type="button" class="kozeni-line-quiz__nav-button kozeni-line-quiz__nav-button--back" id="kozeni-line-quiz-back">戻る</button>
-        </div>
-        <div class="kozeni-line-quiz__nav-right">
-          <button type="button" class="kozeni-line-quiz__nav-button kozeni-line-quiz__nav-button--reset" id="kozeni-line-quiz-reset">最初から</button>
-          <button type="button" class="kozeni-line-quiz__nav-button kozeni-line-quiz__nav-button--main" id="kozeni-line-quiz-next" disabled>次へ</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <section class="kozeni-line-quiz__result" id="kozeni-line-quiz-result" aria-live="polite" aria-atomic="true" hidden>
-    <div class="kozeni-line-quiz__status">
-      <p class="kozeni-line-quiz__badge kozeni-line-quiz__badge--green" id="kozeni-line-quiz-kind">診断結果</p>
-      <p class="kozeni-line-quiz__badge" id="kozeni-line-quiz-saving">節約余地：中</p>
-    </div>
-    <h3 id="kozeni-line-quiz-result-title">小〜中容量なら、まず月額を軽くする候補を確認。</h3>
-    <p class="kozeni-line-quiz__verdict" id="kozeni-line-quiz-verdict">4〜10GB中心なら、小〜中容量の公式条件を確認する方が早いです。</p>
-
-    <p class="kozeni-line-quiz__section-title">見る候補</p>
-    <ul class="kozeni-line-quiz__candidates" id="kozeni-line-quiz-candidates"></ul>
-
-    <p class="kozeni-line-quiz__section-title">確認ポイント</p>
-    <ul class="kozeni-line-quiz__points" id="kozeni-line-quiz-points"></ul>
-
-    <div class="kozeni-line-quiz__actions" id="kozeni-line-quiz-actions"></div>
-    <p class="kozeni-line-quiz__note">公式条件確認への入口です。PR・紹介・ASPリンクを使う場合は別途明記します。料金・キャンペーン・提供エリアは公式画面で最終確認してください。</p>
-  </section>
-
-  <noscript>
-    <p class="kozeni-line-quiz__noscript">診断ギミックを使うにはJavaScriptを有効にしてください。まず現在のスマホ代・月間GB・家のWi-Fi状況を確認してから公式ページを見るのがおすすめです。</p>
-  </noscript>
-</section>
-<!-- kozeni-line-diagnosis-v38-3:end -->
 
 
 
@@ -1344,6 +1520,23 @@ h1{
   </div>
 </section>
 <!-- kozeni-mobile-v40-2-route-end -->
+
+<!-- kozeni-mobile-v40-4-diagnosis-start -->
+<section class="kozeni-diagnosis-v40-4" id="kozeni-mobile-diagnosis-v40-4" aria-labelledby="kozeni-diagnosis-v40-4-title">
+  <div class="kozeni-diagnosis-v40-4__shell">
+    <div class="kozeni-diagnosis-v40-4__head">
+      <div>
+        <span class="kozeni-diagnosis-v40-4__label">30秒診断 / v40.4</span>
+        <h2 id="kozeni-diagnosis-v40-4-title">スマホ・回線、まず何を見る？</h2>
+        <p class="kozeni-diagnosis-v40-4__lead">選択肢を絞りました。2〜3問だけ答えると、家のWi-Fi・月GB確認・スマホ回線のどれを見るかに必ず分岐します。</p>
+      </div>
+      <span class="kozeni-diagnosis-v40-4__meter" id="kozeniDiagMeter">1 / 3</span>
+    </div>
+    <div class="kozeni-diagnosis-v40-4__panel" id="kozeniDiagPanel" aria-live="polite"></div>
+    <p class="kozeni-diagnosis-v40-4__note">PRを含むページへ進む場合があります。料金・キャンペーン・提供エリア・成果条件は申込前に公式ページで確認してください。</p>
+  </div>
+</section>
+<!-- kozeni-mobile-v40-4-diagnosis-end -->
 </main>
 <footer class="footer">
   <div class="container">
@@ -1368,545 +1561,229 @@ h1{
 </nav>
 
 
-<!-- kozeni-line-diagnosis-js-v39-2:start -->
-<script>
-(() => {
-  const root = document.querySelector('.kozeni-line-quiz');
-  if (!root) return;
 
-  const $ = (selector) => root.querySelector(selector);
-  const state = {
-    need: '',
-    bill: '',
-    data: '',
-    priority: ''
-  };
-  let step = 0;
 
-  const questions = [
-    {
-      key: 'need',
-      kicker: 'QUESTION 1',
-      title: 'まず、何を見直したい？',
-      hint: '一番近いものを選んでください。',
-      options: [
-        { value: 'phone', label: 'スマホ代を下げたい', micro: '月額とGBを見直す' },
-        { value: 'data', label: 'ギガが足りない', micro: '外でよく使う' },
-        { value: 'wifi', label: '家のWi-Fiを見直したい', micro: '工事なし回線も確認' },
-        { value: 'temporary', label: '引っ越し・開通待ち', micro: '一時的なネット環境' }
-      ]
-    },
-    {
-      key: 'bill',
-      kicker: 'QUESTION 2',
-      title: '今のスマホ代はどれくらい？',
-      hint: 'ざっくりでOK。分からなければ最後を選んでください。',
-      options: [
-        { value: 'under2000', label: '2,000円未満', micro: 'すでにかなり軽い' },
-        { value: '2000-4000', label: '2,000〜4,000円', micro: '見直し余地あり' },
-        { value: 'over4000', label: '4,000円以上', micro: '下げやすい可能性' },
-        { value: 'unknown', label: 'よく分からない', micro: '請求画面から確認' }
-      ]
-    },
-    {
-      key: 'data',
-      kicker: 'QUESTION 3',
-      title: '月に何GBくらい使う？',
-      hint: '迷ったら近いものを選びます。分からないでもOK。',
-      options: [
-        { value: 'under3', label: '3GB以下', micro: 'Wi-Fi中心・軽め' },
-        { value: '4-10', label: '4〜10GB', micro: 'SNS・調べ物中心' },
-        { value: 'over10', label: '11GB以上', micro: '動画・地図・外利用多め' },
-        { value: 'unknown', label: '分からない', micro: '先に使用量チェック' }
-      ]
-    },
-    {
-      key: 'priority',
-      kicker: 'QUESTION 4',
-      title: '最後に、優先したいことは？',
-      hint: '結果は次のボタンで出します。',
-      options: [
-        { value: 'price', label: 'とにかく安さ', micro: '月額を軽くしたい' },
-        { value: 'stable', label: '通信の安定', micro: 'つながりやすさ重視' },
-        { value: 'store', label: '店舗・家族割', micro: 'サポートも欲しい' },
-        { value: 'esim', label: 'サブ回線/eSIM', micro: '予備・仕事用に持つ' }
-      ]
-    }
-  ];
-
-  const results = {
-    usageUnknown: {
-      kind: 'まず確認',
-      saving: '確認してから判断',
-      title: 'スマホ代・月のGBが分からない人は、先にここだけ確認。',
-      verdict: '料金表やキャンペーンを見る前に、まず「今のスマホ代」と「月間データ使用量」を確認します。分からないまま選ぶと、安く見えても合わないことがあります。',
-      candidates: [
-        { name: '何GBチェック', note: 'スマホ代と月間GBの見方を先に整理' },
-        { name: '現在の請求画面', note: '端末代・通話料・オプション混在を確認' }
-      ],
-      points: ['月間データ使用量', '端末代や保証が混ざっていないか', '家のWi-Fi中心か外でも使うか'],
-      actions: [
-        { label: '何GBチェックを開く', url: '/mobile-sim/data-usage/', external: false }
-      ]
-    },
-    alreadyLean: {
-      kind: '無理に変えない',
-      saving: '節約余地：低〜中',
-      title: 'すでに軽い。乗り換えは条件が良い時だけ。',
-      verdict: '2,000円未満・3GB以下なら、無理な乗り換えよりキャンペーンやサブ回線の必要性だけ確認する方が自然です。',
-      candidates: [
-        { name: 'IIJmio', note: '小容量・eSIM候補' },
-        { name: 'LINEMO', note: '小容量の公式条件確認' }
-      ],
-      points: ['事務手数料やSIM発行料', '今の割引が消えないか', '紹介・キャンペーン条件'],
-      actions: [
-        { label: 'IIJmio公式を見る', url: 'https://www.iijmio.jp/gigaplan/', external: true },
-        { label: 'LINEMO公式を見る', url: 'https://www.linemo.jp/plan/', external: true }
-      ]
-    },
-    lightData: {
-      kind: '小容量',
-      saving: '節約余地：中',
-      title: '3GB以下なら、小容量プランを先に確認。',
-      verdict: '家のWi-Fi中心で外では軽く使う程度なら、大容量より小容量の月額を確認する方が早いです。',
-      candidates: [
-        { name: 'LINEMO', note: '3GB前後の候補' },
-        { name: 'IIJmio', note: '細かい容量・eSIM候補' }
-      ],
-      points: ['昼や夕方の速度感', '通話オプション', 'キャンペーン条件'],
-      actions: [
-        { label: 'LINEMO公式を見る', url: 'https://www.linemo.jp/plan/', external: true },
-        { label: 'IIJmio公式を見る', url: 'https://www.iijmio.jp/gigaplan/', external: true }
-      ]
-    },
-    midData: {
-      kind: '中容量',
-      saving: '節約余地：中',
-      title: '4〜10GBなら、安さと使いやすさのバランスを見る。',
-      verdict: '小容量では足りないけど大容量までは不要なら、月額と速度のクセを見比べるのが近道です。',
-      candidates: [
-        { name: 'LINEMO', note: '小〜中容量の候補' },
-        { name: 'IIJmio', note: '容量を細かく選びやすい' }
-      ],
-      points: ['月間GBが毎月ブレるか', 'LINEや動画の利用頻度', '支払い方法・本人確認'],
-      actions: [
-        { label: 'LINEMO公式を見る', url: 'https://www.linemo.jp/plan/', external: true },
-        { label: 'IIJmio公式を見る', url: 'https://www.iijmio.jp/gigaplan/', external: true }
-      ]
-    },
-    thirtyData: {
-      kind: '20〜30GB',
-      saving: '節約余地：中〜高',
-      title: '11〜30GBなら、30GB前後の公式条件を確認。',
-      verdict: '外でも動画・SNS・地図を使うなら、安さだけでなく通信量と通話条件を一緒に見るのが安全です。',
-      candidates: [
-        { name: 'ahamo', note: '30GB前後と通話込みの候補' },
-        { name: 'LINEMO', note: 'ソフトバンク系の候補' }
-      ],
-      points: ['5分通話の有無', '海外利用の必要性', '速度制限後の使い勝手'],
-      actions: [
-        { label: 'ahamo公式を見る', url: 'https://ahamo.com/', external: true },
-        { label: 'LINEMO公式を見る', url: 'https://www.linemo.jp/plan/', external: true }
-      ]
-    },
-    heavyData: {
-      kind: '大容量',
-      saving: '節約余地：中〜高',
-      title: '30GB以上なら、変動制か大容量プランを確認。',
-      verdict: '毎月かなり使うなら、小容量の安さより「上限・速度制限・テザリング」の確認が先です。',
-      candidates: [
-        { name: '楽天モバイル', note: '使用量が変動する人の候補' },
-        { name: 'ahamo大盛り', note: '大容量寄りの候補' }
-      ],
-      points: ['自宅Wi-Fiの有無', 'テザリング利用', 'エリアと屋内のつながりやすさ'],
-      actions: [
-        { label: '楽天モバイル公式を見る', url: 'https://network.mobile.rakuten.co.jp/fee/saikyo-plan/', external: true },
-        { label: 'ahamo公式を見る', url: 'https://ahamo.com/', external: true }
-      ]
-    },
-    homeWifi: {
-      kind: '家の回線',
-      saving: '節約余地：状況次第',
-      title: '家のWi-Fiが先。工事なし回線を確認。',
-      verdict: 'スマホプランを下げても、家のネットが不安定だと満足度が落ちます。開通待ち・工事不可ならホームルーター系を先に見る流れです。',
-      candidates: [
-        { name: 'UQ WiMAX', note: '工事なしWi-Fi候補' },
-        { name: 'docomo home 5G', note: 'ホームルーター候補' },
-        { name: 'Rakuten Turbo', note: '楽天系の家Wi-Fi候補' }
-      ],
-      points: ['提供エリア', '登録住所での利用条件', '短期か長期か'],
-      actions: [
-        { label: 'UQ WiMAX公式を見る', url: 'https://www.uqwimax.jp/wimax/', external: true },
-        { label: 'home 5G公式を見る', url: 'https://www.docomo.ne.jp/home_5g/', external: true }
-      ]
-    },
-    temporaryWifi: {
-      kind: '開通待ち',
-      saving: '節約余地：目的次第',
-      title: '開通待ちなら、短期・工事なしを優先。',
-      verdict: '引っ越し直後や光回線の開通待ちは、長期契約より「いつまで必要か」を先に決める方が失敗しにくいです。',
-      candidates: [
-        { name: 'WiMAX系', note: '短期〜中期の候補' },
-        { name: 'ホームルーター', note: '工事なしで使う候補' }
-      ],
-      points: ['必要な期間', '解約条件', '速度制限とエリア'],
-      actions: [
-        { label: 'UQ WiMAX公式を見る', url: 'https://www.uqwimax.jp/wimax/', external: true },
-        { label: '何GBチェックを見る', url: '/mobile-sim/data-usage/', external: false }
-      ]
-    },
-    subline: {
-      kind: 'サブ回線',
-      saving: '節約余地：中',
-      title: 'サブ回線・eSIMなら、軽い月額から確認。',
-      verdict: 'メイン回線を変えずに、通信障害対策や仕事用として2回線目を持つなら、eSIMや小容量が見やすいです。',
-      candidates: [
-        { name: 'IIJmio', note: 'eSIM・小容量候補' },
-        { name: 'povo', note: '必要な時だけ使う候補' }
-      ],
-      points: ['端末のeSIM対応', 'メイン回線と別系統か', '本人確認と支払い方法'],
-      actions: [
-        { label: 'IIJmio公式を見る', url: 'https://www.iijmio.jp/gigaplan/', external: true },
-        { label: 'povo公式を見る', url: 'https://povo.jp/', external: true }
-      ]
-    },
-    storeSupport: {
-      kind: 'サポート重視',
-      saving: '節約余地：中',
-      title: '店舗・家族割重視なら、サブブランドを確認。',
-      verdict: '完全な格安SIMより、店舗サポートや家族割・セット割を残した方が合う場合があります。',
-      candidates: [
-        { name: 'UQ mobile', note: 'au系・店舗/セット割候補' },
-        { name: 'Y!mobile', note: 'ソフトバンク系・家族割候補' }
-      ],
-      points: ['家族割の人数', '自宅回線とのセット割', '店舗サポートの必要性'],
-      actions: [
-        { label: 'UQ mobile公式を見る', url: 'https://www.uqwimax.jp/mobile/', external: true },
-        { label: 'Y!mobile公式を見る', url: 'https://www.ymobile.jp/', external: true }
-      ]
-    }
-  };
-
-  const els = {
-    step: $('#kozeni-line-quiz-step'),
-    dots: $('#kozeni-line-quiz-dots'),
-    kicker: $('#kozeni-line-quiz-kicker'),
-    question: $('#kozeni-line-quiz-question'),
-    hint: $('#kozeni-line-quiz-hint'),
-    options: $('#kozeni-line-quiz-options'),
-    back: $('#kozeni-line-quiz-back'),
-    next: $('#kozeni-line-quiz-next'),
-    reset: $('#kozeni-line-quiz-reset'),
-    result: $('#kozeni-line-quiz-result'),
-    kind: $('#kozeni-line-quiz-kind'),
-    saving: $('#kozeni-line-quiz-saving'),
-    resultTitle: $('#kozeni-line-quiz-result-title'),
-    verdict: $('#kozeni-line-quiz-verdict'),
-    candidates: $('#kozeni-line-quiz-candidates'),
-    points: $('#kozeni-line-quiz-points'),
-    actions: $('#kozeni-line-quiz-actions')
-  };
-
-  function chooseResult() {
-    const { need, bill, data, priority } = state;
-    if (data === 'unknown' || bill === 'unknown') return 'usageUnknown';
-    if (need === 'temporary') return 'temporaryWifi';
-    if (need === 'wifi') return 'homeWifi';
-    if (priority === 'esim') return 'subline';
-    if (priority === 'store') return 'storeSupport';
-    if (bill === 'under2000' && data === 'under3') return 'alreadyLean';
-    if (data === 'under3') return 'lightData';
-    if (data === '4-10') return 'midData';
-    if (data === 'over10' && need === 'data') return 'heavyData';
-    if (data === 'over10') return 'thirtyData';
-    return 'midData';
-  }
-
-  function renderDots() {
-    els.dots.textContent = '';
-    questions.forEach((_, index) => {
-      const li = document.createElement('li');
-      li.dataset.active = String(index === step);
-      els.dots.appendChild(li);
-    });
-  }
-
-  function renderQuestion() {
-    const question = questions[step];
-    root.dataset.step = String(step);
-    els.step.textContent = `${step + 1} / ${questions.length}`;
-    els.kicker.textContent = question.kicker;
-    els.question.textContent = question.title;
-    els.hint.textContent = question.hint;
-    els.options.textContent = '';
-
-    question.options.forEach((option) => {
-      const button = document.createElement('button');
-      button.type = 'button';
-      button.className = 'kozeni-line-quiz__option';
-      button.setAttribute('aria-pressed', String(state[question.key] === option.value));
-      button.dataset.value = option.value;
-
-      const text = document.createElement('span');
-      const label = document.createElement('span');
-      const micro = document.createElement('span');
-      label.className = 'kozeni-line-quiz__option-label';
-      micro.className = 'kozeni-line-quiz__option-micro';
-      label.textContent = option.label;
-      micro.textContent = option.micro;
-      text.append(label, micro);
-      button.appendChild(text);
-      button.addEventListener('click', () => {
-        state[question.key] = option.value;
-        els.options.querySelectorAll('.kozeni-line-quiz__option').forEach((node) => node.setAttribute('aria-pressed', 'false'));
-        button.setAttribute('aria-pressed', 'true');
-        els.next.disabled = false;
-      });
-      els.options.appendChild(button);
-    });
-
-    els.back.disabled = step === 0;
-    els.next.disabled = !state[question.key];
-    els.next.textContent = step === questions.length - 1 ? '診断結果を見る' : '次へ';
-    els.result.hidden = true;
-    renderDots();
-  }
-
-  function addListItems(target, items, render) {
-    target.textContent = '';
-    items.forEach((item) => {
-      const li = document.createElement('li');
-      render(li, item);
-      target.appendChild(li);
-    });
-  }
-
-  function renderResult() {
-    const result = results[chooseResult()] || results.midData;
-    els.kind.textContent = result.kind;
-    els.saving.textContent = result.saving;
-    els.resultTitle.textContent = result.title;
-    els.verdict.textContent = result.verdict;
-
-    addListItems(els.candidates, result.candidates, (li, item) => {
-      const strong = document.createElement('strong');
-      const span = document.createElement('span');
-      strong.textContent = item.name;
-      span.textContent = item.note;
-      li.append(strong, span);
-    });
-
-    addListItems(els.points, result.points, (li, item) => {
-      li.textContent = item;
-    });
-
-    els.actions.textContent = '';
-    const actions = result.actions && result.actions.length ? result.actions : [{ label: '何GBチェックを開く', url: '/mobile-sim/data-usage/', external: false }];
-    actions.forEach((action, index) => {
-      const a = document.createElement('a');
-      a.className = `kozeni-line-quiz__button ${index === 0 ? 'kozeni-line-quiz__button--primary' : 'kozeni-line-quiz__button--ghost'}`;
-      a.href = action.url;
-      a.textContent = action.label;
-      if (action.external) {
-        a.target = '_blank';
-        a.rel = 'noopener sponsored';
-      }
-      els.actions.appendChild(a);
-    });
-
-    els.result.hidden = false;
-    els.result.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-  }
-
-  els.back.addEventListener('click', () => {
-    if (step > 0) {
-      step -= 1;
-      renderQuestion();
-    }
-  });
-
-  els.next.addEventListener('click', () => {
-    if (!state[questions[step].key]) return;
-    if (step < questions.length - 1) {
-      step += 1;
-      renderQuestion();
-      return;
-    }
-    renderResult();
-  });
-
-  els.reset.addEventListener('click', () => {
-    questions.forEach((question) => { state[question.key] = ''; });
-    step = 0;
-    renderQuestion();
-  });
-
-  renderQuestion();
-})();
-</script>
-<!-- kozeni-line-diagnosis-js-v39-2:end -->
-
-<script id="kozeni-mobile-v40-2-script">
+<script id="kozeni-mobile-v40-4-diagnosis-script">
 (function () {
-  function onReady(fn) {
+  var BIGLOBE_URL = "https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3770077&pid=892609857";
+
+  function ready(fn) {
     if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', fn, { once: true });
     else fn();
   }
 
-  onReady(function () {
-    var main = document.querySelector('main') || document.body;
-    var topBlock = document.getElementById('kozeni-mobile-route-priority');
-    if (topBlock && main) {
-      var sections = Array.from(main.children || []);
-      var recommend = sections.find(function (el) {
-        return /RECOMMEND|最初に見るなら|目的で選ぶ/.test((el.textContent || '').slice(0, 900));
-      });
-      var hero = sections.find(function (el) {
-        return /スマホ・回線は、固定費から見直す|MOBILE/.test((el.textContent || '').slice(0, 900));
-      });
-      if (recommend && recommend !== topBlock) {
-        main.insertBefore(topBlock, recommend);
-      } else if (hero && hero.nextSibling && hero.nextSibling !== topBlock) {
-        main.insertBefore(topBlock, hero.nextSibling);
-      }
+  var OPTIONS = {
+    start: {
+      step: 1,
+      title: 'まず、何を見直したい？',
+      hint: 'ここを分けるだけで結果のズレがかなり減ります。SIMと家Wi-Fiを同じ診断に混ぜすぎないのがコツです。',
+      options: [
+        { key: 'sim', title: 'スマホ代・SIM', desc: '毎月のスマホ料金やギガを見直したい。' },
+        { key: 'home', title: '家のWi-Fi・開通待ち', desc: '固定回線、工事不要Wi-Fi、引っ越し前後を見たい。' },
+        { key: 'unknown', title: 'そもそも分からない', desc: 'スマホ代や月GBが曖昧。まず現状を知りたい。' }
+      ]
+    },
+    sim: {
+      step: 2,
+      title: 'スマホ側で一番近い悩みは？',
+      hint: 'ここは4択まで。これ以上増やすと、結果が似て使いづらくなります。',
+      options: [
+        { key: 'usage_unknown', title: '月額・GBが分からない', desc: '料金明細や月のデータ使用量をまだ見ていない。' },
+        { key: 'cheap_light', title: 'とにかく安く', desc: '3〜10GB前後。低〜中容量で月額を軽くしたい。' },
+        { key: 'heavy_data', title: '20GB前後〜大容量', desc: '動画・外出先利用・テザリングが多い。' },
+        { key: 'service', title: 'ポイント・キャンペーン・サポート', desc: '楽天、LINE/PayPay、店舗サポートなどで選びたい。' }
+      ]
+    },
+    service: {
+      step: 3,
+      title: 'どの条件を優先する？',
+      hint: 'サービス軸だけ最後に分けます。ここを無理に1問目へ入れると選択肢が増えすぎます。',
+      options: [
+        { key: 'rakuten', title: '楽天ポイント・段階制', desc: '楽天経済圏や使った分だけの料金を見たい。' },
+        { key: 'linemo', title: 'LINE・PayPay系', desc: 'オンライン申込やキャンペーン条件を見たい。' },
+        { key: 'uq', title: '店舗サポート', desc: 'オンラインだけでは不安。対面サポートも見たい。' }
+      ]
+    },
+    home: {
+      step: 2,
+      title: '家のWi-Fiは、どの状況？',
+      hint: '家のネット系はスマホSIMと別出口にします。BIGLOBE WiMAXの導線もここで自然に見せます。',
+      options: [
+        { key: 'home_wifi', title: '家のWi-Fiが重い', desc: '固定回線までは決めず、工事不要Wi-Fiを確認したい。' },
+        { key: 'temporary_wifi', title: '引っ越し・開通待ち', desc: '短期〜中期でネット環境が必要。' },
+        { key: 'both_unknown', title: 'スマホも家も怪しい', desc: 'どちらが原因か分からない。まず整理したい。' }
+      ]
     }
+  };
 
-    // 既存診断のロジックを壊さず、選択内容に応じた「差が見える補助結果」を足す。
-    var roots = Array.from(document.querySelectorAll('section, div, main'));
-    var quizRoot = roots.find(function (el) {
-      var t = el.textContent || '';
-      return /30秒クイズ診断|スマホ・回線、まずどこを見る/.test(t) && /診断結果/.test(t);
+  var RESULTS = {
+    unknown: {
+      badge: '情報不足',
+      title: 'まだ選ばず、スマホ代と月GBだけ確認。',
+      body: '料金かデータ使用量が曖昧なまま選ぶと、安くならない可能性があります。まず現状確認ページへ進めばOKです。',
+      bullets: ['スマホ代が分からない', '月のGBが分からない', '診断で迷う人の受け皿'],
+      mainText: 'スマホ代・GBを確認', mainHref: '/mobile-sim/data-usage/',
+      subText: 'スマホ・回線トップへ', subHref: '/mobile-sim/'
+    },
+    usage_unknown: {
+      badge: '現状確認',
+      title: '月額・GBが分からないなら、確認ページへ。',
+      body: 'ここで無理にahamoやLINEMOへ振らない方が安全です。使用量を見てから、低容量・大容量・家Wi-Fiに分けます。',
+      bullets: ['料金明細を見る', '月GBを見る', '家Wi-Fiの有無も見る'],
+      mainText: '確認方法を見る', mainHref: '/mobile-sim/data-usage/',
+      subText: '家のWi-Fiも見る', subHref: '/mobile-sim/home-wifi/'
+    },
+    cheap_light: {
+      badge: '低〜中容量',
+      title: '3〜10GB前後なら、低価格候補を先に確認。',
+      body: '大容量プランに寄せるより、IIJmioやmineo系の低〜中容量候補を見た方が月額を軽くしやすいです。',
+      bullets: ['3〜10GB前後', 'とにかく月額を下げたい', '大容量までは不要'],
+      mainText: 'IIJmioを見る', mainHref: '/mobile-sim/iijmio/',
+      subText: 'mineoも見る', subHref: '/mobile-sim/mineo/'
+    },
+    heavy_data: {
+      badge: '大容量寄り',
+      title: '20GB前後〜大容量なら、ahamoを先に確認。',
+      body: '動画・外出先利用・テザリングが多いなら、低容量より大容量候補から確認した方が早いです。',
+      bullets: ['20GB前後以上', '外出先利用が多い', 'テザリングも使う'],
+      mainText: 'ahamoを見る', mainHref: '/mobile-sim/ahamo/',
+      subText: 'LINEMOも見る', subHref: '/mobile-sim/linemo/'
+    },
+    rakuten: {
+      badge: '楽天・段階制',
+      title: '楽天ポイントや段階制なら、楽天モバイルを確認。',
+      body: '使う月と使わない月の差がある人、楽天系サービスを使う人は、楽天モバイルの条件確認が自然です。',
+      bullets: ['楽天ポイントを使う', '段階制料金を見たい', '紹介条件も確認したい'],
+      mainText: '楽天モバイルを見る', mainHref: '/mobile-sim/rakuten-mobile/',
+      subText: '月GBを確認', subHref: '/mobile-sim/data-usage/'
+    },
+    linemo: {
+      badge: 'LINE・PayPay系',
+      title: 'LINE・PayPay系なら、LINEMOを確認。',
+      body: 'オンライン申込やキャンペーン条件を見たい人は、LINEMOの対象条件を先に整理します。',
+      bullets: ['LINE/PayPay系を重視', 'オンライン申込で進めたい', 'キャンペーン条件を確認したい'],
+      mainText: 'LINEMOを見る', mainHref: '/mobile-sim/linemo/',
+      subText: 'ahamoも見る', subHref: '/mobile-sim/ahamo/'
+    },
+    uq: {
+      badge: 'サポート重視',
+      title: '店舗サポートも見るなら、UQ mobileを確認。',
+      body: 'オンラインだけで不安な人は、料金だけでなく店舗サポートやセット条件も含めて確認します。',
+      bullets: ['店頭サポートも見たい', '家族やセット条件も確認', 'オンラインだけでは不安'],
+      mainText: 'UQ mobileを見る', mainHref: '/mobile-sim/uq-mobile/',
+      subText: 'スマホ・回線トップへ', subHref: '/mobile-sim/'
+    },
+    home_wifi: {
+      badge: '家のWi-Fi',
+      title: '工事不要Wi-Fiを先に確認。',
+      body: '家のWi-Fiが重い、固定回線工事を避けたい、開通待ちなら、スマホSIMではなく家Wi-Fi側の導線へ進みます。',
+      bullets: ['工事なしで使いたい', '家のネットが重い', 'BIGLOBE WiMAXの条件を確認'],
+      mainText: 'BIGLOBE WiMAXを確認', mainHref: BIGLOBE_URL, external: true,
+      subText: '向き・不向きを見る', subHref: '/mobile-sim/home-wifi/'
+    },
+    temporary_wifi: {
+      badge: '開通待ち・短期',
+      title: '短期〜中期なら、家のWi-Fiページで条件確認。',
+      body: '引っ越し・入院・一時帰国・光回線の開通待ちは、期間と解約条件が大事です。まず家Wi-Fiページへ進みます。',
+      bullets: ['引っ越し前後', '開通待ち', '短期〜中期のネット環境'],
+      mainText: '家のWi-Fiを見る', mainHref: '/mobile-sim/home-wifi/',
+      subText: 'BIGLOBE WiMAXを確認', subHref: BIGLOBE_URL, subExternal: true
+    },
+    both_unknown: {
+      badge: 'スマホ＋家Wi-Fi',
+      title: 'まずスマホ代・GBを確認しつつ、家Wi-Fiも見る。',
+      body: 'スマホも家のネットも怪しい場合は、スマホ代・月GBの確認と家Wi-Fiページの2つに分けて整理します。',
+      bullets: ['スマホ代が高いか不明', '家のWi-Fiも不安', '両方を一度に契約しない'],
+      mainText: 'スマホ代・GBを確認', mainHref: '/mobile-sim/data-usage/',
+      subText: '家のWi-Fiを見る', subHref: '/mobile-sim/home-wifi/'
+    }
+  };
+
+  function escapeHtml(s) {
+    return String(s || '').replace(/[&<>"']/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' }[c];
     });
-    if (!quizRoot) return;
+  }
 
-    var answers = [];
-    function clean(text) {
-      return (text || '').replace(/\s+/g, ' ').trim();
+  ready(function () {
+    var root = document.getElementById('kozeni-mobile-diagnosis-v40-4');
+    if (!root) return;
+    var panel = document.getElementById('kozeniDiagPanel');
+    var meter = document.getElementById('kozeniDiagMeter');
+    var state = { path: [] };
+
+    hideLegacyDiagnosis(root);
+    renderQuestion('start');
+
+    function hideLegacyDiagnosis(newRoot) {
+      Array.prototype.slice.call(document.querySelectorAll('section, div')).forEach(function (el) {
+        if (el === newRoot || el.contains(newRoot) || newRoot.contains(el)) return;
+        var text = (el.textContent || '').replace(/\s+/g, ' ').trim().slice(0, 1200);
+        if ((/30秒クイズ診断|スマホ・回線、まずどこを見る|診断結果/.test(text)) && (/月のGB|スマホ代|ahamo|LINEMO|楽天/.test(text))) {
+          el.classList.add('kozeni-diagnosis-legacy-hidden');
+        }
+      });
     }
-    function decide() {
-      var joined = answers.join(' ');
-      var result = {
-        label: '診断結果を補正',
-        title: '迷う場合は、まず現状確認から。',
-        body: 'スマホ代か月GBが曖昧なら、先に使用量を確認してから候補を選ぶ方が安全です。',
-        mainText: 'スマホ代・GBを確認',
-        mainHref: '/mobile-sim/data-usage/',
-        subText: 'スマホ・回線トップへ',
-        subHref: '/mobile-sim/'
-      };
-      if (/家|Wi.?Fi|wifi|ホーム|ルーター|固定|工事|引っ越し|引越|開通|短期|入院|一時帰国|テザリング/.test(joined)) {
-        result = {
-          label: '家のネット寄り',
-          title: 'スマホSIMだけでなく、工事不要Wi-Fiを確認。',
-          body: '家のWi-Fiが重い、開通待ち、引っ越し前後なら、スマホプランより先に工事不要Wi-Fiの条件を見る価値があります。',
-          mainText: 'BIGLOBE WiMAXを確認',
-          mainHref: 'https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3770077&pid=892609857',
-          subText: '向き・不向きを見る',
-          subHref: '/mobile-sim/home-wifi/'
-        };
-      } else if (/分からない|わからない|不明|よく分からない|GBが分からない|料金が分からない/.test(joined)) {
-        result = {
-          label: '情報不足',
-          title: 'まだ選ばず、スマホ代と月GBだけ確認。',
-          body: '料金かデータ使用量が曖昧なまま申し込むと、安くならない可能性があります。まず確認ページへ進みます。',
-          mainText: '確認方法を見る',
-          mainHref: '/mobile-sim/data-usage/',
-          subText: '家のWi-Fiも見る',
-          subHref: '/mobile-sim/home-wifi/'
-        };
-      } else if (/楽天|ポイント|段階|Rakuten|使う月|使わない月/.test(joined)) {
-        result = {
-          label: '楽天・段階制寄り',
-          title: '楽天モバイルを先に確認。',
-          body: 'データ利用量に波がある人や楽天系サービスを使う人は、段階制料金と紹介条件を先に見るのが自然です。',
-          mainText: '楽天モバイルを見る',
-          mainHref: '/mobile-sim/rakuten-mobile/',
-          subText: '月GBを確認',
-          subHref: '/mobile-sim/data-usage/'
-        };
-      } else if (/20|30|大容量|たくさん|動画|ドコモ|海外|安定|外出先/.test(joined)) {
-        result = {
-          label: '大容量寄り',
-          title: '20GB超なら、ahamo系から確認。',
-          body: '動画・外出先利用・テザリングが多いなら、低容量プランより大容量の公式条件を見た方が早いです。',
-          mainText: 'ahamoを見る',
-          mainHref: '/mobile-sim/ahamo/',
-          subText: 'LINEMOも見る',
-          subHref: '/mobile-sim/linemo/'
-        };
-      } else if (/LINE|PayPay|キャンペーン|ソフトバンク|オンライン/.test(joined)) {
-        result = {
-          label: 'キャンペーン・LINE寄り',
-          title: 'LINEMOの条件を先に確認。',
-          body: 'LINE利用やPayPay系キャンペーンを重視するなら、対象条件と申込手順を先に見ます。',
-          mainText: 'LINEMOを見る',
-          mainHref: '/mobile-sim/linemo/',
-          subText: 'ahamoも見る',
-          subHref: '/mobile-sim/ahamo/'
-        };
-      } else if (/店舗|サポート|店頭|UQ|対面|家族/.test(joined)) {
-        result = {
-          label: 'サポート重視',
-          title: '店舗サポートも見るならUQ mobile系。',
-          body: 'オンラインだけで不安な人は、月額だけでなくサポート・セット条件も含めて確認します。',
-          mainText: 'UQ mobileを見る',
-          mainHref: '/mobile-sim/uq-mobile/',
-          subText: 'その他候補を見る',
-          subHref: '/mobile-sim/'
-        };
-      } else if (/安|節約|低容量|小容量|3GB|4GB|10GB|mineo|IIJ|日本通信/.test(joined)) {
-        result = {
-          label: '低〜中容量寄り',
-          title: '小〜中容量なら、低価格候補を確認。',
-          body: '3〜10GB前後なら、大容量プランより低〜中容量の候補で月額を軽くできる可能性があります。',
-          mainText: 'IIJmioを見る',
-          mainHref: '/mobile-sim/iijmio/',
-          subText: 'mineoも見る',
-          subHref: '/mobile-sim/mineo/'
-        };
-      }
-      return result;
-    }
-    function render() {
-      var old = document.getElementById('kozeni-branch-result');
-      if (old) old.remove();
-      if (!answers.length) return;
-      var r = decide();
-      var box = document.createElement('div');
-      box.className = 'kozeni-branch-result';
-      box.id = 'kozeni-branch-result';
-      box.innerHTML = '' +
-        '<span class="kozeni-branch-result__label">' + r.label + '</span>' +
-        '<h3>' + r.title + '</h3>' +
-        '<p>' + r.body + '</p>' +
-        '<div class="kozeni-branch-result__links">' +
-          '<a class="kozeni-branch-result__main" href="' + r.mainHref + '"' + (r.mainHref.indexOf('http') === 0 ? ' target="_blank" rel="nofollow sponsored noopener"' : '') + '>' + r.mainText + '</a>' +
-          '<a class="kozeni-branch-result__sub" href="' + r.subHref + '">' + r.subText + '</a>' +
+
+    function renderQuestion(key) {
+      var q = OPTIONS[key];
+      if (!q) return renderResult(key);
+      meter.textContent = q.step + ' / 3';
+      var optionsHtml = q.options.map(function (o) {
+        return '<button type="button" class="kozeni-diagnosis-v40-4__option" data-key="' + escapeHtml(o.key) + '">' +
+          '<strong>' + escapeHtml(o.title) + '</strong>' +
+          '<span>' + escapeHtml(o.desc) + '</span>' +
+        '</button>';
+      }).join('');
+      panel.innerHTML = '' +
+        '<div class="kozeni-diagnosis-v40-4__question">' +
+          '<h3>' + escapeHtml(q.title) + '</h3>' +
+          '<p class="kozeni-diagnosis-v40-4__hint">' + escapeHtml(q.hint) + '</p>' +
+          '<div class="kozeni-diagnosis-v40-4__options">' + optionsHtml + '</div>' +
+          renderHistory() +
         '</div>';
-
-      var candidates = Array.from(quizRoot.querySelectorAll('h2,h3,div,p,section'));
-      var target = candidates.find(function (el) { return /^診断結果$/.test(clean(el.textContent)); }) ||
-                   candidates.find(function (el) { return /診断結果/.test(clean(el.textContent)) && clean(el.textContent).length < 30; });
-      if (target && target.parentNode) {
-        target.parentNode.insertBefore(box, target.nextSibling);
-      } else {
-        quizRoot.appendChild(box);
-      }
+      Array.prototype.slice.call(panel.querySelectorAll('[data-key]')).forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var next = btn.getAttribute('data-key');
+          var label = (btn.querySelector('strong') || btn).textContent || next;
+          state.path.push(label.trim());
+          if (OPTIONS[next]) renderQuestion(next);
+          else renderResult(next);
+        });
+      });
     }
 
-    quizRoot.addEventListener('click', function (ev) {
-      var clickable = ev.target.closest('button, a, [role="button"], label, .option, [data-answer], [data-value]');
-      if (!clickable || !quizRoot.contains(clickable)) return;
-      var text = clean(clickable.getAttribute('data-answer') || clickable.getAttribute('data-value') || clickable.textContent);
-      if (!text || /戻る|次へ|最初から|診断結果|条件チェック|詳細を見る|公式/.test(text)) {
-        window.setTimeout(render, 120);
-        return;
-      }
-      var progress = clean(quizRoot.textContent).match(/(\d+)\s*\/\s*5/);
-      var step = progress ? Math.max(1, Math.min(5, parseInt(progress[1], 10))) : Math.min(5, answers.length + 1);
-      answers[step - 1] = text;
-      window.setTimeout(render, 160);
-    }, true);
+    function renderHistory() {
+      if (!state.path.length) return '';
+      return '<div class="kozeni-diagnosis-v40-4__history">' +
+        state.path.map(function (x) { return '<span>' + escapeHtml(x) + '</span>'; }).join('') +
+      '</div>';
+    }
+
+    function renderResult(key) {
+      var r = RESULTS[key] || RESULTS.unknown;
+      meter.textContent = '結果';
+      var mainRel = r.external ? ' target="_blank" rel="nofollow sponsored noopener"' : '';
+      var subRel = r.subExternal ? ' target="_blank" rel="nofollow sponsored noopener"' : '';
+      var bullets = (r.bullets || []).map(function (b) { return '<li>' + escapeHtml(b) + '</li>'; }).join('');
+      panel.innerHTML = '' +
+        '<div class="kozeni-diagnosis-v40-4__result">' +
+          '<div>' +
+            '<span class="kozeni-diagnosis-v40-4__result-badge">' + escapeHtml(r.badge) + '</span>' +
+            '<h3>' + escapeHtml(r.title) + '</h3>' +
+            '<p>' + escapeHtml(r.body) + '</p>' +
+            (bullets ? '<ul>' + bullets + '</ul>' : '') +
+            renderHistory() +
+          '</div>' +
+          '<div class="kozeni-diagnosis-v40-4__actions">' +
+            '<a class="kozeni-diagnosis-v40-4__main" href="' + escapeHtml(r.mainHref) + '"' + mainRel + '>' + escapeHtml(r.mainText) + '</a>' +
+            '<a class="kozeni-diagnosis-v40-4__sub" href="' + escapeHtml(r.subHref) + '"' + subRel + '>' + escapeHtml(r.subText) + '</a>' +
+            '<button type="button" class="kozeni-diagnosis-v40-4__reset" id="kozeniDiagReset">最初からやり直す</button>' +
+          '</div>' +
+        '</div>';
+      var reset = document.getElementById('kozeniDiagReset');
+      if (reset) reset.addEventListener('click', function () { state.path = []; renderQuestion('start'); });
+    }
   });
 })();
 </script>
