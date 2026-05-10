@@ -1,1 +1,1 @@
-{"version": "v43.4-d-card-gold-u-route", "updated": "2026-05-10", "note": "Refine the d Card GOLD U page as a conditional candidate for users under 30, with calmer typography, a single official CTA, and alternatives to the three primary cards."}
+{"version": "v44.0.2-point-site-first-question-fix", "updated": "2026-05-10", "note": "Fix the first question text on point-site detail quizzes so the v44 registered-user routing matches the visible yes/no semantics."}
