@@ -670,6 +670,33 @@ h1{
 }
 /* kozeni-line-diagnosis-v38-3:end */
 
+
+/* kozeni-line-quiz-compact-v39-9:start */
+.kozeni-line-quiz__options {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.kozeni-line-quiz__option {
+  min-height: 52px;
+  padding: .66rem .78rem .66rem .9rem;
+}
+.kozeni-line-quiz__option-label {
+  font-size: .9rem;
+}
+.kozeni-line-quiz__option-micro {
+  font-size: .72rem;
+}
+@media(max-width: 640px) {
+  .kozeni-line-quiz__options {
+    grid-template-columns: 1fr;
+    gap: .46rem;
+  }
+  .kozeni-line-quiz__option {
+    min-height: 50px;
+    padding: .62rem .72rem;
+  }
+}
+/* kozeni-line-quiz-compact-v39-9:end */
+
 /* kozeni-mobile-seo-mini-v39:start */
 .kozeni-seo-mini {
   margin: .95rem 0 1.35rem;
@@ -999,22 +1026,20 @@ h1{
       hint: '一番近いものを選んでください。',
       options: [
         { value: 'phone', label: 'スマホ代を下げたい', micro: '月額とGBを見直す' },
-        { value: 'data', label: 'ギガが足りない', micro: '動画・テザリングが多い' },
+        { value: 'data', label: 'ギガが足りない', micro: '外でよく使う' },
         { value: 'wifi', label: '家のWi-Fiを見直したい', micro: '工事なし回線も確認' },
-        { value: 'temporary', label: '引っ越し・開通待ち', micro: '一時的なネット環境' },
-        { value: 'subline', label: 'サブ回線/eSIM', micro: '予備・仕事用・端末追加' }
+        { value: 'temporary', label: '引っ越し・開通待ち', micro: '一時的なネット環境' }
       ]
     },
     {
       key: 'bill',
       kicker: 'QUESTION 2',
       title: '今のスマホ代はどれくらい？',
-      hint: 'だいたいでOK。家族分ではなく自分の1回線で考えます。',
+      hint: 'ざっくりでOK。分からなければ最後を選んでください。',
       options: [
         { value: 'under2000', label: '2,000円未満', micro: 'すでにかなり軽い' },
         { value: '2000-4000', label: '2,000〜4,000円', micro: '見直し余地あり' },
-        { value: '4000-6000', label: '4,000〜6,000円', micro: '下げやすい可能性' },
-        { value: 'over6000', label: '6,000円以上', micro: 'まず条件整理' },
+        { value: 'over4000', label: '4,000円以上', micro: '下げやすい可能性' },
         { value: 'unknown', label: 'よく分からない', micro: '請求画面から確認' }
       ]
     },
@@ -1022,12 +1047,11 @@ h1{
       key: 'data',
       kicker: 'QUESTION 3',
       title: '月に何GBくらい使う？',
-      hint: '分からなければ「分からない」でOK。結果で確認先を出します。',
+      hint: '迷ったら近いものを選びます。分からないでもOK。',
       options: [
         { value: 'under3', label: '3GB以下', micro: 'Wi-Fi中心・軽め' },
-        { value: '4-10', label: '4〜10GB', micro: '小〜中容量' },
-        { value: '11-30', label: '11〜30GB', micro: '外でもよく使う' },
-        { value: 'over30', label: '30GB以上', micro: '大容量・テザリングあり' },
+        { value: '4-10', label: '4〜10GB', micro: 'SNS・調べ物中心' },
+        { value: 'over10', label: '11GB以上', micro: '動画・地図・外利用多め' },
         { value: 'unknown', label: '分からない', micro: '先に使用量チェック' }
       ]
     },
@@ -1035,14 +1059,12 @@ h1{
       key: 'priority',
       kicker: 'QUESTION 4',
       title: '最後に、優先したいことは？',
-      hint: 'ここでスマホ寄りか回線寄りかを絞ります。',
+      hint: '結果は次のボタンで出します。',
       options: [
         { value: 'price', label: 'とにかく安さ', micro: '月額を軽くしたい' },
         { value: 'stable', label: '通信の安定', micro: 'つながりやすさ重視' },
         { value: 'store', label: '店舗・家族割', micro: 'サポートも欲しい' },
-        { value: 'esim', label: 'eSIM・サブ回線', micro: '2回線目や予備' },
-        { value: 'home', label: '工事なしWi-Fi', micro: '家のネットを先に' },
-        { value: 'campaign', label: '特典・キャンペーン', micro: '条件も確認したい' }
+        { value: 'esim', label: 'サブ回線/eSIM', micro: '予備・仕事用に持つ' }
       ]
     }
   ];
@@ -1224,14 +1246,14 @@ h1{
     const { need, bill, data, priority } = state;
     if (data === 'unknown' || bill === 'unknown') return 'usageUnknown';
     if (need === 'temporary') return 'temporaryWifi';
-    if (need === 'wifi' || priority === 'home') return 'homeWifi';
-    if (need === 'subline' || priority === 'esim') return 'subline';
+    if (need === 'wifi') return 'homeWifi';
+    if (priority === 'esim') return 'subline';
     if (priority === 'store') return 'storeSupport';
     if (bill === 'under2000' && data === 'under3') return 'alreadyLean';
     if (data === 'under3') return 'lightData';
     if (data === '4-10') return 'midData';
-    if (data === '11-30') return 'thirtyData';
-    if (data === 'over30' || priority === 'campaign') return 'heavyData';
+    if (data === 'over10' && need === 'data') return 'heavyData';
+    if (data === 'over10') return 'thirtyData';
     return 'midData';
   }
 
