@@ -818,3 +818,276 @@ a.kozeni-social-link .kozeni-social-logo{
   outline: none;
 }
 
+/* =========================================================
+   Smart Kozeni Research Institute — Brand Unification v41.2
+   SNSのフラスコロゴ / ミント×ゴールド / 角丸カードをサイトへ統一
+   ========================================================= */
+:root{
+  --kozeni-mint:#43c59e;
+  --kozeni-mint-deep:#239a78;
+  --kozeni-mint-dark:#19795f;
+  --kozeni-gold:#e3be57;
+  --kozeni-gold-soft:#fff4bd;
+  --kozeni-ink:#162235;
+  --kozeni-muted:#5f6f7a;
+  --kozeni-bg:#f6fbf9;
+  --kozeni-surface:#ffffff;
+  --kozeni-line:#d9eee8;
+  --kozeni-line-strong:#9bd8c9;
+  --kozeni-danger:#d49a22;
+  --kozeni-radius:20px;
+  --kozeni-radius-lg:28px;
+  --kozeni-shadow:0 16px 44px rgba(22,34,53,.09);
+  --kozeni-shadow-soft:0 8px 24px rgba(22,34,53,.07);
+  --kozeni-font-head:'M PLUS Rounded 1c','Noto Sans JP',system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --kozeni-font-body:'Noto Sans JP',system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+}
+
+html{scroll-behavior:smooth;}
+body{
+  color:var(--kozeni-ink);
+  font-family:var(--kozeni-font-body);
+  background:
+    radial-gradient(circle at 8% 2%, rgba(67,197,158,.12), transparent 240px),
+    radial-gradient(circle at 96% 0%, rgba(227,190,87,.12), transparent 260px),
+    linear-gradient(180deg,#fff 0%, var(--kozeni-bg) 100%);
+}
+
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:-1;
+  background-image:radial-gradient(rgba(35,154,120,.16) 1.4px, transparent 1.4px);
+  background-size:26px 26px;
+  background-position:-8px -10px;
+  mask-image:linear-gradient(135deg, #000 0 12%, transparent 34% 100%);
+}
+
+.kozeni-brand-header{
+  position:sticky;
+  top:0;
+  z-index:50;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+  min-height:76px;
+  padding:12px clamp(16px,4vw,44px);
+  border-bottom:1px solid rgba(155,216,201,.65);
+  background:rgba(255,255,255,.88);
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+  box-shadow:0 10px 30px rgba(22,34,53,.05);
+}
+
+.kozeni-brand-home{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  min-width:max-content;
+  color:var(--kozeni-ink);
+  text-decoration:none;
+}
+.kozeni-brand-home img{width:42px;height:42px;display:block;flex:0 0 auto;}
+.kozeni-brand-copy{display:flex;flex-direction:column;line-height:1.1;}
+.kozeni-brand-name{
+  font-family:var(--kozeni-font-head);
+  font-weight:900;
+  letter-spacing:.08em;
+  font-size:clamp(1rem,2.1vw,1.2rem);
+}
+.kozeni-brand-tagline{
+  margin-top:4px;
+  color:var(--kozeni-mint-deep);
+  font-size:.72rem;
+  font-weight:800;
+  letter-spacing:.04em;
+}
+
+.kozeni-brand-nav{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:4px;
+  flex:1 1 auto;
+  min-width:0;
+}
+.kozeni-brand-nav a{
+  color:var(--kozeni-ink);
+  text-decoration:none;
+  font-weight:800;
+  font-size:.92rem;
+  padding:10px 12px;
+  border-radius:999px;
+  white-space:nowrap;
+  transition:background .18s ease, color .18s ease, transform .18s ease;
+}
+.kozeni-brand-nav a:hover,
+.kozeni-brand-nav a:focus-visible{
+  color:var(--kozeni-mint-dark);
+  background:rgba(67,197,158,.10);
+  transform:translateY(-1px);
+  outline:none;
+}
+.kozeni-header-cta{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-width:max-content;
+  padding:11px 18px;
+  border-radius:999px;
+  background:linear-gradient(135deg,var(--kozeni-mint) 0%,var(--kozeni-mint-dark) 100%);
+  color:#fff!important;
+  text-decoration:none;
+  font-weight:900;
+  box-shadow:0 10px 22px rgba(35,154,120,.23);
+}
+.kozeni-header-cta::after{content:"→";margin-left:.45em;}
+
+.kozeni-brand-footer{
+  margin-top:clamp(42px,7vw,80px);
+  padding:34px clamp(18px,4vw,48px);
+  border-top:1px solid rgba(155,216,201,.35);
+  background:linear-gradient(135deg,#101b25 0%, #152633 54%, #12382f 100%);
+  color:#ecfff9;
+  border-radius:28px 28px 0 0;
+  overflow:hidden;
+  position:relative;
+}
+.kozeni-brand-footer::before{
+  content:"";
+  position:absolute;
+  inset:-80px auto auto -60px;
+  width:230px;height:230px;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(67,197,158,.22),transparent 64%);
+}
+.kozeni-footer-inner{
+  position:relative;
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:28px;
+  max-width:1160px;
+  margin:auto;
+}
+.kozeni-footer-brand{display:flex;gap:12px;align-items:flex-start;max-width:520px;}
+.kozeni-footer-brand img{width:46px;height:46px;flex:0 0 auto;}
+.kozeni-footer-title{font-family:var(--kozeni-font-head);font-weight:900;font-size:1.08rem;letter-spacing:.08em;}
+.kozeni-footer-text{margin:.55rem 0 0;color:rgba(236,255,249,.78);font-size:.9rem;line-height:1.8;}
+.kozeni-footer-links{display:flex;flex-wrap:wrap;gap:10px 16px;justify-content:flex-end;}
+.kozeni-footer-links a{color:#ecfff9;text-decoration:none;font-weight:800;font-size:.88rem;opacity:.86;}
+.kozeni-footer-links a:hover{opacity:1;color:var(--kozeni-gold-soft);}
+
+:where(h1,h2,h3,.section-title,.hero-title,.page-title){
+  font-family:var(--kozeni-font-head);
+  font-weight:900;
+  letter-spacing:.02em;
+  color:var(--kozeni-ink);
+}
+:where(.eyebrow,.badge,.label,.pill,.chip,.tag){
+  font-family:var(--kozeni-font-head);
+  font-weight:900;
+  letter-spacing:.06em;
+}
+
+:where(.hero,.kozeni-hero,.page-hero,.category-hero,main > section:first-child){
+  position:relative;
+}
+:where(.hero,.kozeni-hero,.page-hero,.category-hero):not(.kozeni-no-brand){
+  border:1px solid rgba(155,216,201,.58);
+  border-radius:var(--kozeni-radius-lg);
+  background:
+    radial-gradient(circle at 95% 0%,rgba(67,197,158,.14),transparent 260px),
+    linear-gradient(180deg,rgba(255,255,255,.92),rgba(246,251,249,.78));
+  box-shadow:var(--kozeni-shadow-soft);
+}
+:where(.hero,.kozeni-hero,.page-hero,.category-hero):not(.kozeni-no-brand)::after{
+  content:"";
+  position:absolute;
+  right:22px;top:18px;
+  width:46px;height:46px;
+  pointer-events:none;
+  opacity:.38;
+  background:
+    radial-gradient(circle at 50% 0%,var(--kozeni-gold) 0 8%,transparent 9%),
+    radial-gradient(circle at 0% 50%,var(--kozeni-mint) 0 8%,transparent 9%),
+    radial-gradient(circle at 100% 55%,var(--kozeni-mint-deep) 0 7%,transparent 8%);
+}
+
+:where(.card,.kozeni-card,.offer-card,.recommend-card,.category-card,.purpose-card,.pickup-card,.article-card,.case-card,article.card):not(.kozeni-no-brand){
+  border:1px solid rgba(217,238,232,.95);
+  border-radius:var(--kozeni-radius);
+  background:rgba(255,255,255,.94);
+  box-shadow:var(--kozeni-shadow-soft);
+}
+:where(.card,.kozeni-card,.offer-card,.recommend-card,.category-card,.purpose-card,.pickup-card,.article-card,.case-card,article.card):not(.kozeni-no-brand) h2,
+:where(.card,.kozeni-card,.offer-card,.recommend-card,.category-card,.purpose-card,.pickup-card,.article-card,.case-card,article.card):not(.kozeni-no-brand) h3{
+  color:var(--kozeni-ink);
+}
+
+:where(.badge,.label,.pill,.chip,.tag):not(.kozeni-no-brand){
+  display:inline-flex;
+  align-items:center;
+  gap:.35em;
+  border:1px solid rgba(155,216,201,.9);
+  border-radius:999px;
+  background:rgba(67,197,158,.10);
+  color:var(--kozeni-mint-dark);
+}
+:where(.badge,.label,.pill,.chip,.tag):not(.kozeni-no-brand)::before{
+  content:"✓";
+  display:inline-grid;
+  place-items:center;
+  width:1.25em;height:1.25em;
+  border-radius:50%;
+  background:var(--kozeni-mint-deep);
+  color:#fff;
+  font-size:.74em;
+}
+
+:where(.button,.btn,.cta,.cta-button,.primary-button,a.button,a.btn,button):not(.kozeni-no-brand){
+  border-radius:999px;
+  font-weight:900;
+}
+:where(a.button,a.btn,.button.primary,.btn.primary,.cta-button,.primary-button):not(.kozeni-no-brand){
+  background:linear-gradient(135deg,var(--kozeni-mint) 0%,var(--kozeni-mint-dark) 100%);
+  color:#fff!important;
+  border:1px solid rgba(255,255,255,.24);
+  box-shadow:0 12px 24px rgba(35,154,120,.22);
+}
+:where(a.button.secondary,a.btn.secondary,.button.secondary,.btn.secondary):not(.kozeni-no-brand){
+  background:#fff;
+  color:var(--kozeni-mint-dark)!important;
+  border:1px solid var(--kozeni-line-strong);
+  box-shadow:none;
+}
+
+.kozeni-brand-note{
+  border:1px solid rgba(155,216,201,.85);
+  border-radius:18px;
+  background:rgba(255,255,255,.72);
+  box-shadow:var(--kozeni-shadow-soft);
+}
+
+@media (max-width: 860px){
+  .kozeni-brand-header{align-items:flex-start;flex-wrap:wrap;gap:10px;padding:10px 14px;}
+  .kozeni-brand-home{width:100%;}
+  .kozeni-brand-home img{width:38px;height:38px;}
+  .kozeni-brand-tagline{display:none;}
+  .kozeni-brand-nav{
+    order:3;
+    width:100%;
+    overflow-x:auto;
+    justify-content:flex-start;
+    padding-bottom:2px;
+    scrollbar-width:none;
+  }
+  .kozeni-brand-nav::-webkit-scrollbar{display:none;}
+  .kozeni-brand-nav a{font-size:.83rem;padding:8px 10px;background:rgba(67,197,158,.07);}
+  .kozeni-header-cta{position:absolute;right:14px;top:11px;padding:9px 13px;font-size:.82rem;}
+  .kozeni-footer-inner{flex-direction:column;}
+  .kozeni-footer-links{justify-content:flex-start;}
+}

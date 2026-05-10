@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>dカード GOLD U｜スマホ小銭研究所</title>
+  <meta name="description" content="dカード GOLD Uの年齢条件、年会費、実質無料条件、ドコモ・ahamo利用時の注意点を3問で確認します。">
+  <link rel="canonical" href="https://smart-kozeni.com/credit-card/d-card-gold-u/">
+  <meta property="og:title" content="dカード GOLD U｜スマホ小銭研究所"><meta property="og:description" content="dカード GOLD Uの年齢条件、年会費、実質無料条件、ドコモ・ahamo利用時の注意点を3問で確認します。"><meta property="og:url" content="https://smart-kozeni.com/credit-card/d-card-gold-u/"><meta property="og:type" content="article">
+  <style>
+:root{--mint:#4DBD8C;--deep:#228C62;--pale:#E9F5EF;--gold:#F2C94C;--gray:#F2F6F4;--ink:#222831}
+*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Noto Sans JP","Segoe UI",sans-serif;color:var(--ink);background:linear-gradient(180deg,#fff,#f8fbf9)}a{color:inherit}.brand{font-weight:850;text-decoration:none;letter-spacing:-.02em}.container{max-width:1040px;margin:auto;padding:0 20px}.hero{padding:52px 0 22px}.eyebrow{margin:0 0 10px;color:var(--deep);font-size:.78rem;font-weight:850;letter-spacing:.1em}h1{margin:0;font-size:clamp(2rem,4vw,3.6rem);line-height:1.14;letter-spacing:-.055em}.lead{max-width:680px;margin:16px 0 0;color:rgba(34,40,49,.68);font-size:1rem;line-height:1.9}.chips{display:flex;gap:.48rem;flex-wrap:wrap;margin-top:18px}.chips span{display:inline-flex;padding:.36rem .68rem;border-radius:999px;background:var(--pale);border:1px solid rgba(34,140,98,.12);color:rgba(34,40,49,.72);font-size:.8rem;font-weight:780}.section{padding:18px 0 44px}.panel{max-width:840px;border:1px solid rgba(34,140,98,.13);background:linear-gradient(135deg,rgba(233,245,239,.75),rgba(255,255,255,.96));border-radius:26px;padding:1.2rem;box-shadow:0 16px 36px rgba(34,40,49,.045)}.amount{display:inline-flex;width:fit-content;padding:.38rem .68rem;border-radius:999px;background:rgba(242,201,76,.2);border:1px solid rgba(242,201,76,.42);color:#6f5200;font-weight:850;font-size:.86rem}.note{display:block;margin-top:.42rem;color:rgba(34,40,49,.64);font-weight:700;font-size:.88rem;line-height:1.7}.panel p{margin:.86rem 0 0;color:rgba(34,40,49,.68);line-height:1.85}/* credit-card quiz: aligned to kozeni-ia point-site quiz */
+:root{
+  --ia-mint:#4DBD8C;
+  --ia-green:#228C62;
+  --ia-green-deep:#166348;
+  --ia-pale:#E9F5EF;
+  --ia-gold:#F2C94C;
+  --ia-gray:#F2F6F4;
+  --ia-ink:#222831;
+  --ia-muted:#62736b;
+  --ia-line:#dcece4;
+  --ia-paper:#ffffff;
+  --ia-bg:#fbfefd;
+  --ia-shadow:0 20px 60px rgba(34,140,98,.12);
+  --ia-radius:30px;
+}
+
+.quiz-first{margin-top:0}
+.quiz-first .quiz-card{max-width:860px;margin:0 auto}
+.quiz-card{padding:22px}
+.quiz-list{display:grid;gap:12px;margin-top:16px}
+.quiz-question{border:1px solid var(--ia-line);border-radius:22px;background:#fff;padding:14px}
+.quiz-question p{margin:0 0 10px;font-weight:900;line-height:1.45}
+.quiz-answers{display:flex;gap:8px}
+.quiz-answers button{
+  appearance:none;
+  -webkit-appearance:none;
+  flex:1;
+  border:1px solid var(--ia-line);
+  background:var(--ia-gray);
+  color:var(--ia-muted);
+  border-radius:999px;
+  padding:9px 10px;
+  font-weight:950;
+  cursor:pointer;
+  font-family:inherit;
+  font-size:14px;
+  line-height:1.2;
+}
+.quiz-answers button.is-selected[data-quiz-answer="yes"]{
+  background:var(--ia-pale);
+  border-color:var(--ia-mint);
+  color:var(--ia-green);
+}
+.quiz-answers button.is-selected[data-quiz-answer="no"]{
+  background:#fff6df;
+  border-color:var(--ia-gold);
+  color:#8C6B16;
+}
+button.quiz-submit,.quiz-submit{
+  appearance:none!important;
+  -webkit-appearance:none!important;
+  width:100%;
+  display:block;
+  margin-top:14px;
+  border:0!important;
+  border-radius:999px!important;
+  background:linear-gradient(135deg,var(--ia-green),var(--ia-mint))!important;
+  color:#fff!important;
+  padding:13px 18px!important;
+  font-weight:950!important;
+  font-family:inherit!important;
+  font-size:15px!important;
+  line-height:1.2!important;
+  cursor:pointer;
+  box-shadow:0 14px 34px rgba(34,140,98,.18)!important;
+  text-align:center;
+}
+button.quiz-submit:hover,.quiz-submit:hover{transform:translateY(-1px)}
+button.quiz-submit:focus-visible,.quiz-submit:focus-visible{
+  outline:3px solid rgba(77,189,140,.35);
+  outline-offset:3px;
+}
+.quiz-result{
+  margin-top:14px;
+  border-radius:22px;
+  padding:14px;
+  background:var(--ia-gray);
+  color:var(--ia-muted);
+  font-weight:850;
+}
+.quiz-result.is-ok{
+  background:var(--ia-pale);
+  color:var(--ia-green);
+}
+.quiz-result.is-ng{
+  background:#fff6df;
+  color:#8C6B16;
+}
+.quiz-result a{
+  display:inline-flex;
+  margin-top:10px;
+  border-radius:999px;
+  background:var(--ia-green);
+  color:#fff;
+  padding:9px 13px;
+  font-weight:950;
+}
+.kozeni-credit-pr-inline{
+  margin-top:14px;
+  color:var(--ia-muted);
+  font-size:13px;
+  font-weight:800;
+}
+@media(max-width:720px){
+  .quiz-first .quiz-card{max-width:none}
+}
+/* credit-card always-visible CTA */
+.credit-action-panel{
+  max-width:860px;
+  margin:18px auto 0;
+  border:1px solid rgba(34,140,98,.13);
+  border-radius:26px;
+  background:rgba(255,255,255,.94);
+  padding:18px;
+  box-shadow:0 16px 36px rgba(34,40,49,.045);
+}
+.credit-action-panel h2{
+  margin:0 0 6px;
+  color:var(--ink);
+  font-size:clamp(1.25rem,2vw,1.65rem);
+  letter-spacing:-.035em;
+}
+.credit-action-panel p{
+  margin:.38rem 0 0;
+  color:rgba(34,40,49,.64);
+  line-height:1.75;
+  font-weight:700;
+}
+.credit-action-cta{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:46px;
+  margin-top:14px;
+  padding:.82rem 1.14rem;
+  border-radius:999px;
+  background:var(--deep);
+  color:#fff;
+  text-decoration:none;
+  font-weight:900;
+  box-shadow:0 14px 30px rgba(34,140,98,.18);
+}
+.credit-action-cta:hover{
+  transform:translateY(-1px);
+}
+.credit-action-note{
+  font-size:.82rem;
+  color:rgba(34,40,49,.56);
+}
+@media(max-width:720px){
+  .credit-action-cta{
+    width:100%;
+  }
+}
+</style>
+  <link rel="stylesheet" href="/assets/kozeni-brand.v1.css?v=brand1"><link rel="icon" type="image/png" sizes="32x32" href="/assets/images/icon-32.png?v=xicon1">
+<link rel="stylesheet" href="/assets/kozeni-nav.v1.css?v=nav2"><link rel="stylesheet" href="/assets/kozeni-return.v1.css?v=return3">
+</head>
+<body>
+<header class="kozeni-site-header">
+  <div class="kozeni-site-nav">
+    <a class="kozeni-site-brand" href="/">
+      <img src="/assets/images/icon-192.png?v=xicon1" alt="" width="34" height="34" decoding="async">
+      <span>スマホ小銭研究所</span>
+    </a>
+    <nav class="kozeni-main-nav" aria-label="主要カテゴリ">
+      <a href="/mobile-sim/">スマホ・回線</a>
+      <a href="/point-site/">ポイ活</a>
+      <a class="is-active" aria-current="page" href="/credit-card/">クレカ</a>
+      <a href="/account-opening/">口座</a>
+    </nav>
+  </div>
+</header>
+<nav class="kozeni-breadcrumb" aria-label="パンくず"><a href="/">ホーム</a>
+  <span aria-hidden="true">›</span>
+  <a href="/credit-card/">クレカ</a>
+  <span aria-hidden="true">›</span>
+  <span aria-current="page">dカード GOLD U</span></nav>
+<main>
+  <section class="hero"><div class="container"><p class="eyebrow">CREDIT CARD</p><h1>dカード GOLD U</h1><p class="lead">ドコモ・ahamo・dポイント圏の人向け。年齢条件・年会費・実質無料条件を3問で確認します。</p><div class="chips"><span>条件確認</span><span>dポイント</span><span>29歳以下</span></div></div></section>
+  <section class="section quiz-first">
+    <div class="container">
+      <article class="info-card quiz-card"
+        data-kozeni-quiz
+        data-register-url="https://dcard.docomo.ne.jp/st/dcard_goldu/index.html"
+        data-register-name="dカード GOLD U"
+        data-link-rel="noopener noreferrer"
+        data-ok-message="29歳以下でドコモ・ahamo・dポイント圏なら候補。年会費条件は必ず公式画面で確認します。">
+        <span class="card-kicker">条件チェック</span>
+        <h2>3問だけ確認。</h2>
+        <p class="card-copy">全部「はい」なら、申し込み前の最低確認はOKです。</p>
+        <p class="card-copy"><strong>18〜29歳向け</strong>　年会費3,300円・実質無料条件あり</p>
+        <div class="quiz-list">
+              <div class="quiz-question" data-quiz-question>
+                <p>申込時点で18〜29歳に当てはまる？</p>
+                <div class="quiz-answers">
+                  <button type="button" data-quiz-answer="yes">はい</button>
+                  <button type="button" data-quiz-answer="no">いいえ</button>
+                </div>
+              </div>
+              <div class="quiz-question" data-quiz-question>
+                <p>ドコモ・ahamo・dポイントをよく使う？</p>
+                <div class="quiz-answers">
+                  <button type="button" data-quiz-answer="yes">はい</button>
+                  <button type="button" data-quiz-answer="no">いいえ</button>
+                </div>
+              </div>
+              <div class="quiz-question" data-quiz-question>
+                <p>年会費3,300円と実質無料条件を公式画面で確認できる？</p>
+                <div class="quiz-answers">
+                  <button type="button" data-quiz-answer="yes">はい</button>
+                  <button type="button" data-quiz-answer="no">いいえ</button>
+                </div>
+              </div>
+        </div>
+        <button type="button" class="quiz-submit" data-quiz-submit>チェック結果を見る</button>
+        <div class="quiz-result" data-quiz-result aria-live="polite">
+          3つ答えてから、結果を確認してください。
+        </div>
+        <p class="card-copy kozeni-credit-pr-inline">条件・特典は公式画面で確認してください。</p>
+      </article>
+    </div>
+  </section>
+  <section class="section credit-action-section">
+    <div class="container">
+      <div class="credit-action-panel" aria-label="dカード GOLD Uの公式確認リンク">
+        <h2>公式条件を確認</h2>
+        <p>年齢条件・年会費・実質無料条件を公式画面で確認します。</p>
+        <a class="credit-action-cta" href="https://dcard.docomo.ne.jp/st/dcard_goldu/index.html" target="_blank" rel="noopener noreferrer">公式ページを確認する</a>
+        <p class="credit-action-note">条件・特典は公式画面で確認してください。</p>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="footer"><div class="container">PRを含む場合があります。条件・特典は必ず公式画面で確認してください。</div></footer>
+
+<script>
+(function(){
+  function getQuestions(quiz){
+    return Array.from(quiz.querySelectorAll('[data-quiz-question]'));
+  }
+
+  function getResult(quiz){
+    return quiz.querySelector('[data-quiz-result]');
+  }
+
+  function getAnswers(quiz){
+    return getQuestions(quiz).map(function(q){
+      var selected = q.querySelector('[data-quiz-answer].is-selected');
+      return selected ? selected.getAttribute('data-quiz-answer') : null;
+    });
+  }
+
+  function resetResult(result){
+    result.className = 'quiz-result';
+    result.textContent = '3つ答えてから、結果を確認してください。';
+  }
+
+  function showNg(result){
+    result.className = 'quiz-result is-ng';
+    result.textContent = '不安な項目があります。先に条件・対象外・付与条件を公式画面で確認してください。';
+  }
+
+  function showOk(quiz, result){
+    var url = quiz.getAttribute('data-register-url') || '#';
+    var name = quiz.getAttribute('data-register-name') || '公式ページ';
+    var rel = quiz.getAttribute('data-link-rel') || 'noopener noreferrer';
+    var message = quiz.getAttribute('data-ok-message') || '最低確認はOKです。最後は公式画面で条件を確認してください。';
+
+    result.className = 'quiz-result is-ok';
+    result.innerHTML = message + '<br><a href="' + url + '" target="_blank" rel="' + rel + '">' + name + 'の公式条件を見る</a>';
+  }
+
+  document.querySelectorAll('[data-kozeni-quiz]').forEach(function(quiz){
+    var result = getResult(quiz);
+    if (result) resetResult(result);
+  });
+
+  document.addEventListener('click', function(event){
+    var answer = event.target.closest ? event.target.closest('[data-quiz-answer]') : null;
+    if (answer) {
+      var question = answer.closest('[data-quiz-question]');
+      if (!question) return;
+
+      question.querySelectorAll('[data-quiz-answer]').forEach(function(other){
+        other.classList.remove('is-selected');
+      });
+
+      answer.classList.add('is-selected');
+      return;
+    }
+
+    var submit = event.target.closest ? event.target.closest('[data-quiz-submit]') : null;
+    if (!submit) return;
+
+    var quiz = submit.closest('[data-kozeni-quiz]');
+    if (!quiz) return;
+
+    var result = getResult(quiz);
+    if (!result) return;
+
+    var answers = getAnswers(quiz);
+
+    if (answers.some(function(answer){ return !answer; })) {
+      resetResult(result);
+      return;
+    }
+
+    if (answers.every(function(answer){ return answer === 'yes'; })) {
+      showOk(quiz, result);
+    } else {
+      showNg(result);
+    }
+  });
+})();
+</script>
+<nav class="kozeni-fixed-return" aria-label="一覧へ戻る">
+  <a href="/credit-card/">← クレカ一覧へ戻る</a>
+</nav>
+</body></html>

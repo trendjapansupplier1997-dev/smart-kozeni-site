@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>工事不要Wi-Fiは家のWi-Fiページへ｜スマホ小銭研究所</title>
+  <meta name="robots" content="noindex,follow">
+  <link rel="canonical" href="https://smart-kozeni.com/mobile-sim/home-wifi/">
+  <meta http-equiv="refresh" content="0; url=/mobile-sim/home-wifi/">
+  <style>
+    body{margin:0;font-family:-apple-system,BlinkMacSystemFont,'Noto Sans JP','Hiragino Sans',sans-serif;background:#f4fbf7;color:#10241d;}
+    main{min-height:100vh;display:grid;place-items:center;padding:24px;}
+    .box{max-width:620px;border:1px solid rgba(15,122,85,.18);border-radius:28px;padding:26px;background:#fff;box-shadow:0 18px 44px rgba(11,48,36,.08);}
+    h1{margin:0 0 10px;font-size:clamp(1.45rem,4vw,2.1rem);letter-spacing:-.05em;}
+    p{line-height:1.8;color:#5d7168;}
+    a{display:inline-flex;margin-top:10px;padding:.78rem 1.05rem;border-radius:999px;background:#0f7a55;color:#fff;text-decoration:none;font-weight:900;}
+  </style>
+</head>
+<body>
+  <main>
+    <section class="box">
+      <h1>家のWi-Fiページへ移動します</h1>
+      <p>工事不要Wi-Fi・WiMAX系の内容は、現在「家のWi-Fi」ページに整理しています。自動で移動しない場合は下のボタンから進んでください。</p>
+      <a href="/mobile-sim/home-wifi/">家のWi-Fiを見る</a>
+    </section>
+  </main>
+</body>
+</html>

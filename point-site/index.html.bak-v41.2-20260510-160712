@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>ポイ活アプリ・ポイントサイト一覧｜登録前に条件チェック</title>
+  <meta name="description" content="TikTok Lite、モッピー、ハピタス、トリマなど、ポイ活アプリ・ポイントサイトを9つのカードで整理。登録前に条件・対象外・PR表記を確認します。">
+  <link rel="canonical" href="https://smart-kozeni.com/point-site/">
+  <meta property="og:title" content="ポイ活アプリ・ポイントサイト一覧｜登録前に条件チェック">
+  <meta property="og:description" content="TikTok Lite、モッピー、ハピタス、トリマなど、ポイ活アプリ・ポイントサイトを9つのカードで整理。登録前に条件・対象外・PR表記を確認します。">
+  <meta property="og:url" content="https://smart-kozeni.com/point-site/">
+  <meta property="og:type" content="website">
+  <style>
+:root{
+  --mint:#4DBD8C;
+  --deep:#228C62;
+  --pale:#E9F5EF;
+  --gold:#F2C94C;
+  --light:#F2F6F4;
+  --ink:#222831;
+  --muted:#66736E;
+  --line:rgba(34,140,98,.16);
+  --white:#fff;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:"Noto Sans JP", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color:var(--ink);
+  background:linear-gradient(180deg,#F7FCFA 0%,#FFFFFF 44%,#F7FCFA 100%);
+  line-height:1.78;
+}
+a{color:inherit}
+.container{width:min(1040px, calc(100% - 32px)); margin:0 auto}
+
+.brand{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  text-decoration:none;
+  font-weight:900;
+  letter-spacing:.02em;
+}
+.logo-dot{
+  width:30px;
+  height:30px;
+  border-radius:11px;
+  display:inline-grid;
+  place-items:center;
+  background:linear-gradient(135deg,var(--mint),var(--deep));
+  color:white;
+  font-size:15px;
+}
+
+.hero{padding:44px 0 34px}
+.pill{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:8px 12px;
+  border-radius:999px;
+  background:var(--pale);
+  color:var(--deep);
+  font-weight:900;
+  font-size:13px;
+}
+h1{
+  margin:18px 0 14px;
+  font-size:clamp(34px,6vw,64px);
+  line-height:1.08;
+  letter-spacing:-.05em;
+}
+.lead{
+  margin:0;
+  max-width:740px;
+  color:var(--muted);
+  font-size:clamp(16px,2.2vw,20px);
+}
+.note{
+  margin-top:20px;
+  color:var(--muted);
+  font-size:14px;
+}
+.section{padding:26px 0}
+.section-title{
+  margin:0 0 18px;
+  font-size:clamp(24px,4vw,38px);
+  line-height:1.25;
+  letter-spacing:-.03em;
+}
+.grid{
+  display:grid;
+  gap:16px;
+}
+.grid.three{grid-template-columns:repeat(3,1fr)}
+.grid.two{grid-template-columns:repeat(2,1fr)}
+.card{
+  display:block;
+  text-decoration:none;
+  background:rgba(255,255,255,.9);
+  border:1px solid var(--line);
+  border-radius:28px;
+  padding:24px;
+  box-shadow:0 18px 60px rgba(34,140,98,.08);
+}
+.card:hover{transform:translateY(-1px)}
+.card h2,.card h3{margin:0 0 10px;line-height:1.35}
+.card p{margin:0;color:var(--muted)}
+.tag{
+  display:inline-flex;
+  align-items:center;
+  margin-bottom:12px;
+  padding:5px 10px;
+  border-radius:999px;
+  background:var(--light);
+  color:var(--deep);
+  font-size:12px;
+  font-weight:900;
+}
+.kv{
+  display:grid;
+  gap:10px;
+  margin-top:18px;
+}
+.kv div{
+  display:grid;
+  grid-template-columns:120px 1fr;
+  gap:12px;
+  padding:12px 0;
+  border-bottom:1px solid rgba(34,140,98,.12);
+}
+.kv span:first-child{
+  color:var(--muted);
+  font-size:13px;
+}
+.list{
+  margin:16px 0 0;
+  padding-left:1.2em;
+  color:var(--muted);
+}
+.check-list{
+  display:grid;
+  gap:12px;
+  margin:0;
+  padding:0;
+  list-style:none;
+}
+.check-list li{
+  padding:14px 16px;
+  border-radius:18px;
+  background:var(--light);
+  border:1px solid var(--line);
+}
+.footer{
+  margin-top:52px;
+  padding:34px 0 44px;
+  border-top:1px solid var(--line);
+  color:rgba(34,40,49,.62);
+  font-size:13px;
+}
+.footer a{margin-right:14px}
+@media(max-width:760px){
+
+
+  .grid.three,.grid.two{grid-template-columns:1fr}
+  .kv div{grid-template-columns:1fr}
+  .hero{padding-top:36px}
+}
+
+/* kozeni-seo-foundation-v39:start */
+.kozeni-sr-title {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+/* kozeni-seo-foundation-v39:end */
+
+/* kozeni-compare-mini-v39-2:start */
+.kozeni-compare-mini {
+  max-width: 1080px;
+  margin: .35rem auto 1.35rem;
+  padding: 0 24px;
+}
+.kozeni-compare-mini__card {
+  display: grid;
+  gap: .22rem;
+  padding: .9rem .98rem;
+  border-radius: 1.05rem;
+  border: 1px solid rgba(34, 140, 98, .13);
+  background: linear-gradient(135deg, rgba(233, 245, 239, .78), rgba(255, 255, 255, .96));
+  color: #222831;
+  text-decoration: none;
+  box-shadow: 0 12px 28px rgba(34, 40, 49, .045);
+}
+.kozeni-compare-mini__label {
+  color: #228C62;
+  font-size: .72rem;
+  font-weight: 950;
+  letter-spacing: .08em;
+}
+.kozeni-compare-mini__title {
+  color: #222831;
+  font-size: .98rem;
+  font-weight: 950;
+  line-height: 1.45;
+}
+.kozeni-compare-mini__text {
+  color: rgba(34, 40, 49, .62);
+  font-size: .8rem;
+  font-weight: 750;
+  line-height: 1.55;
+}
+.kozeni-compare-mini__card:hover {
+  transform: translateY(-1px);
+  border-color: rgba(34, 140, 98, .28);
+  box-shadow: 0 16px 32px rgba(34, 140, 98, .09);
+}
+/* kozeni-compare-mini-v39-2:end */
+
+/* kozeni-seo-mini-cards-v39-4:start */
+.kozeni-next-mini {
+  max-width: 1080px;
+  margin: .35rem auto 1.35rem;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: .72rem;
+}
+.kozeni-next-mini__card {
+  display: grid;
+  gap: .22rem;
+  padding: .9rem .98rem;
+  border-radius: 1.05rem;
+  border: 1px solid rgba(34, 140, 98, .13);
+  background: linear-gradient(135deg, rgba(233, 245, 239, .78), rgba(255, 255, 255, .96));
+  color: #222831;
+  text-decoration: none;
+  box-shadow: 0 12px 28px rgba(34, 40, 49, .045);
+}
+.kozeni-next-mini__label { color: #228C62; font-size: .72rem; font-weight: 950; letter-spacing: .08em; }
+.kozeni-next-mini__title { color: #222831; font-size: .98rem; font-weight: 950; line-height: 1.45; }
+.kozeni-next-mini__text { color: rgba(34, 40, 49, .62); font-size: .8rem; font-weight: 750; line-height: 1.55; }
+.kozeni-next-mini__card:hover { transform: translateY(-1px); border-color: rgba(34, 140, 98, .28); box-shadow: 0 16px 32px rgba(34, 140, 98, .09); }
+@media(max-width:760px){ .kozeni-next-mini{grid-template-columns:1fr;padding:0 18px;} }
+/* kozeni-seo-mini-cards-v39-4:end */
+
+
+</style>
+  <link rel="stylesheet" href="/assets/kozeni-brand.v1.css?v=brand1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/icon-32.png?v=xicon1">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/icon-192.png?v=xicon1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png?v=xicon1">
+  <link rel="manifest" href="/site.webmanifest?v=xicon1">
+<link rel="stylesheet" href="/assets/kozeni-nav.v1.css?v=nav2"><link rel="stylesheet" href="/assets/kozeni-return.v1.css?v=return3">
+</head>
+<body>
+<header class="kozeni-site-header">
+  <div class="kozeni-site-nav">
+    <a class="kozeni-site-brand" href="/">
+      <img src="/assets/images/icon-192.png?v=xicon1" alt="" width="34" height="34" decoding="async">
+      <span>スマホ小銭研究所</span>
+    </a>
+    <nav class="kozeni-main-nav" aria-label="主要カテゴリ">
+      <a href="/mobile-sim/">スマホ・回線</a>
+      <a class="is-active" aria-current="page" href="/point-site/">ポイ活</a>
+      <a href="/credit-card/">クレカ</a>
+      <a href="/account-opening/">口座</a>
+    </nav>
+  </div>
+</header>
+<nav class="kozeni-breadcrumb" aria-label="パンくず"><a href="/">ホーム</a>
+  <span aria-hidden="true">›</span>
+  <span aria-current="page">ポイ活</span></nav>
+<main>
+<h1 id="kozeni-point-list-title-v39" class="kozeni-sr-title">ポイ活アプリ・ポイントサイト一覧</h1>
+
+
+
+<section class="section">
+  <div class="container grid three">
+    <a class="card" href="/tiktok-lite/"><span class="tag">キャンペーン</span><h2>TikTok Lite <span class="kozeni-amount-badge">最大5,500円相当</span></h2><p>招待・タスク系。対象外条件と反映タイミングを確認。</p></a><a class="card" href="/point-site/moppy/"><span class="tag">定番</span><h2>モッピー <span class="kozeni-amount-badge">最大5,000円相当</span></h2><p>広告案件・高額案件を見る前の候補。</p></a><a class="card" href="/point-site/hapitas/"><span class="tag">買い物前</span><h2>ハピタス <span class="kozeni-amount-badge">最大2,300円相当</span></h2><p>通販・旅行・申込前に経由確認。</p></a><a class="card" href="/point-site/trima/"><span class="tag">移動</span><h2>トリマ <span class="kozeni-amount-badge">最大50円相当</span></h2><p>歩数・移動で拾う。電話番号認証まで確認。</p></a><a class="card" href="/point-site/kurashiru-reward/"><span class="tag">生活</span><h2>クラシルリワード <span class="kozeni-amount-badge">最大500円相当</span></h2><p>レシート・チラシ・移動など生活導線。</p></a><a class="card" href="/point-site/powl/"><span class="tag">スキマ</span><h2>Powl <span class="kozeni-amount-badge">最大130円相当</span></h2><p>アンケート・歩数・スキマ時間向き。</p></a><a class="card" href="/point-site/point-income/"><span class="tag">追加</span><h2>ポイントインカム <span class="kozeni-amount-badge">最大2,220円相当</span></h2><p>案件比較用に追加する候補。</p></a><a class="card" href="/point-site/pointtown/"><span class="tag">追加</span><h2>ポイントタウン <span class="kozeni-amount-badge">最大2,000円相当</span></h2><p>電話番号認証や獲得条件を確認。</p></a><a class="card" href="/point-site/chobirich/"><span class="tag">控え</span><h2>ちょびリッチ <span class="kozeni-amount-badge">最大2,500円相当</span></h2><p>複数サイトで案件を比べる候補。</p></a>
+  </div>
+</section>
+<!-- kozeni-point-beginner-links-v39-4:start -->
+<section class="kozeni-next-mini" aria-label="はじめてのポイ活導線">
+  <a class="kozeni-next-mini__card" href="/point-site/beginner/">
+    <span class="kozeni-next-mini__label">初めてなら</span>
+    <strong class="kozeni-next-mini__title">ポイ活、最初は何から？</strong>
+    <span class="kozeni-next-mini__text">9つの候補を、迷わない順番で確認。</span>
+  </a>
+  <a class="kozeni-next-mini__card" href="/point-site/moppy-hapitas/">
+    <span class="kozeni-next-mini__label">迷ったらここ</span>
+    <strong class="kozeni-next-mini__title">モッピーとハピタス、最初はどっち？</strong>
+    <span class="kozeni-next-mini__text">定番2つの使い分けだけ軽く確認。</span>
+  </a>
+</section>
+<!-- kozeni-point-beginner-links-v39-4:end -->
+
+<!-- seo-internal-links-v1:start -->
+<!-- seo-internal-links-v1:end -->
+
+</main>
+<footer class="footer">
+  <div class="container">
+    <a href="/policy/">PR表記</a>
+    <a href="/privacy/">プライバシー</a>
+    <a href="/about/">このサイトについて</a>
+    <p>© スマホ小銭研究所</p>
+  </div>
+<nav class="kozeni-footer-social" aria-label="SNSリンク">
+    <a href="https://x.com/smart_kozeni" target="_blank" rel="noopener noreferrer" aria-label="Xでスマホ小銭研究所を見る">
+      <img class="kozeni-footer-social__icon" src="/assets/images/social-x.svg?v=social1" alt="" width="22" height="22" loading="lazy" decoding="async">
+      <span>X</span>
+    </a>
+    <a href="https://www.instagram.com/smart_kozeni/" target="_blank" rel="noopener noreferrer" aria-label="Instagramでスマホ小銭研究所を見る">
+      <img class="kozeni-footer-social__icon" src="/assets/images/social-instagram.svg?v=social1" alt="" width="22" height="22" loading="lazy" decoding="async">
+      <span>Instagram</span>
+    </a>
+  </nav>
+</footer>
+<nav class="kozeni-fixed-return" aria-label="ホームへ戻る">
+  <a href="/">← ホームへ戻る</a>
+</nav>
+</body>
+</html>
