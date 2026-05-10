@@ -1072,16 +1072,16 @@ h1{
   const results = {
     usageUnknown: {
       kind: 'まず確認',
-      saving: '節約余地：確認後',
-      title: '先に、スマホ代と月間GBを確認。',
-      verdict: '今の月額かGBが分からないまま乗り換えると、安く見えても合わないことがあります。まず使用量を見てから候補を絞るのが安全です。',
+      saving: '確認してから判断',
+      title: 'スマホ代・月のGBが分からない人は、先にここだけ確認。',
+      verdict: '料金表やキャンペーンを見る前に、まず「今のスマホ代」と「月間データ使用量」を確認します。分からないまま選ぶと、安く見えても合わないことがあります。',
       candidates: [
-        { name: '何GBチェック', note: '確認する場所と見方を先に整理' },
-        { name: '現在の請求画面', note: '割引・通話料・端末代の有無を見る' }
+        { name: '何GBチェック', note: 'スマホ代と月間GBの見方を先に整理' },
+        { name: '現在の請求画面', note: '端末代・通話料・オプション混在を確認' }
       ],
-      points: ['月間データ使用量', '通話料・端末代が混ざっていないか', '家のWi-Fiで使う時間が多いか'],
+      points: ['月間データ使用量', '端末代や保証が混ざっていないか', '家のWi-Fi中心か外でも使うか'],
       actions: [
-        { label: '何GBチェックを見る', url: '/mobile-sim/data-usage/', external: false }
+        { label: '何GBチェックを開く', url: '/mobile-sim/data-usage/', external: false }
       ]
     },
     alreadyLean: {
@@ -1336,7 +1336,8 @@ h1{
     });
 
     els.actions.textContent = '';
-    result.actions.forEach((action, index) => {
+    const actions = result.actions && result.actions.length ? result.actions : [{ label: '何GBチェックを開く', url: '/mobile-sim/data-usage/', external: false }];
+    actions.forEach((action, index) => {
       const a = document.createElement('a');
       a.className = `kozeni-line-quiz__button ${index === 0 ? 'kozeni-line-quiz__button--primary' : 'kozeni-line-quiz__button--ghost'}`;
       a.href = action.url;
