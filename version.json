@@ -1,1 +1,1 @@
-{"version":"v42.0-cleanup-foundation","updated":"2026-05-10","note":"Clean legacy redirects, remove backup files and old page bodies, and remove unfinished public labels."}
+{"version":"v42.1-meta-description-audit-fix","updated":"2026-05-10","note":"Add missing meta description to the no-construction Wi-Fi redirect page after the v42.0 cleanup audit."}
