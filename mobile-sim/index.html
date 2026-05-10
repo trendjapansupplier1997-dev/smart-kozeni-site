@@ -693,38 +693,77 @@ h1{
 /* kozeni-mobile-seo-mini-v39:end */
 
 
-/* kozeni-mobile-link-cards-v39-7:start */
+/* kozeni-mobile-link-cards-v39-8:start */
 .kozeni-quiz-jump {
   max-width: 1080px;
-  margin: .9rem auto 1.05rem;
+  margin: .95rem auto 1.1rem;
   padding: 0 24px;
 }
 .kozeni-quiz-jump a {
-  display: inline-grid;
-  gap: .18rem;
-  max-width: 360px;
-  padding: .78rem .92rem;
-  border-radius: 999px;
-  border: 1px solid rgba(34, 140, 98, .16);
-  background: rgba(233, 245, 239, .78);
-  color: #116544;
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: .36rem .86rem;
+  align-items: center;
+  max-width: 620px;
+  padding: .98rem 1.08rem;
+  border-radius: 1.24rem;
+  border: 1px solid rgba(34, 140, 98, .2);
+  background:
+    radial-gradient(circle at 12% 15%, rgba(77, 189, 140, .26), transparent 34%),
+    linear-gradient(135deg, #13382b, #228C62);
+  color: #fff;
   text-decoration: none;
-  box-shadow: 0 10px 24px rgba(34, 140, 98, .07);
+  box-shadow: 0 16px 36px rgba(34, 140, 98, .18);
+  overflow: hidden;
+}
+.kozeni-quiz-jump a::after {
+  content: "診断をはじめる";
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 38px;
+  padding: .58rem .74rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .92);
+  color: #116544;
+  font-size: .82rem;
+  font-weight: 950;
+  line-height: 1;
+  white-space: nowrap;
 }
 .kozeni-quiz-jump span {
-  font-size: .72rem;
+  grid-column: 1;
+  color: rgba(255, 255, 255, .78);
+  font-size: .73rem;
   font-weight: 950;
-  letter-spacing: .06em;
+  letter-spacing: .08em;
 }
 .kozeni-quiz-jump strong {
-  font-size: .9rem;
-  line-height: 1.25;
+  grid-column: 1;
+  color: #fff;
+  font-size: clamp(1rem, 2.3vw, 1.22rem);
+  line-height: 1.35;
+  letter-spacing: -.025em;
+}
+.kozeni-quiz-jump small {
+  grid-column: 1;
+  color: rgba(255, 255, 255, .76);
+  font-size: .78rem;
+  font-weight: 750;
+  line-height: 1.45;
 }
 @media(max-width: 680px) {
   .kozeni-quiz-jump { padding-inline: 0; }
-  .kozeni-quiz-jump a { width: 100%; }
+  .kozeni-quiz-jump a {
+    grid-template-columns: 1fr;
+    max-width: none;
+  }
+  .kozeni-quiz-jump a::after {
+    width: 100%;
+  }
 }
-/* kozeni-mobile-link-cards-v39-7:end */
+/* kozeni-mobile-link-cards-v39-8:end */
 
 </style>
   <link rel="stylesheet" href="/assets/kozeni-brand.v1.css?v=brand1">
@@ -765,14 +804,15 @@ h1{
       </section>
 
 
-<!-- kozeni-mobile-quiz-jump-v39-5:start -->
+<!-- kozeni-mobile-quiz-jump-v39-8:start -->
 <div class="kozeni-quiz-jump" aria-label="スマホ・回線診断への案内">
   <a href="#kozeni-mobile-line-quiz">
-    <span>まずは診断したい方へ</span>
-    <strong>4問で見るページを絞る</strong>
+    <span>迷ったらまずここ</span>
+    <strong>スマホ代・Wi-Fiを4問で診断</strong>
+    <small>最初に見るページだけ絞ります。</small>
   </a>
 </div>
-<!-- kozeni-mobile-quiz-jump-v39-5:end -->
+<!-- kozeni-mobile-quiz-jump-v39-8:end -->
 
 <!-- brand-list-hero-v1:end -->
 <!-- kozeni-mobile-network-list-v1:start -->
@@ -910,7 +950,6 @@ h1{
   </noscript>
 </section>
 <!-- kozeni-line-diagnosis-v38-3:end -->
-
 
 
 </main>
