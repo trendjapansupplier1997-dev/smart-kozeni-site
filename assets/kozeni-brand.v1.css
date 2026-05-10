@@ -944,3 +944,209 @@ a.kozeni-social-link .kozeni-social-logo{
 }
 /* kozeni-intro-compact-typography-v41.7:end */
 
+/* kozeni-home-intro-refine-v41.8
+   ホーム導入だけを上品に調整。大文字で押さず、余白・薄線・淡い背景で見せる。 */
+.hero.brand-hero.kozeni-home-intro-refine{
+  position:relative;
+  overflow:hidden;
+  isolation:isolate;
+  padding:clamp(34px, 5.2vw, 64px) clamp(20px, 4.6vw, 58px);
+  border:1px solid rgba(217,238,232,.72);
+  border-radius:28px;
+  background:
+    linear-gradient(120deg, rgba(255,255,255,.96) 0%, rgba(246,251,249,.94) 54%, rgba(232,248,242,.76) 100%);
+  box-shadow:0 18px 50px rgba(22,34,53,.055);
+}
+.hero.brand-hero.kozeni-home-intro-refine::before{
+  content:"";
+  position:absolute;
+  inset:0 0 0 auto;
+  width:min(54%, 560px);
+  pointer-events:none;
+  z-index:-2;
+  background:
+    radial-gradient(circle at 78% 20%, rgba(227,190,87,.14) 0 7%, transparent 8%),
+    radial-gradient(circle at 92% 62%, rgba(67,197,158,.11) 0 2px, transparent 2.5px),
+    linear-gradient(135deg, rgba(67,197,158,.035), rgba(67,197,158,.14));
+  background-size:auto, 24px 24px, auto;
+  clip-path:polygon(22% 0,100% 0,100% 100%,7% 100%,0 52%);
+}
+.hero.brand-hero.kozeni-home-intro-refine::after{
+  content:"";
+  position:absolute;
+  right:-95px;
+  top:18px;
+  width:min(40vw, 430px);
+  height:min(40vw, 430px);
+  pointer-events:none;
+  z-index:-1;
+  border-radius:42% 58% 48% 52%;
+  background:
+    radial-gradient(circle at 34% 30%, rgba(255,255,255,.72), transparent 34%),
+    linear-gradient(135deg, rgba(67,197,158,.09), rgba(35,154,120,.03));
+  box-shadow:inset 0 0 0 1px rgba(155,216,201,.18);
+}
+.hero.brand-hero.kozeni-home-intro-refine .kozeni-intro-brand-label{
+  position:relative;
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  width:fit-content;
+  max-width:100%;
+  margin:0 0 clamp(16px, 2.2vw, 24px);
+  padding:0 0 9px;
+  color:#14382f;
+  font-size:clamp(1.02rem, 1.75vw, 1.34rem) !important;
+  font-weight:900;
+  line-height:1.18;
+  letter-spacing:.045em;
+}
+.hero.brand-hero.kozeni-home-intro-refine .kozeni-intro-brand-label::after{
+  content:"";
+  position:absolute;
+  left:44px;
+  bottom:0;
+  width:min(220px, calc(100% - 44px));
+  height:3px;
+  border-radius:999px;
+  background:linear-gradient(90deg, rgba(67,197,158,.54), rgba(67,197,158,.09));
+}
+.kozeni-intro-brand-flask{
+  width:clamp(30px, 3.7vw, 38px);
+  height:clamp(30px, 3.7vw, 38px);
+  flex:0 0 auto;
+  display:block;
+  filter:drop-shadow(0 8px 16px rgba(35,154,120,.16));
+}
+.hero.brand-hero.kozeni-home-intro-refine #brand-home-title{
+  max-width:760px;
+  margin:0;
+  color:#162235;
+  font-size:clamp(1.5rem, 3.05vw, 2.42rem) !important;
+  line-height:1.34;
+  letter-spacing:.005em;
+  text-wrap:balance;
+}
+.hero.brand-hero.kozeni-home-intro-refine .lead{
+  max-width:650px;
+  margin-top:clamp(16px, 2vw, 22px);
+  font-size:clamp(.95rem, 1.18vw, 1.04rem) !important;
+  line-height:1.9;
+}
+.hero.brand-hero.kozeni-home-intro-refine .brand-proof{
+  margin-top:clamp(18px, 2.4vw, 28px);
+  gap:8px 10px;
+}
+.hero.brand-hero.kozeni-home-intro-refine .brand-proof :where(.chip,.tag,.pill,.badge){
+  font-size:.8rem !important;
+  line-height:1.2;
+  padding:.48em .76em;
+}
+@media (max-width: 720px){
+  .hero.brand-hero.kozeni-home-intro-refine{
+    padding:30px 18px 38px;
+    border-radius:22px;
+  }
+  .hero.brand-hero.kozeni-home-intro-refine::before{
+    width:78vw;
+    opacity:.68;
+    clip-path:polygon(34% 0,100% 0,100% 86%,18% 100%,0 50%);
+  }
+  .hero.brand-hero.kozeni-home-intro-refine::after{
+    width:180px;
+    height:180px;
+    right:-86px;
+    top:18px;
+    opacity:.62;
+  }
+  .hero.brand-hero.kozeni-home-intro-refine .kozeni-intro-brand-label{
+    font-size:1.02rem !important;
+    gap:9px;
+  }
+  .hero.brand-hero.kozeni-home-intro-refine #brand-home-title{
+    font-size:clamp(1.46rem, 6.6vw, 2.08rem) !important;
+    line-height:1.32;
+  }
+}
+/* kozeni-home-intro-refine-v41.8:end */
+
+
+/* kozeni-home-intro-elegant-type-v41.9
+   ゴシックで押しすぎず、余白と細い線で見せる調整 */
+.hero.brand-hero.kozeni-home-intro-refine .kozeni-intro-brand-label{
+  font-weight:800 !important;
+  font-size:clamp(.98rem, 1.45vw, 1.18rem) !important;
+  letter-spacing:.035em;
+}
+
+.hero.brand-hero.kozeni-home-intro-refine #brand-home-title{
+  font-weight:700 !important;
+  font-size:clamp(1.42rem, 2.65vw, 2.12rem) !important;
+  line-height:1.42;
+  letter-spacing:.01em;
+  max-width:720px;
+}
+
+.hero.brand-hero.kozeni-home-intro-refine .lead{
+  font-weight:400;
+  font-size:clamp(.94rem, 1.05vw, 1rem) !important;
+  line-height:1.95;
+  color:#405651;
+}
+
+.hero.brand-hero.kozeni-home-intro-refine .brand-proof :where(.chip,.tag,.pill,.badge){
+  font-weight:700;
+  font-size:.76rem !important;
+  padding:.44em .72em;
+}
+
+.hero.brand-hero.kozeni-home-intro-refine .kozeni-intro-brand-label::after{
+  height:2px;
+  opacity:.82;
+}
+
+@media (max-width: 720px){
+  .hero.brand-hero.kozeni-home-intro-refine #brand-home-title{
+    font-size:clamp(1.34rem, 5.8vw, 1.86rem) !important;
+    line-height:1.4;
+  }
+}
+
+/* kozeni-home-intro-soft-final-v41.10 */
+.hero.brand-hero.kozeni-home-intro-refine .kozeni-intro-brand-label{
+  font-weight:700 !important;
+  font-size:clamp(.94rem, 1.25vw, 1.08rem) !important;
+  letter-spacing:.04em;
+}
+
+.hero.brand-hero.kozeni-home-intro-refine #brand-home-title{
+  font-weight:600 !important;
+  font-size:clamp(1.32rem, 2.35vw, 1.92rem) !important;
+  line-height:1.48;
+  letter-spacing:.015em;
+  max-width:700px;
+}
+
+.hero.brand-hero.kozeni-home-intro-refine .lead{
+  max-width:620px;
+  font-size:.96rem !important;
+  line-height:2;
+  color:#465d57;
+}
+
+.hero.brand-hero.kozeni-home-intro-refine .kozeni-intro-brand-label::after{
+  height:2px;
+  width:min(190px, calc(100% - 44px));
+  opacity:.68;
+}
+
+.hero.brand-hero.kozeni-home-intro-refine{
+  box-shadow:0 14px 38px rgba(22,34,53,.045);
+}
+
+@media (max-width: 720px){
+  .hero.brand-hero.kozeni-home-intro-refine #brand-home-title{
+    font-size:clamp(1.28rem, 5.4vw, 1.72rem) !important;
+    line-height:1.46;
+  }
+}
