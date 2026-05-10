@@ -1,1 +1,1 @@
-{"version": "v42.4-revenue-page-template", "updated": "2026-05-10", "note": "Add the revenue page template and monetization route design before changing credit card pages."}
+{"version": "v43.0-credit-card-list-route", "updated": "2026-05-10", "note": "Simplify the credit card list route around three primary cards, lighter purpose rows, calmer typography, and no duplicate card UI."}
