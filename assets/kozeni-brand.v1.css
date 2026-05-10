@@ -1133,3 +1133,139 @@ body .page-main :where(.brand-proof,.proof-list,.chips,.tags) :where(span,a,.chi
 }
 /* kozeni-typography-hierarchy-v41.13:end */
 
+
+
+/* kozeni-mobile-sim-polish-v41.14
+   スマホ・回線ページ専用。文字で押さず、入口/カード/診断の階層を整理。 */
+body.kozeni-mobile-sim-polish .page-main{
+  --mobile-soft-mint:rgba(67,197,158,.095);
+  --mobile-soft-gold:rgba(227,190,87,.14);
+}
+
+/* ページ上部：ホームと同じく、余白と控えめな背景で見せる */
+body.kozeni-mobile-sim-polish .page-main :where(.hero,.page-hero,.category-hero,.mobile-hero):first-child{
+  position:relative;
+  overflow:hidden;
+  isolation:isolate;
+  padding:clamp(32px,5vw,60px) clamp(20px,4.6vw,56px) !important;
+  border:1px solid rgba(217,238,232,.72);
+  border-radius:26px;
+  background:linear-gradient(120deg,rgba(255,255,255,.97),rgba(246,251,249,.94) 58%,rgba(232,248,242,.70));
+  box-shadow:0 14px 38px rgba(22,34,53,.045);
+}
+body.kozeni-mobile-sim-polish .page-main :where(.hero,.page-hero,.category-hero,.mobile-hero):first-child::after{
+  content:"";
+  position:absolute;
+  inset:0 0 0 auto;
+  width:min(48%,520px);
+  pointer-events:none;
+  z-index:-1;
+  background:
+    radial-gradient(circle at 80% 20%, var(--mobile-soft-gold) 0 7%, transparent 8%),
+    radial-gradient(circle at 88% 58%, rgba(67,197,158,.11) 0 2px, transparent 2.5px),
+    linear-gradient(135deg, rgba(67,197,158,.025), rgba(67,197,158,.13));
+  background-size:auto,24px 24px,auto;
+  clip-path:polygon(26% 0,100% 0,100% 100%,8% 100%,0 55%);
+}
+
+body.kozeni-mobile-sim-polish .page-main :where(.hero,.page-hero,.category-hero,.mobile-hero):first-child :is(h1,.page-title,.hero-title){
+  max-width:720px;
+  font-size:clamp(1.26rem,2.18vw,1.86rem) !important;
+  font-weight:600 !important;
+  line-height:1.58 !important;
+  letter-spacing:.018em !important;
+  color:#172a33;
+}
+body.kozeni-mobile-sim-polish .page-main :where(.hero,.page-hero,.category-hero,.mobile-hero):first-child :is(p,.lead){
+  max-width:650px;
+  font-size:clamp(.9rem,1vw,.98rem) !important;
+  line-height:2 !important;
+  color:#4b625d;
+}
+
+/* 3択入口：カードを大げさにせず、押しやすさと視線誘導を両立 */
+body.kozeni-mobile-sim-polish .page-main :where(.entry-card,.choice-card,.route-card,.purpose-card,.diagnosis-card,.recommend-card,.offer-card,.category-card){
+  border-radius:20px !important;
+  border:1px solid rgba(217,238,232,.86) !important;
+  background:rgba(255,255,255,.96) !important;
+  box-shadow:0 10px 26px rgba(22,34,53,.055) !important;
+}
+body.kozeni-mobile-sim-polish .page-main :where(.entry-card,.choice-card,.route-card,.purpose-card,.diagnosis-card,.recommend-card,.offer-card,.category-card):hover{
+  transform:translateY(-1px);
+  box-shadow:0 14px 34px rgba(22,34,53,.07) !important;
+}
+
+body.kozeni-mobile-sim-polish .page-main :where(.entry-card,.choice-card,.route-card,.purpose-card,.diagnosis-card,.recommend-card,.offer-card,.category-card) :is(h2,h3,.card-title,.title){
+  font-size:clamp(1rem,1.36vw,1.18rem) !important;
+  font-weight:650 !important;
+  line-height:1.52 !important;
+  letter-spacing:.014em !important;
+  margin-bottom:.45em !important;
+}
+body.kozeni-mobile-sim-polish .page-main :where(.entry-card,.choice-card,.route-card,.purpose-card,.diagnosis-card,.recommend-card,.offer-card,.category-card) :is(p,li,.desc,.description,.summary,.note){
+  font-size:clamp(.86rem,.94vw,.92rem) !important;
+  line-height:1.88 !important;
+  color:#4e625e !important;
+}
+
+/* RECOMMEND 3件は主役。ただし巨大にしない */
+body.kozeni-mobile-sim-polish .page-main :where(.recommend,.recommend-section,.recommend-list) :where(.recommend-card,.offer-card) :is(h2,h3,.card-title,.title){
+  font-size:clamp(1.04rem,1.5vw,1.26rem) !important;
+  font-weight:700 !important;
+}
+
+/* セクション間を詰めすぎず、読み流しやすく */
+body.kozeni-mobile-sim-polish .page-main :where(section){
+  scroll-margin-top:90px;
+}
+body.kozeni-mobile-sim-polish .page-main :where(section + section){
+  margin-top:clamp(28px,5vw,54px) !important;
+}
+body.kozeni-mobile-sim-polish .page-main :where(section > h2,.section-title){
+  font-size:clamp(1.12rem,1.7vw,1.44rem) !important;
+  font-weight:650 !important;
+  line-height:1.58 !important;
+  margin-bottom:clamp(12px,2vw,20px) !important;
+}
+
+/* ラベル/チップ/ボタンを静かに整える */
+body.kozeni-mobile-sim-polish .page-main :where(.badge,.label,.pill,.chip,.tag,.eyebrow){
+  font-size:.68rem !important;
+  font-weight:700 !important;
+  letter-spacing:.055em !important;
+  line-height:1.2 !important;
+}
+body.kozeni-mobile-sim-polish .page-main :where(a.button,a.btn,.button,.btn,.cta-button,.primary-button){
+  font-size:.86rem !important;
+  font-weight:700 !important;
+  padding:.72em 1em !important;
+  border-radius:999px !important;
+}
+
+/* わからない人向け診断は、出たときだけ読みやすく */
+body.kozeni-mobile-sim-polish .page-main :where(#mobile-unknown-check,.unknown-check,.diagnosis-panel,.quiz-panel){
+  border-radius:22px !important;
+  background:linear-gradient(135deg,rgba(255,255,255,.98),rgba(246,251,249,.92)) !important;
+  border:1px solid rgba(217,238,232,.82) !important;
+  box-shadow:0 14px 36px rgba(22,34,53,.055) !important;
+}
+
+@media (max-width:720px){
+  body.kozeni-mobile-sim-polish .page-main :where(.hero,.page-hero,.category-hero,.mobile-hero):first-child{
+    padding:28px 18px 38px !important;
+    border-radius:22px;
+  }
+  body.kozeni-mobile-sim-polish .page-main :where(.hero,.page-hero,.category-hero,.mobile-hero):first-child::after{
+    width:76vw;
+    opacity:.66;
+    clip-path:polygon(38% 0,100% 0,100% 86%,20% 100%,0 52%);
+  }
+  body.kozeni-mobile-sim-polish .page-main :where(.hero,.page-hero,.category-hero,.mobile-hero):first-child :is(h1,.page-title,.hero-title){
+    font-size:clamp(1.18rem,5vw,1.58rem) !important;
+    line-height:1.58 !important;
+  }
+  body.kozeni-mobile-sim-polish .page-main :where(.entry-card,.choice-card,.route-card,.purpose-card,.diagnosis-card,.recommend-card,.offer-card,.category-card) :is(h2,h3,.card-title,.title){
+    font-size:clamp(.98rem,4.2vw,1.12rem) !important;
+  }
+}
+/* kozeni-mobile-sim-polish-v41.14:end */
