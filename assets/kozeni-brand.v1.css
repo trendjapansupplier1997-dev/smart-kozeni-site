@@ -819,22 +819,98 @@ a.kozeni-social-link .kozeni-social-logo{
 }
 
 
-/* kozeni-header-flask-mini-v41.4 */
-.kozeni-site-brand .kozeni-brand-flask{
-  width:26px;
-  height:26px;
-  flex:0 0 auto;
-  display:block;
-  margin-left:-2px;
-  margin-right:2px;
-  filter:drop-shadow(0 3px 8px rgba(35,154,120,.18));
+/* kozeni-intro-brand-design-v41.6 */
+.kozeni-intro-hero{
+  position:relative;
+  overflow:hidden;
+  isolation:isolate;
 }
-@media (max-width: 560px){
-  .kozeni-site-brand .kozeni-brand-flask{
-    width:23px;
-    height:23px;
-    margin-left:-3px;
-    margin-right:0;
+.kozeni-intro-hero::before{
+  content:"";
+  position:absolute;
+  inset:0 0 auto auto;
+  width:min(54vw, 620px);
+  height:100%;
+  min-height:280px;
+  pointer-events:none;
+  z-index:-2;
+  background:
+    radial-gradient(circle at 72% 22%, rgba(227,190,87,.18) 0 7%, transparent 8%),
+    radial-gradient(circle at 92% 18%, rgba(35,154,120,.15) 0 1.5px, transparent 2px),
+    linear-gradient(135deg, rgba(67,197,158,.04), rgba(67,197,158,.19));
+  background-size:auto, 22px 22px, auto;
+  clip-path:ellipse(76% 74% at 74% 40%);
+}
+.kozeni-intro-hero::after{
+  content:"";
+  position:absolute;
+  right:-80px;
+  top:24px;
+  width:min(46vw, 520px);
+  height:min(46vw, 520px);
+  pointer-events:none;
+  z-index:-1;
+  border-radius:46% 54% 42% 58%;
+  background:
+    radial-gradient(circle at 36% 34%, rgba(255,255,255,.72), transparent 34%),
+    linear-gradient(135deg, rgba(67,197,158,.13), rgba(35,154,120,.06));
+  box-shadow:inset 0 0 0 1px rgba(155,216,201,.25);
+}
+.kozeni-intro-title-row{
+  display:flex;
+  align-items:center;
+  gap:clamp(12px,2vw,20px);
+  width:fit-content;
+  max-width:100%;
+}
+.kozeni-intro-flask{
+  width:clamp(52px,7vw,78px);
+  height:clamp(52px,7vw,78px);
+  flex:0 0 auto;
+  filter:drop-shadow(0 10px 20px rgba(35,154,120,.16));
+}
+.kozeni-intro-title{
+  position:relative;
+  display:inline-block;
+  color:#14382f;
+  letter-spacing:.04em;
+  line-height:1.12;
+}
+.kozeni-intro-title::after{
+  content:"";
+  position:absolute;
+  left:0;
+  right:-.32em;
+  bottom:-.22em;
+  height:.16em;
+  border-radius:999px;
+  background:linear-gradient(90deg, rgba(67,197,158,.62), rgba(67,197,158,.18));
+}
+.kozeni-intro-tagline{
+  color:#182832;
+}
+.kozeni-intro-tagline strong,
+.kozeni-intro-tagline em{
+  color:#239a78;
+}
+@media (max-width: 720px){
+  .kozeni-intro-hero::before{
+    width:70vw;
+    opacity:.7;
+    clip-path:ellipse(82% 66% at 82% 28%);
+  }
+  .kozeni-intro-hero::after{
+    width:210px;
+    height:210px;
+    right:-88px;
+    top:24px;
+    opacity:.72;
+  }
+  .kozeni-intro-title-row{
+    gap:10px;
+  }
+  .kozeni-intro-title::after{
+    right:0;
   }
 }
-/* kozeni-header-flask-mini-v41.4:end */
+/* kozeni-intro-brand-design-v41.6:end */
