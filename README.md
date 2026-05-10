@@ -23,3 +23,16 @@ Cloudflare Pages 用のクリーンな静的サイト一式です。
 - 新規ページ追加時は、`sitemap.xml` と内部リンクの両方を更新します。
 - 旧ページ実体を残さず、必要な旧URLは `_redirects` に集約します。
 - バックアップファイルや作業ログは公開用ZIPに含めません。
+
+
+## 保守・運用ドキュメント
+- `docs/page-authoring-rules.md` 新規ページ作成ルール
+- `docs/release-checklist.md` リリース前チェックリスト
+- `tools/kozeni_site_audit.py` サイト衛生チェック用スクリプト
+
+監査コマンド：
+
+```bash
+python3 tools/kozeni_site_audit.py
+```
+
