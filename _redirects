@@ -1,4 +1,4 @@
-# kozeni-legacy-redirects-v39-3:start
+# smart-kozeni legacy redirects v42.0
 /mobile /mobile-sim/ 301
 /mobile/ /mobile-sim/ 301
 /mobile/ahamo /mobile-sim/ahamo/ 301
@@ -13,20 +13,6 @@
 /point-site/trip-mile/ /point-site/trima/ 301
 /point-site/trip-mile/earn /point-site/trima/earn/ 301
 /point-site/trip-mile/earn/ /point-site/trima/earn/ 301
-# kozeni-legacy-redirects-v39-3:end
 
 /start-here/ / 301
 /point-site/referral-code/ /point-site/ 301
-
-# smart-kozeni mobile legacy redirects start
-/mobile  /mobile-sim/  301
-/mobile/  /mobile-sim/  301
-/mobile/ahamo  /mobile-sim/ahamo/  301
-/mobile/ahamo/  /mobile-sim/ahamo/  301
-/mobile/linemo  /mobile-sim/linemo/  301
-/mobile/linemo/  /mobile-sim/linemo/  301
-/mobile/rakuten-mobile  /mobile-sim/rakuten-mobile/  301
-/mobile/rakuten-mobile/  /mobile-sim/rakuten-mobile/  301
-/mobile/route-check  /mobile-sim/  301
-/mobile/route-check/  /mobile-sim/  301
-# smart-kozeni mobile legacy redirects end
