@@ -819,7 +819,7 @@ h1{
   <div class="kozeni-line-quiz__head">
     <p class="kozeni-line-quiz__eyebrow">30秒クイズ診断</p>
     <h2 id="kozeni-line-quiz-title">スマホ・回線、まずどこを見る？</h2>
-    <p class="kozeni-line-quiz__lead">5つ選ぶだけ。最後に見るべき公式ページを出します。</p>
+    <p class="kozeni-line-quiz__lead">4つ選ぶだけ。最後に見るべき公式ページを出します。</p>
   </div>
 
   <div class="kozeni-line-quiz__shell">
@@ -904,180 +904,230 @@ h1{
 
 
 
-<!-- kozeni-line-diagnosis-js-v38-3:start -->
+<!-- kozeni-line-diagnosis-js-v39-2:start -->
 <script>
 (() => {
   const root = document.querySelector('.kozeni-line-quiz');
   if (!root) return;
 
-  const links = {
-    rakuten: 'https://network.mobile.rakuten.co.jp/fee/saikyo-plan/',
-    ahamo: 'https://ahamo.com/plan/index.html',
-    linemo: 'https://www.linemo.jp/plan/',
-    iijmio: 'https://www.iijmio.jp/gigaplan/',
-    mineo: 'https://mineo.jp/price/',
-    uqmobile: 'https://www.uqwimax.jp/mobile/plan/',
-    ymobile: 'https://www.ymobile.jp/plan/',
-    wimax: 'https://www.uqwimax.jp/wimax/plan/',
-    home5g: 'https://www.docomo.ne.jp/home_5g/',
-    rakutenTurbo: 'https://network.mobile.rakuten.co.jp/internet/turbo/fee/',
-    povo: 'https://povo.jp/',
-    list: '/mobile-sim/'
+  const $ = (selector) => root.querySelector(selector);
+  const state = {
+    need: '',
+    bill: '',
+    data: '',
+    priority: ''
   };
+  let step = 0;
 
   const questions = [
     {
-      key: 'need', kicker: 'QUESTION 1', title: 'まず、何を見直したい？', hint: '一番近いものを選んでください。',
+      key: 'need',
+      kicker: 'QUESTION 1',
+      title: 'まず、何を見直したい？',
+      hint: '一番近いものを選んでください。',
       options: [
-        { value: 'save', label: 'スマホ代を下げたい', micro: '毎月の固定費を軽くしたい' },
-        { value: 'data', label: 'ギガが足りない', micro: '外でも動画・SNSを使う' },
-        { value: 'wifi', label: '家のWi-Fi', micro: '遅い・ない・工事なしで済ませたい' },
-        { value: 'temporary', label: '引っ越し・開通待ち', micro: '短期でネット環境が必要' },
-        { value: 'sub', label: 'サブ回線/eSIM', micro: '今の回線は残して試したい' }
+        { value: 'phone', label: 'スマホ代を下げたい', micro: '月額とGBを見直す' },
+        { value: 'data', label: 'ギガが足りない', micro: '動画・テザリングが多い' },
+        { value: 'wifi', label: '家のWi-Fiを見直したい', micro: '工事なし回線も確認' },
+        { value: 'temporary', label: '引っ越し・開通待ち', micro: '一時的なネット環境' },
+        { value: 'subline', label: 'サブ回線/eSIM', micro: '予備・仕事用・端末追加' }
       ]
     },
     {
-      key: 'bill', kicker: 'QUESTION 2', title: '今のスマホ代は？', hint: '端末代やサブスク込みで曖昧なら「分からない」でOK。',
+      key: 'bill',
+      kicker: 'QUESTION 2',
+      title: '今のスマホ代はどれくらい？',
+      hint: 'だいたいでOK。家族分ではなく自分の1回線で考えます。',
       options: [
-        { value: 'under2000', label: '2,000円未満', micro: 'すでに安いかも' },
-        { value: '2000_4000', label: '2,000〜4,000円', micro: '見直し候補ゾーン' },
-        { value: '4000_6000', label: '4,000〜6,000円', micro: '節約余地が出やすい' },
-        { value: 'over6000', label: '6,000円以上', micro: 'まず内訳確認したい' },
-        { value: 'unknown', label: '分からない', micro: '先にMyページ確認' }
+        { value: 'under2000', label: '2,000円未満', micro: 'すでにかなり軽い' },
+        { value: '2000-4000', label: '2,000〜4,000円', micro: '見直し余地あり' },
+        { value: '4000-6000', label: '4,000〜6,000円', micro: '下げやすい可能性' },
+        { value: 'over6000', label: '6,000円以上', micro: 'まず条件整理' },
+        { value: 'unknown', label: 'よく分からない', micro: '請求画面から確認' }
       ]
     },
     {
-      key: 'data', kicker: 'QUESTION 3', title: '月のギガはどれくらい？', hint: '迷ったら近いものを選択。分からない場合もそのまま進めます。',
+      key: 'data',
+      kicker: 'QUESTION 3',
+      title: '月に何GBくらい使う？',
+      hint: '分からなければ「分からない」でOK。結果で確認先を出します。',
       options: [
-        { value: 'under3', label: '3GB以下', micro: '小容量で足りる' },
-        { value: '4_10', label: '4〜10GB', micro: 'SNS・調べ物中心' },
-        { value: '11_30', label: '11〜30GB', micro: '外でもよく使う' },
-        { value: 'over30', label: '30GB以上', micro: '動画・テザリング多め' },
-        { value: 'variable', label: '月で大きく変わる', micro: '使う月と使わない月がある' },
-        { value: 'unknown', label: '分からない', micro: 'まず使用量チェック' }
+        { value: 'under3', label: '3GB以下', micro: 'Wi-Fi中心・軽め' },
+        { value: '4-10', label: '4〜10GB', micro: '小〜中容量' },
+        { value: '11-30', label: '11〜30GB', micro: '外でもよく使う' },
+        { value: 'over30', label: '30GB以上', micro: '大容量・テザリングあり' },
+        { value: 'unknown', label: '分からない', micro: '先に使用量チェック' }
       ]
     },
     {
-      key: 'home', kicker: 'QUESTION 4', title: '家のネットは？', hint: 'スマホ代より、家のWi-Fiを先に見るべき場合があります。',
+      key: 'priority',
+      kicker: 'QUESTION 4',
+      title: '最後に、優先したいことは？',
+      hint: 'ここでスマホ寄りか回線寄りかを絞ります。',
       options: [
-        { value: 'ok', label: '安定している', micro: 'スマホ料金を中心に見る' },
-        { value: 'slow', label: '遅い・不安定', micro: '回線側も候補' },
-        { value: 'none', label: '家Wi-Fiなし', micro: 'スマホ大容量かホームルーター' },
-        { value: 'waiting', label: '開通待ち', micro: '短期・工事なし優先' },
-        { value: 'no_construction', label: '工事なしがいい', micro: 'WiMAX/home 5G系' }
-      ]
-    },
-    {
-      key: 'style', kicker: 'QUESTION 5', title: '最後に、何を優先する？', hint: '結果は次のボタンで出します。',
-      options: [
-        { value: 'cheap', label: '月額の安さ', micro: '固定費を削る' },
-        { value: 'simple', label: '分かりやすさ', micro: '料金体系がシンプル' },
-        { value: 'support', label: '店舗・家族割', micro: 'サポートやセット割も見る' },
-        { value: 'rakuten', label: '楽天ポイント', micro: '楽天経済圏も重視' },
-        { value: 'sub', label: '今の回線を残す', micro: 'サブ回線で試す' }
+        { value: 'price', label: 'とにかく安さ', micro: '月額を軽くしたい' },
+        { value: 'stable', label: '通信の安定', micro: 'つながりやすさ重視' },
+        { value: 'store', label: '店舗・家族割', micro: 'サポートも欲しい' },
+        { value: 'esim', label: 'eSIM・サブ回線', micro: '2回線目や予備' },
+        { value: 'home', label: '工事なしWi-Fi', micro: '家のネットを先に' },
+        { value: 'campaign', label: '特典・キャンペーン', micro: '条件も確認したい' }
       ]
     }
   ];
 
   const results = {
     usageUnknown: {
-      kind: 'まず確認', saving: '節約余地：未判定',
-      title: '先に「今の料金」と「月のGB」を確認。',
-      verdict: '使用量が分からないまま乗り換えると、安いけど足りない・大容量だけど払いすぎ、のどちらにも転びます。まずMyページやスマホ設定で使用量を見ます。',
+      kind: 'まず確認',
+      saving: '節約余地：確認後',
+      title: '先に、スマホ代と月間GBを確認。',
+      verdict: '今の月額かGBが分からないまま乗り換えると、安く見えても合わないことがあります。まず使用量を見てから候補を絞るのが安全です。',
       candidates: [
-        ['今の契約先のMyページ', '月額、通話料、オプション、データ使用量を確認'],
-        ['スマホ設定のモバイル通信', '直近のデータ使用量をざっくり確認']
+        { name: '何GBチェック', note: '確認する場所と見方を先に整理' },
+        { name: '現在の請求画面', note: '割引・通話料・端末代の有無を見る' }
       ],
-      points: ['端末代・保証・サブスクが混ざっていないか見る', '月間GBが3GB以下か、10GB超か、30GB超かを見る', 'キャンペーンの最安表示だけで判断しない'],
-      actions: [['スマホ・回線一覧へ戻る', links.list, 'primary']]
+      points: ['月間データ使用量', '通話料・端末代が混ざっていないか', '家のWi-Fiで使う時間が多いか'],
+      actions: [
+        { label: '何GBチェックを見る', url: '/mobile-sim/data-usage/', external: false }
+      ]
     },
-    alreadyCheap: {
-      kind: '無理に変えない', saving: '節約余地：低',
-      title: 'すでに安い可能性あり。乗り換えより条件確認を優先。',
-      verdict: '2,000円未満で収まっているなら、無理な乗り換えで手間や失敗リスクを増やすより、GB不足・通話料・家Wi-Fiだけを確認する方が安全です。',
-      candidates: [['IIJmio / mineo系', '低容量・サブ回線候補として比較'], ['povo系', 'たまに使う回線・予備回線として確認']],
-      points: ['本当に困っているのが月額かGBかを分ける', '通話料・オプションで高くなっていないか見る', 'MNP特典だけで動かない'],
-      actions: [['IIJmio公式を見る', links.iijmio, 'primary'], ['mineo公式を見る', links.mineo, 'ghost']]
+    alreadyLean: {
+      kind: '無理に変えない',
+      saving: '節約余地：低〜中',
+      title: 'すでに軽い。乗り換えは条件が良い時だけ。',
+      verdict: '2,000円未満・3GB以下なら、無理な乗り換えよりキャンペーンやサブ回線の必要性だけ確認する方が自然です。',
+      candidates: [
+        { name: 'IIJmio', note: '小容量・eSIM候補' },
+        { name: 'LINEMO', note: '小容量の公式条件確認' }
+      ],
+      points: ['事務手数料やSIM発行料', '今の割引が消えないか', '紹介・キャンペーン条件'],
+      actions: [
+        { label: 'IIJmio公式を見る', url: 'https://www.iijmio.jp/gigaplan/', external: true },
+        { label: 'LINEMO公式を見る', url: 'https://www.linemo.jp/plan/', external: true }
+      ]
     },
-    lightCheap: {
-      kind: '小容量', saving: '節約余地：中',
+    lightData: {
+      kind: '小容量',
+      saving: '節約余地：中',
       title: '3GB以下なら、小容量プランを先に確認。',
-      verdict: '毎月3GB以下なら、大容量プランより小容量・低価格の公式条件を見た方が早いです。LINE中心ならLINEMO、細かく容量を選ぶならIIJmioが候補です。',
-      candidates: [['LINEMO', '3GB以下・10GB以下の段階で見やすい'], ['IIJmio', '5GB前後やeSIM・サブ回線に寄せやすい']],
-      points: ['自宅Wi-Fiあり前提で足りるか確認', '通話オプションが必要か確認', 'キャンペーン対象条件と付与時期を確認'],
-      actions: [['LINEMO公式を見る', links.linemo, 'primary'], ['IIJmio公式を見る', links.iijmio, 'ghost']]
+      verdict: '家のWi-Fi中心で外では軽く使う程度なら、大容量より小容量の月額を確認する方が早いです。',
+      candidates: [
+        { name: 'LINEMO', note: '3GB前後の候補' },
+        { name: 'IIJmio', note: '細かい容量・eSIM候補' }
+      ],
+      points: ['昼や夕方の速度感', '通話オプション', 'キャンペーン条件'],
+      actions: [
+        { label: 'LINEMO公式を見る', url: 'https://www.linemo.jp/plan/', external: true },
+        { label: 'IIJmio公式を見る', url: 'https://www.iijmio.jp/gigaplan/', external: true }
+      ]
     },
-    midCheap: {
-      kind: '中容量', saving: '節約余地：中',
-      title: '4〜10GBなら、小〜中容量で月額を軽くする。',
-      verdict: '4〜10GB中心なら、いきなり30GB以上へ上げず、10GB前後で足りるかを先に確認します。毎月の固定費を落としやすいゾーンです。',
-      candidates: [['LINEMO', '3GB/10GB帯から見やすい'], ['IIJmio', '5GB〜10GB前後を細かく調整しやすい']],
-      points: ['外で動画をどれくらい見るか確認', '昼休みなど混雑時間帯の使い方を確認', '端末セット・MNP特典は条件を確認'],
-      actions: [['LINEMO公式を見る', links.linemo, 'primary'], ['IIJmio公式を見る', links.iijmio, 'ghost']]
+    midData: {
+      kind: '中容量',
+      saving: '節約余地：中',
+      title: '4〜10GBなら、安さと使いやすさのバランスを見る。',
+      verdict: '小容量では足りないけど大容量までは不要なら、月額と速度のクセを見比べるのが近道です。',
+      candidates: [
+        { name: 'LINEMO', note: '小〜中容量の候補' },
+        { name: 'IIJmio', note: '容量を細かく選びやすい' }
+      ],
+      points: ['月間GBが毎月ブレるか', 'LINEや動画の利用頻度', '支払い方法・本人確認'],
+      actions: [
+        { label: 'LINEMO公式を見る', url: 'https://www.linemo.jp/plan/', external: true },
+        { label: 'IIJmio公式を見る', url: 'https://www.iijmio.jp/gigaplan/', external: true }
+      ]
     },
-    largeSimple: {
-      kind: '大容量', saving: '節約余地：中',
-      title: '11〜30GBなら、ahamoを基準に確認。',
-      verdict: '20〜30GB前後を安定して使うなら、まず30GB帯のシンプルな公式条件を基準にします。料金・通話・キャンペーンを分けて見るのがコツです。',
-      candidates: [['ahamo', '30GB・5分通話込みの基準として見やすい'], ['LINEMOベストプランV', '30GB帯の比較候補']],
-      points: ['30GBで足りるか、超過月が多いか確認', '5分通話込みが得か確認', 'ドコモ/ソフトバンク系からの変更条件を確認'],
-      actions: [['ahamo公式を見る', links.ahamo, 'primary'], ['LINEMO公式を見る', links.linemo, 'ghost']]
+    thirtyData: {
+      kind: '20〜30GB',
+      saving: '節約余地：中〜高',
+      title: '11〜30GBなら、30GB前後の公式条件を確認。',
+      verdict: '外でも動画・SNS・地図を使うなら、安さだけでなく通信量と通話条件を一緒に見るのが安全です。',
+      candidates: [
+        { name: 'ahamo', note: '30GB前後と通話込みの候補' },
+        { name: 'LINEMO', note: 'ソフトバンク系の候補' }
+      ],
+      points: ['5分通話の有無', '海外利用の必要性', '速度制限後の使い勝手'],
+      actions: [
+        { label: 'ahamo公式を見る', url: 'https://ahamo.com/', external: true },
+        { label: 'LINEMO公式を見る', url: 'https://www.linemo.jp/plan/', external: true }
+      ]
     },
-    variableHeavy: {
-      kind: '大容量・変動', saving: '節約余地：中〜高',
-      title: '30GB以上・月で変動するなら、段階制か大容量を確認。',
-      verdict: '使う月と使わない月の差が大きいなら楽天モバイル、毎月30GB前後を安定して使うならahamoを基準に見ると判断しやすいです。',
-      candidates: [['楽天モバイル', '使用量がブレる人・楽天ポイント重視'], ['ahamo', '30GB〜110GBの大容量基準']],
-      points: ['自宅Wi-Fiなしでスマホ回線に寄せすぎていないか確認', 'テザリング用途なら制限・エリアを確認', '通話はアプリ条件や対象外番号を確認'],
-      actions: [['楽天モバイル公式を見る', links.rakuten, 'primary'], ['ahamo公式を見る', links.ahamo, 'ghost']]
+    heavyData: {
+      kind: '大容量',
+      saving: '節約余地：中〜高',
+      title: '30GB以上なら、変動制か大容量プランを確認。',
+      verdict: '毎月かなり使うなら、小容量の安さより「上限・速度制限・テザリング」の確認が先です。',
+      candidates: [
+        { name: '楽天モバイル', note: '使用量が変動する人の候補' },
+        { name: 'ahamo大盛り', note: '大容量寄りの候補' }
+      ],
+      points: ['自宅Wi-Fiの有無', 'テザリング利用', 'エリアと屋内のつながりやすさ'],
+      actions: [
+        { label: '楽天モバイル公式を見る', url: 'https://network.mobile.rakuten.co.jp/fee/saikyo-plan/', external: true },
+        { label: 'ahamo公式を見る', url: 'https://ahamo.com/', external: true }
+      ]
     },
-    subLine: {
-      kind: 'サブ回線', saving: '節約余地：目的次第',
-      title: 'メインを残すなら、eSIM・サブ回線で小さく試す。',
-      verdict: 'いきなりメイン回線を変えるのが怖い人は、サブ回線やeSIMで通信品質・使い勝手を試す方が安全です。',
-      candidates: [['IIJmio', 'eSIM・低容量の候補として見やすい'], ['povo', '必要な時だけトッピングする予備回線候補']],
-      points: ['端末がeSIM対応か確認', '電話番号を移すか、新規番号にするか確認', 'メイン回線の解約は最後に判断'],
-      actions: [['IIJmio公式を見る', links.iijmio, 'primary'], ['povo公式を見る', links.povo, 'ghost']]
-    },
-    supportFamily: {
-      kind: '店舗・家族割', saving: '節約余地：条件次第',
-      title: '家族割・店舗サポート重視なら、サブブランドを確認。',
-      verdict: '最安だけを狙うより、店舗サポート・家族割・光回線セット割を含めて判断する方が失敗しにくい層です。',
-      candidates: [['UQ mobile', 'au/UQ系・店舗/セット割を確認'], ['Y!mobile', 'ソフトバンク/Yahoo!系・家族割を確認']],
-      points: ['割引前料金と割引後料金を分けて見る', '家族回線・光回線の条件を確認', '店舗サポートが必要な人の回線だけ分ける'],
-      actions: [['UQ mobile公式を見る', links.uqmobile, 'primary'], ['Y!mobile公式を見る', links.ymobile, 'ghost']]
-    },
-    wifiNoConstruction: {
-      kind: '工事不要Wi-Fi', saving: '回線次第',
-      title: '家のWi-Fiは、工事なし候補を先に確認。',
-      verdict: '家のネットがない・遅い・工事を避けたい場合は、スマホプランより先にホームルーター/WiMAX系の提供エリアを確認した方が早いです。',
-      candidates: [['UQ WiMAX', '工事なし・持ち運び/ホームルーター候補'], ['docomo home 5G', '据え置き型・ドコモ系セット割候補'], ['Rakuten Turbo', '楽天経済圏寄りのホームルーター候補']],
-      points: ['住所の提供エリアを確認', '端末代・契約期間・解約条件を確認', 'オンラインゲーム/在宅会議など用途を確認'],
-      actions: [['UQ WiMAX公式を見る', links.wimax, 'primary'], ['home 5G公式を見る', links.home5g, 'ghost'], ['Rakuten Turbo公式を見る', links.rakutenTurbo, 'subtle']]
+    homeWifi: {
+      kind: '家の回線',
+      saving: '節約余地：状況次第',
+      title: '家のWi-Fiが先。工事なし回線を確認。',
+      verdict: 'スマホプランを下げても、家のネットが不安定だと満足度が落ちます。開通待ち・工事不可ならホームルーター系を先に見る流れです。',
+      candidates: [
+        { name: 'UQ WiMAX', note: '工事なしWi-Fi候補' },
+        { name: 'docomo home 5G', note: 'ホームルーター候補' },
+        { name: 'Rakuten Turbo', note: '楽天系の家Wi-Fi候補' }
+      ],
+      points: ['提供エリア', '登録住所での利用条件', '短期か長期か'],
+      actions: [
+        { label: 'UQ WiMAX公式を見る', url: 'https://www.uqwimax.jp/wimax/', external: true },
+        { label: 'home 5G公式を見る', url: 'https://www.docomo.ne.jp/home_5g/', external: true }
+      ]
     },
     temporaryWifi: {
-      kind: '開通待ち', saving: '短期優先',
-      title: '開通待ちなら、短期・工事なし回線を優先。',
-      verdict: '引っ越し直後や光回線の開通待ちは、長期契約の安さより「すぐ使える・解約しやすい・端末が届く」条件を優先します。',
-      candidates: [['UQ WiMAX', '工事なし候補として公式条件を確認'], ['短期Wi-Fiレンタル', 'A8など提携審査後に候補を追加予定']],
-      points: ['必要期間が2週間か1〜3か月か決める', '端末到着日と返却条件を確認', '長期契約に寄せすぎない'],
-      actions: [['UQ WiMAX公式を見る', links.wimax, 'primary'], ['スマホ・回線一覧へ戻る', links.list, 'ghost']]
+      kind: '開通待ち',
+      saving: '節約余地：目的次第',
+      title: '開通待ちなら、短期・工事なしを優先。',
+      verdict: '引っ越し直後や光回線の開通待ちは、長期契約より「いつまで必要か」を先に決める方が失敗しにくいです。',
+      candidates: [
+        { name: 'WiMAX系', note: '短期〜中期の候補' },
+        { name: 'ホームルーター', note: '工事なしで使う候補' }
+      ],
+      points: ['必要な期間', '解約条件', '速度制限とエリア'],
+      actions: [
+        { label: 'UQ WiMAX公式を見る', url: 'https://www.uqwimax.jp/wimax/', external: true },
+        { label: '何GBチェックを見る', url: '/mobile-sim/data-usage/', external: false }
+      ]
     },
-    rakutenPoint: {
-      kind: '楽天経済圏', saving: '使い方次第',
-      title: '楽天ポイント重視なら、楽天モバイル/楽天Turboを確認。',
-      verdict: '楽天市場・楽天カード・楽天ポイントをよく使うなら、スマホ回線とホームルーターを楽天側で見る価値があります。通信エリアと料金条件は必ず公式で確認します。',
-      candidates: [['楽天モバイル', '段階制スマホ回線'], ['Rakuten Turbo', '工事不要ホームルーター']],
-      points: ['ポイント還元の条件と上限を確認', '自宅/職場の楽天回線エリアを確認', '通話アプリ条件を確認'],
-      actions: [['楽天モバイル公式を見る', links.rakuten, 'primary'], ['Rakuten Turbo公式を見る', links.rakutenTurbo, 'ghost']]
+    subline: {
+      kind: 'サブ回線',
+      saving: '節約余地：中',
+      title: 'サブ回線・eSIMなら、軽い月額から確認。',
+      verdict: 'メイン回線を変えずに、通信障害対策や仕事用として2回線目を持つなら、eSIMや小容量が見やすいです。',
+      candidates: [
+        { name: 'IIJmio', note: 'eSIM・小容量候補' },
+        { name: 'povo', note: '必要な時だけ使う候補' }
+      ],
+      points: ['端末のeSIM対応', 'メイン回線と別系統か', '本人確認と支払い方法'],
+      actions: [
+        { label: 'IIJmio公式を見る', url: 'https://www.iijmio.jp/gigaplan/', external: true },
+        { label: 'povo公式を見る', url: 'https://povo.jp/', external: true }
+      ]
+    },
+    storeSupport: {
+      kind: 'サポート重視',
+      saving: '節約余地：中',
+      title: '店舗・家族割重視なら、サブブランドを確認。',
+      verdict: '完全な格安SIMより、店舗サポートや家族割・セット割を残した方が合う場合があります。',
+      candidates: [
+        { name: 'UQ mobile', note: 'au系・店舗/セット割候補' },
+        { name: 'Y!mobile', note: 'ソフトバンク系・家族割候補' }
+      ],
+      points: ['家族割の人数', '自宅回線とのセット割', '店舗サポートの必要性'],
+      actions: [
+        { label: 'UQ mobile公式を見る', url: 'https://www.uqwimax.jp/mobile/', external: true },
+        { label: 'Y!mobile公式を見る', url: 'https://www.ymobile.jp/', external: true }
+      ]
     }
   };
 
-  const state = Object.fromEntries(questions.map((question) => [question.key, null]));
-  let step = 0;
-  let resultVisible = false;
-
-  const $ = (selector) => root.querySelector(selector);
   const els = {
     step: $('#kozeni-line-quiz-step'),
     dots: $('#kozeni-line-quiz-dots'),
@@ -1099,60 +1149,26 @@ h1{
   };
 
   function chooseResult() {
-    const { need, bill, data, home, style } = state;
+    const { need, bill, data, priority } = state;
     if (data === 'unknown' || bill === 'unknown') return 'usageUnknown';
-    if (need === 'temporary' || home === 'waiting') return 'temporaryWifi';
-    if (need === 'wifi' || home === 'slow' || home === 'none' || home === 'no_construction') return 'wifiNoConstruction';
-    if (style === 'support') return 'supportFamily';
-    if (style === 'rakuten') return 'rakutenPoint';
-    if (need === 'sub' || style === 'sub') return 'subLine';
-    if (bill === 'under2000' && need !== 'data') return 'alreadyCheap';
-    if (data === 'under3') return 'lightCheap';
-    if (data === '4_10') return 'midCheap';
-    if (data === '11_30') return 'largeSimple';
-    if (data === 'over30' || data === 'variable' || need === 'data') return 'variableHeavy';
-    return 'midCheap';
-  }
-
-  function replaceList(list, rows, className) {
-    list.textContent = '';
-    rows.forEach((row) => {
-      const li = document.createElement('li');
-      if (className) li.className = className;
-      if (Array.isArray(row)) {
-        const strong = document.createElement('strong');
-        strong.textContent = row[0];
-        const span = document.createElement('span');
-        span.textContent = row[1];
-        li.append(strong, span);
-      } else {
-        li.textContent = row;
-      }
-      list.appendChild(li);
-    });
-  }
-
-  function renderActions(container, actions) {
-    container.textContent = '';
-    actions.forEach(([text, href, variant]) => {
-      const a = document.createElement('a');
-      a.className = `kozeni-line-quiz__button kozeni-line-quiz__button--${variant}`;
-      a.textContent = text;
-      a.href = href;
-      if (/^https?:\/\//.test(href)) {
-        a.target = '_blank';
-        a.rel = 'noopener noreferrer';
-      }
-      container.appendChild(a);
-    });
+    if (need === 'temporary') return 'temporaryWifi';
+    if (need === 'wifi' || priority === 'home') return 'homeWifi';
+    if (need === 'subline' || priority === 'esim') return 'subline';
+    if (priority === 'store') return 'storeSupport';
+    if (bill === 'under2000' && data === 'under3') return 'alreadyLean';
+    if (data === 'under3') return 'lightData';
+    if (data === '4-10') return 'midData';
+    if (data === '11-30') return 'thirtyData';
+    if (data === 'over30' || priority === 'campaign') return 'heavyData';
+    return 'midData';
   }
 
   function renderDots() {
     els.dots.textContent = '';
     questions.forEach((_, index) => {
-      const dot = document.createElement('li');
-      dot.dataset.active = String(index === step);
-      els.dots.appendChild(dot);
+      const li = document.createElement('li');
+      li.dataset.active = String(index === step);
+      els.dots.appendChild(li);
     });
   }
 
@@ -1167,24 +1183,25 @@ h1{
 
     question.options.forEach((option) => {
       const button = document.createElement('button');
-      const label = document.createElement('span');
-      const micro = document.createElement('span');
       button.type = 'button';
       button.className = 'kozeni-line-quiz__option';
-      button.dataset.value = option.value;
       button.setAttribute('aria-pressed', String(state[question.key] === option.value));
+      button.dataset.value = option.value;
+
+      const text = document.createElement('span');
+      const label = document.createElement('span');
+      const micro = document.createElement('span');
       label.className = 'kozeni-line-quiz__option-label';
-      label.textContent = option.label;
       micro.className = 'kozeni-line-quiz__option-micro';
+      label.textContent = option.label;
       micro.textContent = option.micro;
-      const wrap = document.createElement('span');
-      wrap.append(label, micro);
-      button.appendChild(wrap);
+      text.append(label, micro);
+      button.appendChild(text);
       button.addEventListener('click', () => {
         state[question.key] = option.value;
-        resultVisible = false;
-        els.result.hidden = true;
-        renderQuestion();
+        els.options.querySelectorAll('.kozeni-line-quiz__option').forEach((node) => node.setAttribute('aria-pressed', 'false'));
+        button.setAttribute('aria-pressed', 'true');
+        els.next.disabled = false;
       });
       els.options.appendChild(button);
     });
@@ -1192,54 +1209,81 @@ h1{
     els.back.disabled = step === 0;
     els.next.disabled = !state[question.key];
     els.next.textContent = step === questions.length - 1 ? '診断結果を見る' : '次へ';
+    els.result.hidden = true;
     renderDots();
   }
 
+  function addListItems(target, items, render) {
+    target.textContent = '';
+    items.forEach((item) => {
+      const li = document.createElement('li');
+      render(li, item);
+      target.appendChild(li);
+    });
+  }
+
   function renderResult() {
-    const result = results[chooseResult()];
+    const result = results[chooseResult()] || results.midData;
     els.kind.textContent = result.kind;
     els.saving.textContent = result.saving;
     els.resultTitle.textContent = result.title;
     els.verdict.textContent = result.verdict;
-    replaceList(els.candidates, result.candidates, 'kozeni-line-quiz__candidate');
-    replaceList(els.points, result.points);
-    renderActions(els.actions, result.actions);
+
+    addListItems(els.candidates, result.candidates, (li, item) => {
+      const strong = document.createElement('strong');
+      const span = document.createElement('span');
+      strong.textContent = item.name;
+      span.textContent = item.note;
+      li.append(strong, span);
+    });
+
+    addListItems(els.points, result.points, (li, item) => {
+      li.textContent = item;
+    });
+
+    els.actions.textContent = '';
+    result.actions.forEach((action, index) => {
+      const a = document.createElement('a');
+      a.className = `kozeni-line-quiz__button ${index === 0 ? 'kozeni-line-quiz__button--primary' : 'kozeni-line-quiz__button--ghost'}`;
+      a.href = action.url;
+      a.textContent = action.label;
+      if (action.external) {
+        a.target = '_blank';
+        a.rel = 'noopener sponsored';
+      }
+      els.actions.appendChild(a);
+    });
+
+    els.result.hidden = false;
+    els.result.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   }
 
   els.back.addEventListener('click', () => {
     if (step > 0) {
       step -= 1;
-      resultVisible = false;
-      els.result.hidden = true;
       renderQuestion();
     }
   });
 
   els.next.addEventListener('click', () => {
-    const question = questions[step];
-    if (!state[question.key]) return;
+    if (!state[questions[step].key]) return;
     if (step < questions.length - 1) {
       step += 1;
       renderQuestion();
       return;
     }
     renderResult();
-    resultVisible = true;
-    els.result.hidden = false;
-    els.result.scrollIntoView({ behavior: 'smooth', block: 'start' });
   });
 
   els.reset.addEventListener('click', () => {
-    Object.keys(state).forEach((key) => { state[key] = null; });
+    questions.forEach((question) => { state[question.key] = ''; });
     step = 0;
-    resultVisible = false;
-    els.result.hidden = true;
     renderQuestion();
   });
 
   renderQuestion();
 })();
 </script>
-<!-- kozeni-line-diagnosis-js-v38-3:end -->
+<!-- kozeni-line-diagnosis-js-v39-2:end -->
 </body>
 </html>
