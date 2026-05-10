@@ -20,6 +20,17 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png?v=xicon1">
   <link rel="manifest" href="/site.webmanifest?v=xicon1">
 <style>
+
+/* kozeni v44.1 point-site top route */
+.kozeni-point-route{max-width:860px;margin:0 auto;border:1px solid rgba(34,140,98,.13);border-radius:26px;background:rgba(255,255,255,.94);padding:18px;box-shadow:0 16px 36px rgba(34,40,49,.045)}
+.kozeni-point-route h2{margin:0 0 6px;font-size:clamp(1.22rem,2vw,1.58rem);line-height:1.34;letter-spacing:-.035em}
+.kozeni-point-route p{margin:.45rem 0 0;color:rgba(34,40,49,.64);line-height:1.78}
+.kozeni-point-route-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:14px}
+.kozeni-point-route-cta{display:flex;align-items:center;justify-content:center;min-height:46px;padding:.82rem 1rem;border-radius:999px;text-decoration:none;font-weight:850;text-align:center}
+.kozeni-point-route-cta.is-new{background:var(--ia-green,var(--deep,#228C62));color:#fff;box-shadow:0 14px 30px rgba(34,140,98,.18)}
+.kozeni-point-route-cta.is-registered{background:var(--ia-pale,var(--pale,#E9F5EF));color:var(--ia-green,var(--deep,#228C62));border:1px solid rgba(34,140,98,.16)}
+@media(max-width:720px){.kozeni-point-route-actions{grid-template-columns:1fr}}
+
 </style>
 <link rel="stylesheet" href="/assets/kozeni-nav.v1.css?v=nav2"><link rel="stylesheet" href="/assets/kozeni-return.v1.css?v=return3">
 </head>
@@ -82,10 +93,24 @@
         <p class="lead">紹介URLの記録、過去登録なし、60日以内の成立ルールが重要。</p>
       </section>
 
-      <section class="section quiz-first">
-        <article class="info-card quiz-card" data-kozeni-quiz data-register-url="https://www.pointtown.com/registration?intrid=fuFGNj2vixnyk" data-register-name="ポイントタウン">
+      <!-- kozeni v44.1 point-site top route -->
+  <section class="section kozeni-point-route-section" aria-label="ポイントタウンの登録状況選択">
+    <div class="container">
+      <div class="kozeni-point-route">
+        <h2>新規登録か、登録済みか。</h2>
+        <p>はじめて登録する人は条件チェックへ。すでに登録済みなら、登録後に狙う案件ページへ進みます。</p>
+        <div class="kozeni-point-route-actions">
+          <a class="kozeni-point-route-cta is-new" href="#point-register-check">ポイントタウンを新規登録する前に確認</a>
+          <a class="kozeni-point-route-cta is-registered" href="/point-site/pointtown/earn/">ポイントタウン登録済みの人向け</a>
+        </div>
+      </div>
+    </div>
+  </section>
+<!-- /kozeni v44.1 point-site top route -->
+  <section id="point-register-check" class="section quiz-first">
+        <article class="info-card quiz-card" data-kozeni-quiz data-register-url="https://www.pointtown.com/registration?intrid=fuFGNj2vixnyk" data-register-name="ポイントタウン" data-earn-url="/point-site/pointtown/earn/" data-earn-name="ポイントタウン登録済みの人向け">
           <span class="card-kicker">条件チェック</span>
-          <h2>まず、登録済みか確認。</h2>
+          <h2>登録状況で分岐します。</h2>
           <p class="card-copy">登録済みなら登録済み向けへ。未登録なら、続けて条件を確認します。</p>
           <div class="quiz-list">
               <div class="quiz-question" data-quiz-question>
@@ -117,38 +142,8 @@
         </article>
       </section>
 
-      <section class="section">
-        <div class="two-grid">
-          <article class="detail-panel">
-            <span class="card-kicker">これから登録する</span>
-            <h2>新規登録する。</h2>
-            <p class="card-copy">登録方法の細かい手順は、遷移先の公式画面に任せます。ここでは対象条件だけ確認します。</p>
-            <div class="callout">
-              <h3>ポイントタウンに登録する</h3>
-              <p>PR / 紹介リンクを含みます。条件は変わるため、最後は登録先の公式画面で確認してください。</p>
-              <a href="https://www.pointtown.com/registration?intrid=fuFGNj2vixnyk" target="_blank" rel="sponsored noopener noreferrer">新規登録する</a>
-            </div>
-          </article>
-
-          <article class="detail-panel">
-            <span class="card-kicker">登録済み</span>
-            <h2>ポイントを貯める。</h2>
-            <p class="card-copy">登録後に見るページです。最初に狙いやすい使い方だけ、シンプルに整理します。</p>
-            <div class="callout">
-              <h3>登録済みの人向け</h3>
-              <p>登録後の最初の貯め方だけを案内します。</p>
-              <a href="/point-site/pointtown/earn/">ポイントの貯め方を見る</a>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <!-- seo-internal-links-v1:start -->
-      <section class="seo-related" aria-labelledby="seo-related-title">
-        <h2 id="seo-related-title">関連チェック</h2>
-        <p>登録前と登録後を分けて確認できます。迷ったら一覧へ戻って比較してください。</p>
-        <div class="seo-related-links"><a href="/point-site/pointtown/earn/">ポイントタウン登録後の狙い目</a><a href="/point-site/">ポイ活一覧</a><a href="/point-site/powl/">Powlも見る</a><a href="/point-site/chobirich/">ちょびリッチも見る</a></div>
-      </section>
+      
+<!-- seo-internal-links-v1:start -->
 <!-- seo-internal-links-v1:end -->
       <footer class="site-footer">
         <p>スマホ小銭研究所</p>
@@ -165,160 +160,54 @@
 <nav class="kozeni-fixed-return" aria-label="一覧へ戻る">
   <a href="/point-site/">← 一覧へ戻る</a>
 </nav>
-<!-- kozeni v44.0.1 point-site quiz route override -->
+
+
+<!-- kozeni v44.1 point-site quiz result links -->
 <script>
 (function(){
-  function closest(el, selector){
-    return el && el.closest ? el.closest(selector) : null;
-  }
-
-  function getQuestions(quiz){
-    return Array.from(quiz.querySelectorAll('[data-quiz-question]'));
-  }
-
-  function getResult(quiz){
-    return quiz.querySelector('[data-quiz-result]');
-  }
-
-  function getAnswers(quiz){
-    return getQuestions(quiz).map(function(q){
-      var selected = q.querySelector('[data-quiz-answer].is-selected');
-      return selected ? selected.getAttribute('data-quiz-answer') : null;
-    });
-  }
-
-  function setResult(result, className, text){
-    if (!result) return;
-    result.className = className;
-    result.textContent = text;
-  }
-
-  function scrollToElement(el){
-    if (el && el.scrollIntoView) {
-      window.setTimeout(function(){
-        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }, 220);
-    }
-  }
-
-  function findRegisterLink(quiz){
-    var url = quiz.getAttribute('data-register-url');
-    if (!url) return null;
-
-    var links = Array.from(document.querySelectorAll('a[href]'));
-    var outsideQuiz = links.filter(function(link){
-      return link.getAttribute('href') === url && !quiz.contains(link);
-    });
-
-    return outsideQuiz[0] || links.find(function(link){
-      return link.getAttribute('href') === url;
-    }) || null;
-  }
-
-  function findEarnLink(){
-    var links = Array.from(document.querySelectorAll('a[href]'));
-    return links.find(function(link){
-      var href = link.getAttribute('href') || '';
-      return href.indexOf('/earn/') !== -1;
-    }) || null;
-  }
-
-  function showRegistered(result){
-    setResult(result, 'quiz-result is-ok', '登録済みなら、新規登録ではなく下の「登録済みの人向け」へ進みます。');
-    scrollToElement(findEarnLink());
-  }
-
-  function showContinue(result){
-    setResult(result, 'quiz-result', '未登録なら、残りの条件も選んでから結果を確認してください。');
-  }
-
-  function showNg(result){
-    setResult(result, 'quiz-result is-ng', '不安な項目があります。先に条件・対象外・付与条件を公式画面で確認してください。');
-  }
-
-  function showOk(quiz, result){
-    var message = quiz.getAttribute('data-ok-message') || '最低確認はOKです。最後は公式画面で条件を確認してください。';
-    setResult(result, 'quiz-result is-ok', message);
-    scrollToElement(findRegisterLink(quiz));
-  }
-
-  function init(){
-    document.querySelectorAll('[data-kozeni-quiz]').forEach(function(quiz){
-      var result = getResult(quiz);
-      setResult(result, 'quiz-result', 'まず登録済みか答えてから、結果を確認してください。');
-    });
-  }
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
-  } else {
-    init();
-  }
-
-  document.addEventListener('click', function(event){
-    var answer = closest(event.target, '[data-quiz-answer]');
-    var submit = closest(event.target, '[data-quiz-submit]');
-    var quizTarget = answer || submit;
-
-    if (!quizTarget) return;
-
-    var quiz = closest(quizTarget, '[data-kozeni-quiz]');
-    if (!quiz) return;
-
-    event.preventDefault();
-    event.stopPropagation();
-    if (event.stopImmediatePropagation) event.stopImmediatePropagation();
-
-    var result = getResult(quiz);
-    var questions = getQuestions(quiz);
-
-    if (answer) {
-      var question = closest(answer, '[data-quiz-question]');
-      if (!question) return;
-
-      question.querySelectorAll('[data-quiz-answer]').forEach(function(other){
-        other.classList.remove('is-selected');
-      });
-      answer.classList.add('is-selected');
-
-      if (questions.length && question === questions[0]) {
-        if (answer.getAttribute('data-quiz-answer') === 'yes') {
-          showRegistered(result);
-        } else {
-          showContinue(result);
-          if (questions[1]) scrollToElement(questions[1]);
-        }
+  function c(e,s){return e&&e.closest?e.closest(s):null}
+  function qs(q){return Array.from(q.querySelectorAll('[data-quiz-question]'))}
+  function r(q){return q.querySelector('[data-quiz-result]')}
+  function ans(q){return qs(q).map(function(x){var s=x.querySelector('[data-quiz-answer].is-selected');return s?s.getAttribute('data-quiz-answer'):null})}
+  function esc(v){return String(v||'').replace(/[&<>"']/g,function(ch){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[ch]})}
+  function text(el,cn,msg){if(!el)return;el.className=cn;el.textContent=msg}
+  function link(el,cn,msg,href,label,external,rel){if(!el)return;el.className=cn;el.innerHTML=esc(msg)+'<br><a href="'+esc(href)+'"'+(external?' target="_blank"':'')+(rel?' rel="'+esc(rel)+'"':'')+'>'+esc(label)+'</a>'}
+  function regUrl(q){return q.getAttribute('data-register-url')||'#'}
+  function regName(q){return q.getAttribute('data-register-name')||'公式ページ'}
+  function regRel(q){return q.getAttribute('data-link-rel')||'sponsored noopener noreferrer'}
+  function earnUrl(q){return q.getAttribute('data-earn-url')||'./earn/'}
+  function earnName(q){return q.getAttribute('data-earn-name')||'登録済みの人向け'}
+  function showRegistered(q,res){link(res,'quiz-result is-ok','登録済みなら、新規登録ではなく登録済み向けページへ進みます。',earnUrl(q),earnName(q)+'を見る',false,'')}
+  function showContinue(res){text(res,'quiz-result','未登録なら、残りの条件も選んでから結果を確認してください。')}
+  function showNg(res){text(res,'quiz-result is-ng','不安な項目があります。先に条件・対象外・付与条件を確認してください。')}
+  function showOk(q,res){var msg=q.getAttribute('data-ok-message')||'最低確認はOKです。最後は公式画面で条件を確認してください。';link(res,'quiz-result is-ok',msg,regUrl(q),regName(q)+'に新規登録する',true,regRel(q))}
+  function init(){document.querySelectorAll('[data-kozeni-quiz]').forEach(function(q){text(r(q),'quiz-result','まず登録済みか答えてから、結果を確認してください。')})}
+  if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',init)}else{init()}
+  document.addEventListener('click',function(e){
+    var a=c(e.target,'[data-quiz-answer]'), sub=c(e.target,'[data-quiz-submit]'), t=a||sub;
+    if(!t)return;
+    var q=c(t,'[data-kozeni-quiz]'); if(!q)return;
+    e.preventDefault(); e.stopPropagation(); if(e.stopImmediatePropagation)e.stopImmediatePropagation();
+    var res=r(q), qq=qs(q);
+    if(a){
+      var qu=c(a,'[data-quiz-question]'); if(!qu)return;
+      qu.querySelectorAll('[data-quiz-answer]').forEach(function(o){o.classList.remove('is-selected')});
+      a.classList.add('is-selected');
+      if(qq.length&&qu===qq[0]){
+        if(a.getAttribute('data-quiz-answer')==='yes'){showRegistered(q,res)}
+        else{showContinue(res); if(qq[1]&&qq[1].scrollIntoView){setTimeout(function(){qq[1].scrollIntoView({behavior:'smooth',block:'center'})},180)}}
       }
       return;
     }
-
-    var answers = getAnswers(quiz);
-
-    if (!answers[0]) {
-      setResult(result, 'quiz-result', 'まず登録済みか答えてください。');
-      return;
-    }
-
-    if (answers[0] === 'yes') {
-      showRegistered(result);
-      return;
-    }
-
-    var remaining = answers.slice(1);
-
-    if (remaining.some(function(answer){ return !answer; })) {
-      showContinue(result);
-      return;
-    }
-
-    if (remaining.every(function(answer){ return answer === 'yes'; })) {
-      showOk(quiz, result);
-    } else {
-      showNg(result);
-    }
-  }, true);
+    var aa=ans(q);
+    if(!aa[0]){text(res,'quiz-result','まず登録済みか答えてください。');return}
+    if(aa[0]==='yes'){showRegistered(q,res);return}
+    var rest=aa.slice(1);
+    if(rest.some(function(x){return !x})){showContinue(res);return}
+    if(rest.every(function(x){return x==='yes'})){showOk(q,res)}else{showNg(res)}
+  },true);
 })();
 </script>
-<!-- /kozeni v44.0.1 point-site quiz route override -->
+<!-- /kozeni v44.1 point-site quiz result links -->
 </body>
 </html>

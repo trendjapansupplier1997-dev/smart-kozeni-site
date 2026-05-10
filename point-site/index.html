@@ -252,6 +252,111 @@ h1{
 /* kozeni-seo-mini-cards-v39-4:end */
 
 
+
+/* point-site top entry split */
+.point-entry-switch{
+  padding:28px 0 10px;
+}
+.point-entry-panel{
+  border:1px solid rgba(16,185,129,.20);
+  background:
+    radial-gradient(circle at top left, rgba(16,185,129,.13), transparent 34%),
+    linear-gradient(135deg, rgba(255,255,255,.96), rgba(240,253,244,.92));
+  border-radius:28px;
+  padding:24px;
+  box-shadow:0 18px 44px rgba(15,23,42,.08);
+}
+.point-entry-kicker{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  font-size:.82rem;
+  font-weight:800;
+  color:#047857;
+  background:rgba(16,185,129,.10);
+  border:1px solid rgba(16,185,129,.18);
+  border-radius:999px;
+  padding:7px 11px;
+  margin:0 0 12px;
+}
+.point-entry-title{
+  margin:0;
+  font-size:clamp(1.5rem,3vw,2.25rem);
+  line-height:1.25;
+  letter-spacing:-.04em;
+  color:#0f172a;
+}
+.point-entry-lead{
+  margin:10px 0 0;
+  color:#475569;
+  line-height:1.9;
+  max-width:720px;
+}
+.point-entry-actions{
+  display:grid;
+  grid-template-columns:1.08fr .92fr;
+  gap:16px;
+  margin-top:20px;
+}
+.point-entry-card{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  min-height:190px;
+  padding:22px;
+  border-radius:24px;
+  text-decoration:none;
+  color:#0f172a;
+  background:#fff;
+  border:1px solid rgba(15,23,42,.08);
+  box-shadow:0 12px 30px rgba(15,23,42,.07);
+  transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+.point-entry-card:hover{
+  transform:translateY(-2px);
+  box-shadow:0 18px 40px rgba(15,23,42,.10);
+  border-color:rgba(16,185,129,.28);
+}
+.point-entry-card.is-primary{
+  background:linear-gradient(135deg,#ecfdf5,#ffffff);
+  border-color:rgba(16,185,129,.28);
+}
+.point-entry-card__tag{
+  width:max-content;
+  font-size:.78rem;
+  font-weight:800;
+  color:#047857;
+  background:rgba(16,185,129,.12);
+  border-radius:999px;
+  padding:6px 10px;
+}
+.point-entry-card__title{
+  margin:0;
+  font-size:1.35rem;
+  letter-spacing:-.03em;
+}
+.point-entry-card__text{
+  margin:0;
+  color:#475569;
+  line-height:1.75;
+}
+.point-entry-card__cta{
+  margin-top:auto;
+  font-weight:900;
+  color:#047857;
+}
+.point-entry-note{
+  margin:14px 0 0;
+  color:#64748b;
+  font-size:.9rem;
+  line-height:1.7;
+}
+@media (max-width: 760px){
+  .point-entry-panel{padding:18px;border-radius:24px}
+  .point-entry-actions{grid-template-columns:1fr}
+  .point-entry-card{min-height:auto;padding:18px}
+}
+
 </style>
   <link rel="stylesheet" href="/assets/kozeni-brand.v1.css?v=41.13">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/icon-32.png?v=xicon1">
@@ -278,11 +383,40 @@ h1{
   <span aria-hidden="true">›</span>
   <span aria-current="page">ポイ活</span></nav>
 <main>
-<h1 id="kozeni-point-list-title-v39" class="kozeni-sr-title">ポイ活アプリ・ポイントサイト一覧</h1>
+
+<section class="point-entry-switch" aria-label="ポイ活の入口">
+  <div class="wrap">
+    <div class="point-entry-panel">
+      <p class="point-entry-kicker">最初に分ける</p>
+      <h1 class="point-entry-title">ポイ活は「新規登録できるか」で、見る場所が変わります。</h1>
+      <p class="point-entry-lead">まだ登録していない人は、紹介特典や初回条件を先に確認。すでに登録済みの人は、案件の経由忘れ防止や高単価案件チェックへ進むのが近道です。</p>
+
+      <div class="point-entry-actions">
+        <a class="point-entry-card is-primary" href="/point-site/beginner/">
+          <span class="point-entry-card__tag">はじめて・未登録向け</span>
+          <h2 class="point-entry-card__title">新規登録チェックへ進む</h2>
+          <p class="point-entry-card__text">モッピー、ハピタス、ポイントインカムなどを、登録前の条件・向き不向きで整理します。</p>
+          <span class="point-entry-card__cta">紹介特典を取りに行く →</span>
+        </a>
+
+        <a class="point-entry-card" href="#registered-point-use">
+          <span class="point-entry-card__tag">登録済み向け</span>
+          <h2 class="point-entry-card__title">すでに登録済みの人はこちら</h2>
+          <p class="point-entry-card__text">買い物、口座開設、クレカ、スマホ回線など、案件前にどこを経由するか確認します。</p>
+          <span class="point-entry-card__cta">案件候補を見る →</span>
+        </a>
+      </div>
+
+      <p class="point-entry-note">※ 条件・付与額・対象外条件は変わるため、最後は各サービスの公式画面で確認してください。</p>
+    </div>
+  </div>
+</section>
+
+<h2 id="kozeni-point-list-title-v39" class="kozeni-sr-title">ポイ活アプリ・ポイントサイト一覧</h2>
 
 
 
-<section class="section">
+<section class="section" id="registered-point-use" aria-labelledby="kozeni-point-list-title-v39">
   <div class="container grid three">
     <a class="card" href="/tiktok-lite/"><span class="tag">キャンペーン</span><h2>TikTok Lite <span class="kozeni-amount-badge">最大5,500円相当</span></h2><p>招待・タスク系。対象外条件と反映タイミングを確認。</p></a><a class="card" href="/point-site/moppy/"><span class="tag">定番</span><h2>モッピー <span class="kozeni-amount-badge">最大5,000円相当</span></h2><p>広告案件・高額案件を見る前の候補。</p></a><a class="card" href="/point-site/hapitas/"><span class="tag">買い物前</span><h2>ハピタス <span class="kozeni-amount-badge">最大2,300円相当</span></h2><p>通販・旅行・申込前に経由確認。</p></a><a class="card" href="/point-site/trima/"><span class="tag">移動</span><h2>トリマ <span class="kozeni-amount-badge">最大50円相当</span></h2><p>歩数・移動で拾う。電話番号認証まで確認。</p></a><a class="card" href="/point-site/kurashiru-reward/"><span class="tag">生活</span><h2>クラシルリワード <span class="kozeni-amount-badge">最大500円相当</span></h2><p>レシート・チラシ・移動など生活導線。</p></a><a class="card" href="/point-site/powl/"><span class="tag">スキマ</span><h2>Powl <span class="kozeni-amount-badge">最大130円相当</span></h2><p>アンケート・歩数・スキマ時間向き。</p></a><a class="card" href="/point-site/point-income/"><span class="tag">追加</span><h2>ポイントインカム <span class="kozeni-amount-badge">最大2,220円相当</span></h2><p>案件比較用に追加する候補。</p></a><a class="card" href="/point-site/pointtown/"><span class="tag">追加</span><h2>ポイントタウン <span class="kozeni-amount-badge">最大2,000円相当</span></h2><p>電話番号認証や獲得条件を確認。</p></a><a class="card" href="/point-site/chobirich/"><span class="tag">控え</span><h2>ちょびリッチ <span class="kozeni-amount-badge">最大2,500円相当</span></h2><p>複数サイトで案件を比べる候補。</p></a>
   </div>

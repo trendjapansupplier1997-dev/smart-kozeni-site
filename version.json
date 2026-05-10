@@ -1,1 +1,1 @@
-{"version": "v44.0.2-point-site-first-question-fix", "updated": "2026-05-10", "note": "Fix the first question text on point-site detail quizzes so the v44 registered-user routing matches the visible yes/no semantics."}
+{"version": "v44.1-point-site-top-route", "updated": "2026-05-10", "note": "Move point-site detail CTAs to the top: new users go to the checklist, registered users go to earn pages, and quiz results show the final registration or registered-user link."}
