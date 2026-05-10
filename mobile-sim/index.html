@@ -198,8 +198,6 @@ h1{
 }
 
 
-
-
 /* kozeni-line-diagnosis-v38-3:start */
 .kozeni-line-quiz {
   --quiz-green: #228C62;
@@ -707,6 +705,89 @@ h1{
 .kozeni-wifi-mini p { margin: 0; font-size: .82rem; line-height: 1.72; }
 /* kozeni-wifi-mini-v39-4:end */
 
+
+/* kozeni-mobile-link-cards-v39-5:start */
+.kozeni-quiz-jump {
+  max-width: 1080px;
+  margin: .9rem auto 1.05rem;
+  padding: 0 24px;
+}
+.kozeni-quiz-jump a {
+  display: inline-grid;
+  gap: .18rem;
+  max-width: 360px;
+  padding: .78rem .92rem;
+  border-radius: 999px;
+  border: 1px solid rgba(34, 140, 98, .16);
+  background: rgba(233, 245, 239, .78);
+  color: #116544;
+  text-decoration: none;
+  box-shadow: 0 10px 24px rgba(34, 140, 98, .07);
+}
+.kozeni-quiz-jump span {
+  font-size: .72rem;
+  font-weight: 950;
+  letter-spacing: .06em;
+}
+.kozeni-quiz-jump strong {
+  font-size: .9rem;
+  line-height: 1.25;
+}
+.kozeni-mobile-help-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: .72rem;
+  margin: .9rem 0 1.4rem;
+}
+.kozeni-mobile-help-card {
+  display: grid;
+  gap: .22rem;
+  padding: .9rem .98rem;
+  border-radius: 1.08rem;
+  border: 1px solid rgba(34, 140, 98, .13);
+  background: linear-gradient(135deg, rgba(233, 245, 239, .78), rgba(255, 255, 255, .96));
+  color: #222831;
+  text-decoration: none;
+  box-shadow: 0 12px 28px rgba(34, 40, 49, .045);
+}
+.kozeni-mobile-help-card:hover {
+  transform: translateY(-1px);
+  border-color: rgba(34, 140, 98, .28);
+  box-shadow: 0 16px 32px rgba(34, 140, 98, .09);
+}
+.kozeni-mobile-help-card__label {
+  color: #228C62;
+  font-size: .72rem;
+  font-weight: 950;
+  letter-spacing: .08em;
+}
+.kozeni-mobile-help-card__title {
+  color: #222831;
+  font-size: .98rem;
+  font-weight: 950;
+  line-height: 1.45;
+}
+.kozeni-mobile-help-card__text {
+  color: rgba(34, 40, 49, .62);
+  font-size: .8rem;
+  font-weight: 750;
+  line-height: 1.55;
+}
+@media(max-width: 680px) {
+  .kozeni-quiz-jump,
+  .kozeni-mobile-help-grid {
+    padding-inline: 0;
+  }
+  .kozeni-quiz-jump a,
+  .kozeni-mobile-help-grid {
+    width: 100%;
+  }
+  .kozeni-mobile-help-grid {
+    grid-template-columns: 1fr;
+  }
+}
+/* kozeni-mobile-link-cards-v39-5:end */
+
 </style>
   <link rel="stylesheet" href="/assets/kozeni-brand.v1.css?v=brand1">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/icon-32.png?v=xicon1">
@@ -746,8 +827,14 @@ h1{
       </section>
 
 
-
-
+<!-- kozeni-mobile-quiz-jump-v39-5:start -->
+<div class="kozeni-quiz-jump" aria-label="スマホ・回線診断への案内">
+  <a href="#kozeni-mobile-line-quiz">
+    <span>まずは診断したい方へ</span>
+    <strong>4問で見るページを絞る</strong>
+  </a>
+</div>
+<!-- kozeni-mobile-quiz-jump-v39-5:end -->
 
 <!-- brand-list-hero-v1:end -->
 <!-- kozeni-mobile-network-list-v1:start -->
@@ -829,7 +916,7 @@ h1{
 </div>
 <!-- kozeni-mobile-network-list-v1:end -->
 <!-- kozeni-line-diagnosis-v38-3:start -->
-<section class="kozeni-line-quiz" aria-labelledby="kozeni-line-quiz-title" data-step="0">
+<section id="kozeni-mobile-line-quiz" class="kozeni-line-quiz" aria-labelledby="kozeni-line-quiz-title" data-step="0">
   <div class="kozeni-line-quiz__head">
     <p class="kozeni-line-quiz__eyebrow">30秒クイズ診断</p>
     <h2 id="kozeni-line-quiz-title">スマホ・回線、まずどこを見る？</h2>
@@ -885,12 +972,22 @@ h1{
   </noscript>
 </section>
 <!-- kozeni-line-diagnosis-v38-3:end -->
-<!-- kozeni-mobile-data-usage-link-v39-1:start -->
-<section class="kozeni-seo-mini" aria-label="スマホ代とデータ使用量の確認">
-  <h2>何GB使っているか分からない人へ</h2>
-  <p>料金表を見る前に、まず月間データ使用量を確認。<a href="/mobile-sim/data-usage/">スマホ代を下げる前の何GBチェック</a>にまとめています。</p>
+
+<!-- kozeni-mobile-helper-links-v39-5:start -->
+<section class="kozeni-mobile-help-grid" aria-label="スマホ・回線で迷った時に見るページ">
+  <a class="kozeni-mobile-help-card" href="/mobile-sim/data-usage/">
+    <span class="kozeni-mobile-help-card__label">GBが分からない</span>
+    <strong class="kozeni-mobile-help-card__title">スマホ代を下げる前の何GBチェック</strong>
+    <span class="kozeni-mobile-help-card__text">料金表を見る前に、月間データ使用量を確認。</span>
+  </a>
+  <a class="kozeni-mobile-help-card" href="/mobile-sim/no-construction-wifi/">
+    <span class="kozeni-mobile-help-card__label">家のネットを急ぎたい</span>
+    <strong class="kozeni-mobile-help-card__title">工事不要Wi-Fiの確認ポイント</strong>
+    <span class="kozeni-mobile-help-card__text">引っ越し・開通待ち・工事なしの順番を整理。</span>
+  </a>
 </section>
-<!-- kozeni-mobile-data-usage-link-v39-1:end -->
+<!-- kozeni-mobile-helper-links-v39-5:end -->
+
 
 <!-- kozeni-no-construction-wifi-link-v39-4:start -->
 <section class="kozeni-wifi-mini" aria-label="工事不要Wi-Fiの確認">
@@ -898,7 +995,6 @@ h1{
   <p>引っ越し・開通待ち・工事なしで迷う場合は、<a href="/mobile-sim/no-construction-wifi/">工事不要Wi-Fiの確認ポイント</a>を先に見てください。</p>
 </section>
 <!-- kozeni-no-construction-wifi-link-v39-4:end -->
-
 
 
 </main>
@@ -923,7 +1019,6 @@ h1{
 <nav class="kozeni-fixed-return" aria-label="ホームへ戻る">
   <a href="/">← ホームへ戻る</a>
 </nav>
-
 
 
 <!-- kozeni-line-diagnosis-js-v39-2:start -->
