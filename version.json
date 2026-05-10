@@ -1,1 +1,1 @@
-{"version": "v43.1.1-rakuten-card-cta-dedup", "updated": "2026-05-10", "note": "Deduplicate the Rakuten Card CTA by making the quiz result jump to the single official confirmation panel and keeping PR disclosure in one place."}
+{"version": "v43.1.2-rakuten-quiz-autoscroll", "updated": "2026-05-10", "note": "Make the Rakuten Card quiz OK result auto-scroll to the single official CTA instead of showing an intermediate CTA link."}

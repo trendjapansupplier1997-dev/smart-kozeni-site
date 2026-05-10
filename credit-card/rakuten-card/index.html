@@ -331,7 +331,7 @@ button.quiz-submit:focus-visible,.quiz-submit:focus-visible{
                 </div>
               </div>
         </div>
-        <button type="button" class="quiz-submit" data-quiz-submit>チェック結果を見る</button>
+        <button type="button" class="quiz-submit" data-quiz-submit>3問の結果を確認</button>
         <div class="quiz-result" data-quiz-result aria-live="polite">
           3つ答えてから、結果を確認してください。
         </div>
@@ -396,7 +396,14 @@ button.quiz-submit:focus-visible,.quiz-submit:focus-visible{
     var message = quiz.getAttribute('data-ok-message') || '最低確認はOKです。最後は公式画面で条件を確認してください。';
 
     result.className = 'quiz-result is-ok';
-    result.innerHTML = message + '<br><a href="#rakuten-card-cta">下の公式確認へ進む</a>';
+    result.textContent = message;
+
+    var cta = document.getElementById('rakuten-card-cta');
+    if (cta && cta.scrollIntoView) {
+      window.setTimeout(function(){
+        cta.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 260);
+    }
   }
 
   document.querySelectorAll('[data-kozeni-quiz]').forEach(function(quiz){
