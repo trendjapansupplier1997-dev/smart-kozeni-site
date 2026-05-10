@@ -880,261 +880,32 @@ h1{
 </style>
 
 
-<style id="kozeni-mobile-v40-2-style">
-  .kozeni-route-priority {
+<style id="kozeni-mobile-v40-5-reframe-style">
+  html { scroll-behavior: smooth; }
+  .kozeni-anchor-offset {
+    position: relative;
+    top: -82px;
+    height: 0;
+    overflow: hidden;
+  }
+  .kozeni-entry-v40-5,
+  .kozeni-home-plans-v40-5,
+  .kozeni-helper-v40-5 {
     width: min(1120px, calc(100% - 32px));
-    margin: 28px auto 34px;
+    margin: 32px auto;
   }
-  .kozeni-route-priority__shell {
-    border: 1px solid rgba(15, 122, 85, .18);
+  .kozeni-entry-v40-5__shell,
+  .kozeni-home-plans-v40-5__shell,
+  .kozeni-helper-v40-5__shell {
+    border: 1px solid rgba(15, 122, 85, .17);
     border-radius: 30px;
-    padding: 22px;
-    background:
-      radial-gradient(circle at 0% 0%, rgba(39, 208, 146, .16), transparent 22rem),
-      linear-gradient(135deg, rgba(232,255,246,.94), rgba(255,255,255,.96));
-    box-shadow: 0 20px 50px rgba(11, 48, 36, .09);
-  }
-  .kozeni-route-priority__head {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 16px;
-    align-items: end;
-    margin-bottom: 16px;
-  }
-  .kozeni-route-priority__label {
-    display: inline-flex;
-    width: fit-content;
-    padding: .28rem .62rem;
-    border-radius: 999px;
-    border: 1px solid rgba(201, 154, 46, .32);
-    background: rgba(201, 154, 46, .10);
-    color: #765508;
-    font-size: .76rem;
-    font-weight: 900;
-    letter-spacing: .04em;
-  }
-  .kozeni-route-priority h2 {
-    margin: 9px 0 0;
-    color: #0f2f25;
-    font-size: clamp(1.45rem, 3.4vw, 2.45rem);
-    letter-spacing: -.055em;
-    line-height: 1.08;
-  }
-  .kozeni-route-priority__lead {
-    margin: 8px 0 0;
-    color: #597067;
-    line-height: 1.8;
-  }
-  .kozeni-route-priority__grid {
-    display: grid;
-    grid-template-columns: 1.12fr .88fr;
-    gap: 14px;
-    align-items: stretch;
-  }
-  .kozeni-route-priority__cards {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 10px;
-  }
-  .kozeni-route-card {
-    display: block;
-    min-height: 132px;
-    padding: 16px;
-    border-radius: 22px;
-    border: 1px solid rgba(15, 61, 46, .12);
-    background: rgba(255,255,255,.78);
-    color: inherit;
-    text-decoration: none;
-    transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
-  }
-  .kozeni-route-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 14px 30px rgba(11, 48, 36, .10);
-    border-color: rgba(15, 122, 85, .28);
-  }
-  .kozeni-route-card strong {
-    display: block;
-    color: #0f2f25;
-    font-size: 1.02rem;
-    letter-spacing: -.025em;
-  }
-  .kozeni-route-card span {
-    display: block;
-    margin-top: 7px;
-    color: #61736c;
-    font-size: .88rem;
-    line-height: 1.62;
-  }
-  .kozeni-route-card small {
-    display: inline-flex;
-    margin-top: 10px;
-    padding: .24rem .52rem;
-    border-radius: 999px;
-    background: rgba(15, 122, 85, .08);
-    color: #0f7a55;
-    font-weight: 900;
-    font-size: .72rem;
-  }
-  .kozeni-route-wimax {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: 16px;
-    min-height: 100%;
-    padding: 18px;
-    border-radius: 24px;
-    color: #fff;
-    background:
-      radial-gradient(circle at 92% 10%, rgba(255, 255, 255, .22), transparent 11rem),
-      linear-gradient(135deg, #0f7a55, #0f3d2e);
-    box-shadow: 0 18px 40px rgba(15, 61, 46, .22);
-  }
-  .kozeni-route-wimax__tag {
-    display: inline-flex;
-    width: fit-content;
-    padding: .28rem .58rem;
-    border-radius: 999px;
-    background: rgba(255,255,255,.16);
-    border: 1px solid rgba(255,255,255,.26);
-    font-size: .74rem;
-    font-weight: 900;
-  }
-  .kozeni-route-wimax h3 {
-    margin: 10px 0 8px;
-    font-size: clamp(1.28rem, 2.4vw, 1.85rem);
-    line-height: 1.14;
-    letter-spacing: -.045em;
-  }
-  .kozeni-route-wimax p {
-    margin: 0;
-    color: rgba(255,255,255,.84);
-    line-height: 1.75;
-    font-size: .93rem;
-  }
-  .kozeni-route-wimax__actions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 9px;
-  }
-  .kozeni-route-wimax__btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 42px;
-    padding: .68rem .9rem;
-    border-radius: 999px;
-    text-decoration: none;
-    font-weight: 900;
-    border: 1px solid rgba(255,255,255,.28);
-  }
-  .kozeni-route-wimax__btn--main {
-    background: #fff;
-    color: #0f3d2e;
-  }
-  .kozeni-route-wimax__btn--sub {
-    color: #fff;
-    background: rgba(255,255,255,.10);
-  }
-  .kozeni-route-priority__note {
-    margin: 12px 0 0;
-    color: #708078;
-    font-size: .8rem;
-    line-height: 1.7;
-  }
-  .kozeni-branch-result {
-    margin: 16px 0;
-    padding: 16px;
-    border-radius: 22px;
-    border: 1px solid rgba(15, 122, 85, .18);
-    background: linear-gradient(135deg, rgba(232,255,246,.94), rgba(255,255,255,.96));
-    box-shadow: 0 14px 30px rgba(11, 48, 36, .07);
-  }
-  .kozeni-branch-result__label {
-    display: inline-flex;
-    padding: .24rem .56rem;
-    border-radius: 999px;
-    background: rgba(15, 122, 85, .09);
-    color: #0f7a55;
-    font-size: .74rem;
-    font-weight: 900;
-  }
-  .kozeni-branch-result h3 {
-    margin: 8px 0 6px;
-    color: #0f2f25;
-    font-size: clamp(1.12rem, 2.5vw, 1.45rem);
-    letter-spacing: -.035em;
-  }
-  .kozeni-branch-result p {
-    margin: 0;
-    color: #5f716a;
-    line-height: 1.75;
-  }
-  .kozeni-branch-result__links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-top: 12px;
-  }
-  .kozeni-branch-result__links a {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 40px;
-    padding: .62rem .88rem;
-    border-radius: 999px;
-    text-decoration: none;
-    font-weight: 900;
-    border: 1px solid rgba(15, 61, 46, .14);
-  }
-  .kozeni-branch-result__main {
-    color: #fff;
-    background: linear-gradient(135deg, #12a872, #0f7a55);
-    border-color: transparent !important;
-  }
-  .kozeni-branch-result__sub {
-    color: #0f2f25;
-    background: rgba(255,255,255,.74);
-  }
-  @media (max-width: 860px) {
-    .kozeni-route-priority__head,
-    .kozeni-route-priority__grid {
-      grid-template-columns: 1fr;
-    }
-    .kozeni-route-priority__cards {
-      grid-template-columns: 1fr;
-    }
-  }
-  @media (max-width: 560px) {
-    .kozeni-route-priority { width: min(100% - 22px, 1120px); }
-    .kozeni-route-priority__shell { padding: 16px; border-radius: 24px; }
-    .kozeni-route-card { min-height: auto; }
-    .kozeni-route-wimax__btn,
-    .kozeni-branch-result__links a { width: 100%; }
-  }
-</style>
-
-<style id="kozeni-mobile-v40-4-diagnosis-style">
-  .kozeni-diagnosis-v40-4 {
-    width: min(1120px, calc(100% - 32px));
-    margin: 34px auto;
-  }
-  .kozeni-diagnosis-v40-4__shell {
-    border: 1px solid rgba(15, 122, 85, .18);
-    border-radius: 30px;
-    padding: 22px;
-    background:
-      radial-gradient(circle at 100% 0%, rgba(201, 154, 46, .12), transparent 24rem),
-      linear-gradient(135deg, rgba(255,255,255,.98), rgba(232,255,246,.88));
+    background: linear-gradient(135deg, rgba(255,255,255,.98), rgba(232,255,246,.88));
     box-shadow: 0 20px 48px rgba(11, 48, 36, .08);
+    padding: 22px;
   }
-  .kozeni-diagnosis-v40-4__head {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 16px;
-    align-items: end;
-    margin-bottom: 16px;
-  }
-  .kozeni-diagnosis-v40-4__label {
+  .kozeni-entry-v40-5__label,
+  .kozeni-home-plans-v40-5__label,
+  .kozeni-helper-v40-5__label {
     display: inline-flex;
     width: fit-content;
     padding: .28rem .62rem;
@@ -1145,204 +916,242 @@ h1{
     font-weight: 900;
     letter-spacing: .05em;
   }
-  .kozeni-diagnosis-v40-4 h2 {
+  .kozeni-entry-v40-5 h2,
+  .kozeni-home-plans-v40-5 h2,
+  .kozeni-helper-v40-5 h2 {
     margin: 9px 0 0;
     color: #0f2f25;
-    font-size: clamp(1.5rem, 3.4vw, 2.35rem);
-    line-height: 1.1;
+    font-size: clamp(1.55rem, 3.6vw, 2.55rem);
+    line-height: 1.08;
     letter-spacing: -.055em;
   }
-  .kozeni-diagnosis-v40-4__lead {
+  .kozeni-entry-v40-5__lead,
+  .kozeni-home-plans-v40-5__lead,
+  .kozeni-helper-v40-5__lead {
+    max-width: 760px;
     margin: 8px 0 0;
     color: #5f716a;
     line-height: 1.8;
   }
-  .kozeni-diagnosis-v40-4__meter {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 86px;
-    padding: .45rem .7rem;
-    border-radius: 999px;
-    color: #0f2f25;
-    background: rgba(255,255,255,.76);
-    border: 1px solid rgba(15, 61, 46, .12);
-    font-weight: 900;
-    font-size: .84rem;
-  }
-  .kozeni-diagnosis-v40-4__panel {
-    display: grid;
-    gap: 14px;
-  }
-  .kozeni-diagnosis-v40-4__question {
-    border: 1px solid rgba(15, 61, 46, .12);
-    border-radius: 24px;
-    padding: 18px;
-    background: rgba(255,255,255,.78);
-  }
-  .kozeni-diagnosis-v40-4__question h3 {
-    margin: 0;
-    color: #0f2f25;
-    font-size: clamp(1.18rem, 2.5vw, 1.58rem);
-    letter-spacing: -.035em;
-  }
-  .kozeni-diagnosis-v40-4__hint {
-    margin: 6px 0 0;
-    color: #66786f;
-    line-height: 1.7;
-    font-size: .92rem;
-  }
-  .kozeni-diagnosis-v40-4__options {
+  .kozeni-entry-v40-5__grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 10px;
-    margin-top: 14px;
+    gap: 12px;
+    margin-top: 18px;
   }
-  .kozeni-diagnosis-v40-4__option {
-    appearance: none;
-    border: 1px solid rgba(15, 61, 46, .14);
-    border-radius: 20px;
-    padding: 15px;
-    min-height: 118px;
-    background: rgba(255,255,255,.9);
-    color: #0f2f25;
-    text-align: left;
-    cursor: pointer;
-    transition: transform .16s ease, box-shadow .16s ease, border-color .16s ease;
-    font: inherit;
+  .kozeni-entry-v40-5__card {
+    display: grid;
+    gap: 8px;
+    min-height: 150px;
+    padding: 18px;
+    border-radius: 24px;
+    border: 1px solid rgba(15, 61, 46, .13);
+    background: rgba(255,255,255,.83);
+    color: inherit;
+    text-decoration: none;
+    transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
   }
-  .kozeni-diagnosis-v40-4__option:hover,
-  .kozeni-diagnosis-v40-4__option:focus-visible {
+  .kozeni-entry-v40-5__card:hover,
+  .kozeni-entry-v40-5__card:focus-visible {
     transform: translateY(-2px);
-    box-shadow: 0 14px 28px rgba(11, 48, 36, .09);
     border-color: rgba(15, 122, 85, .3);
+    box-shadow: 0 16px 34px rgba(11, 48, 36, .10);
     outline: none;
   }
-  .kozeni-diagnosis-v40-4__option strong {
-    display: block;
-    font-size: 1rem;
-    letter-spacing: -.02em;
+  .kozeni-entry-v40-5__card strong {
+    color: #0f2f25;
+    font-size: 1.08rem;
+    letter-spacing: -.03em;
   }
-  .kozeni-diagnosis-v40-4__option span {
-    display: block;
-    margin-top: 7px;
-    color: #63766d;
-    line-height: 1.6;
-    font-size: .86rem;
+  .kozeni-entry-v40-5__card span {
+    color: #64766e;
+    line-height: 1.62;
+    font-size: .9rem;
   }
-  .kozeni-diagnosis-v40-4__result {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 16px;
-    align-items: stretch;
-    border-radius: 26px;
-    padding: 20px;
-    background:
-      radial-gradient(circle at 100% 0%, rgba(255,255,255,.18), transparent 14rem),
-      linear-gradient(135deg, #0f7a55, #0f3d2e);
-    color: #fff;
-    box-shadow: 0 20px 44px rgba(15, 61, 46, .20);
-  }
-  .kozeni-diagnosis-v40-4__result-badge {
+  .kozeni-entry-v40-5__card em {
     display: inline-flex;
     width: fit-content;
-    padding: .28rem .6rem;
-    border-radius: 999px;
-    border: 1px solid rgba(255,255,255,.25);
-    background: rgba(255,255,255,.14);
-    font-size: .76rem;
-    font-weight: 900;
-  }
-  .kozeni-diagnosis-v40-4__result h3 {
-    margin: 10px 0 8px;
-    font-size: clamp(1.35rem, 3vw, 2.05rem);
-    line-height: 1.12;
-    letter-spacing: -.05em;
-  }
-  .kozeni-diagnosis-v40-4__result p {
-    margin: 0;
-    color: rgba(255,255,255,.84);
-    line-height: 1.8;
-  }
-  .kozeni-diagnosis-v40-4__result ul {
-    margin: 12px 0 0;
-    padding-left: 1.15rem;
-    color: rgba(255,255,255,.82);
-    line-height: 1.75;
-    font-size: .92rem;
-  }
-  .kozeni-diagnosis-v40-4__actions {
-    display: flex;
-    flex-direction: column;
-    gap: 9px;
-    justify-content: flex-end;
-    min-width: 210px;
-  }
-  .kozeni-diagnosis-v40-4__actions a,
-  .kozeni-diagnosis-v40-4__reset {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 44px;
-    padding: .72rem .95rem;
-    border-radius: 999px;
-    text-decoration: none;
-    font-weight: 900;
-    border: 1px solid rgba(255,255,255,.25);
-    cursor: pointer;
-    font: inherit;
-  }
-  .kozeni-diagnosis-v40-4__main {
-    background: #fff;
-    color: #0f3d2e;
-  }
-  .kozeni-diagnosis-v40-4__sub,
-  .kozeni-diagnosis-v40-4__reset {
-    background: rgba(255,255,255,.10);
-    color: #fff;
-  }
-  .kozeni-diagnosis-v40-4__history {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-top: 12px;
-  }
-  .kozeni-diagnosis-v40-4__history span {
-    display: inline-flex;
-    padding: .25rem .52rem;
+    align-self: end;
+    margin-top: 4px;
+    padding: .28rem .58rem;
     border-radius: 999px;
     background: rgba(15, 122, 85, .08);
     color: #0f7a55;
-    font-size: .76rem;
+    font-size: .74rem;
+    font-style: normal;
     font-weight: 900;
   }
-  .kozeni-diagnosis-v40-4__note {
+  .kozeni-home-plans-v40-5__grid {
+    display: grid;
+    grid-template-columns: 1fr .95fr;
+    gap: 14px;
+    margin-top: 18px;
+  }
+  .kozeni-home-plans-v40-5__main {
+    border-radius: 26px;
+    padding: 20px;
+    color: #fff;
+    background:
+      radial-gradient(circle at 90% 8%, rgba(255,255,255,.22), transparent 12rem),
+      linear-gradient(135deg, #0f7a55, #0f3d2e);
+    box-shadow: 0 18px 40px rgba(15, 61, 46, .20);
+  }
+  .kozeni-home-plans-v40-5__tag {
+    display: inline-flex;
+    width: fit-content;
+    padding: .28rem .58rem;
+    border-radius: 999px;
+    background: rgba(255,255,255,.15);
+    border: 1px solid rgba(255,255,255,.25);
+    font-size: .74rem;
+    font-weight: 900;
+  }
+  .kozeni-home-plans-v40-5__main h3 {
+    margin: 10px 0 8px;
+    font-size: clamp(1.32rem, 2.6vw, 1.95rem);
+    line-height: 1.13;
+    letter-spacing: -.045em;
+  }
+  .kozeni-home-plans-v40-5__main p {
+    margin: 0;
+    color: rgba(255,255,255,.84);
+    line-height: 1.78;
+  }
+  .kozeni-home-plans-v40-5__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+    margin-top: 15px;
+  }
+  .kozeni-home-plans-v40-5__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 42px;
+    padding: .68rem .94rem;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 900;
+    border: 1px solid rgba(255,255,255,.28);
+  }
+  .kozeni-home-plans-v40-5__btn--main { background: #fff; color: #0f3d2e; }
+  .kozeni-home-plans-v40-5__btn--sub { color: #fff; background: rgba(255,255,255,.10); }
+  .kozeni-home-plans-v40-5__side {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+  .kozeni-home-plans-v40-5__mini {
+    border: 1px solid rgba(15, 61, 46, .12);
+    border-radius: 22px;
+    padding: 16px;
+    background: rgba(255,255,255,.78);
+  }
+  .kozeni-home-plans-v40-5__mini strong {
+    display: block;
+    color: #0f2f25;
+    letter-spacing: -.025em;
+  }
+  .kozeni-home-plans-v40-5__mini span {
+    display: block;
+    margin-top: 7px;
+    color: #65776f;
+    font-size: .88rem;
+    line-height: 1.65;
+  }
+  .kozeni-home-plans-v40-5__note,
+  .kozeni-helper-v40-5__note {
     margin: 12px 0 0;
     color: #74847c;
     line-height: 1.7;
     font-size: .8rem;
   }
-  .kozeni-diagnosis-legacy-hidden {
-    display: none !important;
+  .kozeni-helper-v40-5__options,
+  .kozeni-helper-v40-5__result-actions {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+    margin-top: 16px;
   }
-  @media (max-width: 860px) {
-    .kozeni-diagnosis-v40-4__head,
-    .kozeni-diagnosis-v40-4__result {
+  .kozeni-helper-v40-5__option,
+  .kozeni-helper-v40-5__result-actions a,
+  .kozeni-helper-v40-5__reset {
+    appearance: none;
+    display: grid;
+    align-content: center;
+    min-height: 92px;
+    padding: 15px;
+    border-radius: 22px;
+    border: 1px solid rgba(15, 61, 46, .13);
+    background: rgba(255,255,255,.84);
+    color: #0f2f25;
+    text-align: left;
+    text-decoration: none;
+    font: inherit;
+    font-weight: 900;
+    cursor: pointer;
+  }
+  .kozeni-helper-v40-5__option span,
+  .kozeni-helper-v40-5__result-actions small {
+    display: block;
+    margin-top: 7px;
+    color: #65776f;
+    font-size: .84rem;
+    font-weight: 700;
+    line-height: 1.55;
+  }
+  .kozeni-helper-v40-5__result {
+    margin-top: 16px;
+    padding: 18px;
+    border-radius: 24px;
+    background: linear-gradient(135deg, rgba(232,255,246,.94), rgba(255,255,255,.97));
+    border: 1px solid rgba(15, 122, 85, .16);
+  }
+  .kozeni-helper-v40-5__result h3 {
+    margin: 0;
+    color: #0f2f25;
+    font-size: clamp(1.25rem, 2.6vw, 1.65rem);
+    letter-spacing: -.04em;
+  }
+  .kozeni-helper-v40-5__result p {
+    margin: 8px 0 0;
+    color: #5f716a;
+    line-height: 1.75;
+  }
+  .kozeni-helper-v40-5__result-actions a:first-child {
+    background: linear-gradient(135deg, #12a872, #0f7a55);
+    color: #fff;
+    border-color: transparent;
+  }
+  .kozeni-helper-v40-5__result-actions a:first-child small { color: rgba(255,255,255,.82); }
+  .kozeni-helper-v40-5__reset {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 42px;
+    margin-top: 10px;
+    border-radius: 999px;
+    background: rgba(15, 122, 85, .08);
+    color: #0f7a55;
+  }
+  @media (max-width: 880px) {
+    .kozeni-entry-v40-5__grid,
+    .kozeni-home-plans-v40-5__grid,
+    .kozeni-home-plans-v40-5__side,
+    .kozeni-helper-v40-5__options,
+    .kozeni-helper-v40-5__result-actions {
       grid-template-columns: 1fr;
     }
-    .kozeni-diagnosis-v40-4__options {
-      grid-template-columns: 1fr;
-    }
-    .kozeni-diagnosis-v40-4__actions {
-      min-width: 0;
-    }
+    .kozeni-entry-v40-5__card { min-height: auto; }
   }
   @media (max-width: 560px) {
-    .kozeni-diagnosis-v40-4 { width: min(100% - 22px, 1120px); }
-    .kozeni-diagnosis-v40-4__shell { padding: 16px; border-radius: 24px; }
-    .kozeni-diagnosis-v40-4__option { min-height: auto; }
-    .kozeni-diagnosis-v40-4__actions a,
-    .kozeni-diagnosis-v40-4__reset { width: 100%; }
+    .kozeni-entry-v40-5,
+    .kozeni-home-plans-v40-5,
+    .kozeni-helper-v40-5 { width: min(100% - 22px, 1120px); }
+    .kozeni-entry-v40-5__shell,
+    .kozeni-home-plans-v40-5__shell,
+    .kozeni-helper-v40-5__shell { padding: 16px; border-radius: 24px; }
+    .kozeni-home-plans-v40-5__btn { width: 100%; }
   }
 </style>
 </head>
@@ -1365,6 +1174,32 @@ h1{
   <span aria-hidden="true">›</span>
   <span aria-current="page">スマホ・回線</span></nav>
 <main>
+<!-- kozeni-mobile-v40-5-entry-start -->
+<section class="kozeni-entry-v40-5" id="mobile-sim-entry" aria-labelledby="mobile-sim-entry-title">
+  <div class="kozeni-entry-v40-5__shell">
+    <span class="kozeni-entry-v40-5__label">スマホ・回線 / 最初に選ぶ</span>
+    <h2 id="mobile-sim-entry-title">まず、どっちを見直す？</h2>
+    <p class="kozeni-entry-v40-5__lead">細かい比較の前に、入口を3つに分けます。分かっている人は該当カード群へ、迷う人だけ下のチェックへ進めばOKです。</p>
+    <div class="kozeni-entry-v40-5__grid" aria-label="スマホ・回線の入口">
+      <a class="kozeni-entry-v40-5__card" href="#smartphone-plans">
+        <strong>スマホ代・SIMを見直す</strong>
+        <span>月額、GB、乗り換え候補を見たい人はこちら。安さ・20GB前後・楽天系・店舗サポートに分けて確認します。</span>
+        <em>スマホ候補へ</em>
+      </a>
+      <a class="kozeni-entry-v40-5__card" href="#home-wifi-plans">
+        <strong>家のWi-Fi・回線を見直す</strong>
+        <span>家のネットが重い、引っ越し前後、工事なしで使いたい人はこちら。BIGLOBE WiMAXもここで確認できます。</span>
+        <em>回線候補へ</em>
+      </a>
+      <a class="kozeni-entry-v40-5__card" href="#mobile-sim-helper">
+        <strong>どっちか分からない</strong>
+        <span>スマホ側を見るべきか、家のWi-Fi側を見るべきかだけを短く判定します。細かいブランド診断ではありません。</span>
+        <em>30秒チェックへ</em>
+      </a>
+    </div>
+  </div>
+</section>
+<!-- kozeni-mobile-v40-5-entry-end -->
 
 <!-- brand-list-hero-v1:start -->
       <section class="hero brand-list-hero" aria-labelledby="brand-list-title">
@@ -1435,6 +1270,7 @@ h1{
   </div>
 
   <div class="kozeni-purpose-list">
+    <div id="smartphone-plans" class="kozeni-anchor-offset"></div>
     <a class="kozeni-purpose-row" href="/mobile-sim/rakuten-mobile/"><span><strong>楽天系をよく使う</strong><span>ポイント連携や段階制料金を確認。</span></span><em>楽天モバイル</em></a>
     <a class="kozeni-purpose-row" href="/mobile-sim/ahamo/"><span><strong>大容量をシンプルに使う</strong><span>データ量・海外利用・手続き方法を確認。</span></span><em>ahamo</em></a>
     <a class="kozeni-purpose-row" href="/mobile-sim/linemo/"><span><strong>LINE・PayPay系で見る</strong><span>キャンペーンや対象条件を確認。</span></span><em>LINEMO</em></a>
@@ -1462,81 +1298,56 @@ h1{
 </section>
 
 <div class="kozeni-note-strip" id="network-options" role="note">
-  <strong>追加予定：</strong>
-  短期Wi-Fi、ホームルーター、光回線、光回線の開通待ち向けWi-Fiなども、条件を確認しながら順番に整理します。
+  <strong>回線メモ：</strong>
+  短期Wi-Fi、ホームルーター、光回線、光回線の開通待ち向けWi-Fiは、家のWi-Fiページ側で順番に整理します。
 </div>
 <!-- kozeni-mobile-network-list-v1:end -->
 
 
-
-<!-- kozeni-mobile-v40-2-route-start -->
-<section class="kozeni-route-priority" id="kozeni-mobile-route-priority" aria-labelledby="kozeni-route-priority-title">
-  <div class="kozeni-route-priority__shell">
-    <div class="kozeni-route-priority__head">
-      <div>
-        <span class="kozeni-route-priority__label">スマホ・回線 / まずここ</span>
-        <h2 id="kozeni-route-priority-title">選択肢ごとに、出口を分ける。</h2>
-        <p class="kozeni-route-priority__lead">スマホSIMだけでなく、家のWi-Fiまで含めて固定費を見ます。迷う人は診断、急ぐ人は下の出口から直接確認できます。</p>
+<!-- kozeni-mobile-v40-5-home-plans-start -->
+<section class="kozeni-home-plans-v40-5" id="home-wifi-plans" aria-labelledby="home-wifi-plans-title">
+  <div class="kozeni-home-plans-v40-5__shell">
+    <span class="kozeni-home-plans-v40-5__label">家のWi-Fi・回線</span>
+    <h2 id="home-wifi-plans-title">家のネットが重いなら、工事不要Wi-Fiも候補。</h2>
+    <p class="kozeni-home-plans-v40-5__lead">スマホプランだけ変えても、家のWi-Fiが遅いと不満は残ります。まずは工事なしで使える候補を1つだけ見える場所に置きます。</p>
+    <div class="kozeni-home-plans-v40-5__grid">
+      <article class="kozeni-home-plans-v40-5__main">
+        <span class="kozeni-home-plans-v40-5__tag">PR / ValueCommerce</span>
+        <h3>BIGLOBE WiMAX +5G</h3>
+        <p>工事なしで使えるWiMAX系の候補です。家の固定回線までは不要だけど、スマホのテザリングだけでは足りない人向けに確認します。</p>
+        <div class="kozeni-home-plans-v40-5__actions">
+          <a class="kozeni-home-plans-v40-5__btn kozeni-home-plans-v40-5__btn--main" href="https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3770077&pid=892609857" target="_blank" rel="nofollow sponsored noopener">BIGLOBE WiMAXを確認</a>
+          <a class="kozeni-home-plans-v40-5__btn kozeni-home-plans-v40-5__btn--sub" href="/mobile-sim/home-wifi/">向き・不向きを見る</a>
+        </div>
+      </article>
+      <div class="kozeni-home-plans-v40-5__side" aria-label="工事不要Wi-Fiの向き不向き">
+        <div class="kozeni-home-plans-v40-5__mini"><strong>向く人</strong><span>工事したくない、引っ越し前後、開通待ち、家のWi-Fi不調、スマホのテザリングでは足りない人。</span></div>
+        <div class="kozeni-home-plans-v40-5__mini"><strong>向かない人</strong><span>光回線の安定性が必要、オンラインゲーム中心、提供エリアが弱い、家族で常時大容量利用する人。</span></div>
+        <div class="kozeni-home-plans-v40-5__mini"><strong>先に見ること</strong><span>料金、端末条件、提供エリア、キャンペーン、解約条件。最終条件は公式ページで確認します。</span></div>
+        <div class="kozeni-home-plans-v40-5__mini"><strong>スマホ側も怪しい時</strong><span>スマホ代や月GBが分からない場合は、先に確認ページで現在地を整理します。</span></div>
       </div>
     </div>
-    <div class="kozeni-route-priority__grid">
-      <div class="kozeni-route-priority__cards" aria-label="スマホ回線の主な出口">
-        <a class="kozeni-route-card" href="/mobile-sim/data-usage/">
-          <strong>スマホ代・GBが分からない</strong>
-          <span>まず現在の月額とデータ使用量だけ確認。診断で迷う人の受け皿です。</span>
-          <small>確認ページへ</small>
-        </a>
-        <a class="kozeni-route-card" href="/mobile-sim/rakuten-mobile/">
-          <strong>楽天系・段階制で見る</strong>
-          <span>使う月と使わない月の差がある人、楽天ポイント導線を見たい人向け。</span>
-          <small>楽天モバイル</small>
-        </a>
-        <a class="kozeni-route-card" href="/mobile-sim/ahamo/">
-          <strong>20GB超・大容量で見る</strong>
-          <span>動画・テザリング・外出先利用が多い人は、まず大容量候補を確認。</span>
-          <small>ahamo</small>
-        </a>
-        <a class="kozeni-route-card" href="/mobile-sim/linemo/">
-          <strong>LINE・PayPay系で見る</strong>
-          <span>オンライン申込とキャンペーン条件を短く確認したい人向け。</span>
-          <small>LINEMO</small>
-        </a>
-      </div>
-      <aside class="kozeni-route-wimax" aria-label="家のWi-Fi導線">
-        <div>
-          <span class="kozeni-route-wimax__tag">PR / ASP導線</span>
-          <h3>家のWi-Fiが重いなら、工事不要Wi-Fiも見る。</h3>
-          <p>スマホ回線だけ見直しても、家のネットが遅いと不満は残ります。工事なしで使える候補として、BIGLOBE WiMAX +5G の条件を確認できます。</p>
-        </div>
-        <div>
-          <div class="kozeni-route-wimax__actions">
-            <a class="kozeni-route-wimax__btn kozeni-route-wimax__btn--main" href="https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3770077&pid=892609857" target="_blank" rel="nofollow sponsored noopener">BIGLOBE WiMAXを確認</a>
-            <a class="kozeni-route-wimax__btn kozeni-route-wimax__btn--sub" href="/mobile-sim/home-wifi/">向き・不向きを見る</a>
-          </div>
-          <p class="kozeni-route-priority__note">料金・キャンペーン・提供エリア・端末条件は変更されることがあります。申込前に公式ページで最新条件を確認してください。</p>
-        </div>
-      </aside>
-    </div>
+    <p class="kozeni-home-plans-v40-5__note">料金・キャンペーン・提供エリア・端末条件は変更されることがあります。申込前に公式ページで最新条件を確認してください。</p>
   </div>
 </section>
-<!-- kozeni-mobile-v40-2-route-end -->
+<!-- kozeni-mobile-v40-5-home-plans-end -->
 
-<!-- kozeni-mobile-v40-4-diagnosis-start -->
-<section class="kozeni-diagnosis-v40-4" id="kozeni-mobile-diagnosis-v40-4" aria-labelledby="kozeni-diagnosis-v40-4-title">
-  <div class="kozeni-diagnosis-v40-4__shell">
-    <div class="kozeni-diagnosis-v40-4__head">
-      <div>
-        <span class="kozeni-diagnosis-v40-4__label">30秒診断 / v40.4</span>
-        <h2 id="kozeni-diagnosis-v40-4-title">スマホ・回線、まず何を見る？</h2>
-        <p class="kozeni-diagnosis-v40-4__lead">選択肢を絞りました。2〜3問だけ答えると、家のWi-Fi・月GB確認・スマホ回線のどれを見るかに必ず分岐します。</p>
-      </div>
-      <span class="kozeni-diagnosis-v40-4__meter" id="kozeniDiagMeter">1 / 3</span>
+<!-- kozeni-mobile-v40-5-helper-start -->
+<section class="kozeni-helper-v40-5" id="mobile-sim-helper" aria-labelledby="mobile-sim-helper-title">
+  <div class="kozeni-helper-v40-5__shell">
+    <span class="kozeni-helper-v40-5__label">どっちか分からない人へ</span>
+    <h2 id="mobile-sim-helper-title">30秒チェック</h2>
+    <p class="kozeni-helper-v40-5__lead">ブランド名まで細かく決める診断ではありません。スマホ側を見るか、家のWi-Fi側を見るか、まず確認ページへ行くかだけに絞ります。</p>
+    <div class="kozeni-helper-v40-5__options" id="kozeniHelperOptions" aria-label="見直したい内容">
+      <button type="button" class="kozeni-helper-v40-5__option" data-helper-result="smartphone">スマホ代が高い<span>月額、GB、乗り換え先を見たい。</span></button>
+      <button type="button" class="kozeni-helper-v40-5__option" data-helper-result="homewifi">家のネットが重い<span>Wi-Fi、開通待ち、工事不要回線を見たい。</span></button>
+      <button type="button" class="kozeni-helper-v40-5__option" data-helper-result="unknown">そもそも分からない<span>料金やGBも曖昧。まず現在地を確認したい。</span></button>
     </div>
-    <div class="kozeni-diagnosis-v40-4__panel" id="kozeniDiagPanel" aria-live="polite"></div>
-    <p class="kozeni-diagnosis-v40-4__note">PRを含むページへ進む場合があります。料金・キャンペーン・提供エリア・成果条件は申込前に公式ページで確認してください。</p>
+    <div class="kozeni-helper-v40-5__result" id="kozeniHelperResult" hidden></div>
+    <p class="kozeni-helper-v40-5__note">PRを含むページへ進む場合があります。料金・キャンペーン・提供エリアは申込前に公式ページで確認してください。</p>
   </div>
 </section>
-<!-- kozeni-mobile-v40-4-diagnosis-end -->
+<!-- kozeni-mobile-v40-5-helper-end -->
 </main>
 <footer class="footer">
   <div class="container">
@@ -1561,229 +1372,63 @@ h1{
 </nav>
 
 
-
-
-<script id="kozeni-mobile-v40-4-diagnosis-script">
+<script id="kozeni-mobile-v40-5-helper-script">
 (function () {
-  var BIGLOBE_URL = "https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3770077&pid=892609857";
-
   function ready(fn) {
-    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', fn, { once: true });
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', fn);
     else fn();
   }
-
-  var OPTIONS = {
-    start: {
-      step: 1,
-      title: 'まず、何を見直したい？',
-      hint: 'ここを分けるだけで結果のズレがかなり減ります。SIMと家Wi-Fiを同じ診断に混ぜすぎないのがコツです。',
-      options: [
-        { key: 'sim', title: 'スマホ代・SIM', desc: '毎月のスマホ料金やギガを見直したい。' },
-        { key: 'home', title: '家のWi-Fi・開通待ち', desc: '固定回線、工事不要Wi-Fi、引っ越し前後を見たい。' },
-        { key: 'unknown', title: 'そもそも分からない', desc: 'スマホ代や月GBが曖昧。まず現状を知りたい。' }
-      ]
-    },
-    sim: {
-      step: 2,
-      title: 'スマホ側で一番近い悩みは？',
-      hint: 'ここは4択まで。これ以上増やすと、結果が似て使いづらくなります。',
-      options: [
-        { key: 'usage_unknown', title: '月額・GBが分からない', desc: '料金明細や月のデータ使用量をまだ見ていない。' },
-        { key: 'cheap_light', title: 'とにかく安く', desc: '3〜10GB前後。低〜中容量で月額を軽くしたい。' },
-        { key: 'heavy_data', title: '20GB前後〜大容量', desc: '動画・外出先利用・テザリングが多い。' },
-        { key: 'service', title: 'ポイント・キャンペーン・サポート', desc: '楽天、LINE/PayPay、店舗サポートなどで選びたい。' }
-      ]
-    },
-    service: {
-      step: 3,
-      title: 'どの条件を優先する？',
-      hint: 'サービス軸だけ最後に分けます。ここを無理に1問目へ入れると選択肢が増えすぎます。',
-      options: [
-        { key: 'rakuten', title: '楽天ポイント・段階制', desc: '楽天経済圏や使った分だけの料金を見たい。' },
-        { key: 'linemo', title: 'LINE・PayPay系', desc: 'オンライン申込やキャンペーン条件を見たい。' },
-        { key: 'uq', title: '店舗サポート', desc: 'オンラインだけでは不安。対面サポートも見たい。' }
-      ]
-    },
-    home: {
-      step: 2,
-      title: '家のWi-Fiは、どの状況？',
-      hint: '家のネット系はスマホSIMと別出口にします。BIGLOBE WiMAXの導線もここで自然に見せます。',
-      options: [
-        { key: 'home_wifi', title: '家のWi-Fiが重い', desc: '固定回線までは決めず、工事不要Wi-Fiを確認したい。' },
-        { key: 'temporary_wifi', title: '引っ越し・開通待ち', desc: '短期〜中期でネット環境が必要。' },
-        { key: 'both_unknown', title: 'スマホも家も怪しい', desc: 'どちらが原因か分からない。まず整理したい。' }
-      ]
-    }
-  };
-
-  var RESULTS = {
-    unknown: {
-      badge: '情報不足',
-      title: 'まだ選ばず、スマホ代と月GBだけ確認。',
-      body: '料金かデータ使用量が曖昧なまま選ぶと、安くならない可能性があります。まず現状確認ページへ進めばOKです。',
-      bullets: ['スマホ代が分からない', '月のGBが分からない', '診断で迷う人の受け皿'],
-      mainText: 'スマホ代・GBを確認', mainHref: '/mobile-sim/data-usage/',
-      subText: 'スマホ・回線トップへ', subHref: '/mobile-sim/'
-    },
-    usage_unknown: {
-      badge: '現状確認',
-      title: '月額・GBが分からないなら、確認ページへ。',
-      body: 'ここで無理にahamoやLINEMOへ振らない方が安全です。使用量を見てから、低容量・大容量・家Wi-Fiに分けます。',
-      bullets: ['料金明細を見る', '月GBを見る', '家Wi-Fiの有無も見る'],
-      mainText: '確認方法を見る', mainHref: '/mobile-sim/data-usage/',
-      subText: '家のWi-Fiも見る', subHref: '/mobile-sim/home-wifi/'
-    },
-    cheap_light: {
-      badge: '低〜中容量',
-      title: '3〜10GB前後なら、低価格候補を先に確認。',
-      body: '大容量プランに寄せるより、IIJmioやmineo系の低〜中容量候補を見た方が月額を軽くしやすいです。',
-      bullets: ['3〜10GB前後', 'とにかく月額を下げたい', '大容量までは不要'],
-      mainText: 'IIJmioを見る', mainHref: '/mobile-sim/iijmio/',
-      subText: 'mineoも見る', subHref: '/mobile-sim/mineo/'
-    },
-    heavy_data: {
-      badge: '大容量寄り',
-      title: '20GB前後〜大容量なら、ahamoを先に確認。',
-      body: '動画・外出先利用・テザリングが多いなら、低容量より大容量候補から確認した方が早いです。',
-      bullets: ['20GB前後以上', '外出先利用が多い', 'テザリングも使う'],
-      mainText: 'ahamoを見る', mainHref: '/mobile-sim/ahamo/',
-      subText: 'LINEMOも見る', subHref: '/mobile-sim/linemo/'
-    },
-    rakuten: {
-      badge: '楽天・段階制',
-      title: '楽天ポイントや段階制なら、楽天モバイルを確認。',
-      body: '使う月と使わない月の差がある人、楽天系サービスを使う人は、楽天モバイルの条件確認が自然です。',
-      bullets: ['楽天ポイントを使う', '段階制料金を見たい', '紹介条件も確認したい'],
-      mainText: '楽天モバイルを見る', mainHref: '/mobile-sim/rakuten-mobile/',
-      subText: '月GBを確認', subHref: '/mobile-sim/data-usage/'
-    },
-    linemo: {
-      badge: 'LINE・PayPay系',
-      title: 'LINE・PayPay系なら、LINEMOを確認。',
-      body: 'オンライン申込やキャンペーン条件を見たい人は、LINEMOの対象条件を先に整理します。',
-      bullets: ['LINE/PayPay系を重視', 'オンライン申込で進めたい', 'キャンペーン条件を確認したい'],
-      mainText: 'LINEMOを見る', mainHref: '/mobile-sim/linemo/',
-      subText: 'ahamoも見る', subHref: '/mobile-sim/ahamo/'
-    },
-    uq: {
-      badge: 'サポート重視',
-      title: '店舗サポートも見るなら、UQ mobileを確認。',
-      body: 'オンラインだけで不安な人は、料金だけでなく店舗サポートやセット条件も含めて確認します。',
-      bullets: ['店頭サポートも見たい', '家族やセット条件も確認', 'オンラインだけでは不安'],
-      mainText: 'UQ mobileを見る', mainHref: '/mobile-sim/uq-mobile/',
-      subText: 'スマホ・回線トップへ', subHref: '/mobile-sim/'
-    },
-    home_wifi: {
-      badge: '家のWi-Fi',
-      title: '工事不要Wi-Fiを先に確認。',
-      body: '家のWi-Fiが重い、固定回線工事を避けたい、開通待ちなら、スマホSIMではなく家Wi-Fi側の導線へ進みます。',
-      bullets: ['工事なしで使いたい', '家のネットが重い', 'BIGLOBE WiMAXの条件を確認'],
-      mainText: 'BIGLOBE WiMAXを確認', mainHref: BIGLOBE_URL, external: true,
-      subText: '向き・不向きを見る', subHref: '/mobile-sim/home-wifi/'
-    },
-    temporary_wifi: {
-      badge: '開通待ち・短期',
-      title: '短期〜中期なら、家のWi-Fiページで条件確認。',
-      body: '引っ越し・入院・一時帰国・光回線の開通待ちは、期間と解約条件が大事です。まず家Wi-Fiページへ進みます。',
-      bullets: ['引っ越し前後', '開通待ち', '短期〜中期のネット環境'],
-      mainText: '家のWi-Fiを見る', mainHref: '/mobile-sim/home-wifi/',
-      subText: 'BIGLOBE WiMAXを確認', subHref: BIGLOBE_URL, subExternal: true
-    },
-    both_unknown: {
-      badge: 'スマホ＋家Wi-Fi',
-      title: 'まずスマホ代・GBを確認しつつ、家Wi-Fiも見る。',
-      body: 'スマホも家のネットも怪しい場合は、スマホ代・月GBの確認と家Wi-Fiページの2つに分けて整理します。',
-      bullets: ['スマホ代が高いか不明', '家のWi-Fiも不安', '両方を一度に契約しない'],
-      mainText: 'スマホ代・GBを確認', mainHref: '/mobile-sim/data-usage/',
-      subText: '家のWi-Fiを見る', subHref: '/mobile-sim/home-wifi/'
-    }
-  };
-
-  function escapeHtml(s) {
-    return String(s || '').replace(/[&<>"']/g, function (c) {
-      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' }[c];
-    });
-  }
-
   ready(function () {
-    var root = document.getElementById('kozeni-mobile-diagnosis-v40-4');
-    if (!root) return;
-    var panel = document.getElementById('kozeniDiagPanel');
-    var meter = document.getElementById('kozeniDiagMeter');
-    var state = { path: [] };
+    var options = document.getElementById('kozeniHelperOptions');
+    var result = document.getElementById('kozeniHelperResult');
+    if (!options || !result) return;
 
-    hideLegacyDiagnosis(root);
-    renderQuestion('start');
+    var results = {
+      smartphone: {
+        title: 'スマホ側の候補を見ましょう。',
+        text: '月額やGB、乗り換え先が気になるなら、まずスマホ候補のカード群へ。安さ重視・20GB前後・楽天系・店舗サポートに分けて見られます。',
+        primaryHref: '#smartphone-plans',
+        primary: 'スマホ候補へ',
+        secondaryHref: '/mobile-sim/data-usage/',
+        secondary: 'GBが不明なら先に確認'
+      },
+      homewifi: {
+        title: '家のWi-Fi側を見ましょう。',
+        text: '家のネットが重い、開通待ち、引っ越し前後なら、スマホSIMより先に家のWi-Fi候補を確認した方が早いです。',
+        primaryHref: '#home-wifi-plans',
+        primary: '回線候補へ',
+        secondaryHref: '/mobile-sim/home-wifi/',
+        secondary: '向き・不向きを見る'
+      },
+      unknown: {
+        title: 'まず現在の料金とGBを確認しましょう。',
+        text: 'スマホ側か家のWi-Fi側か判断できない時は、現在の月額・月GB・家のWi-Fi状況を先に整理すると失敗しにくいです。',
+        primaryHref: '/mobile-sim/data-usage/',
+        primary: '確認ページへ',
+        secondaryHref: '#smartphone-plans',
+        secondary: 'スマホ候補も見る'
+      }
+    };
 
-    function hideLegacyDiagnosis(newRoot) {
-      Array.prototype.slice.call(document.querySelectorAll('section, div')).forEach(function (el) {
-        if (el === newRoot || el.contains(newRoot) || newRoot.contains(el)) return;
-        var text = (el.textContent || '').replace(/\s+/g, ' ').trim().slice(0, 1200);
-        if ((/30秒クイズ診断|スマホ・回線、まずどこを見る|診断結果/.test(text)) && (/月のGB|スマホ代|ahamo|LINEMO|楽天/.test(text))) {
-          el.classList.add('kozeni-diagnosis-legacy-hidden');
-        }
-      });
-    }
-
-    function renderQuestion(key) {
-      var q = OPTIONS[key];
-      if (!q) return renderResult(key);
-      meter.textContent = q.step + ' / 3';
-      var optionsHtml = q.options.map(function (o) {
-        return '<button type="button" class="kozeni-diagnosis-v40-4__option" data-key="' + escapeHtml(o.key) + '">' +
-          '<strong>' + escapeHtml(o.title) + '</strong>' +
-          '<span>' + escapeHtml(o.desc) + '</span>' +
-        '</button>';
-      }).join('');
-      panel.innerHTML = '' +
-        '<div class="kozeni-diagnosis-v40-4__question">' +
-          '<h3>' + escapeHtml(q.title) + '</h3>' +
-          '<p class="kozeni-diagnosis-v40-4__hint">' + escapeHtml(q.hint) + '</p>' +
-          '<div class="kozeni-diagnosis-v40-4__options">' + optionsHtml + '</div>' +
-          renderHistory() +
+    function render(key) {
+      var data = results[key] || results.unknown;
+      result.hidden = false;
+      result.innerHTML = '' +
+        '<h3>' + data.title + '</h3>' +
+        '<p>' + data.text + '</p>' +
+        '<div class="kozeni-helper-v40-5__result-actions">' +
+          '<a href="' + data.primaryHref + '">' + data.primary + '<small>まずここへ</small></a>' +
+          '<a href="' + data.secondaryHref + '">' + data.secondary + '<small>補助ルート</small></a>' +
+          '<a href="#mobile-sim-entry">入口に戻る<small>選び直す</small></a>' +
         '</div>';
-      Array.prototype.slice.call(panel.querySelectorAll('[data-key]')).forEach(function (btn) {
-        btn.addEventListener('click', function () {
-          var next = btn.getAttribute('data-key');
-          var label = (btn.querySelector('strong') || btn).textContent || next;
-          state.path.push(label.trim());
-          if (OPTIONS[next]) renderQuestion(next);
-          else renderResult(next);
-        });
-      });
+      result.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     }
 
-    function renderHistory() {
-      if (!state.path.length) return '';
-      return '<div class="kozeni-diagnosis-v40-4__history">' +
-        state.path.map(function (x) { return '<span>' + escapeHtml(x) + '</span>'; }).join('') +
-      '</div>';
-    }
-
-    function renderResult(key) {
-      var r = RESULTS[key] || RESULTS.unknown;
-      meter.textContent = '結果';
-      var mainRel = r.external ? ' target="_blank" rel="nofollow sponsored noopener"' : '';
-      var subRel = r.subExternal ? ' target="_blank" rel="nofollow sponsored noopener"' : '';
-      var bullets = (r.bullets || []).map(function (b) { return '<li>' + escapeHtml(b) + '</li>'; }).join('');
-      panel.innerHTML = '' +
-        '<div class="kozeni-diagnosis-v40-4__result">' +
-          '<div>' +
-            '<span class="kozeni-diagnosis-v40-4__result-badge">' + escapeHtml(r.badge) + '</span>' +
-            '<h3>' + escapeHtml(r.title) + '</h3>' +
-            '<p>' + escapeHtml(r.body) + '</p>' +
-            (bullets ? '<ul>' + bullets + '</ul>' : '') +
-            renderHistory() +
-          '</div>' +
-          '<div class="kozeni-diagnosis-v40-4__actions">' +
-            '<a class="kozeni-diagnosis-v40-4__main" href="' + escapeHtml(r.mainHref) + '"' + mainRel + '>' + escapeHtml(r.mainText) + '</a>' +
-            '<a class="kozeni-diagnosis-v40-4__sub" href="' + escapeHtml(r.subHref) + '"' + subRel + '>' + escapeHtml(r.subText) + '</a>' +
-            '<button type="button" class="kozeni-diagnosis-v40-4__reset" id="kozeniDiagReset">最初からやり直す</button>' +
-          '</div>' +
-        '</div>';
-      var reset = document.getElementById('kozeniDiagReset');
-      if (reset) reset.addEventListener('click', function () { state.path = []; renderQuestion('start'); });
-    }
+    options.addEventListener('click', function (event) {
+      var button = event.target.closest('[data-helper-result]');
+      if (!button) return;
+      render(button.getAttribute('data-helper-result'));
+    });
   });
 })();
 </script>
