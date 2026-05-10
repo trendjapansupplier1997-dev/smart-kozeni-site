@@ -4,10 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>クレカ入会特典｜まず見る3枚の条件確認メモ</title>
-  <meta name="description" content="楽天カード、三井住友カード（NL）、dカード GOLD Uの入会特典・年会費・利用条件を申し込み前に短く確認します。">
+  <meta name="description" content="楽天カード、三井住友カード（NL）、エポスカードをまず見る3枚として、dカード GOLD Uは条件に合う人向けの候補として整理します。">
   <link rel="canonical" href="https://smart-kozeni.com/credit-card/">
   <meta property="og:title" content="クレカ入会特典｜まず見る3枚の条件確認メモ">
-  <meta property="og:description" content="楽天カード、三井住友カード（NL）、dカード GOLD Uの入会特典・年会費・利用条件を申し込み前に短く確認します。">
+  <meta property="og:description" content="楽天カード、三井住友カード（NL）、エポスカードをまず見る3枚として、dカード GOLD Uは条件に合う人向けの候補として整理します。">
   <meta property="og:url" content="https://smart-kozeni.com/credit-card/">
   <meta property="og:type" content="website">
   <style>
@@ -184,6 +184,32 @@ h1{
 .kozeni-credit-pr { margin: .72rem 0 0; color: rgba(34, 40, 49, .56); font-size: .78rem; line-height: 1.7; }
 .kozeni-credit-pick:focus-visible { outline: 3px solid rgba(77, 189, 140, .34); outline-offset: 3px; }
 @media (max-width: 860px) { .kozeni-credit-grid { grid-template-columns: 1fr; } }
+
+/* v41.0.1 credit-card: top 3 + other candidate */
+.kozeni-credit-other{
+  margin-top:1.2rem;
+  padding-top:1.05rem;
+  border-top:1px solid rgba(34,40,49,.07);
+}
+.kozeni-credit-head--small{
+  margin-bottom:.75rem;
+}
+.kozeni-credit-head--small h2{
+  font-size:clamp(1.08rem,1.7vw,1.34rem);
+}
+.kozeni-credit-head--small p{
+  font-size:.92rem;
+}
+.kozeni-credit-subgrid{
+  display:grid;
+  grid-template-columns:minmax(0,1fr);
+  gap:.82rem;
+  max-width:760px;
+}
+.kozeni-credit-subgrid .kozeni-credit-pick{
+  background:rgba(255,255,255,.94);
+}
+
 </style>
   <link rel="stylesheet" href="/assets/kozeni-brand.v1.css?v=41.13">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/icon-32.png?v=xicon1">
@@ -224,41 +250,66 @@ h1{
       </section>
 <!-- brand-list-hero-v1:end -->
 <!-- kozeni-credit-card-list-v1:start -->
-<section class="kozeni-list-section" aria-label="最初に見るおすすめクレカ">
-  <div class="kozeni-list-section__head">
-    <div>
-      <p class="kozeni-list-section__kicker">RECOMMEND</p>
-      <h2>最初に見るなら、この3つ。</h2>
+<!-- kozeni-credit-card-v41-0-1:start -->
+<section class="section kozeni-credit-start" aria-label="クレカ入会特典のまず見る3枚">
+  <div class="container">
+    <div class="kozeni-credit-head">
+      <p class="eyebrow">CREDIT CARD</p>
+      <h2>まず見る3枚。</h2>
+      <p>招待・提携リンクを用意できているものを中心に、年会費・利用条件・付与時期を短く確認します。</p>
     </div>
-    <p class="kozeni-list-section__lead">年会費、使う店、ポイント経済圏を見て、まず候補を3つに絞ります。</p>
-  </div>
 
-  <div class="kozeni-pick-grid">
-    <a class="kozeni-pick-card" href="/credit-card/rakuten-card/">
-      <span class="kozeni-pick-card__label">楽天経済圏</span>
-      <h3>楽天カード</h3>
-      <p>楽天市場・楽天ペイ・楽天モバイルなどを使う人向け。入会特典と利用条件を確認します。</p>
-      <div class="kozeni-pick-card__meta"><span>年会費永年無料</span><span>楽天系</span></div>
-      <span class="kozeni-pick-card__action">条件チェックへ</span>
-    </a>
+    <div class="kozeni-credit-grid">
+      <a class="kozeni-credit-pick" href="/credit-card/rakuten-card/" aria-label="楽天カードの条件チェックを見る">
+        <span class="tag">PRあり</span>
+        <h3>楽天カード</h3>
+        <span class="kozeni-reward-badge">新規入会&利用で5,000pt</span>
+        <small class="kozeni-reward-note">e-NAVI登録・利用条件・口座設定など条件あり</small>
+        <p>楽天経済圏を使う人なら最初に確認。3問チェックで条件を見ます。</p>
+        <strong class="kozeni-credit-cta">条件チェックへ</strong>
+      </a>
 
-    <a class="kozeni-pick-card" href="/credit-card/smbc-nl/">
-      <span class="kozeni-pick-card__label">コンビニ・飲食店</span>
-      <h3>三井住友カード（NL）</h3>
-      <p>対象店舗とスマホのタッチ決済を使う人向け。還元条件と支払い方法を確認します。</p>
-      <div class="kozeni-pick-card__meta"><span>番号レス</span><span>対象店舗</span></div>
-      <span class="kozeni-pick-card__action">条件チェックへ</span>
-    </a>
+      <a class="kozeni-credit-pick" href="/credit-card/smbc-nl/" aria-label="三井住友カード（NL）の条件チェックを見る">
+        <span class="tag">条件確認</span>
+        <h3>三井住友カード（NL）</h3>
+        <span class="kozeni-reward-badge">年会費永年無料</span>
+        <small class="kozeni-reward-note">対象店舗・タッチ決済など条件あり</small>
+        <p>コンビニ・飲食店をよく使う人向け。公式条件を短く確認。</p>
+        <strong class="kozeni-credit-cta">条件チェックへ</strong>
+      </a>
 
-    <a class="kozeni-pick-card" href="/credit-card/d-card-gold-u/">
-      <span class="kozeni-pick-card__label">ドコモ系・若年層</span>
-      <h3>dカード GOLD U</h3>
-      <p>ドコモ系サービスや年齢条件を確認したい人向け。対象条件を先に見ます。</p>
-      <div class="kozeni-pick-card__meta"><span>条件確認</span><span>ドコモ系</span></div>
-      <span class="kozeni-pick-card__action">条件チェックへ</span>
-    </a>
+      <a class="kozeni-credit-pick" href="/credit-card/epos-card/" aria-label="エポスカードの条件チェックを見る">
+        <span class="tag">PRあり</span>
+        <h3>エポスカード</h3>
+        <span class="kozeni-reward-badge">年会費永年無料</span>
+        <small class="kozeni-reward-note">即日発行・旅行前の確認にも向く候補</small>
+        <p>はじめての1枚やサブカード候補。条件と公式画面を確認してから申し込みます。</p>
+        <strong class="kozeni-credit-cta">条件チェックへ</strong>
+      </a>
+    </div>
+
+    <p class="kozeni-credit-pr">PR：楽天カード・エポスカード詳細ページにはアフィリエイトリンクを含みます。各カードの条件・特典は公式画面で確認してください。</p>
+
+    <div class="kozeni-credit-other" aria-label="その他の候補">
+      <div class="kozeni-credit-head kozeni-credit-head--small">
+        <h2>その他で見るカード。</h2>
+        <p>条件に合う人だけ確認。トップ3とは分けて、必要な人にだけ見せます。</p>
+      </div>
+
+      <div class="kozeni-credit-subgrid">
+        <a class="kozeni-credit-pick" href="/credit-card/d-card-gold-u/" aria-label="dカード GOLD Uの条件チェックを見る">
+          <span class="tag">条件確認</span>
+          <h3>dカード GOLD U</h3>
+          <span class="kozeni-reward-badge">18〜29歳向け</span>
+          <small class="kozeni-reward-note">年会費3,300円・実質無料条件あり</small>
+          <p>ドコモ・ahamo・dポイント圏の人向け。年齢条件と年会費条件を確認。</p>
+          <strong class="kozeni-credit-cta">条件チェックへ</strong>
+        </a>
+      </div>
+    </div>
   </div>
 </section>
+<!-- kozeni-credit-card-v41-0-1:end -->
 
 <section class="kozeni-list-section" aria-label="目的別で選ぶクレカ">
   <div class="kozeni-list-section__head">
