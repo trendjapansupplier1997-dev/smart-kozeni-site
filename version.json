@@ -1,1 +1,1 @@
-{"version": "v43.0-credit-card-list-route", "updated": "2026-05-10", "note": "Simplify the credit card list route around three primary cards, lighter purpose rows, calmer typography, and no duplicate card UI."}
+{"version": "v43.1-rakuten-card-route", "updated": "2026-05-10", "note": "Refine the Rakuten Card detail page around fit checks, calmer copy, a single main CTA, alternatives, and reduced campaign-number dependency."}
