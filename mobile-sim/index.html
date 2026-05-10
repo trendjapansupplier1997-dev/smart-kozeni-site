@@ -1191,7 +1191,7 @@ h1{
         <span>家のネットが重い、引っ越し前後、工事なしで使いたい人はこちら。BIGLOBE WiMAXもここで確認できます。</span>
         <em>回線候補へ</em>
       </a>
-      <a class="kozeni-entry-v40-5__card" href="#mobile-sim-helper">
+      <a class="kozeni-entry-v40-5__card" href="#mobile-unknown-check">
         <strong>どっちか分からない</strong>
         <span>スマホ側を見るべきか、家のWi-Fi側を見るべきかだけを短く判定します。細かいブランド診断ではありません。</span>
         <em>30秒チェックへ</em>
@@ -1203,8 +1203,47 @@ h1{
 
 <!-- brand-list-hero-v1:start -->
       
-<!-- kozeni-v40-6 removed duplicate old entry block: old mobile hero/diagnosis CTA -->
+<!-- kozeni-v40-7 old mobile hero/4-question CTA removed; primary entry is the first 3 cards -->
 
+
+<!-- kozeni-mobile-v40-7-recommend-start -->
+<div id="smartphone-plans" class="kozeni-anchor-offset" aria-hidden="true"></div>
+<section class="kozeni-list-section" aria-label="最初に見るおすすめスマホ・回線">
+  <div class="kozeni-list-section__head">
+    <div>
+      <p class="kozeni-list-section__kicker">RECOMMEND</p>
+      <h2>最初に見るなら、この3つ。</h2>
+    </div>
+    <p class="kozeni-list-section__lead">スマホ代の見直しは、まず代表候補を3つだけ確認。細かい目的別はこの下で見ます。</p>
+  </div>
+
+  <div class="kozeni-pick-grid">
+    <a class="kozeni-pick-card" href="/mobile-sim/rakuten-mobile/">
+      <span class="kozeni-pick-card__label">楽天経済圏・段階制</span>
+      <h3>楽天モバイル</h3>
+      <p>使う月と使わない月の差がある人、楽天ポイント導線も一緒に見たい人向け。</p>
+      <div class="kozeni-pick-card__meta"><span>紹介あり</span><span>段階制</span></div>
+      <span class="kozeni-pick-card__action">条件チェックへ</span>
+    </a>
+
+    <a class="kozeni-pick-card" href="/mobile-sim/ahamo/">
+      <span class="kozeni-pick-card__label">20GB前後・大容量</span>
+      <h3>ahamo</h3>
+      <p>動画・外出先利用・テザリングが多い人向け。料金と申込条件を短く確認します。</p>
+      <div class="kozeni-pick-card__meta"><span>大容量</span><span>オンライン</span></div>
+      <span class="kozeni-pick-card__action">条件チェックへ</span>
+    </a>
+
+    <a class="kozeni-pick-card" href="/mobile-sim/linemo/">
+      <span class="kozeni-pick-card__label">LINE・PayPay系</span>
+      <h3>LINEMO</h3>
+      <p>LINE利用やキャンペーン重視で見る候補。対象条件と特典を確認します。</p>
+      <div class="kozeni-pick-card__meta"><span>オンライン</span><span>条件確認</span></div>
+      <span class="kozeni-pick-card__action">条件チェックへ</span>
+    </a>
+  </div>
+</section>
+<!-- kozeni-mobile-v40-7-recommend-end -->
 
 <section class="kozeni-list-section" aria-label="目的別で選ぶスマホ・回線">
   <div class="kozeni-list-section__head">
@@ -1279,7 +1318,7 @@ h1{
 <!-- kozeni-mobile-v40-5-home-plans-end -->
 
 <!-- kozeni-mobile-v40-5-helper-start -->
-<section class="kozeni-helper-v40-5" id="mobile-sim-helper" aria-labelledby="mobile-sim-helper-title">
+<section class="kozeni-helper-v40-5" id="mobile-unknown-check" aria-labelledby="mobile-sim-helper-title" hidden aria-hidden="true">
   <div class="kozeni-helper-v40-5__shell">
     <span class="kozeni-helper-v40-5__label">どっちか分からない人へ</span>
     <h2 id="mobile-sim-helper-title">30秒チェック</h2>
@@ -1375,6 +1414,41 @@ h1{
       if (!button) return;
       render(button.getAttribute('data-helper-result'));
     });
+  });
+})();
+</script>
+
+<script id="kozeni-mobile-v40-7-entry-script">
+(function () {
+  function ready(fn) {
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', fn);
+    else fn();
+  }
+  ready(function () {
+    var helper = document.getElementById('mobile-unknown-check');
+    if (!helper) return;
+
+    function openHelper(pushHash) {
+      helper.hidden = false;
+      helper.setAttribute('aria-hidden', 'false');
+      if (pushHash && window.history && window.history.pushState) {
+        window.history.pushState(null, '', '#mobile-unknown-check');
+      }
+      window.setTimeout(function () {
+        helper.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 20);
+    }
+
+    document.addEventListener('click', function (event) {
+      var link = event.target.closest && event.target.closest('a[href="#mobile-unknown-check"]');
+      if (!link) return;
+      event.preventDefault();
+      openHelper(true);
+    });
+
+    if (window.location.hash === '#mobile-unknown-check') {
+      openHelper(false);
+    }
   });
 })();
 </script>
