@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="スマホ小銭研究所 フラスコロゴ">
+  <defs>
+    <linearGradient id="mint" x1="12" y1="8" x2="52" y2="58" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#63DDBA"/>
+      <stop offset="1" stop-color="#239A78"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="19" y1="20" x2="48" y2="50" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFE39A"/>
+      <stop offset="1" stop-color="#E3BE57"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#162235" flood-opacity=".16"/>
+    </filter>
+  </defs>
+  <circle cx="32" cy="32" r="29" fill="#F6FBF9"/>
+  <circle cx="32" cy="32" r="28" fill="none" stroke="#D9EEE8" stroke-width="2"/>
+  <path filter="url(#shadow)" d="M25 8h14v5h-3v12.2l11.4 18.5C51.5 50.4 46.7 59 38.9 59H25.1c-7.8 0-12.6-8.6-8.5-15.3L28 25.2V13h-3V8z" fill="#fff" stroke="#239A78" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M20.6 43.7h22.8l3 5c2.1 3.6-.4 8.3-4.6 8.3H22.2c-4.2 0-6.7-4.7-4.6-8.3l3-5z" fill="url(#mint)"/>
+  <circle cx="31.8" cy="45.5" r="9.5" fill="url(#gold)" stroke="#C99A2F" stroke-width="2"/>
+  <path d="M28.2 40.7h4.7c2.5 0 4 1.4 4 3.5s-1.5 3.6-4.1 3.6h-1.9v3.8h-2.7V40.7zm4.4 4.9c1 0 1.6-.5 1.6-1.3s-.6-1.3-1.6-1.3h-1.7v2.6h1.7z" fill="#162235"/>
+  <circle cx="24" cy="21" r="2.6" fill="#63DDBA"/>
+  <circle cx="38" cy="18" r="2.1" fill="#E3BE57"/>
+  <circle cx="43" cy="30" r="2.3" fill="#63DDBA"/>
+  <path d="M13 22l3-1 1-3 1 3 3 1-3 1-1 3-1-3-3-1z" fill="#E3BE57"/>
+</svg>

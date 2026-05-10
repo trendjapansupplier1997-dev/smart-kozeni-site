@@ -818,3 +818,23 @@ a.kozeni-social-link .kozeni-social-logo{
   outline: none;
 }
 
+
+/* kozeni-header-flask-mini-v41.4 */
+.kozeni-site-brand .kozeni-brand-flask{
+  width:26px;
+  height:26px;
+  flex:0 0 auto;
+  display:block;
+  margin-left:-2px;
+  margin-right:2px;
+  filter:drop-shadow(0 3px 8px rgba(35,154,120,.18));
+}
+@media (max-width: 560px){
+  .kozeni-site-brand .kozeni-brand-flask{
+    width:23px;
+    height:23px;
+    margin-left:-3px;
+    margin-right:0;
+  }
+}
+/* kozeni-header-flask-mini-v41.4:end */
