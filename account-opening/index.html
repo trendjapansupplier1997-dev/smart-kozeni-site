@@ -382,27 +382,33 @@ h1{
 
 /* KOZENI_ACCOUNT_FILTER_UI_START */
 .account-filter{
-  display:inline-flex;
-  flex-wrap:wrap;
-  gap:8px;
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:5px;
+  width:min(100%,560px);
   margin-top:22px;
-  padding:6px;
-  border:1px solid rgba(15,118,110,.16);
+  padding:5px;
+  border:1px solid rgba(15,118,110,.14);
   border-radius:999px;
-  background:rgba(255,255,255,.78);
-  box-shadow:0 14px 34px rgba(15,23,42,.07);
+  background:rgba(226,232,240,.72);
+  box-shadow:0 16px 34px rgba(15,23,42,.08);
+  backdrop-filter:blur(10px);
 }
 .account-filter button{
   appearance:none;
   border:0;
   border-radius:999px;
   background:transparent;
-  color:#475569;
+  color:#64748b;
   cursor:pointer;
+  min-height:54px;
+  padding:7px 10px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:1px;
   font:inherit;
-  font-weight:800;
-  min-height:42px;
-  padding:0 16px;
   transition:background .18s ease, color .18s ease, box-shadow .18s ease, transform .18s ease;
 }
 .account-filter button:hover{
@@ -410,15 +416,35 @@ h1{
   color:#0f172a;
 }
 .account-filter button.is-active{
-  background:#0f766e;
-  color:#fff;
-  box-shadow:0 10px 22px rgba(15,118,110,.22);
+  background:#ffffff;
+  color:#0f172a;
+  box-shadow:0 10px 24px rgba(15,23,42,.13);
+}
+.account-filter button.is-active[data-account-filter="all"]{
+  color:#0f766e;
+}
+.account-filter button.is-active[data-account-filter="bank"]{
+  color:#047857;
+}
+.account-filter button.is-active[data-account-filter="securities"]{
+  color:#b45309;
+}
+.account-filter-main{
+  font-size:.98rem;
+  font-weight:900;
+  line-height:1.15;
+}
+.account-filter-sub{
+  font-size:.72rem;
+  font-weight:800;
+  letter-spacing:.04em;
+  opacity:.72;
 }
 .account-filter-note{
-  margin:12px 0 0;
+  margin:10px 0 0;
   color:#64748b;
-  font-size:.92rem;
-  line-height:1.8;
+  font-size:.86rem;
+  line-height:1.7;
 }
 .account-section-lead{
   max-width:760px;
@@ -428,14 +454,17 @@ h1{
 }
 @media (max-width:560px){
   .account-filter{
-    display:grid;
-    grid-template-columns:1fr;
     width:100%;
-    border-radius:24px;
   }
   .account-filter button{
-    justify-content:center;
-    width:100%;
+    min-height:52px;
+    padding:7px 6px;
+  }
+  .account-filter-main{
+    font-size:.92rem;
+  }
+  .account-filter-sub{
+    font-size:.68rem;
   }
 }
 /* KOZENI_ACCOUNT_FILTER_UI_END */
@@ -471,15 +500,24 @@ h1{
 <!-- brand-list-hero-v1:start -->
       <section class="hero brand-list-hero" aria-labelledby="brand-list-title">
         <p class="eyebrow">口座開設</p>
-        <h1 id="brand-list-title" style="font-size:clamp(1.85rem,6vw,2.7rem);line-height:1.18;">日常のお金か、将来のお金か。</h1>
-        <p class="lead" style="max-width:760px;">普段使いの銀行口座と、NISA・iDeCoなどの資産づくり口座を分けて確認できます。まだ決めていない人は、まず「すべて見る」で比べてください。</p>
+        <h1 id="brand-list-title" style="font-size:clamp(1.75rem,5.5vw,2.55rem);line-height:1.18;">お金の入口を選ぶ。</h1>
+        <p class="lead" style="max-width:700px;">迷ったら、まずは「すべて」。普段使いは「日常」、NISA・iDeCoは「将来」から確認できます。</p>
 
         <div class="account-filter" role="group" aria-label="表示する口座カテゴリ">
-          <button type="button" class="is-active" data-account-filter="all" aria-pressed="true">すべて見る</button>
-          <button type="button" data-account-filter="bank" aria-pressed="false">銀行口座</button>
-          <button type="button" data-account-filter="securities" aria-pressed="false">NISA・iDeCo</button>
+          <button type="button" class="is-active" data-account-filter="all" aria-pressed="true">
+            <span class="account-filter-main">すべて</span>
+            <span class="account-filter-sub">比較</span>
+          </button>
+          <button type="button" data-account-filter="bank" aria-pressed="false">
+            <span class="account-filter-main">日常</span>
+            <span class="account-filter-sub">銀行口座</span>
+          </button>
+          <button type="button" data-account-filter="securities" aria-pressed="false">
+            <span class="account-filter-main">将来</span>
+            <span class="account-filter-sub">NISA・iDeCo</span>
+          </button>
         </div>
-        <p class="account-filter-note" data-account-filter-note>銀行口座とNISA・iDeCo口座を、両方表示しています。</p>
+        <p class="account-filter-note" data-account-filter-note>すべて表示中。銀行口座とNISA・iDeCoを比べられます。</p>
 
         <div class="brand-keywords"><span>銀行口座</span><span>NISA</span><span>iDeCo</span><span>証券口座</span><span>申込前チェック</span></div>
       </section>
@@ -587,9 +625,9 @@ h1{
   if (!buttons.length || !panels.length) return;
 
   const labels = {
-    all: '銀行口座とNISA・iDeCo口座を、両方表示しています。',
-    bank: '銀行口座だけを表示しています。比較したいときは「すべて見る」に戻せます。',
-    securities: 'NISA・iDeCo口座だけを表示しています。比較したいときは「すべて見る」に戻せます。'
+    all: 'すべて表示中。銀行口座とNISA・iDeCoを比べられます。',
+    bank: '日常のお金向け。銀行口座だけを表示しています。',
+    securities: '将来のお金向け。NISA・iDeCo口座だけを表示しています。'
   };
 
   const applyFilter = (target) => {
