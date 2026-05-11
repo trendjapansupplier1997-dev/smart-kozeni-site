@@ -256,6 +256,33 @@ li+li{margin-top:6px}
     border-radius:22px;
   }
 }
+
+.kozeni-fixed-return{
+  position:fixed;
+  left:50%;
+  bottom:18px;
+  transform:translateX(-50%);
+  z-index:40;
+}
+.kozeni-fixed-return a{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:44px;
+  padding:0 18px;
+  border:1px solid rgba(15,118,110,.18);
+  border-radius:999px;
+  background:rgba(255,255,255,.92);
+  color:#0f766e;
+  font-weight:900;
+  text-decoration:none;
+  box-shadow:0 14px 30px rgba(15,23,42,.14);
+  backdrop-filter:blur(12px);
+}
+.kozeni-fixed-return a:hover{
+  transform:translateY(-1px);
+}
+
 /* KOZENI_ACCOUNT_GUIDE_PAGE_STYLE_END */
 </style>
 
@@ -327,9 +354,9 @@ li+li{margin-top:6px}
     </section>
 
     <section class="content-card soft-cta">
-      <h2>松井証券で確認するなら</h2>
-      <p>松井証券は、NISAや投資信託、iDeCoをまとめて確認しやすいネット証券候補です。投資判断ではなく、まずは口座開設条件・対象外条件・制度の違いを確認します。</p>
-      <a class="button" href="/account-opening/matsui-sec/">松井証券の確認ページへ戻る</a>
+      <h2>次に見るなら</h2>
+      <p>NISAとiDeCoの違いが分かったら、銀行口座と証券口座の役割の違いも軽く確認しておくと、口座選びがしやすくなります。</p>
+      <a class="button" href="/account-opening/securities-basics/">証券口座の基本を見る</a>
     </section>
 
     <p class="note">このページは制度の違いを整理するための一般情報です。金融商品や投資判断を推奨するものではありません。</p>
@@ -340,7 +367,10 @@ li+li{margin-top:6px}
     <a href="/privacy/">プライバシー</a>
     <a href="/about/">このサイトについて</a>
     <p>© スマホ小銭研究所</p>
-    <a href="/account-opening/">← 口座一覧へ戻る</a>
   </footer>
+
+  <nav class="kozeni-fixed-return" aria-label="口座一覧へ戻る">
+    <a href="/account-opening/">← 口座一覧へ戻る</a>
+  </nav>
 </body>
 </html>
