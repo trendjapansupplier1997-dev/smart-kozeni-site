@@ -6,7 +6,259 @@
   <title>証券口座とは？NISA・iDeCoを始める前の基本｜スマホ小銭研究所</title>
   <meta name="description" content="証券口座とは何かを初心者向けに1ページで整理。銀行口座との違い、NISA・iDeCoとの関係、申し込み前に確認したいポイントをざっくり確認します。">
   <link rel="canonical" href="https://smart-kozeni.com/account-opening/securities-basics/">
-  <link rel="stylesheet" href="../../assets/kozeni-brand.v1.css">
+  <link rel="stylesheet" href="/assets/kozeni-brand.v1.css?v=41.13">
+
+<style>
+/* KOZENI_ACCOUNT_GUIDE_PAGE_STYLE_START */
+:root{
+  --kozeni-ink:#0f172a;
+  --kozeni-muted:#64748b;
+  --kozeni-line:rgba(148,163,184,.24);
+  --kozeni-green:#047857;
+  --kozeni-mint:#ecfdf5;
+  --kozeni-gold:#f59e0b;
+  --kozeni-bg:#f8fafc;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  color:var(--kozeni-ink);
+  background:
+    radial-gradient(circle at 18% 0%, rgba(20,184,166,.10), transparent 32%),
+    linear-gradient(180deg,#ffffff 0%,#f8fafc 44%,#ffffff 100%);
+  font-family:-apple-system,BlinkMacSystemFont,"Noto Sans JP","Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;
+  line-height:1.8;
+}
+.site-header{
+  position:sticky;
+  top:0;
+  z-index:20;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+  padding:14px clamp(18px,4vw,42px);
+  border-bottom:1px solid rgba(226,232,240,.86);
+  background:rgba(255,255,255,.88);
+  backdrop-filter:blur(14px);
+}
+.brand{
+  color:#0f172a;
+  font-weight:900;
+  letter-spacing:.02em;
+  text-decoration:none;
+  white-space:nowrap;
+}
+.site-nav{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:flex-end;
+  gap:8px;
+}
+.site-nav a{
+  display:inline-flex;
+  align-items:center;
+  min-height:34px;
+  padding:0 10px;
+  border-radius:999px;
+  color:#475569;
+  font-size:.88rem;
+  font-weight:800;
+  text-decoration:none;
+}
+.site-nav a:hover{
+  background:rgba(15,118,110,.08);
+  color:#0f766e;
+}
+.page-shell{
+  width:min(100% - 32px,1040px);
+  margin:0 auto;
+  padding:24px 0 56px;
+}
+.breadcrumb{
+  margin:4px 0 18px;
+  color:#64748b;
+  font-size:.88rem;
+}
+.breadcrumb a{
+  color:#047857;
+  font-weight:800;
+  text-decoration:none;
+}
+.hero-card,
+.content-card{
+  border:1px solid var(--kozeni-line);
+  border-radius:28px;
+  background:rgba(255,255,255,.88);
+  box-shadow:0 18px 42px rgba(15,23,42,.07);
+}
+.hero-card{
+  padding:clamp(24px,5vw,44px);
+  margin-bottom:22px;
+  background:
+    linear-gradient(135deg,rgba(236,253,245,.96),rgba(255,251,235,.86)),
+    #fff;
+}
+.eyebrow{
+  margin:0 0 10px;
+  color:#047857;
+  font-size:.78rem;
+  font-weight:900;
+  letter-spacing:.08em;
+}
+h1{
+  margin:0;
+  font-size:clamp(1.7rem,5.6vw,2.75rem);
+  line-height:1.22;
+  letter-spacing:-.03em;
+}
+.lead{
+  max-width:760px;
+  margin:16px 0 0;
+  color:#475569;
+  font-size:1.02rem;
+}
+.tag-row{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:20px;
+}
+.tag-row span{
+  display:inline-flex;
+  align-items:center;
+  min-height:30px;
+  padding:0 10px;
+  border:1px solid rgba(15,118,110,.14);
+  border-radius:999px;
+  background:rgba(255,255,255,.74);
+  color:#0f766e;
+  font-size:.78rem;
+  font-weight:850;
+}
+.content-card{
+  padding:clamp(20px,4vw,32px);
+  margin:18px 0;
+}
+.content-card h2{
+  margin:0 0 14px;
+  font-size:clamp(1.22rem,3.8vw,1.65rem);
+  line-height:1.35;
+}
+.content-card h3{
+  margin:0 0 8px;
+  font-size:1.04rem;
+  line-height:1.45;
+}
+.content-card p{
+  margin:0 0 12px;
+  color:#475569;
+}
+.compare-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:14px;
+}
+.mini-card{
+  padding:18px;
+  border:1px solid rgba(148,163,184,.22);
+  border-radius:22px;
+  background:linear-gradient(180deg,#ffffff,rgba(248,250,252,.92));
+}
+.table-scroll{
+  overflow-x:auto;
+  border:1px solid rgba(148,163,184,.22);
+  border-radius:20px;
+}
+table{
+  width:100%;
+  min-width:680px;
+  border-collapse:collapse;
+  background:#fff;
+}
+th,td{
+  padding:13px 14px;
+  border-bottom:1px solid rgba(226,232,240,.9);
+  text-align:left;
+  vertical-align:top;
+}
+thead th{
+  background:rgba(236,253,245,.72);
+  color:#0f766e;
+  font-size:.9rem;
+}
+tbody th{
+  width:160px;
+  color:#0f172a;
+}
+.note{
+  margin-top:12px!important;
+  color:#64748b!important;
+  font-size:.9rem;
+}
+ul{
+  margin:0;
+  padding-left:1.2em;
+  color:#475569;
+}
+li+li{margin-top:6px}
+.soft-cta{
+  background:linear-gradient(135deg,rgba(236,253,245,.92),rgba(255,251,235,.86));
+}
+.button{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:46px;
+  margin:8px 8px 0 0;
+  padding:0 18px;
+  border-radius:999px;
+  background:#0f766e;
+  color:#fff;
+  font-weight:900;
+  text-decoration:none;
+  box-shadow:0 12px 24px rgba(15,118,110,.20);
+}
+.button.secondary{
+  background:#fff;
+  color:#0f766e;
+  border:1px solid rgba(15,118,110,.18);
+  box-shadow:0 8px 18px rgba(15,23,42,.06);
+}
+.site-footer{
+  width:min(100% - 32px,1040px);
+  margin:0 auto 36px;
+  padding:22px 0;
+  border-top:1px solid rgba(226,232,240,.9);
+  color:#64748b;
+  font-size:.88rem;
+}
+.site-footer a{
+  display:inline-flex;
+  margin:0 12px 8px 0;
+  color:#047857;
+  font-weight:800;
+  text-decoration:none;
+}
+@media (max-width:720px){
+  .site-header{
+    align-items:flex-start;
+    flex-direction:column;
+  }
+  .site-nav{
+    justify-content:flex-start;
+  }
+  .compare-grid{
+    grid-template-columns:1fr;
+  }
+  .hero-card,
+  .content-card{
+    border-radius:22px;
+  }
+}
+/* KOZENI_ACCOUNT_GUIDE_PAGE_STYLE_END */
+</style>
+
 </head>
 <body>
   <header class="site-header">
