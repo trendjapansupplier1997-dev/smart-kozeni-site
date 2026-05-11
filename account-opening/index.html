@@ -252,6 +252,102 @@ h1{
   .account-route-list{grid-template-columns:1fr}
 }
 
+
+/* account-opening offer candidates v1 */
+.account-offer-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:16px;
+}
+.account-offer-card{
+  position:relative;
+  border:1px solid rgba(20,83,45,.10);
+  background:#fff;
+}
+.account-offer-card.is-main{
+  border-color:rgba(34,140,98,.22);
+  background:linear-gradient(135deg,rgba(233,245,239,.88),rgba(255,255,255,.98));
+}
+.account-offer-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  margin-bottom:10px;
+}
+.account-offer-kind{
+  display:inline-flex;
+  align-items:center;
+  min-height:28px;
+  padding:.22rem .62rem;
+  border-radius:999px;
+  background:rgba(34,140,98,.10);
+  color:var(--deep,#228C62);
+  font-size:.78rem;
+  font-weight:850;
+}
+.account-offer-status{
+  display:inline-flex;
+  align-items:center;
+  min-height:28px;
+  padding:.22rem .62rem;
+  border-radius:999px;
+  background:rgba(15,23,42,.06);
+  color:var(--muted,#64748b);
+  font-size:.76rem;
+  font-weight:800;
+}
+.account-offer-card h3{
+  margin:.2rem 0 .55rem;
+}
+.account-offer-points{
+  display:grid;
+  gap:7px;
+  margin:14px 0 0;
+  padding:0;
+  list-style:none;
+}
+.account-offer-points li{
+  position:relative;
+  padding-left:20px;
+  color:var(--muted,#64748b);
+  line-height:1.65;
+  font-size:.94rem;
+}
+.account-offer-points li::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:.72em;
+  width:7px;
+  height:7px;
+  border-radius:999px;
+  background:var(--deep,#228C62);
+}
+.account-offer-cta{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  margin-top:16px;
+  min-height:42px;
+  padding:.72rem 1rem;
+  border-radius:999px;
+  background:rgba(34,140,98,.10);
+  color:var(--deep,#228C62);
+  text-decoration:none;
+  font-weight:850;
+  border:1px solid rgba(34,140,98,.16);
+}
+.account-offer-note{
+  margin:14px 0 0;
+  color:var(--muted,#64748b);
+  line-height:1.8;
+  font-size:.92rem;
+}
+@media(max-width:860px){
+  .account-offer-grid{grid-template-columns:1fr}
+}
+
 </style>
   <link rel="stylesheet" href="/assets/kozeni-brand.v1.css?v=41.13">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/icon-32.png?v=xicon1">
@@ -331,6 +427,96 @@ h1{
     </div>
   </div>
 </section>
+
+
+<!-- account-opening-offer-candidates-v1:start -->
+<section class="section" aria-labelledby="account-offer-title">
+  <div class="container">
+    <h2 id="account-offer-title" class="section-title">まず確認したい5つ</h2>
+    <p class="account-note">銀行口座と証券口座を中心に、申し込み前に見る条件を整理しています。公式導線は、掲載条件を確認してから設置します。</p>
+
+    <div class="account-offer-grid">
+      <article class="card account-offer-card is-main">
+        <div class="account-offer-head">
+          <span class="account-offer-kind">銀行口座</span>
+          <span class="account-offer-status">条件確認中</span>
+        </div>
+        <h3>住信SBIネット銀行</h3>
+        <p>スマホで使いやすいネット銀行候補。普段使い、振込、手数料、アプリ利用を見たい人向けです。</p>
+        <ul class="account-offer-points">
+          <li>個人口座開設の条件を確認</li>
+          <li>本人確認・アプリ手続きの流れを確認</li>
+          <li>キャンペーン対象外にならないか確認</li>
+        </ul>
+        <span class="account-offer-cta">公式条件を確認する</span>
+      </article>
+
+      <article class="card account-offer-card">
+        <div class="account-offer-head">
+          <span class="account-offer-kind">銀行口座</span>
+          <span class="account-offer-status">条件確認中</span>
+        </div>
+        <h3>SBI新生銀行</h3>
+        <p>銀行口座をシンプルに作りたい人向け。口座開設完了条件や本人確認の流れを確認します。</p>
+        <ul class="account-offer-points">
+          <li>新規口座開設の対象条件を確認</li>
+          <li>過去利用・重複申込の対象外を確認</li>
+          <li>特典付与時期と成果判定を確認</li>
+        </ul>
+        <span class="account-offer-cta">公式条件を確認する</span>
+      </article>
+
+      <article class="card account-offer-card">
+        <div class="account-offer-head">
+          <span class="account-offer-kind">証券・NISA</span>
+          <span class="account-offer-status">条件確認中</span>
+        </div>
+        <h3>三菱UFJ eスマート証券</h3>
+        <p>証券口座やNISA口座の候補。投資判断ではなく、口座開設条件とキャンペーン条件を確認します。</p>
+        <ul class="account-offer-points">
+          <li>証券口座開設の完了条件を確認</li>
+          <li>NISA対応や申し込み導線を確認</li>
+          <li>入金・取引条件の有無を確認</li>
+        </ul>
+        <span class="account-offer-cta">公式条件を確認する</span>
+      </article>
+
+      <article class="card account-offer-card">
+        <div class="account-offer-head">
+          <span class="account-offer-kind">証券口座</span>
+          <span class="account-offer-status">条件確認中</span>
+        </div>
+        <h3>GMOクリック証券</h3>
+        <p>証券取引口座の候補。FXではなく、まずは証券口座の開設条件を確認する枠として扱います。</p>
+        <ul class="account-offer-points">
+          <li>証券取引口座の申込条件を確認</li>
+          <li>成果条件が申込か開設完了か確認</li>
+          <li>FX系とは分けて掲載判断する</li>
+        </ul>
+        <span class="account-offer-cta">公式条件を確認する</span>
+      </article>
+
+      <article class="card account-offer-card">
+        <div class="account-offer-head">
+          <span class="account-offer-kind">証券・NISA</span>
+          <span class="account-offer-status">条件確認中</span>
+        </div>
+        <h3>松井証券</h3>
+        <p>老舗ネット証券の候補。NISA、投資信託、証券口座を検討する人向けに条件を確認します。</p>
+        <ul class="account-offer-points">
+          <li>新規口座開設の対象条件を確認</li>
+          <li>iDeCoやFX系とは分けて整理</li>
+          <li>公式条件とASP条件を確認して掲載</li>
+        </ul>
+        <span class="account-offer-cta">公式条件を確認する</span>
+      </article>
+    </div>
+
+    <p class="account-offer-note">※ 広告リンクは、掲載条件を確認したうえで設置します。金融商品や投資判断を推奨するものではありません。</p>
+  </div>
+</section>
+<!-- account-opening-offer-candidates-v1:end -->
+
 
 <section class="section" aria-labelledby="account-route-title">
   <div class="container">
