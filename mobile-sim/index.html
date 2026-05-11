@@ -1155,84 +1155,6 @@ h1{
   }
 </style>
 
-<style id="kozeni-rakuten-hikari-route-style">
-.kozeni-rakuten-hikari-route{
-  margin:34px auto;
-}
-.kozeni-rakuten-hikari-route .rk-route-shell{
-  border:1px solid rgba(15,118,110,.15);
-  border-radius:28px;
-  background:linear-gradient(135deg,#ecfdf5 0%,#ffffff 62%,#fff7d6 100%);
-  box-shadow:0 18px 45px rgba(17,35,31,.08);
-  padding:24px;
-}
-.kozeni-rakuten-hikari-route .rk-route-kicker{
-  display:inline-flex;
-  align-items:center;
-  gap:8px;
-  margin:0 0 10px;
-  padding:6px 12px;
-  border-radius:999px;
-  background:#fff;
-  border:1px solid rgba(15,118,110,.13);
-  color:#047857;
-  font-size:.82rem;
-  font-weight:800;
-}
-.kozeni-rakuten-hikari-route h2{
-  margin:0;
-  letter-spacing:-.03em;
-}
-.kozeni-rakuten-hikari-route p{
-  color:#5f706b;
-}
-.kozeni-rakuten-hikari-route .rk-route-grid{
-  display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:14px;
-  margin-top:16px;
-}
-.kozeni-rakuten-hikari-route .rk-route-card{
-  border:1px solid rgba(15,118,110,.12);
-  border-radius:22px;
-  background:rgba(255,255,255,.86);
-  padding:18px;
-}
-.kozeni-rakuten-hikari-route .rk-route-card strong{
-  display:block;
-  margin-bottom:6px;
-}
-.kozeni-rakuten-hikari-route .rk-route-actions{
-  display:flex;
-  flex-wrap:wrap;
-  gap:10px;
-  margin-top:18px;
-}
-.kozeni-rakuten-hikari-route .rk-route-btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  min-height:44px;
-  padding:0 16px;
-  border-radius:999px;
-  border:1px solid rgba(15,118,110,.16);
-  text-decoration:none;
-  font-weight:850;
-}
-.kozeni-rakuten-hikari-route .rk-route-btn.primary{
-  color:#fff;
-  background:linear-gradient(135deg,#047857,#059669);
-  border-color:transparent;
-  box-shadow:0 12px 24px rgba(4,120,87,.22);
-}
-.kozeni-rakuten-hikari-route .rk-route-btn.sub{
-  background:#fff;
-  color:#0f766e;
-}
-@media (max-width:760px){
-  .kozeni-rakuten-hikari-route .rk-route-grid{grid-template-columns:1fr;}
-}
-</style>
 
 </head>
 <body class="kozeni-mobile-sim-polish">
@@ -1255,40 +1177,71 @@ h1{
   <span aria-current="page">スマホ・回線</span></nav>
 <main>
 <!-- kozeni-mobile-v40-5-entry-start -->
-<section class="kozeni-entry-v40-5" id="mobile-sim-entry" aria-labelledby="mobile-sim-entry-title">
-  <div class="kozeni-entry-v40-5__shell">
-    <span class="kozeni-entry-v40-5__label">スマホ・回線 / 最初に選ぶ</span>
-    <h2 id="mobile-sim-entry-title">まず、どっちを見直す？</h2>
-    <p class="kozeni-entry-v40-5__lead">細かい比較の前に、入口を3つに分けます。分かっている人は該当カード群へ、迷う人だけ下のチェックへ進めばOKです。</p>
-    <div class="kozeni-entry-v40-5__grid" aria-label="スマホ・回線の入口">
-      <a class="kozeni-entry-v40-5__card" href="#smartphone-plans">
-        <strong>スマホ代・SIMを見直す</strong>
-        <span>月額、GB、乗り換え候補を見たい人はこちら。安さ・20GB前後・楽天系・店舗サポートに分けて確認します。</span>
-        <em>スマホ候補へ</em>
-      </a>
-      <a class="kozeni-entry-v40-5__card" href="#home-wifi-plans">
+
+<section class="kozeni-entry-router-v1" aria-labelledby="kozeni-mobile-route-title">
+  <div class="kozeni-entry-router-v1__shell">
+    <p class="kozeni-entry-router-v1__kicker">スマホ・回線 / 最初に選ぶ</p>
+    <h1 id="kozeni-mobile-route-title">まず、どっちを見直す？</h1>
+    <p class="kozeni-entry-router-v1__lead">
+      細かい比較の前に、入口を切り替えます。スマホ代を見たい人はスマホ側、家のネットを見たい人は回線側。
+      迷う人だけ、30秒チェックで現在地を整理します。
+    </p>
+
+    <div class="kozeni-entry-router-v1__tabs" role="tablist" aria-label="スマホ・回線の入口切り替え">
+      <button class="kozeni-entry-router-v1__tab" type="button" data-kozeni-route-tab="mobile" aria-selected="true">
+        <strong>スマホ・SIMを見直す</strong>
+        <span>月額、GB、乗り換え候補を確認。楽天モバイル、ahamo、LINEMOなど。</span>
+      </button>
+      <button class="kozeni-entry-router-v1__tab" type="button" data-kozeni-route-tab="home" aria-selected="false">
         <strong>家のWi-Fi・回線を見直す</strong>
-        <span>家のネットが重い、引っ越し前後、工事なしで使いたい人はこちら。BIGLOBE WiMAXもここで確認できます。</span>
-        <em>回線候補へ</em>
-      </a>
-      <a class="kozeni-entry-v40-5__card" href="#mobile-unknown-check">
+        <span>工事不要Wi-Fi、WiMAX、楽天ひかりなど。家のネット側だけを整理。</span>
+      </button>
+      <button class="kozeni-entry-router-v1__tab" type="button" data-kozeni-route-tab="unknown" aria-selected="false">
         <strong>どっちか分からない</strong>
-        <span>スマホ側を見るべきか、家のWi-Fi側を見るべきかだけを短く判定します。細かいブランド診断ではありません。</span>
-        <em>30秒チェックへ</em>
-      </a>
+        <span>スマホ側を見るべきか、家のWi-Fi側を見るべきかだけを短く判定。</span>
+      </button>
     </div>
   </div>
 </section>
-<!-- kozeni-mobile-v40-5-entry-end -->
 
-<!-- brand-list-hero-v1:start -->
-      
-<!-- kozeni-v40-7 old mobile hero/4-question CTA removed; primary entry is the first 3 cards -->
+<section class="kozeni-route-panel-v1" data-kozeni-route-panel="home" aria-label="家のWi-Fi・回線候補">
+  <div class="kozeni-route-panel-v1__shell">
+    <div class="kozeni-route-panel-v1__head">
+      <p class="kozeni-entry-router-v1__kicker">PR / 家のWi-Fi・回線</p>
+      <h2>家のネットは、まず2択で見る。</h2>
+      <p>
+        すぐ使いたいなら工事不要Wi-Fi。楽天モバイルや楽天市場を使うなら楽天ひかり。
+        このページでは、回線側だけをシンプルに分けます。
+      </p>
+    </div>
 
+    <div class="kozeni-route-panel-v1__grid">
+      <article class="kozeni-route-panel-v1__card">
+        <strong>工事不要Wi-Fi / WiMAX</strong>
+        <p>工事したくない、引っ越し前後、開通待ち、スマホのテザリングでは足りない人向け。</p>
+        <div class="kozeni-route-panel-v1__tags">
+          <span class="kozeni-route-panel-v1__tag">工事なし</span>
+          <span class="kozeni-route-panel-v1__tag">開通待ち</span>
+          <span class="kozeni-route-panel-v1__tag">短期〜中期</span>
+        </div>
+        <a class="kozeni-route-panel-v1__btn primary" href="/mobile-sim/home-wifi/">工事不要Wi-Fiを見る</a>
+      </article>
 
-<!-- kozeni-mobile-v40-7-recommend-start -->
-<div id="smartphone-plans" class="kozeni-anchor-offset" aria-hidden="true"></div>
-<section class="kozeni-list-section" aria-label="最初に見るおすすめスマホ・回線">
+      <article class="kozeni-route-panel-v1__card">
+        <strong>楽天ひかり</strong>
+        <p>楽天モバイル利用者、楽天市場をよく使う人が、家の固定回線を楽天系でまとめたいときの候補。</p>
+        <div class="kozeni-route-panel-v1__tags">
+          <span class="kozeni-route-panel-v1__tag">光回線</span>
+          <span class="kozeni-route-panel-v1__tag">楽天系</span>
+          <span class="kozeni-route-panel-v1__tag">SPU確認</span>
+        </div>
+        <a class="kozeni-route-panel-v1__btn primary" href="/mobile-sim/rakuten-hikari/">楽天ひかりを確認する</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="kozeni-list-section" aria-label="最初に見るおすすめスマホ・回線" data-kozeni-route-panel="mobile">
   <div class="kozeni-list-section__head">
     <div>
       <p class="kozeni-list-section__kicker">RECOMMEND</p>
@@ -1325,7 +1278,7 @@ h1{
 </section>
 <!-- kozeni-mobile-v40-7-recommend-end -->
 
-<section class="kozeni-list-section" aria-label="目的別で選ぶスマホ・回線">
+<section class="kozeni-list-section" aria-label="目的別で選ぶスマホ・回線" data-kozeni-route-panel="mobile">
   <div class="kozeni-list-section__head">
     <div>
       <p class="kozeni-list-section__kicker">PURPOSE</p>
@@ -1345,7 +1298,7 @@ h1{
   </div>
 </section>
 
-<section class="kozeni-list-section" aria-label="その他のスマホ・回線候補">
+<section class="kozeni-list-section" aria-label="その他のスマホ・回線候補" data-kozeni-route-panel="mobile">
   <div class="kozeni-list-section__head">
     <div>
       <p class="kozeni-list-section__kicker">MORE</p>
@@ -1369,66 +1322,10 @@ h1{
 <!-- kozeni-mobile-network-list-v1:end -->
 
 
-<!-- kozeni-mobile-v40-5-home-plans-start -->
 
-<section id="kozeni-rakuten-hikari-route-section" class="kozeni-rakuten-hikari-route" aria-label="楽天ひかり導線">
-  <div class="rk-route-shell">
-    <p class="rk-route-kicker">PR / 光回線も確認</p>
-    <h2>楽天モバイルを使う人は、楽天ひかりも候補。</h2>
-    <p>
-      家のネットを見直すなら、工事不要Wi-Fiだけでなく光回線も確認。
-      楽天モバイルや楽天市場を使っている人は、楽天ひかりの料金・工事・SPU条件を一度見ておく価値があります。
-    </p>
-
-    <div class="rk-route-grid">
-      <article class="rk-route-card">
-        <strong>工事不要・すぐ使いたい</strong>
-        <p>開通を待ちたくない、短期利用、引っ越し前後ならホームルーター・WiMAX系を確認。</p>
-        <a class="rk-route-btn sub" href="/mobile-sim/home-wifi/">工事不要Wi-Fiを見る</a>
-      </article>
-      <article class="rk-route-card">
-        <strong>楽天系で固定回線をまとめたい</strong>
-        <p>楽天モバイル利用者、楽天市場をよく使う人は、楽天ひかりの条件確認へ。</p>
-        <a class="rk-route-btn primary" href="/mobile-sim/rakuten-hikari/">楽天ひかりを確認する</a>
-      </article>
-    </div>
-
-    <div class="rk-route-actions">
-      <a class="rk-route-btn primary" href="/mobile-sim/rakuten-hikari/">楽天ひかりのチェックページへ</a>
-      <a class="rk-route-btn sub" href="/mobile-sim/home-wifi/">BIGLOBE WiMAXも見る</a>
-    </div>
-  </div>
-</section>
-
-<section class="kozeni-home-plans-v40-5" id="home-wifi-plans" aria-labelledby="home-wifi-plans-title">
-  <div class="kozeni-home-plans-v40-5__shell">
-    <span class="kozeni-home-plans-v40-5__label">家のWi-Fi・回線</span>
-    <h2 id="home-wifi-plans-title">家のネットが重いなら、工事不要Wi-Fiも候補。</h2>
-    <p class="kozeni-home-plans-v40-5__lead">スマホプランだけ変えても、家のWi-Fiが遅いと不満は残ります。まずは工事なしで使える候補を1つだけ見える場所に置きます。</p>
-    <div class="kozeni-home-plans-v40-5__grid">
-      <article class="kozeni-home-plans-v40-5__main">
-        <span class="kozeni-home-plans-v40-5__tag">PR / ValueCommerce</span>
-        <h3>BIGLOBE WiMAX +5G</h3>
-        <p>工事なしで使えるWiMAX系の候補です。家の固定回線までは不要だけど、スマホのテザリングだけでは足りない人向けに確認します。</p>
-        <div class="kozeni-home-plans-v40-5__actions">
-          <a class="kozeni-home-plans-v40-5__btn kozeni-home-plans-v40-5__btn--main" href="https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3770077&pid=892609857" target="_blank" rel="nofollow sponsored noopener">BIGLOBE WiMAXを確認</a>
-          <a class="kozeni-home-plans-v40-5__btn kozeni-home-plans-v40-5__btn--sub" href="/mobile-sim/home-wifi/">向き・不向きを見る</a>
-        </div>
-      </article>
-      <div class="kozeni-home-plans-v40-5__side" aria-label="工事不要Wi-Fiの向き不向き">
-        <div class="kozeni-home-plans-v40-5__mini"><strong>向く人</strong><span>工事したくない、引っ越し前後、開通待ち、家のWi-Fi不調、スマホのテザリングでは足りない人。</span></div>
-        <div class="kozeni-home-plans-v40-5__mini"><strong>向かない人</strong><span>光回線の安定性が必要、オンラインゲーム中心、提供エリアが弱い、家族で常時大容量利用する人。</span></div>
-        <div class="kozeni-home-plans-v40-5__mini"><strong>先に見ること</strong><span>料金、端末条件、提供エリア、キャンペーン、解約条件。最終条件は公式ページで確認します。</span></div>
-        <div class="kozeni-home-plans-v40-5__mini"><strong>スマホ側も怪しい時</strong><span>スマホ代や月GBが分からない場合は、先に確認ページで現在地を整理します。</span></div>
-      </div>
-    </div>
-    <p class="kozeni-home-plans-v40-5__note">料金・キャンペーン・提供エリア・端末条件は変更されることがあります。申込前に公式ページで最新条件を確認してください。</p>
-  </div>
-</section>
-<!-- kozeni-mobile-v40-5-home-plans-end -->
 
 <!-- kozeni-mobile-v40-5-helper-start -->
-<section class="kozeni-helper-v40-5" id="mobile-unknown-check" aria-labelledby="mobile-sim-helper-title" hidden aria-hidden="true">
+<section class="kozeni-helper-v40-5" id="mobile-unknown-check" aria-labelledby="mobile-sim-helper-title" data-kozeni-route-panel="unknown">
   <div class="kozeni-helper-v40-5__shell">
     <span class="kozeni-helper-v40-5__label">どっちか分からない人へ</span>
     <h2 id="mobile-sim-helper-title">30秒チェック</h2>
@@ -1562,5 +1459,39 @@ h1{
   });
 })();
 </script>
+
+<script id="kozeni-route-switch-v1-script">
+(() => {
+  const root = document.documentElement;
+  const tabs = Array.from(document.querySelectorAll('[data-kozeni-route-tab]'));
+  const panels = Array.from(document.querySelectorAll('[data-kozeni-route-panel]'));
+
+  if (!tabs.length || !panels.length) return;
+
+  function setRoute(route){
+    root.classList.add('kozeni-route-switch-ready');
+
+    tabs.forEach(tab => {
+      const active = tab.dataset.kozeniRouteTab === route;
+      tab.setAttribute('aria-selected', active ? 'true' : 'false');
+    });
+
+    panels.forEach(panel => {
+      const active = panel.dataset.kozeniRoutePanel === route;
+      panel.classList.toggle('is-active', active);
+      panel.setAttribute('aria-hidden', active ? 'false' : 'true');
+    });
+  }
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      setRoute(tab.dataset.kozeniRouteTab);
+    });
+  });
+
+  setRoute('mobile');
+})();
+</script>
+
 </body>
 </html>
