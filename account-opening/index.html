@@ -348,6 +348,88 @@ h1{
   .account-offer-grid{grid-template-columns:1fr}
 }
 
+
+/* account-opening list v3 */
+.account-choice-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:16px;
+}
+.account-choice-card{
+  border:1px solid rgba(34,140,98,.16);
+  background:linear-gradient(135deg,rgba(233,245,239,.88),rgba(255,255,255,.98));
+}
+.account-choice-card .cta,
+.account-list-card .cta{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:42px;
+  margin-top:16px;
+  padding:.72rem 1rem;
+  border-radius:999px;
+  background:var(--deep,#228C62);
+  color:#fff;
+  text-decoration:none;
+  font-weight:850;
+}
+.account-list-section{
+  scroll-margin-top:90px;
+}
+.account-list-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:16px;
+}
+.account-list-card{
+  position:relative;
+  border:1px solid rgba(20,83,45,.10);
+  background:#fff;
+}
+.account-list-card.is-main{
+  border-color:rgba(34,140,98,.22);
+  background:linear-gradient(135deg,rgba(233,245,239,.88),rgba(255,255,255,.98));
+}
+.account-list-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  margin-bottom:10px;
+}
+.account-list-kind{
+  display:inline-flex;
+  align-items:center;
+  min-height:28px;
+  padding:.22rem .62rem;
+  border-radius:999px;
+  background:rgba(34,140,98,.10);
+  color:var(--deep,#228C62);
+  font-size:.78rem;
+  font-weight:850;
+}
+.account-list-status{
+  display:inline-flex;
+  align-items:center;
+  min-height:28px;
+  padding:.22rem .62rem;
+  border-radius:999px;
+  background:rgba(15,23,42,.06);
+  color:var(--muted,#64748b);
+  font-size:.76rem;
+  font-weight:800;
+}
+.account-list-note{
+  margin-top:14px;
+  color:var(--muted,#64748b);
+  line-height:1.8;
+  font-size:.92rem;
+}
+@media(max-width:860px){
+  .account-choice-grid,
+  .account-list-grid{grid-template-columns:1fr}
+}
+
 </style>
   <link rel="stylesheet" href="/assets/kozeni-brand.v1.css?v=41.13">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/icon-32.png?v=xicon1">
@@ -377,183 +459,107 @@ h1{
 
 <!-- brand-list-hero-v1:start -->
       <section class="hero brand-list-hero" aria-labelledby="brand-list-title">
-        <p class="eyebrow">口座開設 / 条件確認</p>
-        <h1 id="brand-list-title">口座開設は、成果条件と使い道で選ぶ。</h1>
-        <p class="lead">銀行・証券・NISA口座は、特典額だけで選ぶと失敗しやすいです。申し込み前に、対象外条件・本人確認・入金や取引条件まで確認します。</p>
-        <div class="brand-keywords"><span>銀行口座</span><span>証券口座</span><span>NISA</span><span>成果条件</span><span>本人確認</span></div>
+        <p class="eyebrow">口座開設 / 案件選択</p>
+        <h1 id="brand-list-title">口座開設は、銀行か証券・NISAから選ぶ。</h1>
+        <p class="lead">このページでは、口座開設案件を選ぶところまで整理します。成果条件・対象外・本人確認の細かい確認は、各案件の詳細ページで見ます。</p>
+        <div class="brand-keywords"><span>銀行口座</span><span>証券口座</span><span>NISA</span><span>ASP直リンク</span><span>条件確認</span></div>
       </section>
 <!-- brand-list-hero-v1:end -->
 
-<section class="section" aria-labelledby="account-entry-title">
+<section class="section" aria-labelledby="account-choice-title">
   <div class="container">
-    <h2 id="account-entry-title" class="section-title">まず、どの口座を作りたいか選ぶ。</h2>
-    <div class="account-entry-grid">
-      <article class="card account-entry-card">
-        <span class="tag">普段使い</span>
+    <h2 id="account-choice-title" class="section-title">まず、どちらを見たいか選ぶ。</h2>
+    <div class="account-choice-grid">
+      <article class="card account-choice-card">
+        <span class="tag">銀行口座</span>
         <h3>銀行口座を作りたい</h3>
-        <p>給与受取、振込、スマホ決済、手数料、キャンペーン条件を確認。ネット銀行やASP案件の受け皿にします。</p>
-        <a class="cta" href="#bank-account">銀行口座の見方へ</a>
+        <p>普段使い、給与受取、振込、スマホ決済、手数料を見たい人向け。銀行口座の候補だけを表示します。</p>
+        <a class="cta" href="#bank-accounts">銀行口座の候補を見る</a>
       </article>
 
-      <article class="card account-entry-card">
+      <article class="card account-choice-card">
         <span class="tag">証券・NISA</span>
         <h3>証券口座・NISA口座を見たい</h3>
-        <p>投資商品の推奨ではなく、口座開設キャンペーンの条件、入金・取引条件、対象外を整理します。</p>
-        <a class="cta" href="#securities-account">証券口座の見方へ</a>
-      </article>
-
-      <article class="card account-entry-card">
-        <span class="tag">条件確認</span>
-        <h3>キャンペーン条件を先に確認したい</h3>
-        <p>口座開設だけで対象になるのか、入金・取引・維持条件があるのかを申し込み前に確認します。</p>
-        <a class="cta" href="#campaign-check">条件チェックへ</a>
+        <p>投資商品の推奨ではなく、口座開設の入口を整理します。証券・NISA口座の候補だけを表示します。</p>
+        <a class="cta" href="#securities-accounts">証券・NISAの候補を見る</a>
       </article>
     </div>
   </div>
 </section>
 
-<section class="section" aria-labelledby="account-check-title">
+<section id="bank-accounts" class="section account-list-section" aria-labelledby="bank-accounts-title">
   <div class="container">
-    <div class="account-check-panel">
-      <h2 id="account-check-title" class="section-title">申し込み前チェック</h2>
-      <p class="account-note">口座開設案件は「開設だけでOK」なのか、「入金・取引・一定期間維持」が必要なのかで難易度が大きく変わります。</p>
-      <ul class="account-check-list">
-        <li>口座開設だけで成果になるのか、入金・取引・カード発行など追加条件があるのか確認する</li>
-        <li>過去に同じ金融機関・証券会社を使ったことがある場合、対象外にならないか確認する</li>
-        <li>ASP・公式キャンペーン経由の場合、途中で別ブラウザ・別アプリ・広告ブロックを挟まない</li>
-        <li>本人確認書類、住所、電話番号、メールアドレスの入力ミスで否認されないよう確認する</li>
-        <li>条件達成期限、特典付与時期、成果判定までの期間を確認する</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-
-<!-- account-opening-offer-candidates-v1:start -->
-<section class="section" aria-labelledby="account-offer-title">
-  <div class="container">
-    <h2 id="account-offer-title" class="section-title">まず確認したい5つ</h2>
-    <p class="account-note">銀行口座と証券口座を中心に、申し込み前に見る条件を整理しています。公式導線は、掲載条件を確認してから設置します。</p>
-
-    <div class="account-offer-grid">
-      <article class="card account-offer-card is-main">
-        <div class="account-offer-head">
-          <span class="account-offer-kind">銀行口座</span>
-          <span class="account-offer-status">条件確認中</span>
+    <h2 id="bank-accounts-title" class="section-title">銀行口座の候補</h2>
+    <div class="account-list-grid">
+      <article class="card account-list-card is-main">
+        <div class="account-list-head">
+          <span class="account-list-kind">銀行口座</span>
+          <span class="account-list-status">条件確認中</span>
         </div>
         <h3>住信SBIネット銀行</h3>
         <p>スマホで使いやすいネット銀行候補。普段使い、振込、手数料、アプリ利用を見たい人向けです。</p>
-        <ul class="account-offer-points">
-          <li>個人口座開設の条件を確認</li>
-          <li>本人確認・アプリ手続きの流れを確認</li>
-          <li>キャンペーン対象外にならないか確認</li>
-        </ul>
-        <span class="account-offer-cta">公式条件を確認する</span>
+        <a class="cta" href="/account-opening/sumishin-sbi-netbank/">詳細を見る</a>
       </article>
 
-      <article class="card account-offer-card">
-        <div class="account-offer-head">
-          <span class="account-offer-kind">銀行口座</span>
-          <span class="account-offer-status">条件確認中</span>
+      <article class="card account-list-card">
+        <div class="account-list-head">
+          <span class="account-list-kind">銀行口座</span>
+          <span class="account-list-status">条件確認中</span>
         </div>
         <h3>SBI新生銀行</h3>
         <p>銀行口座をシンプルに作りたい人向け。口座開設完了条件や本人確認の流れを確認します。</p>
-        <ul class="account-offer-points">
-          <li>新規口座開設の対象条件を確認</li>
-          <li>過去利用・重複申込の対象外を確認</li>
-          <li>特典付与時期と成果判定を確認</li>
-        </ul>
-        <span class="account-offer-cta">公式条件を確認する</span>
+        <a class="cta" href="/account-opening/sbi-shinsei-bank/">詳細を見る</a>
       </article>
+    </div>
+  </div>
+</section>
 
-      <article class="card account-offer-card">
-        <div class="account-offer-head">
-          <span class="account-offer-kind">証券・NISA</span>
-          <span class="account-offer-status">条件確認中</span>
+<section id="securities-accounts" class="section account-list-section" aria-labelledby="securities-accounts-title">
+  <div class="container">
+    <h2 id="securities-accounts-title" class="section-title">証券・NISA口座の候補</h2>
+    <div class="account-list-grid">
+      <article class="card account-list-card is-main">
+        <div class="account-list-head">
+          <span class="account-list-kind">証券・NISA</span>
+          <span class="account-list-status">条件確認中</span>
         </div>
         <h3>三菱UFJ eスマート証券</h3>
-        <p>証券口座やNISA口座の候補。投資判断ではなく、口座開設条件とキャンペーン条件を確認します。</p>
-        <ul class="account-offer-points">
-          <li>証券口座開設の完了条件を確認</li>
-          <li>NISA対応や申し込み導線を確認</li>
-          <li>入金・取引条件の有無を確認</li>
-        </ul>
-        <span class="account-offer-cta">公式条件を確認する</span>
+        <p>証券口座やNISA口座の候補。投資判断ではなく、口座開設条件を確認します。</p>
+        <a class="cta" href="/account-opening/mufg-esmart-sec/">詳細を見る</a>
       </article>
 
-      <article class="card account-offer-card">
-        <div class="account-offer-head">
-          <span class="account-offer-kind">証券口座</span>
-          <span class="account-offer-status">条件確認中</span>
+      <article class="card account-list-card">
+        <div class="account-list-head">
+          <span class="account-list-kind">証券口座</span>
+          <span class="account-list-status">条件確認中</span>
         </div>
         <h3>GMOクリック証券</h3>
         <p>証券取引口座の候補。FXではなく、まずは証券口座の開設条件を確認する枠として扱います。</p>
-        <ul class="account-offer-points">
-          <li>証券取引口座の申込条件を確認</li>
-          <li>成果条件が申込か開設完了か確認</li>
-          <li>FX系とは分けて掲載判断する</li>
-        </ul>
-        <span class="account-offer-cta">公式条件を確認する</span>
+        <a class="cta" href="/account-opening/gmo-click-sec/">詳細を見る</a>
       </article>
 
-      <article class="card account-offer-card">
-        <div class="account-offer-head">
-          <span class="account-offer-kind">証券・NISA</span>
-          <span class="account-offer-status">条件確認中</span>
+      <article class="card account-list-card">
+        <div class="account-list-head">
+          <span class="account-list-kind">証券・NISA</span>
+          <span class="account-list-status">条件確認中</span>
         </div>
         <h3>松井証券</h3>
-        <p>老舗ネット証券の候補。NISA、投資信託、証券口座を検討する人向けに条件を確認します。</p>
-        <ul class="account-offer-points">
-          <li>新規口座開設の対象条件を確認</li>
-          <li>iDeCoやFX系とは分けて整理</li>
-          <li>公式条件とASP条件を確認して掲載</li>
-        </ul>
-        <span class="account-offer-cta">公式条件を確認する</span>
+        <p>老舗ネット証券の候補。NISA、投資信託、証券口座を検討する人向けに整理します。</p>
+        <a class="cta" href="/account-opening/matsui-sec/">詳細を見る</a>
       </article>
     </div>
 
-    <p class="account-offer-note">※ 広告リンクは、掲載条件を確認したうえで設置します。金融商品や投資判断を推奨するものではありません。</p>
-  </div>
-</section>
-<!-- account-opening-offer-candidates-v1:end -->
-
-
-<section class="section" aria-labelledby="account-route-title">
-  <div class="container">
-    <h2 id="account-route-title" class="section-title">受け皿として見る候補</h2>
-    <div class="account-route-list">
-      <article id="bank-account" class="card account-route-card">
-        <span class="tag">銀行口座</span>
-        <h3>銀行口座</h3>
-        <p>給与受取、振込、ATM、スマホ決済連携、キャンペーン条件を確認します。</p>
-        <small>今後、ASP直リンクや公式キャンペーン案件に差し替えやすい受け皿です。</small>
-      </article>
-
-      <article id="securities-account" class="card account-route-card">
-        <span class="tag">証券・NISA</span>
-        <h3>証券口座・NISA口座</h3>
-        <p>口座開設キャンペーン、NISA対応、入金条件、取引条件を確認します。</p>
-        <small>投資商品の推奨ではなく、申し込み条件の確認に限定します。</small>
-      </article>
-
-      <article id="campaign-check" class="card account-route-card">
-        <span class="tag">ASP・公式</span>
-        <h3>キャンペーン条件</h3>
-        <p>ASP直リンクや公式アフィリエイトを優先し、成果条件・対象外・付与時期を確認します。</p>
-        <small>口座開設の目的に合わせて、銀行・証券・NISAのASP直リンクや公式キャンペーン導線を整えます。</small>
-      </article>
-    </div>
+    <p class="account-list-note">※ このページは案件を選ぶための一覧です。成果条件・対象外・本人確認・広告リンクは各詳細ページで確認します。金融商品や投資判断を推奨するものではありません。</p>
   </div>
 </section>
 
 <section class="section" aria-labelledby="account-policy-title">
   <div class="container">
-    <h2 id="account-policy-title" class="section-title">このページの方針</h2>
-    <p class="account-note">このページでは、特定の金融商品や投資判断を推奨しません。口座開設キャンペーン、成果条件、対象外条件、本人確認の注意点を整理し、最後は公式サイト・ASP掲載条件の最新情報を確認する前提で案内します。</p>
+    <h2 id="account-policy-title" class="section-title">このカテゴリの方針</h2>
+    <p class="account-note">スマホ小銭研究所では、口座開設をASP直リンク・公式アフィリエイトの受け皿として扱います。ポイ活一覧へ流すのではなく、銀行口座と証券・NISA口座の目的に合わせて案件を選べる形にします。</p>
   </div>
 </section>
 
-</main>
 <footer class="footer">
   <div class="container">
     <a href="/policy/">PR表記</a>
