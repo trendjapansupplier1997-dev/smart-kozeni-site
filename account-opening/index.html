@@ -379,6 +379,67 @@ h1{
   box-shadow:0 16px 32px rgba(34,140,98,.22);
 }
 
+
+/* KOZENI_ACCOUNT_FILTER_UI_START */
+.account-filter{
+  display:inline-flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:22px;
+  padding:6px;
+  border:1px solid rgba(15,118,110,.16);
+  border-radius:999px;
+  background:rgba(255,255,255,.78);
+  box-shadow:0 14px 34px rgba(15,23,42,.07);
+}
+.account-filter button{
+  appearance:none;
+  border:0;
+  border-radius:999px;
+  background:transparent;
+  color:#475569;
+  cursor:pointer;
+  font:inherit;
+  font-weight:800;
+  min-height:42px;
+  padding:0 16px;
+  transition:background .18s ease, color .18s ease, box-shadow .18s ease, transform .18s ease;
+}
+.account-filter button:hover{
+  transform:translateY(-1px);
+  color:#0f172a;
+}
+.account-filter button.is-active{
+  background:#0f766e;
+  color:#fff;
+  box-shadow:0 10px 22px rgba(15,118,110,.22);
+}
+.account-filter-note{
+  margin:12px 0 0;
+  color:#64748b;
+  font-size:.92rem;
+  line-height:1.8;
+}
+.account-section-lead{
+  max-width:760px;
+  margin:-4px 0 22px;
+  color:#64748b;
+  line-height:1.85;
+}
+@media (max-width:560px){
+  .account-filter{
+    display:grid;
+    grid-template-columns:1fr;
+    width:100%;
+    border-radius:24px;
+  }
+  .account-filter button{
+    justify-content:center;
+    width:100%;
+  }
+}
+/* KOZENI_ACCOUNT_FILTER_UI_END */
+
 </style>
   <link rel="stylesheet" href="/assets/kozeni-brand.v1.css?v=41.13">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/icon-32.png?v=xicon1">
@@ -409,15 +470,24 @@ h1{
 
 <!-- brand-list-hero-v1:start -->
       <section class="hero brand-list-hero" aria-labelledby="brand-list-title">
-        <p class="eyebrow">口座開設 / 案件選択</p>
-        <h1 id="brand-list-title">口座開設は、銀行口座と証券・NISA・iDeCoから選ぶ。</h1>
-        <p class="lead">銀行口座と証券・NISA・iDeCo口座の候補を分けて整理します。成果条件・対象外・本人確認の細かい確認は、各案件の詳細ページで見ます。</p>
-        <div class="brand-keywords"><span>銀行口座</span><span>証券口座</span><span>NISA</span><span>本人確認</span><span>申込条件</span></div>
+        <p class="eyebrow">口座開設</p>
+        <h1 id="brand-list-title" style="font-size:clamp(1.85rem,6vw,2.7rem);line-height:1.18;">日常のお金か、将来のお金か。</h1>
+        <p class="lead" style="max-width:760px;">普段使いの銀行口座と、NISA・iDeCoなどの資産づくり口座を分けて確認できます。まだ決めていない人は、まず「すべて見る」で比べてください。</p>
+
+        <div class="account-filter" role="group" aria-label="表示する口座カテゴリ">
+          <button type="button" class="is-active" data-account-filter="all" aria-pressed="true">すべて見る</button>
+          <button type="button" data-account-filter="bank" aria-pressed="false">銀行口座</button>
+          <button type="button" data-account-filter="securities" aria-pressed="false">NISA・iDeCo</button>
+        </div>
+        <p class="account-filter-note" data-account-filter-note>銀行口座とNISA・iDeCo口座を、両方表示しています。</p>
+
+        <div class="brand-keywords"><span>銀行口座</span><span>NISA</span><span>iDeCo</span><span>証券口座</span><span>申込前チェック</span></div>
       </section>
 <!-- brand-list-hero-v1:end -->
-<section id="bank-accounts" class="section account-list-section" aria-labelledby="bank-accounts-title">
+<section id="bank-accounts" class="section account-list-section" aria-labelledby="bank-accounts-title" data-account-panel="bank">
   <div class="container">
-    <h2 id="bank-accounts-title" class="section-title">銀行口座の候補</h2>
+    <h2 id="bank-accounts-title" class="section-title">日常のお金に使う口座</h2>
+    <p class="account-section-lead">給与受け取り、振込、生活費の管理など、普段使いしやすい銀行口座を確認します。</p>
     <div class="account-list-grid">
       <article class="card account-list-card is-main">
         <div class="account-list-head">
@@ -440,9 +510,10 @@ h1{
   </div>
 </section>
 
-<section id="securities-accounts" class="section account-list-section" aria-labelledby="securities-accounts-title">
+<section id="securities-accounts" class="section account-list-section" aria-labelledby="securities-accounts-title" data-account-panel="securities">
   <div class="container">
-    <h2 id="securities-accounts-title" class="section-title">証券・NISA・iDeCo口座の候補</h2>
+    <h2 id="securities-accounts-title" class="section-title">将来のお金を考える口座</h2>
+    <p class="account-section-lead">NISA、iDeCo、投資信託など、資産づくりの入口になる証券口座を確認します。違いが分からない人向けの解説も用意しています。</p>
     <div class="account-list-grid">
       <article class="card account-list-card is-main">
         <div class="account-list-head">
@@ -504,5 +575,49 @@ h1{
 <nav class="kozeni-fixed-return" aria-label="ホームへ戻る">
   <a href="/">← ホームへ戻る</a>
 </nav>
+
+<!-- KOZENI_ACCOUNT_FILTER_SCRIPT_START -->
+
+<script>
+(() => {
+  const buttons = Array.from(document.querySelectorAll('[data-account-filter]'));
+  const panels = Array.from(document.querySelectorAll('[data-account-panel]'));
+  const note = document.querySelector('[data-account-filter-note]');
+
+  if (!buttons.length || !panels.length) return;
+
+  const labels = {
+    all: '銀行口座とNISA・iDeCo口座を、両方表示しています。',
+    bank: '銀行口座だけを表示しています。比較したいときは「すべて見る」に戻せます。',
+    securities: 'NISA・iDeCo口座だけを表示しています。比較したいときは「すべて見る」に戻せます。'
+  };
+
+  const applyFilter = (target) => {
+    buttons.forEach((button) => {
+      const active = button.dataset.accountFilter === target;
+      button.classList.toggle('is-active', active);
+      button.setAttribute('aria-pressed', active ? 'true' : 'false');
+    });
+
+    panels.forEach((panel) => {
+      const show = target === 'all' || panel.dataset.accountPanel === target;
+      panel.hidden = !show;
+    });
+
+    if (note) note.textContent = labels[target] || labels.all;
+  };
+
+  buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+      applyFilter(button.dataset.accountFilter || 'all');
+    });
+  });
+
+  applyFilter('all');
+})();
+</script>
+
+<!-- KOZENI_ACCOUNT_FILTER_SCRIPT_END -->
+
 </body>
 </html>
