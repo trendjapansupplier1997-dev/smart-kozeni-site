@@ -8,6 +8,93 @@
   <link rel="canonical" href="https://smart-kozeni.com/account-opening/matsui-sec/">
   <link rel="stylesheet" href="/assets/kozeni-brand.v1.css?v=41.13">
   <style>
+
+/* account-opening detail header fix v1 */
+.kozeni-header{
+  position:sticky;
+  top:0;
+  z-index:40;
+  background:rgba(255,255,255,.92);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(20,83,45,.10);
+}
+.kozeni-header-inner{
+  max-width:1120px;
+  margin:0 auto;
+  padding:12px 20px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+}
+.kozeni-logo{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  color:var(--ink,#17231d);
+  text-decoration:none;
+  font-weight:900;
+  letter-spacing:-.02em;
+  white-space:nowrap;
+}
+.kozeni-logo-mark{
+  width:34px;
+  height:34px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:12px;
+  overflow:hidden;
+  box-shadow:0 8px 18px rgba(34,140,98,.12);
+}
+.kozeni-logo-mark img{
+  display:block;
+  width:34px;
+  height:34px;
+}
+.kozeni-main-nav{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  flex-wrap:wrap;
+  justify-content:flex-end;
+}
+.kozeni-main-nav a{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:36px;
+  padding:.52rem .78rem;
+  border-radius:999px;
+  color:var(--muted,#64748b);
+  text-decoration:none;
+  font-weight:800;
+  font-size:.92rem;
+}
+.kozeni-main-nav a:hover,
+.kozeni-main-nav a.is-active{
+  background:rgba(34,140,98,.10);
+  color:var(--deep,#228C62);
+}
+@media(max-width:760px){
+  .kozeni-header-inner{
+    padding:10px 14px;
+    align-items:flex-start;
+    flex-direction:column;
+    gap:10px;
+  }
+  .kozeni-main-nav{
+    width:100%;
+    justify-content:flex-start;
+    gap:6px;
+  }
+  .kozeni-main-nav a{
+    min-height:34px;
+    padding:.46rem .66rem;
+    font-size:.86rem;
+  }
+}
+
 /* account-opening detail layout v1 */
 :root{
   --deep:#228C62;
