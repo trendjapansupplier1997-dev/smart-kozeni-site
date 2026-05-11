@@ -8,6 +8,109 @@
   <link rel="canonical" href="https://smart-kozeni.com/account-opening/matsui-sec/">
   <link rel="stylesheet" href="/assets/kozeni-brand.v1.css?v=41.13">
   <style>
+/* account-opening detail layout v1 */
+:root{
+  --deep:#228C62;
+  --pale:#E9F5EF;
+  --ink:#17231d;
+  --muted:#64748b;
+  --line:rgba(20,83,45,.12);
+}
+body{
+  margin:0;
+  color:var(--ink);
+  background:linear-gradient(180deg,#f8fffb 0%,#ffffff 44%);
+  font-family:-apple-system,BlinkMacSystemFont,"Noto Sans JP","Hiragino Sans","Yu Gothic",sans-serif;
+}
+.page-main{
+  max-width:1040px;
+  margin:0 auto;
+  padding:22px 20px 104px;
+}
+.kozeni-breadcrumb{
+  max-width:1040px;
+  margin:0 auto;
+  padding:14px 20px 0;
+  color:var(--muted);
+  font-size:.9rem;
+}
+.kozeni-breadcrumb a{
+  color:var(--muted);
+  text-decoration:none;
+}
+.brand-micro{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px 12px;
+  align-items:center;
+  border:1px solid rgba(34,140,98,.14);
+  background:rgba(233,245,239,.72);
+  border-radius:18px;
+  padding:12px 14px;
+  margin:8px 0 22px;
+}
+.brand-micro span{
+  font-weight:900;
+  color:var(--deep);
+}
+.brand-micro strong{
+  font-weight:850;
+}
+.brand-micro small{
+  color:var(--muted);
+}
+.hero.clean{
+  padding:34px 0 26px;
+}
+.eyebrow{
+  display:inline-flex;
+  margin:0 0 10px;
+  padding:.28rem .68rem;
+  border-radius:999px;
+  background:rgba(34,140,98,.10);
+  color:var(--deep);
+  font-size:.82rem;
+  font-weight:850;
+}
+.hero h1{
+  margin:0;
+  font-size:clamp(1.85rem,4vw,3rem);
+  line-height:1.22;
+  letter-spacing:-.04em;
+}
+.lead{
+  max-width:760px;
+  margin:14px 0 0;
+  color:var(--muted);
+  font-size:1.05rem;
+  line-height:1.9;
+}
+.section{
+  padding:24px 0;
+}
+.card{
+  border:1px solid var(--line);
+  background:#fff;
+  border-radius:24px;
+  padding:22px;
+  box-shadow:0 14px 34px rgba(15,23,42,.06);
+}
+.card h2{
+  margin:8px 0 10px;
+  font-size:1.45rem;
+  line-height:1.35;
+}
+.tag{
+  display:inline-flex;
+  align-items:center;
+  min-height:28px;
+  padding:.24rem .68rem;
+  border-radius:999px;
+  background:rgba(34,140,98,.10);
+  color:var(--deep);
+  font-size:.8rem;
+  font-weight:850;
+}
 .detail-check-list{
   display:grid;
   gap:10px;
@@ -19,14 +122,14 @@
   position:relative;
   padding-left:28px;
   line-height:1.75;
-  color:var(--ink,#17231d);
+  color:var(--ink);
 }
 .detail-check-list li::before{
   content:"✓";
   position:absolute;
   left:0;
   top:.05em;
-  color:var(--deep,#228C62);
+  color:var(--deep);
   font-weight:900;
 }
 .detail-cta{
@@ -34,14 +137,64 @@
   align-items:center;
   justify-content:center;
   min-height:44px;
-  margin-top:16px;
+  margin-top:18px;
   padding:.78rem 1.1rem;
   border-radius:999px;
   background:rgba(34,140,98,.10);
-  color:var(--deep,#228C62);
+  color:var(--deep);
   border:1px solid rgba(34,140,98,.16);
   text-decoration:none;
   font-weight:850;
+}
+.account-note{
+  margin:16px 0 0;
+  color:var(--muted);
+  line-height:1.85;
+  font-size:.92rem;
+}
+.footer{
+  max-width:1040px;
+  margin:0 auto;
+  padding:28px 20px 96px;
+  color:var(--muted);
+}
+.footer .container{
+  display:flex;
+  flex-wrap:wrap;
+  gap:14px;
+}
+.footer a{
+  color:var(--muted);
+  text-decoration:none;
+}
+.kozeni-fixed-return{
+  position:fixed;
+  left:50%;
+  bottom:18px;
+  transform:translateX(-50%);
+  z-index:30;
+}
+.kozeni-fixed-return a{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:44px;
+  padding:.72rem 1.05rem;
+  border-radius:999px;
+  background:#fff;
+  color:var(--deep);
+  border:1px solid rgba(34,140,98,.18);
+  box-shadow:0 14px 34px rgba(15,23,42,.14);
+  text-decoration:none;
+  font-weight:850;
+}
+@media(max-width:760px){
+  .page-main{padding:16px 16px 96px}
+  .kozeni-breadcrumb{padding:12px 16px 0}
+  .brand-micro{display:block}
+  .brand-micro > *{display:block;margin:3px 0}
+  .card{padding:18px;border-radius:20px}
+  .footer{padding-left:16px;padding-right:16px}
 }
 </style>
 </head>
