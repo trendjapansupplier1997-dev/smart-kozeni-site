@@ -53,6 +53,46 @@
   line-height: 1.72;
 }
 /* kozeni-tiktok-faq-v39:end */
+
+/* TikTok Lite route selector */
+.kozeni-point-route-section{
+  padding-top:10px;
+}
+.kozeni-point-route-card{
+  border:1px solid rgba(34,140,98,.16);
+  background:linear-gradient(135deg, rgba(233,245,239,.92), rgba(255,255,255,.96));
+}
+.kozeni-point-route-actions{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+  margin-top:16px;
+}
+.kozeni-point-route-cta{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-height:46px;
+  padding:.82rem 1rem;
+  border-radius:999px;
+  text-decoration:none;
+  font-weight:850;
+  text-align:center;
+}
+.kozeni-point-route-cta.is-new{
+  background:var(--ia-green,var(--deep,#228C62));
+  color:#fff;
+  box-shadow:0 14px 30px rgba(34,140,98,.18);
+}
+.kozeni-point-route-cta.is-registered{
+  background:var(--ia-pale,var(--pale,#E9F5EF));
+  color:var(--ia-green,var(--deep,#228C62));
+  border:1px solid rgba(34,140,98,.16);
+}
+@media(max-width:760px){
+  .kozeni-point-route-actions{grid-template-columns:1fr}
+}
+
 </style>
 <link rel="stylesheet" href="/assets/kozeni-nav.v1.css?v=nav2"><link rel="stylesheet" href="/assets/kozeni-return.v1.css?v=return3">
 </head>
@@ -115,7 +155,20 @@
         <p class="lead">条件が変わりやすい招待案件。登録前にアプリ内の表示条件まで確認。</p>
       </section>
 
-      <section class="section quiz-first">
+
+      <section class="section kozeni-point-route-section" aria-label="TikTok Liteの登録状況選択">
+        <article class="info-card kozeni-point-route-card">
+          <span class="card-kicker">まず選ぶ</span>
+          <h2>TikTok Liteは、新規登録か登録済みかで見る場所が変わります。</h2>
+          <p class="card-copy">はじめて使う人は、招待リンクを開く前に条件チェックへ。すでに使っている人は、登録後の貯め方・キャンペーン確認へ進みます。</p>
+          <div class="kozeni-point-route-actions">
+            <a class="kozeni-point-route-cta is-new" href="#tiktok-register-check">TikTok Liteを新規登録する前に確認</a>
+            <a class="kozeni-point-route-cta is-registered" href="/tiktok-lite/earn/">TikTok Lite登録済みの人向け</a>
+          </div>
+        </article>
+      </section>
+
+      <section id="tiktok-register-check" class="section quiz-first">
         <article class="info-card quiz-card" data-kozeni-quiz data-register-url="https://lite.tiktok.com/t/ZS9FNf4YXU4EW-eKSGv/" data-register-name="TikTok Lite">
           <span class="card-kicker">条件チェック</span>
           <h2>3問だけ確認。</h2>
@@ -201,8 +254,8 @@
   </div>
 
   <script src="/assets/kozeni-ia.v36.11.js?v=quiz-sticky1" defer></script>
-<nav class="kozeni-fixed-return" aria-label="一覧へ戻る">
-  <a href="/point-site/">← 一覧へ戻る</a>
+<nav class="kozeni-fixed-return" aria-label="ポイ活一覧へ戻る">
+  <a href="/point-site/">← ポイ活一覧へ戻る</a>
 </nav>
 </body>
 </html>
