@@ -467,6 +467,30 @@ h1{
     font-size:.68rem;
   }
 }
+
+.account-guide-strip{
+  width:min(100%,560px);
+  margin:12px auto 0;
+  padding:12px 14px;
+  border:1px solid rgba(148,163,184,.24);
+  border-radius:18px;
+  background:rgba(248,250,252,.78);
+  color:#64748b;
+  font-size:.9rem;
+  line-height:1.75;
+}
+.account-guide-strip strong{
+  color:#0f172a;
+}
+.account-guide-strip a{
+  color:#047857;
+  font-weight:800;
+  text-decoration:none;
+}
+.account-guide-strip a:hover{
+  text-decoration:underline;
+}
+
 /* KOZENI_ACCOUNT_FILTER_UI_END */
 
 </style>
@@ -518,6 +542,10 @@ h1{
           </button>
         </div>
         <p class="account-filter-note" data-account-filter-note>すべて表示中。銀行口座とNISA・iDeCoを比べられます。</p>
+        <aside class="account-guide-strip" aria-label="口座開設の基礎ガイド">
+          <strong>迷う人へ</strong><br>
+          <a href="/account-opening/nisa-ideco/">NISAとiDeCoの違いを1ページで見る</a>
+        </aside>
 
         <div class="brand-keywords"><span>銀行口座</span><span>NISA</span><span>iDeCo</span><span>証券口座</span><span>申込前チェック</span></div>
       </section>
