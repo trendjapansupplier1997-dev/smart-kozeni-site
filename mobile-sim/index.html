@@ -793,7 +793,7 @@ h1{
 /* kozeni-mobile-link-cards-v39-8:end */
 
 </style>
-  <link rel="stylesheet" href="/assets/kozeni-brand.v1.css?v=common-route-v2">
+  <link rel="stylesheet" href="/assets/kozeni-brand.v1.css?v=common-route-v3">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/icon-32.png?v=xicon1">
   <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/icon-192.png?v=xicon1">
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png?v=xicon1">
@@ -1183,26 +1183,21 @@ h1{
 <section class="kozeni-entry-router-v1" aria-labelledby="kozeni-mobile-route-title">
   <div class="kozeni-entry-router-v1__shell">
     <p class="kozeni-entry-router-v1__kicker">スマホ・回線 / 最初に選ぶ</p>
-    <h1 id="kozeni-mobile-route-title" class="kozeni-entry-router-v1__title">まず、どっちを見直す？</h1>
-    <p class="kozeni-entry-router-v1__lead">
-      細かい比較の前に、入口を切り替えます。スマホ代を見たい人はスマホ側、家のネットを見たい人は回線側。
-      迷う人だけ、30秒チェックで現在地を整理します。
-    </p>
+    <h1 id="kozeni-mobile-route-title" class="kozeni-entry-router-v1__title">スマホ代か、家のネットか。</h1>
+    <p class="kozeni-entry-router-v1__lead">スマホ料金の見直しと、家のWi-Fi・光回線の見直しを分けて確認できます。まだ決めていない人は、まずスマホ側から見て、必要なら回線側へ切り替えてください。</p>
 
     <div class="kozeni-entry-router-v1__tabs" role="tablist" aria-label="スマホ・回線の入口切り替え">
       <button class="kozeni-entry-router-v1__tab" type="button" data-kozeni-route-tab="mobile" aria-selected="true">
-        <strong>スマホ・SIMを見直す</strong>
-        <span>月額、GB、乗り換え候補を確認。楽天モバイル、ahamo、LINEMOなど。</span>
+        <strong>スマホ・SIM</strong>
       </button>
       <button class="kozeni-entry-router-v1__tab" type="button" data-kozeni-route-tab="home" aria-selected="false">
-        <strong>家のWi-Fi・回線を見直す</strong>
-        <span>工事不要Wi-Fi、WiMAX、楽天ひかりなど。家のネット側だけを整理。</span>
+        <strong>家のWi-Fi・回線</strong>
       </button>
       <button class="kozeni-entry-router-v1__tab" type="button" data-kozeni-route-tab="unknown" aria-selected="false">
-        <strong>どっちか分からない</strong>
-        <span>スマホ側を見るべきか、家のWi-Fi側を見るべきかだけを短く判定。</span>
+        <strong>分からない</strong>
       </button>
     </div>
+    <p class="kozeni-entry-router-v1__note" data-kozeni-route-note>スマホ・SIM候補を表示しています。</p>
   </div>
 </section>
 
@@ -1464,13 +1459,22 @@ h1{
 
 
 
+
+
 <script id="kozeni-route-switch-v1-script">
 (() => {
   const root = document.documentElement;
   const tabs = Array.from(document.querySelectorAll('[data-kozeni-route-tab]'));
   const panels = Array.from(document.querySelectorAll('[data-kozeni-route-panel]'));
+  const note = document.querySelector('[data-kozeni-route-note]');
 
   if (!tabs.length || !panels.length) return;
+
+  const labels = {
+    mobile: 'スマホ・SIM候補を表示しています。回線側も見たい場合は「家のWi-Fi・回線」に切り替えられます。',
+    home: '家のWi-Fi・回線候補だけを表示しています。工事不要Wi-Fiと楽天ひかりを分けて確認できます。',
+    unknown: 'どちらを見るべきか分からない人向けの30秒チェックを表示しています。'
+  };
 
   function setRoute(route){
     root.classList.add('kozeni-route-switch-ready');
@@ -1485,11 +1489,13 @@ h1{
       panel.classList.toggle('is-active', active);
       panel.setAttribute('aria-hidden', active ? 'false' : 'true');
     });
+
+    if (note) note.textContent = labels[route] || labels.mobile;
   }
 
   tabs.forEach(tab => {
     tab.addEventListener('click', () => {
-      setRoute(tab.dataset.kozeniRouteTab);
+      setRoute(tab.dataset.kozeniRouteTab || 'mobile');
     });
   });
 
