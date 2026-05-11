@@ -347,78 +347,7 @@ h1{
 @media(max-width:860px){
   .account-offer-grid{grid-template-columns:1fr}
 }
-
-
 /* account-opening list v3 */
-.account-choice-grid{
-  display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:16px;
-}
-.account-choice-card{
-  border:1px solid rgba(34,140,98,.16);
-  background:linear-gradient(135deg,rgba(233,245,239,.88),rgba(255,255,255,.98));
-}
-.account-choice-card .cta,
-.account-list-card .cta{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  min-height:42px;
-  margin-top:16px;
-  padding:.72rem 1rem;
-  border-radius:999px;
-  background:var(--deep,#228C62);
-  color:#fff;
-  text-decoration:none;
-  font-weight:850;
-}
-.account-list-section{
-  scroll-margin-top:90px;
-}
-.account-list-grid{
-  display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:16px;
-}
-.account-list-card{
-  position:relative;
-  border:1px solid rgba(20,83,45,.10);
-  background:#fff;
-}
-.account-list-card.is-main{
-  border-color:rgba(34,140,98,.22);
-  background:linear-gradient(135deg,rgba(233,245,239,.88),rgba(255,255,255,.98));
-}
-.account-list-head{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:10px;
-  margin-bottom:10px;
-}
-.account-list-kind{
-  display:inline-flex;
-  align-items:center;
-  min-height:28px;
-  padding:.22rem .62rem;
-  border-radius:999px;
-  background:rgba(34,140,98,.10);
-  color:var(--deep,#228C62);
-  font-size:.78rem;
-  font-weight:850;
-}
-.account-list-status{
-  display:inline-flex;
-  align-items:center;
-  min-height:28px;
-  padding:.22rem .62rem;
-  border-radius:999px;
-  background:rgba(15,23,42,.06);
-  color:var(--muted,#64748b);
-  font-size:.76rem;
-  font-weight:800;
-}
 .account-list-note{
   margin-top:14px;
   color:var(--muted,#64748b);
@@ -426,7 +355,6 @@ h1{
   font-size:.92rem;
 }
 @media(max-width:860px){
-  .account-choice-grid,
   .account-list-grid{grid-template-columns:1fr}
 }
 
@@ -460,33 +388,11 @@ h1{
 <!-- brand-list-hero-v1:start -->
       <section class="hero brand-list-hero" aria-labelledby="brand-list-title">
         <p class="eyebrow">口座開設 / 案件選択</p>
-        <h1 id="brand-list-title">口座開設は、銀行か証券・NISAから選ぶ。</h1>
-        <p class="lead">このページでは、口座開設案件を選ぶところまで整理します。成果条件・対象外・本人確認の細かい確認は、各案件の詳細ページで見ます。</p>
+        <h1 id="brand-list-title">口座開設は、銀行口座と証券・NISAから選ぶ。</h1>
+        <p class="lead">銀行口座と証券・NISA口座の候補を分けて整理します。成果条件・対象外・本人確認の細かい確認は、各案件の詳細ページで見ます。</p>
         <div class="brand-keywords"><span>銀行口座</span><span>証券口座</span><span>NISA</span><span>ASP直リンク</span><span>条件確認</span></div>
       </section>
 <!-- brand-list-hero-v1:end -->
-
-<section class="section" aria-labelledby="account-choice-title">
-  <div class="container">
-    <h2 id="account-choice-title" class="section-title">まず、どちらを見たいか選ぶ。</h2>
-    <div class="account-choice-grid">
-      <article class="card account-choice-card">
-        <span class="tag">銀行口座</span>
-        <h3>銀行口座を作りたい</h3>
-        <p>普段使い、給与受取、振込、スマホ決済、手数料を見たい人向け。銀行口座の候補だけを表示します。</p>
-        <a class="cta" href="#bank-accounts">銀行口座の候補を見る</a>
-      </article>
-
-      <article class="card account-choice-card">
-        <span class="tag">証券・NISA</span>
-        <h3>証券口座・NISA口座を見たい</h3>
-        <p>投資商品の推奨ではなく、口座開設の入口を整理します。証券・NISA口座の候補だけを表示します。</p>
-        <a class="cta" href="#securities-accounts">証券・NISAの候補を見る</a>
-      </article>
-    </div>
-  </div>
-</section>
-
 <section id="bank-accounts" class="section account-list-section" aria-labelledby="bank-accounts-title">
   <div class="container">
     <h2 id="bank-accounts-title" class="section-title">銀行口座の候補</h2>
