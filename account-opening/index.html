@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>口座開設｜キャンペーン条件確認メモ</title>
-  <meta name="description" content="銀行口座・証券口座・NISA口座のキャンペーン条件、対象外、取引条件を申し込み前に確認するためのメモです。">
+  <title>口座開設｜銀行・証券・ポイント条件を申し込み前に確認</title>
+  <meta name="description" content="銀行口座・証券口座・NISA口座を開設する前に、キャンペーン条件・ポイント付与条件・対象外・本人確認の注意点を整理します。">
   <link rel="canonical" href="https://smart-kozeni.com/account-opening/">
-  <meta property="og:title" content="口座開設｜キャンペーン条件確認メモ">
-  <meta property="og:description" content="銀行口座・証券口座・NISA口座のキャンペーン条件、対象外、取引条件を申し込み前に確認するためのメモです。">
+  <meta property="og:title" content="口座開設｜銀行・証券・ポイント条件を申し込み前に確認">
+  <meta property="og:description" content="銀行口座・証券口座・NISA口座を開設する前に、キャンペーン条件・ポイント付与条件・対象外・本人確認の注意点を整理します。">
   <meta property="og:url" content="https://smart-kozeni.com/account-opening/">
   <meta property="og:type" content="website">
   <style>
@@ -167,6 +167,91 @@ h1{
   .kv div{grid-template-columns:1fr}
   .hero{padding-top:36px}
 }
+
+/* account-opening reception v1 */
+.account-entry-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:16px;
+}
+.account-entry-card{
+  position:relative;
+  overflow:hidden;
+}
+.account-entry-card::after{
+  content:"";
+  position:absolute;
+  inset:auto -24px -38px auto;
+  width:110px;
+  height:110px;
+  border-radius:999px;
+  background:rgba(34,140,98,.08);
+}
+.account-entry-card .cta{
+  display:inline-flex;
+  margin-top:16px;
+  align-items:center;
+  justify-content:center;
+  min-height:42px;
+  padding:.72rem 1rem;
+  border-radius:999px;
+  background:var(--deep,#228C62);
+  color:#fff;
+  text-decoration:none;
+  font-weight:850;
+}
+.account-check-panel{
+  border:1px solid rgba(34,140,98,.16);
+  background:linear-gradient(135deg,rgba(233,245,239,.88),rgba(255,255,255,.96));
+  border-radius:24px;
+  padding:22px;
+}
+.account-check-list{
+  display:grid;
+  gap:10px;
+  margin:16px 0 0;
+  padding:0;
+  list-style:none;
+}
+.account-check-list li{
+  position:relative;
+  padding-left:28px;
+  color:var(--ink,#17231d);
+  line-height:1.75;
+}
+.account-check-list li::before{
+  content:"✓";
+  position:absolute;
+  left:0;
+  top:.05em;
+  color:var(--deep,#228C62);
+  font-weight:900;
+}
+.account-route-list{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:16px;
+}
+.account-route-card{
+  border:1px solid rgba(20,83,45,.10);
+  background:#fff;
+}
+.account-route-card small{
+  display:block;
+  margin-top:10px;
+  color:var(--muted,#64748b);
+  line-height:1.7;
+}
+.account-note{
+  font-size:.92rem;
+  line-height:1.9;
+  color:var(--muted,#64748b);
+}
+@media(max-width:860px){
+  .account-entry-grid,
+  .account-route-list{grid-template-columns:1fr}
+}
+
 </style>
   <link rel="stylesheet" href="/assets/kozeni-brand.v1.css?v=41.13">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/icon-32.png?v=xicon1">
@@ -196,33 +281,89 @@ h1{
 
 <!-- brand-list-hero-v1:start -->
       <section class="hero brand-list-hero" aria-labelledby="brand-list-title">
-        <p class="eyebrow">ACCOUNT</p>
-        <h1 id="brand-list-title">口座開設は、条件を読んでから。</h1>
-        <p class="lead">銀行・証券・NISA口座は、特典額よりも達成条件と対象外を先に確認します。</p>
-<div class="kozeni-prep-note" role="note">
-  <strong>掲載方針</strong>
-  <span>広告リンクはASP提携条件を確認してから掲載します。いまは申し込み前に見る条件を整理します。</span>
-</div>
-        <div class="brand-keywords"><span>銀行口座</span><span>証券口座</span><span>NISA</span><span>取引条件</span></div>
+        <p class="eyebrow">口座開設 / 条件確認</p>
+        <h1 id="brand-list-title">口座開設は、ポイント条件と使い道で選ぶ。</h1>
+        <p class="lead">銀行・証券・NISA口座は、特典額だけで選ぶと失敗しやすいです。申し込み前に、対象外条件・本人確認・入金や取引条件まで確認します。</p>
+        <div class="brand-keywords"><span>銀行口座</span><span>証券口座</span><span>NISA</span><span>ポイント条件</span><span>本人確認</span></div>
       </section>
 <!-- brand-list-hero-v1:end -->
-<section class="section">
-  <div class="container grid three">
-    <article class="card"><span class="tag">NISA</span><h2>NISA口座</h2><p>商品推奨ではなく、口座開設キャンペーンの条件確認に限定します。</p></article>
-    <article class="card"><span class="tag">証券</span><h2>証券口座</h2><p>紹介制度、付与条件、取引条件、対象外を整理します。</p></article>
-    <article class="card"><span class="tag">銀行</span><h2>銀行口座</h2><p>ネット銀行、給与受取、振込、ポイント条件を確認します。</p></article>
+
+<section class="section" aria-labelledby="account-entry-title">
+  <div class="container">
+    <h2 id="account-entry-title" class="section-title">まず、どの口座を作りたいか選ぶ。</h2>
+    <div class="account-entry-grid">
+      <article class="card account-entry-card">
+        <span class="tag">普段使い</span>
+        <h3>銀行口座を作りたい</h3>
+        <p>給与受取、振込、スマホ決済、ポイント条件を確認。ネット銀行やキャンペーン案件の受け皿にします。</p>
+        <a class="cta" href="#bank-account">銀行口座の見方へ</a>
+      </article>
+
+      <article class="card account-entry-card">
+        <span class="tag">証券・NISA</span>
+        <h3>証券口座・NISA口座を見たい</h3>
+        <p>投資商品の推奨ではなく、口座開設キャンペーンの条件、入金・取引条件、対象外を整理します。</p>
+        <a class="cta" href="#securities-account">証券口座の見方へ</a>
+      </article>
+
+      <article class="card account-entry-card">
+        <span class="tag">ポイント経由</span>
+        <h3>ポイントサイト経由で探したい</h3>
+        <p>モッピーやハピタスなどで案件がある場合、直接申し込みより経由した方が得なことがあります。</p>
+        <a class="cta" href="#point-route">経由前チェックへ</a>
+      </article>
+    </div>
   </div>
 </section>
-<section class="section">
+
+<section class="section" aria-labelledby="account-check-title">
   <div class="container">
-    <h2 class="section-title">申し込み前チェック</h2>
-    <ul class="check-list">
-      <li>すでに同じサービスを使ったことがないか</li>
-      <li>キャンペーンの対象期間・対象者に入っているか</li>
-      <li>口座開設だけで成果になるのか、入金や取引が必要なのか</li>
-      <li>本人確認書類と登録情報が一致しているか</li>
-      <li>ポイントサイト経由の場合、途中で別ページへ移動していないか</li>
-    </ul>
+    <div class="account-check-panel">
+      <h2 id="account-check-title" class="section-title">申し込み前チェック</h2>
+      <p class="account-note">口座開設案件は「開設だけでOK」なのか、「入金・取引・一定期間維持」が必要なのかで難易度が大きく変わります。</p>
+      <ul class="account-check-list">
+        <li>口座開設だけで成果になるのか、入金・取引・カード発行など追加条件があるのか確認する</li>
+        <li>過去に同じ金融機関・証券会社を使ったことがある場合、対象外にならないか確認する</li>
+        <li>ポイントサイト経由の場合、途中で別ブラウザ・別アプリ・広告ブロックを挟まない</li>
+        <li>本人確認書類、住所、電話番号、メールアドレスの入力ミスで否認されないよう確認する</li>
+        <li>条件達成期限、ポイント付与時期、成果判定までの期間を確認する</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="account-route-title">
+  <div class="container">
+    <h2 id="account-route-title" class="section-title">受け皿として見る候補</h2>
+    <div class="account-route-list">
+      <article id="bank-account" class="card account-route-card">
+        <span class="tag">銀行口座</span>
+        <h3>銀行口座</h3>
+        <p>給与受取、振込、ATM、スマホ決済連携、キャンペーン条件を確認します。</p>
+        <small>今後、ASP直リンクやポイントサイト案件に差し替えやすい受け皿です。</small>
+      </article>
+
+      <article id="securities-account" class="card account-route-card">
+        <span class="tag">証券・NISA</span>
+        <h3>証券口座・NISA口座</h3>
+        <p>口座開設キャンペーン、NISA対応、入金条件、取引条件を確認します。</p>
+        <small>投資商品の推奨ではなく、申し込み条件の確認に限定します。</small>
+      </article>
+
+      <article id="point-route" class="card account-route-card">
+        <span class="tag">ポイントサイト</span>
+        <h3>ポイントサイト経由</h3>
+        <p>モッピー、ハピタス、ポイントインカムなどで案件があるか確認します。</p>
+        <small>すでに登録済みなら案件検索へ。未登録なら先にポイントサイト詳細ページで登録条件を確認します。</small>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="account-policy-title">
+  <div class="container">
+    <h2 id="account-policy-title" class="section-title">このページの方針</h2>
+    <p class="account-note">このページでは、特定の金融商品や投資判断を推奨しません。口座開設キャンペーン、ポイント付与条件、対象外条件、本人確認の注意点を整理し、最後は公式サイト・各ポイントサイトの最新条件を確認する前提で案内します。</p>
   </div>
 </section>
 
