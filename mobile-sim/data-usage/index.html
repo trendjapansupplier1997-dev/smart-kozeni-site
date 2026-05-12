@@ -3,148 +3,332 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>スマホ代・月のGBが分からない人へ｜格安SIM選び前の確認</title>
-  <meta name="description" content="スマホ代や月間データ使用量が分からない人向けに、請求額・端末代・通話料・月のGBを確認してから格安SIMや回線を選ぶ方法を整理します。">
+  <title>スマホ代と月GBの確認方法 | スマホ小銭研究所</title>
+  <meta name="description" content="スマホ代が分からない、月のGBが分からない人向けに、料金表を見る前の確認ポイントだけを短く整理します。">
   <link rel="canonical" href="https://smart-kozeni.com/mobile-sim/data-usage/">
-  <meta property="og:title" content="スマホ代・月のGBが分からない人へ｜格安SIM選び前の確認">
-  <meta property="og:description" content="スマホ代や月間データ使用量が分からない人向けに、請求額・端末代・通話料・月のGBを確認してから格安SIMや回線を選ぶ方法を整理します。">
-  <meta property="og:url" content="https://smart-kozeni.com/mobile-sim/data-usage/">
+  <meta property="og:title" content="スマホ代と月GBの確認方法">
+  <meta property="og:description" content="スマホ代と月GBだけを先に確認するための補助ページです。">
   <meta property="og:type" content="article">
-  <meta name="theme-color" content="#4DBD8C">
-  <link rel="stylesheet" href="/assets/kozeni-brand.v1.css?v=41.13">
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/icon-32.png?v=xicon1">
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png?v=xicon1">
-  <link rel="manifest" href="/site.webmanifest?v=xicon1">
+  <meta property="og:url" content="https://smart-kozeni.com/mobile-sim/data-usage/">
+  <link rel="stylesheet" href="/assets/kozeni-brand.v1.css?v=data-usage-v2">
   <style>
-  body{margin:0;background:#f7fbf8;color:#222831;font-family:-apple-system,BlinkMacSystemFont,'Noto Sans JP','Hiragino Kaku Gothic ProN','Yu Gothic',Meiryo,sans-serif;}
-  a{color:inherit;}
-  .page{width:min(1040px,calc(100% - 32px));margin:0 auto;padding:22px 0 44px;}
-  .mini-nav{display:flex;flex-wrap:wrap;gap:.55rem;align-items:center;margin:0 0 1rem;color:rgba(34,40,49,.62);font-size:.82rem;font-weight:800;}
-  .mini-nav a{text-decoration:none;color:#116544;}
-  .article-hero{padding:clamp(1.2rem,3vw,2rem);border-radius:1.55rem;background:linear-gradient(135deg,#10241d,#1d513c 45%,#e9f5ef 45.2%,#fff);box-shadow:0 20px 48px rgba(34,40,49,.08);overflow:hidden;}
-  .eyebrow{display:inline-flex;margin:0 0 .65rem;padding:.28rem .62rem;border-radius:999px;background:rgba(255,255,255,.14);color:#fff;font-size:.74rem;font-weight:950;letter-spacing:.08em;}
-  h1{max-width:48rem;margin:0;color:#fff;font-size:clamp(1.68rem,4vw,2.58rem);line-height:1.25;letter-spacing:-.045em;}
-  .lead{max-width:44rem;margin:.72rem 0 0;color:rgba(255,255,255,.76);font-size:.96rem;line-height:1.8;}
-  .article-body{display:grid;gap:1rem;margin-top:1rem;}
-  .block{padding:1rem;border:1px solid rgba(34,140,98,.12);border-radius:1.2rem;background:rgba(255,255,255,.86);box-shadow:0 12px 28px rgba(34,40,49,.045);}
-  .block h2{margin:0 0 .54rem;color:#222831;font-size:1.18rem;line-height:1.45;letter-spacing:-.02em;}
-  .block p,.block li{color:rgba(34,40,49,.7);font-size:.9rem;line-height:1.78;}
-  .block p{margin:.4rem 0 0;}
-  .check-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.7rem;margin:.8rem 0 0;}
-  .mini-card{padding:.86rem;border-radius:1rem;background:rgba(233,245,239,.62);border:1px solid rgba(34,140,98,.1);}
-  .mini-card strong{display:block;color:#116544;font-size:.9rem;margin-bottom:.22rem;}
-  .mini-card span{display:block;color:rgba(34,40,49,.66);font-size:.82rem;line-height:1.62;}
-  .compare{width:100%;border-collapse:separate;border-spacing:0 .46rem;margin:.65rem 0 0;}
-  .compare th,.compare td{padding:.72rem .76rem;text-align:left;font-size:.86rem;line-height:1.6;background:rgba(242,246,244,.74);vertical-align:top;}
-  .compare th{width:28%;color:#116544;border-radius:.82rem 0 0 .82rem;font-weight:950;}
-  .compare td:last-child{border-radius:0 .82rem .82rem 0;}
-  .actions{display:flex;flex-wrap:wrap;gap:.55rem;margin-top:.9rem;}
-  .button{display:inline-flex;align-items:center;justify-content:center;min-height:42px;padding:.72rem .96rem;border-radius:999px;text-decoration:none;font-weight:950;font-size:.88rem;}
-  .button.primary{background:#228C62;color:#fff;box-shadow:0 12px 26px rgba(34,140,98,.18);}
-  .button.ghost{background:rgba(233,245,239,.72);color:#116544;border:1px solid rgba(34,140,98,.16);}
-  .note{font-size:.78rem!important;color:rgba(34,40,49,.52)!important;}
-  footer{margin-top:1.4rem;color:rgba(34,40,49,.52);font-size:.78rem;}
-  @media(max-width:820px){.check-grid{grid-template-columns:1fr;}.article-hero{background:linear-gradient(145deg,#10241d,#1d513c);}}
-  @media(max-width:560px){.page{width:min(100% - 22px,1040px);}.button{width:100%;}.compare,.compare tbody,.compare tr,.compare th,.compare td{display:block;width:100%;}.compare th{border-radius:.82rem .82rem 0 0;}.compare td:last-child{border-radius:0 0 .82rem .82rem;}}
+    body {
+      margin:0;
+      color:#11231f;
+      background:
+        radial-gradient(circle at 20% 0%, rgba(52,211,153,.14), transparent 34rem),
+        linear-gradient(180deg,#fbfffd 0%,#f7fbf9 100%);
+      font-family:-apple-system,BlinkMacSystemFont,"Noto Sans JP","Hiragino Sans","Yu Gothic",sans-serif;
+      line-height:1.8;
+    }
+
+    .du-wrap {
+      width:min(980px,calc(100% - 32px));
+      margin:0 auto;
+    }
+
+    .du-breadcrumb {
+      margin:22px auto 0;
+      color:#64748b;
+      font-size:.88rem;
+    }
+
+    .du-breadcrumb a {
+      color:#0f766e;
+      text-decoration:none;
+      font-weight:750;
+    }
+
+    .du-hero {
+      padding:36px 0 22px;
+    }
+
+    .du-shell {
+      border:1px solid rgba(15,118,110,.14);
+      border-radius:28px;
+      background:linear-gradient(135deg,#ffffff 0%,#f7fffb 68%,#fff9e6 100%);
+      box-shadow:0 18px 45px rgba(17,35,31,.08);
+      padding:28px;
+    }
+
+    .du-kicker {
+      display:inline-flex;
+      align-items:center;
+      margin:0 0 12px;
+      padding:6px 12px;
+      border:1px solid rgba(15,118,110,.14);
+      border-radius:999px;
+      background:#fff;
+      color:#047857;
+      font-size:.82rem;
+      font-weight:850;
+      letter-spacing:.02em;
+    }
+
+    .du-hero h1 {
+      margin:0;
+      color:#11231f;
+      font-size:clamp(1.9rem,4vw,2.8rem);
+      font-weight:900;
+      letter-spacing:-.05em;
+      line-height:1.18;
+    }
+
+    .du-lead {
+      max-width:720px;
+      margin:14px 0 0;
+      color:#5f706b;
+      font-size:1rem;
+    }
+
+    .du-section {
+      padding:18px 0;
+    }
+
+    .du-section h2 {
+      margin:0 0 12px;
+      font-size:clamp(1.35rem,3vw,1.85rem);
+      letter-spacing:-.035em;
+      line-height:1.28;
+    }
+
+    .du-grid {
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:14px;
+    }
+
+    .du-card {
+      border:1px solid rgba(15,118,110,.13);
+      border-radius:22px;
+      background:rgba(255,255,255,.92);
+      padding:20px;
+      box-shadow:0 10px 24px rgba(17,35,31,.04);
+    }
+
+    .du-card strong {
+      display:block;
+      margin-bottom:8px;
+      color:#11231f;
+      font-size:1.08rem;
+      font-weight:900;
+    }
+
+    .du-card p {
+      margin:0;
+      color:#5f706b;
+      font-size:.95rem;
+    }
+
+    .du-list {
+      display:grid;
+      gap:10px;
+      margin:0;
+      padding:0;
+      list-style:none;
+    }
+
+    .du-list li {
+      padding:12px 14px;
+      border:1px solid rgba(15,118,110,.11);
+      border-radius:16px;
+      background:#fff;
+      color:#41524d;
+      font-size:.94rem;
+    }
+
+    .du-list b {
+      color:#11231f;
+    }
+
+    .du-final {
+      margin:20px 0 44px;
+      border:1px solid rgba(15,118,110,.14);
+      border-radius:26px;
+      background:#ffffff;
+      padding:24px;
+      box-shadow:0 16px 36px rgba(17,35,31,.06);
+    }
+
+    .du-classify {
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin:14px 0 0;
+    }
+
+    .du-chip {
+      display:inline-flex;
+      align-items:center;
+      min-height:30px;
+      padding:0 12px;
+      border-radius:999px;
+      background:#ecfdf5;
+      color:#047857;
+      font-size:.82rem;
+      font-weight:850;
+    }
+
+    .du-actions {
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:20px;
+    }
+
+    .du-btn {
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:46px;
+      padding:0 18px;
+      border-radius:999px;
+      text-decoration:none;
+      font-weight:900;
+    }
+
+    .du-btn.primary {
+      color:#fff;
+      background:linear-gradient(135deg,#047857,#059669);
+      box-shadow:0 12px 24px rgba(4,120,87,.20);
+    }
+
+    .du-note {
+      margin-top:14px;
+      color:#64748b;
+      font-size:.9rem;
+    }
+
+    @media (max-width:760px) {
+      .du-grid {
+        grid-template-columns:1fr;
+      }
+
+      .du-shell,
+      .du-final {
+        padding:20px;
+        border-radius:24px;
+      }
+    }
   </style>
-
-<style id="kozeni-data-usage-exit-style">
-  .kozeni-data-usage-exit {
-    margin: 30px auto;
-    border: 1px solid rgba(15, 122, 85, .16);
-    border-radius: 26px;
-    padding: 20px;
-    background: linear-gradient(135deg, rgba(232,255,246,.9), rgba(255,255,255,.94));
-    box-shadow: 0 16px 34px rgba(11, 48, 36, .07);
-  }
-  .kozeni-data-usage-exit h2 {
-    margin: 0 0 8px;
-    color: #0f2f25;
-    font-size: clamp(1.25rem, 2.6vw, 1.85rem);
-    letter-spacing: -.04em;
-  }
-  .kozeni-data-usage-exit p {
-    margin: 0;
-    color: #5c7168;
-    line-height: 1.8;
-  }
-  .kozeni-data-usage-exit__buttons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 14px;
-  }
-  .kozeni-data-usage-exit__buttons a {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 42px;
-    padding: .68rem .96rem;
-    border-radius: 999px;
-    text-decoration: none;
-    font-weight: 900;
-    border: 1px solid rgba(15, 61, 46, .14);
-  }
-  .kozeni-data-usage-exit__main {
-    background: linear-gradient(135deg, #12a872, #0f7a55);
-    color: #fff;
-    border-color: transparent !important;
-  }
-  .kozeni-data-usage-exit__sub {
-    background: rgba(255,255,255,.76);
-    color: #0f2f25;
-  }
-  @media (max-width: 560px) {
-    .kozeni-data-usage-exit__buttons a { width: 100%; }
-  }
-</style>
-
 </head>
 <body>
-  <main class="page">
-    <nav class="mini-nav" aria-label="パンくず"><a href="/">ホーム</a><span>›</span><a href="/mobile-sim/">スマホ・回線</a><span>›</span><span aria-current="page">料金とGB確認</span></nav>
-    <section class="article-hero">
-      <p class="eyebrow">BILL / DATA CHECK</p>
-      <h1>スマホ代と月のGB、まずここで確認。</h1>
-      <p class="lead">「スマホ代がよく分からない」「月のGBが分からない」人向けに、料金表を見る前の確認ポイントだけ整理します。</p>
-    </section>
-    <div class="article-body">
-      <section class="block">
-        <h2>まず見るのは、料金とGBの2つだけ。</h2>
-        <p>このページは、診断クイズで「スマホ代がよく分からない」「月のGBが分からない」を選んだ人向けの確認ページです。料金表を見る前に、今の契約の現在地だけ整理します。</p>
-        <div class="check-grid">
-          <div class="mini-card"><strong>スマホ代</strong><span>毎月の請求額、端末代、通話料、保証・オプションが混ざっていないかを見る。</span></div>
-          <div class="mini-card"><strong>月のGB</strong><span>キャリアアプリや端末設定で、モバイル通信だけの使用量を見る。</span></div>
-          <div class="mini-card"><strong>家Wi-Fi</strong><span>家ではWi-Fi中心か、外でも動画や地図をよく使うかで必要GBが変わる。</span></div>
-          <div class="mini-card"><strong>判断</strong><span>分かった数字を持って、スマホ・回線診断に戻ると候補を絞りやすい。</span></div>
+<header class="kozeni-site-header">
+  <div class="kozeni-site-nav">
+    <a class="kozeni-site-brand" href="/">
+      <img src="/assets/images/icon-192.png?v=xicon1" alt="" width="34" height="34" decoding="async"><span>スマホ小銭研究所</span>
+    </a>
+    <nav class="kozeni-main-nav" aria-label="主要カテゴリ">
+      <a class="is-active" aria-current="page" href="/mobile-sim/">スマホ・回線</a>
+      <a href="/point-site/">ポイ活</a>
+      <a href="/credit-card/">クレカ</a>
+      <a href="/account-opening/">口座</a>
+      <a href="/travel/">旅行・移動</a>
+    </nav>
+  </div>
+</header>
+
+  <main>
+    <nav class="du-wrap du-breadcrumb" aria-label="パンくずリスト">
+      <a href="/">ホーム</a>
+      <span>›</span>
+      <a href="/mobile-sim/">スマホ・回線</a>
+      <span>›</span>
+      <span aria-current="page">料金とGB確認</span>
+    </nav>
+
+    <section class="du-hero">
+      <div class="du-wrap">
+        <div class="du-shell">
+          <p class="du-kicker">BILL / DATA CHECK</p>
+          <h1>スマホ代と月GBだけ、先に見る。</h1>
+          <p class="du-lead">
+            ここは「スマホ代が分からない」「月のGBが分からない」人向けの補助ページです。
+            料金表やキャンペーンを見る前に、今の契約の現在地だけ短く確認します。
+          </p>
         </div>
-      </section>
-      <section class="block">
-        <h2>スマホ代が分からない人へ</h2>
-        <table class="compare">
-          <tr><th>請求総額</th><td>まず毎月いくら払っているかを見る。家族分ではなく、自分の1回線分でざっくり確認します。</td></tr>
-          <tr><th>端末代</th><td>スマホ本体の分割代が混ざっていると、回線料金だけでは判断しにくいです。端末代と通信料を分けます。</td></tr>
-          <tr><th>通話料</th><td>通話料が高い人は、安いSIMより通話オプションの有無が大事になることがあります。</td></tr>
-          <tr><th>保証・オプション</th><td>保証、留守電、セキュリティ、サブスク系が入っていると月額が重く見えます。</td></tr>
-        </table>
-      </section>
-      <section class="block">
-        <h2>月のGBが分からない人へ</h2>
-        <table class="compare">
-          <tr><th>キャリアアプリ</th><td>楽天モバイル、ahamo、LINEMOなどのマイページで、直近の月間データ使用量を確認します。</td></tr>
-          <tr><th>端末設定</th><td>iPhone/Androidのモバイル通信量を見る。Wi-Fi通信量と混ざらないように注意します。</td></tr>
-          <tr><th>最近2〜3か月</th><td>1か月だけで決めず、少ない月・多い月があるかを見ると失敗しにくいです。</td></tr>
-          <tr><th>ざっくり分類</th><td>3GB以下、4〜10GB、11GB以上、分からない。この4つに分けられれば診断には十分です。</td></tr>
-        </table>
-      </section>
-      <section class="block">
-        <h2>確認できたら、クイズへ戻る。</h2>
-        <p>スマホ代か月のGBが分かったら、スマホ・回線ページの4問診断で最初に見るページを絞れます。</p>
-        <div class="actions"><a class="button primary" href="/mobile-sim/#kozeni-mobile-line-quiz">クイズを開く</a><a class="button ghost" href="/mobile-sim/">スマホ・回線ページへ</a></div>
-        <p class="note">正確な料金・キャンペーン・提供条件は、申し込み前に必ず公式画面で確認してください。</p>
-      </section>
-    </div>
-    <footer>スマホ小銭研究所｜PRを含む場合があります。条件は必ず公式画面で確認してください。</footer>
+      </div>
+    </section>
+
+    <section class="du-section">
+      <div class="du-wrap">
+        <h2>見るのは2つだけ。</h2>
+        <div class="du-grid">
+          <article class="du-card">
+            <strong>1. 毎月いくら払っているか</strong>
+            <p>請求総額を見ます。できれば、通信料・端末代・通話料・オプションを分けて確認します。</p>
+          </article>
+          <article class="du-card">
+            <strong>2. 月に何GB使っているか</strong>
+            <p>キャリアアプリや端末設定で、モバイル通信量を見ます。家のWi-Fi通信量とは分けて考えます。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="du-section">
+      <div class="du-wrap du-grid">
+        <article class="du-card">
+          <strong>スマホ代の見方</strong>
+          <ul class="du-list">
+            <li><b>請求総額</b><br>まず、自分の1回線分が毎月いくらかを見ます。</li>
+            <li><b>端末代</b><br>スマホ本体の分割代が混ざっていないか確認します。</li>
+            <li><b>通話料・オプション</b><br>保証、留守電、セキュリティ、通話料が重くないか見ます。</li>
+          </ul>
+        </article>
+
+        <article class="du-card">
+          <strong>月GBの見方</strong>
+          <ul class="du-list">
+            <li><b>キャリアアプリ</b><br>楽天モバイル、ahamo、LINEMOなどのマイページで確認します。</li>
+            <li><b>端末設定</b><br>iPhone/Androidのモバイル通信量を見ます。Wi-Fi使用量とは分けます。</li>
+            <li><b>直近2〜3か月</b><br>1か月だけでなく、少ない月・多い月があるかを見ます。</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="du-section">
+      <div class="du-wrap">
+        <div class="du-final">
+          <h2>ここまで分かれば十分。</h2>
+          <p>
+            正確に1GB単位で分からなくても大丈夫です。まずは、だいたいの分類だけ持ってスマホ・回線ページへ戻れば、候補を選びやすくなります。
+          </p>
+          <div class="du-classify" aria-label="GBのざっくり分類">
+            <span class="du-chip">3GB以下</span>
+            <span class="du-chip">4〜10GB</span>
+            <span class="du-chip">11GB以上</span>
+            <span class="du-chip">分からない</span>
+          </div>
+          <div class="du-actions">
+            <a class="du-btn primary" href="/mobile-sim/">スマホ・回線ページへ戻る</a>
+          </div>
+          <p class="du-note">
+            このページは確認用です。申し込み前には、料金・キャンペーン・提供条件を必ず公式ページで確認してください。
+          </p>
+        </div>
+      </div>
+    </section>
   </main>
+
+<footer class="footer">
+  <div class="container">
+    <a href="/policy/">PR表記</a>
+    <a href="/privacy/">プライバシー</a>
+    <a href="/about/">このサイトについて</a>
+    <p>© スマホ小銭研究所</p>
+  </div>
+<nav class="kozeni-footer-social" aria-label="SNSリンク">
+    <a href="https://x.com/smart_kozeni" target="_blank" rel="noopener noreferrer" aria-label="Xでスマホ小銭研究所を見る">
+      <img class="kozeni-footer-social__icon" src="/assets/images/social-x.svg?v=social1" alt="" width="22" height="22" loading="lazy" decoding="async">
+      <span>X</span>
+    </a>
+    <a href="https://www.instagram.com/smart_kozeni/" target="_blank" rel="noopener noreferrer" aria-label="Instagramでスマホ小銭研究所を見る">
+      <img class="kozeni-footer-social__icon" src="/assets/images/social-instagram.svg?v=social1" alt="" width="22" height="22" loading="lazy" decoding="async">
+      <span>Instagram</span>
+    </a>
+  </nav>
+</footer>
 </body>
 </html>
