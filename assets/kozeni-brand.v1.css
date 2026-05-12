@@ -1531,3 +1531,46 @@ html.kozeni-route-switch-ready [data-kozeni-route-panel].is-active{
 }
 /* /kozeni-common-entry-router-v1 */
 
+/* kozeni-affiliate-link-v1 */
+.kozeni-at-link{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  max-width:100%;
+}
+.kozeni-at-link a{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:44px;
+  padding:0 16px;
+  border-radius:999px;
+  text-decoration:none;
+  font-size:.94rem;
+  font-weight:900;
+  line-height:1.4;
+}
+.kozeni-at-link--primary a{
+  color:#fff;
+  background:linear-gradient(135deg,#047857,#059669);
+  box-shadow:0 12px 24px rgba(4,120,87,.20);
+}
+.kozeni-at-link--sub a{
+  color:#0f766e;
+  background:#fff;
+  border:1px solid rgba(15,118,110,.16);
+}
+.kozeni-at-link img{
+  position:absolute;
+  width:1px;
+  height:1px;
+  opacity:0;
+  pointer-events:none;
+}
+@media (max-width:760px){
+  .kozeni-at-link,
+  .kozeni-at-link a{
+    width:100%;
+  }
+}
+/* /kozeni-affiliate-link-v1 */
