@@ -1574,3 +1574,134 @@ html.kozeni-route-switch-ready [data-kozeni-route-panel].is-active{
   }
 }
 /* /kozeni-affiliate-link-v1 */
+
+/* kozeni-shared-shell-v1 */
+.kozeni-site-header{
+  position:sticky;
+  top:0;
+  z-index:50;
+  border-bottom:1px solid rgba(15,118,110,.10);
+  background:rgba(255,255,255,.88);
+  backdrop-filter:blur(14px);
+}
+
+.kozeni-site-nav{
+  width:min(1080px,calc(100% - 32px));
+  min-height:64px;
+  margin:0 auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+}
+
+.kozeni-site-brand{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  color:#11231f;
+  text-decoration:none;
+  font-weight:900;
+  letter-spacing:-.02em;
+}
+
+.kozeni-site-brand img{
+  display:block;
+  border-radius:12px;
+}
+
+.kozeni-main-nav{
+  display:flex;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:8px;
+}
+
+.kozeni-main-nav a{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:36px;
+  padding:0 12px;
+  border-radius:999px;
+  color:#5f706b;
+  text-decoration:none;
+  font-size:.9rem;
+  font-weight:850;
+}
+
+.kozeni-main-nav a.is-active,
+.kozeni-main-nav a[aria-current="page"]{
+  color:#047857;
+  background:#ecfdf5;
+}
+
+footer.footer{
+  margin-top:44px;
+  padding:30px 0 42px;
+  border-top:1px solid rgba(15,118,110,.10);
+  background:#fbfffd;
+  color:#5f706b;
+}
+
+footer.footer .container{
+  width:min(1080px,calc(100% - 32px));
+  margin:0 auto;
+  display:flex;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:12px;
+}
+
+footer.footer a{
+  color:#0f766e;
+  text-decoration:none;
+  font-weight:800;
+}
+
+.kozeni-footer-social{
+  width:min(1080px,calc(100% - 32px));
+  margin:14px auto 0;
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.kozeni-footer-social a{
+  display:inline-flex;
+  align-items:center;
+  gap:7px;
+  color:#475569;
+  text-decoration:none;
+  font-weight:800;
+}
+
+.kozeni-footer-social__icon{
+  display:block;
+}
+
+@media (max-width:760px){
+  .kozeni-site-nav{
+    align-items:flex-start;
+    flex-direction:column;
+    justify-content:center;
+    padding:12px 0;
+  }
+
+  .kozeni-main-nav{
+    gap:6px;
+  }
+
+  .kozeni-main-nav a{
+    min-height:34px;
+    padding:0 10px;
+    font-size:.86rem;
+  }
+
+  footer.footer .container,
+  .kozeni-footer-social{
+    align-items:flex-start;
+    flex-direction:column;
+  }
+}
+/* /kozeni-shared-shell-v1 */
