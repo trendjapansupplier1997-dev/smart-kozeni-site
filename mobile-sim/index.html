@@ -1201,7 +1201,7 @@ h1{
   </div>
 </section>
 
-<section class="kozeni-route-panel-v1" data-kozeni-route-panel="home" aria-label="家のWi-Fi・回線候補">
+<section class="kozeni-route-panel-v1" id="home-wifi-plans" data-kozeni-route-panel="home" aria-label="家のWi-Fi・回線候補">
   <div class="kozeni-route-panel-v1__shell">
     <div class="kozeni-route-panel-v1__head">
       <p class="kozeni-route-panel-v1__kicker">PR / 家のWi-Fi・回線</p>
@@ -1461,6 +1461,8 @@ h1{
 
 
 
+
+
 <script id="kozeni-route-switch-v1-script">
 (() => {
   const root = document.documentElement;
@@ -1476,30 +1478,74 @@ h1{
     unknown: 'どちらを見るべきか分からない人向けの30秒チェックを表示しています。'
   };
 
-  function setRoute(route){
+  const hashRoutes = {
+    '#smartphone-plans': 'mobile',
+    '#home-wifi-plans': 'home',
+    '#mobile-unknown-check': 'unknown',
+    '#kozeni-mobile-route-title': 'mobile',
+    '#mobile-sim-entry': 'mobile'
+  };
+
+  function setRoute(route, shouldScroll = false, targetHash = ''){
+    const safeRoute = route || 'mobile';
     root.classList.add('kozeni-route-switch-ready');
 
     tabs.forEach(tab => {
-      const active = tab.dataset.kozeniRouteTab === route;
+      const active = tab.dataset.kozeniRouteTab === safeRoute;
       tab.setAttribute('aria-selected', active ? 'true' : 'false');
     });
 
     panels.forEach(panel => {
-      const active = panel.dataset.kozeniRoutePanel === route;
+      const active = panel.dataset.kozeniRoutePanel === safeRoute;
       panel.classList.toggle('is-active', active);
       panel.setAttribute('aria-hidden', active ? 'false' : 'true');
     });
 
-    if (note) note.textContent = labels[route] || labels.mobile;
+    if (note) note.textContent = labels[safeRoute] || labels.mobile;
+
+    if (shouldScroll) {
+      window.setTimeout(() => {
+        const target =
+          (targetHash && document.querySelector(targetHash)) ||
+          document.querySelector(`[data-kozeni-route-panel="${safeRoute}"]`) ||
+          document.querySelector('.kozeni-entry-router-v1');
+
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 40);
+    }
   }
+
+  window.kozeniSetRoute = setRoute;
 
   tabs.forEach(tab => {
     tab.addEventListener('click', () => {
-      setRoute(tab.dataset.kozeniRouteTab || 'mobile');
+      setRoute(tab.dataset.kozeniRouteTab || 'mobile', false);
     });
   });
 
-  setRoute('mobile');
+  document.addEventListener('click', event => {
+    const link = event.target.closest('a[href]');
+    if (!link) return;
+
+    let url;
+    try {
+      url = new URL(link.getAttribute('href'), window.location.href);
+    } catch (_) {
+      return;
+    }
+
+    if (url.pathname !== window.location.pathname) return;
+
+    const route = hashRoutes[url.hash];
+    if (!route) return;
+
+    event.preventDefault();
+    setRoute(route, true, url.hash);
+    history.replaceState(null, '', url.hash);
+  });
+
+  const initialRoute = hashRoutes[window.location.hash] || 'mobile';
+  setRoute(initialRoute, false);
 })();
 </script>
 
