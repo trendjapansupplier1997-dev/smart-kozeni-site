@@ -11,7 +11,7 @@
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://smart-kozeni.com/mobile-sim/home-wifi/">
   <meta name="theme-color" content="#0f3d2e">
-  <link rel="stylesheet" href="/assets/kozeni-brand.v1.css?v=home-wifi-shell-v1">
+  <link rel="stylesheet" href="/assets/kozeni-brand.v1.css?v=home-wifi-shell-v2">
   <style>
     :root {
       --hw-mint: #e8fff6;
@@ -442,102 +442,23 @@
   }
   </script>
 
-<style id="kozeni-home-wifi-shell-polish">
-/* home-wifi page shell polish */
-body > header,
-.hw-header,
-.site-header{
-  position:sticky;
-  top:0;
-  z-index:30;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:16px;
-  min-height:64px;
-  padding:0 max(18px,calc((100vw - 1080px)/2));
-  border-bottom:1px solid rgba(15,118,110,.10);
-  background:rgba(255,255,255,.88);
-  backdrop-filter:blur(14px);
-}
-
-body > header a,
-.hw-header a,
-.site-header a{
-  color:#11231f;
-  text-decoration:none;
-  font-weight:800;
-}
-
-body > header nav,
-.hw-header nav,
-.site-header nav{
-  display:flex;
-  align-items:center;
-  gap:14px;
-  flex-wrap:wrap;
-  color:#5f706b;
-  font-size:.92rem;
-}
-
-body > header nav a,
-.hw-header nav a,
-.site-header nav a{
-  color:#5f706b;
-  font-weight:750;
-}
-
-body > footer,
-.hw-footer,
-.site-footer{
-  margin-top:44px;
-  padding:32px max(18px,calc((100vw - 1080px)/2)) 44px;
-  border-top:1px solid rgba(15,118,110,.10);
-  color:#5f706b;
-  background:#fbfffd;
-  font-size:.9rem;
-}
-
-body > footer a,
-.hw-footer a,
-.site-footer a{
-  color:#0f766e;
-  text-decoration:none;
-  font-weight:750;
-}
-
-@media (max-width:760px){
-  body > header,
-  .hw-header,
-  .site-header{
-    align-items:flex-start;
-    flex-direction:column;
-    justify-content:center;
-    padding:12px 18px;
-  }
-
-  body > header nav,
-  .hw-header nav,
-  .site-header nav{
-    gap:10px;
-  }
-}
-/* /home-wifi page shell polish */
-</style>
 
 </head>
 <body>
-  <header class="site-header">
-    <div class="site-header__inner">
-      <a class="site-logo" href="/">スマホ小銭研究所</a>
-      <nav class="site-nav" aria-label="主要ナビゲーション">
-        <a href="/mobile-sim/">スマホ・回線</a>
-        <a href="/point-site/">ポイ活</a>
-        <a href="/credit-card/">クレカ</a>
-        <a href="/account-opening/">口座</a>
-      </nav>
-    </div>
-  </header>
+  <header class="kozeni-site-header">
+  <div class="kozeni-site-nav">
+    <a class="kozeni-site-brand" href="/">
+      <img src="/assets/images/icon-192.png?v=xicon1" alt="" width="34" height="34" decoding="async"><span>スマホ小銭研究所</span>
+    </a>
+    <nav class="kozeni-main-nav" aria-label="主要カテゴリ">
+      <a class="is-active" aria-current="page" href="/mobile-sim/">スマホ・回線</a>
+      <a href="/point-site/">ポイ活</a>
+      <a href="/credit-card/">クレカ</a>
+      <a href="/account-opening/">口座</a>
+      <a href="/travel/">旅行・移動</a>
+    </nav>
+  </div>
+</header>
 
   <main>
     <section class="hw-hero">
@@ -735,15 +656,23 @@ body > footer a,
 <p class="hw-mini-note">PR：このページには広告リンクを含みます。条件は公式ページで最終確認してください。</p>
 </main>
 
-  <footer class="site-footer">
-    <div class="site-footer__inner">
-      <p>© スマホ小銭研究所</p>
-      <nav aria-label="フッターナビゲーション">
-        <a href="/policy/">運営方針</a>
-        <a href="/privacy/">プライバシーポリシー</a>
-        <a href="/contact/">お問い合わせ</a>
-      </nav>
-    </div>
-  </footer>
+  <footer class="footer">
+  <div class="container">
+    <a href="/policy/">PR表記</a>
+    <a href="/privacy/">プライバシー</a>
+    <a href="/about/">このサイトについて</a>
+    <p>© スマホ小銭研究所</p>
+  </div>
+<nav class="kozeni-footer-social" aria-label="SNSリンク">
+    <a href="https://x.com/smart_kozeni" target="_blank" rel="noopener noreferrer" aria-label="Xでスマホ小銭研究所を見る">
+      <img class="kozeni-footer-social__icon" src="/assets/images/social-x.svg?v=social1" alt="" width="22" height="22" loading="lazy" decoding="async">
+      <span>X</span>
+    </a>
+    <a href="https://www.instagram.com/smart_kozeni/" target="_blank" rel="noopener noreferrer" aria-label="Instagramでスマホ小銭研究所を見る">
+      <img class="kozeni-footer-social__icon" src="/assets/images/social-instagram.svg?v=social1" alt="" width="22" height="22" loading="lazy" decoding="async">
+      <span>Instagram</span>
+    </a>
+  </nav>
+</footer>
 </body>
 </html>
