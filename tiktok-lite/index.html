@@ -232,5 +232,120 @@
   <a href="/point-site/">← ポイ活一覧へ戻る</a>
 </nav>
 
+
+<!-- tiktok-lite quiz handler v1 -->
+<script>
+(function(){
+  function closest(el, sel){ return el && el.closest ? el.closest(sel) : null; }
+  function questions(q){ return Array.from(q.querySelectorAll('[data-quiz-question]')); }
+  function result(q){ return q.querySelector('[data-quiz-result]'); }
+  function answers(q){
+    return questions(q).map(function(x){
+      var selected = x.querySelector('[data-quiz-answer].is-selected');
+      return selected ? selected.getAttribute('data-quiz-answer') : null;
+    });
+  }
+  function escapeHtml(v){
+    return String(v || '').replace(/[&<>"']/g, function(ch){
+      return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[ch];
+    });
+  }
+  function setText(el, className, message){
+    if(!el) return;
+    el.className = className;
+    el.textContent = message;
+  }
+  function setLink(el, className, message, href, label, external, rel){
+    if(!el) return;
+    el.className = className;
+    el.innerHTML =
+      escapeHtml(message) +
+      '<br><a href="' + escapeHtml(href) + '"' +
+      (external ? ' target="_blank"' : '') +
+      (rel ? ' rel="' + escapeHtml(rel) + '"' : '') +
+      '>' + escapeHtml(label) + '</a>';
+  }
+  function registerUrl(q){
+    return q.getAttribute('data-register-url') || 'https://lite.tiktok.com/t/ZS9FNf4YXU4EW-eKSGv/';
+  }
+  function registerName(q){
+    return q.getAttribute('data-register-name') || 'TikTok Lite';
+  }
+  function registerRel(q){
+    return q.getAttribute('data-link-rel') || 'sponsored noopener noreferrer';
+  }
+  function showOk(q, res){
+    var msg = q.getAttribute('data-ok-message') || '最低確認はOKです。最後は公式画面で条件を確認してください。';
+    setLink(res, 'quiz-result is-ok', msg, registerUrl(q), registerName(q) + 'を確認する', true, registerRel(q));
+  }
+  function showNg(res){
+    setText(res, 'quiz-result is-ng', '不安な項目があります。先に対象条件・タスク・付与条件を確認してください。');
+  }
+  function showPending(res){
+    setText(res, 'quiz-result', '選択しました。すべて答えたら、チェック結果を確認してください。');
+  }
+  function init(){
+    document.querySelectorAll('[data-kozeni-quiz]').forEach(function(q){
+      var res = result(q);
+      if(res && !res.textContent.trim()){
+        setText(res, 'quiz-result', '3問に答えてから、チェック結果を確認してください。');
+      }
+    });
+  }
+
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', init);
+  }else{
+    init();
+  }
+
+  document.addEventListener('click', function(event){
+    var answerButton = closest(event.target, '[data-quiz-answer]');
+    var submitButton = closest(event.target, '[data-quiz-submit]');
+    var target = answerButton || submitButton;
+    if(!target) return;
+
+    var quiz = closest(target, '[data-kozeni-quiz]');
+    if(!quiz) return;
+
+    event.preventDefault();
+    event.stopPropagation();
+    if(event.stopImmediatePropagation) event.stopImmediatePropagation();
+
+    var res = result(quiz);
+
+    if(answerButton){
+      var question = closest(answerButton, '[data-quiz-question]');
+      if(!question) return;
+
+      question.querySelectorAll('[data-quiz-answer]').forEach(function(btn){
+        btn.classList.remove('is-selected');
+        btn.setAttribute('aria-pressed', 'false');
+      });
+
+      answerButton.classList.add('is-selected');
+      answerButton.setAttribute('aria-pressed', 'true');
+
+      showPending(res);
+      return;
+    }
+
+    var values = answers(quiz);
+
+    if(values.some(function(v){ return !v; })){
+      setText(res, 'quiz-result', '未回答の項目があります。はい・いいえをすべて選んでください。');
+      return;
+    }
+
+    if(values.every(function(v){ return v === 'yes'; })){
+      showOk(quiz, res);
+    }else{
+      showNg(res);
+    }
+  }, true);
+})();
+</script>
+<!-- /tiktok-lite quiz handler v1 -->
+
 </body>
 </html>
