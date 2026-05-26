@@ -144,6 +144,67 @@
       font-weight:850;
       box-shadow:0 12px 26px rgba(34,140,98,.16);
     }
+
+/* kozeni-travel-official-links-v1:start */
+.travel-official-links{
+  border:1px solid rgba(34,140,98,.14);
+  background:rgba(255,255,255,.78);
+  border-radius:24px;
+  padding:20px;
+  box-shadow:0 12px 28px rgba(15,23,42,.045);
+}
+.travel-official-links__head{
+  display:grid;
+  gap:6px;
+  margin-bottom:14px;
+}
+.travel-official-links__head h2{
+  margin:0;
+  font-size:clamp(1.35rem,3vw,2rem);
+  letter-spacing:-.035em;
+  line-height:1.3;
+}
+.travel-official-links__head p{
+  margin:0;
+  color:var(--muted,#64748b);
+  line-height:1.75;
+}
+.travel-official-links__grid{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:10px;
+}
+.travel-official-link{
+  display:grid;
+  gap:5px;
+  min-height:88px;
+  padding:14px;
+  border:1px solid rgba(34,140,98,.12);
+  border-radius:18px;
+  background:rgba(233,245,239,.52);
+  color:inherit;
+  text-decoration:none;
+}
+.travel-official-link strong{
+  color:var(--ink,#17231d);
+  line-height:1.35;
+}
+.travel-official-link span{
+  color:var(--muted,#64748b);
+  font-size:.86rem;
+  line-height:1.55;
+}
+.travel-official-links__note{
+  margin:12px 0 0;
+  color:rgba(34,40,49,.58);
+  font-size:.84rem;
+  line-height:1.7;
+}
+@media(max-width:860px){
+  .travel-official-links__grid{grid-template-columns:1fr}
+}
+/* kozeni-travel-official-links-v1:end */
+
     @media(max-width:860px){
       .travel-main{padding:18px 16px 100px}
       .travel-grid{grid-template-columns:1fr}
@@ -345,6 +406,39 @@
       </article>
     </div>
   </section>
+
+
+<!-- kozeni-travel-official-links-v1:start -->
+  <section class="travel-section" aria-labelledby="travel-official-links-title">
+    <div class="travel-official-links">
+      <div class="travel-official-links__head">
+        <span class="travel-tag">PRなし / 公式確認</span>
+        <h2 id="travel-official-links-title">予約前に、条件だけ見る。</h2>
+        <p>ホテル予約は、金額より先にキャンセル条件・クーポン対象・ポイント付与条件を確認します。</p>
+      </div>
+      <div class="travel-official-links__grid">
+        <a class="travel-official-link" href="https://travel.yahoo.co.jp/" target="_blank" rel="noopener noreferrer">
+          <strong>Yahoo!トラベル</strong>
+          <span>PayPayポイントやクーポン条件を確認</span>
+        </a>
+        <a class="travel-official-link" href="https://travel.rakuten.co.jp/" target="_blank" rel="noopener noreferrer">
+          <strong>楽天トラベル</strong>
+          <span>楽天ポイント・クーポン条件を確認</span>
+        </a>
+        <a class="travel-official-link" href="https://www.jalan.net/" target="_blank" rel="noopener noreferrer">
+          <strong>じゃらんnet</strong>
+          <span>宿泊プランとキャンセル条件を確認</span>
+        </a>
+        <a class="travel-official-link" href="https://www.ikyu.com/" target="_blank" rel="noopener noreferrer">
+          <strong>一休.com</strong>
+          <span>ホテル・旅館予約の条件を確認</span>
+        </a>
+      </div>
+      <p class="travel-official-links__note">現時点ではPRなしの公式リンクです。提携後はPR表記を明記して差し替えます。予約条件・キャンセル料・ポイント付与は各公式画面で確認してください。</p>
+    </div>
+  </section>
+<!-- kozeni-travel-official-links-v1:end -->
+
 
   <section class="travel-section" aria-labelledby="travel-policy-title">
     <h2 id="travel-policy-title" class="section-title">このカテゴリの方針</h2>
