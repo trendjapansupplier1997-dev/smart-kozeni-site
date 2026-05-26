@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>買い物・日用品｜クーポン・ポイント条件を買う前に確認</title>
+  <meta name="description" content="Yahoo!ショッピング、JTBショッピング、Qoo10など、買い物前にクーポン・ポイント付与・送料・対象条件を確認するページです。PRリンクを含みます。">
+  <link rel="canonical" href="https://smart-kozeni.com/shopping/">
+  <meta property="og:title" content="買い物・日用品｜クーポン・ポイント条件を買う前に確認">
+  <meta property="og:description" content="買い物前に、クーポン・ポイント付与・送料・対象条件を短く確認します。PRリンクを含みます。">
+  <meta property="og:url" content="https://smart-kozeni.com/shopping/">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="/assets/kozeni-brand.v1.css?v=41.13">
+  <link rel="stylesheet" href="/assets/kozeni-nav.v1.css?v=nav2">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/icon-32.png?v=xicon1">
+  <style>
+    :root{
+      --deep:#228C62;
+      --pale:#E9F5EF;
+      --ink:#17231d;
+      --muted:#64748b;
+      --line:rgba(20,83,45,.12);
+    }
+    body{
+      margin:0;
+      color:var(--ink);
+      background:linear-gradient(180deg,#f8fffb 0%,#ffffff 48%);
+      font-family:-apple-system,BlinkMacSystemFont,"Noto Sans JP","Hiragino Sans","Yu Gothic",sans-serif;
+    }
+    .shopping-main{
+      max-width:1080px;
+      margin:0 auto;
+      padding:22px 20px 106px;
+    }
+    .shopping-hero{
+      padding:42px 0 28px;
+    }
+    .shopping-hero h1{
+      margin:0;
+      font-size:clamp(1.9rem,4vw,3.2rem);
+      line-height:1.22;
+      letter-spacing:-.04em;
+    }
+    .shopping-lead{
+      max-width:760px;
+      margin:14px 0 0;
+      color:var(--muted);
+      line-height:1.9;
+      font-size:1.05rem;
+    }
+    .shopping-tags{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-top:18px;
+    }
+    .shopping-tags span,
+    .shopping-tag{
+      display:inline-flex;
+      align-items:center;
+      min-height:28px;
+      padding:.24rem .68rem;
+      border-radius:999px;
+      background:rgba(34,140,98,.10);
+      color:var(--deep);
+      font-size:.8rem;
+      font-weight:850;
+    }
+    .shopping-section{
+      padding:24px 0;
+    }
+    .shopping-grid{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:16px;
+    }
+    .shopping-card{
+      border:1px solid var(--line);
+      background:#fff;
+      border-radius:24px;
+      padding:22px;
+      box-shadow:0 14px 34px rgba(15,23,42,.06);
+    }
+    .shopping-card.is-main{
+      border-color:rgba(34,140,98,.22);
+      background:linear-gradient(135deg,rgba(233,245,239,.88),rgba(255,255,255,.98));
+    }
+    .shopping-card h2,
+    .shopping-card h3{
+      margin:10px 0 10px;
+      line-height:1.35;
+      letter-spacing:-.03em;
+    }
+    .shopping-card p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.8;
+    }
+    .shopping-card ul{
+      display:grid;
+      gap:8px;
+      margin:14px 0 0;
+      padding:0;
+      list-style:none;
+    }
+    .shopping-card li{
+      position:relative;
+      padding-left:20px;
+      color:var(--muted);
+      line-height:1.65;
+      font-size:.94rem;
+    }
+    .shopping-card li::before{
+      content:"";
+      position:absolute;
+      left:0;
+      top:.72em;
+      width:7px;
+      height:7px;
+      border-radius:999px;
+      background:var(--deep);
+      opacity:.72;
+    }
+    .shopping-official-links{
+      border:1px solid rgba(34,140,98,.14);
+      background:rgba(255,255,255,.78);
+      border-radius:24px;
+      padding:20px;
+      box-shadow:0 12px 28px rgba(15,23,42,.045);
+    }
+    .shopping-official-links__head{
+      display:grid;
+      gap:6px;
+      margin-bottom:14px;
+    }
+    .shopping-official-links__head h2{
+      margin:0;
+      font-size:clamp(1.35rem,3vw,2rem);
+      letter-spacing:-.035em;
+      line-height:1.3;
+    }
+    .shopping-official-links__head p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.75;
+    }
+    .shopping-official-links__grid{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:10px;
+    }
+    .shopping-official-link{
+      display:grid;
+      gap:5px;
+      min-height:88px;
+      padding:14px;
+      border:1px solid rgba(34,140,98,.12);
+      border-radius:18px;
+      background:rgba(233,245,239,.52);
+      color:inherit;
+      text-decoration:none;
+    }
+    .shopping-official-link strong{
+      color:var(--ink);
+      line-height:1.35;
+    }
+    .shopping-official-link span{
+      color:var(--muted);
+      font-size:.86rem;
+      line-height:1.55;
+    }
+    .shopping-note{
+      border:1px solid rgba(34,140,98,.12);
+      border-radius:22px;
+      background:rgba(233,245,239,.48);
+      padding:18px;
+      color:rgba(34,40,49,.68);
+      line-height:1.8;
+    }
+    .shopping-official-links__note{
+      margin:12px 0 0;
+      color:rgba(34,40,49,.58);
+      font-size:.84rem;
+      line-height:1.7;
+    }
+    .shopping-footer-nav{
+      margin-top:30px;
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+    .shopping-footer-nav a{
+      color:var(--deep);
+      font-weight:800;
+      text-decoration:none;
+    }
+    @media(max-width:860px){
+      .shopping-main{padding:18px 16px 100px}
+      .shopping-grid,
+      .shopping-official-links__grid{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+<header class="kozeni-site-header">
+  <div class="kozeni-site-nav">
+    <a class="kozeni-site-brand" href="/">
+      <img src="/assets/images/icon-192.png?v=xicon1" alt="" width="34" height="34" decoding="async"><span>スマホ小銭研究所</span>
+    </a>
+    <nav class="kozeni-main-nav" aria-label="主要カテゴリ">
+      <a href="/mobile-sim/">スマホ・回線</a>
+      <a href="/point-site/">ポイ活</a>
+      <a href="/shopping/">買い物</a>
+      <a href="/credit-card/">クレカ</a>
+      <a href="/account-opening/">口座</a>
+      <a href="/travel/">旅行・移動</a>
+    </nav>
+  </div>
+</header>
+
+<main class="shopping-main">
+  <section class="shopping-hero" aria-labelledby="shopping-title">
+    <div class="shopping-tags">
+      <span>買い物・日用品</span>
+      <span>PRあり</span>
+      <span>条件確認</span>
+    </div>
+    <h1 id="shopping-title">買う前に、クーポンと条件だけ見る。</h1>
+    <p class="shopping-lead">セールやクーポンは、使える条件・付与時期・送料で印象が変わります。まずはよく使う買い物先を3つだけ確認します。</p>
+  </section>
+
+  <section class="shopping-section" aria-label="買い物前に見るポイント">
+    <div class="shopping-grid">
+      <article class="shopping-card is-main">
+        <span class="shopping-tag">CHECK 01</span>
+        <h2>クーポン対象か。</h2>
+        <p>対象ストア、対象商品、最低購入金額、併用可否を見ます。</p>
+        <ul>
+          <li>クーポンの対象外商品</li>
+          <li>利用期限と先着条件</li>
+          <li>他キャンペーンとの併用</li>
+        </ul>
+      </article>
+      <article class="shopping-card">
+        <span class="shopping-tag">CHECK 02</span>
+        <h2>ポイントはいつ付くか。</h2>
+        <p>表示倍率だけでなく、付与予定日・上限・対象外条件を確認します。</p>
+        <ul>
+          <li>付与上限</li>
+          <li>キャンセル時の扱い</li>
+          <li>PayPayポイント等の条件</li>
+        </ul>
+      </article>
+      <article class="shopping-card">
+        <span class="shopping-tag">CHECK 03</span>
+        <h2>送料・返品は重くないか。</h2>
+        <p>小さな買い物ほど、送料と返品条件でお得感が変わります。</p>
+        <ul>
+          <li>送料無料ライン</li>
+          <li>返品・キャンセル条件</li>
+          <li>定期購入や予約商品の扱い</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <section class="shopping-section" aria-labelledby="shopping-official-links-title">
+    <div class="shopping-official-links">
+      <div class="shopping-official-links__head">
+        <span class="shopping-tag">PR / 公式条件確認</span>
+        <h2 id="shopping-official-links-title">買う前に、条件だけ確認する。</h2>
+        <p>まずは3つだけ。クーポン、ポイント、送料、対象条件を公式画面で確認します。</p>
+      </div>
+      <div class="shopping-official-links__grid">
+        <a class="shopping-official-link" href="https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3770077&pid=892620430" target="_blank" rel="nofollow sponsored noopener noreferrer">
+          <strong>Yahoo!ショッピング</strong>
+          <span>クーポン・PayPayポイント条件を確認</span>
+        </a>
+        <a class="shopping-official-link" href="https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3770077&pid=892620432" target="_blank" rel="nofollow sponsored noopener noreferrer">
+          <strong>JTBショッピング</strong>
+          <span>旅行のお土産・お取り寄せ条件を確認</span>
+        </a>
+        <a class="shopping-official-link" href="https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3770077&pid=892620439" target="_blank" rel="nofollow sponsored noopener noreferrer">
+          <strong>Qoo10</strong>
+          <span>メガ割・クーポン条件を確認</span>
+        </a>
+      </div>
+      <p class="shopping-official-links__note">PR：広告リンクを含みます。クーポン条件、ポイント付与、送料、返品・キャンセル条件は各公式画面で確認してください。</p>
+    </div>
+  </section>
+
+  <section class="shopping-section" aria-labelledby="shopping-policy-title">
+    <h2 id="shopping-policy-title">このカテゴリの方針</h2>
+    <div class="shopping-note">
+      商品レビューではなく、買う前に条件を確認するカテゴリです。価格、クーポン、ポイント、送料、返品条件は変わるため、最後は公式画面で確認してください。
+    </div>
+  </section>
+
+  <nav class="shopping-footer-nav" aria-label="関連ページ">
+    <a href="/">ホーム</a>
+    <a href="/point-site/">ポイ活</a>
+    <a href="/travel/">旅行・移動</a>
+    <a href="/policy/">PR表記</a>
+  </nav>
+</main>
+</body>
+</html>
