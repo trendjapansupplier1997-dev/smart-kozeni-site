@@ -271,4 +271,10 @@
     <changefreq>weekly</changefreq>
     <priority>0.70</priority>
   </url>
+  <url>
+    <loc>https://smart-kozeni.com/travel/cancel-fee-check/</loc>
+    <lastmod>2026-05-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.70</priority>
+  </url>
 </urlset>
