@@ -39,7 +39,7 @@ a{color:inherit}
   align-items:center;
   gap:10px;
   text-decoration:none;
-  font-weight:900;
+  font-weight:800;
   letter-spacing:.02em;
 }
 .logo-dot{
@@ -53,7 +53,7 @@ a{color:inherit}
   font-size:15px;
 }
 
-.hero{padding:44px 0 34px}
+.hero{padding:34px 0 24px}
 .pill{
   display:inline-flex;
   align-items:center;
@@ -66,16 +66,17 @@ a{color:inherit}
   font-size:13px;
 }
 h1{
-  margin:18px 0 14px;
-  font-size:clamp(34px,6vw,64px);
-  line-height:1.08;
-  letter-spacing:-.05em;
+  margin:14px 0 12px;
+  font-size:clamp(1.65rem,3.8vw,2.35rem);
+  line-height:1.22;
+  letter-spacing:-.055em;
+  font-weight:800;
 }
 .lead{
   margin:0;
   max-width:740px;
   color:var(--muted);
-  font-size:clamp(16px,2.2vw,20px);
+  font-size:clamp(.95rem,1.7vw,1.06rem);
 }
 .note{
   margin-top:20px;
@@ -85,13 +86,13 @@ h1{
 .section{padding:26px 0}
 .section-title{
   margin:0 0 18px;
-  font-size:clamp(24px,4vw,38px);
+  font-size:clamp(1.18rem,2vw,1.55rem);
   line-height:1.25;
   letter-spacing:-.03em;
 }
 .grid{
   display:grid;
-  gap:16px;
+  gap:12px;
 }
 .grid.three{grid-template-columns:repeat(3,1fr)}
 .grid.two{grid-template-columns:repeat(2,1fr)}
@@ -100,13 +101,13 @@ h1{
   text-decoration:none;
   background:rgba(255,255,255,.9);
   border:1px solid var(--line);
-  border-radius:28px;
-  padding:24px;
-  box-shadow:0 18px 60px rgba(34,140,98,.08);
+  border-radius:22px;
+  padding:18px;
+  box-shadow:0 12px 28px rgba(34,40,49,.045);
 }
 .card:hover{transform:translateY(-1px)}
-.card h2,.card h3{margin:0 0 10px;line-height:1.35}
-.card p{margin:0;color:var(--muted)}
+.card h2,.card h3{margin:0 0 8px;line-height:1.45;font-size:1.08rem;letter-spacing:-.02em}
+.card p{margin:0;color:var(--muted);font-size:.9rem;line-height:1.75}
 .tag{
   display:inline-flex;
   align-items:center;
