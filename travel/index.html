@@ -87,6 +87,16 @@
       border-color:rgba(34,140,98,.22);
       background:linear-gradient(135deg,rgba(233,245,239,.88),rgba(255,255,255,.98));
     }
+    .travel-card__support{
+      margin-top:12px!important;
+      font-size:.9rem;
+    }
+    .travel-card__support a{
+      color:var(--deep);
+      font-weight:850;
+      text-decoration:none;
+    }
+
     .travel-card h2,
     .travel-card h3{
       margin:10px 0 10px;
@@ -359,7 +369,7 @@
   <section class="travel-hero" aria-labelledby="travel-title">
     <p class="eyebrow">旅行・移動 / 予約前チェック</p>
     <h1 id="travel-title">旅行前に、スマホで損しない。</h1>
-    <p class="travel-lead">ホテル予約、移動手段、Wi-Fi・eSIMは、申し込み前に条件を見ておくと失敗しにくいです。まずは旅行前に確認する入口だけ整理します。</p>
+    <p class="travel-lead">ホテル予約、移動手段、Wi-Fi・eSIMは、申し込み前に条件を見ておくと失敗しにくいです。まずは宿泊予約とキャンセル条件から確認します。</p>
     <div class="travel-keywords">
       <span>ホテル予約</span>
       <span>高速バス</span>
@@ -369,52 +379,13 @@
     </div>
   </section>
 
-  <section class="travel-section" aria-labelledby="travel-start-title">
-    <h2 id="travel-start-title" class="section-title">まず見る3つ</h2>
-    <div class="travel-grid">
-      <article class="travel-card is-main" id="hotel">
-        <span class="travel-tag">宿泊</span>
-        <h3>宿泊・ホテル予約</h3>
-        <p>ホテル、旅館、国内旅行予約の候補。料金だけでなく、キャンセル条件やポイント付与条件も確認します。</p>
-        <ul>
-          <li>予約完了か宿泊完了か</li>
-          <li>キャンセル時の扱い</li>
-          <li>ポイント・クーポンの対象条件</li>
-        </ul>
-      </article>
-
-      <article class="travel-card" id="move">
-        <span class="travel-tag">移動</span>
-        <h3>高速バス・移動手段</h3>
-        <p>高速バス、航空券、レンタカーなどの移動系候補。出発日、変更条件、予約完了条件を確認します。</p>
-        <ul>
-          <li>予約後の変更・取消条件</li>
-          <li>出発完了が必要か</li>
-          <li>アプリ予約・Web予約の違い</li>
-        </ul>
-      </article>
-
-      <article class="travel-card" id="wifi">
-        <span class="travel-tag">通信</span>
-        <h3>Wi-Fi・eSIM・レンタル回線</h3>
-        <p>旅行中の通信手段を確認。短期レンタル、国内旅行、海外旅行、一時利用の導線を整理します。</p>
-        <ul>
-          <li>利用日数と返却条件</li>
-          <li>国内用・海外用の違い</li>
-          <li>スマホ・回線カテゴリとの接続</li>
-        </ul>
-      </article>
-    </div>
-  </section>
-
-
 <!-- kozeni-travel-official-links-v1:start -->
   <section class="travel-section" aria-labelledby="travel-official-links-title">
     <div class="travel-official-links">
       <div class="travel-official-links__head">
-        <span class="travel-tag">PR / 公式条件確認</span>
-        <h2 id="travel-official-links-title">予約前に、条件だけ見る。</h2>
-        <p>宿泊予約は、金額より先にキャンセル条件・クーポン対象・ポイント付与条件を確認します。</p>
+        <span class="travel-tag">宿泊予約 / PR</span>
+        <h2 id="travel-official-links-title">まずは、宿泊予約先を選ぶ。</h2>
+        <p>気になる予約先を選び、キャンセル条件やポイント付与を公式画面で確認します。</p>
       </div>
       <div class="travel-official-links__grid">
         <a class="travel-official-link" href="https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3770077&pid=892620421" target="_blank" rel="nofollow sponsored noopener noreferrer">
@@ -439,22 +410,45 @@
   </section>
 <!-- kozeni-travel-official-links-v1:end -->
 
+  <section class="travel-section" aria-labelledby="travel-start-title">
+    <h2 id="travel-start-title" class="section-title">予約前に見るポイント</h2>
+    <div class="travel-grid">
+      <article class="travel-card is-main" id="hotel">
+        <span class="travel-tag">宿泊</span>
+        <h3>宿泊・ホテル予約</h3>
+        <p>ホテル、旅館、国内旅行予約の候補。料金だけでなく、キャンセル条件やポイント付与条件も確認します。</p>
+        <ul>
+          <li>予約完了か宿泊完了か</li>
+          <li>キャンセル時の扱い</li>
+          <li>ポイント・クーポンの対象条件</li>
+        </ul>
+        <p class="travel-card__support"><a href="/travel/cancel-fee-check/">ホテル予約のキャンセル料確認メモを見る</a></p>
+      </article>
 
-  <section class="travel-section" aria-labelledby="travel-support-title">
-    <div class="travel-note">
-      <span class="travel-tag">予約前チェック</span>
-      <h2 id="travel-support-title">キャンセル料が気になる時は。</h2>
-      <p>無料キャンセル期限、当日・不泊、クーポンやポイントの扱いで迷いやすいところを短く確認できます。</p>
-      <p style="margin-top:10px"><a href="/travel/cancel-fee-check/" style="color:var(--deep);font-weight:800;text-decoration:none">ホテル予約のキャンセル料確認メモを見る</a></p>
+      <article class="travel-card" id="move">
+        <span class="travel-tag">移動</span>
+        <h3>高速バス・移動手段</h3>
+        <p>高速バス、航空券、レンタカーなどの移動系候補。出発日、変更条件、予約完了条件を確認します。</p>
+        <ul>
+          <li>予約後の変更・取消条件</li>
+          <li>出発完了が必要か</li>
+          <li>アプリ予約・Web予約の違い</li>
+        </ul>
+      </article>
+
+      <article class="travel-card" id="wifi">
+        <span class="travel-tag">通信</span>
+        <h3>Wi-Fi・eSIM・レンタル回線</h3>
+        <p>旅行中の通信手段を確認。短期レンタル、国内旅行、海外旅行、一時利用の条件を見ます。</p>
+        <ul>
+          <li>利用日数と返却条件</li>
+          <li>国内用・海外用の違い</li>
+          <li>スマホ・回線カテゴリとの接続</li>
+        </ul>
+      </article>
     </div>
   </section>
 
-  <section class="travel-section" aria-labelledby="travel-policy-title">
-    <h2 id="travel-policy-title" class="section-title">予約前に見るポイント</h2>
-    <div class="travel-note">
-      宿泊予約、移動手段、通信環境は、料金だけでなくキャンセル条件やポイント付与条件も確認します。具体的な条件は、各サービスの公式サイトで最新情報を確認してください。
-    </div>
-  </section>
 </main>
 
 <footer class="footer">
