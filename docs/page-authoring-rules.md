@@ -80,6 +80,20 @@
 6. 公式/申込CTA
 7. 関連ページへの内部リンク
 
+
+## スマホ回線詳細ページのSSOT
+
+共通基盤へ移行済みの`/mobile-sim/<slug>/index.html`は直接編集しない。
+
+- 内容は`data/mobile-sim/<slug>.json`で管理する
+- 構造は`templates/mobile-sim-detail.html`で管理する
+- `python3 tools/build_mobile_sim.py`でHTMLを生成する
+- `python3 tools/build_mobile_sim.py --check`で生成差分を確認する
+- `python3 tools/kozeni_site_audit.py`でCTA・PR・構造・内部リンクを監査する
+- CSS更新時は`/assets/*`のimmutableキャッシュを考慮し、ファイル名の版を上げる
+
+詳細は`docs/mobile-sim-generation.md`を参照する。
+
 ## 公開前チェック
 
 公開前は `python3 tools/kozeni_site_audit.py` を実行し、最低限の欠落を確認する。

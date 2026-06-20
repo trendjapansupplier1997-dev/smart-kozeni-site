@@ -15,13 +15,12 @@
   <link rel="stylesheet" href="/assets/kozeni-brand.v1.css?v=41.13">
   <link rel="stylesheet" href="/assets/kozeni-nav.v1.css?v=nav2">
   <link rel="stylesheet" href="/assets/kozeni-return.v1.css?v=return3">
-  <link rel="stylesheet" href="/assets/kozeni-sim-detail.v1.css?v=1">
+  <link rel="stylesheet" href="/assets/kozeni-sim-detail.v2.css">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/icon-32.png?v=xicon1">
   <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/icon-192.png?v=xicon1">
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png?v=xicon1">
   <link rel="manifest" href="/site.webmanifest?v=xicon1">
   <script type="application/ld+json">$seo_jsonld</script>
-  <script type="application/ld+json">$faq_jsonld</script>
 </head>
 <body>
   <a class="sim-skip-link" href="#main">本文へ移動</a>
@@ -61,7 +60,10 @@
         <p class="sim-eyebrow">$eyebrow</p>
         <h1>$h1</h1>
         <p class="sim-lead">$lead</p>
-        <p class="sim-updated">公式情報確認日：$checked_at_display</p>
+        <p class="sim-updated">
+          公式情報確認日：
+          <time datetime="$checked_at">$checked_at_display</time>
+        </p>
       </header>
 
       <section class="sim-verdict" aria-labelledby="verdict-title">
@@ -71,20 +73,8 @@
         <div class="sim-badges" aria-label="特徴">$badges</div>
       </section>
 
-      $cta
-
-      <section class="sim-section" aria-labelledby="facts-title">
-        <h2 id="facts-title">基本情報</h2>
-        <p class="sim-section__lead">細かなキャンペーンより先に、毎月の基本条件を確認します。</p>
-        <dl class="sim-facts">$facts</dl>
-        <p class="sim-source">
-          根拠：
-          <a href="$source_url" target="_blank" rel="noopener noreferrer">$source_label</a>
-        </p>
-      </section>
-
       <section class="sim-section" aria-labelledby="fit-title">
-        <h2 id="fit-title">$nameが向いている人・向いていない人</h2>
+        <h2 id="fit-title">$nameが向いている人・比較したい人</h2>
         <div class="sim-two-column">
           <div class="sim-fit-card">
             <h3>向いている人</h3>
@@ -102,6 +92,15 @@
         <ul class="sim-list">$point_items</ul>
       </section>
 
+      $cta
+
+      <section class="sim-section" aria-labelledby="facts-title">
+        <h2 id="facts-title">基本情報</h2>
+        <p class="sim-section__lead">期間限定特典より先に、毎月の基本条件を確認します。</p>
+        <dl class="sim-facts">$facts</dl>
+        <ul class="sim-source-list" aria-label="公式情報の参照先">$source_links</ul>
+      </section>
+
       <section class="sim-section" aria-labelledby="cautions-title">
         <h2 id="cautions-title">注意点</h2>
         <ul class="sim-list">$caution_items</ul>
@@ -116,12 +115,6 @@
         <h2 id="faq-title">よくある質問</h2>
         <div class="sim-faq">$faq_items</div>
       </section>
-
-      $cta
-
-      <aside class="sim-pr" aria-label="広告リンクについて">
-        $pr_note
-      </aside>
     </article>
   </main>
 

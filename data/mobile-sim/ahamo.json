@@ -7,7 +7,6 @@
   "h1": "ahamoの料金と注意点を、申し込み前に確認",
   "lead": "30GBの基本プラン、5分以内の国内通話、大盛りオプション、オンライン中心の手続きまで、選ぶ前に必要な条件だけをまとめます。",
   "checked_at": "2026-06-20",
-  "checked_at_display": "2026年6月20日",
   "verdict_title": "30GBをシンプルに使い、短い通話もまとめたい人向け",
   "verdict": "ahamoは30GBを月額2,970円で利用でき、1回5分以内の国内通話が基本料金に含まれます。低容量を細かく選びたい人より、30GB前後を分かりやすく使いたい人に向くプランです。",
   "badges": [
@@ -94,8 +93,16 @@
       "answer": "ahamoはオンラインでの申し込みと手続きが基本です。店頭での有料サポートを利用できる場合がありますが、対応範囲を事前に確認してください。"
     }
   ],
-  "affiliate_url": "https://tr.affiliate-sp.docomo.ne.jp/cl/d0000001629/4911/838",
-  "source_url": "https://ahamo.com/plan/index.html",
-  "source_label": "ahamo公式「料金・データ量」",
-  "pr_note": "PR：このリンクは広告リンクです。条件・特典は公式画面で確認してください。"
+  "cta": {
+    "url": "https://tr.affiliate-sp.docomo.ne.jp/cl/d0000001629/4911/838",
+    "label": "公式条件を見る",
+    "affiliate": true,
+    "note": "PR：このリンクは広告リンクです。条件・特典は公式画面で確認してください。"
+  },
+  "sources": [
+    {
+      "url": "https://ahamo.com/plan/index.html",
+      "label": "ahamo公式「料金・データ量」"
+    }
+  ]
 }

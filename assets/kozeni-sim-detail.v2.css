@@ -351,15 +351,6 @@ img {
   font-weight: 800;
 }
 
-.sim-pr {
-  padding: .9rem 1rem;
-  border-left: 4px solid var(--sim-gold);
-  border-radius: .7rem;
-  background: #fff9e9;
-  color: #66551e;
-  font-size: .84rem;
-}
-
 .sim-site-footer {
   margin-top: 3rem;
   border-top: 1px solid var(--sim-line);
@@ -410,4 +401,25 @@ img {
   html {
     scroll-behavior: auto;
   }
+}
+.sim-source-list {
+  display: grid;
+  gap: .35rem;
+  margin: .85rem 0 0;
+  padding: 0;
+  list-style: none;
+  color: var(--sim-muted);
+  font-size: .78rem;
+}
+
+.sim-source-list a {
+  color: var(--sim-green-deep);
+  font-weight: 800;
+}
+
+.sim-cta__tracking {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
 }

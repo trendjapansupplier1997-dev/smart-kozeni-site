@@ -3,276 +3,136 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>mineo｜スマホ料金条件チェック</title>
-  <meta name="description" content="mineoの申込前に対象条件・紹介制度・公式条件を確認するページです。">
+  <title>mineoの料金・メリット・注意点｜3GBから50GBを比較</title>
+  <meta name="description" content="mineoのマイピタ3GB・7GB・15GB・30GB・50GB料金、A・D・Sプラン、パケット放題、通話料の注意点を申し込み前に整理します。">
   <link rel="canonical" href="https://smart-kozeni.com/mobile-sim/mineo/">
-  <meta property="og:title" content="mineo｜スマホ料金条件チェック">
-  <meta property="og:description" content="mineoの申込前に対象条件・紹介制度・公式条件を確認するページです。">
+  <meta property="og:title" content="mineoの料金・メリット・注意点｜3GBから50GBを比較">
+  <meta property="og:description" content="mineoのマイピタ3GB・7GB・15GB・30GB・50GB料金、A・D・Sプラン、パケット放題、通話料の注意点を申し込み前に整理します。">
   <meta property="og:url" content="https://smart-kozeni.com/mobile-sim/mineo/">
-  <meta property="og:type" content="website">
-  <style>
-:root{
-  --mint:#4DBD8C;
-  --deep:#228C62;
-  --pale:#E9F5EF;
-  --gold:#F2C94C;
-  --light:#F2F6F4;
-  --ink:#222831;
-  --muted:#66736E;
-  --line:rgba(34,140,98,.16);
-  --white:#fff;
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-  margin:0;
-  font-family:"Noto Sans JP", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  color:var(--ink);
-  background:linear-gradient(180deg,#F7FCFA 0%,#FFFFFF 44%,#F7FCFA 100%);
-  line-height:1.78;
-}
-a{color:inherit}
-.container{width:min(1040px, calc(100% - 32px)); margin:0 auto}
-
-.brand{
-  display:inline-flex;
-  align-items:center;
-  gap:10px;
-  text-decoration:none;
-  font-weight:900;
-  letter-spacing:.02em;
-}
-.logo-dot{
-  width:30px;
-  height:30px;
-  border-radius:11px;
-  display:inline-grid;
-  place-items:center;
-  background:linear-gradient(135deg,var(--mint),var(--deep));
-  color:white;
-  font-size:15px;
-}
-
-.hero{padding:44px 0 34px}
-.pill{
-  display:inline-flex;
-  align-items:center;
-  gap:8px;
-  padding:8px 12px;
-  border-radius:999px;
-  background:var(--pale);
-  color:var(--deep);
-  font-weight:900;
-  font-size:13px;
-}
-h1{
-  margin:18px 0 14px;
-  font-size:clamp(34px,6vw,64px);
-  line-height:1.08;
-  letter-spacing:-.05em;
-}
-.lead{
-  margin:0;
-  max-width:740px;
-  color:var(--muted);
-  font-size:clamp(16px,2.2vw,20px);
-}
-.note{
-  margin-top:20px;
-  color:var(--muted);
-  font-size:14px;
-}
-.section{padding:26px 0}
-.section-title{
-  margin:0 0 18px;
-  font-size:clamp(24px,4vw,38px);
-  line-height:1.25;
-  letter-spacing:-.03em;
-}
-.grid{
-  display:grid;
-  gap:16px;
-}
-.grid.three{grid-template-columns:repeat(3,1fr)}
-.grid.two{grid-template-columns:repeat(2,1fr)}
-.card{
-  display:block;
-  text-decoration:none;
-  background:rgba(255,255,255,.9);
-  border:1px solid var(--line);
-  border-radius:28px;
-  padding:24px;
-  box-shadow:0 18px 60px rgba(34,140,98,.08);
-}
-.card:hover{transform:translateY(-1px)}
-.card h2,.card h3{margin:0 0 10px;line-height:1.35}
-.card p{margin:0;color:var(--muted)}
-.tag{
-  display:inline-flex;
-  align-items:center;
-  margin-bottom:12px;
-  padding:5px 10px;
-  border-radius:999px;
-  background:var(--light);
-  color:var(--deep);
-  font-size:12px;
-  font-weight:900;
-}
-.kv{
-  display:grid;
-  gap:10px;
-  margin-top:18px;
-}
-.kv div{
-  display:grid;
-  grid-template-columns:120px 1fr;
-  gap:12px;
-  padding:12px 0;
-  border-bottom:1px solid rgba(34,140,98,.12);
-}
-.kv span:first-child{
-  color:var(--muted);
-  font-size:13px;
-}
-.list{
-  margin:16px 0 0;
-  padding-left:1.2em;
-  color:var(--muted);
-}
-.check-list{
-  display:grid;
-  gap:12px;
-  margin:0;
-  padding:0;
-  list-style:none;
-}
-.check-list li{
-  padding:14px 16px;
-  border-radius:18px;
-  background:var(--light);
-  border:1px solid var(--line);
-}
-.footer{
-  margin-top:52px;
-  padding:34px 0 44px;
-  border-top:1px solid var(--line);
-  color:rgba(34,40,49,.62);
-  font-size:13px;
-}
-.footer a{margin-right:14px}
-@media(max-width:760px){
-  
-  
-  .grid.three,.grid.two{grid-template-columns:1fr}
-  .kv div{grid-template-columns:1fr}
-  .hero{padding-top:36px}
-}
-
-/* mineo AccessTrade CTA v1 */
-.mineo-asp-card{
-  grid-column:1/-1;
-}
-.mineo-asp-link a{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  min-height:42px;
-  padding:.72rem 1rem;
-  border-radius:999px;
-  background:var(--deep,#228C62);
-  color:#fff;
-  text-decoration:none;
-  font-weight:850;
-}
-.mineo-asp-note{
-  margin:.7rem 0 0;
-  color:var(--muted,#64748b);
-  font-size:.9rem;
-  line-height:1.7;
-}
-
-</style>
+  <meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary">
+  <meta name="theme-color" content="#4DBD8C">
   <link rel="stylesheet" href="/assets/kozeni-brand.v1.css?v=41.13">
+  <link rel="stylesheet" href="/assets/kozeni-nav.v1.css?v=nav2">
+  <link rel="stylesheet" href="/assets/kozeni-return.v1.css?v=return3">
+  <link rel="stylesheet" href="/assets/kozeni-sim-detail.v2.css">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/icon-32.png?v=xicon1">
   <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/icon-192.png?v=xicon1">
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png?v=xicon1">
   <link rel="manifest" href="/site.webmanifest?v=xicon1">
-<link rel="stylesheet" href="/assets/kozeni-nav.v1.css?v=nav2"><link rel="stylesheet" href="/assets/kozeni-return.v1.css?v=return3">
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://smart-kozeni.com/#website","url":"https://smart-kozeni.com/","name":"スマホ小銭研究所","inLanguage":"ja"},{"@type":"Organization","@id":"https://smart-kozeni.com/#organization","name":"スマホ小銭研究所","url":"https://smart-kozeni.com/"},{"@type":"WebPage","@id":"https://smart-kozeni.com/mobile-sim/mineo/#webpage","url":"https://smart-kozeni.com/mobile-sim/mineo/","name":"mineoの料金・メリット・注意点｜3GBから50GBを比較","description":"mineoのマイピタ3GB・7GB・15GB・30GB・50GB料金、A・D・Sプラン、パケット放題、通話料の注意点を申し込み前に整理します。","dateModified":"2026-06-20","isPartOf":{"@id":"https://smart-kozeni.com/#website"},"publisher":{"@id":"https://smart-kozeni.com/#organization"},"breadcrumb":{"@id":"https://smart-kozeni.com/mobile-sim/mineo/#breadcrumb"},"inLanguage":"ja"},{"@type":"BreadcrumbList","@id":"https://smart-kozeni.com/mobile-sim/mineo/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"ホーム","item":"https://smart-kozeni.com/"},{"@type":"ListItem","position":2,"name":"スマホ・回線","item":"https://smart-kozeni.com/mobile-sim/"},{"@type":"ListItem","position":3,"name":"mineo","item":"https://smart-kozeni.com/mobile-sim/mineo/"}]}]}</script>
 </head>
 <body>
-<header class="kozeni-site-header">
-  <div class="kozeni-site-nav">
-    <a class="kozeni-site-brand" href="/">
-      <img src="/assets/images/icon-192.png?v=xicon1" alt="" width="34" height="34" decoding="async"><span>スマホ小銭研究所</span>
-    </a>
-    <nav class="kozeni-main-nav" aria-label="主要カテゴリ">
-      <a class="is-active" aria-current="page" href="/mobile-sim/">スマホ・回線</a>
-      <a href="/point-site/">ポイ活</a>
-      <a href="/credit-card/">クレカ</a>
-      <a href="/account-opening/">口座</a>
-      <a href="/travel/">旅行・移動</a>
-    </nav>
-  </div>
-</header>
-<nav class="kozeni-breadcrumb" aria-label="パンくず"><a href="/">ホーム</a>
-  <span aria-hidden="true">›</span>
-  <a href="/mobile-sim/">スマホ・回線</a>
-  <span aria-hidden="true">›</span>
-  <span aria-current="page">mineo</span></nav>
-<main>
+  <a class="sim-skip-link" href="#main">本文へ移動</a>
 
-<!-- brand-micro-v1:start -->
-      <section class="brand-micro" aria-label="スマホ小銭研究所の確認方針">
+  <header class="kozeni-site-header">
+    <div class="kozeni-site-nav">
+      <a class="kozeni-site-brand" href="/">
+        <img src="/assets/images/icon-192.png?v=xicon1" alt="" width="34" height="34" decoding="async">
         <span>スマホ小銭研究所</span>
-        <strong>月額・特典・対象外を先に確認。</strong>
-        <small>PR・紹介リンクは明記します</small>
+      </a>
+      <nav class="kozeni-main-nav" aria-label="主要カテゴリ">
+        <a class="is-active" aria-current="page" href="/mobile-sim/">スマホ・回線</a>
+        <a href="/point-site/">ポイ活</a>
+        <a href="/credit-card/">クレカ</a>
+        <a href="/account-opening/">口座</a>
+        <a href="/travel/">旅行・移動</a>
+      </nav>
+    </div>
+  </header>
+
+  <nav class="kozeni-breadcrumb" aria-label="パンくず">
+    <a href="/">ホーム</a>
+    <span aria-hidden="true">›</span>
+    <a href="/mobile-sim/">スマホ・回線</a>
+    <span aria-hidden="true">›</span>
+    <span aria-current="page">mineo</span>
+  </nav>
+
+  <main class="sim-page" id="main">
+    <article class="sim-article">
+      <div class="sim-brand-note">
+        <strong>スマホ小銭研究所</strong>
+        <span>料金・向き不向き・対象外条件を、申し込み前に確認します。</span>
+      </div>
+
+      <header class="sim-hero">
+        <p class="sim-eyebrow">MINEO GUIDE</p>
+        <h1>mineoの料金と注意点を、申し込み前に確認</h1>
+        <p class="sim-lead">3GBから50GBまで選べるマイピタ、au・ドコモ・ソフトバンク回線、パケット放題サービス、通話と申し込みの注意点をまとめます。</p>
+        <p class="sim-updated">
+          公式情報確認日：
+          <time datetime="2026-06-20">2026年6月20日</time>
+        </p>
+      </header>
+
+      <section class="sim-verdict" aria-labelledby="verdict-title">
+        <p class="sim-verdict__label">30秒で分かる結論</p>
+        <h2 id="verdict-title">データ容量と回線を、自分の使い方に合わせて選びたい人向け</h2>
+        <p>mineoは音声通話付きのマイピタを3GBから50GBまで選べます。au・ドコモ・ソフトバンク回線から選択でき、余ったデータの繰り越しやパケット放題サービスもあるため、単純な最安値だけでなく使い方の柔軟性を重視する人に向きます。</p>
+        <div class="sim-badges" aria-label="特徴"><span>3GBから50GB</span><span>3回線から選択</span><span>データ繰り越し</span><span>パケット放題</span></div>
       </section>
-<!-- brand-micro-v1:end -->
-      <section class="hero">
-  <div class="container">
-    <span class="pill">MOBILE CHECK</span>
-    <h1>mineo</h1>
-    <p class="lead">紹介制度と月額確認。細かい金額より、対象条件と失敗しやすい点を先に見る。</p>
-  </div>
-</section>
-<section class="section">
-  <div class="container grid two">
-      <article class="card mineo-asp-card">
-        <span class="tag">PR / AccessTrade</span>
-        <h2>mineoの公式条件を見る</h2>
-        <p>mineoを検討する場合は、料金プラン、紹介制度、契約事務手数料、オプション、対象外条件を公式画面で確認します。</p>
-        <span class="mineo-asp-link"><a href="https://h.accesstrade.net/sp/cc?rk=0100ii8900osbd" rel="nofollow" referrerpolicy="no-referrer-when-downgrade">公式条件を見る<img src="https://h.accesstrade.net/sp/rr?rk=0100ii8900osbd" width="1" height="1" border="0" alt=""></a></span>
-        <p class="mineo-asp-note">PR：このリンクは広告リンクです。申込条件・特典・対象外条件は公式画面で最新情報を確認してください。</p>
-      </article>
 
+      <section class="sim-section" aria-labelledby="fit-title">
+        <h2 id="fit-title">mineoが向いている人・比較したい人</h2>
+        <div class="sim-two-column">
+          <div class="sim-fit-card">
+            <h3>向いている人</h3>
+            <ul class="sim-list"><li>3GBから50GBまで使う量に合わせて選びたい</li><li>au・ドコモ・ソフトバンク回線から選びたい</li><li>余ったデータを翌月へ繰り越したい</li><li>パケット放題やコミュニティなどmineo独自サービスを使いたい</li></ul>
+          </div>
+          <div class="sim-fit-card sim-fit-card--caution">
+            <h3>別の候補も比較したい人</h3>
+            <ul class="sim-list"><li>通信速度を最優先し、大手キャリア本体を選びたい</li><li>標準料金だけで国内通話無料を付けたい</li><li>容量を選ばず完全な高速データ無制限を使いたい</li><li>料金プランを1種類だけから選びたい</li></ul>
+          </div>
+        </div>
+      </section>
 
-    <article class="card">
-      <span class="tag">POINT</span>
-      <h2>見るポイント</h2>
-      <p>紹介制度と独自サービスを確認。低〜中容量で比較しやすい。</p>
-      <ul class="list">
-        <li>公式キャンペーンページで現在の特典を確認</li><li>紹介URL、契約事務手数料、月額、パケット放題系オプション</li><li>申込前に対象外条件、期限、併用可否を見る</li><li>紹介リンクを使う場合は、開通まで同じ導線で進む</li>
-      </ul>
+      <section class="sim-section" aria-labelledby="points-title">
+        <h2 id="points-title">申し込み前に見るポイント</h2>
+        <ul class="sim-list"><li>音声通話付きのデュアルタイプか、データ通信のみのシングルタイプか確認する</li><li>端末と利用場所に合うA・D・Sプランを確認する</li><li>現在の月間データ使用量に合う容量を選ぶ</li><li>パケット放題サービスは別途申し込みが必要な点を確認する</li><li>紹介制度を使う場合は、申し込み開始前に紹介用URLを確認する</li></ul>
+      </section>
+
+      <div class="sim-cta"><a class="sim-cta__button" href="https://h.accesstrade.net/sp/cc?rk=0100ii8900osbd" target="_blank" rel="nofollow sponsored noopener noreferrer" referrerpolicy="no-referrer-when-downgrade">公式条件を見る<img class="sim-cta__tracking" src="https://h.accesstrade.net/sp/rr?rk=0100ii8900osbd" width="1" height="1" alt=""></a><p class="sim-cta__note">PR：このリンクは広告リンクです。条件・特典は公式画面で確認してください。</p></div>
+
+      <section class="sim-section" aria-labelledby="facts-title">
+        <h2 id="facts-title">基本情報</h2>
+        <p class="sim-section__lead">期間限定特典より先に、毎月の基本条件を確認します。</p>
+        <dl class="sim-facts"><div class="sim-facts__row"><dt>3GB</dt><dd>月額1,298円（税込）・音声通話付き</dd></div><div class="sim-facts__row"><dt>7GB</dt><dd>月額1,518円（税込）・音声通話付き</dd></div><div class="sim-facts__row"><dt>15GB</dt><dd>月額1,958円（税込）・音声通話付き</dd></div><div class="sim-facts__row"><dt>30GB</dt><dd>月額2,178円（税込）・音声通話付き</dd></div><div class="sim-facts__row"><dt>50GB</dt><dd>月額2,948円（税込）・音声通話付き</dd></div><div class="sim-facts__row"><dt>対応回線</dt><dd>Aプラン・Dプラン・Sプラン</dd></div></dl>
+        <ul class="sim-source-list" aria-label="公式情報の参照先"><li>根拠：<a href="https://mineo.jp/price/mypita/" target="_blank" rel="noopener noreferrer">mineo公式「マイピタ料金表」</a></li><li>根拠：<a href="https://mineo.jp/price/" target="_blank" rel="noopener noreferrer">mineo公式「料金表」</a></li></ul>
+      </section>
+
+      <section class="sim-section" aria-labelledby="cautions-title">
+        <h2 id="cautions-title">注意点</h2>
+        <ul class="sim-list"><li>実際の通信速度は通信環境やネットワークの混雑状況で変わります</li><li>通常の国内通話料は30秒22円で、かけ放題は別オプションです</li><li>容量を使い切った後の通信速度やパケット放題の条件を確認してください</li><li>端末によって対応する回線・SIM・eSIMが異なります</li><li>キャンペーン・紹介制度・初期費用の適用条件は申し込み直前に公式画面で確認してください</li></ul>
+      </section>
+
+      <section class="sim-section" aria-labelledby="related-title">
+        <h2 id="related-title">次に確認するページ</h2>
+        <div class="sim-related"><a href="/mobile-sim/ahamo/"><strong>30GBと短い通話をまとめるならahamoも比較</strong><span>30GBと5分以内の国内通話を含む料金を確認します。</span></a><a href="/mobile-sim/rakuten-mobile/"><strong>大容量・無制限なら楽天モバイルも比較</strong><span>使用量で変わる3段階料金と20GB超過後の無制限を確認します。</span></a><a href="/mobile-sim/"><strong>格安SIM・スマホ料金の比較へ戻る</strong><span>LINEMO、IIJmio、日本通信SIMなども含めて候補を探します。</span></a></div>
+      </section>
+
+      <section class="sim-section" aria-labelledby="faq-title">
+        <h2 id="faq-title">よくある質問</h2>
+        <div class="sim-faq"><details><summary>mineoの音声通話付きプランはいくらですか？</summary><p>マイピタのデュアルタイプは、3GBが1,298円、7GBが1,518円、15GBが1,958円、30GBが2,178円、50GBが2,948円です。すべて税込です。</p></details><details><summary>mineoはどの回線を使えますか？</summary><p>Aプラン、Dプラン、Sプランから選べます。端末ごとに対応状況が異なるため、動作確認済み端末検索で確認してください。</p></details><details><summary>mineoにデータ使い放題はありますか？</summary><p>マイピタ向けのパケット放題サービスや、通信速度で選ぶマイそくがあります。速度、昼間の制限、3日間の利用量などの条件を公式ページで確認してください。</p></details><details><summary>mineoの国内通話料はいくらですか？</summary><p>通常の国内通話料は30秒22円です。10分かけ放題や時間無制限かけ放題などの有料オプションがあります。</p></details></div>
+      </section>
     </article>
-    <article class="card">
-      <span class="tag">MEMO</span>
-      <h2>紹介アンバサダー</h2>
-      <p>報酬・特典は変動します。ここでは判断の順番を整理し、最終確認は公式画面で行います。</p>
-    </article>
-  </div>
-</section>
+  </main>
 
-</main>
-<footer class="footer">
-  <div class="container">
-    <a href="/policy/">PR表記</a>
-    <a href="/privacy/">プライバシー</a>
-    <a href="/about/">このサイトについて</a>
-    <p>© スマホ小銭研究所</p>
-  </div>
-</footer>
-<nav class="kozeni-fixed-return" aria-label="一覧へ戻る">
-  <a href="/mobile-sim/">← スマホ・回線一覧へ戻る</a>
-</nav>
+  <footer class="sim-site-footer">
+    <div class="sim-site-footer__inner">
+      <nav aria-label="フッター">
+        <a href="/mobile-sim/">スマホ・回線一覧</a>
+        <a href="/policy/">PR表記</a>
+        <a href="/privacy/">プライバシー</a>
+        <a href="/about/">運営者情報</a>
+        <a href="/contact/">お問い合わせ</a>
+      </nav>
+      <p>© スマホ小銭研究所</p>
+    </div>
+  </footer>
+
+  <nav class="kozeni-fixed-return" aria-label="一覧へ戻る">
+    <a href="/mobile-sim/">← スマホ・回線一覧へ戻る</a>
+  </nav>
 </body>
 </html>

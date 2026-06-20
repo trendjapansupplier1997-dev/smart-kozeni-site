@@ -30,12 +30,19 @@ Cloudflare Pages 用のクリーンな静的サイト一式です。
 - `docs/revenue-page-template.md` 収益ページ雛形/導線設計
 - `docs/page-authoring-rules.md` 新規ページ作成ルール
 - `docs/release-checklist.md` リリース前チェックリスト
+- `docs/mobile-sim-generation.md` スマホ回線詳細ページのSSOT/生成/監査ルール
 - `tools/kozeni_site_audit.py` サイト衛生チェック用スクリプト
 
 監査コマンド：
 
 ```bash
 python3 tools/kozeni_site_audit.py
+```
+
+スマホ回線詳細ページの生成確認：
+
+```bash
+python3 tools/build_mobile_sim.py --check
 ```
 
 デザイン監査コマンド：
