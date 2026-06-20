@@ -1,0 +1,102 @@
+{
+  "title": "格安SIM・スマホ料金を比較｜使い方別に選ぶ",
+  "description": "格安SIM・スマホ料金を、データ使用量、通話、低容量、大容量、店舗サポートなどの使い方別に比較します。楽天モバイル、ahamo、mineoを中心に申し込み前の確認先へ案内します。",
+  "h1": "格安SIM・スマホ料金を、使い方から比較",
+  "lead": "最安値だけで決めず、毎月のデータ量、通話、店舗サポート、回線の使い方から候補を絞ります。最初に楽天モバイル・ahamo・mineoを比較し、合わない場合だけ他の候補を確認します。",
+  "checked_at": "2026-06-20",
+  "featured_slugs": [
+    "rakuten-mobile",
+    "ahamo",
+    "mineo"
+  ],
+  "purpose_links": [
+    {
+      "title": "月によってデータ使用量が変わる",
+      "description": "少ない月と20GBを超える月の両方がある場合に確認。",
+      "href": "/mobile-sim/rakuten-mobile/",
+      "result": "楽天モバイル"
+    },
+    {
+      "title": "30GBと短い国内通話をまとめたい",
+      "description": "料金をシンプルにし、5分以内の国内通話も使いたい場合に確認。",
+      "href": "/mobile-sim/ahamo/",
+      "result": "ahamo"
+    },
+    {
+      "title": "3GBから50GBまで細かく選びたい",
+      "description": "容量とA・D・S回線を自分に合わせて選びたい場合に確認。",
+      "href": "/mobile-sim/mineo/",
+      "result": "mineo"
+    },
+    {
+      "title": "LINEやPayPayとの相性を見たい",
+      "description": "オンライン専用プランとキャンペーン条件を確認。",
+      "href": "/mobile-sim/linemo/",
+      "result": "LINEMO"
+    },
+    {
+      "title": "必要なときだけデータを追加したい",
+      "description": "トッピング型のサブ回線や予備回線を確認。",
+      "href": "/mobile-sim/povo/",
+      "result": "povo"
+    },
+    {
+      "title": "店舗サポートも候補に入れたい",
+      "description": "オンラインだけでは不安な場合に確認。",
+      "href": "/mobile-sim/uq-mobile/",
+      "result": "UQ mobile"
+    }
+  ],
+  "other_options": [
+    {
+      "title": "LINEMO",
+      "description": "LINE利用とオンライン専用プランの条件を見る。",
+      "href": "/mobile-sim/linemo/"
+    },
+    {
+      "title": "povo",
+      "description": "基本料0円とトッピングの維持条件を見る。",
+      "href": "/mobile-sim/povo/"
+    },
+    {
+      "title": "UQ mobile",
+      "description": "au回線、店舗、セット割の条件を見る。",
+      "href": "/mobile-sim/uq-mobile/"
+    },
+    {
+      "title": "ワイモバイル",
+      "description": "家族割や固定回線とのセット条件を見る。",
+      "href": "/mobile-sim/ymobile/"
+    },
+    {
+      "title": "IIJmio",
+      "description": "低容量、端末セット、料金の細かさを見る。",
+      "href": "/mobile-sim/iijmio/"
+    },
+    {
+      "title": "日本通信SIM",
+      "description": "低価格プランと通話込みの条件を見る。",
+      "href": "/mobile-sim/nihon-tsushin/"
+    }
+  ],
+  "home_networks": [
+    {
+      "title": "工事不要Wi-Fi",
+      "description": "引っ越し、開通待ち、工事を避けたい場合はこちら。",
+      "href": "/mobile-sim/home-wifi/"
+    },
+    {
+      "title": "楽天ひかり",
+      "description": "楽天モバイルや楽天市場と家の固定回線をまとめたい場合はこちら。",
+      "href": "/mobile-sim/rakuten-hikari/"
+    }
+  ],
+  "checklist": [
+    "直近3カ月のデータ使用量を確認する",
+    "短い通話と長い通話のどちらが多いか確認する",
+    "自宅・勤務先・よく行く場所の対応エリアを確認する",
+    "端末をそのまま使えるか、SIM・eSIM対応を確認する",
+    "キャンペーンより先に通常料金と対象外条件を確認する"
+  ],
+  "note": "料金・キャンペーン・対象条件は変わります。各詳細ページの公式情報確認日と参照先を確認し、申し込み直前に公式画面で最終確認してください。"
+}

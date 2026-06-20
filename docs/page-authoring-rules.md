@@ -94,6 +94,17 @@
 
 詳細は`docs/mobile-sim-generation.md`を参照する。
 
+
+## スマホ回線比較ハブのSSOT
+
+`/mobile-sim/index.html`は直接編集しない。
+
+- ページ構成は`data/mobile-sim-hub.json`で管理する
+- 主要3候補の比較情報は各詳細JSONの`hub`で管理する
+- `python3 tools/build_mobile_sim_hub.py`で生成する
+- 比較ハブにはASPリンクを直接置かず、詳細ページへ内部リンクする
+- JavaScriptによる候補の出し分けを行わず、重要導線は常にHTMLへ表示する
+
 ## 公開前チェック
 
 公開前は `python3 tools/kozeni_site_audit.py` を実行し、最低限の欠落を確認する。

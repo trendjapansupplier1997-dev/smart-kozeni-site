@@ -1,3 +1,7 @@
 
 # Smart Kozeni patch backups
 *.bak-v*
+
+# Python bytecode
+__pycache__/
+*.py[cod]

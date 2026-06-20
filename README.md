@@ -45,6 +45,12 @@ python3 tools/kozeni_site_audit.py
 python3 tools/build_mobile_sim.py --check
 ```
 
+スマホ回線比較ハブの生成確認：
+
+```bash
+python3 tools/build_mobile_sim_hub.py --check
+```
+
 デザイン監査コマンド：
 
 ```bash

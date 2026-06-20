@@ -14,6 +14,7 @@ from typing import Any
 sys.dont_write_bytecode = True
 
 import build_mobile_sim
+import build_mobile_sim_hub
 
 ROOT = Path(__file__).resolve().parents[1]
 HTML_FILES = sorted(
@@ -246,6 +247,113 @@ def audit_generated_mobile_sim() -> list[str]:
     return problems
 
 
+
+def audit_mobile_sim_hub() -> list[str]:
+    problems: list[str] = []
+    rel = "mobile-sim/index.html"
+    page = ROOT / rel
+
+    try:
+        data = build_mobile_sim_hub.load_hub_data()
+        details = build_mobile_sim_hub.load_featured_details(
+            data["featured_slugs"]
+        )
+        template = Template(
+            read(build_mobile_sim_hub.TEMPLATE_PATH)
+        )
+        rendered = build_mobile_sim_hub.render_page(
+            data,
+            details,
+            template,
+        )
+    except Exception as error:
+        return [f"{rel}: invalid hub data: {error}"]
+
+    if not page.exists():
+        return [f"{rel}: generated hub page is missing"]
+
+    source = read(page)
+    checked_at = build_mobile_sim_hub.effective_checked_at(
+        data,
+        details,
+    )
+
+    if source != rendered:
+        problems.append(f"{rel}: generated hub HTML is outdated")
+    if source.count("<h1") != 1:
+        problems.append(f"{rel}: h1 must appear exactly once")
+    if "<style" in source:
+        problems.append(f"{rel}: inline style is forbidden")
+    if source.count('type="application/ld+json"') != 1:
+        problems.append(f"{rel}: exactly one JSON-LD graph is required")
+    if re.search(
+        r'<script(?![^>]*type="application/ld\+json")',
+        source,
+        flags=re.I,
+    ):
+        problems.append(f"{rel}: executable inline script is forbidden")
+    if (
+        f'href="{build_mobile_sim_hub.STYLE_HREF}"'
+        not in source
+    ):
+        problems.append(f"{rel}: shared hub stylesheet is missing")
+    if (
+        f'<link rel="canonical" '
+        f'href="{build_mobile_sim_hub.CANONICAL}">'
+        not in source
+    ):
+        problems.append(f"{rel}: canonical is incorrect")
+    if (
+        f'"dateModified":"{checked_at.isoformat()}"'
+        not in source
+    ):
+        problems.append(f"{rel}: dateModified is incorrect")
+    if build_mobile_sim_hub.CANONICAL not in sitemap_urls():
+        problems.append(f"{rel}: canonical URL is missing from sitemap")
+
+    scripts = re.findall(
+        r'<script type="application/ld\+json">(.*?)</script>',
+        source,
+        flags=re.S,
+    )
+    for script in scripts:
+        try:
+            json.loads(script)
+        except json.JSONDecodeError as error:
+            problems.append(f"{rel}: invalid JSON-LD: {error}")
+
+    expected_rows = len(data["featured_slugs"])
+    if source.count('class="hub-compare__row"') != expected_rows:
+        problems.append(f"{rel}: comparison row count is incorrect")
+
+    positions: list[int] = []
+    for slug in data["featured_slugs"]:
+        href = f'href="/mobile-sim/{slug}/"'
+        position = source.find(href)
+        if position < 0:
+            problems.append(f"{rel}: featured link is missing: {slug}")
+        positions.append(position)
+    if positions != sorted(positions):
+        problems.append(f"{rel}: featured order differs from data")
+
+    for href in re.findall(r'href="(/[^"]*)"', source):
+        if not local_target_exists(href):
+            problems.append(f"{rel}: broken internal link: {href}")
+
+    for token in (
+        "trafficgate.net",
+        "accesstrade.net",
+        "affiliate-sp.docomo.ne.jp",
+        "data-kozeni-route",
+        "kozeni-line-quiz",
+        "kozeni-helper-v40",
+        "kozeni-sim-focus",
+    ):
+        if token in source:
+            problems.append(f"{rel}: forbidden hub token: {token}")
+
+    return problems
+
 def show_list(
     title: str,
     items: list[str],
@@ -317,6 +425,7 @@ def main() -> int:
                 backup_files.append(path.relative_to(ROOT).as_posix())
 
     mobile_sim_problems = audit_generated_mobile_sim()
+    mobile_sim_hub_problems = audit_mobile_sim_hub()
 
     print("=== kozeni site audit ===")
     print(f"HTML files: {len(HTML_FILES)}")
@@ -339,6 +448,11 @@ def main() -> int:
     show_list(
         "generated mobile SIM pages",
         mobile_sim_problems,
+        problems,
+    )
+    show_list(
+        "generated mobile SIM hub",
+        mobile_sim_hub_problems,
         problems,
     )
 

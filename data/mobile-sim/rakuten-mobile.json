@@ -119,5 +119,18 @@
       "url": "https://network.mobile.rakuten.co.jp/service/rakuten-link/",
       "label": "楽天モバイル公式「Rakuten Link」"
     }
-  ]
+  ],
+  "hub": {
+    "label": "使用量が変わる・大容量",
+    "best_for": "月ごとのデータ量が変わり、20GBを超える月もある",
+    "price": "月額1,078円〜3,278円",
+    "data": "3GB / 20GB / 20GB超は無制限",
+    "calls": "Rakuten Link利用時は国内通話無料",
+    "summary": "使ったデータ量に応じて料金が変わり、20GB超は無制限。楽天ポイントとの相性も確認できます。",
+    "badges": [
+      "3段階料金",
+      "20GB超は無制限",
+      "Rakuten Link"
+    ]
+  }
 }

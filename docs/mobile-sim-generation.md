@@ -96,3 +96,27 @@ kozeni-sim-detail.v3.css
 ```
 
 テンプレート側の参照も同時に更新します。
+
+## 比較ハブ
+
+`/mobile-sim/index.html`も直接編集しません。
+
+- ページ内容は`data/mobile-sim-hub.json`で管理する
+- 3候補の料金・データ量・通話は各`data/mobile-sim/<slug>.json`の`hub`から取得する
+- HTML構造は`templates/mobile-sim-hub.html`で管理する
+- CSSは`assets/kozeni-mobile-sim-hub.v1.css`で管理する
+
+生成：
+
+```bash
+python3 tools/build_mobile_sim_hub.py
+```
+
+生成差分の確認：
+
+```bash
+python3 tools/build_mobile_sim_hub.py --check
+```
+
+比較ハブにアフィリエイトURLを直接置かない。
+詳細ページへの内部リンクだけを置き、公式条件・PR表記・計測は詳細ページで管理する。
