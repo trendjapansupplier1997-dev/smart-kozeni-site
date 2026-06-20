@@ -148,7 +148,11 @@ def render_page(data: dict[str, Any], template: Template) -> str:
         "steps":render_steps(data["steps"]),"checklist":render_list(data["checklist"]),"avoid_section":render_avoid(data["avoid"]),"cta":cta,"source_section":render_sources(data["sources"]),
         "next_links":render_next(data["next"]),"faq_items":render_faq(data["faq"]),"return_href":esc(return_href),"return_label":esc(return_label),"seo_jsonld":render_jsonld(data, canonical).replace("</", "<\\/")
     }
-    return template.substitute(values).rstrip() + "\n"
+    rendered = template.substitute(values)
+    cleaned = "\n".join(
+        line.rstrip() for line in rendered.splitlines()
+    )
+    return cleaned.rstrip() + "\n"
 
 
 def data_paths(ids: list[str]) -> list[Path]:

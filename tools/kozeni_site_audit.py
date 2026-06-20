@@ -385,6 +385,10 @@ def audit_mobile_sim_guides() -> list[str]:
             problems.append(f"{rel}: generated guide is missing")
             continue
         text = read(page)
+        if re.search(r"[ \\t]+$", text, flags=re.M):
+            problems.append(
+                f"{rel}: generated guide contains trailing whitespace"
+            )
         if text != rendered:
             problems.append(f"{rel}: generated guide is outdated")
         if text.count("<h1") != 1:

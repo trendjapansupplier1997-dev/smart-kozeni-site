@@ -139,4 +139,3 @@ CTA・PR注記・ASP URL・計測ピクセルをガイドJSONへ複製しませ�
 python3 tools/build_mobile_sim_guides.py
 python3 tools/build_mobile_sim_guides.py --check
 ```
-
