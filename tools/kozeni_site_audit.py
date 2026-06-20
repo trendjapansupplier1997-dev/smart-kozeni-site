@@ -15,6 +15,7 @@ sys.dont_write_bytecode = True
 
 import build_mobile_sim
 import build_mobile_sim_hub
+import build_mobile_sim_guides
 
 ROOT = Path(__file__).resolve().parents[1]
 HTML_FILES = sorted(
@@ -364,6 +365,75 @@ def audit_mobile_sim_hub() -> list[str]:
 
     return problems
 
+
+
+def audit_mobile_sim_guides() -> list[str]:
+    problems: list[str] = []
+    template = Template(read(build_mobile_sim_guides.TEMPLATE_PATH))
+    sitemap = sitemap_urls()
+    for data_path in build_mobile_sim_guides.data_paths([]):
+        try:
+            data = build_mobile_sim_guides.load_data(data_path)
+            rendered = build_mobile_sim_guides.render_page(data, template)
+        except Exception as error:
+            problems.append(f"{data_path.relative_to(ROOT)}: invalid data: {error}")
+            continue
+        page = build_mobile_sim_guides.output_path(data)
+        rel = page.relative_to(ROOT).as_posix()
+        canonical = build_mobile_sim_guides.canonical_url(data)
+        if not page.exists():
+            problems.append(f"{rel}: generated guide is missing")
+            continue
+        text = read(page)
+        if text != rendered:
+            problems.append(f"{rel}: generated guide is outdated")
+        if text.count("<h1") != 1:
+            problems.append(f"{rel}: h1 must appear exactly once")
+        if "<style" in text:
+            problems.append(f"{rel}: inline style is forbidden")
+        if text.count('type="application/ld+json"') != 1:
+            problems.append(f"{rel}: exactly one JSON-LD graph is required")
+        if re.search(r'<script(?![^>]*type="application/ld\+json")', text, flags=re.I):
+            problems.append(f"{rel}: executable inline script is forbidden")
+        if f'href="{build_mobile_sim_guides.STYLE_HREF}"' not in text:
+            problems.append(f"{rel}: shared guide CSS is missing")
+        if f'<link rel="canonical" href="{canonical}">' not in text:
+            problems.append(f"{rel}: canonical is incorrect")
+        if f'"dateModified":"{data["checked_at"]}"' not in text:
+            problems.append(f"{rel}: dateModified differs from checked_at")
+        if canonical not in sitemap:
+            problems.append(f"{rel}: canonical URL is missing from sitemap")
+        if text.count("<details>") != len(data["faq"]):
+            problems.append(f"{rel}: visible FAQ count differs from data")
+        expected_cta = 1 if data["show_parent_cta"] else 0
+        if text.count('class="sim-cta__button"') != expected_cta:
+            problems.append(f"{rel}: main CTA count differs from data")
+        if expected_cta:
+            parent_cta = data["_parent"]["cta"]
+            href = html.escape(parent_cta["url"], quote=True)
+            if f'href="{href}"' not in text:
+                problems.append(f"{rel}: parent CTA URL is missing")
+            if parent_cta["affiliate"]:
+                for token in ("nofollow", "sponsored", "noopener", "noreferrer"):
+                    if token not in text:
+                        problems.append(f"{rel}: affiliate CTA missing {token}")
+        lists = re.findall(r'<ul class="guide-source-list">(.*?)</ul>', text, flags=re.S)
+        expected_count = 1 if data["sources"] else 0
+        if len(lists) != expected_count:
+            problems.append(f"{rel}: source list count differs from data")
+        elif data["sources"]:
+            actual = re.findall(r'<li>根拠：<a href="([^"]+)" target="_blank" rel="noopener noreferrer">(.*?)</a></li>', lists[0], flags=re.S)
+            expected = [(html.escape(x["url"], quote=True), html.escape(x["label"])) for x in data["sources"]]
+            if actual != expected:
+                problems.append(f"{rel}: official source list differs from data")
+        for href in re.findall(r'href="(/[^"]*)"', text):
+            if not local_target_exists(href):
+                problems.append(f"{rel}: broken internal link: {href}")
+        for token in ("brand-micro", "kozeni-helper-v40", "data-kozeni-route", "MOBILE CHECK"):
+            if token in text:
+                problems.append(f"{rel}: forbidden legacy guide token: {token}")
+    return problems
+
 def show_list(
     title: str,
     items: list[str],
@@ -436,6 +506,7 @@ def main() -> int:
 
     mobile_sim_problems = audit_generated_mobile_sim()
     mobile_sim_hub_problems = audit_mobile_sim_hub()
+    mobile_sim_guide_problems = audit_mobile_sim_guides()
 
     print("=== kozeni site audit ===")
     print(f"HTML files: {len(HTML_FILES)}")
@@ -463,6 +534,11 @@ def main() -> int:
     show_list(
         "generated mobile SIM hub",
         mobile_sim_hub_problems,
+        problems,
+    )
+    show_list(
+        "generated mobile SIM guides",
+        mobile_sim_guide_problems,
         problems,
     )
 

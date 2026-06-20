@@ -120,3 +120,23 @@ python3 tools/build_mobile_sim_hub.py --check
 
 比較ハブにアフィリエイトURLを直接置かない。
 詳細ページへの内部リンクだけを置き、公式条件・PR表記・計測は詳細ページで管理する。
+
+## 確認・トラブルページ
+
+料金詳細とは別に、申込前チェックや反映待ちの確認ページを生成します。
+
+```text
+data/mobile-sim-guides/*.json
+templates/mobile-sim-guide.html
+assets/kozeni-mobile-guide.v1.css
+tools/build_mobile_sim_guides.py
+```
+
+親サービスがあるガイドは`parent_slug`で詳細JSONを参照します。
+CTA・PR注記・ASP URL・計測ピクセルをガイドJSONへ複製しません。
+
+```bash
+python3 tools/build_mobile_sim_guides.py
+python3 tools/build_mobile_sim_guides.py --check
+```
+

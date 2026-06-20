@@ -1,0 +1,39 @@
+{
+  "id":"rakuten-mobile-campaign-not-eligible",
+  "output":"mobile-sim/rakuten-mobile/campaign-not-eligible",
+  "parent_slug":"rakuten-mobile",
+  "show_parent_cta":true,
+  "title":"楽天モバイルのキャンペーンが対象外になる条件｜申し込み前チェック",
+  "description":"楽天モバイルのキャンペーンで対象外になりやすいエントリー、申込経路、契約履歴、開通、Rakuten Link、併用条件、ポイント進呈時期を確認します。",
+  "breadcrumb_label":"キャンペーン対象外チェック",
+  "eyebrow":"RAKUTEN MOBILE CAMPAIGN CHECK",
+  "h1":"楽天モバイルのキャンペーン対象外を、申し込み前に確認",
+  "lead":"キャンペーンコード、申込経路、エントリー、過去契約、開通・利用条件、併用可否を順番に確認します。",
+  "checked_at":"2026-06-20",
+  "summary_title":"対象キャンペーンのルールを一つに絞る",
+  "summary":"紹介、初回申込、端末購入、店舗限定などを混ぜず、キャンペーンコードと公式ルールを基準にします。",
+  "steps":[
+    {"title":"キャンペーン名とコードを確認する","description":"正式名称、コード、期間、特典内容を記録します。"},
+    {"title":"エントリーと申込経路を確認する","description":"指定ページ、紹介ログイン、店舗などの開始経路を確認します。"},
+    {"title":"過去契約と申込区分を確認する","description":"初回、MNP、新規、追加回線、過去契約の条件を確認します。"},
+    {"title":"開通後の達成条件を確認する","description":"利用開始、期限、Rakuten Link通話などを確認します。"},
+    {"title":"併用と進呈時期を確認する","description":"併用可否、優先適用、進呈月、分割回数、受取方法を確認します。"}
+  ],
+  "checklist":["キャンペーン名とコード","エントリー済み楽天ID","指定申込ページ","申込区分","開通・利用条件","併用不可条件","ポイント進呈予定"],
+  "avoid":["紹介と初回申込の条件を混ぜる","途中で別ページからやり直す","過去記事を現在条件として使う","反映待ちで複数回申し込む"],
+  "next":[
+    {"href":"/mobile-sim/rakuten-mobile/referral-not-reflected/","title":"紹介ポイントが反映されない場合を確認する","description":"進呈時期と受取方法を確認します。"},
+    {"href":"/mobile-sim/rakuten-mobile/","title":"楽天モバイルの通常料金へ戻る","description":"3段階料金と通話条件を確認します。"},
+    {"href":"/mobile-sim/","title":"ほかのスマホ料金も比較する","description":"通常料金を基準に比較します。"}
+  ],
+  "faq":[
+    {"question":"条件はどこで確認しますか？","answer":"公式キャンペーン一覧から対象ページを開き、適用条件と進呈時期を確認します。"},
+    {"question":"Rakuten Link利用は必要ですか？","answer":"キャンペーンによって通話条件があるため、対象ルールを確認します。"},
+    {"question":"複数キャンペーンを併用できますか？","answer":"併用できない組み合わせや優先適用があります。各ルールを確認します。"}
+  ],
+  "sources":[
+    {"url":"https://network.mobile.rakuten.co.jp/campaign/","label":"楽天モバイル公式「キャンペーン一覧」"},
+    {"url":"https://network.mobile.rakuten.co.jp/faq/detail/00001728/","label":"楽天モバイル公式FAQ「キャンペーンの適用条件」"},
+    {"url":"https://network.mobile.rakuten.co.jp/faq/detail/00001919/","label":"楽天モバイル公式FAQ「Rakuten Link利用条件」"}
+  ]
+}

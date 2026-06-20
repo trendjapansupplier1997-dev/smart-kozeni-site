@@ -51,6 +51,12 @@ python3 tools/build_mobile_sim.py --check
 python3 tools/build_mobile_sim_hub.py --check
 ```
 
+スマホ回線の確認・トラブルページ生成確認：
+
+```bash
+python3 tools/build_mobile_sim_guides.py --check
+```
+
 デザイン監査コマンド：
 
 ```bash

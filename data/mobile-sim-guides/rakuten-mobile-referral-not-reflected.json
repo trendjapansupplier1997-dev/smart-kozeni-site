@@ -1,0 +1,41 @@
+{
+  "id":"rakuten-mobile-referral-not-reflected",
+  "output":"mobile-sim/rakuten-mobile/referral-not-reflected",
+  "parent_slug":"rakuten-mobile",
+  "show_parent_cta":true,
+  "title":"楽天モバイルの紹介ポイントが反映されない時の確認順",
+  "description":"楽天モバイル紹介キャンペーンのポイントが反映されない時に、紹介ログイン、申込期限、開通・利用条件、進呈時期、受取方法を確認します。",
+  "breadcrumb_label":"紹介ポイント反映チェック",
+  "eyebrow":"RAKUTEN REFERRAL POINT CHECK",
+  "h1":"楽天モバイルの紹介ポイントが反映されない時に確認すること",
+  "lead":"申込直後には表示されません。紹介ログイン、申込・開通条件、利用条件、進呈開始月、受取手続きを順番に確認します。",
+  "checked_at":"2026-06-20",
+  "summary_title":"ポイント進呈予定月へ到達しているか確認する",
+  "summary":"紹介ログイン月の数カ月後から複数回に分けて進呈する案内があります。予定月前なら条件未達と決めつけず、公式FAQを確認します。",
+  "steps":[
+    {"title":"利用した紹介キャンペーンを特定する","description":"紹介した側・された側、申込時期、コードを確認します。"},
+    {"title":"紹介ログインを確認する","description":"紹介URLから楽天IDでログインし、指定期間内に申し込んだか確認します。"},
+    {"title":"申込・開通条件を確認する","description":"対象プラン、申込期限、利用開始期限を確認します。"},
+    {"title":"利用条件を確認する","description":"Rakuten Linkなど開通後の条件を確認します。"},
+    {"title":"進呈時期と受取方法を確認する","description":"開始月、分割回数、受取通知、受取期限を確認します。"}
+  ],
+  "checklist":["紹介した側・された側","紹介ログイン楽天ID","紹介ログイン月と申込日","プラン利用開始日","利用条件","進呈開始月と分割回数","受取通知と期限"],
+  "avoid":["申込直後に登録し直す","別紹介URLからやり直す","紹介者と被紹介者の条件を混同する","受取通知を見ず期限を過ぎる"],
+  "next":[
+    {"href":"/mobile-sim/rakuten-mobile/campaign-not-eligible/","title":"キャンペーン対象条件全体を確認する","description":"申込経路、契約区分、開通条件を確認します。"},
+    {"href":"/mobile-sim/rakuten-mobile/","title":"楽天モバイルの通常料金へ戻る","description":"3段階料金と公式条件を確認します。"},
+    {"href":"/mobile-sim/","title":"スマホ料金比較へ戻る","description":"特典に依存しない通常料金も比較します。"}
+  ],
+  "faq":[
+    {"question":"紹介ポイントはいつ反映されますか？","answer":"申込直後ではなく、紹介ログイン月の数カ月後から複数月に分けて進呈される場合があります。"},
+    {"question":"紹介ログインだけで対象ですか？","answer":"申込、プラン利用開始、期限内の条件達成などが必要です。"},
+    {"question":"ポイントは自動受取ですか？","answer":"受取通知から手続きが必要な場合があります。受取期限を確認します。"},
+    {"question":"達成状況が不明な場合は？","answer":"申込日、開通日、紹介ログイン月、利用状況、コードを整理してサポートへ確認します。"}
+  ],
+  "sources":[
+    {"url":"https://network.mobile.rakuten.co.jp/campaign/referral/","label":"楽天モバイル公式「紹介キャンペーン」"},
+    {"url":"https://network.mobile.rakuten.co.jp/faq/detail/10000992/","label":"楽天モバイル公式FAQ「紹介キャンペーン」"},
+    {"url":"https://network.mobile.rakuten.co.jp/faq/detail/10000596/","label":"楽天モバイル公式FAQ「ポイントが付与されない理由」"},
+    {"url":"https://network.mobile.rakuten.co.jp/guide/point-notification/","label":"楽天モバイル公式「ポイントの受取方法」"}
+  ]
+}

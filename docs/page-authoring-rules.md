@@ -105,6 +105,14 @@
 - 比較ハブにはASPリンクを直接置かず、詳細ページへ内部リンクする
 - JavaScriptによる候補の出し分けを行わず、重要導線は常にHTMLへ表示する
 
+## スマホ回線の確認・トラブルページ
+
+- 料金のSSOTは`data/mobile-sim/*.json`
+- 確認手順は`data/mobile-sim-guides/*.json`
+- 親CTAは`parent_slug`から参照し、URLを複製しない
+- 実行JavaScriptや診断UIを追加しない
+- 金額より申込経路・期限・達成条件・進呈時期を優先する
+
 ## 公開前チェック
 
 公開前は `python3 tools/kozeni_site_audit.py` を実行し、最低限の欠落を確認する。

@@ -3,332 +3,41 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>スマホ代と月GBの確認方法 | スマホ小銭研究所</title>
-  <meta name="description" content="スマホ代が分からない、月のGBが分からない人向けに、料金表を見る前の確認ポイントだけを短く整理します。">
+  <title>スマホ代と月間データ使用量の確認方法</title>
+  <meta name="description" content="スマホ料金を比較する前に、請求総額、端末代、通話・オプション、直近3カ月のモバイルデータ使用量を確認する順番を整理します。">
   <link rel="canonical" href="https://smart-kozeni.com/mobile-sim/data-usage/">
-  <meta property="og:title" content="スマホ代と月GBの確認方法">
-  <meta property="og:description" content="スマホ代と月GBだけを先に確認するための補助ページです。">
-  <meta property="og:type" content="article">
+  <meta property="og:title" content="スマホ代と月間データ使用量の確認方法">
+  <meta property="og:description" content="スマホ料金を比較する前に、請求総額、端末代、通話・オプション、直近3カ月のモバイルデータ使用量を確認する順番を整理します。">
   <meta property="og:url" content="https://smart-kozeni.com/mobile-sim/data-usage/">
-<style>
-    body {
-      margin:0;
-      color:#11231f;
-      background:
-        radial-gradient(circle at 20% 0%, rgba(52,211,153,.14), transparent 34rem),
-        linear-gradient(180deg,#fbfffd 0%,#f7fbf9 100%);
-      font-family:-apple-system,BlinkMacSystemFont,"Noto Sans JP","Hiragino Sans","Yu Gothic",sans-serif;
-      line-height:1.8;
-    }
-
-    .du-wrap {
-      width:min(980px,calc(100% - 32px));
-      margin:0 auto;
-    }
-
-    .du-breadcrumb {
-      margin:22px auto 0;
-      color:#64748b;
-      font-size:.88rem;
-    }
-
-    .du-breadcrumb a {
-      color:#0f766e;
-      text-decoration:none;
-      font-weight:750;
-    }
-
-    .du-hero {
-      padding:36px 0 22px;
-    }
-
-    .du-shell {
-      border:1px solid rgba(15,118,110,.14);
-      border-radius:28px;
-      background:linear-gradient(135deg,#ffffff 0%,#f7fffb 68%,#fff9e6 100%);
-      box-shadow:0 18px 45px rgba(17,35,31,.08);
-      padding:28px;
-    }
-
-    .du-kicker {
-      display:inline-flex;
-      align-items:center;
-      margin:0 0 12px;
-      padding:6px 12px;
-      border:1px solid rgba(15,118,110,.14);
-      border-radius:999px;
-      background:#fff;
-      color:#047857;
-      font-size:.82rem;
-      font-weight:850;
-      letter-spacing:.02em;
-    }
-
-    .du-hero h1 {
-      margin:0;
-      color:#11231f;
-      font-size:clamp(1.9rem,4vw,2.8rem);
-      font-weight:900;
-      letter-spacing:-.05em;
-      line-height:1.18;
-    }
-
-    .du-lead {
-      max-width:720px;
-      margin:14px 0 0;
-      color:#5f706b;
-      font-size:1rem;
-    }
-
-    .du-section {
-      padding:18px 0;
-    }
-
-    .du-section h2 {
-      margin:0 0 12px;
-      font-size:clamp(1.35rem,3vw,1.85rem);
-      letter-spacing:-.035em;
-      line-height:1.28;
-    }
-
-    .du-grid {
-      display:grid;
-      grid-template-columns:repeat(2,minmax(0,1fr));
-      gap:14px;
-    }
-
-    .du-card {
-      border:1px solid rgba(15,118,110,.13);
-      border-radius:22px;
-      background:rgba(255,255,255,.92);
-      padding:20px;
-      box-shadow:0 10px 24px rgba(17,35,31,.04);
-    }
-
-    .du-card strong {
-      display:block;
-      margin-bottom:8px;
-      color:#11231f;
-      font-size:1.08rem;
-      font-weight:900;
-    }
-
-    .du-card p {
-      margin:0;
-      color:#5f706b;
-      font-size:.95rem;
-    }
-
-    .du-list {
-      display:grid;
-      gap:10px;
-      margin:0;
-      padding:0;
-      list-style:none;
-    }
-
-    .du-list li {
-      padding:12px 14px;
-      border:1px solid rgba(15,118,110,.11);
-      border-radius:16px;
-      background:#fff;
-      color:#41524d;
-      font-size:.94rem;
-    }
-
-    .du-list b {
-      color:#11231f;
-    }
-
-    .du-final {
-      margin:20px 0 44px;
-      border:1px solid rgba(15,118,110,.14);
-      border-radius:26px;
-      background:#ffffff;
-      padding:24px;
-      box-shadow:0 16px 36px rgba(17,35,31,.06);
-    }
-
-    .du-classify {
-      display:flex;
-      flex-wrap:wrap;
-      gap:8px;
-      margin:14px 0 0;
-    }
-
-    .du-chip {
-      display:inline-flex;
-      align-items:center;
-      min-height:30px;
-      padding:0 12px;
-      border-radius:999px;
-      background:#ecfdf5;
-      color:#047857;
-      font-size:.82rem;
-      font-weight:850;
-    }
-
-    .du-actions {
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      margin-top:20px;
-    }
-
-    .du-btn {
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      min-height:46px;
-      padding:0 18px;
-      border-radius:999px;
-      text-decoration:none;
-      font-weight:900;
-    }
-
-    .du-btn.primary {
-      color:#fff;
-      background:linear-gradient(135deg,#047857,#059669);
-      box-shadow:0 12px 24px rgba(4,120,87,.20);
-    }
-
-    .du-note {
-      margin-top:14px;
-      color:#64748b;
-      font-size:.9rem;
-    }
-
-    @media (max-width:760px) {
-      .du-grid {
-        grid-template-columns:1fr;
-      }
-
-      .du-shell,
-      .du-final {
-        padding:20px;
-        border-radius:24px;
-      }
-    }
-  </style>
-  <link rel="stylesheet" href="/assets/kozeni-brand.v1.css?v=shared-shell-v1">
+  <meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary">
+  <meta name="theme-color" content="#4DBD8C">
+  <link rel="stylesheet" href="/assets/kozeni-brand.v1.css?v=41.13">
+  <link rel="stylesheet" href="/assets/kozeni-nav.v1.css?v=nav2">
+  <link rel="stylesheet" href="/assets/kozeni-return.v1.css?v=return3">
+  <link rel="stylesheet" href="/assets/kozeni-mobile-guide.v1.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/icon-32.png?v=xicon1">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/icon-192.png?v=xicon1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png?v=xicon1">
+  <link rel="manifest" href="/site.webmanifest?v=xicon1">
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://smart-kozeni.com/#website","url":"https://smart-kozeni.com/","name":"スマホ小銭研究所","inLanguage":"ja"},{"@type":"Organization","@id":"https://smart-kozeni.com/#organization","name":"スマホ小銭研究所","url":"https://smart-kozeni.com/"},{"@type":"WebPage","@id":"https://smart-kozeni.com/mobile-sim/data-usage/#webpage","url":"https://smart-kozeni.com/mobile-sim/data-usage/","name":"スマホ代と月間データ使用量の確認方法","description":"スマホ料金を比較する前に、請求総額、端末代、通話・オプション、直近3カ月のモバイルデータ使用量を確認する順番を整理します。","dateModified":"2026-06-20","isPartOf":{"@id":"https://smart-kozeni.com/#website"},"publisher":{"@id":"https://smart-kozeni.com/#organization"},"breadcrumb":{"@id":"https://smart-kozeni.com/mobile-sim/data-usage/#breadcrumb"},"inLanguage":"ja"},{"@type":"BreadcrumbList","@id":"https://smart-kozeni.com/mobile-sim/data-usage/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"ホーム","item":"https://smart-kozeni.com/"},{"@type":"ListItem","position":2,"name":"スマホ・回線","item":"https://smart-kozeni.com/mobile-sim/"},{"@type":"ListItem","position":3,"name":"料金とデータ量の確認","item":"https://smart-kozeni.com/mobile-sim/data-usage/"}]}]}</script>
 </head>
 <body>
-<header class="kozeni-site-header">
-  <div class="kozeni-site-nav">
-    <a class="kozeni-site-brand" href="/">
-      <img src="/assets/images/icon-192.png?v=xicon1" alt="" width="34" height="34" decoding="async"><span>スマホ小銭研究所</span>
-    </a>
-    <nav class="kozeni-main-nav" aria-label="主要カテゴリ">
-      <a class="is-active" aria-current="page" href="/mobile-sim/">スマホ・回線</a>
-      <a href="/point-site/">ポイ活</a>
-      <a href="/credit-card/">クレカ</a>
-      <a href="/account-opening/">口座</a>
-      <a href="/travel/">旅行・移動</a>
-    </nav>
-  </div>
-</header>
-
-  <main>
-    <nav class="du-wrap du-breadcrumb" aria-label="パンくずリスト">
-      <a href="/">ホーム</a>
-      <span>›</span>
-      <a href="/mobile-sim/">スマホ・回線</a>
-      <span>›</span>
-      <span aria-current="page">料金とGB確認</span>
-    </nav>
-
-    <section class="du-hero">
-      <div class="du-wrap">
-        <div class="du-shell">
-          <p class="du-kicker">BILL / DATA CHECK</p>
-          <h1>スマホ代と月GBだけ、先に見る。</h1>
-          <p class="du-lead">
-            ここは「スマホ代が分からない」「月のGBが分からない」人向けの補助ページです。
-            料金表やキャンペーンを見る前に、今の契約の現在地だけ短く確認します。
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section class="du-section">
-      <div class="du-wrap">
-        <h2>見るのは2つだけ。</h2>
-        <div class="du-grid">
-          <article class="du-card">
-            <strong>1. 毎月いくら払っているか</strong>
-            <p>請求総額を見ます。できれば、通信料・端末代・通話料・オプションを分けて確認します。</p>
-          </article>
-          <article class="du-card">
-            <strong>2. 月に何GB使っているか</strong>
-            <p>キャリアアプリや端末設定で、モバイル通信量を見ます。家のWi-Fi通信量とは分けて考えます。</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="du-section">
-      <div class="du-wrap du-grid">
-        <article class="du-card">
-          <strong>スマホ代の見方</strong>
-          <ul class="du-list">
-            <li><b>請求総額</b><br>まず、自分の1回線分が毎月いくらかを見ます。</li>
-            <li><b>端末代</b><br>スマホ本体の分割代が混ざっていないか確認します。</li>
-            <li><b>通話料・オプション</b><br>保証、留守電、セキュリティ、通話料が重くないか見ます。</li>
-          </ul>
-        </article>
-
-        <article class="du-card">
-          <strong>月GBの見方</strong>
-          <ul class="du-list">
-            <li><b>キャリアアプリ</b><br>楽天モバイル、ahamo、LINEMOなどのマイページで確認します。</li>
-            <li><b>端末設定</b><br>iPhone/Androidのモバイル通信量を見ます。Wi-Fi使用量とは分けます。</li>
-            <li><b>直近2〜3か月</b><br>1か月だけでなく、少ない月・多い月があるかを見ます。</li>
-          </ul>
-        </article>
-      </div>
-    </section>
-
-    <section class="du-section">
-      <div class="du-wrap">
-        <div class="du-final">
-          <h2>ここまで分かれば十分。</h2>
-          <p>
-            正確に1GB単位で分からなくても大丈夫です。まずは、だいたいの分類だけ持ってスマホ・回線ページへ戻れば、候補を選びやすくなります。
-          </p>
-          <div class="du-classify" aria-label="GBのざっくり分類">
-            <span class="du-chip">3GB以下</span>
-            <span class="du-chip">4〜10GB</span>
-            <span class="du-chip">11GB以上</span>
-            <span class="du-chip">分からない</span>
-          </div>
-          <div class="du-actions">
-            <a class="du-btn primary" href="/mobile-sim/">スマホ・回線ページへ戻る</a>
-          </div>
-          <p class="du-note">
-            このページは確認用です。申し込み前には、料金・キャンペーン・提供条件を必ず公式ページで確認してください。
-          </p>
-        </div>
-      </div>
-    </section>
-  </main>
-
-<footer class="footer">
-  <div class="container">
-    <a href="/policy/">PR表記</a>
-    <a href="/privacy/">プライバシー</a>
-    <a href="/about/">このサイトについて</a>
-    <p>© スマホ小銭研究所</p>
-  </div>
-<nav class="kozeni-footer-social" aria-label="SNSリンク">
-    <a href="https://x.com/smart_kozeni" target="_blank" rel="noopener noreferrer" aria-label="Xでスマホ小銭研究所を見る">
-      <img class="kozeni-footer-social__icon" src="/assets/images/social-x.svg?v=social1" alt="" width="22" height="22" loading="lazy" decoding="async">
-      <span>X</span>
-    </a>
-    <a href="https://www.instagram.com/smart_kozeni/" target="_blank" rel="noopener noreferrer" aria-label="Instagramでスマホ小銭研究所を見る">
-      <img class="kozeni-footer-social__icon" src="/assets/images/social-instagram.svg?v=social1" alt="" width="22" height="22" loading="lazy" decoding="async">
-      <span>Instagram</span>
-    </a>
-  </nav>
-</footer>
+  <a class="guide-skip" href="#main">本文へ移動</a>
+  <header class="kozeni-site-header"><div class="kozeni-site-nav"><a class="kozeni-site-brand" href="/"><img src="/assets/images/icon-192.png?v=xicon1" alt="" width="34" height="34" decoding="async"><span>スマホ小銭研究所</span></a><nav class="kozeni-main-nav" aria-label="主要カテゴリ"><a class="is-active" aria-current="page" href="/mobile-sim/">スマホ・回線</a><a href="/point-site/">ポイ活</a><a href="/credit-card/">クレカ</a><a href="/account-opening/">口座</a><a href="/travel/">旅行・移動</a></nav></div></header>
+  <nav class="kozeni-breadcrumb" aria-label="パンくず"><a href="/">ホーム</a><span aria-hidden="true">›</span><a href="/mobile-sim/">スマホ・回線</a><span aria-hidden="true">›</span><span aria-current="page">料金とデータ量の確認</span></nav>
+  <main class="guide-page" id="main"><div class="guide-content">
+    <header class="guide-hero"><p class="guide-eyebrow">BILL / DATA CHECK</p><h1>スマホ代と月間データ量を、先に確認</h1><p class="guide-lead">料金プランを見る前に、現在の請求とデータ使用量を分けます。直近3カ月の少ない月と多い月が分かれば候補を絞れます。</p><p class="guide-updated">内容確認日：<time datetime="2026-06-20">2026年6月20日</time></p></header>
+    <section class="guide-summary" aria-labelledby="summary-title"><p class="guide-label">まず確認</p><h2 id="summary-title">請求総額とモバイルデータ量を別々に確認する</h2><p>請求には端末代、通話料、保証やセキュリティなどが混ざります。通信プランだけの月額と、Wi-Fiを除いたモバイルデータ使用量を分けて確認します。</p></section>
+    <section class="guide-section" aria-labelledby="steps-title"><div class="guide-head"><h2 id="steps-title">確認する順番</h2><p>上から一つずつ確認します。</p></div><div class="guide-steps"><article class="guide-step"><span class="guide-num">1</span><div><h3>請求総額を確認する</h3><p>キャリアのマイページやカード明細で、1回線分の毎月の請求総額を確認します。</p></div></article><article class="guide-step"><span class="guide-num">2</span><div><h3>端末代を分ける</h3><p>スマホ本体の分割払い、残価設定、端末保証が含まれていないか確認します。</p></div></article><article class="guide-step"><span class="guide-num">3</span><div><h3>通話料とオプションを分ける</h3><p>通話定額、留守番電話、セキュリティなどの月額を確認します。</p></div></article><article class="guide-step"><span class="guide-num">4</span><div><h3>直近3カ月のデータ量を見る</h3><p>キャリアのマイページで、Wi-Fi通信を除いた月間利用量を確認します。</p></div></article><article class="guide-step"><span class="guide-num">5</span><div><h3>少ない月と多い月を記録する</h3><p>通常月と、旅行やテザリングで増えた月を分けます。</p></div></article></div></section>
+    <section class="guide-section" aria-labelledby="check-title"><div class="guide-head"><h2 id="check-title">確認チェックリスト</h2><p>公式画面やマイページで照合します。</p></div><ul class="guide-list guide-check"><li>通信料金だけの月額</li><li>端末代の残額と終了月</li><li>通話料と有料オプション</li><li>直近3カ月のモバイルデータ使用量</li><li>Wi-Fi利用時間</li><li>テザリング頻度</li></ul></section>
+    <section class="guide-section" aria-labelledby="avoid-title"><div class="guide-head"><h2 id="avoid-title">避けたい進め方</h2><p>条件確認前の再申込や経路変更を避けます。</p></div><ul class="guide-list guide-avoid"><li>請求総額をすべて通信料金だと思う</li><li>端末設定の累計値を月間利用量だと思う</li><li>最も少ない月だけで容量を決める</li><li>期間限定割引だけで乗り換え先を決める</li></ul></section>
+    
+    
+    <section class="guide-section" aria-labelledby="next-title"><div class="guide-head"><h2 id="next-title">次に確認するページ</h2><p>料金詳細や関連ページへ進みます。</p></div><div class="guide-next"><a class="guide-next-link" href="/mobile-sim/"><strong>格安SIM・スマホ料金を比較する</strong><span>確認した月額とデータ量から候補を選びます。</span></a><a class="guide-next-link" href="/mobile-sim/nihon-tsushin/"><strong>1GB・20GB・50GBの固定料金を見る</strong><span>低容量から中容量を通常料金で比較します。</span></a><a class="guide-next-link" href="/mobile-sim/rakuten-mobile/"><strong>使用量で変わる料金を見る</strong><span>月によってデータ量が変わる場合の候補です。</span></a></div></section>
+    <section class="guide-section" aria-labelledby="faq-title"><div class="guide-head"><h2 id="faq-title">よくある確認</h2><p>再申込や経路変更の前に確認します。</p></div><div class="guide-faq"><details><summary>何カ月分を見ればよいですか？</summary><p>直近3カ月を目安に、最も少ない月と多い月を確認します。</p></details><details><summary>端末設定だけで判断できますか？</summary><p>端末の集計期間が請求月と一致しない場合があるため、キャリアのマイページも確認します。</p></details><details><summary>端末代は料金比較へ含めますか？</summary><p>通信料金とは分けますが、家計の総額には残債を含めて確認します。</p></details></div></section>
+  </div></main>
+  <footer class="guide-footer"><div class="guide-footer__inner"><nav aria-label="フッター"><a href="/policy/">PR表記</a><a href="/privacy/">プライバシー</a><a href="/about/">運営者情報</a><a href="/contact/">お問い合わせ</a></nav><p>© スマホ小銭研究所</p></div></footer>
+  <nav class="kozeni-fixed-return" aria-label="前のページへ戻る"><a href="/mobile-sim/">← スマホ・回線一覧へ戻る</a></nav>
 </body>
 </html>

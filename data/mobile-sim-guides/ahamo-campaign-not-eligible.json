@@ -1,0 +1,37 @@
+{
+  "id":"ahamo-campaign-not-eligible",
+  "output":"mobile-sim/ahamo/campaign-not-eligible",
+  "parent_slug":"ahamo",
+  "show_parent_cta":true,
+  "title":"ahamoのキャンペーンが対象外になる条件｜申し込み前チェック",
+  "description":"ahamoのキャンペーンで対象外になりやすい申込経路、エントリー、契約種別、dアカウント、開通期限、ポイント進呈時期を確認します。",
+  "breadcrumb_label":"キャンペーン対象外チェック",
+  "eyebrow":"AHAMO CAMPAIGN CHECK",
+  "h1":"ahamoのキャンペーン対象外を、申し込み前に確認",
+  "lead":"申込経路、エントリー、契約種別、開通期限、dアカウント、端末購入条件を順番に照合します。",
+  "checked_at":"2026-06-20",
+  "summary_title":"対象キャンペーンを一つに特定して確認する",
+  "summary":"MNP、新規契約、ドコモからの変更、端末購入、エントリー時期で条件が異なります。対象キャンペーンの公式ページを開いた状態で確認します。",
+  "steps":[
+    {"title":"キャンペーン名を特定する","description":"正式名称、期間、対象手続き、特典内容を確認します。"},
+    {"title":"エントリーを確認する","description":"エントリー要否、開通との順番、dアカウントの一致を確認します。"},
+    {"title":"契約種別を照合する","description":"MNP、新規、ドコモからの変更のどれが対象か確認します。"},
+    {"title":"端末購入条件を確認する","description":"SIMのみか、対象端末購入が必要か、同時購入が対象外かを確認します。"},
+    {"title":"期限と進呈時期を確認する","description":"申込・開通期限とポイント進呈予定月を記録します。"}
+  ],
+  "checklist":["キャンペーン正式名称","エントリー済みdアカウント","契約種別","SIM・端末購入条件","申込日と開通期限","ポイント進呈予定月"],
+  "avoid":["複数キャンペーンの条件を混ぜる","ドコモからの変更をMNPと思う","順番を確認せず進める","反映待ちだけで申し込み直す"],
+  "next":[
+    {"href":"/mobile-sim/ahamo/","title":"ahamoの通常料金と注意点へ戻る","description":"30GB・大盛り・国内通話の基本条件を確認します。"},
+    {"href":"/mobile-sim/","title":"ほかのスマホ料金も比較する","description":"割引条件なしの候補も比較します。"}
+  ],
+  "faq":[
+    {"question":"キャンペーンは自動適用ですか？","answer":"事前エントリーが必要なキャンペーンがあります。対象ページを確認してください。"},
+    {"question":"ドコモからの変更はMNPですか？","answer":"ドコモからの料金プラン変更は他社からのMNPとは異なります。"},
+    {"question":"ポイントがすぐ付かないと対象外ですか？","answer":"後日進呈の場合があります。条件達成と進呈時期を分けて確認します。"}
+  ],
+  "sources":[
+    {"url":"https://ahamo.com/campaigns/index.html","label":"ahamo公式「キャンペーン一覧」"},
+    {"url":"https://faq.ahamo.com/faq/show/3104?category_id=14&site_domain=default","label":"ahamo公式FAQ「乗り換えキャンペーンの対象外条件」"}
+  ]
+}
