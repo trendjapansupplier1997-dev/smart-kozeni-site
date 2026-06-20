@@ -211,13 +211,33 @@ def audit_generated_mobile_sim() -> list[str]:
         elif "sim-cta__tracking" in source:
             problems.append(f"{rel}: unexpected tracking pixel")
 
-        for source_item in data["sources"]:
-            url = html.escape(source_item["url"], quote=True)
-            token = f'href="{url}"'
-            if source.count(token) != 1:
+        source_lists = re.findall(
+            r'<ul class="sim-source-list"[^>]*>(.*?)</ul>',
+            source,
+            flags=re.S,
+        )
+        if len(source_lists) != 1:
+            problems.append(
+                f"{rel}: exactly one official source list is required"
+            )
+        else:
+            actual_sources = re.findall(
+                r'<li>根拠：<a href="([^"]+)" '
+                r'target="_blank" rel="noopener noreferrer">'
+                r'(.*?)</a></li>',
+                source_lists[0],
+                flags=re.S,
+            )
+            expected_sources = [
+                (
+                    html.escape(item["url"], quote=True),
+                    html.escape(item["label"]),
+                )
+                for item in data["sources"]
+            ]
+            if actual_sources != expected_sources:
                 problems.append(
-                    f"{rel}: source URL must appear exactly once: "
-                    f"{source_item['url']}"
+                    f"{rel}: official source list differs from data"
                 )
 
         for item in data["related"]:
