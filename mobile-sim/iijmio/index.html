@@ -3,243 +3,136 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>IIJmio｜スマホ料金条件チェック</title>
-  <meta name="description" content="IIJmioの申込前に対象条件・紹介制度・公式条件を確認するページです。">
+  <title>IIJmioの料金・メリット・注意点｜2GBから55GBを比較</title>
+  <meta name="description" content="IIJmioギガプランの2GB・5GB・10GB・15GB・25GB・35GB・45GB・55GB料金、通話料、データ繰り越しとシェアの注意点を整理します。">
   <link rel="canonical" href="https://smart-kozeni.com/mobile-sim/iijmio/">
-  <meta property="og:title" content="IIJmio｜スマホ料金条件チェック">
-  <meta property="og:description" content="IIJmioの申込前に対象条件・紹介制度・公式条件を確認するページです。">
+  <meta property="og:title" content="IIJmioの料金・メリット・注意点｜2GBから55GBを比較">
+  <meta property="og:description" content="IIJmioギガプランの2GB・5GB・10GB・15GB・25GB・35GB・45GB・55GB料金、通話料、データ繰り越しとシェアの注意点を整理します。">
   <meta property="og:url" content="https://smart-kozeni.com/mobile-sim/iijmio/">
-  <meta property="og:type" content="website">
-  <style>
-:root{
-  --mint:#4DBD8C;
-  --deep:#228C62;
-  --pale:#E9F5EF;
-  --gold:#F2C94C;
-  --light:#F2F6F4;
-  --ink:#222831;
-  --muted:#66736E;
-  --line:rgba(34,140,98,.16);
-  --white:#fff;
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-  margin:0;
-  font-family:"Noto Sans JP", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  color:var(--ink);
-  background:linear-gradient(180deg,#F7FCFA 0%,#FFFFFF 44%,#F7FCFA 100%);
-  line-height:1.78;
-}
-a{color:inherit}
-.container{width:min(1040px, calc(100% - 32px)); margin:0 auto}
-
-.brand{
-  display:inline-flex;
-  align-items:center;
-  gap:10px;
-  text-decoration:none;
-  font-weight:900;
-  letter-spacing:.02em;
-}
-.logo-dot{
-  width:30px;
-  height:30px;
-  border-radius:11px;
-  display:inline-grid;
-  place-items:center;
-  background:linear-gradient(135deg,var(--mint),var(--deep));
-  color:white;
-  font-size:15px;
-}
-
-.hero{padding:44px 0 34px}
-.pill{
-  display:inline-flex;
-  align-items:center;
-  gap:8px;
-  padding:8px 12px;
-  border-radius:999px;
-  background:var(--pale);
-  color:var(--deep);
-  font-weight:900;
-  font-size:13px;
-}
-h1{
-  margin:18px 0 14px;
-  font-size:clamp(34px,6vw,64px);
-  line-height:1.08;
-  letter-spacing:-.05em;
-}
-.lead{
-  margin:0;
-  max-width:740px;
-  color:var(--muted);
-  font-size:clamp(16px,2.2vw,20px);
-}
-.note{
-  margin-top:20px;
-  color:var(--muted);
-  font-size:14px;
-}
-.section{padding:26px 0}
-.section-title{
-  margin:0 0 18px;
-  font-size:clamp(24px,4vw,38px);
-  line-height:1.25;
-  letter-spacing:-.03em;
-}
-.grid{
-  display:grid;
-  gap:16px;
-}
-.grid.three{grid-template-columns:repeat(3,1fr)}
-.grid.two{grid-template-columns:repeat(2,1fr)}
-.card{
-  display:block;
-  text-decoration:none;
-  background:rgba(255,255,255,.9);
-  border:1px solid var(--line);
-  border-radius:28px;
-  padding:24px;
-  box-shadow:0 18px 60px rgba(34,140,98,.08);
-}
-.card:hover{transform:translateY(-1px)}
-.card h2,.card h3{margin:0 0 10px;line-height:1.35}
-.card p{margin:0;color:var(--muted)}
-.tag{
-  display:inline-flex;
-  align-items:center;
-  margin-bottom:12px;
-  padding:5px 10px;
-  border-radius:999px;
-  background:var(--light);
-  color:var(--deep);
-  font-size:12px;
-  font-weight:900;
-}
-.kv{
-  display:grid;
-  gap:10px;
-  margin-top:18px;
-}
-.kv div{
-  display:grid;
-  grid-template-columns:120px 1fr;
-  gap:12px;
-  padding:12px 0;
-  border-bottom:1px solid rgba(34,140,98,.12);
-}
-.kv span:first-child{
-  color:var(--muted);
-  font-size:13px;
-}
-.list{
-  margin:16px 0 0;
-  padding-left:1.2em;
-  color:var(--muted);
-}
-.check-list{
-  display:grid;
-  gap:12px;
-  margin:0;
-  padding:0;
-  list-style:none;
-}
-.check-list li{
-  padding:14px 16px;
-  border-radius:18px;
-  background:var(--light);
-  border:1px solid var(--line);
-}
-.footer{
-  margin-top:52px;
-  padding:34px 0 44px;
-  border-top:1px solid var(--line);
-  color:rgba(34,40,49,.62);
-  font-size:13px;
-}
-.footer a{margin-right:14px}
-@media(max-width:760px){
-  
-  
-  .grid.three,.grid.two{grid-template-columns:1fr}
-  .kv div{grid-template-columns:1fr}
-  .hero{padding-top:36px}
-}
-</style>
+  <meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary">
+  <meta name="theme-color" content="#4DBD8C">
   <link rel="stylesheet" href="/assets/kozeni-brand.v1.css?v=41.13">
+  <link rel="stylesheet" href="/assets/kozeni-nav.v1.css?v=nav2">
+  <link rel="stylesheet" href="/assets/kozeni-return.v1.css?v=return3">
+  <link rel="stylesheet" href="/assets/kozeni-sim-detail.v2.css">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/icon-32.png?v=xicon1">
   <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/icon-192.png?v=xicon1">
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png?v=xicon1">
   <link rel="manifest" href="/site.webmanifest?v=xicon1">
-<link rel="stylesheet" href="/assets/kozeni-nav.v1.css?v=nav2"><link rel="stylesheet" href="/assets/kozeni-return.v1.css?v=return3">
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://smart-kozeni.com/#website","url":"https://smart-kozeni.com/","name":"スマホ小銭研究所","inLanguage":"ja"},{"@type":"Organization","@id":"https://smart-kozeni.com/#organization","name":"スマホ小銭研究所","url":"https://smart-kozeni.com/"},{"@type":"WebPage","@id":"https://smart-kozeni.com/mobile-sim/iijmio/#webpage","url":"https://smart-kozeni.com/mobile-sim/iijmio/","name":"IIJmioの料金・メリット・注意点｜2GBから55GBを比較","description":"IIJmioギガプランの2GB・5GB・10GB・15GB・25GB・35GB・45GB・55GB料金、通話料、データ繰り越しとシェアの注意点を整理します。","dateModified":"2026-06-20","isPartOf":{"@id":"https://smart-kozeni.com/#website"},"publisher":{"@id":"https://smart-kozeni.com/#organization"},"breadcrumb":{"@id":"https://smart-kozeni.com/mobile-sim/iijmio/#breadcrumb"},"inLanguage":"ja"},{"@type":"BreadcrumbList","@id":"https://smart-kozeni.com/mobile-sim/iijmio/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"ホーム","item":"https://smart-kozeni.com/"},{"@type":"ListItem","position":2,"name":"スマホ・回線","item":"https://smart-kozeni.com/mobile-sim/"},{"@type":"ListItem","position":3,"name":"IIJmio","item":"https://smart-kozeni.com/mobile-sim/iijmio/"}]}]}</script>
 </head>
 <body>
-<header class="kozeni-site-header">
-  <div class="kozeni-site-nav">
-    <a class="kozeni-site-brand" href="/">
-      <img src="/assets/images/icon-192.png?v=xicon1" alt="" width="34" height="34" decoding="async"><span>スマホ小銭研究所</span>
-    </a>
-    <nav class="kozeni-main-nav" aria-label="主要カテゴリ">
-      <a class="is-active" aria-current="page" href="/mobile-sim/">スマホ・回線</a>
-      <a href="/point-site/">ポイ活</a>
-      <a href="/credit-card/">クレカ</a>
-      <a href="/account-opening/">口座</a>
-      <a href="/travel/">旅行・移動</a>
-    </nav>
-  </div>
-</header>
-<nav class="kozeni-breadcrumb" aria-label="パンくず"><a href="/">ホーム</a>
-  <span aria-hidden="true">›</span>
-  <a href="/mobile-sim/">スマホ・回線</a>
-  <span aria-hidden="true">›</span>
-  <span aria-current="page">IIJmio</span></nav>
-<main>
+  <a class="sim-skip-link" href="#main">本文へ移動</a>
 
-<!-- brand-micro-v1:start -->
-      <section class="brand-micro" aria-label="スマホ小銭研究所の確認方針">
+  <header class="kozeni-site-header">
+    <div class="kozeni-site-nav">
+      <a class="kozeni-site-brand" href="/">
+        <img src="/assets/images/icon-192.png?v=xicon1" alt="" width="34" height="34" decoding="async">
         <span>スマホ小銭研究所</span>
-        <strong>月額・特典・対象外を先に確認。</strong>
-        <small>PR・紹介リンクは明記します</small>
-      </section>
-<!-- brand-micro-v1:end -->
-      <section class="hero">
-  <div class="container">
-    <span class="pill">MOBILE CHECK</span>
-    <h1>IIJmio</h1>
-    <p class="lead">月額と端末セット確認。細かい金額より、対象条件と失敗しやすい点を先に見る。</p>
-  </div>
-</section>
-<section class="section">
-  <div class="container grid two">
-    <article class="card">
-      <span class="tag">POINT</span>
-      <h2>見るポイント</h2>
-      <p>紹介報酬より、月額と端末セットの比較枠。</p>
-      <ul class="list">
-        <li>公式キャンペーンページで現在の特典を確認</li><li>ギガプラン、端末セット、MNP条件、キャンペーン期間</li><li>申込前に対象外条件、期限、併用可否を見る</li><li>紹介リンクを使う場合は、開通まで同じ導線で進む</li>
-      </ul>
-    </article>
-    <article class="card">
-      <span class="tag">MEMO</span>
-      <h2>料金・端末</h2>
-      <p>報酬・特典は変動します。ここでは判断の順番を整理し、最終確認は公式画面で行います。</p>
-    </article>
-  </div>
-</section>
+      </a>
+      <nav class="kozeni-main-nav" aria-label="主要カテゴリ">
+        <a class="is-active" aria-current="page" href="/mobile-sim/">スマホ・回線</a>
+        <a href="/point-site/">ポイ活</a>
+        <a href="/credit-card/">クレカ</a>
+        <a href="/account-opening/">口座</a>
+        <a href="/travel/">旅行・移動</a>
+      </nav>
+    </div>
+  </header>
 
-</main>
-<footer class="footer">
-  <div class="container">
-    <a href="/policy/">PR表記</a>
-    <a href="/privacy/">プライバシー</a>
-    <a href="/about/">このサイトについて</a>
-    <p>© スマホ小銭研究所</p>
-  </div>
-</footer>
-<nav class="kozeni-fixed-return" aria-label="一覧へ戻る">
-  <a href="/mobile-sim/">← スマホ・回線一覧へ戻る</a>
-</nav>
+  <nav class="kozeni-breadcrumb" aria-label="パンくず">
+    <a href="/">ホーム</a>
+    <span aria-hidden="true">›</span>
+    <a href="/mobile-sim/">スマホ・回線</a>
+    <span aria-hidden="true">›</span>
+    <span aria-current="page">IIJmio</span>
+  </nav>
+
+  <main class="sim-page" id="main">
+    <article class="sim-article">
+      <div class="sim-brand-note">
+        <strong>スマホ小銭研究所</strong>
+        <span>料金・向き不向き・対象外条件を、申し込み前に確認します。</span>
+      </div>
+
+      <header class="sim-hero">
+        <p class="sim-eyebrow">IIJMIO GUIDE</p>
+        <h1>IIJmioの料金と注意点を、申し込み前に確認</h1>
+        <p class="sim-lead">2GBから55GBまで選べる音声SIMの通常料金、通話料、データ繰り越し、回線タイプ、端末セットの確認順をまとめます。</p>
+        <p class="sim-updated">
+          公式情報確認日：
+          <time datetime="2026-06-20">2026年6月20日</time>
+        </p>
+      </header>
+
+      <section class="sim-verdict" aria-labelledby="verdict-title">
+        <p class="sim-verdict__label">30秒で分かる結論</p>
+        <h2 id="verdict-title">小容量から大容量まで細かく選び、複数回線でデータを分けたい人向け</h2>
+        <p>IIJmioのギガプランは2GBから55GBまで8段階の音声SIM料金があります。余ったデータの翌月繰り越しや、同一mioID内でのデータシェアに対応するため、1回線だけでなく家族や複数端末でも比較しやすいプランです。</p>
+        <div class="sim-badges" aria-label="特徴"><span>2GB月額850円</span><span>5GB月額950円</span><span>25GB月額2,000円</span><span>55GB月額3,900円</span></div>
+      </section>
+
+      <section class="sim-section" aria-labelledby="fit-title">
+        <h2 id="fit-title">IIJmioが向いている人・比較したい人</h2>
+        <div class="sim-two-column">
+          <div class="sim-fit-card">
+            <h3>向いている人</h3>
+            <ul class="sim-list"><li>2GBから55GBまで現在の利用量に近い容量を選びたい</li><li>家族や複数端末でデータ容量をシェアしたい</li><li>余ったデータを翌月へ繰り越したい</li><li>ドコモ網とau網、SIMカードとeSIMを比較したい</li></ul>
+          </div>
+          <div class="sim-fit-card sim-fit-card--caution">
+            <h3>別の候補も比較したい人</h3>
+            <ul class="sim-list"><li>データ容量を気にせず完全な無制限で使いたい</li><li>店舗で継続的な対面サポートを受けたい</li><li>端末セットの一時的な価格だけで回線を決めたい</li><li>混雑時間帯を含めた通信速度を最優先する</li></ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="sim-section" aria-labelledby="points-title">
+        <h2 id="points-title">申し込み前に見るポイント</h2>
+        <ul class="sim-list"><li>直近3カ月のデータ量に最も近い容量を選ぶ</li><li>音声SIM・SMS・データ・データeSIMのどれが必要か確認する</li><li>タイプDとタイプAの対応端末・利用エリアを確認する</li><li>データシェアする回線を同一mioIDで契約するか確認する</li><li>端末セットを使う場合はMNP条件・対象端末・申込期間を通常料金と分けて確認する</li></ul>
+      </section>
+
+      <div class="sim-cta"><a class="sim-cta__button" href="https://www.iijmio.jp/gigaplan/" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer-when-downgrade">公式条件を見る</a></div>
+
+      <section class="sim-section" aria-labelledby="facts-title">
+        <h2 id="facts-title">基本情報</h2>
+        <p class="sim-section__lead">期間限定特典より先に、毎月の基本条件を確認します。</p>
+        <dl class="sim-facts"><div class="sim-facts__row"><dt>2GB</dt><dd>音声SIM・月額850円（税込）</dd></div><div class="sim-facts__row"><dt>5GB</dt><dd>音声SIM・月額950円（税込）</dd></div><div class="sim-facts__row"><dt>10GB</dt><dd>音声SIM・月額1,400円（税込）</dd></div><div class="sim-facts__row"><dt>15GB</dt><dd>音声SIM・月額1,600円（税込）</dd></div><div class="sim-facts__row"><dt>25GB</dt><dd>音声SIM・月額2,000円（税込）</dd></div><div class="sim-facts__row"><dt>35GB</dt><dd>音声SIM・月額2,400円（税込）</dd></div><div class="sim-facts__row"><dt>45GB</dt><dd>音声SIM・月額3,300円（税込）</dd></div><div class="sim-facts__row"><dt>55GB</dt><dd>音声SIM・月額3,900円（税込）</dd></div><div class="sim-facts__row"><dt>国内通話</dt><dd>30秒11円。通話定額オプションあり</dd></div><div class="sim-facts__row"><dt>データ</dt><dd>翌月繰り越し・同一mioID内のシェアに対応</dd></div></dl>
+        <ul class="sim-source-list" aria-label="公式情報の参照先"><li>根拠：<a href="https://www.iijmio.jp/gigaplan/" target="_blank" rel="noopener noreferrer">IIJmio公式「ギガプラン」</a></li><li>根拠：<a href="https://www.iijmio.jp/mobile/voicefree/" target="_blank" rel="noopener noreferrer">IIJmio公式「通話定額オプション」</a></li><li>根拠：<a href="https://www.iijmio.jp/gigaplan/dataoption/" target="_blank" rel="noopener noreferrer">IIJmio公式「データシェア・プレゼント機能」</a></li></ul>
+      </section>
+
+      <section class="sim-section" aria-labelledby="cautions-title">
+        <h2 id="cautions-title">注意点</h2>
+        <ul class="sim-list"><li>音声SIMの月額料金に通話料は含まれていません</li><li>通話定額の対象外番号や時間超過分には通話料がかかります</li><li>毎月付与されるデータは翌月末まで繰り越せますが、追加購入分は期限が異なります</li><li>回線タイプやSIM機能によって選べるサービスと料金が異なります</li><li>端末セットや初期費用のキャンペーンは対象条件と価格が変わります</li><li>通信速度は利用場所や混雑状況によって変わります</li></ul>
+      </section>
+
+      <section class="sim-section" aria-labelledby="related-title">
+        <h2 id="related-title">次に確認するページ</h2>
+        <div class="sim-related"><a href="/mobile-sim/nihon-tsushin/"><strong>低価格の1GB・20GB・50GBなら日本通信SIMも比較</strong><span>通話込みの料金と追加データを確認します。</span></a><a href="/mobile-sim/mineo/"><strong>3回線と独自サービスならmineoも比較</strong><span>3GBから50GBの容量とA・D・S回線を確認します。</span></a><a href="/mobile-sim/"><strong>格安SIM・スマホ料金の比較へ戻る</strong><span>LINEMO、povo、UQ mobileなども含めて候補を探します。</span></a></div>
+      </section>
+
+      <section class="sim-section" aria-labelledby="faq-title">
+        <h2 id="faq-title">よくある質問</h2>
+        <div class="sim-faq"><details><summary>IIJmioの音声SIMはいくらですか？</summary><p>ギガプランの音声SIMは2GBが850円、5GBが950円、10GBが1,400円、15GBが1,600円、25GBが2,000円、35GBが2,400円、45GBが3,300円、55GBが3,900円です。すべて税込です。</p></details><details><summary>IIJmioの国内通話料はいくらですか？</summary><p>通常の国内通話料は30秒11円です。同一mioID内の通話は30秒8.8円となる条件があります。</p></details><details><summary>余ったデータは繰り越せますか？</summary><p>毎月付与されるデータは翌月末まで繰り越せます。追加購入したデータは有効期限が異なるため確認が必要です。</p></details><details><summary>家族でデータをシェアできますか？</summary><p>同一mioID内のギガプラン回線でデータシェアができます。回線の機能やタイプが異なる場合もシェアできる組み合わせがあります。</p></details></div>
+      </section>
+    </article>
+  </main>
+
+  <footer class="sim-site-footer">
+    <div class="sim-site-footer__inner">
+      <nav aria-label="フッター">
+        <a href="/mobile-sim/">スマホ・回線一覧</a>
+        <a href="/policy/">PR表記</a>
+        <a href="/privacy/">プライバシー</a>
+        <a href="/about/">運営者情報</a>
+        <a href="/contact/">お問い合わせ</a>
+      </nav>
+      <p>© スマホ小銭研究所</p>
+    </div>
+  </footer>
+
+  <nav class="kozeni-fixed-return" aria-label="一覧へ戻る">
+    <a href="/mobile-sim/">← スマホ・回線一覧へ戻る</a>
+  </nav>
 </body>
 </html>

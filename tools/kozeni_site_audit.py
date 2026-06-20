@@ -59,7 +59,10 @@ FORBIDDEN_BY_SLUG = {'ahamo': ('紹介者7,000',
  'mineo': ('Rakuten Link', '楽天最強', '大盛り110GB', '5分以内の国内通話無料', 'dアカウント'),
  'linemo': ('紹介者7,000', '大盛り110GB', 'マイピタ', '20GB超は3,278円'),
  'povo': ('紹介者7,000', '5分以内の国内通話無料', 'マイピタ', 'LINEMOベストプランV'),
- 'nihon-tsushin': ('紹介者7,000', 'Rakuten Link', '大盛り110GB', 'LINEMOベストプランV', 'マイピタ')}
+ 'nihon-tsushin': ('紹介者7,000', 'Rakuten Link', '大盛り110GB', 'LINEMOベストプランV', 'マイピタ'),
+ 'iijmio': ('Rakuten Link', '大盛り110GB', 'LINEMOベストプランV', 'トクトクプラン2', 'シンプル3 L'),
+ 'uq-mobile': ('Rakuten Link', '大盛り110GB', 'LINEMOベストプランV', 'ギガプランの音声SIM', 'シンプル3 L'),
+ 'ymobile': ('Rakuten Link', '大盛り110GB', 'トクトクプラン2', 'コミコミプランバリュー', 'ギガプランの音声SIM')}
 
 
 def read(path: Path) -> str:
