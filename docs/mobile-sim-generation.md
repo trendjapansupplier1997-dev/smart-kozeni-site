@@ -139,3 +139,24 @@ CTA・PR注記・ASP URL・計測ピクセルをガイドJSONへ複製しませ�
 python3 tools/build_mobile_sim_guides.py
 python3 tools/build_mobile_sim_guides.py --check
 ```
+
+## ホーム回線ページ
+
+スマホ料金や確認ガイドとは分けて、家のネットを生成します。
+
+```text
+data/home-network/*.json
+templates/home-network-detail.html
+assets/kozeni-home-network.v1.css
+tools/build_home_network.py
+```
+
+生成：
+
+```bash
+python3 tools/build_home_network.py
+python3 tools/build_home_network.py --check
+```
+
+`/mobile-sim/no-construction-wifi/`は重複ページを置かず、
+`_redirects`から`/mobile-sim/home-wifi/`へ恒久転送します。

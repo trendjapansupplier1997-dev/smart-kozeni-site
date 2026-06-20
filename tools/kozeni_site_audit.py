@@ -16,6 +16,7 @@ sys.dont_write_bytecode = True
 import build_mobile_sim
 import build_mobile_sim_hub
 import build_mobile_sim_guides
+import build_home_network
 
 ROOT = Path(__file__).resolve().parents[1]
 HTML_FILES = sorted(
@@ -438,6 +439,171 @@ def audit_mobile_sim_guides() -> list[str]:
                 problems.append(f"{rel}: forbidden legacy guide token: {token}")
     return problems
 
+
+def audit_home_network() -> list[str]:
+    problems: list[str] = []
+    template = Template(read(build_home_network.TEMPLATE_PATH))
+    sitemap = sitemap_urls()
+
+    for data_path in build_home_network.data_paths([]):
+        try:
+            data = build_home_network.load_data(data_path)
+            rendered = build_home_network.render_page(data, template)
+        except Exception as error:
+            problems.append(
+                f"{data_path.relative_to(ROOT)}: invalid data: {error}"
+            )
+            continue
+
+        page = build_home_network.output_path(data)
+        rel = page.relative_to(ROOT).as_posix()
+        canonical = build_home_network.canonical_url(data)
+
+        if not page.exists():
+            problems.append(f"{rel}: generated home-network page is missing")
+            continue
+
+        text = read(page)
+        if re.search(r"[ \t]+$", text, flags=re.M):
+            problems.append(f"{rel}: trailing whitespace")
+        if text != rendered:
+            problems.append(f"{rel}: generated home-network HTML is outdated")
+        if text.count("<h1") != 1:
+            problems.append(f"{rel}: h1 must appear exactly once")
+        if "<style" in text:
+            problems.append(f"{rel}: inline style is forbidden")
+        if text.count('type="application/ld+json"') != 1:
+            problems.append(f"{rel}: exactly one JSON-LD graph is required")
+        if re.search(
+            r'<script(?![^>]*type="application/ld\+json")',
+            text,
+            flags=re.I,
+        ):
+            problems.append(f"{rel}: executable inline script is forbidden")
+        if f'href="{build_home_network.STYLE_HREF}"' not in text:
+            problems.append(f"{rel}: shared home-network CSS is missing")
+        if f'<link rel="canonical" href="{canonical}">' not in text:
+            problems.append(f"{rel}: canonical is incorrect")
+        if f'"dateModified":"{data["checked_at"]}"' not in text:
+            problems.append(f"{rel}: dateModified differs from checked_at")
+        if canonical not in sitemap:
+            problems.append(f"{rel}: canonical URL is missing from sitemap")
+        if text.count("<details>") != len(data["faq"]):
+            problems.append(f"{rel}: visible FAQ count differs from data")
+
+        cta = data["cta"]
+        ctas = re.findall(
+            r'<a class="sim-cta__button"([^>]*)>(.*?)</a>',
+            text,
+            flags=re.S,
+        )
+        if len(ctas) != 1:
+            problems.append(f"{rel}: exactly one main CTA is required")
+        else:
+            attrs, body = ctas[0]
+            expected_href = html.escape(cta["url"], quote=True)
+            required = [
+                f'href="{expected_href}"',
+                'target="_blank"',
+                "noopener",
+                "noreferrer",
+                'referrerpolicy="no-referrer-when-downgrade"',
+            ]
+            if cta["affiliate"]:
+                required.extend(("nofollow", "sponsored"))
+            for token in required:
+                if token not in attrs:
+                    problems.append(f"{rel}: CTA missing {token}")
+            if html.escape(cta["label"]) not in body:
+                problems.append(f"{rel}: CTA label differs from data")
+
+        notes = re.findall(
+            r'<p class="sim-cta__note">(.*?)</p>',
+            text,
+            flags=re.S,
+        )
+        expected_note = html.escape(cta["note"])
+        if notes != ([expected_note] if expected_note else []):
+            problems.append(f"{rel}: CTA note differs from data")
+
+        tracking = cta.get("tracking_pixel_url")
+        if tracking:
+            expected = html.escape(tracking, quote=True)
+            if text.count(expected) != 1:
+                problems.append(
+                    f"{rel}: tracking pixel URL must appear exactly once"
+                )
+        elif "sim-cta__tracking" in text:
+            problems.append(f"{rel}: unexpected tracking pixel")
+
+        source_lists = re.findall(
+            r'<ul class="home-source-list">(.*?)</ul>',
+            text,
+            flags=re.S,
+        )
+        if len(source_lists) != 1:
+            problems.append(f"{rel}: exactly one source list is required")
+        else:
+            actual = re.findall(
+                r'<li>根拠：<a href="([^"]+)" '
+                r'target="_blank" rel="noopener noreferrer">'
+                r'(.*?)</a></li>',
+                source_lists[0],
+                flags=re.S,
+            )
+            expected = [
+                (
+                    html.escape(item["url"], quote=True),
+                    html.escape(item["label"]),
+                )
+                for item in data["sources"]
+            ]
+            if actual != expected:
+                problems.append(f"{rel}: official source list differs from data")
+
+        for item in data["related"]:
+            if not local_target_exists(item["href"]):
+                problems.append(
+                    f"{rel}: broken related link: {item['href']}"
+                )
+
+        for token in (
+            "brand-micro",
+            "data-kozeni-route",
+            "kozeni-helper-v40",
+            "homeWifiQuiz",
+            "rakutenHikariQuiz",
+        ):
+            if token in text:
+                problems.append(
+                    f"{rel}: forbidden legacy home-network token: {token}"
+                )
+
+    redirects_path = ROOT / "_redirects"
+    redirects = read(redirects_path) if redirects_path.exists() else ""
+    for rule in (
+        "/mobile-sim/no-construction-wifi /mobile-sim/home-wifi/ 301",
+        "/mobile-sim/no-construction-wifi/ /mobile-sim/home-wifi/ 301",
+    ):
+        if rule not in redirects.splitlines():
+            problems.append(f"_redirects: missing rule: {rule}")
+
+    old_page = ROOT / "mobile-sim" / "no-construction-wifi" / "index.html"
+    if old_page.exists():
+        problems.append(
+            "mobile-sim/no-construction-wifi/index.html: "
+            "legacy redirect page must be deleted"
+        )
+    old_url = (
+        "https://smart-kozeni.com/mobile-sim/no-construction-wifi/"
+    )
+    if old_url in sitemap:
+        problems.append(
+            "sitemap.xml: legacy no-construction-wifi URL must be removed"
+        )
+
+    return problems
+
 def show_list(
     title: str,
     items: list[str],
@@ -511,6 +677,7 @@ def main() -> int:
     mobile_sim_problems = audit_generated_mobile_sim()
     mobile_sim_hub_problems = audit_mobile_sim_hub()
     mobile_sim_guide_problems = audit_mobile_sim_guides()
+    home_network_problems = audit_home_network()
 
     print("=== kozeni site audit ===")
     print(f"HTML files: {len(HTML_FILES)}")
@@ -543,6 +710,11 @@ def main() -> int:
     show_list(
         "generated mobile SIM guides",
         mobile_sim_guide_problems,
+        problems,
+    )
+    show_list(
+        "generated home network pages",
+        home_network_problems,
         problems,
     )
 

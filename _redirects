@@ -18,3 +18,5 @@
 /point-site/referral-code/ /point-site/ 301
 /compare/point-sites/ /point-site/ 301
 /compare/point-sites /point-site/ 301
+/mobile-sim/no-construction-wifi /mobile-sim/home-wifi/ 301
+/mobile-sim/no-construction-wifi/ /mobile-sim/home-wifi/ 301

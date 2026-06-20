@@ -57,6 +57,12 @@ python3 tools/build_mobile_sim_hub.py --check
 python3 tools/build_mobile_sim_guides.py --check
 ```
 
+ホーム回線ページの生成確認：
+
+```bash
+python3 tools/build_home_network.py --check
+```
+
 デザイン監査コマンド：
 
 ```bash

@@ -2,673 +2,125 @@
 <html lang="ja">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>工事不要Wi-Fiを見直す｜スマホ小銭研究所</title>
-  <meta name="description" content="家のネットが重い、工事は避けたい、引っ越し前後で短期〜中期のWi-Fiがほしい人向けに、工事不要Wi-Fiの向き・不向きと申込前チェックを整理します。">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>工事不要Wi-Fiの料金・向き不向き｜BIGLOBE WiMAX +5G</title>
+  <meta name="description" content="工事不要Wi-Fiの候補としてBIGLOBE WiMAX +5Gの月額料金、端末代、提供エリア、速度制御、向いている人と注意点を整理します。">
   <link rel="canonical" href="https://smart-kozeni.com/mobile-sim/home-wifi/">
-  <meta property="og:title" content="工事不要Wi-Fiを見直す｜スマホ小銭研究所">
-  <meta property="og:description" content="家のネットも見直したい人向け。工事不要Wi-Fiの向き・不向き、申込前チェック、公式確認までを短く整理。">
-  <meta property="og:type" content="article">
+  <meta property="og:title" content="工事不要Wi-Fiの料金・向き不向き｜BIGLOBE WiMAX +5G">
+  <meta property="og:description" content="工事不要Wi-Fiの候補としてBIGLOBE WiMAX +5Gの月額料金、端末代、提供エリア、速度制御、向いている人と注意点を整理します。">
   <meta property="og:url" content="https://smart-kozeni.com/mobile-sim/home-wifi/">
-  <meta name="theme-color" content="#0f3d2e">
-<style>
-    :root {
-      --hw-mint: #e8fff6;
-      --hw-mint-2: #f3fff9;
-      --hw-green: #0f7a55;
-      --hw-deep: #0f2f25;
-      --hw-gold: #c99a2e;
-      --hw-line: rgba(15, 61, 46, .14);
-      --hw-soft: rgba(15, 122, 85, .08);
-      --hw-shadow: 0 20px 50px rgba(11, 48, 36, .10);
-    }
-    body {
-      background:
-        radial-gradient(circle at top left, rgba(41, 211, 146, .13), transparent 32rem),
-        linear-gradient(180deg, #f8fffb 0%, #ffffff 34%, #f8fbf9 100%);
-    }
-    .hw-wrap {
-      width: min(1120px, calc(100% - 32px));
-      margin: 0 auto;
-    }
-    .hw-hero {
-      padding: 54px 0 28px;
-    }
-    .hw-kicker {
-      display: inline-flex;
-      align-items: center;
-      gap: .45rem;
-      padding: .42rem .72rem;
-      border: 1px solid var(--hw-line);
-      border-radius: 999px;
-      background: rgba(255,255,255,.78);
-      color: #0e6f4d;
-      font-size: .82rem;
-      font-weight: 800;
-      letter-spacing: .03em;
-    }
-    .hw-hero-grid {
-      display: grid;
-      grid-template-columns: 1.05fr .95fr;
-      gap: 28px;
-      align-items: center;
-      margin-top: 18px;
-    }
-    .hw-title {
-      margin: 0;
-      font-size: clamp(2rem, 5vw, 4.35rem);
-      line-height: .98;
-      letter-spacing: -.07em;
-      color: var(--hw-deep);
-    }
-    .hw-title span {
-      color: var(--hw-green);
-    }
-    .hw-lead {
-      max-width: 42rem;
-      margin: 18px 0 0;
-      color: #49645a;
-      font-size: 1.04rem;
-      line-height: 1.9;
-    }
-    .hw-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 22px;
-    }
-    .hw-btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 46px;
-      padding: .78rem 1.08rem;
-      border-radius: 999px;
-      border: 1px solid var(--hw-line);
-      text-decoration: none;
-      font-weight: 900;
-      transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
-    }
-    .hw-btn:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 12px 28px rgba(11, 48, 36, .12);
-    }
-    .hw-btn-main {
-      background: linear-gradient(135deg, #12a872, #0f7a55);
-      color: #fff;
-      border-color: transparent;
-    }
-    .hw-btn-sub {
-      background: rgba(255,255,255,.72);
-      color: var(--hw-deep);
-    }
-    .hw-mini-note {
-      margin-top: 10px;
-      color: #6a7d75;
-      font-size: .83rem;
-      line-height: 1.7;
-    }
-    .hw-hero-card {
-      border: 1px solid var(--hw-line);
-      border-radius: 28px;
-      padding: 22px;
-      background: rgba(255,255,255,.82);
-      box-shadow: var(--hw-shadow);
-      backdrop-filter: blur(12px);
-    }
-    .hw-score {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 10px;
-    }
-    .hw-score-item {
-      min-height: 112px;
-      border-radius: 22px;
-      padding: 16px;
-      background: var(--hw-mint-2);
-      border: 1px solid var(--hw-line);
-    }
-    .hw-score-item strong {
-      display: block;
-      color: var(--hw-deep);
-      font-size: 1.35rem;
-      letter-spacing: -.04em;
-    }
-    .hw-score-item span {
-      display: block;
-      margin-top: 8px;
-      color: #5c7169;
-      font-size: .86rem;
-      line-height: 1.55;
-    }
-    .hw-section {
-      padding: 26px 0;
-    }
-    .hw-section-head {
-      display: flex;
-      justify-content: space-between;
-      gap: 16px;
-      align-items: end;
-      margin-bottom: 16px;
-    }
-    .hw-section h2 {
-      margin: 0;
-      color: var(--hw-deep);
-      font-size: clamp(1.45rem, 3vw, 2.2rem);
-      letter-spacing: -.04em;
-    }
-    .hw-section-desc {
-      max-width: 40rem;
-      margin: 8px 0 0;
-      color: #60756d;
-      line-height: 1.8;
-    }
-    .hw-grid-3 {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-    }
-    .hw-card {
-      border: 1px solid var(--hw-line);
-      border-radius: 24px;
-      padding: 18px;
-      background: rgba(255,255,255,.82);
-      box-shadow: 0 16px 34px rgba(11, 48, 36, .07);
-    }
-    .hw-card h3 {
-      margin: 0 0 8px;
-      color: var(--hw-deep);
-      font-size: 1.05rem;
-    }
-    .hw-card p {
-      margin: 0;
-      color: #5d7169;
-      font-size: .93rem;
-      line-height: 1.75;
-    }
-    .hw-check {
-      list-style: none;
-      padding: 0;
-      margin: 12px 0 0;
-      display: grid;
-      gap: 9px;
-    }
-    .hw-check li {
-      position: relative;
-      padding-left: 1.55rem;
-      color: #4f665d;
-      line-height: 1.7;
-      font-size: .94rem;
-    }
-    .hw-check li::before {
-      content: "✓";
-      position: absolute;
-      left: 0;
-      top: 0;
-      color: var(--hw-green);
-      font-weight: 900;
-    }
-    .hw-avoid li::before {
-      content: "!";
-      color: #a36d00;
-    }
-    .hw-feature {
-      display: grid;
-      grid-template-columns: .95fr 1.05fr;
-      gap: 18px;
-      align-items: stretch;
-      border: 1px solid var(--hw-line);
-      border-radius: 30px;
-      padding: 22px;
-      background: linear-gradient(135deg, rgba(232,255,246,.88), rgba(255,255,255,.92));
-      box-shadow: var(--hw-shadow);
-    }
-    .hw-product {
-      border-radius: 24px;
-      padding: 20px;
-      background: #fff;
-      border: 1px solid rgba(15, 122, 85, .16);
-    }
-    .hw-pr {
-      display: inline-flex;
-      padding: .28rem .55rem;
-      border-radius: 999px;
-      border: 1px solid rgba(201, 154, 46, .34);
-      background: rgba(201, 154, 46, .10);
-      color: #7b5a09;
-      font-size: .76rem;
-      font-weight: 900;
-    }
-    .hw-product h3 {
-      margin: 12px 0 8px;
-      color: var(--hw-deep);
-      font-size: 1.55rem;
-      letter-spacing: -.04em;
-    }
-    .hw-product p {
-      color: #576e65;
-      line-height: 1.8;
-      margin: 0;
-    }
-    .hw-metrics {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 10px;
-      margin: 14px 0;
-    }
-    .hw-metric {
-      border-radius: 18px;
-      padding: 12px;
-      border: 1px solid var(--hw-line);
-      background: #fbfffd;
-    }
-    .hw-metric small {
-      display: block;
-      color: #789087;
-      font-size: .75rem;
-      font-weight: 800;
-    }
-    .hw-metric b {
-      display: block;
-      margin-top: 4px;
-      color: var(--hw-deep);
-      font-size: 1rem;
-    }
-    .hw-flow {
-      display: grid;
-      gap: 10px;
-    }
-    .hw-step {
-      display: flex;
-      gap: 12px;
-      align-items: flex-start;
-      border-radius: 20px;
-      border: 1px solid var(--hw-line);
-      background: rgba(255,255,255,.72);
-      padding: 14px;
-    }
-    .hw-step-num {
-      width: 30px;
-      height: 30px;
-      flex: 0 0 30px;
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
-      background: var(--hw-deep);
-      color: #fff;
-      font-weight: 900;
-      font-size: .82rem;
-    }
-    .hw-step strong {
-      display: block;
-      color: var(--hw-deep);
-      margin-bottom: 4px;
-    }
-    .hw-step span {
-      display: block;
-      color: #63776f;
-      line-height: 1.65;
-      font-size: .91rem;
-    }
-    .hw-adbox {
-      margin-top: 14px;
-      padding: 14px;
-      border: 1px dashed rgba(15, 122, 85, .28);
-      border-radius: 20px;
-      background: rgba(255,255,255,.66);
-      text-align: center;
-      overflow: auto;
-    }
-    .hw-compare {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-    }
-    .hw-compare .hw-card {
-      background: #fff;
-    }
-    .hw-faq {
-      display: grid;
-      gap: 10px;
-    }
-    .hw-faq details {
-      border: 1px solid var(--hw-line);
-      border-radius: 20px;
-      padding: 14px 16px;
-      background: rgba(255,255,255,.82);
-    }
-    .hw-faq summary {
-      cursor: pointer;
-      color: var(--hw-deep);
-      font-weight: 900;
-    }
-    .hw-faq p {
-      color: #5d7169;
-      line-height: 1.8;
-      margin: 10px 0 0;
-    }
-    .hw-footer-nav {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      padding: 28px 0 54px;
-    }
-    @media (max-width: 860px) {
-      .hw-hero-grid,
-      .hw-feature {
-        grid-template-columns: 1fr;
-      }
-      .hw-grid-3,
-      .hw-compare {
-        grid-template-columns: 1fr;
-      }
-      .hw-section-head {
-        display: block;
-      }
-      .hw-score {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-    @media (max-width: 560px) {
-      .hw-wrap {
-        width: min(100% - 22px, 1120px);
-      }
-      .hw-hero {
-        padding-top: 34px;
-      }
-      .hw-score {
-        grid-template-columns: 1fr;
-      }
-      .hw-metrics {
-        grid-template-columns: 1fr;
-      }
-      .hw-actions .hw-btn {
-        width: 100%;
-      }
-    }
-  </style>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-V140MZBPKB"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-V140MZBPKB');
-  </script>
-  <script>
-    (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script", "wmurko5bi1");
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {"@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://smart-kozeni.com/"},
-      {"@type": "ListItem", "position": 2, "name": "スマホ・回線", "item": "https://smart-kozeni.com/mobile-sim/"},
-      {"@type": "ListItem", "position": 3, "name": "工事不要Wi-Fi", "item": "https://smart-kozeni.com/mobile-sim/home-wifi/"}
-    ]
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "工事不要Wi-Fiはどんな人に向いていますか？",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "固定回線の工事を避けたい人、引っ越し前後で早めにネット環境が必要な人、スマホのテザリングだけでは容量や速度が足りない人に向きます。"
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "固定回線の代わりになりますか？",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "使い方によります。オンラインゲームや大容量アップロードを安定して行う場合は固定回線も比較対象になります。申込前に利用エリア、速度制限、端末条件、解約条件を確認してください。"
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "申込前に何を確認すべきですか？",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "提供エリア、月額料金、端末代、キャンペーン条件、最低利用期間、解約時費用、支払い方法、到着時期を確認してください。"
-        }
-      }
-    ]
-  }
-  </script>
-  <link rel="stylesheet" href="/assets/kozeni-brand.v1.css?v=shared-shell-v1">
+  <meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary">
+  <meta name="theme-color" content="#4DBD8C">
+  <link rel="stylesheet" href="/assets/kozeni-brand.v1.css?v=41.13">
+  <link rel="stylesheet" href="/assets/kozeni-nav.v1.css?v=nav2">
+  <link rel="stylesheet" href="/assets/kozeni-return.v1.css?v=return3">
+  <link rel="stylesheet" href="/assets/kozeni-home-network.v1.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/icon-32.png?v=xicon1">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/icon-192.png?v=xicon1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png?v=xicon1">
+  <link rel="manifest" href="/site.webmanifest?v=xicon1">
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://smart-kozeni.com/#website","url":"https://smart-kozeni.com/","name":"スマホ小銭研究所","inLanguage":"ja"},{"@type":"Organization","@id":"https://smart-kozeni.com/#organization","name":"スマホ小銭研究所","url":"https://smart-kozeni.com/"},{"@type":"WebPage","@id":"https://smart-kozeni.com/mobile-sim/home-wifi/#webpage","url":"https://smart-kozeni.com/mobile-sim/home-wifi/","name":"工事不要Wi-Fiの料金・向き不向き｜BIGLOBE WiMAX +5G","description":"工事不要Wi-Fiの候補としてBIGLOBE WiMAX +5Gの月額料金、端末代、提供エリア、速度制御、向いている人と注意点を整理します。","dateModified":"2026-06-20","isPartOf":{"@id":"https://smart-kozeni.com/#website"},"publisher":{"@id":"https://smart-kozeni.com/#organization"},"breadcrumb":{"@id":"https://smart-kozeni.com/mobile-sim/home-wifi/#breadcrumb"},"inLanguage":"ja"},{"@type":"BreadcrumbList","@id":"https://smart-kozeni.com/mobile-sim/home-wifi/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"ホーム","item":"https://smart-kozeni.com/"},{"@type":"ListItem","position":2,"name":"スマホ・回線","item":"https://smart-kozeni.com/mobile-sim/"},{"@type":"ListItem","position":3,"name":"工事不要Wi-Fi","item":"https://smart-kozeni.com/mobile-sim/home-wifi/"}]}]}</script>
 </head>
 <body>
   <header class="kozeni-site-header">
-  <div class="kozeni-site-nav">
-    <a class="kozeni-site-brand" href="/">
-      <img src="/assets/images/icon-192.png?v=xicon1" alt="" width="34" height="34" decoding="async"><span>スマホ小銭研究所</span>
-    </a>
-    <nav class="kozeni-main-nav" aria-label="主要カテゴリ">
-      <a class="is-active" aria-current="page" href="/mobile-sim/">スマホ・回線</a>
-      <a href="/point-site/">ポイ活</a>
-      <a href="/credit-card/">クレカ</a>
-      <a href="/account-opening/">口座</a>
-      <a href="/travel/">旅行・移動</a>
-    </nav>
-  </div>
-</header>
+    <div class="kozeni-site-nav">
+      <a class="kozeni-site-brand" href="/">
+        <img src="/assets/images/icon-192.png?v=xicon1" alt="" width="34" height="34" decoding="async">
+        <span>スマホ小銭研究所</span>
+      </a>
+      <nav class="kozeni-main-nav" aria-label="主要カテゴリ">
+        <a class="is-active" aria-current="page" href="/mobile-sim/">スマホ・回線</a>
+        <a href="/point-site/">ポイ活</a>
+        <a href="/credit-card/">クレカ</a>
+        <a href="/account-opening/">口座</a>
+        <a href="/travel/">旅行・移動</a>
+      </nav>
+    </div>
+  </header>
 
-  <main>
-    <section class="hw-hero">
-      <div class="hw-wrap">
-        <div class="hw-kicker">PRあり / 工事不要Wi-Fi / 申込前チェック</div>
-        <div class="hw-hero-grid">
-          <div>
-            <h1 class="hw-title">家のネットも、<span>工事なし</span>で見直す。</h1>
-            <p class="hw-lead">
-              スマホ代だけ見直しても、家のWi-Fiが重いままだと結局ストレスが残ります。
-              ここでは、固定回線の工事まではしたくない人向けに、工事不要Wi-Fiの向き・不向きと申込前チェックを短く整理します。
-            </p>
-            <div class="hw-actions">
-              <span class="kozeni-at-link kozeni-at-link--primary"><a href="https://h.accesstrade.net/sp/cc?rk=0100asjy00osbd" rel="nofollow" referrerpolicy="no-referrer-when-downgrade">BIGLOBE WiMAX +5G ★おトクな申込特典あり★<img src="https://h.accesstrade.net/sp/rr?rk=0100asjy00osbd" width="1" height="1" border="0" alt=""></a></span>
-              <a class="hw-btn hw-btn-sub" href="#check">申込前チェックを見る</a>
-            </div>
-            <p class="hw-mini-note">料金・キャンペーン・端末条件は変更されることがあります。最終判断は必ず公式ページの最新条件で確認してください。</p>
-          </div>
-          <aside class="hw-hero-card" aria-label="このページで分かること">
-            <div class="hw-score">
-              <div class="hw-score-item">
-                <strong>工事なし</strong>
-                <span>固定回線の開通工事を避けたい人の候補。</span>
-              </div>
-              <div class="hw-score-item">
-                <strong>家Wi-Fi</strong>
-                <span>テザリングだけでは足りない人向け。</span>
-              </div>
-              <div class="hw-score-item">
-                <strong>短期〜中期</strong>
-                <span>引っ越し前後・開通待ちの受け皿にも。</span>
-              </div>
-              <div class="hw-score-item">
-                <strong>条件確認</strong>
-                <span>エリア・端末代・解約条件は先に見る。</span>
-              </div>
-            </div>
-          </aside>
-        </div>
-      </div>
-    </section>
-
-    <section class="hw-section" id="fit">
-      <div class="hw-wrap">
-        <div class="hw-section-head">
-          <div>
-            <h2>向く人・向かない人</h2>
-            <p class="hw-section-desc">WiMAX系は便利ですが、全員に万能ではありません。まず向き・不向きだけ確認します。</p>
-          </div>
-        </div>
-        <div class="hw-grid-3">
-          <article class="hw-card">
-            <h3>向く人</h3>
-            <ul class="hw-check">
-              <li>家のネットが重く、早めに見直したい</li>
-              <li>固定回線の工事や立ち会いを避けたい</li>
-              <li>一人暮らし・引っ越し前後・開通待ち</li>
-              <li>スマホのテザリングでは容量が足りない</li>
-            </ul>
-          </article>
-          <article class="hw-card">
-            <h3>慎重に見る人</h3>
-            <ul class="hw-check hw-avoid">
-              <li>オンラインゲームの安定性を最優先したい</li>
-              <li>家族全員で常時大容量通信をする</li>
-              <li>提供エリアや室内電波に不安がある</li>
-              <li>解約条件を細かく確認したくない</li>
-            </ul>
-          </article>
-          <article class="hw-card">
-            <h3>先に確認すること</h3>
-            <ul class="hw-check">
-              <li>自宅住所が提供エリアか</li>
-              <li>端末代・月額・キャンペーン条件</li>
-              <li>契約期間・解約時の費用</li>
-              <li>端末の到着時期と支払い方法</li>
-            </ul>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="hw-section" id="biglobe">
-      <div class="hw-wrap">
-        <div class="hw-feature">
-          <article class="hw-product">
-            <span class="hw-pr">PR / AccessTrade</span>
-            <h3>BIGLOBE WiMAX +5G</h3>
-            <p>
-              工事不要Wi-Fiの候補として、まず確認しやすいWiMAX系サービスです。
-              固定回線までは不要だけど、スマホのテザリングだけでは足りない人向けに見ます。
-            </p>
-            <div class="hw-metrics">
-              <div class="hw-metric">
-                <small>見るポイント</small>
-                <b>工事不要Wi-Fi</b>
-              </div>
-              <div class="hw-metric">
-                <small>成果条件</small>
-                <b>申込完了</b>
-              </div>
-              <div class="hw-metric">
-                <small>向く場面</small>
-                <b>家Wi-Fi見直し</b>
-              </div>
-              <div class="hw-metric">
-                <small>最終確認</small>
-                <b>公式条件</b>
-              </div>
-            </div>
-            <div class="hw-actions">
-              <span class="kozeni-at-link kozeni-at-link--primary"><a href="https://h.accesstrade.net/sp/cc?rk=0100asjy00osbd" rel="nofollow" referrerpolicy="no-referrer-when-downgrade">BIGLOBE WiMAX +5G ★おトクな申込特典あり★<img src="https://h.accesstrade.net/sp/rr?rk=0100asjy00osbd" width="1" height="1" border="0" alt=""></a></span>
-</div>
-            <p class="hw-mini-note">当サイトは広告を含みます。申込前に公式ページで料金・端末・キャンペーン・解約条件を確認してください。</p>
-          </article>
-
-          <div class="hw-flow" id="check">
-            <div class="hw-step">
-              <div class="hw-step-num">1</div>
-              <div>
-                <strong>エリアを確認</strong>
-                <span>自宅・職場・よく使う場所で利用できるか。室内での電波も想定します。</span>
-              </div>
-            </div>
-            <div class="hw-step">
-              <div class="hw-step-num">2</div>
-              <div>
-                <strong>総額を見る</strong>
-                <span>月額だけでなく、端末代、キャンペーン条件、初期費用、解約時費用まで見ます。</span>
-              </div>
-            </div>
-            <div class="hw-step">
-              <div class="hw-step-num">3</div>
-              <div>
-                <strong>使い方に合うか</strong>
-                <span>動画視聴、在宅作業、ゲーム、家族利用など、用途によって固定回線も比較対象です。</span>
-              </div>
-            </div>
-            <div class="hw-adbox" aria-label="BIGLOBE WiMAX提供エリア確認">
-              <span class="kozeni-at-link kozeni-at-link--sub"><a href="https://h.accesstrade.net/sp/cc?rk=0100asjz00osbd" rel="nofollow" referrerpolicy="no-referrer-when-downgrade">BIGLOBEでWiMAX+5Gの提供エリアをチェック<img src="https://h.accesstrade.net/sp/rr?rk=0100asjz00osbd" width="1" height="1" border="0" alt=""></a></span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="hw-section">
-      <div class="hw-wrap">
-        <h2>スマホ回線との分け方</h2>
-        <p class="hw-section-desc">迷ったら、スマホ回線と家のWi-Fiは別で考えると判断しやすいです。</p>
-        <div class="hw-compare">
-          <article class="hw-card">
-            <h3>スマホのGB不足</h3>
-            <p>外出先の通信量が足りないなら、スマホプランの容量や料金を見直す。</p>
-          </article>
-          <article class="hw-card">
-            <h3>家だけ重い</h3>
-            <p>家で動画・PC・タブレットを使うなら、工事不要Wi-Fiや固定回線を別に見る。</p>
-          </article>
-          <article class="hw-card">
-            <h3>両方分からない</h3>
-            <p>まず月額料金と月GBを確認。分からなければデータ使用量チェックへ。</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="hw-section">
-      <div class="hw-wrap">
-        <h2>よくある確認</h2>
-        <div class="hw-faq">
-          <details>
-            <summary>WiMAXは固定回線の代わりになりますか？</summary>
-            <p>用途次第です。動画視聴や通常の在宅作業なら候補になりますが、速度・遅延の安定性を最優先するなら固定回線も比較対象です。</p>
-          </details>
-          <details>
-            <summary>「無制限」と書いてあれば何も気にしなくていいですか？</summary>
-            <p>いいえ。サービスごとに速度制御や混雑時の扱い、端末条件が異なります。公式ページの注意書きまで確認してください。</p>
-          </details>
-          <details>
-            <summary>スマホ代の見直しとどちらを先にやるべきですか？</summary>
-            <p>外で使うGBが足りないならスマホプラン、家だけ重いなら家のWi-Fiを先に見ると判断しやすいです。</p>
-          </details>
-        </div>
-        <div class="hw-footer-nav">
-          <span class="kozeni-at-link kozeni-at-link--primary"><a href="https://h.accesstrade.net/sp/cc?rk=0100asjy00osbd" rel="nofollow" referrerpolicy="no-referrer-when-downgrade">BIGLOBE WiMAX +5G ★おトクな申込特典あり★<img src="https://h.accesstrade.net/sp/rr?rk=0100asjy00osbd" width="1" height="1" border="0" alt=""></a></span>
-<a class="hw-btn hw-btn-sub" href="/mobile-sim/">スマホ・回線トップへ</a>
-        </div>
-      </div>
-    </section>
-  
-<!-- kozeni-home-wifi-v40-2-note -->
-<p class="hw-mini-note">PR：このページには広告リンクを含みます。条件は公式ページで最終確認してください。</p>
-</main>
-
-  <footer class="footer">
-  <div class="container">
-    <a href="/policy/">PR表記</a>
-    <a href="/privacy/">プライバシー</a>
-    <a href="/about/">このサイトについて</a>
-    <p>© スマホ小銭研究所</p>
-  </div>
-<nav class="kozeni-footer-social" aria-label="SNSリンク">
-    <a href="https://x.com/smart_kozeni" target="_blank" rel="noopener noreferrer" aria-label="Xでスマホ小銭研究所を見る">
-      <img class="kozeni-footer-social__icon" src="/assets/images/social-x.svg?v=social1" alt="" width="22" height="22" loading="lazy" decoding="async">
-      <span>X</span>
-    </a>
-    <a href="https://www.instagram.com/smart_kozeni/" target="_blank" rel="noopener noreferrer" aria-label="Instagramでスマホ小銭研究所を見る">
-      <img class="kozeni-footer-social__icon" src="/assets/images/social-instagram.svg?v=social1" alt="" width="22" height="22" loading="lazy" decoding="async">
-      <span>Instagram</span>
-    </a>
+  <nav class="kozeni-breadcrumb" aria-label="パンくず">
+    <a href="/">ホーム</a>
+    <span aria-hidden="true">›</span>
+    <a href="/mobile-sim/">スマホ・回線</a>
+    <span aria-hidden="true">›</span>
+    <span aria-current="page">工事不要Wi-Fi</span>
   </nav>
-</footer>
+
+  <main class="home-page">
+    <div class="home-content">
+      <header class="home-hero">
+        <p class="home-eyebrow">HOME ROUTER GUIDE</p>
+        <h1>工事不要Wi-Fiを、月額と端末代から確認</h1>
+        <p class="home-lead">固定回線の工事を待たずに家のネットを用意したい場合の候補です。割引期間の月額だけでなく、25カ月目以降、端末代、エリア、通信モードまで確認します。</p>
+        <p class="home-updated">内容確認日：<time datetime="2026-06-20">2026年6月20日</time></p>
+      </header>
+
+      <section class="home-card" aria-labelledby="verdict-title">
+        <h2 id="verdict-title">工事を避けて早く使いたい人向け。安定性を最優先するなら光回線も比較</h2>
+        <p>BIGLOBE WiMAX +5Gは、サービス開始翌月から24カ月間は月額3,278円、25カ月目以降は月額4,928円です。別途ルーター代27,720円などがかかるため、割引期間だけでなく端末代を含む総額で判断します。</p>
+        <div class="home-badges" aria-label="特徴"><span>工事不要</span><span>24カ月目まで3,278円</span><span>25カ月目以降4,928円</span><span>端末代27,720円</span></div>
+      </section>
+
+      <div class="home-two">
+        <section class="home-card" aria-labelledby="fit-title">
+          <h2 id="fit-title">向いている人</h2>
+          <ul class="home-list"><li>固定回線の開通工事や立ち会いを避けたい</li><li>引っ越し前後や光回線の開通待ちで早くネットが必要</li><li>一人暮らしや少人数で動画・在宅作業に使う</li><li>スマホのテザリングだけでは容量が足りない</li></ul>
+        </section>
+        <section class="home-card" aria-labelledby="not-fit-title">
+          <h2 id="not-fit-title">慎重に確認する人</h2>
+          <ul class="home-list home-list--caution"><li>オンラインゲームなどで遅延と安定性を最優先する</li><li>家族全員が常時大容量通信をする</li><li>自宅の室内電波や提供エリアに不安がある</li><li>端末代や通信モードを管理したくない</li></ul>
+        </section>
+      </div>
+
+      <section class="home-card" aria-labelledby="check-title">
+        <h2 id="check-title">申し込み前チェック</h2>
+        <ul class="home-list"><li>自宅住所がスタンダードモードの提供エリアか</li><li>24カ月目までと25カ月目以降の月額</li><li>ルーター代の支払回数と解約時の残債</li><li>ベーシックコース月額220円の要否</li><li>プラスエリアモードを使う可能性</li><li>キャッシュバックの受取期限と手続き</li></ul>
+      </section>
+
+      <div class="sim-cta"><a class="sim-cta__button" href="https://h.accesstrade.net/sp/cc?rk=0100asjy00osbd" target="_blank" rel="nofollow sponsored noopener noreferrer" referrerpolicy="no-referrer-when-downgrade">公式条件を見る<img class="sim-cta__tracking" src="https://h.accesstrade.net/sp/rr?rk=0100asjy00osbd" width="1" height="1" alt=""></a><p class="sim-cta__note">PR：このリンクは広告リンクです。料金・端末・提供エリア・特典条件は公式画面で確認してください。</p></div>
+
+      <section class="home-card" aria-labelledby="facts-title">
+        <h2 id="facts-title">料金・条件</h2>
+        <dl class="home-facts"><div class="home-facts__row"><dt>サービス開始月</dt><dd>月額0円。初月解約時は1カ月分が必要</dd></div><div class="home-facts__row"><dt>1カ月目から24カ月目</dt><dd>月額3,278円（税込）。値引き特典適用時</dd></div><div class="home-facts__row"><dt>25カ月目以降</dt><dd>月額4,928円（税込）</dd></div><div class="home-facts__row"><dt>ルーター代</dt><dd>27,720円。770円×36回の分割払いに対応</dd></div><div class="home-facts__row"><dt>接続コース</dt><dd>BIGLOBEの他接続サービスがなければベーシックコース月額220円</dd></div><div class="home-facts__row"><dt>プラスエリアモード</dt><dd>利用月は月額1,100円。月30GB超で当月末まで最大128kbps</dd></div></dl>
+      </section>
+
+      <section class="home-card" aria-labelledby="cautions-title">
+        <h2 id="cautions-title">注意点</h2>
+        <ul class="home-list home-list--caution"><li>データ容量無制限の表記があっても、混雑時などに速度制御される場合があります</li><li>ルーターの分割払い途中で解約すると残額の支払いが必要です</li><li>キャッシュバックには受取手続きと期限があります</li><li>手数料、オプション料、ルーター代は月額料金に含まれません</li><li>室内での通信品質は住所、建物、設置場所によって変わります</li><li>安定性を重視する場合は光回線も比較してください</li></ul>
+      </section>
+
+      <section class="home-card" aria-labelledby="sources-title">
+        <h2 id="sources-title">公式情報の参照先</h2>
+        <ul class="home-source-list"><li>根拠：<a href="https://join.biglobe.ne.jp/mobile/wimax/5g/price/" target="_blank" rel="noopener noreferrer">BIGLOBE公式「WiMAXプラン料金」</a></li><li>根拠：<a href="https://join.biglobe.ne.jp/mobile/wimax/5g/area/" target="_blank" rel="noopener noreferrer">BIGLOBE公式「WiMAX +5G サービスエリア」</a></li><li>根拠：<a href="https://join.biglobe.ne.jp/mobile/wimax/5g/campaign/" target="_blank" rel="noopener noreferrer">BIGLOBE公式「WiMAX 特典・キャンペーン」</a></li></ul>
+      </section>
+
+      <section class="home-card" aria-labelledby="related-title">
+        <h2 id="related-title">関連ページ</h2>
+        <div class="home-related"><a href="/mobile-sim/rakuten-hikari/"><strong>固定回線なら楽天ひかりも確認</strong><span>集合住宅と戸建の月額、工事、開通待ちを確認します。</span></a><a href="/mobile-sim/data-usage/"><strong>スマホ側のデータ使用量を確認</strong><span>家のWi-Fiではなくスマホ容量が不足していないか分けます。</span></a><a href="/mobile-sim/"><strong>スマホ・回線比較へ戻る</strong><span>スマホ料金と家のネットを分けて確認します。</span></a></div>
+      </section>
+
+      <section class="home-card" aria-labelledby="faq-title">
+        <h2 id="faq-title">よくある確認</h2>
+        <div class="home-faq"><details><summary>WiMAXは固定回線の代わりになりますか？</summary><p>動画視聴や通常の在宅作業では候補になります。遅延や安定性を最優先するオンラインゲーム、家族の同時大容量利用では光回線も比較してください。</p></details><details><summary>25カ月目以降はいくらですか？</summary><p>プラン料金値引き特典終了後は月額4,928円です。ルーター代や必要な接続コース、オプション料は別に確認します。</p></details><details><summary>ルーター代はいくらですか？</summary><p>27,720円で、クレジットカードでは770円の36回分割払いに対応します。途中解約時は残債の支払いが必要です。</p></details><details><summary>提供エリアなら必ず快適に使えますか？</summary><p>提供エリア内でも建物や設置場所によって通信品質は変わります。窓際など設置候補を考え、公式エリア情報と注意事項を確認してください。</p></details></div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="home-footer">
+    <div class="home-footer__inner">
+      <nav aria-label="フッター">
+        <a href="/policy/">PR表記</a>
+        <a href="/privacy/">プライバシー</a>
+        <a href="/about/">運営者情報</a>
+        <a href="/contact/">お問い合わせ</a>
+      </nav>
+      <p>© スマホ小銭研究所</p>
+    </div>
+  </footer>
+
+  <nav class="kozeni-fixed-return" aria-label="前のページへ戻る">
+    <a href="/mobile-sim/">← スマホ・回線一覧へ戻る</a>
+  </nav>
 </body>
 </html>
