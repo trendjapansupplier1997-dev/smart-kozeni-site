@@ -1,0 +1,107 @@
+{
+  "page_type": "beginner",
+  "slug": "beginner",
+  "title": "ポイ活はじめて何から？登録前に見る9つの候補",
+  "description": "ポイ活を初めて始める人向けに、TikTok Lite、モッピー、ハピタスなど9つの候補を、登録前に見る順番と失敗しやすい条件で整理します。",
+  "eyebrow": "POINT ACTIVITY START GUIDE",
+  "h1": "ポイ活、最初は何から始める？",
+  "lead": "いきなり全部登録しなくてOK。まずは「キャンペーン」「定番ポイントサイト」「生活ついで」のどれが自分に近いかだけ決めます。",
+  "checked_at": "2026-06-21",
+  "steps": [
+    {
+      "title": "まず1つだけ選ぶ",
+      "description": "最初から9個全部やると、条件確認が雑になります。まず1つ登録して、反映まで見るのが安全です。"
+    },
+    {
+      "title": "登録前に対象外を確認",
+      "description": "過去利用、電話番号認証、初回登録、広告利用期限など、特典が消えやすいところだけ先に見ます。"
+    },
+    {
+      "title": "登録後に“次の案件”を見る",
+      "description": "登録しただけで満足せず、反映条件・交換条件・高額案件の対象外を順番に確認します。"
+    }
+  ],
+  "cards": [
+    {
+      "tag": "キャンペーン",
+      "title": "TikTok Lite",
+      "description": "招待特典を狙うなら最初に確認。対象外条件と反映タイミングを見てから進めます。",
+      "href": "/tiktok-lite/",
+      "label": "条件を見る"
+    },
+    {
+      "tag": "定番",
+      "title": "モッピー",
+      "description": "広告案件・高額案件の入口。初回は登録条件と広告利用条件を見ます。",
+      "href": "/point-site/moppy/",
+      "label": "登録前チェック"
+    },
+    {
+      "tag": "買い物前",
+      "title": "ハピタス",
+      "description": "通販・旅行・サービス申込の前に経由する候補。買う前に見るタイプです。",
+      "href": "/point-site/hapitas/",
+      "label": "登録前チェック"
+    },
+    {
+      "tag": "移動",
+      "title": "トリマ",
+      "description": "歩数・移動で拾う生活系。電話番号認証や交換条件も見ます。",
+      "href": "/point-site/trima/",
+      "label": "登録前チェック"
+    },
+    {
+      "tag": "生活",
+      "title": "クラシルリワード",
+      "description": "レシート・チラシ・移動など、日常ついでに拾う候補です。",
+      "href": "/point-site/kurashiru-reward/",
+      "label": "登録前チェック"
+    },
+    {
+      "tag": "スキマ",
+      "title": "Powl",
+      "description": "アンケート・歩数・ゲーム案件など。重すぎる案件は撤退ラインも見ます。",
+      "href": "/point-site/powl/",
+      "label": "登録前チェック"
+    },
+    {
+      "tag": "追加",
+      "title": "ポイントインカム",
+      "description": "ボーナスや案件比較の候補。複数サイトで条件差を見る時に使います。",
+      "href": "/point-site/point-income/",
+      "label": "登録前チェック"
+    },
+    {
+      "tag": "追加",
+      "title": "ポイントタウン",
+      "description": "案件比較用の候補。認証や条件を見てから使います。",
+      "href": "/point-site/pointtown/",
+      "label": "登録前チェック"
+    },
+    {
+      "tag": "控え",
+      "title": "ちょびリッチ",
+      "description": "複数サイトで案件を比べる時の控え候補。条件差を見る用途です。",
+      "href": "/point-site/chobirich/",
+      "label": "登録前チェック"
+    }
+  ],
+  "note": "このページは「どれが一番稼げるか」より、初見で迷わない順番を優先しています。PR・紹介リンクを使う場合は各ページで明記し、最終条件は公式画面で確認します。",
+  "related": [
+    {
+      "href": "/point-site/",
+      "title": "9枚カード一覧へ",
+      "description": "全候補をざっと見る"
+    },
+    {
+      "href": "/point-site/moppy-hapitas/",
+      "title": "モッピーとハピタス比較",
+      "description": "定番2つで迷ったら"
+    },
+    {
+      "href": "/tiktok-lite/conditions/",
+      "title": "TikTok Lite対象外チェック",
+      "description": "特典狙いの前に見る"
+    }
+  ]
+}

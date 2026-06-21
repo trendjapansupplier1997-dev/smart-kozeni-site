@@ -1,6 +1,6 @@
 # 収益導線SSOT
 
-承認済みASP案件のURL・PR注記・計測ピクセル・バナー素材は、
+承認済みASP案件と運用中の紹介プログラムのURL・PR注記・計測ピクセル・バナー素材は、
 `data/monetization/programs.json`だけで管理します。
 
 ## 原則
@@ -85,3 +85,19 @@ python3 tools/kozeni_site_audit.py
 
 口座開設ページでも広告URLはJSONへ直接書かず、`program_id`だけを参照します。
 ハブの広告カードと商品ページのCTAは同じレジストリと描画規則を使います。
+
+
+## ポイ活で利用する紹介プログラム
+
+8サービスの紹介URLは`data/monetization/programs.json`へ集約します。
+
+- `moppy-direct-referral`
+- `hapitas-direct-referral`
+- `point-income-direct-referral`
+- `pointtown-direct-referral`
+- `chobirich-direct-referral`
+- `powl-direct-referral`
+- `trima-direct-referral`
+- `kurashiru-reward-direct-referral`
+
+サービスJSONは`cta.program_id`だけを保持し、紹介コードやURLをHTML・JSONへ重複させません。

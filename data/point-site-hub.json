@@ -1,0 +1,100 @@
+{
+  "title": "ポイ活アプリ・ポイントサイト一覧｜登録前に条件チェック",
+  "description": "TikTok Lite、モッピー、ハピタスなど、ポイ活アプリ・ポイントサイトを登録前に確認するページです。まずは使いやすい候補から選びます。",
+  "h1": "ポイ活は、拾いやすい小銭から。",
+  "lead": "派手な数字より、対象条件と反映時期。まずは、取りこぼしにくい小銭から見ていきます。",
+  "checked_at": "2026-06-21",
+  "sections": [
+    {
+      "title": "最初に見るなら、この3つ。",
+      "cards": [
+        {
+          "href": "/tiktok-lite/",
+          "tag": "キャンペーン",
+          "title": "TikTok Lite",
+          "amount": "最大5,500円相当",
+          "description": "招待・タスク系。対象外条件と反映タイミングを確認。"
+        },
+        {
+          "href": "/point-site/moppy/",
+          "tag": "定番",
+          "title": "モッピー",
+          "amount": "最大5,000円相当",
+          "description": "広告案件・高額案件を見る前の候補。"
+        },
+        {
+          "href": "/point-site/hapitas/",
+          "tag": "買い物前",
+          "title": "ハピタス",
+          "amount": "最大2,300円相当",
+          "description": "通販・旅行・申込前に経由確認。"
+        }
+      ]
+    },
+    {
+      "title": "目的で選ぶ。",
+      "cards": [
+        {
+          "href": "/point-site/trima/",
+          "tag": "移動",
+          "title": "トリマ",
+          "amount": "最大50円相当",
+          "description": "歩数・移動で拾う。電話番号認証まで確認。"
+        },
+        {
+          "href": "/point-site/kurashiru-reward/",
+          "tag": "生活",
+          "title": "クラシルリワード",
+          "amount": "最大500円相当",
+          "description": "レシート・チラシ・移動など生活導線。"
+        },
+        {
+          "href": "/point-site/powl/",
+          "tag": "スキマ",
+          "title": "Powl",
+          "amount": "最大130円相当",
+          "description": "アンケート・歩数・スキマ時間向き。"
+        },
+        {
+          "href": "/point-site/point-income/",
+          "tag": "比較",
+          "title": "ポイントインカム",
+          "amount": "最大2,220円相当",
+          "description": "案件比較用に追加する候補。"
+        },
+        {
+          "href": "/point-site/pointtown/",
+          "tag": "比較",
+          "title": "ポイントタウン",
+          "amount": "最大2,000円相当",
+          "description": "電話番号認証や獲得条件を確認。"
+        },
+        {
+          "href": "/point-site/chobirich/",
+          "tag": "控え",
+          "title": "ちょびリッチ",
+          "amount": "最大2,500円相当",
+          "description": "複数サイトで案件を比べる候補。"
+        }
+      ]
+    }
+  ],
+  "checklist": [
+    {
+      "label": "CHECK 01",
+      "title": "対象条件",
+      "description": "新規登録、年齢、端末、過去利用の有無を確認します。"
+    },
+    {
+      "label": "CHECK 02",
+      "title": "反映時期",
+      "description": "即時反映か、後日付与か。タスク完了条件も見ます。"
+    },
+    {
+      "label": "CHECK 03",
+      "title": "交換条件",
+      "description": "最低交換額、交換先、手数料、本人確認の有無を確認します。"
+    }
+  ],
+  "note": "紹介特典や掲載金額は変動します。登録前に対象条件、付与時期、交換条件を各サービス内で確認してください。"
+}

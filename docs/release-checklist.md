@@ -14,6 +14,7 @@ git status --short
 ```bash
 git diff --stat
 git diff --check
+python3 tools/build_point_sites.py --check
 python3 tools/kozeni_site_audit.py
 ```
 
@@ -39,6 +40,7 @@ python3 tools/kozeni_site_audit.py
 git status --short
 git diff --stat
 git diff --check
+python3 tools/build_point_sites.py --check
 python3 tools/kozeni_site_audit.py
 ```
 
@@ -49,4 +51,3 @@ git add -A
 git commit -m "<変更内容>"
 git push
 ```
-

@@ -19,6 +19,7 @@ import build_mobile_sim_guides
 import build_home_network
 import build_credit_cards
 import build_account_opening
+import build_point_sites
 import monetization
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -635,6 +636,8 @@ def audit_monetization_registry() -> list[str]:
         *sorted((ROOT / "data" / "credit-card").glob("*.json")),
         *sorted((ROOT / "data" / "account-opening").rglob("*.json")),
         ROOT / "data" / "account-opening-hub.json",
+        *sorted((ROOT / "data" / "point-site").rglob("*.json")),
+        ROOT / "data" / "point-site-hub.json",
     ]
     known_urls = {program["click_url"] for program in programs.values()}
     for data_path in affiliate_data_paths:
@@ -1119,6 +1122,85 @@ def audit_account_opening() -> list[str]:
         )
     return problems
 
+
+def audit_point_sites() -> list[str]:
+    problems: list[str] = []
+    sitemap = sitemap_urls()
+    try:
+        outputs = build_point_sites.build_outputs()
+        sites = build_point_sites.load_all_sites()
+    except Exception as error:
+        return [f"data/point-site: invalid point-site data: {error}"]
+
+    if len(outputs) != 19:
+        problems.append(f"point-site: expected 19 generated pages, got {len(outputs)}")
+
+    expected_programs = {
+        "chobirich-direct-referral",
+        "hapitas-direct-referral",
+        "kurashiru-reward-direct-referral",
+        "moppy-direct-referral",
+        "point-income-direct-referral",
+        "pointtown-direct-referral",
+        "powl-direct-referral",
+        "trima-direct-referral",
+    }
+    actual_programs = {
+        data["cta"]["program_id"]
+        for data in sites.values()
+    }
+    if actual_programs != expected_programs:
+        problems.append("data/point-site/sites: referral program set differs from expected")
+
+    for page, rendered in sorted(outputs.items()):
+        rel = page.relative_to(ROOT).as_posix()
+        if not page.exists():
+            problems.append(f"{rel}: generated point-site page is missing")
+            continue
+        text = read(page)
+        if text != rendered:
+            problems.append(f"{rel}: generated point-site HTML is outdated")
+        if text.count("<h1") != 1:
+            problems.append(f"{rel}: h1 must appear exactly once")
+        if "<style" in text:
+            problems.append(f"{rel}: inline style is forbidden")
+        if re.search(r'<script(?![^>]*type="application/ld\+json")', text, flags=re.I):
+            problems.append(f"{rel}: executable inline script is forbidden")
+        if text.count('type="application/ld+json"') != 1:
+            problems.append(f"{rel}: exactly one JSON-LD graph is required")
+        if f'href="{build_point_sites.STYLE_HREF}"' not in text:
+            problems.append(f"{rel}: shared point-site CSS is missing")
+        if "kozeni-point.v1.css" in text:
+            problems.append(f"{rel}: legacy mixed point CSS is referenced")
+        if "data-kozeni-quiz" in text or "data-register-url" in text:
+            problems.append(f"{rel}: legacy quiz contract remains")
+        canonical_match = re.search(r'<link rel="canonical" href="([^"]+)">', text)
+        if not canonical_match:
+            problems.append(f"{rel}: canonical is missing")
+        elif canonical_match.group(1) not in sitemap:
+            problems.append(f"{rel}: canonical URL is missing from sitemap")
+        if 'class="kozeni-breadcrumb"' not in text:
+            problems.append(f"{rel}: visible breadcrumb is required")
+
+    for slug, data in sites.items():
+        page = build_point_sites.detail_output(data)
+        text = read(page)
+        cta = data["cta"]
+        expected_url = html.escape(cta["url"], quote=True)
+        if text.count(expected_url) != 1:
+            problems.append(f"{page.relative_to(ROOT)}: referral URL must appear exactly once")
+        for token in ("nofollow", "sponsored", "noopener", "noreferrer", 'referrerpolicy="no-referrer-when-downgrade"'):
+            if token not in text:
+                problems.append(f"{page.relative_to(ROOT)}: CTA missing {token}")
+        if html.escape(cta["note"]) not in text:
+            problems.append(f"{page.relative_to(ROOT)}: PR note differs from registry")
+        earn_text = read(build_point_sites.earn_output(data))
+        if cta["url"] in earn_text:
+            problems.append(f"{slug}/earn: referral URL must not be emitted")
+
+    return problems
+
+
 def show_list(
     title: str,
     items: list[str],
@@ -1196,6 +1278,7 @@ def main() -> int:
     monetization_problems = audit_monetization_registry()
     credit_card_problems = audit_credit_cards()
     account_opening_problems = audit_account_opening()
+    point_site_problems = audit_point_sites()
 
     print("=== kozeni site audit ===")
     print(f"HTML files: {len(HTML_FILES)}")
@@ -1248,6 +1331,11 @@ def main() -> int:
     show_list(
         "generated account-opening pages",
         account_opening_problems,
+        problems,
+    )
+    show_list(
+        "generated point-site pages",
+        point_site_problems,
         problems,
     )
 

@@ -103,6 +103,78 @@
       "label": "松井証券ではじめるiDeCoを確認する",
       "pr_note": "PR：このリンクはA8.netのアフィリエイト広告です。iDeCoの対象、手数料、申込条件は公式画面で確認してください。",
       "tracking_pixel_url": "https://www12.a8.net/0.gif?a8mat=4B3NYV+DIF60I+3XCC+BXIYQ"
+    },
+    "chobirich-direct-referral": {
+      "asp": "direct-referral",
+      "advertiser": "ちょびリッチ",
+      "status": "approved",
+      "format": "text",
+      "click_url": "https://www.chobirich.com/cm/ad/?p=8225208671&i=4970604",
+      "label": "ちょびリッチに新規登録する",
+      "pr_note": "PR：このリンクはちょびリッチの紹介リンクです。登録特典・対象条件・付与時期は登録画面で確認してください。"
+    },
+    "hapitas-direct-referral": {
+      "asp": "direct-referral",
+      "advertiser": "ハピタス",
+      "status": "approved",
+      "format": "text",
+      "click_url": "https://hapitas.jp/appinvite?i=25179605&route=text",
+      "label": "ハピタスに新規登録する",
+      "pr_note": "PR：このリンクはハピタスの紹介リンクです。登録特典・対象条件・付与時期は登録画面で確認してください。"
+    },
+    "kurashiru-reward-direct-referral": {
+      "asp": "direct-referral",
+      "advertiser": "クラシルリワード",
+      "status": "approved",
+      "format": "text",
+      "click_url": "https://www.rewards.kurashiru.com/register?ref=055aba5c-282f-48cb-947b-1188018494c6",
+      "label": "クラシルリワードに新規登録する",
+      "pr_note": "PR：このリンクはクラシルリワードの紹介リンクです。登録特典・対象条件・付与時期は登録画面で確認してください。"
+    },
+    "moppy-direct-referral": {
+      "asp": "direct-referral",
+      "advertiser": "モッピー",
+      "status": "approved",
+      "format": "text",
+      "click_url": "https://pc.moppy.jp/entry/invite.php?invite=F9fnA1a1",
+      "label": "モッピーに新規登録する",
+      "pr_note": "PR：このリンクはモッピーの紹介リンクです。登録特典・対象条件・付与時期は登録画面で確認してください。"
+    },
+    "point-income-direct-referral": {
+      "asp": "direct-referral",
+      "advertiser": "ポイントインカム",
+      "status": "approved",
+      "format": "text",
+      "click_url": "https://sp.pointi.jp/p/?a=rbf883933489",
+      "label": "ポイントインカムに新規登録する",
+      "pr_note": "PR：このリンクはポイントインカムの紹介リンクです。登録特典・対象条件・付与時期は登録画面で確認してください。"
+    },
+    "pointtown-direct-referral": {
+      "asp": "direct-referral",
+      "advertiser": "ポイントタウン",
+      "status": "approved",
+      "format": "text",
+      "click_url": "https://www.pointtown.com/registration?intrid=fuFGNj2vixnyk",
+      "label": "ポイントタウンに新規登録する",
+      "pr_note": "PR：このリンクはポイントタウンの紹介リンクです。登録特典・対象条件・付与時期は登録画面で確認してください。"
+    },
+    "powl-direct-referral": {
+      "asp": "direct-referral",
+      "advertiser": "Powl",
+      "status": "approved",
+      "format": "text",
+      "click_url": "https://web.powl.jp/?invite_code=TA9N5BAJUEL",
+      "label": "Powlに新規登録する",
+      "pr_note": "PR：このリンクはPowlの紹介リンクです。登録特典・対象条件・付与時期は登録画面で確認してください。"
+    },
+    "trima-direct-referral": {
+      "asp": "direct-referral",
+      "advertiser": "トリマ",
+      "status": "approved",
+      "format": "text",
+      "click_url": "https://services.trip-mile.com/web/invite?code=zWowBHqTe",
+      "label": "トリマに新規登録する",
+      "pr_note": "PR：このリンクはトリマの紹介リンクです。登録特典・対象条件・付与時期は登録画面で確認してください。"
     }
   }
 }

@@ -162,3 +162,20 @@
 - 解説ページへ収益CTAを自動挿入しない
 
 詳細は`docs/account-opening-generation.md`を参照する。
+
+
+## ポイ活ページ
+
+`/point-site/`配下のハブ、8サービスの登録前・登録後ページ、初心者・比較ガイドは直接編集しない。
+
+- サービス内容は`data/point-site/sites/*.json`で管理する
+- ガイドは`data/point-site/guides/*.json`で管理する
+- ハブは`data/point-site-hub.json`で管理する
+- 構造は`templates/point-site-*.html`で管理する
+- CSSは`assets/kozeni-point-site.v1.css`へ共通化する
+- `python3 tools/build_point_sites.py`で生成する
+- 紹介URLは`data/monetization/programs.json`だけで管理する
+- 登録前条件は常時表示し、診断JavaScriptを追加しない
+- 金額・案件例には取得時点を明示し、現在条件の確認を促す
+
+詳細は`docs/point-site-generation.md`を参照する。
