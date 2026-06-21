@@ -1,0 +1,75 @@
+{
+  "breadcrumb_label": "対象外条件",
+  "title": "TikTok Lite招待の対象外条件まとめ｜登録前チェック",
+  "description": "TikTok Lite招待で失敗しやすい対象外条件、登録前に見るポイント、タスク達成と反映タイミングを整理します。",
+  "eyebrow": "TikTok Lite / 対象外条件",
+  "h1": "TikTok Lite招待、対象外だけ先に見る。",
+  "lead": "特典額だけを見て進むと、条件違いで取り逃がすことがあります。対象外になりやすい点を先に確認します。",
+  "cards": [
+    {
+      "label": "対象",
+      "title": "対象条件",
+      "description": "年齢・居住地・新規利用など、キャンペーンごとの条件を確認します。"
+    },
+    {
+      "label": "除外",
+      "title": "対象外",
+      "description": "過去利用、別リンク経由、期限切れなどを確認します。"
+    },
+    {
+      "label": "達成",
+      "title": "達成条件",
+      "description": "登録だけか、チェックインやタスク完了まで必要かを確認します。"
+    }
+  ],
+  "checklist_title": "対象外になりやすいチェックリスト",
+  "checklist": [
+    "招待リンクを開いた後、公式画面でキャンペーン参加表示が出ているか",
+    "過去にTikTok Liteや関連アカウントで参加していないか",
+    "年齢・地域・端末・通信環境など、キャンペーン画面の条件に合っているか",
+    "登録後に必要なタスクやチェックイン期限を見落としていないか",
+    "古いSNS投稿の金額や期限だけで判断していないか"
+  ],
+  "note": "金額・条件は時期で変わります。最終判断は登録時の公式アプリ画面を優先してください。",
+  "steps_title": "登録前の流れ",
+  "steps": [
+    {
+      "title": "招待ページ",
+      "description": "リンクを開いた時点で、参加対象のキャンペーン画面か確認します。"
+    },
+    {
+      "title": "条件確認",
+      "description": "対象外条件、年齢条件、期限、必要タスクを確認します。"
+    },
+    {
+      "title": "登録後",
+      "description": "タスク完了・反映タイミングを確認し、必要な期間は利用状況を保ちます。"
+    }
+  ],
+  "faq": [],
+  "page_type": "guide",
+  "slug": "conditions",
+  "checked_at": "2026-06-21",
+  "related": [
+    {
+      "href": "/tiktok-lite/checklist/",
+      "title": "登録前チェックリスト",
+      "description": "目的に合う確認ページへ進みます。"
+    },
+    {
+      "href": "/tiktok-lite/not-eligible/",
+      "title": "対象外になる理由",
+      "description": "目的に合う確認ページへ進みます。"
+    },
+    {
+      "href": "/tiktok-lite/invite-code/",
+      "title": "招待コード",
+      "description": "目的に合う確認ページへ進みます。"
+    },
+    {
+      "href": "/tiktok-lite/earn/",
+      "title": "登録後に見ること",
+      "description": "目的に合う確認ページへ進みます。"
+    }
+  ]
+}

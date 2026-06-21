@@ -1,0 +1,81 @@
+{
+  "breadcrumb_label": "リンクが開かない時",
+  "title": "TikTok Liteリンクが開かない時の確認｜招待リンク対策｜スマホ小銭研究所",
+  "description": "TikTok Liteの招待リンクが開かない、白画面になる、アプリへ飛ばない時に確認したいブラウザ・通信・アプリ設定を整理します。",
+  "eyebrow": "TikTok Lite / リンク不具合",
+  "h1": "リンクが開かない時に見る。",
+  "lead": "招待リンクが開かない時は、ブラウザ・通信・アプリ遷移を順番に切り分けます。",
+  "cta": {
+    "program_id": "tiktok-lite-direct-referral"
+  },
+  "cards": [
+    {
+      "label": "ブラウザ",
+      "title": "別ブラウザで開く",
+      "description": "アプリ内ブラウザで白画面になる場合は、ChromeやSafariなど標準ブラウザで開き直します。"
+    },
+    {
+      "label": "通信",
+      "title": "VPNや広告ブロックを外す",
+      "description": "VPN、広告ブロック、通信制限があるとリンク遷移に影響する場合があります。"
+    },
+    {
+      "label": "導線",
+      "title": "ストア検索に逃げない",
+      "description": "経由が切れるのを避けるため、検索から入り直す前に公式画面の表示を確認します。"
+    }
+  ],
+  "checklist_title": "確認する順番",
+  "checklist": [
+    "標準ブラウザで開いたか",
+    "VPN・広告ブロックを一時的に外したか",
+    "招待リンク経由の表示が残っているか"
+  ],
+  "note": "何度も登録操作を繰り返す前に、ブラウザと通信環境を一つずつ切り分けてください。",
+  "faq_title": "リンク不具合で迷ったら",
+  "faq_intro": "リンクが開かない時は、まず環境を切り分けます。",
+  "faq": [
+    {
+      "question": "TikTok Liteの招待リンクが開かない時は？",
+      "answer": "まず標準ブラウザで開き直します。アプリ内ブラウザ、VPN、広告ブロックが影響することがあります。"
+    },
+    {
+      "question": "白画面やエラーになる時は？",
+      "answer": "通信環境を変える、ブラウザを変える、アプリやOSを更新するなど、シンプルな切り分けから試します。"
+    },
+    {
+      "question": "ストア検索から入ってもいい？",
+      "answer": "招待経由が切れる可能性があります。検索から入り直す前に、招待リンク経由の表示が残っているか確認してください。"
+    }
+  ],
+  "page_type": "guide",
+  "slug": "link-not-open",
+  "checked_at": "2026-06-21",
+  "related": [
+    {
+      "href": "/tiktok-lite/invite-code/",
+      "title": "招待コード",
+      "description": "目的に合う確認ページへ進みます。"
+    },
+    {
+      "href": "/tiktok-lite/not-eligible/",
+      "title": "対象外チェック",
+      "description": "目的に合う確認ページへ進みます。"
+    },
+    {
+      "href": "/tiktok-lite/reward-timing/",
+      "title": "報酬はいつ？",
+      "description": "目的に合う確認ページへ進みます。"
+    },
+    {
+      "href": "/tiktok-lite/checklist/",
+      "title": "登録前チェックリスト",
+      "description": "目的に合う確認ページへ進みます。"
+    },
+    {
+      "href": "/tiktok-lite/earn/",
+      "title": "登録後に見ること",
+      "description": "目的に合う確認ページへ進みます。"
+    }
+  ]
+}

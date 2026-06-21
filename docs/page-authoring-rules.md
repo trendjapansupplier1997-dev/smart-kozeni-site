@@ -179,3 +179,19 @@
 - 金額・案件例には取得時点を明示し、現在条件の確認を促す
 
 詳細は`docs/point-site-generation.md`を参照する。
+
+## TikTok Liteページ
+
+`/tiktok-lite/`配下の8ページは直接編集しない。
+
+- ハブは`data/tiktok-lite-hub.json`で管理する
+- 確認ページは`data/tiktok-lite/pages/*.json`で管理する
+- 構造は`templates/tiktok-lite-*.html`で管理する
+- CSSは`assets/kozeni-tiktok-lite.v1.css`へ共通化する
+- `python3 tools/build_tiktok_lite.py`で生成する
+- `python3 tools/build_tiktok_lite.py --check`で生成差分を確認する
+- 紹介URLと招待コードは`data/monetization/programs.json`だけで管理する
+- 診断JavaScriptを追加せず、確認事項は常にHTMLへ表示する
+- 報酬額・期限・必要タスクは固定値として断定せず、公式画面の確認を促す
+
+詳細は`docs/tiktok-lite-generation.md`を参照する。

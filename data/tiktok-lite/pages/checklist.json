@@ -1,0 +1,86 @@
+{
+  "breadcrumb_label": "登録前チェックリスト",
+  "title": "TikTok Lite登録前チェックリスト｜対象外を避ける確認｜スマホ小銭研究所",
+  "description": "TikTok Lite登録前に、招待リンク、対象条件、過去利用、報酬条件、リンク不具合をまとめて確認するチェックリストです。",
+  "eyebrow": "TikTok Lite / 登録前チェックリスト",
+  "h1": "登録前に、ここだけ見る。",
+  "lead": "報酬条件は変わりやすいため、初回利用・招待経由・公式表示の3点を登録前に確認します。",
+  "cta": {
+    "program_id": "tiktok-lite-direct-referral"
+  },
+  "cards": [
+    {
+      "label": "1",
+      "title": "初回利用か",
+      "description": "過去に同じ端末・アカウントで利用していないか確認します。"
+    },
+    {
+      "label": "2",
+      "title": "リンク経由か",
+      "description": "招待リンクからアプリ登録までつながっているか確認します。"
+    },
+    {
+      "label": "3",
+      "title": "条件を読んだか",
+      "description": "報酬額だけでなく、日数・タスク・対象外を確認します。"
+    },
+    {
+      "label": "4",
+      "title": "公式画面を見たか",
+      "description": "最後はTikTok Liteアプリ内の表示を基準にします。"
+    }
+  ],
+  "checklist_title": "登録前チェック",
+  "checklist": [
+    "招待リンクから開いた",
+    "対象外条件を確認した",
+    "報酬ハブの現在条件を確認するつもりで進める"
+  ],
+  "note": "1つでも不明なら、登録画面の条件を確認してから進んでください。",
+  "faq_title": "登録前に迷ったら",
+  "faq_intro": "登録前に見る場所を3つだけに絞ります。",
+  "faq": [
+    {
+      "question": "登録前に最低限見ることは？",
+      "answer": "初回利用か、招待リンク経由か、公式画面に現在の条件が表示されているかを確認します。"
+    },
+    {
+      "question": "報酬額だけ見て登録していい？",
+      "answer": "報酬額だけでなく、対象条件、日数、タスク、対象外条件まで見てから進む方が安全です。"
+    },
+    {
+      "question": "条件がよく分からない時は？",
+      "answer": "無理に進めず、公式画面の表示を確認してから判断します。条件が曖昧なまま登録しない方が失敗しにくいです。"
+    }
+  ],
+  "page_type": "guide",
+  "slug": "checklist",
+  "checked_at": "2026-06-21",
+  "related": [
+    {
+      "href": "/tiktok-lite/invite-code/",
+      "title": "招待コード",
+      "description": "目的に合う確認ページへ進みます。"
+    },
+    {
+      "href": "/tiktok-lite/not-eligible/",
+      "title": "対象外チェック",
+      "description": "目的に合う確認ページへ進みます。"
+    },
+    {
+      "href": "/tiktok-lite/reward-timing/",
+      "title": "報酬はいつ？",
+      "description": "目的に合う確認ページへ進みます。"
+    },
+    {
+      "href": "/tiktok-lite/link-not-open/",
+      "title": "リンクが開かない時",
+      "description": "目的に合う確認ページへ進みます。"
+    },
+    {
+      "href": "/tiktok-lite/earn/",
+      "title": "登録後に見ること",
+      "description": "目的に合う確認ページへ進みます。"
+    }
+  ]
+}

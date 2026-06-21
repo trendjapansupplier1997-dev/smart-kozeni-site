@@ -1,0 +1,63 @@
+{
+  "breadcrumb_label": "登録後に見ること",
+  "title": "TikTok Lite登録後に見ること｜報酬条件チェック｜スマホ小銭研究所",
+  "description": "TikTok Lite登録後に見るタスク、報酬条件、反映タイミング、対象外になりやすい点を整理します。",
+  "eyebrow": "TikTok Lite / 登録済み向け",
+  "h1": "TikTok Lite、登録後に見る。",
+  "lead": "登録後は、アプリ内に表示されたタスク、期限、達成状況を確認します。",
+  "cards": [
+    {
+      "label": "01",
+      "title": "アプリ内タスク",
+      "description": "表示されたタスクだけを確認し、外部情報よりアプリ内表示を優先します。"
+    },
+    {
+      "label": "02",
+      "title": "期限を確認",
+      "description": "報酬条件には期限がある場合があります。表示期限を確認します。"
+    },
+    {
+      "label": "03",
+      "title": "毎日できる分だけ",
+      "description": "動画視聴やチェックインなど、無理なく続けられるものだけ進めます。"
+    },
+    {
+      "label": "避ける",
+      "title": "条件不明は避ける",
+      "description": "表示条件が読めない、対象か分からない場合は無理に進めません。"
+    }
+  ],
+  "checklist_title": "登録後の確認",
+  "checklist": [
+    "報酬ハブに対象キャンペーンが表示されているか",
+    "必要なタスクと期限を確認したか",
+    "達成状況と付与予定を記録したか"
+  ],
+  "note": "報酬条件はアカウントごとに異なる場合があります。アプリ内の表示を基準にしてください。",
+  "faq": [],
+  "page_type": "guide",
+  "slug": "earn",
+  "checked_at": "2026-06-21",
+  "related": [
+    {
+      "href": "/tiktok-lite/reward-timing/",
+      "title": "報酬はいつ？",
+      "description": "目的に合う確認ページへ進みます。"
+    },
+    {
+      "href": "/tiktok-lite/not-eligible/",
+      "title": "対象外になる理由",
+      "description": "目的に合う確認ページへ進みます。"
+    },
+    {
+      "href": "/tiktok-lite/checklist/",
+      "title": "登録前チェックリスト",
+      "description": "目的に合う確認ページへ進みます。"
+    },
+    {
+      "href": "/point-site/",
+      "title": "ポイ活一覧",
+      "description": "目的に合う確認ページへ進みます。"
+    }
+  ]
+}

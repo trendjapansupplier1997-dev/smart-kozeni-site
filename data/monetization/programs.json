@@ -175,6 +175,16 @@
       "click_url": "https://services.trip-mile.com/web/invite?code=zWowBHqTe",
       "label": "トリマに新規登録する",
       "pr_note": "PR：このリンクはトリマの紹介リンクです。登録特典・対象条件・付与時期は登録画面で確認してください。"
+    },
+    "tiktok-lite-direct-referral": {
+      "asp": "direct-referral",
+      "advertiser": "TikTok Lite",
+      "status": "approved",
+      "format": "text",
+      "click_url": "https://lite.tiktok.com/t/ZS9FNf4YXU4EW-eKSGv/",
+      "label": "TikTok Liteの招待リンクを開く",
+      "pr_note": "PR：このリンクはTikTok Liteの紹介リンクです。対象条件・報酬額・必要タスク・期限は登録時の公式画面で確認してください。",
+      "referral_code": "913299034"
     }
   }
 }

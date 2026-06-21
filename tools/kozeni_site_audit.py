@@ -20,6 +20,7 @@ import build_home_network
 import build_credit_cards
 import build_account_opening
 import build_point_sites
+import build_tiktok_lite
 import monetization
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -638,6 +639,8 @@ def audit_monetization_registry() -> list[str]:
         ROOT / "data" / "account-opening-hub.json",
         *sorted((ROOT / "data" / "point-site").rglob("*.json")),
         ROOT / "data" / "point-site-hub.json",
+        *sorted((ROOT / "data" / "tiktok-lite").rglob("*.json")),
+        ROOT / "data" / "tiktok-lite-hub.json",
     ]
     known_urls = {program["click_url"] for program in programs.values()}
     for data_path in affiliate_data_paths:
@@ -1201,6 +1204,137 @@ def audit_point_sites() -> list[str]:
     return problems
 
 
+
+def audit_tiktok_lite() -> list[str]:
+    problems: list[str] = []
+    sitemap = sitemap_urls()
+    try:
+        outputs = build_tiktok_lite.build_outputs()
+        pages = build_tiktok_lite.load_pages()
+        hub = build_tiktok_lite.load_hub()
+    except Exception as error:
+        return [f"data/tiktok-lite: invalid TikTok Lite data: {error}"]
+
+    if len(outputs) != 8:
+        problems.append(
+            f"tiktok-lite: expected 8 generated pages, got {len(outputs)}"
+        )
+
+    if hub["cta"]["program_id"] != build_tiktok_lite.PROGRAM_ID:
+        problems.append(
+            "data/tiktok-lite-hub.json: referral program differs from expected"
+        )
+
+    referral_url = hub["cta"]["url"]
+    referral_code = str(hub["cta"].get("referral_code", ""))
+    page_by_output = {
+        build_tiktok_lite.output_for_slug(slug): data
+        for slug, data in pages.items()
+    }
+
+    for page, rendered in sorted(outputs.items()):
+        rel = page.relative_to(ROOT).as_posix()
+        if not page.exists():
+            problems.append(f"{rel}: generated TikTok Lite page is missing")
+            continue
+        text = read(page)
+        if text != rendered:
+            problems.append(f"{rel}: generated TikTok Lite HTML is outdated")
+        if text.count("<h1") != 1:
+            problems.append(f"{rel}: h1 must appear exactly once")
+        if "<style" in text:
+            problems.append(f"{rel}: inline style is forbidden")
+        if re.search(
+            r'<script(?![^>]*type="application/ld\+json")',
+            text,
+            flags=re.I,
+        ):
+            problems.append(f"{rel}: executable inline script is forbidden")
+        if text.count('type="application/ld+json"') != 1:
+            problems.append(f"{rel}: exactly one JSON-LD graph is required")
+        if f'href="{build_tiktok_lite.STYLE_HREF}"' not in text:
+            problems.append(f"{rel}: shared TikTok Lite CSS is missing")
+        if "kozeni-point.v1.css" in text:
+            problems.append(f"{rel}: legacy mixed point CSS is referenced")
+        for token in (
+            "data-kozeni-quiz",
+            "data-register-url",
+            "quiz-submit",
+            "quiz-question",
+        ):
+            if token in text:
+                problems.append(f"{rel}: legacy interactive token remains: {token}")
+        canonical_match = re.search(
+            r'<link rel="canonical" href="([^"]+)">',
+            text,
+        )
+        if not canonical_match:
+            problems.append(f"{rel}: canonical is missing")
+        elif canonical_match.group(1) not in sitemap:
+            problems.append(f"{rel}: canonical URL is missing from sitemap")
+        if 'class="kozeni-breadcrumb"' not in text:
+            problems.append(f"{rel}: visible breadcrumb is required")
+
+        data = page_by_output.get(page)
+        cta = hub["cta"] if data is None else data.get("cta")
+        if cta:
+            expected_url = html.escape(referral_url, quote=True)
+            if text.count(expected_url) != 1:
+                problems.append(
+                    f"{rel}: referral URL must appear exactly once"
+                )
+            for token in (
+                "nofollow",
+                "sponsored",
+                "noopener",
+                "noreferrer",
+                'referrerpolicy="no-referrer-when-downgrade"',
+            ):
+                if token not in text:
+                    problems.append(f"{rel}: referral CTA missing {token}")
+            if html.escape(cta["note"]) not in text:
+                problems.append(f"{rel}: PR note differs from registry")
+        elif referral_url in text:
+            problems.append(f"{rel}: page without CTA contains referral URL")
+
+        if data is not None:
+            if text.count("<details>") != len(data.get("faq", [])):
+                problems.append(f"{rel}: visible FAQ count differs from data")
+            for item in data["related"]:
+                if not local_target_exists(item["href"]):
+                    problems.append(
+                        f"{rel}: broken related link: {item['href']}"
+                    )
+
+    invite_page = build_tiktok_lite.output_for_slug("invite-code")
+    invite_text = read(invite_page)
+    if not referral_code:
+        problems.append(
+            "data/monetization/programs.json: TikTok Lite referral_code is missing"
+        )
+    elif invite_text.count(html.escape(referral_code)) != 1:
+        problems.append(
+            "tiktok-lite/invite-code/index.html: referral code must appear once"
+        )
+    for page in outputs:
+        if page != invite_page and referral_code and referral_code in read(page):
+            problems.append(
+                f"{page.relative_to(ROOT)}: referral code must only appear on invite-code"
+            )
+
+    for route in hub["route_cards"]:
+        if not local_target_exists(route["href"]):
+            problems.append(
+                f"tiktok-lite/index.html: broken route link: {route['href']}"
+            )
+    for section in hub["sections"]:
+        for card in section["cards"]:
+            if not local_target_exists(card["href"]):
+                problems.append(
+                    f"tiktok-lite/index.html: broken card link: {card['href']}"
+                )
+    return problems
+
 def show_list(
     title: str,
     items: list[str],
@@ -1279,6 +1413,7 @@ def main() -> int:
     credit_card_problems = audit_credit_cards()
     account_opening_problems = audit_account_opening()
     point_site_problems = audit_point_sites()
+    tiktok_lite_problems = audit_tiktok_lite()
 
     print("=== kozeni site audit ===")
     print(f"HTML files: {len(HTML_FILES)}")
@@ -1336,6 +1471,11 @@ def main() -> int:
     show_list(
         "generated point-site pages",
         point_site_problems,
+        problems,
+    )
+    show_list(
+        "generated TikTok Lite pages",
+        tiktok_lite_problems,
         problems,
     )
 

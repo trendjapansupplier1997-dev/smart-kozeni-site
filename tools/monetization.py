@@ -52,6 +52,16 @@ def _validate_program(program_id: str, program: Any) -> None:
         raise ValueError(
             f"{REGISTRY_PATH}: {program_id}.tracking_pixel_url must use https"
         )
+    referral_code = program.get("referral_code")
+    if referral_code is not None:
+        if not isinstance(referral_code, str) or not referral_code.strip():
+            raise ValueError(
+                f"{REGISTRY_PATH}: {program_id}.referral_code must be a non-empty string"
+            )
+        if len(referral_code) > 64:
+            raise ValueError(
+                f"{REGISTRY_PATH}: {program_id}.referral_code is too long"
+            )
     creative = program.get("creative")
     if program["format"] == "banner":
         if not isinstance(creative, dict):

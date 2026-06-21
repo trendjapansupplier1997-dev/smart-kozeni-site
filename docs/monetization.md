@@ -101,3 +101,12 @@ python3 tools/kozeni_site_audit.py
 - `kurashiru-reward-direct-referral`
 
 サービスJSONは`cta.program_id`だけを保持し、紹介コードやURLをHTML・JSONへ重複させません。
+
+## TikTok Liteで利用する紹介プログラム
+
+TikTok Liteの紹介URLと招待コードは次の1件へ集約します。
+
+- `tiktok-lite-direct-referral`
+
+ハブと登録前ページは`cta.program_id`だけを参照します。
+招待コードは`invite-code`ページだけに表示し、URLやコードをHTML・ページJSONへ複製しません。

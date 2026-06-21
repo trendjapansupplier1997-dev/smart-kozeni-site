@@ -1,0 +1,98 @@
+{
+  "title": "TikTok Lite招待の条件・対象外チェック｜登録前に確認",
+  "description": "TikTok Liteの招待特典は、登録前に対象条件・対象外・タスク達成・反映タイミングを確認。登録前後に見るページを目的別に整理します。",
+  "h1": "TikTok Lite、登録前に見る。",
+  "lead": "条件が変わりやすい招待案件です。登録前は対象条件、登録後はタスクと反映状況をアプリ内の公式表示で確認します。",
+  "checked_at": "2026-06-21",
+  "cta": {
+    "program_id": "tiktok-lite-direct-referral"
+  },
+  "route_cards": [
+    {
+      "tag": "登録前",
+      "title": "最初に条件を確認する",
+      "description": "初回利用、招待リンク経由、対象外条件を確認してから進みます。",
+      "href": "/tiktok-lite/checklist/",
+      "label": "登録前チェックへ"
+    },
+    {
+      "tag": "登録済み",
+      "title": "タスクと反映状況を見る",
+      "description": "登録後は報酬ハブ、期限、必要タスクを確認します。",
+      "href": "/tiktok-lite/earn/",
+      "label": "登録後ガイドへ"
+    }
+  ],
+  "sections": [
+    {
+      "title": "登録前に確認する",
+      "cards": [
+        {
+          "href": "/tiktok-lite/checklist/",
+          "tag": "基本",
+          "title": "登録前チェックリスト",
+          "description": "初回利用、リンク経由、公式条件をまとめて確認します。"
+        },
+        {
+          "href": "/tiktok-lite/conditions/",
+          "tag": "対象外",
+          "title": "対象外条件まとめ",
+          "description": "過去利用、地域、端末、期限などを先に確認します。"
+        },
+        {
+          "href": "/tiktok-lite/invite-code/",
+          "tag": "招待",
+          "title": "招待コードの使い方",
+          "description": "リンクとコードの使い分け、入力前の注意点を確認します。"
+        },
+        {
+          "href": "/tiktok-lite/link-not-open/",
+          "tag": "不具合",
+          "title": "リンクが開かない時",
+          "description": "ブラウザ、通信、アプリ遷移を順番に切り分けます。"
+        }
+      ]
+    },
+    {
+      "title": "登録後に確認する",
+      "cards": [
+        {
+          "href": "/tiktok-lite/earn/",
+          "tag": "登録後",
+          "title": "登録後に見ること",
+          "description": "表示されたタスク、期限、続けやすい使い方を確認します。"
+        },
+        {
+          "href": "/tiktok-lite/reward-timing/",
+          "tag": "反映",
+          "title": "報酬はいつ？",
+          "description": "反映時期、必要日数、達成状況の見方を確認します。"
+        },
+        {
+          "href": "/tiktok-lite/not-eligible/",
+          "tag": "対象外",
+          "title": "対象外になる理由",
+          "description": "過去利用や経由切れなど、報酬が出ない原因を確認します。"
+        }
+      ]
+    }
+  ],
+  "checks": [
+    {
+      "label": "初回利用",
+      "title": "端末とアカウント",
+      "description": "過去に利用した端末・アカウントでないか確認します。"
+    },
+    {
+      "label": "申込経路",
+      "title": "招待リンク経由",
+      "description": "リンクから登録画面まで経由が切れていないか確認します。"
+    },
+    {
+      "label": "公式条件",
+      "title": "アプリ内表示",
+      "description": "報酬額、期限、必要タスクは現在の公式表示を優先します。"
+    }
+  ],
+  "note": "紹介条件や報酬額は時期・端末・アカウントで異なる場合があります。古いSNS投稿ではなく、登録時の公式画面を基準にしてください。"
+}
