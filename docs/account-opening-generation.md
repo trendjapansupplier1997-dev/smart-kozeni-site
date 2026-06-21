@@ -43,18 +43,10 @@ python3 tools/build_account_opening.py
 python3 tools/build_account_opening.py matsui-sec
 ```
 
-生成結果がSSOTと一致するか確認します。
+## 生成結果と監査
 
 ```bash
-python3 tools/build_account_opening.py --check
-```
-
-## 監査
-
-```bash
-python3 tools/kozeni_site_audit.py
-python3 tools/kozeni_design_audit.py
-git diff --check
+python3 tools/verify_site.py
 ```
 
 統合監査は次を確認します。

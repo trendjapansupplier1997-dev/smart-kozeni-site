@@ -30,8 +30,7 @@ assets/kozeni-point-site.v1.css
 
 ```bash
 python3 tools/build_point_sites.py
-python3 tools/build_point_sites.py --check
-python3 tools/kozeni_site_audit.py
+python3 tools/verify_site.py
 ```
 
 ## 禁止事項

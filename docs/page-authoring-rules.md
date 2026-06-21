@@ -1,4 +1,4 @@
-# スマホ小銭研究所 ページ作成ルール v42.2
+# スマホ小銭研究所 ページ作成ルール v43.0
 
 このドキュメントは、今後ページを増やしてもサイト構成を崩さないための運用ルールです。
 
@@ -9,6 +9,16 @@
 - 「準備中」「一部公開」「工事中」など、未完成に見える表現を表側に出さない。
 - 掲載できない案件は無理に出さず、「掲載方針」や「条件確認メモ」として成立させる。
 - 旧URLの実体ページは残さず、必要な場合は `_redirects` に集約する。
+
+## 検証SSOT
+
+公開前確認は必ず次の1コマンドで行う。
+
+```bash
+python3 tools/verify_site.py
+```
+
+個別generatorや監査コマンドをリリース手順へ追加しない。新しい`tools/build_*.py`は自動的に検証対象となる。詳細は`docs/site-verification.md`を参照する。
 
 ## URLとカテゴリ
 
@@ -88,8 +98,7 @@
 - 内容は`data/mobile-sim/<slug>.json`で管理する
 - 構造は`templates/mobile-sim-detail.html`で管理する
 - `python3 tools/build_mobile_sim.py`でHTMLを生成する
-- `python3 tools/build_mobile_sim.py --check`で生成差分を確認する
-- `python3 tools/kozeni_site_audit.py`でCTA・PR・構造・内部リンクを監査する
+- `python3 tools/verify_site.py`で生成差分、CTA、PR、構造、内部リンクをまとめて監査する
 - CSS更新時は`/assets/*`のimmutableキャッシュを考慮し、ファイル名の版を上げる
 
 詳細は`docs/mobile-sim-generation.md`を参照する。
@@ -140,12 +149,12 @@
 - 構造は`templates/credit-card-*.html`で管理する
 - CSSは`assets/kozeni-credit-card.v1.css`へ共通化する
 - `python3 tools/build_credit_cards.py`で生成する
-- `python3 tools/build_credit_cards.py --check`で生成差分を確認する
+- `python3 tools/verify_site.py`で生成差分を確認する
 - 診断JavaScriptを追加せず、重要な条件は常にHTMLへ表示する
 
 ## 公開前チェック
 
-公開前は `python3 tools/kozeni_site_audit.py` を実行し、最低限の欠落を確認する。
+公開前は `python3 tools/verify_site.py` を実行し、最低限の欠落を確認する。
 
 ## 口座開設ページ
 
@@ -157,7 +166,7 @@
 - 構造は`templates/account-opening-*.html`で管理する
 - CSSは`assets/kozeni-account-opening.v1.css`へ共通化する
 - `python3 tools/build_account_opening.py`で生成する
-- `python3 tools/build_account_opening.py --check`で生成差分を確認する
+- `python3 tools/verify_site.py`で生成差分を確認する
 - 広告リンクは`program_id`だけを記述し、生URLをページデータへ複製しない
 - 解説ページへ収益CTAを自動挿入しない
 
@@ -189,7 +198,7 @@
 - 構造は`templates/tiktok-lite-*.html`で管理する
 - CSSは`assets/kozeni-tiktok-lite.v1.css`へ共通化する
 - `python3 tools/build_tiktok_lite.py`で生成する
-- `python3 tools/build_tiktok_lite.py --check`で生成差分を確認する
+- `python3 tools/verify_site.py`で生成差分を確認する
 - 紹介URLと招待コードは`data/monetization/programs.json`だけで管理する
 - 診断JavaScriptを追加せず、確認事項は常にHTMLへ表示する
 - 報酬額・期限・必要タスクは固定値として断定せず、公式画面の確認を促す
@@ -205,7 +214,7 @@
 - 構造は`templates/lifestyle-*.html`で管理する
 - CSSは`assets/kozeni-lifestyle.v1.css`へ共通化する
 - `python3 tools/build_lifestyle.py`で生成する
-- `python3 tools/build_lifestyle.py --check`で生成差分を確認する
+- `python3 tools/verify_site.py`で生成差分を確認する
 - ASP URLは`data/monetization/programs.json`だけで管理し、ページJSONには`program_id`だけを書く
 - クーポン、ポイント、予約、キャンセル条件は固定保証せず、公式画面の確認を促す
 

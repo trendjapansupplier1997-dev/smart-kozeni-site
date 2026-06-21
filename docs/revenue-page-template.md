@@ -618,5 +618,5 @@ tools/build_credit_cards.py
 
 ```bash
 python3 tools/build_credit_cards.py
-python3 tools/build_credit_cards.py --check
+python3 tools/verify_site.py
 ```

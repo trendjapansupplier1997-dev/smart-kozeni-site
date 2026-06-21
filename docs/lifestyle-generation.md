@@ -35,8 +35,6 @@ ASP URLは`data/monetization/programs.json`だけで管理する。各ページJ
 
 ```bash
 python3 tools/build_lifestyle.py
-python3 tools/build_lifestyle.py --check
-python3 tools/kozeni_site_audit.py
-python3 tools/kozeni_design_audit.py
+python3 tools/verify_site.py
 git diff --check
 ```

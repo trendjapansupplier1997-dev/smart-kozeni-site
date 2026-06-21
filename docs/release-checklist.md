@@ -1,71 +1,79 @@
-# スマホ小銭研究所 リリース前チェックリスト v43.0
+# スマホ小銭研究所 リリース前チェックリスト v44.0
 
 ## 1. 変更前
 
 ```bash
 cd ~/smart-kozeni-site
-git status --short
+git status --short --branch
 ```
 
-作業前に未コミット差分がないことを確認する。
+作業前に、意図しない未コミット差分がないことを確認する。
 
-## 2. 変更後の基本確認
+## 2. 編集と生成
+
+生成対象HTMLは直接編集せず、対応する`data/`・`templates/`・`tools/build_*.py`を変更する。
+
+必要なgeneratorだけを実行するか、全生成ページを更新する。
 
 ```bash
-git diff --stat
-git diff --check
-python3 tools/build_site_foundation.py --check
-python3 tools/build_point_sites.py --check
-python3 tools/build_tiktok_lite.py --check
-python3 tools/kozeni_site_audit.py
+python3 tools/verify_site.py --write
 ```
 
-## 3. 新規ページを追加したとき
+`--write`後は必ず差分を確認する。
+
+```bash
+git status --short
+git diff --check
+git diff --stat
+```
+
+## 3. 公開前の統合検証
+
+検証入口は次の1コマンドだけとする。
+
+```bash
+python3 tools/verify_site.py
+```
+
+個別generator、サイト監査、デザイン監査をリリース手順へ重複記載しない。`verify_site.py`が自動発見して実行する。
+
+## 4. 新規ページを追加したとき
 
 - URLがカテゴリ配下として自然か
 - title / description / canonical があるか
-- sitemap.xml に追加したか
+- `sitemap.xml`へ追加したか
 - 一覧ページから内部リンクしたか
 - PR/紹介/広告リンク表記があるか
 - 公式条件の確認を促しているか
 - 「準備中」「一部公開」など未完成表示を出していないか
+- 生成対象ならHTMLを直接編集していないか
 
-## 4. 旧URLを整理したとき
+## 5. 旧URL・資産を整理したとき
 
 - 旧ページ実体を残していないか
-- `_redirects` に転送先を1回だけ定義したか
-- sitemap.xml に旧URLを残していないか
+- `_redirects`に転送先を1回だけ定義したか
+- `sitemap.xml`に旧URLを残していないか
+- 旧`v36`、旧home/menu資産を復活させていないか
+- インラインCSS・インライン実行JavaScriptを追加していないか
 
-## 5. コミット前
-
-```bash
-git status --short
-git diff --stat
-git diff --check
-python3 tools/build_site_foundation.py --check
-python3 tools/build_point_sites.py --check
-python3 tools/build_tiktok_lite.py --check
-python3 tools/kozeni_site_audit.py
-```
-
-問題なければコミットする。
+## 6. コミット前
 
 ```bash
 git add -A
-git commit -m "<変更内容>"
-git push
+git diff --cached --check
+git diff --cached --stat
+git diff --cached --name-status
+python3 tools/verify_site.py
 ```
 
-
-買い物・旅行ページを変更した場合：
+問題がなければコミット・pushする。
 
 ```bash
-python3 tools/build_lifestyle.py --check
+git commit -m "<変更内容>"
+git push origin main
 ```
 
-## 6. サイト基盤と旧資産
+## 7. push後
 
-- `python3 tools/build_site_foundation.py --check`が成功する
-- `style.v36.css`、`kozeni-nav.v36.3.*`、`script.v36.js`が存在しない
-- インラインCSSとインライン実行JavaScriptが0ページである
-- ホーム、404、運営者情報、問い合わせ、PR表記、プライバシーを直接編集していない
+GitHub Actionsの`Site verification`が成功したことを確認する。
+ローカルとCIは同じ`python3 tools/verify_site.py`を実行するため、別の検証手順を増やさない。

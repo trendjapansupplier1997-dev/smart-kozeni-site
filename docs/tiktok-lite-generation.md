@@ -30,18 +30,10 @@ assets/kozeni-tiktok-lite.v1.css
 python3 tools/build_tiktok_lite.py
 ```
 
-生成差分の確認：
+## 生成結果と監査
 
 ```bash
-python3 tools/build_tiktok_lite.py --check
-```
-
-## 監査
-
-```bash
-python3 tools/kozeni_site_audit.py
-python3 tools/kozeni_design_audit.py
-git diff --check
+python3 tools/verify_site.py
 ```
 
 統合監査では以下を確認します。

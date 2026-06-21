@@ -37,16 +37,10 @@ python3 tools/build_mobile_sim.py
 python3 tools/build_mobile_sim.py ahamo
 ```
 
-生成済みHTMLがJSONとテンプレートに一致するか確認します。
+生成済みHTMLの一致とサイト全体の監査をまとめて確認します。
 
 ```bash
-python3 tools/build_mobile_sim.py --check
-```
-
-サイト全体の監査では生成差分も検査されます。
-
-```bash
-python3 tools/kozeni_site_audit.py
+python3 tools/verify_site.py
 ```
 
 ## 更新手順
@@ -55,7 +49,7 @@ python3 tools/kozeni_site_audit.py
 2. `checked_at`を更新する
 3. JSONだけを編集する
 4. HTMLを生成する
-5. `--check`とサイト監査を実行する
+5. `python3 tools/verify_site.py`を実行する
 6. `git diff`でJSONと生成HTMLを確認する
 7. ローカルHTTPサーバーでPC・スマホ幅を確認する
 8. commit・pushする
@@ -117,7 +111,7 @@ python3 tools/build_mobile_sim_hub.py
 生成差分の確認：
 
 ```bash
-python3 tools/build_mobile_sim_hub.py --check
+python3 tools/verify_site.py
 ```
 
 比較ハブにアフィリエイトURLを直接置かない。
@@ -139,7 +133,7 @@ CTA・PR注記・ASP URL・計測ピクセルをガイドJSONへ複製しませ�
 
 ```bash
 python3 tools/build_mobile_sim_guides.py
-python3 tools/build_mobile_sim_guides.py --check
+python3 tools/verify_site.py
 ```
 
 ## ホーム回線ページ
@@ -157,7 +151,7 @@ tools/build_home_network.py
 
 ```bash
 python3 tools/build_home_network.py
-python3 tools/build_home_network.py --check
+python3 tools/verify_site.py
 ```
 
 `/mobile-sim/no-construction-wifi/`は重複ページを置かず、

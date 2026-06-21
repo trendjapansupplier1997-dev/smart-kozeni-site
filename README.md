@@ -30,84 +30,29 @@ Cloudflare Pages 用のクリーンな静的サイト一式です。
 - `docs/revenue-page-template.md` 収益ページ雛形/導線設計
 - `docs/page-authoring-rules.md` 新規ページ作成ルール
 - `docs/release-checklist.md` リリース前チェックリスト
+- `docs/site-verification.md` ローカル/CI共通の検証SSOT
 - `docs/mobile-sim-generation.md` スマホ回線詳細ページのSSOT/生成/監査ルール
 - `docs/monetization.md` 承認済みASP案件と収益導線のSSOTルール
 - `docs/account-opening-generation.md` 口座開設ページのSSOT/生成/監査ルール
 - `docs/point-site-generation.md` ポイ活ページのSSOT/生成/監査ルール
 - `docs/tiktok-lite-generation.md` TikTok LiteページのSSOT/生成/監査ルール
-- `docs/site-foundation-generation.md` ホーム・404・サイト情報ページのSSOT/旧v36撤去ルール
-- `tools/kozeni_site_audit.py` サイト衛生チェック用スクリプト
-
-監査コマンド：
-
-```bash
-python3 tools/kozeni_site_audit.py
-```
-
-スマホ回線詳細ページの生成確認：
-
-```bash
-python3 tools/build_mobile_sim.py --check
-```
-
-スマホ回線比較ハブの生成確認：
-
-```bash
-python3 tools/build_mobile_sim_hub.py --check
-```
-
-スマホ回線の確認・トラブルページ生成確認：
-
-```bash
-python3 tools/build_mobile_sim_guides.py --check
-```
-
-ホーム回線ページの生成確認：
-
-```bash
-python3 tools/build_home_network.py --check
-```
-
-クレジットカードページの生成確認：
-
-```bash
-python3 tools/build_credit_cards.py --check
-```
-
-口座開設ページの生成確認：
-
-```bash
-python3 tools/build_account_opening.py --check
-```
-
-ポイ活ページの生成確認：
-
-```bash
-python3 tools/build_point_sites.py --check
-```
-
-TikTok Liteページの生成確認：
-
-```bash
-python3 tools/build_tiktok_lite.py --check
-```
-
-デザイン監査コマンド：
-
-```bash
-python3 tools/kozeni_design_audit.py
-```
-
 - `docs/lifestyle-generation.md` 買い物・旅行ページのSSOT/生成/収益導線ルール
+- `docs/site-foundation-generation.md` ホーム・404・サイト情報ページのSSOT/旧v36撤去ルール
 
-買い物・旅行ページの生成確認：
+## 統合検証
 
-```bash
-python3 tools/build_lifestyle.py --check
-```
-
-サイト基盤ページの生成確認：
+ローカルとGitHub Actionsは同じ1コマンドを使用します。
 
 ```bash
-python3 tools/build_site_foundation.py --check
+python3 tools/verify_site.py
 ```
+
+このコマンドは、すべてのgenerator、JSON/JavaScript構文、収益導線、内部リンク、canonical、sitemap、デザイン、Git差分をまとめて検証します。
+
+すべての生成ページを書き直してから検証する場合：
+
+```bash
+python3 tools/verify_site.py --write
+```
+
+`--write`後は`git status --short`と`git diff --stat`で生成差分を確認してください。

@@ -27,9 +27,7 @@ HTMLは生成物です。内容はJSON、共通構造はテンプレート、表
 
 ```bash
 python3 tools/build_site_foundation.py
-python3 tools/build_site_foundation.py --check
-python3 tools/kozeni_site_audit.py
-python3 tools/kozeni_design_audit.py
+python3 tools/verify_site.py
 ```
 
 ## JavaScriptの境界

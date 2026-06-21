@@ -65,7 +65,7 @@ size: 320x100
 ## 監査
 
 ```bash
-python3 tools/kozeni_site_audit.py
+python3 tools/verify_site.py
 ```
 
 統合監査では以下を確認します。
