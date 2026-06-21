@@ -1,0 +1,57 @@
+{
+  "page_type": "product",
+  "slug": "matsui-sec",
+  "name": "松井証券",
+  "category": "証券・NISA・iDeCo",
+  "title": "松井証券｜NISA・iDeCo口座開設前チェック｜スマホ小銭研究所",
+  "description": "松井証券でNISA・iDeCoを検討する前に、制度の違い、申込条件、本人確認、公式条件を確認します。",
+  "eyebrow": "口座開設 / 証券・NISA・iDeCo",
+  "h1": "松井証券、NISAとiDeCoの入口として見る。",
+  "lead": "NISAとiDeCoを同じものとして扱わず、資金の自由度と申込条件を分けて確認します。",
+  "checked_at": "2026-06-21",
+  "verdict_title": "NISAとiDeCoは制度を分けて比較する",
+  "verdict": "NISAは投資枠、iDeCoは老後資金づくりの制度です。松井証券を候補にする場合も、制度の違いと対象条件を先に確認します。",
+  "badges": [
+    "NISA",
+    "iDeCo",
+    "証券口座"
+  ],
+  "checklist": [
+    "新規口座開設の対象条件",
+    "NISAとiDeCoのどちらを申し込むか",
+    "iDeCoの掛金・手数料・原則60歳まで引き出せない点",
+    "本人確認とマイナンバーの提出方法",
+    "広告経由の成果条件と対象外"
+  ],
+  "cautions": [
+    "NISAとiDeCoは制度と申込手続きが異なる",
+    "節税効果だけでiDeCoを選ばず資金拘束も確認する",
+    "投資判断や商品選びは口座開設とは分けて考える"
+  ],
+  "cta": {
+    "program_id": "matsui-ideco-a8"
+  },
+  "sources": [
+    {
+      "label": "松井証券 口座開設",
+      "url": "https://www.matsui.co.jp/apply/"
+    }
+  ],
+  "related": [
+    {
+      "href": "/account-opening/nisa-ideco/",
+      "title": "NISAとiDeCoの違い",
+      "description": "自由度、税制、引き出し条件を確認します。"
+    },
+    {
+      "href": "/account-opening/securities-basics/",
+      "title": "証券口座の基本",
+      "description": "口座と制度の関係を整理します。"
+    },
+    {
+      "href": "/account-opening/",
+      "title": "口座開設一覧",
+      "description": "他の銀行・証券候補と比較します。"
+    }
+  ]
+}

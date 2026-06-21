@@ -1,0 +1,60 @@
+{
+  "page_type": "product",
+  "slug": "gmo-click-sec",
+  "name": "GMOクリック証券",
+  "category": "証券口座",
+  "title": "GMOクリック証券｜証券口座開設前チェック｜スマホ小銭研究所",
+  "description": "GMOクリック証券の証券口座を申し込む前に、対象口座、本人確認、開設条件、公式申込先を確認します。",
+  "eyebrow": "口座開設 / 証券口座",
+  "h1": "GMOクリック証券、申し込み前に見る。",
+  "lead": "FX口座と混同せず、証券取引口座の申込条件と本人確認を先に整理します。",
+  "checked_at": "2026-06-21",
+  "verdict_title": "証券口座の種類と申込完了条件を先に確認",
+  "verdict": "同じ会社でも証券、FX、CFDなど口座の種類が分かれます。広告やキャンペーンではなく、申し込む口座名と開設完了条件を公式画面で確認します。",
+  "badges": [
+    "証券口座",
+    "本人確認",
+    "口座種別を確認"
+  ],
+  "checklist": [
+    "申し込む口座が証券取引口座か",
+    "申込だけでなく開設完了が必要か",
+    "本人確認書類とマイナンバーの提出方法",
+    "過去申込や重複口座の扱い",
+    "取引や入金を条件とする特典がないか"
+  ],
+  "cautions": [
+    "FX口座やCFD口座と証券取引口座を混同しない",
+    "金融商品の値動きや損失リスクは口座開設とは別に判断する",
+    "キャンペーン条件は申込前の公式画面で再確認する"
+  ],
+  "cta": {
+    "url": "https://www.click-sec.com/corp/kouza/entry/",
+    "label": "GMOクリック証券の公式条件を見る",
+    "affiliate": false,
+    "note": "公式サイト：口座種別、必要書類、申込条件を確認してください。"
+  },
+  "sources": [
+    {
+      "label": "GMOクリック証券 口座開設",
+      "url": "https://www.click-sec.com/corp/kouza/entry/"
+    }
+  ],
+  "related": [
+    {
+      "href": "/account-opening/securities-basics/",
+      "title": "証券口座の基本",
+      "description": "銀行口座との役割の違いを確認します。"
+    },
+    {
+      "href": "/account-opening/nisa-ideco/",
+      "title": "NISAとiDeCoの違い",
+      "description": "制度の目的と引き出し条件を整理します。"
+    },
+    {
+      "href": "/account-opening/",
+      "title": "口座開設一覧",
+      "description": "銀行・証券の候補へ戻ります。"
+    }
+  ]
+}

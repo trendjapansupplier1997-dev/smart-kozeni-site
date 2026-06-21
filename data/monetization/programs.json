@@ -84,6 +84,25 @@
         "height": 100,
         "alt": "東急カード"
       }
+    },
+    "rakuten-securities-trafficgate": {
+      "asp": "trafficgate",
+      "advertiser": "楽天証券",
+      "status": "approved",
+      "format": "text",
+      "click_url": "https://ad2.trafficgate.net/t/r/928/738/317799_397134",
+      "label": "楽天証券の公式条件を見る",
+      "pr_note": "PR：このリンクは広告リンクです。口座開設、本人確認、キャンペーン条件は公式画面で確認してください。"
+    },
+    "matsui-ideco-a8": {
+      "asp": "a8",
+      "advertiser": "松井証券 iDeCo",
+      "status": "approved",
+      "format": "text",
+      "click_url": "https://px.a8.net/svt/ejp?a8mat=4B3NYV+DIF60I+3XCC+BXIYQ",
+      "label": "松井証券ではじめるiDeCoを確認する",
+      "pr_note": "PR：このリンクはA8.netのアフィリエイト広告です。iDeCoの対象、手数料、申込条件は公式画面で確認してください。",
+      "tracking_pixel_url": "https://www12.a8.net/0.gif?a8mat=4B3NYV+DIF60I+3XCC+BXIYQ"
     }
   }
 }

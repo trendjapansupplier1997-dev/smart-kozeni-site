@@ -146,3 +146,19 @@
 ## 公開前チェック
 
 公開前は `python3 tools/kozeni_site_audit.py` を実行し、最低限の欠落を確認する。
+
+## 口座開設ページ
+
+`/account-opening/`と`/account-opening/<slug>/`は直接編集しない。
+
+- 商品ページは`data/account-opening/products/*.json`で管理する
+- 解説ページは`data/account-opening/guides/*.json`で管理する
+- ハブは`data/account-opening-hub.json`で管理する
+- 構造は`templates/account-opening-*.html`で管理する
+- CSSは`assets/kozeni-account-opening.v1.css`へ共通化する
+- `python3 tools/build_account_opening.py`で生成する
+- `python3 tools/build_account_opening.py --check`で生成差分を確認する
+- 広告リンクは`program_id`だけを記述し、生URLをページデータへ複製しない
+- 解説ページへ収益CTAを自動挿入しない
+
+詳細は`docs/account-opening-generation.md`を参照する。

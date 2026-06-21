@@ -1,0 +1,60 @@
+{
+  "page_type": "product",
+  "slug": "sbi-shinsei-bank",
+  "name": "SBI新生銀行",
+  "category": "銀行口座",
+  "title": "SBI新生銀行｜口座開設前チェック｜スマホ小銭研究所",
+  "description": "SBI新生銀行を申し込む前に、対象条件、本人確認、過去利用、口座開設完了条件を確認します。",
+  "eyebrow": "口座開設 / 銀行口座",
+  "h1": "SBI新生銀行、申し込み前に見る。",
+  "lead": "銀行口座を作る前に、対象者、本人確認、重複申込、特典判定を整理します。",
+  "checked_at": "2026-06-21",
+  "verdict_title": "口座開設完了と対象外条件を先に確認",
+  "verdict": "申込ボタンを押した時点ではなく、本人確認を経て口座開設が完了するまでの流れを確認します。過去利用や重複申込の扱いも重要です。",
+  "badges": [
+    "銀行口座",
+    "本人確認",
+    "重複申込を確認"
+  ],
+  "checklist": [
+    "新規口座開設の対象者",
+    "本人確認書類と手続き方法",
+    "過去利用や既存口座がある場合の扱い",
+    "申込から口座開設完了までの流れ",
+    "特典がある場合の付与時期と対象外"
+  ],
+  "cautions": [
+    "既存口座や過去申込がある場合は新規扱いにならないことがある",
+    "本人確認の不備で手続きが止まる場合がある",
+    "金利や特典は時期によって変わるため公式情報を確認する"
+  ],
+  "cta": {
+    "url": "https://www.sbishinseibank.co.jp/account/",
+    "label": "SBI新生銀行の公式条件を見る",
+    "affiliate": false,
+    "note": "公式サイト：対象者、必要書類、口座開設の流れを確認してください。"
+  },
+  "sources": [
+    {
+      "label": "SBI新生銀行 口座開設",
+      "url": "https://www.sbishinseibank.co.jp/account/"
+    }
+  ],
+  "related": [
+    {
+      "href": "/account-opening/sumishin-sbi-netbank/",
+      "title": "住信SBIネット銀行",
+      "description": "ネット銀行の別候補を確認します。"
+    },
+    {
+      "href": "/account-opening/securities-basics/",
+      "title": "銀行口座と証券口座の違い",
+      "description": "役割の違いを整理します。"
+    },
+    {
+      "href": "/account-opening/",
+      "title": "口座開設一覧",
+      "description": "銀行・証券候補へ戻ります。"
+    }
+  ]
+}

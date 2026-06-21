@@ -18,6 +18,7 @@ import build_mobile_sim_hub
 import build_mobile_sim_guides
 import build_home_network
 import build_credit_cards
+import build_account_opening
 import monetization
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -632,6 +633,8 @@ def audit_monetization_registry() -> list[str]:
         *sorted((ROOT / "data" / "mobile-sim").glob("*.json")),
         *sorted((ROOT / "data" / "home-network").glob("*.json")),
         *sorted((ROOT / "data" / "credit-card").glob("*.json")),
+        *sorted((ROOT / "data" / "account-opening").rglob("*.json")),
+        ROOT / "data" / "account-opening-hub.json",
     ]
     known_urls = {program["click_url"] for program in programs.values()}
     for data_path in affiliate_data_paths:
@@ -640,22 +643,28 @@ def audit_monetization_registry() -> list[str]:
         except json.JSONDecodeError as error:
             problems.append(f"{data_path.relative_to(ROOT)}: invalid JSON: {error}")
             continue
-        cta = raw.get("cta")
-        if not isinstance(cta, dict):
-            continue
-        if cta.get("affiliate") is True:
-            problems.append(
-                f"{data_path.relative_to(ROOT)}: affiliate CTA must use program_id"
-            )
-        if cta.get("url") in known_urls:
-            problems.append(
-                f"{data_path.relative_to(ROOT)}: monetization URL is duplicated outside registry"
-            )
-        program_id = cta.get("program_id")
-        if program_id is not None and program_id not in programs:
-            problems.append(
-                f"{data_path.relative_to(ROOT)}: unknown program_id {program_id}"
-            )
+        def walk(value: Any) -> None:
+            if isinstance(value, dict):
+                if value.get("affiliate") is True:
+                    problems.append(
+                        f"{data_path.relative_to(ROOT)}: affiliate CTA must use program_id"
+                    )
+                if value.get("url") in known_urls:
+                    problems.append(
+                        f"{data_path.relative_to(ROOT)}: monetization URL is duplicated outside registry"
+                    )
+                program_id = value.get("program_id")
+                if program_id is not None and program_id not in programs:
+                    problems.append(
+                        f"{data_path.relative_to(ROOT)}: unknown program_id {program_id}"
+                    )
+                for nested in value.values():
+                    walk(nested)
+            elif isinstance(value, list):
+                for nested in value:
+                    walk(nested)
+
+        walk(raw)
 
     return problems
 
@@ -861,6 +870,255 @@ def audit_credit_cards() -> list[str]:
 
     return problems
 
+
+def _audit_account_page_common(
+    *,
+    page: Path,
+    rendered: str,
+    canonical: str,
+    sitemap: set[str],
+) -> list[str]:
+    problems: list[str] = []
+    rel = page.relative_to(ROOT).as_posix()
+    if not page.exists():
+        return [f"{rel}: generated account-opening page is missing"]
+    text = read(page)
+    if text != rendered:
+        problems.append(f"{rel}: generated account-opening HTML is outdated")
+    if text.count("<h1") != 1:
+        problems.append(f"{rel}: h1 must appear exactly once")
+    if "<style" in text:
+        problems.append(f"{rel}: inline style is forbidden")
+    if re.search(
+        r'<script(?![^>]*type="application/ld\+json")',
+        text,
+        flags=re.I,
+    ):
+        problems.append(f"{rel}: executable inline script is forbidden")
+    if f'href="{build_account_opening.STYLE_HREF}"' not in text:
+        problems.append(f"{rel}: shared account-opening CSS is missing")
+    if f'<link rel="canonical" href="{canonical}">' not in text:
+        problems.append(f"{rel}: canonical is incorrect")
+    if canonical not in sitemap:
+        problems.append(f"{rel}: canonical URL is missing from sitemap")
+    for token in (
+        "brand-micro",
+        "data-filter",
+        "accountFilters",
+        "quiz-question",
+        "quiz-submit",
+        "data-kozeni-route",
+        "kozeni-helper-v40",
+    ):
+        if token in text:
+            problems.append(f"{rel}: forbidden legacy account-opening token: {token}")
+    if re.search(r'\sstyle=["\']', text, flags=re.I):
+        problems.append(f"{rel}: inline style attribute is forbidden")
+    return problems
+
+
+def audit_account_opening() -> list[str]:
+    problems: list[str] = []
+    sitemap = sitemap_urls()
+    product_template = Template(read(build_account_opening.PRODUCT_TEMPLATE_PATH))
+    guide_template = Template(read(build_account_opening.GUIDE_TEMPLATE_PATH))
+    hub_template = Template(read(build_account_opening.HUB_TEMPLATE_PATH))
+
+    products: dict[str, dict[str, Any]] = {}
+    for data_path in build_account_opening.product_paths([]):
+        try:
+            data = build_account_opening.load_product(data_path)
+            products[data["slug"]] = data
+            rendered = build_account_opening.render_product(data, product_template)
+        except Exception as error:
+            problems.append(
+                f"{data_path.relative_to(ROOT)}: product render failed: {error}"
+            )
+            continue
+
+        page = build_account_opening.output_path(data["slug"])
+        canonical = build_account_opening.canonical_url(data["slug"])
+        problems.extend(
+            _audit_account_page_common(
+                page=page,
+                rendered=rendered,
+                canonical=canonical,
+                sitemap=sitemap,
+            )
+        )
+        if not page.exists():
+            continue
+        rel = page.relative_to(ROOT).as_posix()
+        text = read(page)
+        cta = data["cta"]
+        anchors = re.findall(
+            r'<a class="account-cta__link[^"]*"([^>]*)>(.*?)</a>',
+            text,
+            flags=re.S,
+        )
+        if len(anchors) != 1:
+            problems.append(f"{rel}: exactly one CTA is required")
+        else:
+            attrs, body = anchors[0]
+            required = [
+                f'href="{html.escape(cta["url"], quote=True)}"',
+                'target="_blank"',
+                "noopener",
+                "noreferrer",
+                'referrerpolicy="no-referrer-when-downgrade"',
+            ]
+            if cta["affiliate"]:
+                required.extend(("nofollow", "sponsored"))
+            for token in required:
+                if token not in attrs:
+                    problems.append(f"{rel}: CTA missing {token}")
+            if html.escape(cta["label"]) not in body:
+                problems.append(f"{rel}: CTA label differs from data")
+
+        expected_note = html.escape(cta["note"])
+        notes = re.findall(
+            r'<p class="account-cta__note">(.*?)</p>', text, flags=re.S
+        )
+        if notes != ([expected_note] if expected_note else []):
+            problems.append(f"{rel}: CTA note differs from data")
+        tracking = cta.get("tracking_pixel_url")
+        if tracking:
+            if text.count(html.escape(tracking, quote=True)) != 1:
+                problems.append(f"{rel}: tracking pixel must appear exactly once")
+        elif "account-cta__tracking" in text:
+            problems.append(f"{rel}: unexpected tracking pixel")
+
+        source_lists = re.findall(
+            r'<ul class="account-source-list">(.*?)</ul>', text, flags=re.S
+        )
+        if len(source_lists) != 1:
+            problems.append(f"{rel}: exactly one official source list is required")
+        else:
+            actual = re.findall(
+                r'<li>根拠：<a href="([^"]+)" '
+                r'target="_blank" rel="noopener noreferrer">(.*?)</a></li>',
+                source_lists[0],
+                flags=re.S,
+            )
+            expected = [
+                (
+                    html.escape(item["url"], quote=True),
+                    html.escape(item["label"]),
+                )
+                for item in data["sources"]
+            ]
+            if actual != expected:
+                problems.append(f"{rel}: official source list differs from data")
+        for item in data["related"]:
+            if not local_target_exists(item["href"]):
+                problems.append(f"{rel}: broken related link: {item['href']}")
+
+    guides: dict[str, dict[str, Any]] = {}
+    for data_path in build_account_opening.guide_paths([]):
+        try:
+            data = build_account_opening.load_guide(data_path)
+            guides[data["slug"]] = data
+            rendered = build_account_opening.render_guide(data, guide_template)
+        except Exception as error:
+            problems.append(
+                f"{data_path.relative_to(ROOT)}: guide render failed: {error}"
+            )
+            continue
+        page = build_account_opening.output_path(data["slug"])
+        canonical = build_account_opening.canonical_url(data["slug"])
+        problems.extend(
+            _audit_account_page_common(
+                page=page,
+                rendered=rendered,
+                canonical=canonical,
+                sitemap=sitemap,
+            )
+        )
+        if page.exists():
+            rel = page.relative_to(ROOT).as_posix()
+            text = read(page)
+            if "account-cta" in text:
+                problems.append(f"{rel}: guide page must not contain a revenue CTA")
+            if not local_target_exists(data["next"]["href"]):
+                problems.append(f"{rel}: broken next link: {data['next']['href']}")
+
+    try:
+        hub_data = build_account_opening.load_hub()
+        rendered_hub = build_account_opening.render_hub(hub_data, hub_template)
+    except Exception as error:
+        problems.append(f"account-opening/index.html: hub render failed: {error}")
+        return problems
+
+    hub_page = ROOT / "account-opening" / "index.html"
+    hub_canonical = f"{build_account_opening.BASE_URL}/account-opening/"
+    problems.extend(
+        _audit_account_page_common(
+            page=hub_page,
+            rendered=rendered_hub,
+            canonical=hub_canonical,
+            sitemap=sitemap,
+        )
+    )
+    if hub_page.exists():
+        hub_rel = hub_page.relative_to(ROOT).as_posix()
+        text = read(hub_page)
+        expected_internal: set[str] = set()
+        affiliate_cards: list[dict[str, Any]] = []
+        for section in hub_data["sections"]:
+            for card in section["cards"]:
+                if card.get("href"):
+                    expected_internal.add(card["href"])
+                    if not local_target_exists(card["href"]):
+                        problems.append(
+                            f"{hub_rel}: broken hub card link: {card['href']}"
+                        )
+                else:
+                    affiliate_cards.append(card)
+        for href in expected_internal:
+            if f'href="{html.escape(href, quote=True)}"' not in text:
+                problems.append(f"{hub_rel}: hub card is missing: {href}")
+        for item in hub_data["guides"]:
+            if not local_target_exists(item["href"]):
+                problems.append(
+                    f"{hub_rel}: broken guide link: {item['href']}"
+                )
+        if len(affiliate_cards) != 1:
+            problems.append(f"{hub_rel}: exactly one affiliate hub card is required")
+        else:
+            cta = affiliate_cards[0]["_cta"]
+            expected_url = html.escape(cta["url"], quote=True)
+            if text.count(expected_url) != 1:
+                problems.append(
+                    f"{hub_rel}: affiliate hub URL must appear exactly once"
+                )
+            for token in (
+                "nofollow",
+                "sponsored",
+                "noopener",
+                "noreferrer",
+                'referrerpolicy="no-referrer-when-downgrade"',
+            ):
+                if token not in text:
+                    problems.append(f"{hub_rel}: affiliate hub card missing {token}")
+            if html.escape(cta["note"]) not in text:
+                problems.append(f"{hub_rel}: affiliate PR note differs from registry")
+
+    if products.get("matsui-sec", {}).get("cta", {}).get("program_id") != "matsui-ideco-a8":
+        problems.append(
+            "data/account-opening/products/matsui-sec.json: A8 program is not connected"
+        )
+    hub_programs = {
+        card.get("program_id")
+        for section in hub_data["sections"]
+        for card in section["cards"]
+        if card.get("program_id")
+    }
+    if "rakuten-securities-trafficgate" not in hub_programs:
+        problems.append(
+            "data/account-opening-hub.json: Rakuten Securities program is not connected"
+        )
+    return problems
+
 def show_list(
     title: str,
     items: list[str],
@@ -937,6 +1195,7 @@ def main() -> int:
     home_network_problems = audit_home_network()
     monetization_problems = audit_monetization_registry()
     credit_card_problems = audit_credit_cards()
+    account_opening_problems = audit_account_opening()
 
     print("=== kozeni site audit ===")
     print(f"HTML files: {len(HTML_FILES)}")
@@ -984,6 +1243,11 @@ def main() -> int:
     show_list(
         "generated credit-card pages",
         credit_card_problems,
+        problems,
+    )
+    show_list(
+        "generated account-opening pages",
+        account_opening_problems,
         problems,
     )
 

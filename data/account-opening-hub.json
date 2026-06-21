@@ -1,0 +1,79 @@
+{
+  "title": "口座開設｜銀行・証券・成果条件を申し込み前に確認",
+  "description": "銀行口座・証券口座・NISA・iDeCoを申し込む前に、本人確認、対象外、成果条件、公式申込先を整理します。",
+  "h1": "お金の入口を、目的から選ぶ。",
+  "lead": "日常のお金は銀行口座、資産づくりは証券口座。制度が分からないときは解説から確認します。",
+  "checked_at": "2026-06-21",
+  "sections": [
+    {
+      "id": "bank",
+      "title": "日常のお金に使う口座",
+      "description": "給与受取、振込、生活費管理など、普段使いの銀行口座候補です。",
+      "cards": [
+        {
+          "tag": "銀行口座",
+          "title": "住信SBIネット銀行",
+          "description": "アプリ手続き、本人確認、通常の手数料条件を確認します。",
+          "href": "/account-opening/sumishin-sbi-netbank/"
+        },
+        {
+          "tag": "銀行口座",
+          "title": "SBI新生銀行",
+          "description": "新規対象、過去利用、口座開設完了条件を確認します。",
+          "href": "/account-opening/sbi-shinsei-bank/"
+        }
+      ]
+    },
+    {
+      "id": "securities",
+      "title": "将来のお金を考える口座",
+      "description": "証券口座、NISA、iDeCoの入口を、制度と申込条件に分けて確認します。",
+      "cards": [
+        {
+          "tag": "証券・NISA",
+          "title": "三菱UFJ eスマート証券",
+          "description": "証券口座、NISA、本人確認の条件を確認します。",
+          "href": "/account-opening/mufg-esmart-sec/"
+        },
+        {
+          "tag": "証券・NISA",
+          "title": "楽天証券",
+          "description": "口座開設条件とキャンペーン対象を公式画面で確認します。",
+          "program_id": "rakuten-securities-trafficgate"
+        },
+        {
+          "tag": "証券・NISA・iDeCo",
+          "title": "松井証券",
+          "description": "NISAとiDeCoを分けて申込条件を確認します。",
+          "href": "/account-opening/matsui-sec/"
+        },
+        {
+          "tag": "証券口座",
+          "title": "GMOクリック証券",
+          "description": "FX口座と混同せず証券口座の種類を確認します。",
+          "href": "/account-opening/gmo-click-sec/"
+        }
+      ]
+    }
+  ],
+  "guides": [
+    {
+      "href": "/account-opening/nisa-ideco/",
+      "title": "NISAとiDeCoの違い",
+      "description": "資金の自由度、税制、目的を比較します。"
+    },
+    {
+      "href": "/account-opening/securities-basics/",
+      "title": "証券口座の基本",
+      "description": "銀行口座との役割の違いを整理します。"
+    }
+  ],
+  "checklist": [
+    "申込だけでなく口座開設完了が必要か",
+    "過去利用や重複口座が対象外にならないか",
+    "本人確認とマイナンバーの提出方法",
+    "入金や取引を必要とする特典がないか",
+    "広告ではなく公式画面で最新条件を確認したか"
+  ],
+  "note": "口座開設条件の確認を目的としたページです。金融商品や投資判断を推奨するものではありません。"
+}

@@ -1,0 +1,60 @@
+{
+  "page_type": "product",
+  "slug": "mufg-esmart-sec",
+  "name": "三菱UFJ eスマート証券",
+  "category": "証券・NISA",
+  "title": "三菱UFJ eスマート証券｜口座開設前チェック｜スマホ小銭研究所",
+  "description": "三菱UFJ eスマート証券の口座開設前に、本人確認、NISA対応、申込条件、公式申込先を確認します。",
+  "eyebrow": "口座開設 / 証券・NISA",
+  "h1": "三菱UFJ eスマート証券、申し込み前に見る。",
+  "lead": "投資商品ではなく、証券口座とNISA口座の申込条件を先に確認します。",
+  "checked_at": "2026-06-21",
+  "verdict_title": "証券口座とNISAの申込導線を分けて確認",
+  "verdict": "口座開設キャンペーンだけで決めず、本人確認、NISAの利用方法、入金や取引条件の有無を公式画面で確認します。",
+  "badges": [
+    "証券口座",
+    "NISA",
+    "本人確認"
+  ],
+  "checklist": [
+    "証券口座開設の完了条件",
+    "NISA口座の同時申込や切替条件",
+    "本人確認とマイナンバーの提出方法",
+    "入金・取引を必要とする特典の有無",
+    "過去申込や重複口座の扱い"
+  ],
+  "cautions": [
+    "キャンペーン条件と通常の口座条件を分けて読む",
+    "投資商品の推奨情報と口座開設情報を混同しない",
+    "申込前に最新の対象外条件を確認する"
+  ],
+  "cta": {
+    "url": "https://kabu.com/apply/default.html",
+    "label": "三菱UFJ eスマート証券の公式条件を見る",
+    "affiliate": false,
+    "note": "公式サイト：口座開設、NISA、本人確認の条件を確認してください。"
+  },
+  "sources": [
+    {
+      "label": "三菱UFJ eスマート証券 口座開設",
+      "url": "https://kabu.com/apply/default.html"
+    }
+  ],
+  "related": [
+    {
+      "href": "/account-opening/securities-basics/",
+      "title": "証券口座の基本",
+      "description": "銀行口座との違いを確認します。"
+    },
+    {
+      "href": "/account-opening/nisa-ideco/",
+      "title": "NISAとiDeCoの違い",
+      "description": "制度の目的と使い分けを整理します。"
+    },
+    {
+      "href": "/account-opening/",
+      "title": "口座開設一覧",
+      "description": "証券・銀行の候補へ戻ります。"
+    }
+  ]
+}

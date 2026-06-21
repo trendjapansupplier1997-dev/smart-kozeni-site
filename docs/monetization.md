@@ -77,3 +77,11 @@ python3 tools/kozeni_site_audit.py
 - PR注記
 - 計測ピクセル
 - バナー画像URL・サイズ・識別子
+
+## 口座開設で利用する案件
+
+- `rakuten-securities-trafficgate`: 口座開設ハブの楽天証券カード
+- `matsui-ideco-a8`: 松井証券ページのiDeCo導線
+
+口座開設ページでも広告URLはJSONへ直接書かず、`program_id`だけを参照します。
+ハブの広告カードと商品ページのCTAは同じレジストリと描画規則を使います。

@@ -1,0 +1,60 @@
+{
+  "page_type": "product",
+  "slug": "sumishin-sbi-netbank",
+  "name": "住信SBIネット銀行",
+  "category": "銀行口座",
+  "title": "住信SBIネット銀行｜口座開設前チェック｜スマホ小銭研究所",
+  "description": "住信SBIネット銀行を申し込む前に、本人確認、アプリ手続き、口座開設条件、対象外を確認します。",
+  "eyebrow": "口座開設 / 銀行口座",
+  "h1": "住信SBIネット銀行、申し込み前に見る。",
+  "lead": "普段使いのネット銀行候補として、アプリ手続き、本人確認、振込や手数料条件を確認します。",
+  "checked_at": "2026-06-21",
+  "verdict_title": "アプリ手続きと本人確認の流れを先に確認",
+  "verdict": "スマホで申し込める便利さだけでなく、本人確認方法、既存口座、キャンペーン対象外、日常利用の条件を確認します。",
+  "badges": [
+    "ネット銀行",
+    "アプリ手続き",
+    "普段使い"
+  ],
+  "checklist": [
+    "個人口座開設の対象条件",
+    "本人確認とアプリ手続きの流れ",
+    "既存口座や過去申込の扱い",
+    "ATM・振込手数料の通常条件",
+    "キャンペーンがある場合の対象外"
+  ],
+  "cautions": [
+    "優遇条件は利用状況によって変わる場合がある",
+    "キャンペーンより通常の手数料条件を先に確認する",
+    "本人確認や初期設定を完了するまで利用開始できない場合がある"
+  ],
+  "cta": {
+    "url": "https://www.netbk.co.jp/contents/account-2/",
+    "label": "住信SBIネット銀行の公式条件を見る",
+    "affiliate": false,
+    "note": "公式サイト：本人確認、口座開設、利用条件を確認してください。"
+  },
+  "sources": [
+    {
+      "label": "住信SBIネット銀行 口座開設",
+      "url": "https://www.netbk.co.jp/contents/account-2/"
+    }
+  ],
+  "related": [
+    {
+      "href": "/account-opening/sbi-shinsei-bank/",
+      "title": "SBI新生銀行",
+      "description": "銀行口座の別候補を確認します。"
+    },
+    {
+      "href": "/account-opening/securities-basics/",
+      "title": "銀行口座と証券口座の違い",
+      "description": "日常口座と投資口座を分けて整理します。"
+    },
+    {
+      "href": "/account-opening/",
+      "title": "口座開設一覧",
+      "description": "銀行・証券候補へ戻ります。"
+    }
+  ]
+}
