@@ -110,3 +110,17 @@ TikTok Liteの紹介URLと招待コードは次の1件へ集約します。
 
 ハブと登録前ページは`cta.program_id`だけを参照します。
 招待コードは`invite-code`ページだけに表示し、URLやコードをHTML・ページJSONへ複製しません。
+
+## 買い物・旅行で利用する案件
+
+買い物・旅行の7つのValueCommerce案件は`data/monetization/programs.json`へ集約する。
+
+- `yahoo-shopping-valuecommerce`
+- `jtb-shopping-valuecommerce`
+- `qoo10-valuecommerce`
+- `yahoo-travel-valuecommerce`
+- `jtb-travel-valuecommerce`
+- `jalan-valuecommerce`
+- `ikyu-valuecommerce`
+
+ページデータは`program_id`と文脈別の説明だけを持ち、ASP URLを複製しない。リンク属性とPR導線は生成器と統合監査で検証する。

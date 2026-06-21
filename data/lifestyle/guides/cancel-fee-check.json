@@ -1,0 +1,95 @@
+{
+  "page_type": "guide",
+  "category": "travel",
+  "slug": "cancel-fee-check",
+  "output": "travel/cancel-fee-check/index.html",
+  "breadcrumb_label": "キャンセル料確認",
+  "title": "ホテル予約のキャンセル料はいつから？予約前に確認すること",
+  "description": "ホテル予約のキャンセル料がいつから発生するか、予約前に見るべきキャンセル規定・返金条件・クーポンやポイントの扱いを確認します。PRリンクを含みます。",
+  "eyebrow": "宿泊予約前チェック",
+  "h1": "ホテル予約のキャンセル料は、予約前にここだけ見る。",
+  "lead": "キャンセル料は、予約サイトだけでなく、宿泊施設・プラン・支払い方法でも変わります。安さだけで決める前に、キャンセル規定と返金条件を確認します。",
+  "checked_at": "2026-06-21",
+  "tags": [
+    "宿泊予約前チェック",
+    "PRあり",
+    "キャンセル条件"
+  ],
+  "summary_label": "まず結論",
+  "summary_title": "「いつから何％」を先に見る。",
+  "summary_body": "同じホテルでも、プランによってキャンセル料の発生日や割合が違うことがあります。予約前に、無料キャンセル期限・前日／当日／不泊の扱いだけは見ておきます。",
+  "summary_items": [
+    "無料キャンセル期限はいつまでか。",
+    "前日・当日・不泊で何％かかるか。",
+    "早割・セール・事前決済プランで返金条件が変わらないか。",
+    "クーポンやポイント利用分が戻るか。"
+  ],
+  "steps_title": "予約画面では、この6点だけ。",
+  "steps": [
+    {
+      "title": "無料期限",
+      "description": "「何日前まで無料」かを最初に見ます。"
+    },
+    {
+      "title": "当日・不泊",
+      "description": "急な予定変更で一番重くなりやすい部分です。"
+    },
+    {
+      "title": "事前決済",
+      "description": "返金不可・一部返金不可のプランに注意します。"
+    },
+    {
+      "title": "クーポン",
+      "description": "キャンセル時に再利用できるか、期限切れにならないかを見ます。"
+    },
+    {
+      "title": "ポイント",
+      "description": "利用ポイント・付与予定ポイントの扱いを確認します。"
+    },
+    {
+      "title": "交通つき",
+      "description": "宿だけでなく、航空券・JR・バス付きプランは条件が重くなることがあります。"
+    }
+  ],
+  "offers_title": "予約前に、公式条件を見る。",
+  "offers_intro": "キャンセル条件は変わるので、最後は各公式画面で確認します。",
+  "offers_note": "PR：広告リンクを含みます。キャンセル料、返金条件、クーポン・ポイントの扱いは各公式画面で確認してください。",
+  "offers": [
+    {
+      "program_id": "yahoo-travel-valuecommerce",
+      "description": "ヤフープラン・キャンセル条件を確認"
+    },
+    {
+      "program_id": "jtb-travel-valuecommerce",
+      "description": "国内宿泊・国内ツアー条件を確認"
+    },
+    {
+      "program_id": "jalan-valuecommerce",
+      "description": "宿泊プランとクーポン条件を確認"
+    },
+    {
+      "program_id": "ikyu-valuecommerce",
+      "description": "ホテル・旅館予約の条件を確認"
+    }
+  ],
+  "avoid_label": "やらないこと",
+  "avoid_title": "安さだけで即予約しない。",
+  "avoid_body": "予定が変わりやすい時期は、少し高くても無料キャンセル期限が長いプランの方が結果的に安全なことがあります。条件が重いなら、今回は見送る判断もありです。",
+  "related": [
+    {
+      "href": "/travel/",
+      "title": "旅行・移動へ戻る",
+      "description": "宿泊予約先と基本の確認項目を見ます。"
+    },
+    {
+      "href": "/shopping/",
+      "title": "買い物・日用品",
+      "description": "旅行用品やクーポン条件を確認します。"
+    },
+    {
+      "href": "/policy/",
+      "title": "PR表記",
+      "description": "広告・紹介リンクの方針を確認します。"
+    }
+  ]
+}

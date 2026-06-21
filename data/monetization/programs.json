@@ -185,6 +185,69 @@
       "label": "TikTok Liteの招待リンクを開く",
       "pr_note": "PR：このリンクはTikTok Liteの紹介リンクです。対象条件・報酬額・必要タスク・期限は登録時の公式画面で確認してください。",
       "referral_code": "913299034"
+    },
+    "yahoo-shopping-valuecommerce": {
+      "asp": "valuecommerce",
+      "advertiser": "Yahoo!ショッピング",
+      "status": "approved",
+      "format": "text",
+      "click_url": "https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3770077&pid=892620430",
+      "label": "Yahoo!ショッピングの公式条件を見る",
+      "pr_note": "PR：このリンクはバリューコマースのアフィリエイトリンクです。クーポン、ポイント、送料、返品条件は公式画面で確認してください。"
+    },
+    "jtb-shopping-valuecommerce": {
+      "asp": "valuecommerce",
+      "advertiser": "JTBショッピング",
+      "status": "approved",
+      "format": "text",
+      "click_url": "https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3770077&pid=892620432",
+      "label": "JTBショッピングの公式条件を見る",
+      "pr_note": "PR：このリンクはバリューコマースのアフィリエイトリンクです。商品、送料、クーポン、返品条件は公式画面で確認してください。"
+    },
+    "qoo10-valuecommerce": {
+      "asp": "valuecommerce",
+      "advertiser": "Qoo10",
+      "status": "approved",
+      "format": "text",
+      "click_url": "https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3770077&pid=892620439",
+      "label": "Qoo10の公式条件を見る",
+      "pr_note": "PR：このリンクはバリューコマースのアフィリエイトリンクです。クーポン、セール、送料、返品条件は公式画面で確認してください。"
+    },
+    "yahoo-travel-valuecommerce": {
+      "asp": "valuecommerce",
+      "advertiser": "Yahoo!トラベル",
+      "status": "approved",
+      "format": "text",
+      "click_url": "https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3770077&pid=892620421",
+      "label": "Yahoo!トラベルの公式条件を見る",
+      "pr_note": "PR：このリンクはバリューコマースのアフィリエイトリンクです。予約、キャンセル、ポイント条件は公式画面で確認してください。"
+    },
+    "jtb-travel-valuecommerce": {
+      "asp": "valuecommerce",
+      "advertiser": "JTB",
+      "status": "approved",
+      "format": "text",
+      "click_url": "https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3770077&pid=892620416",
+      "label": "JTBの公式条件を見る",
+      "pr_note": "PR：このリンクはバリューコマースのアフィリエイトリンクです。旅行商品、予約、キャンセル条件は公式画面で確認してください。"
+    },
+    "jalan-valuecommerce": {
+      "asp": "valuecommerce",
+      "advertiser": "じゃらんnet",
+      "status": "approved",
+      "format": "text",
+      "click_url": "https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3770077&pid=892620422",
+      "label": "じゃらんnetの公式条件を見る",
+      "pr_note": "PR：このリンクはバリューコマースのアフィリエイトリンクです。宿泊、クーポン、キャンセル条件は公式画面で確認してください。"
+    },
+    "ikyu-valuecommerce": {
+      "asp": "valuecommerce",
+      "advertiser": "一休.com",
+      "status": "approved",
+      "format": "text",
+      "click_url": "https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3770077&pid=892620413",
+      "label": "一休.comの公式条件を見る",
+      "pr_note": "PR：このリンクはバリューコマースのアフィリエイトリンクです。宿泊プラン、予約、キャンセル条件は公式画面で確認してください。"
     }
   }
 }

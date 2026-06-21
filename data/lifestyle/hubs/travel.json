@@ -1,0 +1,92 @@
+{
+  "page_type": "hub",
+  "category": "travel",
+  "output": "travel/index.html",
+  "breadcrumb_label": "旅行・移動",
+  "title": "旅行・移動｜ホテル予約・移動・Wi-Fiを申し込み前に確認",
+  "description": "ホテル予約、移動手段、Wi-Fi・eSIMを申し込み前に確認するページです。キャンセル条件やポイント付与も整理します。PRリンクを含みます。",
+  "eyebrow": "旅行・移動 / 予約前チェック",
+  "h1": "出張も旅行も、予約前に軽く確認。",
+  "lead": "ホテル予約、移動手段、Wi-Fi・eSIMは、申し込み前に条件を見ておくと失敗しにくいです。まずは宿泊予約先を選びます。",
+  "checked_at": "2026-06-21",
+  "tags": [
+    "ホテル予約",
+    "高速バス",
+    "Wi-Fi・eSIM",
+    "キャンセル条件"
+  ],
+  "offers_title": "まずは、宿泊予約先を選ぶ。",
+  "offers_intro": "気になる予約先を選び、キャンセル条件やポイント付与を公式画面で確認します。",
+  "offers_note": "PR：広告リンクを含みます。予約条件・キャンセル料・ポイント付与・成果対象は各公式画面で確認してください。",
+  "offers": [
+    {
+      "program_id": "yahoo-travel-valuecommerce",
+      "description": "ヤフープラン・PayPayポイント条件を確認"
+    },
+    {
+      "program_id": "jtb-travel-valuecommerce",
+      "description": "国内宿泊・国内ツアー条件を確認"
+    },
+    {
+      "program_id": "jalan-valuecommerce",
+      "description": "宿泊完了・クーポン条件を確認"
+    },
+    {
+      "program_id": "ikyu-valuecommerce",
+      "description": "ホテル・旅館予約の条件を確認"
+    }
+  ],
+  "cards_title": "予約前に見るポイント",
+  "cards_intro": "料金だけでなく、成立条件・変更条件・利用環境を確認します。",
+  "cards": [
+    {
+      "label": "宿泊",
+      "title": "宿泊・ホテル予約",
+      "description": "ホテル、旅館、国内旅行予約の候補。料金だけでなく、キャンセル条件やポイント付与条件も確認します。",
+      "items": [
+        "予約完了か宿泊完了か",
+        "キャンセル時の扱い",
+        "ポイント・クーポンの対象条件"
+      ],
+      "href": "/travel/cancel-fee-check/",
+      "link_label": "ホテル予約のキャンセル料確認メモを見る"
+    },
+    {
+      "label": "移動",
+      "title": "高速バス・移動手段",
+      "description": "高速バス、航空券、レンタカーなどの移動系候補。出発日、変更条件、予約完了条件を確認します。",
+      "items": [
+        "予約後の変更・取消条件",
+        "出発完了が必要か",
+        "アプリ予約・Web予約の違い"
+      ]
+    },
+    {
+      "label": "通信",
+      "title": "Wi-Fi・eSIM・レンタル回線",
+      "description": "旅行中の通信手段を確認。短期レンタル、国内旅行、海外旅行、一時利用の条件を見ます。",
+      "items": [
+        "利用日数と返却条件",
+        "国内用・海外用の違い",
+        "スマホ・回線カテゴリとの接続"
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/shopping/",
+      "title": "買い物・日用品",
+      "description": "旅行用品やクーポン条件を確認します。"
+    },
+    {
+      "href": "/mobile-sim/",
+      "title": "スマホ・回線",
+      "description": "旅行中の通信手段も比較します。"
+    },
+    {
+      "href": "/policy/",
+      "title": "PR表記",
+      "description": "広告・紹介リンクの方針を確認します。"
+    }
+  ]
+}

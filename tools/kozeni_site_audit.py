@@ -21,6 +21,7 @@ import build_credit_cards
 import build_account_opening
 import build_point_sites
 import build_tiktok_lite
+import build_lifestyle
 import monetization
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -641,6 +642,7 @@ def audit_monetization_registry() -> list[str]:
         ROOT / "data" / "point-site-hub.json",
         *sorted((ROOT / "data" / "tiktok-lite").rglob("*.json")),
         ROOT / "data" / "tiktok-lite-hub.json",
+        *sorted((ROOT / "data" / "lifestyle").rglob("*.json")),
     ]
     known_urls = {program["click_url"] for program in programs.values()}
     for data_path in affiliate_data_paths:
@@ -1335,6 +1337,68 @@ def audit_tiktok_lite() -> list[str]:
                 )
     return problems
 
+
+def audit_lifestyle() -> list[str]:
+    problems: list[str] = []
+    sitemap = sitemap_urls()
+    try:
+        records = build_lifestyle.build_records()
+    except Exception as error:
+        return [f"data/lifestyle: invalid lifestyle data: {error}"]
+
+    if len(records) != 4:
+        problems.append(f"lifestyle: expected 4 generated pages, got {len(records)}")
+
+    for data_path, data, page, rendered in records:
+        rel = page.relative_to(ROOT).as_posix()
+        canonical = f"{build_lifestyle.site_common.BASE_URL}/" + data["output"].removesuffix("index.html")
+        if not page.exists():
+            problems.append(f"{rel}: generated lifestyle page is missing")
+            continue
+        text = read(page)
+        if text != rendered:
+            problems.append(f"{rel}: generated lifestyle HTML is outdated")
+        if text.count("<h1") != 1:
+            problems.append(f"{rel}: h1 must appear exactly once")
+        if "<style" in text or re.search(r"\sstyle=[\"']", text, flags=re.I):
+            problems.append(f"{rel}: inline style is forbidden")
+        if re.search(r'<script(?![^>]*type="application/ld\+json")', text, flags=re.I):
+            problems.append(f"{rel}: executable inline script is forbidden")
+        if text.count('type="application/ld+json"') != 1:
+            problems.append(f"{rel}: exactly one JSON-LD graph is required")
+        if f'href="{build_lifestyle.STYLE_HREF}"' not in text:
+            problems.append(f"{rel}: shared lifestyle CSS is missing")
+        if f'<link rel="canonical" href="{canonical}">' not in text:
+            problems.append(f"{rel}: canonical is incorrect")
+        if canonical not in sitemap:
+            problems.append(f"{rel}: canonical URL is missing from sitemap")
+        if 'class="kozeni-breadcrumb"' not in text:
+            problems.append(f"{rel}: visible breadcrumb is required")
+        for token in ("shopping-main", "check-main", "travel-main", "cancel-main"):
+            if token in text:
+                problems.append(f"{rel}: legacy lifestyle token remains: {token}")
+
+        for offer in data["offers"]:
+            cta = offer["cta"]
+            expected = html.escape(cta["url"], quote=True)
+            if text.count(expected) != 1:
+                problems.append(f"{rel}: {cta['program_id']} URL must appear exactly once")
+            for token in ("nofollow", "sponsored", "noopener", "noreferrer", 'referrerpolicy="no-referrer-when-downgrade"'):
+                if token not in text:
+                    problems.append(f"{rel}: offer link missing {token}")
+            if html.escape(cta["advertiser"]) not in text:
+                problems.append(f"{rel}: offer advertiser differs from registry")
+
+        for item in data["related"]:
+            if not local_target_exists(item["href"]):
+                problems.append(f"{rel}: broken related link: {item['href']}")
+        if data["page_type"] == "hub":
+            for card in data["cards"]:
+                if "href" in card and not local_target_exists(card["href"]):
+                    problems.append(f"{rel}: broken card link: {card['href']}")
+
+    return problems
+
 def show_list(
     title: str,
     items: list[str],
@@ -1414,6 +1478,7 @@ def main() -> int:
     account_opening_problems = audit_account_opening()
     point_site_problems = audit_point_sites()
     tiktok_lite_problems = audit_tiktok_lite()
+    lifestyle_problems = audit_lifestyle()
 
     print("=== kozeni site audit ===")
     print(f"HTML files: {len(HTML_FILES)}")
@@ -1476,6 +1541,11 @@ def main() -> int:
     show_list(
         "generated TikTok Lite pages",
         tiktok_lite_problems,
+        problems,
+    )
+    show_list(
+        "generated shopping/travel pages",
+        lifestyle_problems,
         problems,
     )
 

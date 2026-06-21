@@ -53,3 +53,10 @@ git add -A
 git commit -m "<変更内容>"
 git push
 ```
+
+
+買い物・旅行ページを変更した場合：
+
+```bash
+python3 tools/build_lifestyle.py --check
+```

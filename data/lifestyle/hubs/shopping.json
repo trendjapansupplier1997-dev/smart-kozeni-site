@@ -1,0 +1,87 @@
+{
+  "page_type": "hub",
+  "category": "shopping",
+  "output": "shopping/index.html",
+  "breadcrumb_label": "買い物・日用品",
+  "title": "買い物・日用品｜クーポン・ポイント条件を買う前に確認",
+  "description": "Yahoo!ショッピング、JTBショッピング、Qoo10など、買い物前にクーポン・ポイント付与・送料・対象条件を確認するページです。PRリンクを含みます。",
+  "eyebrow": "買い物・日用品 / 条件確認",
+  "h1": "日用品も、セールも、買う前に軽く確認。",
+  "lead": "クーポン、ポイント、送料でお得感は変わります。まずはよく使う買い物先を選びます。",
+  "checked_at": "2026-06-21",
+  "tags": [
+    "買い物・日用品",
+    "PRあり",
+    "条件確認"
+  ],
+  "offers_title": "よく使う買い物先を選ぶ。",
+  "offers_intro": "気になる買い物先を選んで、条件は公式画面で確認します。",
+  "offers_note": "PR：広告リンクを含みます。クーポン条件、ポイント付与、送料、返品・キャンセル条件は各公式画面で確認してください。",
+  "offers": [
+    {
+      "program_id": "yahoo-shopping-valuecommerce",
+      "description": "クーポン・PayPayポイント条件を確認"
+    },
+    {
+      "program_id": "jtb-shopping-valuecommerce",
+      "description": "旅行のお土産・お取り寄せ条件を確認"
+    },
+    {
+      "program_id": "qoo10-valuecommerce",
+      "description": "メガ割・クーポン条件を確認"
+    }
+  ],
+  "cards_title": "最後に、この3つだけ確認。",
+  "cards_intro": "細かい比較は後回し。クーポン、ポイント、送料・返品だけ見ます。",
+  "cards": [
+    {
+      "label": "CHECK 01",
+      "title": "クーポン対象か。",
+      "description": "対象ストア、対象商品、最低購入金額、併用可否を見ます。",
+      "items": [
+        "クーポンの対象外商品",
+        "利用期限と先着条件",
+        "他キャンペーンとの併用"
+      ],
+      "href": "/shopping/coupon-check/",
+      "link_label": "クーポンが使えない時の確認メモを見る"
+    },
+    {
+      "label": "CHECK 02",
+      "title": "ポイントはいつ付くか。",
+      "description": "表示倍率だけでなく、付与予定日・上限・対象外条件を確認します。",
+      "items": [
+        "付与上限",
+        "キャンセル時の扱い",
+        "PayPayポイント等の条件"
+      ]
+    },
+    {
+      "label": "CHECK 03",
+      "title": "送料・返品は重くないか。",
+      "description": "小さな買い物ほど、送料と返品条件でお得感が変わります。",
+      "items": [
+        "送料無料ライン",
+        "返品・キャンセル条件",
+        "定期購入や予約商品の扱い"
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/point-site/",
+      "title": "ポイ活",
+      "description": "買う前にポイント経由条件も確認します。"
+    },
+    {
+      "href": "/travel/",
+      "title": "旅行・移動",
+      "description": "宿泊や移動の予約条件を確認します。"
+    },
+    {
+      "href": "/policy/",
+      "title": "PR表記",
+      "description": "広告・紹介リンクの方針を確認します。"
+    }
+  ]
+}

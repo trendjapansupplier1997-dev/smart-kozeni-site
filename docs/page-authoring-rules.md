@@ -195,3 +195,18 @@
 - 報酬額・期限・必要タスクは固定値として断定せず、公式画面の確認を促す
 
 詳細は`docs/tiktok-lite-generation.md`を参照する。
+
+## 買い物・旅行ページ
+
+`/shopping/`と`/travel/`配下のハブ・確認ページは直接編集しない。
+
+- ハブは`data/lifestyle/hubs/*.json`で管理する
+- 確認ページは`data/lifestyle/guides/*.json`で管理する
+- 構造は`templates/lifestyle-*.html`で管理する
+- CSSは`assets/kozeni-lifestyle.v1.css`へ共通化する
+- `python3 tools/build_lifestyle.py`で生成する
+- `python3 tools/build_lifestyle.py --check`で生成差分を確認する
+- ASP URLは`data/monetization/programs.json`だけで管理し、ページJSONには`program_id`だけを書く
+- クーポン、ポイント、予約、キャンセル条件は固定保証せず、公式画面の確認を促す
+
+詳細は`docs/lifestyle-generation.md`を参照する。

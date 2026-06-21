@@ -96,3 +96,11 @@ python3 tools/build_tiktok_lite.py --check
 ```bash
 python3 tools/kozeni_design_audit.py
 ```
+
+- `docs/lifestyle-generation.md` 買い物・旅行ページのSSOT/生成/収益導線ルール
+
+買い物・旅行ページの生成確認：
+
+```bash
+python3 tools/build_lifestyle.py --check
+```
