@@ -1,4 +1,4 @@
-# スマホ小銭研究所 リリース前チェックリスト v42.2
+# スマホ小銭研究所 リリース前チェックリスト v43.0
 
 ## 1. 変更前
 
@@ -14,6 +14,7 @@ git status --short
 ```bash
 git diff --stat
 git diff --check
+python3 tools/build_site_foundation.py --check
 python3 tools/build_point_sites.py --check
 python3 tools/build_tiktok_lite.py --check
 python3 tools/kozeni_site_audit.py
@@ -41,6 +42,7 @@ python3 tools/kozeni_site_audit.py
 git status --short
 git diff --stat
 git diff --check
+python3 tools/build_site_foundation.py --check
 python3 tools/build_point_sites.py --check
 python3 tools/build_tiktok_lite.py --check
 python3 tools/kozeni_site_audit.py
@@ -60,3 +62,10 @@ git push
 ```bash
 python3 tools/build_lifestyle.py --check
 ```
+
+## 6. サイト基盤と旧資産
+
+- `python3 tools/build_site_foundation.py --check`が成功する
+- `style.v36.css`、`kozeni-nav.v36.3.*`、`script.v36.js`が存在しない
+- インラインCSSとインライン実行JavaScriptが0ページである
+- ホーム、404、運営者情報、問い合わせ、PR表記、プライバシーを直接編集していない

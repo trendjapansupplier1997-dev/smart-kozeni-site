@@ -35,6 +35,7 @@ Cloudflare Pages 用のクリーンな静的サイト一式です。
 - `docs/account-opening-generation.md` 口座開設ページのSSOT/生成/監査ルール
 - `docs/point-site-generation.md` ポイ活ページのSSOT/生成/監査ルール
 - `docs/tiktok-lite-generation.md` TikTok LiteページのSSOT/生成/監査ルール
+- `docs/site-foundation-generation.md` ホーム・404・サイト情報ページのSSOT/旧v36撤去ルール
 - `tools/kozeni_site_audit.py` サイト衛生チェック用スクリプト
 
 監査コマンド：
@@ -103,4 +104,10 @@ python3 tools/kozeni_design_audit.py
 
 ```bash
 python3 tools/build_lifestyle.py --check
+```
+
+サイト基盤ページの生成確認：
+
+```bash
+python3 tools/build_site_foundation.py --check
 ```

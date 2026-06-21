@@ -22,6 +22,7 @@ import build_account_opening
 import build_point_sites
 import build_tiktok_lite
 import build_lifestyle
+import build_site_foundation
 import monetization
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -404,6 +405,8 @@ def audit_mobile_sim_guides() -> list[str]:
             problems.append(f"{rel}: inline style is forbidden")
         if text.count('type="application/ld+json"') != 1:
             problems.append(f"{rel}: exactly one JSON-LD graph is required")
+        if f'"dateModified":"{data["checked_at"]}"' not in text:
+            problems.append(f"{rel}: dateModified differs from checked_at")
         if re.search(r'<script(?![^>]*type="application/ld\+json")', text, flags=re.I):
             problems.append(f"{rel}: executable inline script is forbidden")
         if f'href="{build_mobile_sim_guides.STYLE_HREF}"' not in text:
@@ -480,6 +483,8 @@ def audit_home_network() -> list[str]:
             problems.append(f"{rel}: inline style is forbidden")
         if text.count('type="application/ld+json"') != 1:
             problems.append(f"{rel}: exactly one JSON-LD graph is required")
+        if f'"dateModified":"{data["checked_at"]}"' not in text:
+            problems.append(f"{rel}: dateModified differs from checked_at")
         if re.search(
             r'<script(?![^>]*type="application/ld\+json")',
             text,
@@ -715,6 +720,8 @@ def audit_credit_cards() -> list[str]:
             problems.append(f"{rel}: executable inline script is forbidden")
         if text.count('type="application/ld+json"') != 1:
             problems.append(f"{rel}: exactly one JSON-LD graph is required")
+        if f'"dateModified":"{data["checked_at"]}"' not in text:
+            problems.append(f"{rel}: dateModified differs from checked_at")
         if f'href="{build_credit_cards.STYLE_HREF}"' not in text:
             problems.append(f"{rel}: shared credit-card CSS is missing")
         if f'<link rel="canonical" href="{canonical}">' not in text:
@@ -1366,6 +1373,8 @@ def audit_lifestyle() -> list[str]:
             problems.append(f"{rel}: executable inline script is forbidden")
         if text.count('type="application/ld+json"') != 1:
             problems.append(f"{rel}: exactly one JSON-LD graph is required")
+        if f'"dateModified":"{data["checked_at"]}"' not in text:
+            problems.append(f"{rel}: dateModified differs from checked_at")
         if f'href="{build_lifestyle.STYLE_HREF}"' not in text:
             problems.append(f"{rel}: shared lifestyle CSS is missing")
         if f'<link rel="canonical" href="{canonical}">' not in text:
@@ -1396,6 +1405,93 @@ def audit_lifestyle() -> list[str]:
             for card in data["cards"]:
                 if "href" in card and not local_target_exists(card["href"]):
                     problems.append(f"{rel}: broken card link: {card['href']}")
+
+    return problems
+
+
+def audit_site_foundation() -> list[str]:
+    problems: list[str] = []
+    sitemap = sitemap_urls()
+    try:
+        records = build_site_foundation.build_records()
+    except Exception as error:
+        return [f"data/site-foundation: invalid foundation data: {error}"]
+
+    if len(records) != 6:
+        problems.append(
+            f"site foundation: expected 6 generated pages, got {len(records)}"
+        )
+
+    forbidden_assets = (
+        "assets/style.v36.css",
+        "assets/kozeni-nav.v36.3.css",
+        "assets/script.v36.js",
+        "assets/kozeni-nav.v36.3.js",
+        "assets/kozeni-home.v1.css",
+        "assets/kozeni-menu.v1.css",
+        "assets/kozeni-menu.v1.js",
+    )
+    for rel in forbidden_assets:
+        if (ROOT / rel).exists():
+            problems.append(f"{rel}: retired asset must be deleted")
+
+    forbidden_tokens = (
+        "style.v36.css",
+        "kozeni-nav.v36.3",
+        "script.v36.js",
+        "kozeni-home.v1.css",
+        "kozeni-menu.v1",
+        "kozeni-nav-fallback",
+        "sk-menu-toggle",
+        "sk-left-menu",
+        "kozeni-v363",
+    )
+
+    for _, data, page, rendered in records:
+        rel = page.relative_to(ROOT).as_posix()
+        canonical = build_site_foundation.canonical_for(rel)
+        if not page.exists():
+            problems.append(f"{rel}: generated foundation page is missing")
+            continue
+        text = read(page)
+        if text != rendered:
+            problems.append(f"{rel}: generated foundation HTML is outdated")
+        if text.count("<h1") != 1:
+            problems.append(f"{rel}: h1 must appear exactly once")
+        if "<style" in text or re.search(r"\sstyle=[\"']", text, flags=re.I):
+            problems.append(f"{rel}: inline style is forbidden")
+        if re.search(
+            r'<script\b(?![^>]*\bsrc=)(?![^>]*type=["\']application/ld\+json["\'])[^>]*>',
+            text,
+            flags=re.I,
+        ):
+            problems.append(f"{rel}: executable inline script is forbidden")
+        if text.count('type="application/ld+json"') != 1:
+            problems.append(f"{rel}: exactly one JSON-LD graph is required")
+        if f'"dateModified":"{data["checked_at"]}"' not in text:
+            problems.append(f"{rel}: dateModified differs from checked_at")
+        if 'href="/assets/kozeni-site-foundation.v1.css"' not in text:
+            problems.append(f"{rel}: shared foundation CSS is missing")
+        if 'src="/assets/kozeni-site-foundation.v1.js"' not in text:
+            problems.append(f"{rel}: shared foundation JS is missing")
+        if f'<link rel="canonical" href="{canonical}">' not in text:
+            problems.append(f"{rel}: canonical is incorrect")
+        if rel != "404.html" and canonical not in sitemap:
+            problems.append(f"{rel}: canonical URL is missing from sitemap")
+        if rel == "404.html" and '<meta name="robots" content="noindex,follow">' not in text:
+            problems.append(f"{rel}: 404 must be noindex,follow")
+        if rel == "index.html":
+            if 'data-foundation-menu-toggle' not in text or 'data-foundation-menu' not in text:
+                problems.append(f"{rel}: home menu contract is missing")
+        elif 'class="foundation-breadcrumb"' not in text:
+            problems.append(f"{rel}: visible breadcrumb is required")
+        for token in forbidden_tokens:
+            if token in text:
+                problems.append(f"{rel}: retired token remains: {token}")
+
+        for href in re.findall(r'href=["\']([^"\']+)["\']', text, flags=re.I):
+            if href.startswith("/") and not local_target_exists(href):
+                problems.append(f"{rel}: broken local link: {href}")
 
     return problems
 
@@ -1479,6 +1575,7 @@ def main() -> int:
     point_site_problems = audit_point_sites()
     tiktok_lite_problems = audit_tiktok_lite()
     lifestyle_problems = audit_lifestyle()
+    site_foundation_problems = audit_site_foundation()
 
     print("=== kozeni site audit ===")
     print(f"HTML files: {len(HTML_FILES)}")
@@ -1546,6 +1643,11 @@ def main() -> int:
     show_list(
         "generated shopping/travel pages",
         lifestyle_problems,
+        problems,
+    )
+    show_list(
+        "generated site foundation pages",
+        site_foundation_problems,
         problems,
     )
 

@@ -1,0 +1,18 @@
+{
+  "page_type": "error",
+  "output": "404.html",
+  "breadcrumb_label": "ページが見つかりません",
+  "title": "ページが見つかりません｜スマホ小銭研究所",
+  "description": "指定されたページは見つかりませんでした。ホームまたは主要カテゴリから選び直してください。",
+  "robots": "noindex,follow",
+  "eyebrow": "404",
+  "h1": "ページが見つかりません",
+  "lead": "URLが変更されたか、ページが削除された可能性があります。ホームまたは主要カテゴリから選び直してください。",
+  "checked_at": "2026-06-21",
+  "sections": [],
+  "actions": [
+    {"href": "/", "label": "ホームへ戻る"},
+    {"href": "/mobile-sim/", "label": "スマホ・回線を見る"},
+    {"href": "/point-site/", "label": "ポイ活を見る"}
+  ]
+}

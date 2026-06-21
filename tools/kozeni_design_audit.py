@@ -133,7 +133,18 @@ def main() -> int:
         print("OK: none")
 
     print("\n=== result ===")
-    print("OK: audit completed. Treat v36 refs and inline styles as migration targets, not immediate failures.")
+    legacy_refs = [path for path in css_refs if "v36" in path]
+    blockers = []
+    if legacy_refs:
+        blockers.append(f"legacy v36 CSS refs: {len(legacy_refs)}")
+    if inline_style_pages:
+        blockers.append(f"inline style pages: {len(inline_style_pages)}")
+    if inline_script_pages:
+        blockers.append(f"inline script pages: {len(inline_script_pages)}")
+    if blockers:
+        print("NG: " + ", ".join(blockers))
+        return 1
+    print("OK: no legacy v36 CSS refs, inline styles, or inline executable scripts")
     return 0
 
 if __name__ == "__main__":

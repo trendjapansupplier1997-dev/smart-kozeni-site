@@ -52,12 +52,12 @@
 
 ## CSS/JSの扱い
 
-既存ページには v36 系CSS/JSが残っているが、これは互換用の legacy 資産として扱う。
+旧v36系CSS/JSは撤去済みであり、互換資産として再追加しない。
 
-- 既存ページのv36系は、壊さない限り急いで消さない
-- 新規ページでは `kozeni-brand.v1.css`、`kozeni-nav.v1.css`、`kozeni-return.v1.css` を基本にする
+- 新規ページでは `kozeni-brand.v1.css`、`kozeni-nav.v1.css`、`kozeni-return.v1.css` とカテゴリ共通CSSを基本にする
 - CSS統合はカテゴリ単位で進める
 - 1ページだけの見た目調整をHTML内に増やさない
+- インラインCSSとインライン実行JavaScriptは追加しない
 
 ## 収益導線の考え方
 
@@ -210,3 +210,16 @@
 - クーポン、ポイント、予約、キャンセル条件は固定保証せず、公式画面の確認を促す
 
 詳細は`docs/lifestyle-generation.md`を参照する。
+
+## サイト基盤ページ
+
+ホーム、404、運営者情報、問い合わせ、PR表記、プライバシーは直接編集しない。
+
+- 内容は`data/site-foundation/`で管理する
+- 構造は`templates/site-home.html`と`templates/site-info.html`で管理する
+- CSS/JSは`assets/kozeni-site-foundation.v1.*`へ集約する
+- `python3 tools/build_site_foundation.py`で生成する
+- インラインCSS、インライン実行JavaScript、旧`v36`資産を追加しない
+- ホームメニュー以外の重要情報をJavaScriptへ依存させない
+
+詳細は`docs/site-foundation-generation.md`を参照する。

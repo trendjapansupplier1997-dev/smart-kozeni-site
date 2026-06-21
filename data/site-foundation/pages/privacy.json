@@ -1,0 +1,34 @@
+{
+  "page_type": "info",
+  "output": "privacy/index.html",
+  "breadcrumb_label": "プライバシー",
+  "title": "プライバシーポリシー｜スマホ小銭研究所",
+  "description": "スマホ小銭研究所のプライバシーポリシー。アクセス解析、外部リンク、お問い合わせ情報の取り扱いについて。",
+  "eyebrow": "PRIVACY",
+  "h1": "プライバシーポリシー",
+  "lead": "サイト改善に必要な範囲で、アクセス情報やお問い合わせ情報を取り扱います。",
+  "checked_at": "2026-06-21",
+  "sections": [
+    {
+      "label": "ANALYTICS",
+      "title": "アクセス解析",
+      "body": "当サイトの一部ページではGoogle Analytics 4とMicrosoft Clarityを利用し、閲覧状況を集計します。これらのサービスによりCookie等が利用される場合があります。"
+    },
+    {
+      "label": "CONTACT",
+      "title": "お問い合わせ情報",
+      "body": "お問い合わせで受け取ったメールアドレスや記載内容は、回答、内容確認、必要な連絡のために利用します。"
+    },
+    {
+      "label": "EXTERNAL LINK",
+      "title": "外部サイト",
+      "body": "紹介リンクや広告リンクの遷移先における利用条件、Cookie、個人情報の取り扱いは、各外部サイトの規約と方針をご確認ください。"
+    },
+    {
+      "label": "UPDATE",
+      "title": "方針の更新",
+      "body": "利用サービスや運用方法の変更に応じて、本方針を更新することがあります。"
+    }
+  ],
+  "actions": []
+}

@@ -1,0 +1,38 @@
+{
+  "page_type": "info",
+  "output": "contact/index.html",
+  "breadcrumb_label": "お問い合わせ",
+  "title": "お問い合わせ｜スマホ小銭研究所",
+  "description": "スマホ小銭研究所へのお問い合わせ窓口。掲載内容の確認、修正依頼、広告掲載・提携のご相談はこちら。",
+  "eyebrow": "CONTACT",
+  "h1": "お問い合わせ",
+  "lead": "掲載内容の確認、修正依頼、広告掲載、提携、その他のご連絡はこちらからお願いします。",
+  "checked_at": "2026-06-21",
+  "sections": [
+    {
+      "label": "MAIL",
+      "title": "info@smart-kozeni.com",
+      "body": "お問い合わせは次のメールアドレスまでお送りください。",
+      "link": {
+        "href": "mailto:info@smart-kozeni.com",
+        "label": "メールを作成する"
+      }
+    },
+    {
+      "label": "REQUEST",
+      "title": "掲載内容の修正依頼",
+      "body": "該当ページのURLと、確認・修正したい内容を添えてご連絡ください。"
+    },
+    {
+      "label": "BUSINESS",
+      "title": "広告掲載・提携",
+      "body": "案件名、条件、掲載希望内容の概要を添えてご連絡ください。掲載を保証するものではありません。"
+    },
+    {
+      "label": "SERVICE",
+      "title": "個別サービスの確認",
+      "body": "ポイント付与可否、審査結果、キャンペーン適用状況など、個別アカウントに関する内容は各公式サービスの窓口へご確認ください。"
+    }
+  ],
+  "actions": []
+}
