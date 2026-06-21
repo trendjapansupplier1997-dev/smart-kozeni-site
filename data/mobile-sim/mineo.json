@@ -103,11 +103,7 @@
     }
   ],
   "cta": {
-    "url": "https://h.accesstrade.net/sp/cc?rk=0100ii8900osbd",
-    "label": "公式条件を見る",
-    "affiliate": true,
-    "note": "PR：このリンクは広告リンクです。条件・特典は公式画面で確認してください。",
-    "tracking_pixel_url": "https://h.accesstrade.net/sp/rr?rk=0100ii8900osbd"
+    "program_id": "mineo-accesstrade"
   },
   "sources": [
     {

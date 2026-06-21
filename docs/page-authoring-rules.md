@@ -74,8 +74,8 @@
 
 1. ファーストビュー：何のページか、誰向けか
 2. PR/紹介リンク表記
-3. 3問チェック：対象かどうか
-4. 向いている人 / 向いていない人
+3. 向いている人 / 向いていない人
+4. 申し込み前チェック
 5. 条件確認：年会費・利用条件・対象外・付与時期
 6. 公式/申込CTA
 7. 関連ページへの内部リンク
@@ -122,7 +122,27 @@
 - 工事不要と光回線の向き不向きを明示する
 - 重複URLはHTMLを残さず`_redirects`へ集約する
 
+
+## 収益導線のSSOT
+
+- 承認済みASP案件は`data/monetization/programs.json`へ登録する
+- ページJSONは`cta.program_id`だけを参照する
+- ASP URL・PR注記・計測ピクセルをページごとに複製しない
+- 生の広告HTMLを直接貼らない
+- 一覧ページからASPへ直接遷移させず、個別条件ページを経由する
+- 詳細は`docs/monetization.md`を参照する
+
+## クレジットカードページ
+
+`/credit-card/`と`/credit-card/<slug>/`は直接編集しない。
+
+- 内容は`data/credit-card/*.json`と`data/credit-card-hub.json`で管理する
+- 構造は`templates/credit-card-*.html`で管理する
+- CSSは`assets/kozeni-credit-card.v1.css`へ共通化する
+- `python3 tools/build_credit_cards.py`で生成する
+- `python3 tools/build_credit_cards.py --check`で生成差分を確認する
+- 診断JavaScriptを追加せず、重要な条件は常にHTMLへ表示する
+
 ## 公開前チェック
 
 公開前は `python3 tools/kozeni_site_audit.py` を実行し、最低限の欠落を確認する。
-

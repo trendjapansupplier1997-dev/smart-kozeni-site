@@ -17,6 +17,8 @@ import build_mobile_sim
 import build_mobile_sim_hub
 import build_mobile_sim_guides
 import build_home_network
+import build_credit_cards
+import monetization
 
 ROOT = Path(__file__).resolve().parents[1]
 HTML_FILES = sorted(
@@ -604,6 +606,261 @@ def audit_home_network() -> list[str]:
 
     return problems
 
+
+def audit_monetization_registry() -> list[str]:
+    problems: list[str] = []
+    try:
+        programs = monetization.load_registry()
+    except Exception as error:
+        return [f"data/monetization/programs.json: {error}"]
+
+    if "tokyu-card-afb" not in programs:
+        problems.append("data/monetization/programs.json: tokyu-card-afb is missing")
+    else:
+        program = programs["tokyu-card-afb"]
+        if program.get("campaign_id") != "C980560u":
+            problems.append("data/monetization/programs.json: TOKYU campaign_id differs from approved CSV")
+        if program.get("media_id") != "H13605n":
+            problems.append("data/monetization/programs.json: TOKYU media_id differs from approved CSV")
+        creative = program.get("creative", {})
+        if creative.get("id") != "450756":
+            problems.append("data/monetization/programs.json: TOKYU creative id differs from approved CSV")
+        if creative.get("width") != 320 or creative.get("height") != 100:
+            problems.append("data/monetization/programs.json: TOKYU creative size differs from approved CSV")
+
+    affiliate_data_paths = [
+        *sorted((ROOT / "data" / "mobile-sim").glob("*.json")),
+        *sorted((ROOT / "data" / "home-network").glob("*.json")),
+        *sorted((ROOT / "data" / "credit-card").glob("*.json")),
+    ]
+    known_urls = {program["click_url"] for program in programs.values()}
+    for data_path in affiliate_data_paths:
+        try:
+            raw = json.loads(read(data_path))
+        except json.JSONDecodeError as error:
+            problems.append(f"{data_path.relative_to(ROOT)}: invalid JSON: {error}")
+            continue
+        cta = raw.get("cta")
+        if not isinstance(cta, dict):
+            continue
+        if cta.get("affiliate") is True:
+            problems.append(
+                f"{data_path.relative_to(ROOT)}: affiliate CTA must use program_id"
+            )
+        if cta.get("url") in known_urls:
+            problems.append(
+                f"{data_path.relative_to(ROOT)}: monetization URL is duplicated outside registry"
+            )
+        program_id = cta.get("program_id")
+        if program_id is not None and program_id not in programs:
+            problems.append(
+                f"{data_path.relative_to(ROOT)}: unknown program_id {program_id}"
+            )
+
+    return problems
+
+
+def audit_credit_cards() -> list[str]:
+    problems: list[str] = []
+    sitemap = sitemap_urls()
+    detail_template = Template(read(build_credit_cards.DETAIL_TEMPLATE_PATH))
+    hub_template = Template(read(build_credit_cards.HUB_TEMPLATE_PATH))
+
+    try:
+        details = build_credit_cards.load_all_details()
+    except Exception as error:
+        return [f"data/credit-card: invalid detail data: {error}"]
+
+    for slug, data in details.items():
+        page = build_credit_cards.detail_output(data)
+        rel = page.relative_to(ROOT).as_posix()
+        canonical = build_credit_cards.detail_canonical(data)
+        try:
+            rendered = build_credit_cards.render_detail(data, detail_template)
+        except Exception as error:
+            problems.append(f"{rel}: render failed: {error}")
+            continue
+        if not page.exists():
+            problems.append(f"{rel}: generated credit-card page is missing")
+            continue
+        text = read(page)
+        if text != rendered:
+            problems.append(f"{rel}: generated credit-card HTML is outdated")
+        if text.count("<h1") != 1:
+            problems.append(f"{rel}: h1 must appear exactly once")
+        if "<style" in text:
+            problems.append(f"{rel}: inline style is forbidden")
+        if re.search(
+            r'<script(?![^>]*type="application/ld\+json")',
+            text,
+            flags=re.I,
+        ):
+            problems.append(f"{rel}: executable inline script is forbidden")
+        if text.count('type="application/ld+json"') != 1:
+            problems.append(f"{rel}: exactly one JSON-LD graph is required")
+        if f'href="{build_credit_cards.STYLE_HREF}"' not in text:
+            problems.append(f"{rel}: shared credit-card CSS is missing")
+        if f'<link rel="canonical" href="{canonical}">' not in text:
+            problems.append(f"{rel}: canonical is incorrect")
+        if f'"dateModified":"{data["checked_at"]}"' not in text:
+            problems.append(f"{rel}: dateModified differs from checked_at")
+        if canonical not in sitemap:
+            problems.append(f"{rel}: canonical URL is missing from sitemap")
+        if text.count("<details>") != len(data["faq"]):
+            problems.append(f"{rel}: visible FAQ count differs from data")
+
+        cta = data["cta"]
+        anchors = re.findall(
+            r'<a class="credit-cta__link(?: [^"]*)?"([^>]*)>(.*?)</a>',
+            text,
+            flags=re.S,
+        )
+        if len(anchors) != 1:
+            problems.append(f"{rel}: exactly one credit CTA is required")
+        else:
+            attrs, body = anchors[0]
+            expected_href = html.escape(cta["url"], quote=True)
+            required = [
+                f'href="{expected_href}"',
+                'target="_blank"',
+                "noopener",
+                "noreferrer",
+                'referrerpolicy="no-referrer-when-downgrade"',
+            ]
+            if cta["affiliate"]:
+                required.extend(("nofollow", "sponsored"))
+            for token in required:
+                if token not in attrs:
+                    problems.append(f"{rel}: CTA missing {token}")
+            if cta.get("format", "text") == "banner":
+                creative = cta["creative"]
+                for token in (
+                    html.escape(creative["image_url"], quote=True),
+                    f'width="{creative["width"]}"',
+                    f'height="{creative["height"]}"',
+                    html.escape(creative["alt"]),
+                ):
+                    if token not in body:
+                        problems.append(f"{rel}: banner CTA missing {token}")
+            elif html.escape(cta["label"]) not in body:
+                problems.append(f"{rel}: CTA label differs from data")
+
+        notes = re.findall(
+            r'<p class="credit-cta__note">(.*?)</p>',
+            text,
+            flags=re.S,
+        )
+        expected_note = html.escape(cta["note"])
+        if notes != ([expected_note] if expected_note else []):
+            problems.append(f"{rel}: CTA note differs from data")
+        tracking = cta.get("tracking_pixel_url")
+        if tracking:
+            expected = html.escape(tracking, quote=True)
+            if text.count(expected) != 1:
+                problems.append(f"{rel}: tracking pixel must appear exactly once")
+        elif "credit-cta__tracking" in text:
+            problems.append(f"{rel}: unexpected tracking pixel")
+
+        source_lists = re.findall(
+            r'<ul class="credit-source-list"[^>]*>(.*?)</ul>',
+            text,
+            flags=re.S,
+        )
+        if len(source_lists) != 1:
+            problems.append(f"{rel}: exactly one official source list is required")
+        else:
+            actual = re.findall(
+                r'<li>根拠：<a href="([^"]+)" '
+                r'target="_blank" rel="noopener noreferrer">(.*?)</a></li>',
+                source_lists[0],
+                flags=re.S,
+            )
+            expected = [
+                (
+                    html.escape(item["url"], quote=True),
+                    html.escape(item["label"]),
+                )
+                for item in data["sources"]
+            ]
+            if actual != expected:
+                problems.append(f"{rel}: official source list differs from data")
+        for item in data["related"]:
+            if not local_target_exists(item["href"]):
+                problems.append(f"{rel}: broken related link: {item['href']}")
+        for token in (
+            "quiz-question",
+            "quiz-submit",
+            "credit-action-cta",
+            "data-kozeni-route",
+            "kozeni-helper-v40",
+        ):
+            if token in text:
+                problems.append(f"{rel}: forbidden legacy credit-card token: {token}")
+
+    try:
+        hub_data = build_credit_cards.load_hub()
+        rendered_hub = build_credit_cards.render_hub(
+            hub_data,
+            details,
+            hub_template,
+        )
+    except Exception as error:
+        problems.append(f"credit-card/index.html: hub render failed: {error}")
+        return problems
+
+    hub_page = ROOT / "credit-card" / "index.html"
+    hub_rel = hub_page.relative_to(ROOT).as_posix()
+    hub_canonical = f"{build_credit_cards.BASE_URL}/credit-card/"
+    if not hub_page.exists():
+        problems.append(f"{hub_rel}: generated credit-card hub is missing")
+    else:
+        text = read(hub_page)
+        if text != rendered_hub:
+            problems.append(f"{hub_rel}: generated credit-card hub is outdated")
+        if text.count("<h1") != 1:
+            problems.append(f"{hub_rel}: h1 must appear exactly once")
+        if "<style" in text:
+            problems.append(f"{hub_rel}: inline style is forbidden")
+        if re.search(
+            r'<script(?![^>]*type="application/ld\+json")',
+            text,
+            flags=re.I,
+        ):
+            problems.append(f"{hub_rel}: executable inline script is forbidden")
+        if f'href="{build_credit_cards.STYLE_HREF}"' not in text:
+            problems.append(f"{hub_rel}: shared credit-card CSS is missing")
+        if f'<link rel="canonical" href="{hub_canonical}">' not in text:
+            problems.append(f"{hub_rel}: canonical is incorrect")
+        if hub_canonical not in sitemap:
+            problems.append(f"{hub_rel}: canonical URL is missing from sitemap")
+        if text.count('class="credit-featured__tag"') != 3:
+            problems.append(f"{hub_rel}: exactly three featured cards are required")
+        positions = [
+            text.find(f'href="/credit-card/{slug}/"')
+            for slug in hub_data["featured_slugs"]
+        ]
+        if any(position < 0 for position in positions):
+            problems.append(f"{hub_rel}: featured card link is missing")
+        elif positions != sorted(positions):
+            problems.append(f"{hub_rel}: featured card order differs from data")
+        for domain in (
+            "trafficgate.net",
+            "valuecommerce.com",
+            "afi-b.com",
+            "accesstrade.net",
+        ):
+            if domain in text:
+                problems.append(f"{hub_rel}: hub must not link directly to affiliate domain {domain}")
+        for item in hub_data["purpose_links"]:
+            if not local_target_exists(item["href"]):
+                problems.append(f"{hub_rel}: broken purpose link: {item['href']}")
+
+    tokyu = details.get("tokyu-card")
+    if not tokyu or tokyu["cta"].get("program_id") != "tokyu-card-afb":
+        problems.append("data/credit-card/tokyu-card.json: approved AFB program is not connected")
+
+    return problems
+
 def show_list(
     title: str,
     items: list[str],
@@ -678,6 +935,8 @@ def main() -> int:
     mobile_sim_hub_problems = audit_mobile_sim_hub()
     mobile_sim_guide_problems = audit_mobile_sim_guides()
     home_network_problems = audit_home_network()
+    monetization_problems = audit_monetization_registry()
+    credit_card_problems = audit_credit_cards()
 
     print("=== kozeni site audit ===")
     print(f"HTML files: {len(HTML_FILES)}")
@@ -715,6 +974,16 @@ def main() -> int:
     show_list(
         "generated home network pages",
         home_network_problems,
+        problems,
+    )
+    show_list(
+        "monetization registry",
+        monetization_problems,
+        problems,
+    )
+    show_list(
+        "generated credit-card pages",
+        credit_card_problems,
         problems,
     )
 

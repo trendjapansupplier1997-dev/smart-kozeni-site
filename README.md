@@ -31,6 +31,7 @@ Cloudflare Pages 用のクリーンな静的サイト一式です。
 - `docs/page-authoring-rules.md` 新規ページ作成ルール
 - `docs/release-checklist.md` リリース前チェックリスト
 - `docs/mobile-sim-generation.md` スマホ回線詳細ページのSSOT/生成/監査ルール
+- `docs/monetization.md` 承認済みASP案件と収益導線のSSOTルール
 - `tools/kozeni_site_audit.py` サイト衛生チェック用スクリプト
 
 監査コマンド：
@@ -63,9 +64,14 @@ python3 tools/build_mobile_sim_guides.py --check
 python3 tools/build_home_network.py --check
 ```
 
+クレジットカードページの生成確認：
+
+```bash
+python3 tools/build_credit_cards.py --check
+```
+
 デザイン監査コマンド：
 
 ```bash
 python3 tools/kozeni_design_audit.py
 ```
-

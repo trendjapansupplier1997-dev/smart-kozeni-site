@@ -94,10 +94,7 @@
     }
   ],
   "cta": {
-    "url": "https://tr.affiliate-sp.docomo.ne.jp/cl/d0000001629/4911/838",
-    "label": "公式条件を見る",
-    "affiliate": true,
-    "note": "PR：このリンクは広告リンクです。条件・特典は公式画面で確認してください。"
+    "program_id": "ahamo-docomo"
   },
   "sources": [
     {

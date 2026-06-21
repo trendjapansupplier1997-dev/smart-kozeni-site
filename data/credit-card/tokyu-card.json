@@ -1,0 +1,61 @@
+{
+  "slug": "tokyu-card",
+  "name": "TOKYU CARD ClubQ JMB",
+  "title": "東急カードの条件確認｜東急線・PASMOを使う人向け",
+  "description": "TOKYU CARD ClubQ JMBの年会費、TOKYU POINT、PASMOオートチャージ、向いている人と注意点を整理します。",
+  "eyebrow": "CREDIT CARD",
+  "h1": "東急カードは、東急線・PASMOを使う人向け。",
+  "lead": "東急線の定期券やPASMOオートチャージ、東急グループを使う人が確認したいカードです。年会費とポイント登録条件を確認します。",
+  "checked_at": "2026-06-21",
+  "verdict_title": "東急沿線でPASMOとTOKYU POINTをまとめたい人向け",
+  "verdict": "TOKYU CARD ClubQ JMBは初年度年会費無料、2年目以降は1,100円です。東急線の定期券やPASMOオートチャージでポイントを貯めるには、所定の登録条件を確認します。",
+  "badges": ["初年度無料", "2年目以降1,100円", "PASMOオートチャージ"],
+  "fit": [
+    "東急線を日常的に利用する",
+    "PASMOオートチャージを使いたい",
+    "東急グループとTOKYU POINTを利用する"
+  ],
+  "not_fit": [
+    "東急沿線や東急グループをほとんど使わない",
+    "2年目以降も無条件の年会費無料を優先したい",
+    "PASMOやJALマイル連携を使う予定がない"
+  ],
+  "checklist": [
+    "申込むカード種類とPASMO一体型・分離型",
+    "初年度と2年目以降の年会費",
+    "Web明細登録によるポイント条件",
+    "電車とバスで貯まるTOKYU POINTの登録",
+    "PASMO定期券・オートチャージの対象条件",
+    "入会キャンペーンの申込・利用・付与条件"
+  ],
+  "facts": [
+    {"label": "年会費", "value": "初年度無料、2年目以降1,100円（税込）"},
+    {"label": "家族カード", "value": "330円（税込）"},
+    {"label": "クレジットポイント", "value": "所定条件で最大1%"},
+    {"label": "PASMO", "value": "定期券購入・オートチャージでポイント対象。事前登録条件あり"},
+    {"label": "JALマイル", "value": "JALマイルとTOKYU POINTの相互交換に対応"}
+  ],
+  "cautions": [
+    "2年目以降は年会費がかかります",
+    "最大1%の条件にはWeb明細サービスなどの登録条件があります",
+    "定期券購入やオートチャージのポイントには事前登録が必要です",
+    "PASMO一体型と記名PASMO組み合わせ型で扱いが異なります",
+    "入会キャンペーンは期間と達成条件が変わります"
+  ],
+  "related": [
+    {"href": "/credit-card/epos-card/", "title": "年会費無料を優先する", "description": "東急沿線利用が少ない場合の候補です。"},
+    {"href": "/travel/", "title": "旅行・移動の確認ページ", "description": "交通や予約条件を確認します。"},
+    {"href": "/credit-card/", "title": "クレカ一覧へ戻る", "description": "使い方から候補を比較します。"}
+  ],
+  "faq": [
+    {"question": "年会費はいくらですか？", "answer": "初年度無料、2年目以降は1,100円です。家族カードは330円です。切替などでは条件が異なる場合があります。"},
+    {"question": "PASMOオートチャージでポイントが貯まりますか？", "answer": "対象ですが、「電車とバスで貯まるTOKYU POINT」など所定の登録条件を確認してください。"},
+    {"question": "通常の買い物で1%貯まりますか？", "answer": "カード種類、利用先、Web明細サービス登録などにより加算率が異なります。公式条件を確認してください。"}
+  ],
+  "cta": {"program_id": "tokyu-card-afb"},
+  "sources": [
+    {"url": "https://www.topcard.co.jp/card/jmb", "label": "東急カード公式「TOKYU CARD ClubQ JMB」"},
+    {"url": "https://www.topcard.co.jp/card/jmbpasmo", "label": "東急カード公式「TOKYU CARD ClubQ JMB PASMO」"},
+    {"url": "https://www.topcard.co.jp/point/save/premium/index.html", "label": "東急カード公式「クレジット利用で貯める」"}
+  ]
+}

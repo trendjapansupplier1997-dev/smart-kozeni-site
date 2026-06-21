@@ -11,16 +11,12 @@ from pathlib import Path
 from string import Template
 from typing import Any
 
+import monetization
 ROOT = Path(__file__).resolve().parents[1]
 DATA_DIR = ROOT / "data" / "mobile-sim"
 TEMPLATE_PATH = ROOT / "templates" / "mobile-sim-detail.html"
 BASE_URL = "https://smart-kozeni.com"
 SLUG_RE = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
-STANDARD_PR_NOTE = (
-    "PR：このリンクは広告リンクです。"
-    "条件・特典は公式画面で確認してください。"
-)
-
 
 def esc(value: object) -> str:
     return html.escape(str(value), quote=True)
@@ -87,26 +83,7 @@ def load_data(path: Path) -> dict[str, Any]:
     ):
         require_list(data, key, path)
 
-    cta = data["cta"]
-    if not isinstance(cta, dict):
-        raise ValueError(f"{path}: cta must be an object")
-    for key in ("url", "label", "affiliate", "note"):
-        if key not in cta:
-            raise ValueError(f"{path}: cta.{key} is required")
-    if not str(cta["url"]).startswith("https://"):
-        raise ValueError(f"{path}: cta.url must start with https://")
-    if cta["label"] != "公式条件を見る":
-        raise ValueError(f"{path}: cta.label must be 公式条件を見る")
-    if not isinstance(cta["affiliate"], bool):
-        raise ValueError(f"{path}: cta.affiliate must be boolean")
-    if cta["affiliate"] and cta["note"] != STANDARD_PR_NOTE:
-        raise ValueError(f"{path}: affiliate CTA must use the standard PR note")
-
-    tracking = cta.get("tracking_pixel_url")
-    if tracking is not None and not str(tracking).startswith("https://"):
-        raise ValueError(
-            f"{path}: cta.tracking_pixel_url must start with https://"
-        )
+    data["cta"] = monetization.resolve_cta(data["cta"], path)
 
     for source in data["sources"]:
         if not isinstance(source, dict):
@@ -179,31 +156,13 @@ def render_faq(items: list[dict[str, str]]) -> str:
 
 
 def render_cta(cta: dict[str, Any]) -> str:
-    rel = ["noopener", "noreferrer"]
-    if cta["affiliate"]:
-        rel = ["nofollow", "sponsored", *rel]
-
-    tracking = ""
-    if cta.get("tracking_pixel_url"):
-        tracking = (
-            f'<img class="sim-cta__tracking" '
-            f'src="{esc(cta["tracking_pixel_url"])}" '
-            'width="1" height="1" alt="">'
-        )
-
-    note = ""
-    if cta["note"]:
-        note = f'<p class="sim-cta__note">{esc(cta["note"])}</p>'
-
-    return (
-        '<div class="sim-cta">'
-        f'<a class="sim-cta__button" href="{esc(cta["url"])}" '
-        'target="_blank" '
-        f'rel="{" ".join(rel)}" '
-        'referrerpolicy="no-referrer-when-downgrade">'
-        f'{esc(cta["label"])}{tracking}</a>'
-        f"{note}"
-        "</div>"
+    return monetization.render_cta(
+        cta,
+        container_class="sim-cta",
+        link_class="sim-cta__button",
+        note_class="sim-cta__note",
+        tracking_class="sim-cta__tracking",
+        creative_class="sim-cta__creative",
     )
 
 

@@ -1,0 +1,89 @@
+{
+  "version": 1,
+  "programs": {
+    "ahamo-docomo": {
+      "asp": "docomo-affiliate",
+      "advertiser": "NTTドコモ",
+      "status": "approved",
+      "format": "text",
+      "click_url": "https://tr.affiliate-sp.docomo.ne.jp/cl/d0000001629/4911/838",
+      "label": "公式条件を見る",
+      "pr_note": "PR：このリンクは広告リンクです。条件・特典は公式画面で確認してください。"
+    },
+    "mineo-accesstrade": {
+      "asp": "accesstrade",
+      "advertiser": "mineo",
+      "status": "approved",
+      "format": "text",
+      "click_url": "https://h.accesstrade.net/sp/cc?rk=0100ii8900osbd",
+      "label": "公式条件を見る",
+      "pr_note": "PR：このリンクは広告リンクです。条件・特典は公式画面で確認してください。",
+      "tracking_pixel_url": "https://h.accesstrade.net/sp/rr?rk=0100ii8900osbd"
+    },
+    "rakuten-mobile-trafficgate": {
+      "asp": "trafficgate",
+      "advertiser": "楽天モバイル",
+      "status": "approved",
+      "format": "text",
+      "click_url": "https://ad2.trafficgate.net/t/r/109/4401/317799_397134",
+      "label": "公式条件を見る",
+      "pr_note": "PR：このリンクは広告リンクです。条件・特典は公式画面で確認してください。"
+    },
+    "biglobe-wimax-accesstrade": {
+      "asp": "accesstrade",
+      "advertiser": "BIGLOBE WiMAX",
+      "status": "approved",
+      "format": "text",
+      "click_url": "https://h.accesstrade.net/sp/cc?rk=0100asjy00osbd",
+      "label": "公式条件を見る",
+      "pr_note": "PR：このリンクは広告リンクです。料金・端末・提供エリア・特典条件は公式画面で確認してください。",
+      "tracking_pixel_url": "https://h.accesstrade.net/sp/rr?rk=0100asjy00osbd"
+    },
+    "rakuten-hikari-trafficgate": {
+      "asp": "trafficgate",
+      "advertiser": "楽天ひかり",
+      "status": "approved",
+      "format": "text",
+      "click_url": "https://ad2.trafficgate.net/t/r/201/3159/317799_397134",
+      "label": "公式条件を見る",
+      "pr_note": "PR：このリンクは広告リンクです。料金・工事・提供エリア・キャンペーン条件は公式画面で確認してください。"
+    },
+    "rakuten-card-trafficgate": {
+      "asp": "trafficgate",
+      "advertiser": "楽天カード",
+      "status": "approved",
+      "format": "text",
+      "click_url": "https://ad2.trafficgate.net/t/r/68/1396/317799_397134",
+      "label": "楽天カードの公式条件を見る",
+      "pr_note": "PR：このリンクは広告リンクです。条件・特典は公式画面で確認してください。"
+    },
+    "epos-card-valuecommerce": {
+      "asp": "valuecommerce",
+      "advertiser": "エポスカード",
+      "status": "approved",
+      "format": "text",
+      "click_url": "https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3770077&pid=892610025",
+      "label": "エポスカードの公式条件を見る",
+      "pr_note": "PR：このリンクはバリューコマースのアフィリエイトリンクです。条件・特典は公式画面で確認してください。"
+    },
+    "tokyu-card-afb": {
+      "asp": "afb",
+      "advertiser": "東急カード",
+      "status": "approved",
+      "format": "banner",
+      "campaign_id": "C980560u",
+      "media_id": "H13605n",
+      "click_url": "https://t.afi-b.com/visit.php?a=H13605n-G450756k&p=C980560u",
+      "label": "東急カードの公式条件を見る",
+      "pr_note": "PR：このバナーはafbのアフィリエイト広告です。年会費・ポイント・入会特典は公式画面で確認してください。",
+      "tracking_pixel_url": "https://t.afi-b.com/lead/H13605n/C980560u/G450756k",
+      "creative": {
+        "id": "450756",
+        "image_url": "https://www.afi-b.com/upload_image/13605-1646589055-3.gif",
+        "width": 320,
+        "height": 100,
+        "alt": "東急カード"
+      }
+    }
+  }
+}

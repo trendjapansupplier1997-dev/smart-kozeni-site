@@ -598,3 +598,25 @@ TikTok Lite / ポイ活入口
 ```
 
 迷う場合は説明を追加するのではなく、選択肢・カード・補足を削ります。
+
+## 収益リンクの実装
+
+承認済みASP案件は`data/monetization/programs.json`で一元管理します。
+個別ページは`cta.program_id`で参照し、URL・PR注記・計測ピクセルを複製しません。
+一覧ページからASPへ直接送らず、個別の条件確認ページを経由します。
+
+クレジットカード領域は以下で生成します。
+
+```text
+data/credit-card/*.json
+data/credit-card-hub.json
+templates/credit-card-detail.html
+templates/credit-card-hub.html
+assets/kozeni-credit-card.v1.css
+tools/build_credit_cards.py
+```
+
+```bash
+python3 tools/build_credit_cards.py
+python3 tools/build_credit_cards.py --check
+```

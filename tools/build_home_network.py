@@ -14,6 +14,7 @@ from typing import Any
 sys.dont_write_bytecode = True
 
 import build_mobile_sim
+import monetization
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA_DIR = ROOT / "data" / "home-network"
@@ -85,16 +86,7 @@ def load_data(path: Path) -> dict[str, Any]:
         if not str(item.get("label", "")).strip():
             raise ValueError(f"{path}: source label is required")
 
-    cta = data["cta"]
-    if not isinstance(cta, dict):
-        raise ValueError(f"{path}: cta must be an object")
-    for key in ("url", "label", "affiliate", "note"):
-        if key not in cta:
-            raise ValueError(f"{path}: cta.{key} is required")
-    if not str(cta["url"]).startswith("https://"):
-        raise ValueError(f"{path}: cta.url must use https")
-    if not isinstance(cta["affiliate"], bool):
-        raise ValueError(f"{path}: cta.affiliate must be boolean")
+    data["cta"] = monetization.resolve_cta(data["cta"], path)
 
     return data
 
@@ -240,7 +232,14 @@ def render_page(data: dict[str, Any], template: Template) -> str:
         "fit": render_list(data["fit"]),
         "not_fit": render_list(data["not_fit"]),
         "checklist": render_list(data["checklist"]),
-        "cta": build_mobile_sim.render_cta(data["cta"]),
+        "cta": monetization.render_cta(
+            data["cta"],
+            container_class="sim-cta",
+            link_class="sim-cta__button",
+            note_class="sim-cta__note",
+            tracking_class="sim-cta__tracking",
+            creative_class="sim-cta__creative",
+        ),
         "facts": render_facts(data["facts"]),
         "cautions": render_list(data["cautions"]),
         "sources": render_sources(data["sources"]),

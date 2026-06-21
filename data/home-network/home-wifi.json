@@ -106,11 +106,7 @@
     }
   ],
   "cta": {
-    "url": "https://h.accesstrade.net/sp/cc?rk=0100asjy00osbd",
-    "label": "公式条件を見る",
-    "affiliate": true,
-    "note": "PR：このリンクは広告リンクです。料金・端末・提供エリア・特典条件は公式画面で確認してください。",
-    "tracking_pixel_url": "https://h.accesstrade.net/sp/rr?rk=0100asjy00osbd"
+    "program_id": "biglobe-wimax-accesstrade"
   },
   "sources": [
     {

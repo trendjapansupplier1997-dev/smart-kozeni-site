@@ -82,7 +82,9 @@ PR文言は次に統一します。
 PR：このリンクは広告リンクです。条件・特典は公式画面で確認してください。
 ```
 
-ASPが指定する計測ピクセルは`cta.tracking_pixel_url`で管理します。
+承認済みASP案件は`data/monetization/programs.json`で管理し、
+ページJSONは`cta.program_id`だけを参照します。
+ASP URL・PR注記・計測ピクセルをページJSONへ複製しません。
 
 ## CSSキャッシュ
 

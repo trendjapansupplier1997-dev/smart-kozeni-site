@@ -1,0 +1,23 @@
+{
+  "title": "クレジットカードの条件比較｜年会費・使う場所から選ぶ",
+  "description": "楽天カード、エポスカード、三井住友カード（NL）、東急カード、dカード GOLD Uを、年会費と普段使う場所から比較します。",
+  "h1": "クレカは、普段使う場所から絞る。",
+  "lead": "最初に見る候補を3枚に絞り、東急沿線やドコモ系など条件が合う場合だけ追加候補を確認します。",
+  "checked_at": "2026-06-21",
+  "featured_slugs": ["rakuten-card", "epos-card", "smbc-nl"],
+  "purpose_links": [
+    {"href": "/credit-card/rakuten-card/", "title": "楽天市場・楽天ペイを使う", "description": "楽天系サービスと入会条件を確認します。"},
+    {"href": "/credit-card/epos-card/", "title": "年会費無料から始めたい", "description": "固定費を増やさず、優待と発行方法を確認します。"},
+    {"href": "/credit-card/smbc-nl/", "title": "コンビニ・飲食店で使う", "description": "対象店舗とスマホタッチ決済を確認します。"},
+    {"href": "/credit-card/tokyu-card/", "title": "東急線・PASMOを使う", "description": "年会費とTOKYU POINTの登録条件を確認します。"},
+    {"href": "/credit-card/d-card-gold-u/", "title": "18〜29歳でドコモ系を使う", "description": "年齢・年会費減算・30歳以降の条件を確認します。"}
+  ],
+  "checklist": [
+    "年会費を通常条件で比較する",
+    "普段使う店舗・交通・サービスを確認する",
+    "高還元の対象となる支払い方法を確認する",
+    "入会特典のエントリーと利用条件を確認する",
+    "ポイント付与時期と対象外を確認する"
+  ],
+  "note": "PR：個別ページにはアフィリエイト広告を含む場合があります。特典額だけで決めず、年会費・対象条件・付与時期を公式画面で確認してください。"
+}

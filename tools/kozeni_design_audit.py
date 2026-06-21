@@ -52,7 +52,14 @@ def main() -> int:
             css_refs[href.split("?")[0]] += 1
 
         style_count = len(re.findall(r"<style\b", text, flags=re.I))
-        script_inline_count = len(re.findall(r"<script\b(?![^>]+src=)", text, flags=re.I))
+        script_inline_count = len(
+            re.findall(
+                r'<script\b(?![^>]*\bsrc=)'
+                r'(?![^>]*type=["\']application/ld\+json["\'])[^>]*>',
+                text,
+                flags=re.I,
+            )
+        )
         if style_count:
             inline_style_pages.append((str(rel), style_count))
         if script_inline_count:

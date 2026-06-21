@@ -107,10 +107,7 @@
     }
   ],
   "cta": {
-    "url": "https://ad2.trafficgate.net/t/r/201/3159/317799_397134",
-    "label": "公式条件を見る",
-    "affiliate": true,
-    "note": "PR：このリンクは広告リンクです。料金・工事・提供エリア・キャンペーン条件は公式画面で確認してください。"
+    "program_id": "rakuten-hikari-trafficgate"
   },
   "sources": [
     {
