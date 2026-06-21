@@ -1,15 +1,15 @@
 :root {
-  --sim-mint: #4dbd8c;
-  --sim-green: #228c62;
-  --sim-green-deep: #135c43;
-  --sim-pale: #e9f5ef;
-  --sim-gold: #f2c94c;
-  --sim-paper: #ffffff;
-  --sim-bg: #f7fbf9;
-  --sim-ink: #222831;
-  --sim-muted: #617069;
-  --sim-line: rgba(34, 140, 98, .16);
-  --sim-shadow: 0 18px 48px rgba(24, 86, 63, .08);
+  --sim-mint: var(--kozeni-mint);
+  --sim-green: var(--kozeni-green);
+  --sim-green-deep: var(--kozeni-deep-alt);
+  --sim-pale: var(--kozeni-pale);
+  --sim-gold: var(--kozeni-gold);
+  --sim-paper: var(--kozeni-white);
+  --sim-bg: var(--kozeni-bg-alt);
+  --sim-ink: var(--kozeni-ink);
+  --sim-muted: var(--kozeni-muted-alt);
+  --sim-line: rgba(var(--kozeni-rgb-green),.16);
+  --sim-shadow: var(--kozeni-shadow-green);
 }
 
 * {
@@ -24,15 +24,9 @@ body {
   margin: 0;
   color: var(--sim-ink);
   background:
-    radial-gradient(circle at 8% 0%, rgba(77, 189, 140, .12), transparent 28rem),
-    linear-gradient(180deg, var(--sim-bg), #fff 36%, var(--sim-bg));
-  font-family:
-    "Noto Sans JP",
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    sans-serif;
+    radial-gradient(circle at 8% 0%, rgba(var(--kozeni-rgb-mint),.12), transparent 28rem),
+    linear-gradient(180deg, var(--sim-bg), var(--kozeni-white) 36%, var(--sim-bg));
+  font-family: var(--kozeni-font-sans);
   line-height: 1.78;
 }
 
@@ -53,7 +47,7 @@ img {
   padding: .65rem .9rem;
   border-radius: .75rem;
   background: var(--sim-green-deep);
-  color: #fff;
+  color: var(--kozeni-white);
   font-weight: 800;
 }
 
@@ -79,8 +73,8 @@ img {
   align-items: center;
   padding: .78rem 1rem;
   border: 1px solid var(--sim-line);
-  border-radius: 1rem;
-  background: rgba(255, 255, 255, .72);
+  border-radius: var(--kozeni-radius-sm);
+  background: rgba(var(--kozeni-rgb-white),.72);
   color: var(--sim-muted);
   font-size: .82rem;
 }
@@ -118,24 +112,24 @@ img {
 
 .sim-updated {
   margin: .8rem 0 0;
-  color: rgba(34, 40, 49, .55);
+  color: rgba(var(--kozeni-rgb-ink),.55);
   font-size: .78rem;
 }
 
 .sim-verdict {
   padding: clamp(1.25rem, 3vw, 2rem);
-  border: 1px solid rgba(34, 140, 98, .22);
+  border: 1px solid rgba(var(--kozeni-rgb-green),.22);
   border-radius: 1.7rem;
   background:
-    radial-gradient(circle at 90% 0%, rgba(255, 255, 255, .24), transparent 12rem),
+    radial-gradient(circle at 90% 0%, rgba(var(--kozeni-rgb-white),.24), transparent 12rem),
     linear-gradient(135deg, var(--sim-green-deep), var(--sim-green));
-  color: #fff;
+  color: var(--kozeni-white);
   box-shadow: 0 20px 48px rgba(19, 92, 67, .18);
 }
 
 .sim-verdict__label {
   margin: 0 0 .45rem;
-  color: rgba(255, 255, 255, .72);
+  color: rgba(var(--kozeni-rgb-white),.72);
   font-size: .75rem;
   font-weight: 900;
   letter-spacing: .08em;
@@ -151,7 +145,7 @@ img {
 .sim-verdict p {
   max-width: 760px;
   margin: .65rem 0 0;
-  color: rgba(255, 255, 255, .86);
+  color: rgba(var(--kozeni-rgb-white),.86);
 }
 
 .sim-badges {
@@ -164,9 +158,9 @@ img {
 .sim-badges span {
   display: inline-flex;
   padding: .35rem .68rem;
-  border: 1px solid rgba(255, 255, 255, .3);
-  border-radius: 999px;
-  background: rgba(255, 255, 255, .12);
+  border: 1px solid rgba(var(--kozeni-rgb-white),.3);
+  border-radius: var(--kozeni-radius-pill);
+  background: rgba(var(--kozeni-rgb-white),.12);
   font-size: .78rem;
   font-weight: 800;
 }
@@ -178,7 +172,7 @@ img {
   padding: 1.15rem;
   border: 1px solid var(--sim-line);
   border-radius: 1.35rem;
-  background: rgba(255, 255, 255, .9);
+  background: rgba(var(--kozeni-rgb-white),.9);
   box-shadow: var(--sim-shadow);
 }
 
@@ -188,12 +182,12 @@ img {
   align-items: center;
   justify-content: center;
   padding: .82rem 1.25rem;
-  border-radius: 999px;
+  border-radius: var(--kozeni-radius-pill);
   background: var(--sim-green);
-  color: #fff;
+  color: var(--kozeni-white);
   text-decoration: none;
   font-weight: 900;
-  box-shadow: 0 12px 28px rgba(34, 140, 98, .2);
+  box-shadow: 0 12px 28px rgba(var(--kozeni-rgb-green),.2);
 }
 
 .sim-cta__button:hover,
@@ -212,7 +206,7 @@ img {
   padding: clamp(1.15rem, 3vw, 1.7rem);
   border: 1px solid var(--sim-line);
   border-radius: 1.5rem;
-  background: rgba(255, 255, 255, .88);
+  background: rgba(var(--kozeni-rgb-white),.88);
   box-shadow: var(--sim-shadow);
 }
 
@@ -297,14 +291,14 @@ img {
   gap: .1rem;
   padding: .85rem 1rem;
   border: 1px solid var(--sim-line);
-  border-radius: 1rem;
+  border-radius: var(--kozeni-radius-sm);
   background: var(--sim-bg);
   text-decoration: none;
 }
 
 .sim-related a:hover,
 .sim-related a:focus-visible {
-  border-color: rgba(34, 140, 98, .42);
+  border-color: rgba(var(--kozeni-rgb-green),.42);
   background: var(--sim-pale);
 }
 
@@ -326,7 +320,7 @@ img {
 .sim-faq details {
   padding: .85rem 1rem;
   border: 1px solid var(--sim-line);
-  border-radius: 1rem;
+  border-radius: var(--kozeni-radius-sm);
   background: var(--sim-bg);
 }
 

@@ -21,7 +21,7 @@ TEMPLATE_PATH = ROOT / "templates" / "mobile-sim-hub.html"
 OUTPUT_PATH = ROOT / "mobile-sim" / "index.html"
 BASE_URL = "https://smart-kozeni.com"
 CANONICAL = f"{BASE_URL}/mobile-sim/"
-STYLE_HREF = "/assets/kozeni-mobile-sim-hub.v1.css"
+STYLE_HREF = "/assets/kozeni-mobile-sim-hub.v1.css?v=45.0"
 
 
 def esc(value: object) -> str:

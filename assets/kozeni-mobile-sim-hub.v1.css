@@ -1,15 +1,15 @@
 :root {
-  --hub-green: #228c62;
-  --hub-green-deep: #135c43;
-  --hub-mint: #4dbd8c;
-  --hub-pale: #e9f5ef;
-  --hub-gold: #f2c94c;
-  --hub-ink: #222831;
-  --hub-muted: #617069;
-  --hub-bg: #f7fbf9;
-  --hub-paper: #ffffff;
-  --hub-line: rgba(34, 140, 98, .16);
-  --hub-shadow: 0 18px 48px rgba(24, 86, 63, .08);
+  --hub-green: var(--kozeni-green);
+  --hub-green-deep: var(--kozeni-deep-alt);
+  --hub-mint: var(--kozeni-mint);
+  --hub-pale: var(--kozeni-pale);
+  --hub-gold: var(--kozeni-gold);
+  --hub-ink: var(--kozeni-ink);
+  --hub-muted: var(--kozeni-muted-alt);
+  --hub-bg: var(--kozeni-bg-alt);
+  --hub-paper: var(--kozeni-white);
+  --hub-line: rgba(var(--kozeni-rgb-green),.16);
+  --hub-shadow: var(--kozeni-shadow-green);
 }
 
 * {
@@ -24,15 +24,9 @@ body {
   margin: 0;
   color: var(--hub-ink);
   background:
-    radial-gradient(circle at 8% 0%, rgba(77, 189, 140, .14), transparent 30rem),
-    linear-gradient(180deg, var(--hub-bg), #fff 34%, var(--hub-bg));
-  font-family:
-    "Noto Sans JP",
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    sans-serif;
+    radial-gradient(circle at 8% 0%, rgba(var(--kozeni-rgb-mint),.14), transparent 30rem),
+    linear-gradient(180deg, var(--hub-bg), var(--kozeni-white) 34%, var(--hub-bg));
+  font-family: var(--kozeni-font-sans);
   line-height: 1.78;
 }
 
@@ -49,7 +43,7 @@ a {
   padding: .65rem .9rem;
   border-radius: .75rem;
   background: var(--hub-green-deep);
-  color: #fff;
+  color: var(--kozeni-white);
   font-weight: 900;
 }
 
@@ -97,7 +91,7 @@ a {
 
 .hub-updated {
   margin: .8rem 0 0;
-  color: rgba(34, 40, 49, .55);
+  color: rgba(var(--kozeni-rgb-ink),.55);
   font-size: .78rem;
 }
 
@@ -105,7 +99,7 @@ a {
   padding: clamp(1.15rem, 3vw, 1.9rem);
   border: 1px solid var(--hub-line);
   border-radius: 1.55rem;
-  background: rgba(255, 255, 255, .9);
+  background: rgba(var(--kozeni-rgb-white),.9);
   box-shadow: var(--hub-shadow);
 }
 
@@ -143,17 +137,17 @@ a {
   min-height: 16rem;
   padding: 1.15rem;
   border: 1px solid var(--hub-line);
-  border-radius: 1.25rem;
+  border-radius: var(--kozeni-radius-md);
   background:
-    radial-gradient(circle at 100% 0%, rgba(77, 189, 140, .15), transparent 9rem),
+    radial-gradient(circle at 100% 0%, rgba(var(--kozeni-rgb-mint),.15), transparent 9rem),
     var(--hub-paper);
   text-decoration: none;
 }
 
 .hub-featured-card:hover,
 .hub-featured-card:focus-visible {
-  border-color: rgba(34, 140, 98, .42);
-  box-shadow: 0 14px 34px rgba(24, 86, 63, .11);
+  border-color: rgba(var(--kozeni-rgb-green),.42);
+  box-shadow: 0 14px 34px rgba(var(--kozeni-rgb-shadow-green),.11);
   outline: none;
 }
 
@@ -186,7 +180,7 @@ a {
 .hub-badges span {
   display: inline-flex;
   padding: .3rem .55rem;
-  border-radius: 999px;
+  border-radius: var(--kozeni-radius-pill);
   background: var(--hub-pale);
   color: var(--hub-green-deep);
   font-size: .72rem;
@@ -210,7 +204,7 @@ a {
   width: 100%;
   min-width: 820px;
   border-collapse: collapse;
-  background: #fff;
+  background: var(--kozeni-white);
 }
 
 .hub-table caption {
@@ -263,14 +257,14 @@ a {
   align-items: center;
   padding: .9rem 1rem;
   border: 1px solid var(--hub-line);
-  border-radius: 1rem;
+  border-radius: var(--kozeni-radius-sm);
   background: var(--hub-bg);
   text-decoration: none;
 }
 
 .hub-route:hover,
 .hub-route:focus-visible {
-  border-color: rgba(34, 140, 98, .4);
+  border-color: rgba(var(--kozeni-rgb-green),.4);
   background: var(--hub-pale);
   outline: none;
 }
@@ -318,7 +312,7 @@ a {
 .hub-option:focus-visible,
 .hub-network:hover,
 .hub-network:focus-visible {
-  border-color: rgba(34, 140, 98, .4);
+  border-color: rgba(var(--kozeni-rgb-green),.4);
   background: var(--hub-pale);
   outline: none;
 }
@@ -355,7 +349,7 @@ a {
   gap: .7rem;
   align-items: start;
   padding: .8rem;
-  border-radius: 1rem;
+  border-radius: var(--kozeni-radius-sm);
   background: var(--hub-bg);
 }
 
@@ -365,9 +359,9 @@ a {
   width: 2rem;
   height: 2rem;
   place-items: center;
-  border-radius: 999px;
+  border-radius: var(--kozeni-radius-pill);
   background: var(--hub-green);
-  color: #fff;
+  color: var(--kozeni-white);
   font-size: .8rem;
   font-weight: 950;
 }

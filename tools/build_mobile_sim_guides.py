@@ -20,7 +20,7 @@ DATA_DIR = ROOT / "data" / "mobile-sim-guides"
 DETAIL_DATA_DIR = ROOT / "data" / "mobile-sim"
 TEMPLATE_PATH = ROOT / "templates" / "mobile-sim-guide.html"
 BASE_URL = "https://smart-kozeni.com"
-STYLE_HREF = "/assets/kozeni-mobile-guide.v1.css"
+STYLE_HREF = "/assets/kozeni-mobile-guide.v1.css?v=45.0"
 ID_RE = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
 OUTPUT_RE = re.compile(r"^mobile-sim/[a-z0-9-]+(?:/[a-z0-9-]+)*$")
 

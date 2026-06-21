@@ -1,15 +1,15 @@
 :root {
-  --account-green: #228c62;
+  --account-green: var(--kozeni-green);
   --account-deep: #116544;
-  --account-mint: #4dbd8c;
-  --account-bg: #f8fffb;
-  --account-panel: #fff;
-  --account-line: #dcece4;
-  --account-text: #222831;
-  --account-muted: #62736b;
-  --account-warn: #8c6b16;
-  --account-warn-bg: #fff6df;
-  --account-shadow: 0 18px 48px rgba(34,140,98,.11);
+  --account-mint: var(--kozeni-mint);
+  --account-bg: var(--kozeni-bg);
+  --account-panel: var(--kozeni-white);
+  --account-line: var(--kozeni-line-solid);
+  --account-text: var(--kozeni-ink);
+  --account-muted: var(--kozeni-muted);
+  --account-warn: var(--kozeni-warn-strong);
+  --account-warn-bg: var(--kozeni-warn-bg);
+  --account-shadow: var(--kozeni-shadow-account);
 }
 
 * {
@@ -23,8 +23,8 @@ html {
 body {
   margin: 0;
   color: var(--account-text);
-  background: radial-gradient(circle at 7% 0%,rgba(77,189,140,.14),transparent 29rem),linear-gradient(180deg,var(--account-bg),#fff 35%,var(--account-bg));
-  font-family: "Noto Sans JP",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  background: radial-gradient(circle at 7% 0%,rgba(var(--kozeni-rgb-mint),.14),transparent 29rem),linear-gradient(180deg,var(--account-bg),var(--kozeni-white) 35%,var(--account-bg));
+  font-family: var(--kozeni-font-sans);
   line-height: 1.78;
 }
 
@@ -41,7 +41,7 @@ a {
   padding: .65rem .9rem;
   border-radius: .75rem;
   background: var(--account-deep);
-  color: #fff;
+  color: var(--kozeni-white);
   font-weight: 900;
 }
 
@@ -89,7 +89,7 @@ a {
 
 .account-updated {
   margin: .8rem 0 0;
-  color: rgba(34,40,49,.58);
+  color: rgba(var(--kozeni-rgb-ink),.58);
   font-size: .78rem;
 }
 
@@ -97,12 +97,12 @@ a {
   padding: clamp(1.15rem,3vw,1.8rem);
   border: 1px solid var(--account-line);
   border-radius: 1.45rem;
-  background: rgba(255,255,255,.94);
+  background: rgba(var(--kozeni-rgb-white),.94);
   box-shadow: var(--account-shadow);
 }
 
 .account-verdict {
-  background: radial-gradient(circle at 100% 0%,rgba(77,189,140,.15),transparent 12rem),rgba(255,255,255,.96);
+  background: radial-gradient(circle at 100% 0%,rgba(var(--kozeni-rgb-mint),.15),transparent 12rem),rgba(var(--kozeni-rgb-white),.96);
 }
 
 .account-panel h2 {
@@ -127,9 +127,9 @@ a {
 .account-badges span {
   display: inline-flex;
   padding: .38rem .72rem;
-  border: 1px solid rgba(34,140,98,.18);
-  border-radius: 999px;
-  background: #e9f5ef;
+  border: 1px solid rgba(var(--kozeni-rgb-green),.18);
+  border-radius: var(--kozeni-radius-pill);
+  background: var(--kozeni-pale);
   color: var(--account-deep);
   font-size: .76rem;
   font-weight: 900;
@@ -159,9 +159,9 @@ a {
   width: 1.25rem;
   height: 1.25rem;
   place-items: center;
-  border-radius: 999px;
+  border-radius: var(--kozeni-radius-pill);
   background: var(--account-green);
-  color: #fff;
+  color: var(--kozeni-white);
   font-size: .68rem;
   font-weight: 950;
 }
@@ -172,8 +172,8 @@ a {
 
 .account-list--caution li:before {
   content: "!";
-  background: #f2c94c;
-  color: #5b4910;
+  background: var(--kozeni-gold);
+  color: var(--kozeni-warn-text);
 }
 
 .account-cta {
@@ -181,9 +181,9 @@ a {
   gap: .6rem;
   justify-items: start;
   padding: clamp(1.05rem,3vw,1.55rem);
-  border: 1px solid rgba(34,140,98,.22);
-  border-radius: 1.25rem;
-  background: #fff;
+  border: 1px solid rgba(var(--kozeni-rgb-green),.22);
+  border-radius: var(--kozeni-radius-md);
+  background: var(--kozeni-white);
   box-shadow: var(--account-shadow);
 }
 
@@ -193,9 +193,9 @@ a {
   align-items: center;
   justify-content: center;
   padding: .78rem 1.2rem;
-  border-radius: 999px;
+  border-radius: var(--kozeni-radius-pill);
   background: linear-gradient(135deg,var(--account-mint),var(--account-green));
-  color: #fff;
+  color: var(--kozeni-white);
   font-weight: 950;
   text-decoration: none;
 }
@@ -237,7 +237,7 @@ a {
   gap: .28rem;
   padding: .9rem 1rem;
   border: 1px solid var(--account-line);
-  border-radius: 1rem;
+  border-radius: var(--kozeni-radius-sm);
   background: var(--account-bg);
   text-decoration: none;
 }
@@ -266,7 +266,7 @@ a {
 .account-conclusion {
   padding: 1rem;
   border: 1px solid var(--account-line);
-  border-radius: 1rem;
+  border-radius: var(--kozeni-radius-sm);
   background: var(--account-bg);
 }
 
@@ -293,14 +293,14 @@ a {
   margin-top: 1rem;
   overflow-x: auto;
   border: 1px solid var(--account-line);
-  border-radius: 1rem;
+  border-radius: var(--kozeni-radius-sm);
 }
 
 .account-table {
   width: 100%;
   min-width: 630px;
   border-collapse: collapse;
-  background: #fff;
+  background: var(--kozeni-white);
 }
 
 .account-table th,.account-table td {
@@ -311,7 +311,7 @@ a {
 }
 
 .account-table thead th {
-  background: #e9f5ef;
+  background: var(--kozeni-pale);
   color: var(--account-deep);
   font-size: .8rem;
 }
@@ -334,7 +334,7 @@ a {
 .account-note {
   margin: 0;
   padding: .95rem 1rem;
-  border-radius: 1rem;
+  border-radius: var(--kozeni-radius-sm);
   background: var(--account-warn-bg);
   color: #6f5200;
   font-size: .82rem;
@@ -363,9 +363,9 @@ a {
   width: 1.7rem;
   height: 1.7rem;
   place-items: center;
-  border-radius: 999px;
+  border-radius: var(--kozeni-radius-pill);
   background: var(--account-green);
-  color: #fff;
+  color: var(--kozeni-white);
   font-size: .72rem;
   font-weight: 950;
 }
@@ -405,7 +405,7 @@ a {
   gap: .32rem;
   padding: 1rem;
   border: 1px solid var(--account-line);
-  border-radius: 1rem;
+  border-radius: var(--kozeni-radius-sm);
   background: var(--account-bg);
   text-decoration: none;
 }
@@ -418,8 +418,8 @@ a {
 .account-card__tag {
   justify-self: start;
   padding: .28rem .58rem;
-  border-radius: 999px;
-  background: #e9f5ef;
+  border-radius: var(--kozeni-radius-pill);
+  background: var(--kozeni-pale);
   color: var(--account-deep);
   font-size: .7rem;
   font-weight: 950;

@@ -1,0 +1,56 @@
+/* Smart Kozeni design tokens v1: visual primitives only. */
+:root {
+  color-scheme: light;
+
+  --kozeni-font-sans: "Noto Sans JP", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --kozeni-font-sans-jp: "Noto Sans JP", -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif;
+  --kozeni-font-system: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans JP", sans-serif;
+
+  --kozeni-white: #fff;
+  --kozeni-ink: #222831;
+  --kozeni-ink-soft: #17231d;
+  --kozeni-muted: #62736b;
+  --kozeni-muted-alt: #617069;
+  --kozeni-green: #228c62;
+  --kozeni-deep: #0f7a55;
+  --kozeni-deep-alt: #135c43;
+  --kozeni-mint: #4dbd8c;
+  --kozeni-pale: #e9f5ef;
+  --kozeni-bg: #f8fffb;
+  --kozeni-bg-alt: #f7fbf9;
+  --kozeni-line-solid: #dcece4;
+  --kozeni-gold: #f2c94c;
+  --kozeni-warn-bg: #fff6df;
+  --kozeni-warn-ink: #7a5a00;
+  --kozeni-warn-strong: #8c6b16;
+  --kozeni-warn-text: #5b4910;
+
+  --kozeni-rgb-white: 255, 255, 255;
+  --kozeni-rgb-ink: 34, 40, 49;
+  --kozeni-rgb-green: 34, 140, 98;
+  --kozeni-rgb-mint: 77, 189, 140;
+  --kozeni-rgb-gold: 242, 201, 76;
+  --kozeni-rgb-shadow-green: 24, 86, 63;
+
+  --kozeni-line: rgba(var(--kozeni-rgb-green), .16);
+  --kozeni-shadow-green: 0 18px 48px rgba(var(--kozeni-rgb-shadow-green), .08);
+  --kozeni-shadow-account: 0 18px 48px rgba(var(--kozeni-rgb-green), .11);
+  --kozeni-shadow-brand: 0 18px 54px rgba(var(--kozeni-rgb-green), .10);
+  --kozeni-shadow-panel: 0 18px 46px rgba(var(--kozeni-rgb-ink), .08);
+  --kozeni-shadow-card: 0 14px 38px rgba(var(--kozeni-rgb-ink), .055);
+  --kozeni-shadow-foundation: 0 20px 60px rgba(var(--kozeni-rgb-green), .12);
+
+  --kozeni-radius-pill: 999px;
+  --kozeni-radius-sm: 1rem;
+  --kozeni-radius-md: 1.25rem;
+  --kozeni-radius-lg: 1.6rem;
+  --kozeni-radius-xl: 2rem;
+
+  --kozeni-space-1: .25rem;
+  --kozeni-space-2: .5rem;
+  --kozeni-space-3: .75rem;
+  --kozeni-space-4: 1rem;
+  --kozeni-space-5: 1.25rem;
+  --kozeni-space-6: 1.5rem;
+  --kozeni-space-8: 2rem;
+}

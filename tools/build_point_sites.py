@@ -14,7 +14,7 @@ DETAIL_TEMPLATE_PATH=ROOT/'templates'/'point-site-detail.html'
 EARN_TEMPLATE_PATH=ROOT/'templates'/'point-site-earn.html'
 GUIDE_TEMPLATE_PATH=ROOT/'templates'/'point-site-guide.html'
 HUB_TEMPLATE_PATH=ROOT/'templates'/'point-site-hub.html'
-STYLE_HREF='/assets/kozeni-point-site.v1.css'
+STYLE_HREF='/assets/kozeni-point-site.v1.css?v=45.0'
 SLUG_RE=re.compile(r'^[a-z0-9]+(?:-[a-z0-9]+)*$')
 
 def load_json(path:Path)->dict[str,Any]:

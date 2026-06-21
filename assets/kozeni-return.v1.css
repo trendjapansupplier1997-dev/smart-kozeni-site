@@ -22,37 +22,37 @@ html body .kozeni-fixed-return > a{
   display:flex !important;
   align-items:center !important;
   justify-content:center !important;
-  border-radius:999px !important;
-  background:rgba(255,255,255,.96) !important;
-  background-color:rgba(255,255,255,.96) !important;
+  border-radius:var(--kozeni-radius-pill) !important;
+  background:rgba(var(--kozeni-rgb-white),.96) !important;
+  background-color:rgba(var(--kozeni-rgb-white),.96) !important;
   background-image:none !important;
-  border:1px solid var(--ia-line, rgba(34,140,98,.16)) !important;
-  color:var(--ia-green, var(--deep, #228C62)) !important;
-  -webkit-text-fill-color:var(--ia-green, var(--deep, #228C62)) !important;
+  border:1px solid var(--ia-line, rgba(var(--kozeni-rgb-green),.16)) !important;
+  color:var(--ia-green, var(--deep, var(--kozeni-green))) !important;
+  -webkit-text-fill-color:var(--ia-green, var(--deep, var(--kozeni-green))) !important;
   padding:12px 18px !important;
   font-size:14px !important;
   font-weight:950 !important;
   line-height:1.2 !important;
   text-decoration:none !important;
-  box-shadow:0 14px 34px rgba(34,140,98,.16) !important;
+  box-shadow:0 14px 34px rgba(var(--kozeni-rgb-green),.16) !important;
   backdrop-filter:blur(14px) !important;
 }
 
 html body .kozeni-fixed-return > a:visited{
-  color:var(--ia-green, var(--deep, #228C62)) !important;
+  color:var(--ia-green, var(--deep, var(--kozeni-green))) !important;
 }
 
 html body .kozeni-fixed-return > a:hover{
   transform:translateY(-1px) !important;
-  background:rgba(255,255,255,.98) !important;
-  background-color:rgba(255,255,255,.98) !important;
+  background:rgba(var(--kozeni-rgb-white),.98) !important;
+  background-color:rgba(var(--kozeni-rgb-white),.98) !important;
   background-image:none !important;
-  color:var(--ia-green, var(--deep, #228C62)) !important;
-  -webkit-text-fill-color:var(--ia-green, var(--deep, #228C62)) !important;
+  color:var(--ia-green, var(--deep, var(--kozeni-green))) !important;
+  -webkit-text-fill-color:var(--ia-green, var(--deep, var(--kozeni-green))) !important;
 }
 
 html body .kozeni-fixed-return > a:focus-visible{
-  outline:3px solid rgba(77,189,140,.35) !important;
+  outline:3px solid rgba(var(--kozeni-rgb-mint),.35) !important;
   outline-offset:3px !important;
 }
 

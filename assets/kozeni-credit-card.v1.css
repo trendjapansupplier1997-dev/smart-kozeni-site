@@ -1,7 +1,7 @@
 :root {
   --credit-ink: #10241d;
   --credit-muted: #5d7168;
-  --credit-green: #0f7a55;
+  --credit-green: var(--kozeni-deep);
   --credit-deep: #0b3024;
   --credit-mint: #ecfdf5;
   --credit-bg: #f4fbf7;
@@ -17,8 +17,8 @@ body {
   color: var(--credit-ink);
   background:
     radial-gradient(circle at 8% 0%, rgba(15, 122, 85, .11), transparent 28rem),
-    linear-gradient(180deg, var(--credit-bg), #fff 34%, var(--credit-bg));
-  font-family: "Noto Sans JP", -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif;
+    linear-gradient(180deg, var(--credit-bg), var(--kozeni-white) 34%, var(--credit-bg));
+  font-family: var(--kozeni-font-sans-jp);
   font-size: 16px;
   line-height: 1.82;
   letter-spacing: -.01em;
@@ -43,7 +43,7 @@ a { color: inherit; }
   padding: .55rem .75rem;
   border-radius: .65rem;
   background: var(--credit-deep);
-  color: #fff;
+  color: var(--kozeni-white);
   transform: translateY(-140%);
 }
 .credit-skip-link:focus { transform: none; }
@@ -85,7 +85,7 @@ a { color: inherit; }
   padding: clamp(1.1rem, 3vw, 1.7rem);
   border: 1px solid var(--credit-line);
   border-radius: 1.35rem;
-  background: rgba(255, 255, 255, .95);
+  background: rgba(var(--kozeni-rgb-white),.95);
   box-shadow: var(--credit-shadow);
 }
 .credit-card h2 {
@@ -106,7 +106,7 @@ a { color: inherit; }
 .credit-badges span {
   padding: .42rem .68rem;
   border: 1px solid var(--credit-line);
-  border-radius: 999px;
+  border-radius: var(--kozeni-radius-pill);
   background: var(--credit-mint);
   color: var(--credit-deep);
   font-size: .76rem;
@@ -140,7 +140,7 @@ a { color: inherit; }
   place-items: center;
   border-radius: 50%;
   background: var(--credit-green);
-  color: #fff;
+  color: var(--kozeni-white);
   content: "✓";
   font-size: .65rem;
   font-weight: 800;
@@ -216,7 +216,7 @@ a { color: inherit; }
   padding: clamp(1.05rem, 3vw, 1.45rem);
   border: 1px solid rgba(15, 122, 85, .24);
   border-radius: 1.2rem;
-  background: #fff;
+  background: var(--kozeni-white);
   box-shadow: var(--credit-shadow);
 }
 .credit-cta__link {
@@ -226,9 +226,9 @@ a { color: inherit; }
   align-items: center;
   justify-content: center;
   padding: .76rem 1.15rem;
-  border-radius: 999px;
+  border-radius: var(--kozeni-radius-pill);
   background: linear-gradient(135deg, #139166, var(--credit-green));
-  color: #fff;
+  color: var(--kozeni-white);
   font-weight: 800;
   text-decoration: none;
 }

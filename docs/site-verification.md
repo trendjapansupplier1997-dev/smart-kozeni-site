@@ -20,7 +20,7 @@ GitHub Actionsも同じコマンドを実行する。ワークフローへ個別
 3. リポジトリ内のJavaScriptを`node --check`で構文検査
 4. GitHub Actionsが統合検証コマンドだけを呼んでいることを検査
 5. `tools/kozeni_site_audit.py`を実行
-6. `tools/kozeni_design_audit.py`を実行
+6. `tools/kozeni_design_audit.py`を実行し、トークン読込順・共通値の生書き戻し・インラインコードを検査
 7. staged／unstaged両方の`git diff --check`を実行
 8. CIでは作業ツリーがクリーンなことを検査
 

@@ -16,7 +16,7 @@ DATA_DIR = ROOT / "data" / "tiktok-lite" / "pages"
 HUB_PATH = ROOT / "data" / "tiktok-lite-hub.json"
 GUIDE_TEMPLATE_PATH = ROOT / "templates" / "tiktok-lite-guide.html"
 HUB_TEMPLATE_PATH = ROOT / "templates" / "tiktok-lite-hub.html"
-STYLE_HREF = "/assets/kozeni-tiktok-lite.v1.css"
+STYLE_HREF = "/assets/kozeni-tiktok-lite.v1.css?v=45.0"
 PROGRAM_ID = "tiktok-lite-direct-referral"
 EXPECTED_SLUGS = {
     "checklist",

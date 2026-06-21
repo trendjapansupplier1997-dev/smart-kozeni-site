@@ -11,7 +11,7 @@ HUB_DIR=ROOT/'data'/'lifestyle'/'hubs'
 GUIDE_DIR=ROOT/'data'/'lifestyle'/'guides'
 HUB_TEMPLATE_PATH=ROOT/'templates'/'lifestyle-hub.html'
 GUIDE_TEMPLATE_PATH=ROOT/'templates'/'lifestyle-guide.html'
-STYLE_HREF='/assets/kozeni-lifestyle.v1.css'
+STYLE_HREF='/assets/kozeni-lifestyle.v1.css?v=45.0'
 EXPECTED_OUTPUTS={'shopping/index.html','shopping/coupon-check/index.html','travel/index.html','travel/cancel-fee-check/index.html'}
 CATEGORY_META={
  'shopping': {'label':'買い物・日用品','href':'/shopping/'},

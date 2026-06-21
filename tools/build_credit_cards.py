@@ -19,7 +19,7 @@ DATA_DIR = ROOT / "data" / "credit-card"
 HUB_DATA_PATH = ROOT / "data" / "credit-card-hub.json"
 DETAIL_TEMPLATE_PATH = ROOT / "templates" / "credit-card-detail.html"
 HUB_TEMPLATE_PATH = ROOT / "templates" / "credit-card-hub.html"
-STYLE_HREF = "/assets/kozeni-credit-card.v1.css"
+STYLE_HREF = "/assets/kozeni-credit-card.v1.css?v=45.0"
 BASE_URL = site_common.BASE_URL
 SLUG_RE = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
 

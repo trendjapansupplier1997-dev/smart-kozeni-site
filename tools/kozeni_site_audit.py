@@ -33,7 +33,7 @@ HTML_FILES = sorted(
 DATA_DIR = ROOT / "data" / "mobile-sim"
 TEMPLATE_PATH = ROOT / "templates" / "mobile-sim-detail.html"
 SITEMAP_PATH = ROOT / "sitemap.xml"
-STYLE_HREF = "/assets/kozeni-sim-detail.v2.css"
+STYLE_HREF = "/assets/kozeni-sim-detail.v2.css?v=45.0"
 
 STATUS_WORDS = [
     "準備中",
@@ -1470,7 +1470,7 @@ def audit_site_foundation() -> list[str]:
             problems.append(f"{rel}: exactly one JSON-LD graph is required")
         if f'"dateModified":"{data["checked_at"]}"' not in text:
             problems.append(f"{rel}: dateModified differs from checked_at")
-        if 'href="/assets/kozeni-site-foundation.v1.css"' not in text:
+        if 'href="/assets/kozeni-site-foundation.v1.css?v=45.0"' not in text:
             problems.append(f"{rel}: shared foundation CSS is missing")
         if 'src="/assets/kozeni-site-foundation.v1.js"' not in text:
             problems.append(f"{rel}: shared foundation JS is missing")

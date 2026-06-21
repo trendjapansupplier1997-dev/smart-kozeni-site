@@ -21,7 +21,7 @@ HUB_DATA_PATH = ROOT / "data" / "account-opening-hub.json"
 PRODUCT_TEMPLATE_PATH = ROOT / "templates" / "account-opening-product.html"
 GUIDE_TEMPLATE_PATH = ROOT / "templates" / "account-opening-guide.html"
 HUB_TEMPLATE_PATH = ROOT / "templates" / "account-opening-hub.html"
-STYLE_HREF = "/assets/kozeni-account-opening.v1.css"
+STYLE_HREF = "/assets/kozeni-account-opening.v1.css?v=45.0"
 BASE_URL = site_common.BASE_URL
 SLUG_RE = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
 

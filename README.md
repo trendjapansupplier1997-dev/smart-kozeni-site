@@ -26,7 +26,8 @@ Cloudflare Pages 用のクリーンな静的サイト一式です。
 
 
 ## 保守・運用ドキュメント
-- `docs/design-system.md` ブランド/配色/フォント/デザイン基調
+- `docs/design-system.md` ブランド/配色/タイポグラフィの視覚方針
+- `docs/design-tokens.md` 色・フォント・角丸・影・余白のSSOT運用
 - `docs/revenue-page-template.md` 収益ページ雛形/導線設計
 - `docs/page-authoring-rules.md` 新規ページ作成ルール
 - `docs/release-checklist.md` リリース前チェックリスト
