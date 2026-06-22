@@ -32,6 +32,7 @@ Cloudflare Pages 用のクリーンな静的サイト一式です。
 - `docs/page-authoring-rules.md` 新規ページ作成ルール
 - `docs/release-checklist.md` リリース前チェックリスト
 - `docs/site-verification.md` ローカル/CI共通の検証SSOT
+- `docs/external-link-verification.md` 外部リンク・収益リンクの構造監査と安全な定期確認
 - `docs/mobile-sim-generation.md` スマホ回線詳細ページのSSOT/生成/監査ルール
 - `docs/monetization.md` 承認済みASP案件と収益導線のSSOTルール
 - `docs/account-opening-generation.md` 口座開設ページのSSOT/生成/監査ルール
@@ -48,7 +49,7 @@ Cloudflare Pages 用のクリーンな静的サイト一式です。
 python3 tools/verify_site.py
 ```
 
-このコマンドは、すべてのgenerator、JSON/JavaScript構文、収益導線、内部リンク、canonical、sitemap、デザイン、Git差分をまとめて検証します。
+このコマンドは、すべてのgenerator、JSON/JavaScript構文、収益導線、外部リンク属性、内部リンク、canonical、sitemap、デザイン、Git差分をまとめて検証します。
 
 すべての生成ページを書き直してから検証する場合：
 
@@ -57,3 +58,13 @@ python3 tools/verify_site.py --write
 ```
 
 `--write`後は`git status --short`と`git diff --stat`で生成差分を確認してください。
+
+## 外部リンクの定期確認
+
+公式リンクとSNSだけをネットワーク確認します。
+
+```bash
+python3 tools/check_external_links.py --live
+```
+
+ASPリンク、紹介リンク、計測ピクセル、広告画像は人工的なクリックやインプレッションを避けるため自動アクセスしません。詳細は`docs/external-link-verification.md`を参照してください。

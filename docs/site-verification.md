@@ -9,7 +9,7 @@
 python3 tools/verify_site.py
 ```
 
-GitHub Actionsも同じコマンドを実行する。ワークフローへ個別generatorや監査コマンドを追加しない。
+通常のGitHub Actionsも同じコマンドを実行する。ワークフローへ個別generatorや監査コマンドを追加しない。外部ネットワーク確認だけは週次の独立コマンドに分離する。
 
 ## 検証内容
 
@@ -19,7 +19,7 @@ GitHub Actionsも同じコマンドを実行する。ワークフローへ個別
 2. リポジトリ内のJSONとWeb Manifestを構文検査
 3. リポジトリ内のJavaScriptを`node --check`で構文検査
 4. GitHub Actionsが統合検証コマンドだけを呼んでいることを検査
-5. `tools/kozeni_site_audit.py`を実行
+5. `tools/kozeni_site_audit.py`を実行し、収益レジストリと全生成HTMLの外部リンク契約も検査
 6. `tools/kozeni_design_audit.py`を実行し、トークン読込順・共通値の生書き戻し・インラインコードを検査
 7. staged／unstaged両方の`git diff --check`を実行
 8. CIでは作業ツリーがクリーンなことを検査
@@ -57,6 +57,8 @@ git diff --stat
 CIでは`CI=true`のため、検証後に未追跡・変更ファイルがあれば失敗する。
 
 これにより、JSONやテンプレートを変更したのに生成HTMLをコミットし忘れた状態をmainへ入れない。
+
+`.github/workflows/external-link-verification.yml`は週次と手動実行で`python3 tools/check_external_links.py --live`を呼ぶ。通常CIとは分離し、外部サイトの一時障害をpush検証へ持ち込まない。収益URLは偽クリック防止のためネットワーク確認対象外とする。
 
 ## 必要環境
 

@@ -24,6 +24,7 @@ import build_tiktok_lite
 import build_lifestyle
 import build_site_foundation
 import monetization
+import external_links
 
 ROOT = Path(__file__).resolve().parents[1]
 HTML_FILES = sorted(
@@ -637,47 +638,7 @@ def audit_monetization_registry() -> list[str]:
         if creative.get("width") != 320 or creative.get("height") != 100:
             problems.append("data/monetization/programs.json: TOKYU creative size differs from approved CSV")
 
-    affiliate_data_paths = [
-        *sorted((ROOT / "data" / "mobile-sim").glob("*.json")),
-        *sorted((ROOT / "data" / "home-network").glob("*.json")),
-        *sorted((ROOT / "data" / "credit-card").glob("*.json")),
-        *sorted((ROOT / "data" / "account-opening").rglob("*.json")),
-        ROOT / "data" / "account-opening-hub.json",
-        *sorted((ROOT / "data" / "point-site").rglob("*.json")),
-        ROOT / "data" / "point-site-hub.json",
-        *sorted((ROOT / "data" / "tiktok-lite").rglob("*.json")),
-        ROOT / "data" / "tiktok-lite-hub.json",
-        *sorted((ROOT / "data" / "lifestyle").rglob("*.json")),
-    ]
-    known_urls = {program["click_url"] for program in programs.values()}
-    for data_path in affiliate_data_paths:
-        try:
-            raw = json.loads(read(data_path))
-        except json.JSONDecodeError as error:
-            problems.append(f"{data_path.relative_to(ROOT)}: invalid JSON: {error}")
-            continue
-        def walk(value: Any) -> None:
-            if isinstance(value, dict):
-                if value.get("affiliate") is True:
-                    problems.append(
-                        f"{data_path.relative_to(ROOT)}: affiliate CTA must use program_id"
-                    )
-                if value.get("url") in known_urls:
-                    problems.append(
-                        f"{data_path.relative_to(ROOT)}: monetization URL is duplicated outside registry"
-                    )
-                program_id = value.get("program_id")
-                if program_id is not None and program_id not in programs:
-                    problems.append(
-                        f"{data_path.relative_to(ROOT)}: unknown program_id {program_id}"
-                    )
-                for nested in value.values():
-                    walk(nested)
-            elif isinstance(value, list):
-                for nested in value:
-                    walk(nested)
-
-        walk(raw)
+    problems.extend(external_links.audit_contract(programs))
 
     return problems
 

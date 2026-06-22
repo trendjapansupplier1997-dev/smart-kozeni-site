@@ -15,7 +15,8 @@ sys.dont_write_bytecode = True
 
 ROOT = Path(__file__).resolve().parents[1]
 TOOLS = ROOT / "tools"
-WORKFLOW = ROOT / ".github" / "workflows" / "site-verification.yml"
+SITE_WORKFLOW = ROOT / ".github" / "workflows" / "site-verification.yml"
+EXTERNAL_LINK_WORKFLOW = ROOT / ".github" / "workflows" / "external-link-verification.yml"
 
 
 def rel(path: Path) -> str:
@@ -115,39 +116,50 @@ def check_javascript_files() -> None:
     print(f"OK: {len(paths)} JavaScript file(s)")
 
 
-def check_workflow_contract() -> None:
-    if not WORKFLOW.exists():
-        raise RuntimeError(f"{rel(WORKFLOW)} is missing")
-
-    source = WORKFLOW.read_text(encoding="utf-8")
-    command = "python3 tools/verify_site.py"
+def _check_one_workflow(
+    path: Path,
+    *,
+    command: str,
+    required: tuple[str, ...],
+    forbidden: tuple[str, ...],
+) -> None:
+    if not path.exists():
+        raise RuntimeError(f"{rel(path)} is missing")
+    source = path.read_text(encoding="utf-8")
     if source.count(command) != 1:
-        raise RuntimeError(
-            f"{rel(WORKFLOW)} must call `{command}` exactly once"
-        )
-
-    forbidden = (
-        "tools/build_",
-        "tools/kozeni_site_audit.py",
-        "tools/kozeni_design_audit.py",
-    )
+        raise RuntimeError(f"{rel(path)} must call `{command}` exactly once")
     for token in forbidden:
         if token in source:
-            raise RuntimeError(
-                f"{rel(WORKFLOW)} duplicates verification logic: {token}"
-            )
-
-    required = (
-        "pull_request:",
-        "workflow_dispatch:",
-        "contents: read",
-    )
+            raise RuntimeError(f"{rel(path)} duplicates verification logic: {token}")
     for token in required:
         if token not in source:
-            raise RuntimeError(
-                f"{rel(WORKFLOW)} is missing required contract: {token}"
-            )
-    print("OK: workflow delegates verification to one command")
+            raise RuntimeError(f"{rel(path)} is missing required contract: {token}")
+
+
+def check_workflow_contract() -> None:
+    _check_one_workflow(
+        SITE_WORKFLOW,
+        command="python3 tools/verify_site.py",
+        required=("pull_request:", "workflow_dispatch:", "contents: read"),
+        forbidden=(
+            "tools/build_",
+            "tools/kozeni_site_audit.py",
+            "tools/kozeni_design_audit.py",
+            "tools/check_external_links.py",
+        ),
+    )
+    _check_one_workflow(
+        EXTERNAL_LINK_WORKFLOW,
+        command="python3 tools/check_external_links.py --live",
+        required=("schedule:", "cron:", "workflow_dispatch:", "contents: read"),
+        forbidden=(
+            "tools/build_",
+            "tools/verify_site.py",
+            "tools/kozeni_site_audit.py",
+            "tools/kozeni_design_audit.py",
+        ),
+    )
+    print("OK: local and scheduled workflows each delegate to one command")
 
 
 def git_output(arguments: Iterable[str]) -> str:

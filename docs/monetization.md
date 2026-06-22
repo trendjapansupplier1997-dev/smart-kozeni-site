@@ -6,13 +6,14 @@
 ## 原則
 
 - 各ページJSONへASP URLを複製しない
-- 承認済み案件だけ`status: approved`で登録する
+- 公開中は`status: approved`、一時停止は`paused`、終了は`retired`で管理する
 - 表示ページ側は`cta.program_id`だけを持つ
 - `nofollow sponsored noopener noreferrer`を必須とする
 - PR注記を必ず表示する
 - ASP指定の計測ピクセルはレジストリで管理する
 - 提供された広告コードの識別子・画像URL・サイズを改変しない
 - 一覧ページからASPへ直接送らず、個別の条件確認ページを経由する
+- 収益URLへ自動HTTPアクセスせず、ASP管理画面で稼働状況を確認する
 
 ## 構造
 
@@ -70,13 +71,15 @@ python3 tools/verify_site.py
 
 統合監査では以下を確認します。
 
-- 未承認案件がない
-- ASP URLがページJSONへ重複していない
-- `program_id`が存在する
-- CTAの`rel`属性
+- 未登録または停止中の`program_id`が参照されていない
+- 承認済み案件に利用ページがある
+- `click_url`が重複していない
+- ASP URL、計測ピクセル、広告画像がレジストリ外へ複製されていない
+- CTAの`rel`属性と`referrerpolicy`
 - PR注記
-- 計測ピクセル
+- 計測ピクセルとCTAの出現数
 - バナー画像URL・サイズ・識別子
+- 全生成HTMLの外部リンク属性
 
 ## 口座開設で利用する案件
 
@@ -124,3 +127,15 @@ TikTok Liteの紹介URLと招待コードは次の1件へ集約します。
 - `ikyu-valuecommerce`
 
 ページデータは`program_id`と文脈別の説明だけを持ち、ASP URLを複製しない。リンク属性とPR導線は生成器と統合監査で検証する。
+
+## 停止・終了のライフサイクル
+
+`paused`と`retired`のプログラムはレジストリへ履歴として残せますが、ページから参照できません。停止時は先にページJSONの`program_id`を外し、代替の公式CTAまたは内部リンクへ切り替えます。
+
+外部リンクのネットワーク確認は次を使用します。
+
+```bash
+python3 tools/check_external_links.py --live
+```
+
+このコマンドは収益URLをリクエストしません。詳細は`docs/external-link-verification.md`を参照してください。

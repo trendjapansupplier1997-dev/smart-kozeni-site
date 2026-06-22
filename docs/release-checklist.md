@@ -1,4 +1,4 @@
-# スマホ小銭研究所 リリース前チェックリスト v45.0
+# スマホ小銭研究所 リリース前チェックリスト v46.0
 
 ## 1. 変更前
 
@@ -56,7 +56,18 @@ python3 tools/verify_site.py
 - トークン値を変更した場合、代表ページをデスクトップ・スマホで確認したか
 - immutableキャッシュ対象のファイル名を更新すべき変更ではないか
 
-## 6. 旧URL・資産を整理したとき
+## 6. 収益導線・外部リンクを変更したとき
+
+- 収益URLをページJSON、テンプレート、生成器へ直接書いていないか
+- `program_id`が`data/monetization/programs.json`に存在するか
+- 停止中の案件をページから参照していないか
+- PR注記と`rel="nofollow sponsored noopener noreferrer"`が生成されるか
+- ASPリンク、紹介リンク、計測ピクセルを自動HTTP確認していないか
+- 公式リンクだけを確認する場合は`python3 tools/check_external_links.py --live`を使ったか
+
+ネットワーク確認は通常のcommit前検証には含めない。外部サイト障害と人工的な広告クリックを通常CIへ持ち込まないためである。
+
+## 7. 旧URL・資産を整理したとき
 
 - 旧ページ実体を残していないか
 - `_redirects`に転送先を1回だけ定義したか
@@ -64,7 +75,7 @@ python3 tools/verify_site.py
 - 旧`v36`、旧home/menu資産を復活させていないか
 - インラインCSS・インライン実行JavaScriptを追加していないか
 
-## 7. コミット前
+## 8. コミット前
 
 ```bash
 git add -A
@@ -81,7 +92,7 @@ git commit -m "<変更内容>"
 git push origin main
 ```
 
-## 8. push後
+## 9. push後
 
-GitHub Actionsの`Site verification`が成功したことを確認する。
+GitHub Actionsの`Site verification`が成功したことを確認する。外部リンクを変更した場合は`External link verification`も手動実行する。
 ローカルとCIは同じ`python3 tools/verify_site.py`を実行するため、別の検証手順を増やさない。

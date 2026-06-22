@@ -1,4 +1,4 @@
-# スマホ小銭研究所 ページ作成ルール v45.0
+# スマホ小銭研究所 ページ作成ルール v46.0
 
 このドキュメントは、今後ページを増やしてもサイト構成を崩さないための運用ルールです。
 
@@ -142,7 +142,9 @@ python3 tools/verify_site.py
 - ASP URL・PR注記・計測ピクセルをページごとに複製しない
 - 生の広告HTMLを直接貼らない
 - 一覧ページからASPへ直接遷移させず、個別条件ページを経由する
-- 詳細は`docs/monetization.md`を参照する
+- 収益リンクをリンク切れ確認ツールやブラウザ自動化から開かない
+- 公式リンクの死活確認は`python3 tools/check_external_links.py --live`で行う
+- 詳細は`docs/monetization.md`と`docs/external-link-verification.md`を参照する
 
 ## クレジットカードページ
 

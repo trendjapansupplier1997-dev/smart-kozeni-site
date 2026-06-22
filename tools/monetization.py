@@ -11,6 +11,7 @@ from site_common import esc
 ROOT = Path(__file__).resolve().parents[1]
 REGISTRY_PATH = ROOT / "data" / "monetization" / "programs.json"
 VALID_FORMATS = {"text", "banner"}
+VALID_STATUSES = {"approved", "paused", "retired"}
 
 
 @lru_cache(maxsize=1)
@@ -41,8 +42,8 @@ def _validate_program(program_id: str, program: Any) -> None:
     ):
         if not str(program.get(key, "")).strip():
             raise ValueError(f"{REGISTRY_PATH}: {program_id}.{key} is required")
-    if program["status"] != "approved":
-        raise ValueError(f"{REGISTRY_PATH}: {program_id} is not approved")
+    if program["status"] not in VALID_STATUSES:
+        raise ValueError(f"{REGISTRY_PATH}: {program_id}.status is invalid")
     if program["format"] not in VALID_FORMATS:
         raise ValueError(f"{REGISTRY_PATH}: {program_id}.format is invalid")
     if not program["click_url"].startswith("https://"):
@@ -103,6 +104,10 @@ def resolve_cta(spec: Any, path: Path) -> dict[str, Any]:
         if program_id not in programs:
             raise ValueError(f"{path}: unknown monetization program {program_id!r}")
         program = dict(programs[program_id])
+        if program["status"] != "approved":
+            raise ValueError(
+                f"{path}: monetization program {program_id!r} is not active"
+            )
         program["program_id"] = program_id
         program["affiliate"] = True
         program["url"] = program.pop("click_url")
