@@ -16,10 +16,10 @@ python3 tools/verify_site.py
 `tools/verify_site.py`は次を順番に実行する。
 
 1. `tools/build_*.py`を自動発見し、通常は`--check`、`--write`時は生成を最大4並列で実行
-2. リポジトリ内のJSONとWeb Manifestを構文検査
+2. リポジトリ内のJSONとWeb Manifestを構文検査（公開実行設定も含む）
 3. リポジトリ内のJavaScriptを`node --check`で構文検査
 4. GitHub Actionsが統合検証コマンドだけを呼んでいることを検査
-5. `tools/kozeni_site_audit.py`を実行し、収益レジストリと全生成HTMLの外部リンク契約も検査
+5. `tools/kozeni_site_audit.py`を実行し、67生成HTML、公開資産、解析、Manifest、Service Worker廃止処理、収益レジストリ、外部リンク契約を検査
 6. `tools/kozeni_design_audit.py`を実行し、トークン読込順・共通値の生書き戻し・インラインコードを検査
 7. staged／unstaged両方の`git diff --check`を実行
 8. CIでは作業ツリーがクリーンなことを検査

@@ -25,11 +25,12 @@ import build_lifestyle
 import build_site_foundation
 import monetization
 import external_links
+import public_assets
 
 ROOT = Path(__file__).resolve().parents[1]
 HTML_FILES = sorted(
     path for path in ROOT.rglob("*.html")
-    if ".git" not in path.parts
+    if ".git" not in path.parts and "templates" not in path.parts
 )
 DATA_DIR = ROOT / "data" / "mobile-sim"
 TEMPLATE_PATH = ROOT / "templates" / "mobile-sim-detail.html"
@@ -44,6 +45,11 @@ STATUS_WORDS = [
     "coming soon",
     "工事中",
 ]
+
+INLINE_EXECUTABLE_SCRIPT_RE = re.compile(
+    r'<script\b(?![^>]*\bsrc\s*=)(?![^>]*\btype\s*=\s*["\']application/ld\+json["\'])[^>]*>',
+    re.I,
+)
 
 OLD_URL_PATTERNS = [
     ("old mobile href", r'href=["\']/mobile(?:/|["\'])'),
@@ -107,7 +113,7 @@ def sitemap_urls() -> set[str]:
 
 def audit_generated_mobile_sim() -> list[str]:
     problems: list[str] = []
-    template = Template(read(TEMPLATE_PATH))
+    template = public_assets.load_template(TEMPLATE_PATH)
     sitemap = sitemap_urls()
 
     for data_path in sorted(DATA_DIR.glob("*.json")):
@@ -278,9 +284,7 @@ def audit_mobile_sim_hub() -> list[str]:
         details = build_mobile_sim_hub.load_featured_details(
             data["featured_slugs"]
         )
-        template = Template(
-            read(build_mobile_sim_hub.TEMPLATE_PATH)
-        )
+        template = public_assets.load_template(build_mobile_sim_hub.TEMPLATE_PATH)
         rendered = build_mobile_sim_hub.render_page(
             data,
             details,
@@ -306,11 +310,7 @@ def audit_mobile_sim_hub() -> list[str]:
         problems.append(f"{rel}: inline style is forbidden")
     if source.count('type="application/ld+json"') != 1:
         problems.append(f"{rel}: exactly one JSON-LD graph is required")
-    if re.search(
-        r'<script(?![^>]*type="application/ld\+json")',
-        source,
-        flags=re.I,
-    ):
+    if INLINE_EXECUTABLE_SCRIPT_RE.search(source):
         problems.append(f"{rel}: executable inline script is forbidden")
     if (
         f'href="{build_mobile_sim_hub.STYLE_HREF}"'
@@ -378,7 +378,7 @@ def audit_mobile_sim_hub() -> list[str]:
 
 def audit_mobile_sim_guides() -> list[str]:
     problems: list[str] = []
-    template = Template(read(build_mobile_sim_guides.TEMPLATE_PATH))
+    template = public_assets.load_template(build_mobile_sim_guides.TEMPLATE_PATH)
     sitemap = sitemap_urls()
     for data_path in build_mobile_sim_guides.data_paths([]):
         try:
@@ -408,7 +408,7 @@ def audit_mobile_sim_guides() -> list[str]:
             problems.append(f"{rel}: exactly one JSON-LD graph is required")
         if f'"dateModified":"{data["checked_at"]}"' not in text:
             problems.append(f"{rel}: dateModified differs from checked_at")
-        if re.search(r'<script(?![^>]*type="application/ld\+json")', text, flags=re.I):
+        if INLINE_EXECUTABLE_SCRIPT_RE.search(text):
             problems.append(f"{rel}: executable inline script is forbidden")
         if f'href="{build_mobile_sim_guides.STYLE_HREF}"' not in text:
             problems.append(f"{rel}: shared guide CSS is missing")
@@ -452,7 +452,7 @@ def audit_mobile_sim_guides() -> list[str]:
 
 def audit_home_network() -> list[str]:
     problems: list[str] = []
-    template = Template(read(build_home_network.TEMPLATE_PATH))
+    template = public_assets.load_template(build_home_network.TEMPLATE_PATH)
     sitemap = sitemap_urls()
 
     for data_path in build_home_network.data_paths([]):
@@ -486,11 +486,7 @@ def audit_home_network() -> list[str]:
             problems.append(f"{rel}: exactly one JSON-LD graph is required")
         if f'"dateModified":"{data["checked_at"]}"' not in text:
             problems.append(f"{rel}: dateModified differs from checked_at")
-        if re.search(
-            r'<script(?![^>]*type="application/ld\+json")',
-            text,
-            flags=re.I,
-        ):
+        if INLINE_EXECUTABLE_SCRIPT_RE.search(text):
             problems.append(f"{rel}: executable inline script is forbidden")
         if f'href="{build_home_network.STYLE_HREF}"' not in text:
             problems.append(f"{rel}: shared home-network CSS is missing")
@@ -646,8 +642,8 @@ def audit_monetization_registry() -> list[str]:
 def audit_credit_cards() -> list[str]:
     problems: list[str] = []
     sitemap = sitemap_urls()
-    detail_template = Template(read(build_credit_cards.DETAIL_TEMPLATE_PATH))
-    hub_template = Template(read(build_credit_cards.HUB_TEMPLATE_PATH))
+    detail_template = public_assets.load_template(build_credit_cards.DETAIL_TEMPLATE_PATH)
+    hub_template = public_assets.load_template(build_credit_cards.HUB_TEMPLATE_PATH)
 
     try:
         details = build_credit_cards.load_all_details()
@@ -673,11 +669,7 @@ def audit_credit_cards() -> list[str]:
             problems.append(f"{rel}: h1 must appear exactly once")
         if "<style" in text:
             problems.append(f"{rel}: inline style is forbidden")
-        if re.search(
-            r'<script(?![^>]*type="application/ld\+json")',
-            text,
-            flags=re.I,
-        ):
+        if INLINE_EXECUTABLE_SCRIPT_RE.search(text):
             problems.append(f"{rel}: executable inline script is forbidden")
         if text.count('type="application/ld+json"') != 1:
             problems.append(f"{rel}: exactly one JSON-LD graph is required")
@@ -806,11 +798,7 @@ def audit_credit_cards() -> list[str]:
             problems.append(f"{hub_rel}: h1 must appear exactly once")
         if "<style" in text:
             problems.append(f"{hub_rel}: inline style is forbidden")
-        if re.search(
-            r'<script(?![^>]*type="application/ld\+json")',
-            text,
-            flags=re.I,
-        ):
+        if INLINE_EXECUTABLE_SCRIPT_RE.search(text):
             problems.append(f"{hub_rel}: executable inline script is forbidden")
         if f'href="{build_credit_cards.STYLE_HREF}"' not in text:
             problems.append(f"{hub_rel}: shared credit-card CSS is missing")
@@ -865,11 +853,7 @@ def _audit_account_page_common(
         problems.append(f"{rel}: h1 must appear exactly once")
     if "<style" in text:
         problems.append(f"{rel}: inline style is forbidden")
-    if re.search(
-        r'<script(?![^>]*type="application/ld\+json")',
-        text,
-        flags=re.I,
-    ):
+    if INLINE_EXECUTABLE_SCRIPT_RE.search(text):
         problems.append(f"{rel}: executable inline script is forbidden")
     if f'href="{build_account_opening.STYLE_HREF}"' not in text:
         problems.append(f"{rel}: shared account-opening CSS is missing")
@@ -896,9 +880,9 @@ def _audit_account_page_common(
 def audit_account_opening() -> list[str]:
     problems: list[str] = []
     sitemap = sitemap_urls()
-    product_template = Template(read(build_account_opening.PRODUCT_TEMPLATE_PATH))
-    guide_template = Template(read(build_account_opening.GUIDE_TEMPLATE_PATH))
-    hub_template = Template(read(build_account_opening.HUB_TEMPLATE_PATH))
+    product_template = public_assets.load_template(build_account_opening.PRODUCT_TEMPLATE_PATH)
+    guide_template = public_assets.load_template(build_account_opening.GUIDE_TEMPLATE_PATH)
+    hub_template = public_assets.load_template(build_account_opening.HUB_TEMPLATE_PATH)
 
     products: dict[str, dict[str, Any]] = {}
     for data_path in build_account_opening.product_paths([]):
@@ -1137,7 +1121,7 @@ def audit_point_sites() -> list[str]:
             problems.append(f"{rel}: h1 must appear exactly once")
         if "<style" in text:
             problems.append(f"{rel}: inline style is forbidden")
-        if re.search(r'<script(?![^>]*type="application/ld\+json")', text, flags=re.I):
+        if INLINE_EXECUTABLE_SCRIPT_RE.search(text):
             problems.append(f"{rel}: executable inline script is forbidden")
         if text.count('type="application/ld+json"') != 1:
             problems.append(f"{rel}: exactly one JSON-LD graph is required")
@@ -1214,11 +1198,7 @@ def audit_tiktok_lite() -> list[str]:
             problems.append(f"{rel}: h1 must appear exactly once")
         if "<style" in text:
             problems.append(f"{rel}: inline style is forbidden")
-        if re.search(
-            r'<script(?![^>]*type="application/ld\+json")',
-            text,
-            flags=re.I,
-        ):
+        if INLINE_EXECUTABLE_SCRIPT_RE.search(text):
             problems.append(f"{rel}: executable inline script is forbidden")
         if text.count('type="application/ld+json"') != 1:
             problems.append(f"{rel}: exactly one JSON-LD graph is required")
@@ -1330,7 +1310,7 @@ def audit_lifestyle() -> list[str]:
             problems.append(f"{rel}: h1 must appear exactly once")
         if "<style" in text or re.search(r"\sstyle=[\"']", text, flags=re.I):
             problems.append(f"{rel}: inline style is forbidden")
-        if re.search(r'<script(?![^>]*type="application/ld\+json")', text, flags=re.I):
+        if INLINE_EXECUTABLE_SCRIPT_RE.search(text):
             problems.append(f"{rel}: executable inline script is forbidden")
         if text.count('type="application/ld+json"') != 1:
             problems.append(f"{rel}: exactly one JSON-LD graph is required")
@@ -1421,11 +1401,7 @@ def audit_site_foundation() -> list[str]:
             problems.append(f"{rel}: h1 must appear exactly once")
         if "<style" in text or re.search(r"\sstyle=[\"']", text, flags=re.I):
             problems.append(f"{rel}: inline style is forbidden")
-        if re.search(
-            r'<script\b(?![^>]*\bsrc=)(?![^>]*type=["\']application/ld\+json["\'])[^>]*>',
-            text,
-            flags=re.I,
-        ):
+        if INLINE_EXECUTABLE_SCRIPT_RE.search(text):
             problems.append(f"{rel}: executable inline script is forbidden")
         if text.count('type="application/ld+json"') != 1:
             problems.append(f"{rel}: exactly one JSON-LD graph is required")
@@ -1433,8 +1409,8 @@ def audit_site_foundation() -> list[str]:
             problems.append(f"{rel}: dateModified differs from checked_at")
         if 'href="/assets/kozeni-site-foundation.v1.css?v=45.0"' not in text:
             problems.append(f"{rel}: shared foundation CSS is missing")
-        if 'src="/assets/kozeni-site-foundation.v1.js"' not in text:
-            problems.append(f"{rel}: shared foundation JS is missing")
+        if rel == "index.html" and 'src="/assets/kozeni-foundation-menu.v1.js"' not in text:
+            problems.append(f"{rel}: foundation menu JS is missing")
         if f'<link rel="canonical" href="{canonical}">' not in text:
             problems.append(f"{rel}: canonical is incorrect")
         if rel != "404.html" and canonical not in sitemap:
@@ -1537,6 +1513,7 @@ def main() -> int:
     tiktok_lite_problems = audit_tiktok_lite()
     lifestyle_problems = audit_lifestyle()
     site_foundation_problems = audit_site_foundation()
+    public_asset_problems = public_assets.audit_public_assets()
 
     print("=== kozeni site audit ===")
     print(f"HTML files: {len(HTML_FILES)}")
@@ -1609,6 +1586,11 @@ def main() -> int:
     show_list(
         "generated site foundation pages",
         site_foundation_problems,
+        problems,
+    )
+    show_list(
+        "public assets and site runtime",
+        public_asset_problems,
         problems,
     )
 

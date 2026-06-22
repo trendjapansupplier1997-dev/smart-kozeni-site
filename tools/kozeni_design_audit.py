@@ -13,7 +13,10 @@ ASSETS = ROOT / "assets"
 TOKEN_PATH = ASSETS / "kozeni-tokens.v1.css"
 TOKEN_HREF = "/assets/kozeni-tokens.v1.css"
 BRAND_HREF = "/assets/kozeni-brand.v1.css"
-HTML_FILES = sorted(path for path in ROOT.rglob("*.html") if ".git" not in path.parts)
+HTML_FILES = sorted(
+    path for path in ROOT.rglob("*.html")
+    if ".git" not in path.parts and "templates" not in path.parts
+)
 CSS_FILES = sorted(ASSETS.glob("*.css")) if ASSETS.exists() else []
 
 HEX_RE = re.compile(r"#[0-9a-fA-F]{3,8}\b")

@@ -1,4 +1,4 @@
-# スマホ小銭研究所 ページ作成ルール v46.0
+# スマホ小銭研究所 ページ作成ルール v47.0
 
 このドキュメントは、今後ページを増やしてもサイト構成を崩さないための運用ルールです。
 
@@ -70,7 +70,9 @@ python3 tools/verify_site.py
 - CSS統合はカテゴリ単位で進め、固有レイアウトを機械的に共通化しない
 - 1ページだけの見た目調整をHTML内に増やさない
 - インラインCSSとインライン実行JavaScriptは追加しない
-- 詳細は`docs/design-tokens.md`を参照する
+- favicon・Manifest・解析スクリプトの共通headは`$site_runtime_head`から生成し、テンプレートへ複製しない
+- 全ページ共通解析は`kozeni-analytics.v1.js`、ホームメニューは`kozeni-foundation-menu.v1.js`に分離する
+- 詳細は`docs/design-tokens.md`と`docs/public-assets-runtime.md`を参照する
 
 ## 収益導線の考え方
 
@@ -231,7 +233,8 @@ python3 tools/verify_site.py
 
 - 内容は`data/site-foundation/`で管理する
 - 構造は`templates/site-home.html`と`templates/site-info.html`で管理する
-- CSS/JSは`assets/kozeni-site-foundation.v1.*`へ集約する
+- CSSは`assets/kozeni-site-foundation.v1.css`、ホームメニューは`assets/kozeni-foundation-menu.v1.js`へ集約する
+- favicon・Manifest・全ページ解析は`data/site-runtime.json`をSSOTとして生成する
 - `python3 tools/build_site_foundation.py`で生成する
 - インラインCSS、インライン実行JavaScript、旧`v36`資産を追加しない
 - ホームメニュー以外の重要情報をJavaScriptへ依存させない

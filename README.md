@@ -33,6 +33,7 @@ Cloudflare Pages 用のクリーンな静的サイト一式です。
 - `docs/release-checklist.md` リリース前チェックリスト
 - `docs/site-verification.md` ローカル/CI共通の検証SSOT
 - `docs/external-link-verification.md` 外部リンク・収益リンクの構造監査と安全な定期確認
+- `docs/public-assets-runtime.md` favicon・Manifest・解析・Service Worker廃止処理のSSOT
 - `docs/mobile-sim-generation.md` スマホ回線詳細ページのSSOT/生成/監査ルール
 - `docs/monetization.md` 承認済みASP案件と収益導線のSSOTルール
 - `docs/account-opening-generation.md` 口座開設ページのSSOT/生成/監査ルール
@@ -49,7 +50,7 @@ Cloudflare Pages 用のクリーンな静的サイト一式です。
 python3 tools/verify_site.py
 ```
 
-このコマンドは、すべてのgenerator、JSON/JavaScript構文、収益導線、外部リンク属性、内部リンク、canonical、sitemap、デザイン、Git差分をまとめて検証します。
+このコマンドは、すべてのgenerator、JSON/JavaScript構文、公開資産、解析スクリプト、収益導線、外部リンク属性、内部リンク、canonical、sitemap、デザイン、Git差分をまとめて検証します。
 
 すべての生成ページを書き直してから検証する場合：
 

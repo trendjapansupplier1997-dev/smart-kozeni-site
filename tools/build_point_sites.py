@@ -5,7 +5,7 @@ from pathlib import Path
 from string import Template
 from typing import Any
 sys.dont_write_bytecode = True
-import monetization, site_common
+import monetization, public_assets, site_common
 ROOT=Path(__file__).resolve().parents[1]
 SITE_DIR=ROOT/'data'/'point-site'/'sites'
 GUIDE_DIR=ROOT/'data'/'point-site'/'guides'
@@ -147,7 +147,7 @@ def render_guide(data,template):
     return site_common.clean_rendered(template.substitute(title=site_common.esc(data['title']),description=site_common.esc(data['description']),canonical=canonical,name=site_common.esc(data['h1']),seo_jsonld=site_common.render_page_jsonld(canonical=canonical,title=data['title'],description=data['description'],checked_at=data['checked_at'],breadcrumbs=[('ホーム',site_common.BASE_URL+'/'),('ポイ活',site_common.BASE_URL+'/point-site/'),(data['h1'],canonical)]),eyebrow=site_common.esc(data['eyebrow']),h1=site_common.esc(data['h1']),lead=site_common.esc(data['lead']),checked_at=data['checked_at'],checked_at_display=site_common.format_date(site_common.parse_date(data['checked_at'],Path(data['slug']))),guide_content=content,related=render_related(data['related'])))
 
 def build_outputs():
-    outputs={}; sites=load_all_sites(); dt=Template(DETAIL_TEMPLATE_PATH.read_text(encoding='utf-8')); et=Template(EARN_TEMPLATE_PATH.read_text(encoding='utf-8')); gt=Template(GUIDE_TEMPLATE_PATH.read_text(encoding='utf-8')); ht=Template(HUB_TEMPLATE_PATH.read_text(encoding='utf-8'))
+    outputs={}; sites=load_all_sites(); dt=public_assets.load_template(DETAIL_TEMPLATE_PATH); et=public_assets.load_template(EARN_TEMPLATE_PATH); gt=public_assets.load_template(GUIDE_TEMPLATE_PATH); ht=public_assets.load_template(HUB_TEMPLATE_PATH)
     for data in sites.values(): outputs[detail_output(data)]=render_detail(data,dt); outputs[earn_output(data)]=render_earn(data,et)
     outputs[ROOT/'point-site'/'index.html']=render_hub(load_hub(),ht)
     for data in load_guides().values(): outputs[ROOT/'point-site'/data['slug']/'index.html']=render_guide(data,gt)

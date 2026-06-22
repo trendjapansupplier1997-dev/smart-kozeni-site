@@ -18,7 +18,9 @@
 - ホーム構造: `templates/site-home.html`
 - 基盤ページ構造: `templates/site-info.html`
 - 共通表示: `assets/kozeni-site-foundation.v1.css`
-- メニューと解析読込: `assets/kozeni-site-foundation.v1.js`
+- ホームメニュー: `assets/kozeni-foundation-menu.v1.js`
+- 全ページ共通解析: `assets/kozeni-analytics.v1.js`
+- 公開実行設定: `data/site-runtime.json`
 - 生成器: `tools/build_site_foundation.py`
 
 HTMLは生成物です。内容はJSON、共通構造はテンプレート、表示は共通CSSで変更します。
@@ -32,9 +34,9 @@ python3 tools/verify_site.py
 
 ## JavaScriptの境界
 
-- ホームの開閉メニューは`kozeni-site-foundation.v1.js`だけが担当する
-- HTMLへフォールバックJavaScriptを複製しない
-- Google Analytics 4とMicrosoft Clarityの読込も同じ外部ファイルへ集約する
+- ホームの開閉メニューは`kozeni-foundation-menu.v1.js`だけが担当する
+- Google Analytics 4とMicrosoft Clarityは`kozeni-analytics.v1.js`だけが担当し、全生成ページで同じファイルを1回だけ読む
+- HTMLへフォールバックJavaScriptや解析IDを複製しない
 - 重要な本文、導線、条件はJavaScriptなしでも読める静的HTMLにする
 
 ## 廃止済み資産
@@ -49,4 +51,4 @@ python3 tools/verify_site.py
 - `assets/kozeni-menu.v1.css`
 - `assets/kozeni-menu.v1.js`
 
-統合監査は、これらのファイル・参照・旧クラスが復活した場合に失敗します。
+統合監査は、これらのファイル・参照・旧クラスが復活した場合に失敗します。公開資産と解析の詳細は`docs/public-assets-runtime.md`を参照します。

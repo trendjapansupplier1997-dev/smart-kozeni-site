@@ -1,4 +1,4 @@
-# スマホ小銭研究所 リリース前チェックリスト v46.0
+# スマホ小銭研究所 リリース前チェックリスト v47.0
 
 ## 1. 変更前
 
@@ -67,15 +67,25 @@ python3 tools/verify_site.py
 
 ネットワーク確認は通常のcommit前検証には含めない。外部サイト障害と人工的な広告クリックを通常CIへ持ち込まないためである。
 
-## 7. 旧URL・資産を整理したとき
+## 7. 公開資産・実行基盤を変更したとき
+
+- favicon、Manifest、解析IDを`data/site-runtime.json`以外へ複製していないか
+- `python3 tools/build_site_runtime.py`で生成物を更新したか
+- 全生成ページが`kozeni-analytics.v1.js`を1回だけ読み込むか
+- `kozeni-foundation-menu.v1.js`がホーム以外へ追加されていないか
+- `assets/`へ未参照の制作元画像や旧SVGを残していないか
+- `sw.js`へ`fetch`処理や新しいキャッシュ機能を追加していないか
+- `site.webmanifest`と`sw.js`のキャッシュ方針を`_headers`から外していないか
+
+## 8. 旧URL・資産を整理したとき
 
 - 旧ページ実体を残していないか
 - `_redirects`に転送先を1回だけ定義したか
 - `sitemap.xml`に旧URLを残していないか
-- 旧`v36`、旧home/menu資産を復活させていないか
+- 旧`v36`、旧home/menu資産、重複Manifest、手動`version.json`を復活させていないか
 - インラインCSS・インライン実行JavaScriptを追加していないか
 
-## 8. コミット前
+## 9. コミット前
 
 ```bash
 git add -A
@@ -92,7 +102,7 @@ git commit -m "<変更内容>"
 git push origin main
 ```
 
-## 9. push後
+## 10. push後
 
 GitHub Actionsの`Site verification`が成功したことを確認する。外部リンクを変更した場合は`External link verification`も手動実行する。
 ローカルとCIは同じ`python3 tools/verify_site.py`を実行するため、別の検証手順を増やさない。

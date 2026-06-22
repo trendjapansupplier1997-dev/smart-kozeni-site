@@ -8,6 +8,7 @@ from string import Template
 from typing import Any
 
 import site_common
+import public_assets
 
 ROOT = Path(__file__).resolve().parents[1]
 HOME_DATA_PATH = ROOT / "data" / "site-foundation" / "home.json"
@@ -304,8 +305,8 @@ def render_page(data: dict[str, Any], template: Template) -> str:
 
 
 def build_records() -> list[tuple[Path, dict[str, Any], Path, str]]:
-    home_template = Template(HOME_TEMPLATE_PATH.read_text(encoding="utf-8"))
-    info_template = Template(INFO_TEMPLATE_PATH.read_text(encoding="utf-8"))
+    home_template = public_assets.load_template(HOME_TEMPLATE_PATH)
+    info_template = public_assets.load_template(INFO_TEMPLATE_PATH)
     home = load_home()
     records: list[tuple[Path, dict[str, Any], Path, str]] = [
         (HOME_DATA_PATH, home, ROOT / home["output"], render_home(home, home_template))

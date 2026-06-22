@@ -4,7 +4,7 @@ import argparse, json, re
 from pathlib import Path
 from string import Template
 from typing import Any
-import monetization, site_common
+import monetization, public_assets, site_common
 
 ROOT=Path(__file__).resolve().parents[1]
 HUB_DIR=ROOT/'data'/'lifestyle'/'hubs'
@@ -138,7 +138,7 @@ def render_guide(data,template):
       'steps_title':site_common.esc(data['steps_title']),'steps':render_steps(data['steps']),'avoid_label':site_common.esc(data['avoid_label']),'avoid_title':site_common.esc(data['avoid_title']),'avoid_body':site_common.esc(data['avoid_body'])})
 
 def build_records():
-    hub_template=Template(HUB_TEMPLATE_PATH.read_text(encoding='utf-8')); guide_template=Template(GUIDE_TEMPLATE_PATH.read_text(encoding='utf-8'))
+    hub_template=public_assets.load_template(HUB_TEMPLATE_PATH); guide_template=public_assets.load_template(GUIDE_TEMPLATE_PATH)
     records=[]
     for path in sorted(HUB_DIR.glob('*.json')):
         data=load_hub(path); records.append((path,data,ROOT/data['output'],render_hub(data,hub_template)))

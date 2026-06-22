@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "site_name": "スマホ小銭研究所",
+  "short_name": "スマホ小銭",
+  "description": "スマホで賢く、ムダなく、毎日をちょっと豊かに。",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#228C62",
+  "icon_cache_key": "xicon1",
+  "head_icons": [
+    {
+      "rel": "icon",
+      "href": "/assets/images/icon-32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "rel": "icon",
+      "href": "/assets/images/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "/assets/images/apple-touch-icon.png",
+      "sizes": "180x180"
+    }
+  ],
+  "manifest_icons": [
+    {
+      "src": "/assets/images/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/images/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "analytics": {
+    "output": "assets/kozeni-analytics.v1.js",
+    "ga4_measurement_id": "G-V140MZBPKB",
+    "clarity_project_id": "wmurko5bi1"
+  }
+}

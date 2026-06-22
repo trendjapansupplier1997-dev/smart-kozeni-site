@@ -12,6 +12,7 @@ from typing import Any
 sys.dont_write_bytecode = True
 
 import monetization
+import public_assets
 import site_common
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -454,9 +455,9 @@ def build(*, check: bool, slugs: list[str]) -> int:
     if unknown:
         raise ValueError(f"unknown slug(s): {', '.join(unknown)}")
 
-    product_template = Template(PRODUCT_TEMPLATE_PATH.read_text(encoding="utf-8"))
-    guide_template = Template(GUIDE_TEMPLATE_PATH.read_text(encoding="utf-8"))
-    hub_template = Template(HUB_TEMPLATE_PATH.read_text(encoding="utf-8"))
+    product_template = public_assets.load_template(PRODUCT_TEMPLATE_PATH)
+    guide_template = public_assets.load_template(GUIDE_TEMPLATE_PATH)
+    hub_template = public_assets.load_template(HUB_TEMPLATE_PATH)
     failures = 0
 
     for path in product_paths(slugs):

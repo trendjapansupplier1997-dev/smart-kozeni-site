@@ -15,6 +15,7 @@ sys.dont_write_bytecode = True
 
 import build_mobile_sim
 import monetization
+import public_assets
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA_DIR = ROOT / "data" / "home-network"
@@ -258,7 +259,7 @@ def main() -> int:
     parser.add_argument("ids", nargs="*")
     args = parser.parse_args()
 
-    template = Template(TEMPLATE_PATH.read_text(encoding="utf-8"))
+    template = public_assets.load_template(TEMPLATE_PATH)
     failures = 0
     try:
         for path in data_paths(args.ids):

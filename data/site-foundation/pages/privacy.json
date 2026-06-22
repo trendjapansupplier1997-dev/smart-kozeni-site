@@ -7,12 +7,12 @@
   "eyebrow": "PRIVACY",
   "h1": "プライバシーポリシー",
   "lead": "サイト改善に必要な範囲で、アクセス情報やお問い合わせ情報を取り扱います。",
-  "checked_at": "2026-06-21",
+  "checked_at": "2026-06-22",
   "sections": [
     {
       "label": "ANALYTICS",
       "title": "アクセス解析",
-      "body": "当サイトの一部ページではGoogle Analytics 4とMicrosoft Clarityを利用し、閲覧状況を集計します。これらのサービスによりCookie等が利用される場合があります。"
+      "body": "当サイトの全ページではGoogle Analytics 4とMicrosoft Clarityを利用し、閲覧状況を集計します。これらのサービスによりCookie等が利用される場合があります。"
     },
     {
       "label": "CONTACT",

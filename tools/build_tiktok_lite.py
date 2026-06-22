@@ -9,6 +9,7 @@ from string import Template
 from typing import Any
 
 import monetization
+import public_assets
 import site_common
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -436,8 +437,8 @@ def render_hub(data: dict[str, Any], template: Template) -> str:
 def build_outputs() -> dict[Path, str]:
     pages = load_pages()
     hub = load_hub()
-    guide_template = Template(GUIDE_TEMPLATE_PATH.read_text(encoding="utf-8"))
-    hub_template = Template(HUB_TEMPLATE_PATH.read_text(encoding="utf-8"))
+    guide_template = public_assets.load_template(GUIDE_TEMPLATE_PATH)
+    hub_template = public_assets.load_template(HUB_TEMPLATE_PATH)
     outputs = {
         output_for_slug(slug): render_page(data, guide_template)
         for slug, data in pages.items()

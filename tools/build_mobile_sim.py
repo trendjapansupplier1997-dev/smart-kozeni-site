@@ -12,6 +12,7 @@ from string import Template
 from typing import Any
 
 import monetization
+import public_assets
 ROOT = Path(__file__).resolve().parents[1]
 DATA_DIR = ROOT / "data" / "mobile-sim"
 TEMPLATE_PATH = ROOT / "templates" / "mobile-sim-detail.html"
@@ -281,7 +282,7 @@ def main() -> int:
     )
     args = parser.parse_args()
 
-    template = Template(TEMPLATE_PATH.read_text(encoding="utf-8"))
+    template = public_assets.load_template(TEMPLATE_PATH)
     failures = 0
 
     try:

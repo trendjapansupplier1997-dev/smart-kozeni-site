@@ -12,6 +12,7 @@ from typing import Any
 sys.dont_write_bytecode = True
 
 import monetization
+import public_assets
 import site_common
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -282,8 +283,8 @@ def render_hub(
 
 
 def build(*, check: bool, slugs: list[str]) -> int:
-    detail_template = Template(DETAIL_TEMPLATE_PATH.read_text(encoding="utf-8"))
-    hub_template = Template(HUB_TEMPLATE_PATH.read_text(encoding="utf-8"))
+    detail_template = public_assets.load_template(DETAIL_TEMPLATE_PATH)
+    hub_template = public_assets.load_template(HUB_TEMPLATE_PATH)
     failures = 0
 
     for path in detail_paths(slugs):

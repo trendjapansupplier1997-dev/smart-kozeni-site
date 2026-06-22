@@ -13,6 +13,7 @@ from typing import Any
 sys.dont_write_bytecode = True
 
 import build_mobile_sim
+import public_assets
 
 ROOT = Path(__file__).resolve().parents[1]
 HUB_DATA_PATH = ROOT / "data" / "mobile-sim-hub.json"
@@ -325,7 +326,7 @@ def render_page(
 def build() -> str:
     data = load_hub_data()
     details = load_featured_details(data["featured_slugs"])
-    template = Template(TEMPLATE_PATH.read_text(encoding="utf-8"))
+    template = public_assets.load_template(TEMPLATE_PATH)
     return render_page(data, details, template)
 
 
