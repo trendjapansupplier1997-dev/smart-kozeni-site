@@ -41,7 +41,7 @@ python3 tools/verify_site.py
 
 - URLがカテゴリ配下として自然か
 - title / description / canonical があるか
-- `sitemap.xml`へ追加したか
+- `python3 tools/build_seo.py --check`でcanonical JSONと`sitemap.xml`が一致するか
 - 一覧ページから内部リンクしたか
 - PR/紹介/広告リンク表記があるか
 - 公式条件の確認を促しているか
@@ -106,3 +106,12 @@ git push origin main
 
 GitHub Actionsの`Site verification`が成功したことを確認する。外部リンクを変更した場合は`External link verification`も手動実行する。
 ローカルとCIは同じ`python3 tools/verify_site.py`を実行するため、別の検証手順を増やさない。
+
+## SEOメタデータ・構造化データ
+
+- 67ページのtitle / description / canonicalが一意か
+- Open Graph / Twitter Cardがcanonical JSONと一致するか
+- JSON-LDのpage node、BreadcrumbList、dateModifiedが一致するか
+- noindexページがsitemapへ入っていないか
+- indexableページに内部リンクの流入があるか
+- `sitemap.xml`を手編集していないか

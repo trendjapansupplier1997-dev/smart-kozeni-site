@@ -7,9 +7,10 @@ import struct
 from functools import lru_cache
 from html.parser import HTMLParser
 from pathlib import Path
-from string import Template
 from typing import Any
 from urllib.parse import urlsplit
+
+import seo
 
 ROOT = Path(__file__).resolve().parents[1]
 CONFIG_PATH = ROOT / "data" / "site-runtime.json"
@@ -199,12 +200,12 @@ def render_head(config: dict[str, Any] | None = None) -> str:
     return "\n".join(lines)
 
 
-def load_template(path: Path) -> Template:
+def load_template(path: Path) -> seo.SeoTemplate:
     source = path.read_text(encoding="utf-8")
     marker = "$site_runtime_head"
     if source.count(marker) != 1:
         raise ValueError(f"{path.relative_to(ROOT)}: must contain {marker} exactly once")
-    return Template(source.replace(marker, render_head()))
+    return seo.SeoTemplate(source.replace(marker, render_head()), path=path)
 
 
 def _png_size(path: Path) -> tuple[int, int]:

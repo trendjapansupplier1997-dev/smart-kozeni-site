@@ -19,12 +19,12 @@ python3 tools/verify_site.py
 2. リポジトリ内のJSONとWeb Manifestを構文検査（公開実行設定も含む）
 3. リポジトリ内のJavaScriptを`node --check`で構文検査
 4. GitHub Actionsが統合検証コマンドだけを呼んでいることを検査
-5. `tools/kozeni_site_audit.py`を実行し、67生成HTML、公開資産、解析、Manifest、Service Worker廃止処理、収益レジストリ、外部リンク契約を検査
+5. `tools/kozeni_site_audit.py`を実行し、67生成HTML、公開資産、解析、Manifest、Service Worker廃止処理、収益レジストリ、外部リンク契約、SEOメタデータ、構造化データ、生成sitemap、孤立ページを検査
 6. `tools/kozeni_design_audit.py`を実行し、トークン読込順・共通値の生書き戻し・インラインコードを検査
 7. staged／unstaged両方の`git diff --check`を実行
 8. CIでは作業ツリーがクリーンなことを検査
 
-新しい`tools/build_*.py`を追加した場合、一覧ファイルの更新は不要。命名規則により自動的に検証対象へ入る。
+新しい`tools/build_*.py`を追加した場合、一覧ファイルの更新は不要。命名規則により自動的に検証対象へ入る。`tools/build_seo.py`も同じ仕組みでcanonical JSONから`sitemap.xml`を検査する。
 
 ## 通常の確認
 

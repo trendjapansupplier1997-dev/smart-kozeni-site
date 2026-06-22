@@ -47,7 +47,7 @@ python3 tools/verify_site.py
 - `<link rel="canonical">` がある
 - PR/広告/紹介リンクの有無が分かる
 - 公式条件の確認を促す文言がある
-- `sitemap.xml` に追加されている
+- canonical JSONから`tools/build_seo.py`が生成する`sitemap.xml`に含まれる（手編集禁止）
 - 一覧ページまたは関連ページから内部リンクされている
 - 404ではなく実ページとして表示確認できる
 
@@ -240,3 +240,11 @@ python3 tools/verify_site.py
 - ホームメニュー以外の重要情報をJavaScriptへ依存させない
 
 詳細は`docs/site-foundation-generation.md`を参照する。
+
+## SEOメタデータ
+
+- SEO headはテンプレートへ個別に複製しない
+- `$seo_head_article` / `$seo_head_website` / `$seo_head_dynamic`のいずれかを1つ使う
+- `title`、`description`、`checked_at`はcanonical JSONだけを編集する
+- `sitemap.xml`は手編集せず、`python3 tools/build_seo.py`で生成する
+- OGP画像が存在しない状態で`og:image`を追加しない

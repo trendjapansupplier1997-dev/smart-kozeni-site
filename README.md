@@ -20,7 +20,7 @@ Cloudflare Pages 用のクリーンな静的サイト一式です。
 - `/start-here/` と `/point-site/referral-code/` は現行ページへリダイレクトします。
 
 ## 運用メモ
-- 新規ページ追加時は、`sitemap.xml` と内部リンクの両方を更新します。
+- 新規ページ追加時はcanonical JSONと内部リンクを更新します。`sitemap.xml`は`tools/build_seo.py`が生成するため手編集しません。
 - 旧ページ実体を残さず、必要な旧URLは `_redirects` に集約します。
 - バックアップファイルや作業ログは公開用ZIPに含めません。
 
@@ -34,6 +34,7 @@ Cloudflare Pages 用のクリーンな静的サイト一式です。
 - `docs/site-verification.md` ローカル/CI共通の検証SSOT
 - `docs/external-link-verification.md` 外部リンク・収益リンクの構造監査と安全な定期確認
 - `docs/public-assets-runtime.md` favicon・Manifest・解析・Service Worker廃止処理のSSOT
+- `docs/seo-metadata.md` SEO head・構造化データ・sitemap・内部リンクのSSOT
 - `docs/mobile-sim-generation.md` スマホ回線詳細ページのSSOT/生成/監査ルール
 - `docs/monetization.md` 承認済みASP案件と収益導線のSSOTルール
 - `docs/account-opening-generation.md` 口座開設ページのSSOT/生成/監査ルール
@@ -50,7 +51,7 @@ Cloudflare Pages 用のクリーンな静的サイト一式です。
 python3 tools/verify_site.py
 ```
 
-このコマンドは、すべてのgenerator、JSON/JavaScript構文、公開資産、解析スクリプト、収益導線、外部リンク属性、内部リンク、canonical、sitemap、デザイン、Git差分をまとめて検証します。
+このコマンドは、すべてのgenerator、JSON/JavaScript構文、公開資産、解析スクリプト、収益導線、外部リンク属性、内部リンク、SEOメタデータ、構造化データ、canonical、生成sitemap、デザイン、Git差分をまとめて検証します。
 
 すべての生成ページを書き直してから検証する場合：
 

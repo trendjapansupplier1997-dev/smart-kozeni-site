@@ -26,6 +26,7 @@ import build_site_foundation
 import monetization
 import external_links
 import public_assets
+import seo
 
 ROOT = Path(__file__).resolve().parents[1]
 HTML_FILES = sorted(
@@ -1514,6 +1515,7 @@ def main() -> int:
     lifestyle_problems = audit_lifestyle()
     site_foundation_problems = audit_site_foundation()
     public_asset_problems = public_assets.audit_public_assets()
+    seo_problems = seo.audit_seo()
 
     print("=== kozeni site audit ===")
     print(f"HTML files: {len(HTML_FILES)}")
@@ -1591,6 +1593,11 @@ def main() -> int:
     show_list(
         "public assets and site runtime",
         public_asset_problems,
+        problems,
+    )
+    show_list(
+        "SEO metadata, structured data, sitemap, and internal links",
+        seo_problems,
         problems,
     )
 

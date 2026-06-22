@@ -1,4 +1,4 @@
-<?xml version='1.0' encoding='utf-8'?>
+<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://smart-kozeni.com/</loc>
@@ -13,11 +13,59 @@
     <lastmod>2026-06-21</lastmod>
   </url>
   <url>
+    <loc>https://smart-kozeni.com/account-opening/gmo-click-sec/</loc>
+    <lastmod>2026-06-21</lastmod>
+  </url>
+  <url>
+    <loc>https://smart-kozeni.com/account-opening/matsui-sec/</loc>
+    <lastmod>2026-06-21</lastmod>
+  </url>
+  <url>
+    <loc>https://smart-kozeni.com/account-opening/mufg-esmart-sec/</loc>
+    <lastmod>2026-06-21</lastmod>
+  </url>
+  <url>
+    <loc>https://smart-kozeni.com/account-opening/nisa-ideco/</loc>
+    <lastmod>2026-06-21</lastmod>
+  </url>
+  <url>
+    <loc>https://smart-kozeni.com/account-opening/sbi-shinsei-bank/</loc>
+    <lastmod>2026-06-21</lastmod>
+  </url>
+  <url>
+    <loc>https://smart-kozeni.com/account-opening/securities-basics/</loc>
+    <lastmod>2026-06-21</lastmod>
+  </url>
+  <url>
+    <loc>https://smart-kozeni.com/account-opening/sumishin-sbi-netbank/</loc>
+    <lastmod>2026-06-21</lastmod>
+  </url>
+  <url>
     <loc>https://smart-kozeni.com/contact/</loc>
     <lastmod>2026-06-21</lastmod>
   </url>
-    <url>
+  <url>
     <loc>https://smart-kozeni.com/credit-card/</loc>
+    <lastmod>2026-06-21</lastmod>
+  </url>
+  <url>
+    <loc>https://smart-kozeni.com/credit-card/d-card-gold-u/</loc>
+    <lastmod>2026-06-21</lastmod>
+  </url>
+  <url>
+    <loc>https://smart-kozeni.com/credit-card/epos-card/</loc>
+    <lastmod>2026-06-21</lastmod>
+  </url>
+  <url>
+    <loc>https://smart-kozeni.com/credit-card/rakuten-card/</loc>
+    <lastmod>2026-06-21</lastmod>
+  </url>
+  <url>
+    <loc>https://smart-kozeni.com/credit-card/smbc-nl/</loc>
+    <lastmod>2026-06-21</lastmod>
+  </url>
+  <url>
+    <loc>https://smart-kozeni.com/credit-card/tokyu-card/</loc>
     <lastmod>2026-06-21</lastmod>
   </url>
   <url>
@@ -26,6 +74,18 @@
   </url>
   <url>
     <loc>https://smart-kozeni.com/mobile-sim/ahamo/</loc>
+    <lastmod>2026-06-20</lastmod>
+  </url>
+  <url>
+    <loc>https://smart-kozeni.com/mobile-sim/ahamo/campaign-not-eligible/</loc>
+    <lastmod>2026-06-20</lastmod>
+  </url>
+  <url>
+    <loc>https://smart-kozeni.com/mobile-sim/data-usage/</loc>
+    <lastmod>2026-06-20</lastmod>
+  </url>
+  <url>
+    <loc>https://smart-kozeni.com/mobile-sim/home-wifi/</loc>
     <lastmod>2026-06-20</lastmod>
   </url>
   <url>
@@ -49,7 +109,19 @@
     <lastmod>2026-06-20</lastmod>
   </url>
   <url>
+    <loc>https://smart-kozeni.com/mobile-sim/rakuten-hikari/</loc>
+    <lastmod>2026-06-20</lastmod>
+  </url>
+  <url>
     <loc>https://smart-kozeni.com/mobile-sim/rakuten-mobile/</loc>
+    <lastmod>2026-06-20</lastmod>
+  </url>
+  <url>
+    <loc>https://smart-kozeni.com/mobile-sim/rakuten-mobile/campaign-not-eligible/</loc>
+    <lastmod>2026-06-20</lastmod>
+  </url>
+  <url>
+    <loc>https://smart-kozeni.com/mobile-sim/rakuten-mobile/referral-not-reflected/</loc>
     <lastmod>2026-06-20</lastmod>
   </url>
   <url>
@@ -62,6 +134,10 @@
   </url>
   <url>
     <loc>https://smart-kozeni.com/point-site/</loc>
+    <lastmod>2026-06-21</lastmod>
+  </url>
+  <url>
+    <loc>https://smart-kozeni.com/point-site/beginner/</loc>
     <lastmod>2026-06-21</lastmod>
   </url>
   <url>
@@ -86,6 +162,10 @@
   </url>
   <url>
     <loc>https://smart-kozeni.com/point-site/kurashiru-reward/earn/</loc>
+    <lastmod>2026-06-21</lastmod>
+  </url>
+  <url>
+    <loc>https://smart-kozeni.com/point-site/moppy-hapitas/</loc>
     <lastmod>2026-06-21</lastmod>
   </url>
   <url>
@@ -137,11 +217,23 @@
     <lastmod>2026-06-22</lastmod>
   </url>
   <url>
+    <loc>https://smart-kozeni.com/shopping/</loc>
+    <lastmod>2026-06-21</lastmod>
+  </url>
+  <url>
+    <loc>https://smart-kozeni.com/shopping/coupon-check/</loc>
+    <lastmod>2026-06-21</lastmod>
+  </url>
+  <url>
     <loc>https://smart-kozeni.com/tiktok-lite/</loc>
     <lastmod>2026-06-21</lastmod>
   </url>
   <url>
     <loc>https://smart-kozeni.com/tiktok-lite/checklist/</loc>
+    <lastmod>2026-06-21</lastmod>
+  </url>
+  <url>
+    <loc>https://smart-kozeni.com/tiktok-lite/conditions/</loc>
     <lastmod>2026-06-21</lastmod>
   </url>
   <url>
@@ -165,123 +257,11 @@
     <lastmod>2026-06-21</lastmod>
   </url>
   <url>
-    <loc>https://smart-kozeni.com/tiktok-lite/conditions/</loc>
-    <lastmod>2026-06-21</lastmod>
-  </url>
-  <url>
-    <loc>https://smart-kozeni.com/point-site/moppy-hapitas/</loc>
-    <lastmod>2026-06-21</lastmod>
-  </url>
-  <url>
-    <loc>https://smart-kozeni.com/mobile-sim/data-usage/</loc>
-    <lastmod>2026-06-20</lastmod>
-  </url>
-    <url>
-    <loc>https://smart-kozeni.com/credit-card/rakuten-card/</loc>
-    <lastmod>2026-06-21</lastmod>
-  </url>
-    <url>
-    <loc>https://smart-kozeni.com/credit-card/smbc-nl/</loc>
-    <lastmod>2026-06-21</lastmod>
-  </url>
-    <url>
-    <loc>https://smart-kozeni.com/credit-card/d-card-gold-u/</loc>
-    <lastmod>2026-06-21</lastmod>
-  </url>
-<url><loc>https://smart-kozeni.com/point-site/beginner/</loc><lastmod>2026-06-21</lastmod></url><url>
-    <loc>https://smart-kozeni.com/mobile-sim/home-wifi/</loc>
-    <lastmod>2026-06-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.75</priority>
-  </url>
-    <url>
-    <loc>https://smart-kozeni.com/credit-card/epos-card/</loc>
-    <lastmod>2026-06-21</lastmod>
-  </url>
-  <url>
-    <loc>https://smart-kozeni.com/account-opening/sumishin-sbi-netbank/</loc>
-    <lastmod>2026-06-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.70</priority>
-  </url>
-  <url>
-    <loc>https://smart-kozeni.com/account-opening/sbi-shinsei-bank/</loc>
-    <lastmod>2026-06-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.70</priority>
-  </url>
-  <url>
-    <loc>https://smart-kozeni.com/account-opening/mufg-esmart-sec/</loc>
-    <lastmod>2026-06-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.70</priority>
-  </url>
-  <url>
-    <loc>https://smart-kozeni.com/account-opening/gmo-click-sec/</loc>
-    <lastmod>2026-06-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.70</priority>
-  </url>
-  <url>
-    <loc>https://smart-kozeni.com/account-opening/matsui-sec/</loc>
-    <lastmod>2026-06-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.70</priority>
-  </url>
-  <url>
     <loc>https://smart-kozeni.com/travel/</loc>
     <lastmod>2026-06-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.75</priority>
-  </url>
-
-  <url>
-    <loc>https://smart-kozeni.com/account-opening/nisa-ideco/</loc>
-    <lastmod>2026-06-21</lastmod>
-  </url>
-
-  <url>
-    <loc>https://smart-kozeni.com/account-opening/securities-basics/</loc>
-    <lastmod>2026-06-21</lastmod>
-  </url>
-  <url>
-    <loc>https://smart-kozeni.com/mobile-sim/rakuten-hikari/</loc>
-    <lastmod>2026-06-20</lastmod>
-  </url>
-
-  <url>
-    <loc>https://smart-kozeni.com/mobile-sim/rakuten-mobile/campaign-not-eligible/</loc>
-    <lastmod>2026-06-20</lastmod>
-  </url>
-  <url>
-    <loc>https://smart-kozeni.com/mobile-sim/rakuten-mobile/referral-not-reflected/</loc>
-    <lastmod>2026-06-20</lastmod>
-  </url>
-
-  <url>
-    <loc>https://smart-kozeni.com/mobile-sim/ahamo/campaign-not-eligible/</loc>
-    <lastmod>2026-06-20</lastmod>
-  </url>
-  <url>
-    <loc>https://smart-kozeni.com/shopping/</loc>
-    <lastmod>2026-06-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://smart-kozeni.com/shopping/coupon-check/</loc>
-    <lastmod>2026-06-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.70</priority>
   </url>
   <url>
     <loc>https://smart-kozeni.com/travel/cancel-fee-check/</loc>
-    <lastmod>2026-06-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.70</priority>
-  </url>
-  <url>
-    <loc>https://smart-kozeni.com/credit-card/tokyu-card/</loc>
     <lastmod>2026-06-21</lastmod>
   </url>
 </urlset>

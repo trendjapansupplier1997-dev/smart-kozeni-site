@@ -2,12 +2,13 @@
 from __future__ import annotations
 
 import html
-import json
 from datetime import date
 from pathlib import Path
 from typing import Any
 
-BASE_URL = "https://smart-kozeni.com"
+import seo
+
+BASE_URL = seo.BASE_URL
 
 
 def esc(value: object) -> str:
@@ -107,51 +108,13 @@ def render_page_jsonld(
     checked_at: str,
     breadcrumbs: list[tuple[str, str]],
 ) -> str:
-    breadcrumb_items = [
-        {
-            "@type": "ListItem",
-            "position": position,
-            "name": name,
-            "item": url,
-        }
-        for position, (name, url) in enumerate(breadcrumbs, 1)
-    ]
-    graph = {
-        "@context": "https://schema.org",
-        "@graph": [
-            {
-                "@type": "WebSite",
-                "@id": f"{BASE_URL}/#website",
-                "url": f"{BASE_URL}/",
-                "name": "スマホ小銭研究所",
-                "inLanguage": "ja",
-            },
-            {
-                "@type": "Organization",
-                "@id": f"{BASE_URL}/#organization",
-                "name": "スマホ小銭研究所",
-                "url": f"{BASE_URL}/",
-            },
-            {
-                "@type": "WebPage",
-                "@id": f"{canonical}#webpage",
-                "url": canonical,
-                "name": title,
-                "description": description,
-                "dateModified": checked_at,
-                "isPartOf": {"@id": f"{BASE_URL}/#website"},
-                "publisher": {"@id": f"{BASE_URL}/#organization"},
-                "breadcrumb": {"@id": f"{canonical}#breadcrumb"},
-                "inLanguage": "ja",
-            },
-            {
-                "@type": "BreadcrumbList",
-                "@id": f"{canonical}#breadcrumb",
-                "itemListElement": breadcrumb_items,
-            },
-        ],
-    }
-    return json.dumps(graph, ensure_ascii=False, separators=(",", ":"))
+    return seo.render_page_jsonld(
+        canonical=canonical,
+        title=title,
+        description=description,
+        checked_at=checked_at,
+        breadcrumbs=breadcrumbs,
+    )
 
 
 def clean_rendered(value: str) -> str:
