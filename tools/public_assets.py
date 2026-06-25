@@ -10,6 +10,8 @@ from pathlib import Path
 from typing import Any
 from urllib.parse import urlsplit
 
+import repo_paths
+
 import seo
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -250,8 +252,8 @@ def audit_public_assets() -> list[str]:
 
     referenced_assets: set[str] = set()
     html_files = sorted(
-        path for path in ROOT.rglob("*.html")
-        if ".git" not in path.parts and "templates" not in path.parts
+        path for path in repo_paths.iter_files(ROOT, "*.html")
+        if "templates" not in path.relative_to(ROOT).parts
     )
     for path in html_files:
         rel = path.relative_to(ROOT).as_posix()

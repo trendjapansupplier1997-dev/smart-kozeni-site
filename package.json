@@ -1,0 +1,12 @@
+{
+  "name": "smart-kozeni-site",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Browser runtime verification for the Smart Kozeni static site",
+  "scripts": {
+    "verify:browser": "playwright test"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.61.0"
+  }
+}

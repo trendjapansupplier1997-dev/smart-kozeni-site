@@ -6,6 +6,8 @@ from pathlib import Path
 import re
 import sys
 
+import repo_paths
+
 sys.dont_write_bytecode = True
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -14,8 +16,8 @@ TOKEN_PATH = ASSETS / "kozeni-tokens.v1.css"
 TOKEN_HREF = "/assets/kozeni-tokens.v1.css"
 BRAND_HREF = "/assets/kozeni-brand.v1.css"
 HTML_FILES = sorted(
-    path for path in ROOT.rglob("*.html")
-    if ".git" not in path.parts and "templates" not in path.parts
+    path for path in repo_paths.iter_files(ROOT, "*.html")
+    if "templates" not in path.relative_to(ROOT).parts
 )
 CSS_FILES = sorted(ASSETS.glob("*.css")) if ASSETS.exists() else []
 

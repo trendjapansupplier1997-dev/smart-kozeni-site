@@ -1,4 +1,4 @@
-:root {
+.home-skip{position:fixed;left:1rem;top:-5rem;z-index:999;padding:.7rem 1rem;border-radius:.8rem;background:var(--home-deep);color:var(--kozeni-white);font-weight:850}.home-skip:focus{top:1rem}:root {
   --home-green: var(--kozeni-green);
   --home-deep: var(--kozeni-deep-alt);
   --home-mint: var(--kozeni-mint);

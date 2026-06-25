@@ -21,7 +21,7 @@ ROOT = Path(__file__).resolve().parents[1]
 DATA_DIR = ROOT / "data" / "home-network"
 TEMPLATE_PATH = ROOT / "templates" / "home-network-detail.html"
 BASE_URL = "https://smart-kozeni.com"
-STYLE_HREF = "/assets/kozeni-home-network.v1.css?v=45.0"
+STYLE_HREF = "/assets/kozeni-home-network.v1.css?v=46.0"
 ID_RE = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
 OUTPUT_RE = re.compile(r"^mobile-sim/[a-z0-9]+(?:-[a-z0-9]+)*$")
 

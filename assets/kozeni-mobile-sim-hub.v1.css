@@ -433,3 +433,11 @@ a {
     scroll-behavior: auto;
   }
 }
+
+/* Keep the wide comparison table inside the responsive grid item. */
+.hub-content > *,
+.hub-section,
+.hub-table-wrap {
+  min-width: 0;
+  max-width: 100%;
+}

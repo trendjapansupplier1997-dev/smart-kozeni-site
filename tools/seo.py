@@ -12,6 +12,8 @@ from typing import Any, Mapping
 from urllib.parse import urlsplit
 import xml.etree.ElementTree as ET
 
+import repo_paths
+
 ROOT = Path(__file__).resolve().parents[1]
 BASE_URL = "https://smart-kozeni.com"
 SITE_NAME = "スマホ小銭研究所"
@@ -408,8 +410,8 @@ def audit_seo() -> list[str]:
 
     generated = {
         path.relative_to(ROOT).as_posix(): path
-        for path in ROOT.rglob("*.html")
-        if ".git" not in path.parts and "templates" not in path.parts
+        for path in repo_paths.iter_files(ROOT, "*.html")
+        if "templates" not in path.relative_to(ROOT).parts
     }
     expected_outputs = {record.output for record in records}
     for output in sorted(expected_outputs - generated.keys()):

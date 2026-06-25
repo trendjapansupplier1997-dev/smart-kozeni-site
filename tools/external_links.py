@@ -12,6 +12,7 @@ from typing import Any, Iterable
 from urllib.parse import urlsplit
 
 import monetization
+import repo_paths
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA_ROOT = ROOT / "data"
@@ -237,8 +238,8 @@ def discover_html_links(
     }
 
     links: list[HtmlLink] = []
-    for path in sorted(ROOT.rglob("*.html")):
-        if ".git" in path.parts or "templates" in path.parts:
+    for path in sorted(repo_paths.iter_files(ROOT, "*.html")):
+        if "templates" in path.relative_to(ROOT).parts:
             continue
         source = path.relative_to(ROOT).as_posix()
         parser = _LinkParser(
@@ -266,8 +267,8 @@ def monetization_urls(programs: dict[str, dict[str, Any]]) -> dict[str, tuple[st
 
 
 def _canonical_source_files() -> Iterable[Path]:
-    for path in ROOT.rglob("*"):
-        if not path.is_file() or ".git" in path.parts:
+    for path in repo_paths.iter_files(ROOT, "*"):
+        if not path.is_file():
             continue
         if path == REGISTRY_PATH or path.suffix.lower() not in TEXT_SUFFIXES:
             continue

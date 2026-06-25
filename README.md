@@ -35,6 +35,7 @@ Cloudflare Pages 用のクリーンな静的サイト一式です。
 - `docs/external-link-verification.md` 外部リンク・収益リンクの構造監査と安全な定期確認
 - `docs/public-assets-runtime.md` favicon・Manifest・解析・Service Worker廃止処理のSSOT
 - `docs/seo-metadata.md` SEO head・構造化データ・sitemap・内部リンクのSSOT
+- `docs/browser-runtime-verification.md` 全公開ページの実ブラウザ・レスポンシブ・操作検証
 - `docs/mobile-sim-generation.md` スマホ回線詳細ページのSSOT/生成/監査ルール
 - `docs/monetization.md` 承認済みASP案件と収益導線のSSOTルール
 - `docs/account-opening-generation.md` 口座開設ページのSSOT/生成/監査ルール
@@ -60,6 +61,18 @@ python3 tools/verify_site.py --write
 ```
 
 `--write`後は`git status --short`と`git diff --stat`で生成差分を確認してください。
+
+## ブラウザ実行時検証
+
+公開67ページをデスクトップとモバイルのChromiumで確認します。
+
+```bash
+npm ci
+npx playwright install chromium
+npm run verify:browser
+```
+
+外部通信はテスト内で隔離し、ASP・紹介・解析URLへアクセスしません。GitHub Actionsでは静的統合検証の成功後に同じ`npm run verify:browser`を実行します。
 
 ## 外部リンクの定期確認
 

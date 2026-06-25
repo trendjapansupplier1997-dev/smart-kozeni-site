@@ -26,12 +26,13 @@ import build_site_foundation
 import monetization
 import external_links
 import public_assets
+import repo_paths
 import seo
 
 ROOT = Path(__file__).resolve().parents[1]
 HTML_FILES = sorted(
-    path for path in ROOT.rglob("*.html")
-    if ".git" not in path.parts and "templates" not in path.parts
+    path for path in repo_paths.iter_files(ROOT, "*.html")
+    if "templates" not in path.relative_to(ROOT).parts
 )
 DATA_DIR = ROOT / "data" / "mobile-sim"
 TEMPLATE_PATH = ROOT / "templates" / "mobile-sim-detail.html"
@@ -1499,9 +1500,8 @@ def main() -> int:
 
     backup_files: list[str] = []
     for pattern in ("*.bak*", "*.tmp", "*.old", "*.orig", "*~"):
-        for path in ROOT.rglob(pattern):
-            if ".git" not in path.parts:
-                backup_files.append(path.relative_to(ROOT).as_posix())
+        for path in repo_paths.iter_files(ROOT, pattern):
+            backup_files.append(path.relative_to(ROOT).as_posix())
 
     mobile_sim_problems = audit_generated_mobile_sim()
     mobile_sim_hub_problems = audit_mobile_sim_hub()

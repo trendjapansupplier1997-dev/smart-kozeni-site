@@ -1,4 +1,4 @@
-# スマホ小銭研究所 リリース前チェックリスト v47.0
+# スマホ小銭研究所 リリース前チェックリスト v48.0
 
 ## 1. 変更前
 
@@ -85,7 +85,18 @@ python3 tools/verify_site.py
 - 旧`v36`、旧home/menu資産、重複Manifest、手動`version.json`を復活させていないか
 - インラインCSS・インライン実行JavaScriptを追加していないか
 
-## 9. コミット前
+
+## 9. ブラウザ表示・実行基盤を変更したとき
+
+- `npm run verify:browser`で全67ページをデスクトップ・モバイル確認したか
+- JavaScript例外・console error・ローカル資産欠落がないか
+- 横スクロールが発生していないか
+- ホームメニューの開閉、Escape、フォーカス復帰が動くか
+- ブラウザテストで外部URLを実アクセスしていないか
+- 収益リンクをクリックするテストを追加していないか
+- ピクセル完全一致の壊れやすいsnapshotを安易に追加していないか
+
+## 10. コミット前
 
 ```bash
 git add -A
@@ -102,9 +113,9 @@ git commit -m "<変更内容>"
 git push origin main
 ```
 
-## 10. push後
+## 11. push後
 
-GitHub Actionsの`Site verification`が成功したことを確認する。外部リンクを変更した場合は`External link verification`も手動実行する。
+GitHub Actionsの`Site verification`で静的jobとbrowser jobが成功したことを確認する。外部リンクを変更した場合は`External link verification`も手動実行する。
 ローカルとCIは同じ`python3 tools/verify_site.py`を実行するため、別の検証手順を増やさない。
 
 ## SEOメタデータ・構造化データ
