@@ -78,3 +78,10 @@ npm run verify:browser
 ```
 
 対象・外部通信隔離・失敗Artifactについては`docs/browser-runtime-verification.md`を参照する。
+
+## 変動訴求の検証
+
+`tools/verify_site.py` は `data/claims.json` の構造、参照、根拠URL、
+ページ確認日、期限切れ、旧文言残存を検証します。通常実行では
+`review_after_days` 超過を警告し、週次の
+`python3 tools/claims.py --strict-stale` では失敗として扱います。

@@ -11,6 +11,7 @@ import sys
 from pathlib import Path
 from typing import Iterable
 
+import claims
 import repo_paths
 
 sys.dont_write_bytecode = True
@@ -172,7 +173,13 @@ def check_workflow_contract() -> None:
     _check_one_workflow(
         EXTERNAL_LINK_WORKFLOW,
         command="python3 tools/check_external_links.py --live",
-        required=("schedule:", "cron:", "workflow_dispatch:", "contents: read"),
+        required=(
+            "schedule:",
+            "cron:",
+            "workflow_dispatch:",
+            "contents: read",
+            "python3 tools/claims.py --strict-stale",
+        ),
         forbidden=(
             "tools/build_",
             "tools/verify_site.py",
@@ -180,7 +187,16 @@ def check_workflow_contract() -> None:
             "tools/kozeni_design_audit.py",
         ),
     )
-    print("OK: static, browser, and scheduled workflows delegate to canonical commands")
+    external_source = EXTERNAL_LINK_WORKFLOW.read_text(encoding="utf-8")
+    strict_claim_command = "python3 tools/claims.py --strict-stale"
+    if external_source.count(strict_claim_command) != 1:
+        raise RuntimeError(
+            f"{rel(EXTERNAL_LINK_WORKFLOW)} must call `{strict_claim_command}` exactly once"
+        )
+    print(
+        "OK: static, browser, external-link, and claim lifecycle workflows "
+        "delegate to canonical commands"
+    )
 
 
 def check_browser_contract() -> None:
@@ -286,6 +302,8 @@ def verify(write: bool) -> None:
     print("\n=== JSON syntax ===")
     check_json_files()
 
+    print("\n=== claim lifecycle ===")
+    claims.verify_registry(strict_stale=False)
     print("\n=== JavaScript syntax ===")
     check_javascript_files()
 

@@ -126,3 +126,12 @@ GitHub Actionsの`Site verification`で静的jobとbrowser jobが成功したこ
 - noindexページがsitemapへ入っていないか
 - indexableページに内部リンクの流入があるか
 - `sitemap.xml`を手編集していないか
+
+## 変動訴求を変更した場合
+
+- 公式HTTPS URLで最新条件を確認した
+- `data/claims.json` の本文と `checked_at` を更新した
+- 終了日が明示されている場合は `expires_at` を設定した
+- 参照ページの `checked_at` をclaim確認日以上にした
+- `python3 tools/claims.py --strict-stale` が成功した
+- 生成ページにclaim tokenが露出していないことを確認した

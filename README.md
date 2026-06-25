@@ -83,3 +83,10 @@ python3 tools/check_external_links.py --live
 ```
 
 ASPリンク、紹介リンク、計測ピクセル、広告画像は人工的なクリックやインプレッションを避けるため自動アクセスしません。詳細は`docs/external-link-verification.md`を参照してください。
+
+## 変動訴求ライフサイクル
+
+料金、値引き、還元、期間など外部都合で変わる公開情報は
+`data/claims.json` で管理します。生成元はclaim tokenを参照し、
+`tools/claims.py` が根拠URL、確認日、期限、旧文言、重複定義を検証します。
+詳細は `docs/claim-lifecycle.md` を参照してください。

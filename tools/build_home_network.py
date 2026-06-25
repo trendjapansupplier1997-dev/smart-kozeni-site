@@ -14,6 +14,7 @@ from typing import Any
 sys.dont_write_bytecode = True
 
 import build_mobile_sim
+import claims
 import monetization
 import public_assets
 
@@ -32,7 +33,7 @@ def esc(value: object) -> str:
 
 def load_data(path: Path) -> dict[str, Any]:
     with path.open(encoding="utf-8") as handle:
-        data = json.load(handle)
+        data = claims.resolve_data(json.load(handle), path)
 
     required = {
         "id", "output", "name", "title", "description", "eyebrow",

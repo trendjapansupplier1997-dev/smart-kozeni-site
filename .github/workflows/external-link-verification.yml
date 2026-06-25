@@ -26,5 +26,8 @@ jobs:
         with:
           python-version: "3.13"
 
+      - name: Check claim freshness
+        run: python3 tools/claims.py --strict-stale
+
       - name: Check external destinations
         run: python3 tools/check_external_links.py --live

@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "claims": {
+    "biglobe-wimax-monthly-discount": {
+      "status": "active",
+      "checked_at": "2026-06-25",
+      "review_after_days": 31,
+      "expires_at": null,
+      "source_url": "https://join.biglobe.ne.jp/mobile/wimax/5g/price/",
+      "texts": {
+        "statement": "サービス開始翌月から24カ月間、月額料金から毎月1,500円（税込1,650円相当）が値引きされます",
+        "badge": "24カ月間 毎月1,650円相当値引き",
+        "fact": "サービス開始翌月から24カ月間、月額料金から毎月1,500円（税込1,650円相当）値引き",
+        "faq_statement": "サービス開始の翌月から24カ月間、月額料金から毎月1,500円（税込1,650円相当）が値引きされます"
+      },
+      "retired_texts": [
+        "月額3,278円",
+        "月額4,928円",
+        "25カ月目以降"
+      ]
+    }
+  }
+}
