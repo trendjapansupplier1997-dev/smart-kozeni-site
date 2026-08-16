@@ -3,7 +3,7 @@
   "claims": {
     "biglobe-wimax-monthly-discount": {
       "status": "active",
-      "checked_at": "2026-06-25",
+      "checked_at": "2026-08-16",
       "review_after_days": 31,
       "expires_at": null,
       "source_url": "https://join.biglobe.ne.jp/mobile/wimax/5g/price/",
@@ -18,6 +18,17 @@
         "月額4,928円",
         "25カ月目以降"
       ]
+    },
+    "biglobe-wimax-oct2026-fee-increase": {
+      "status": "active",
+      "checked_at": "2026-08-16",
+      "review_after_days": 21,
+      "expires_at": null,
+      "source_url": "https://support.biglobe.ne.jp/news/news793.html",
+      "texts": {
+        "caution": "2026年10月1日から、BIGLOBE WiMAXの基本月額料金に一律330円（税込）が上乗せされる料金改定が実施されます。値引き特典の適用期間中は改定後もこれまでの月額料金が維持されますが、特典期間が終わるとその時点の改定後の料金に切り替わります。"
+      },
+      "retired_texts": []
     }
   }
 }

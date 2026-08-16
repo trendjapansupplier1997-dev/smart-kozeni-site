@@ -7,7 +7,7 @@
   "eyebrow": "HOME ROUTER GUIDE",
   "h1": "工事不要Wi-Fiを、月額と端末代から確認",
   "lead": "固定回線の工事を待たずに家のネットを用意したい場合の候補です。月額料金値引き特典の対象期間だけでなく、端末代、エリア、通信モードまで確認します。",
-  "checked_at": "2026-06-25",
+  "checked_at": "2026-08-16",
   "verdict_title": "工事を避けて早く使いたい人向け。安定性を最優先するなら光回線も比較",
   "verdict": "BIGLOBE WiMAX +5Gは、月額料金値引き特典の適用により、{{claim:biglobe-wimax-monthly-discount.statement}}。手数料・オプション料・端末代は別のため、適用条件と総額を公式画面で確認します。",
   "badges": [
@@ -68,7 +68,8 @@
     "キャッシュバックには受取手続きと期限があります",
     "手数料、オプション料、ルーター代は月額料金に含まれません",
     "室内での通信品質は住所、建物、設置場所によって変わります",
-    "安定性を重視する場合は光回線も比較してください"
+    "安定性を重視する場合は光回線も比較してください",
+    "{{claim:biglobe-wimax-oct2026-fee-increase.caution}}"
   ],
   "related": [
     {
@@ -120,6 +121,10 @@
     {
       "url": "https://join.biglobe.ne.jp/mobile/wimax/5g/campaign/",
       "label": "BIGLOBE公式「WiMAX 特典・キャンペーン」"
+    },
+    {
+      "url": "https://support.biglobe.ne.jp/news/news793.html",
+      "label": "BIGLOBE公式「月額料金改定のお知らせ」"
     }
   ]
 }
